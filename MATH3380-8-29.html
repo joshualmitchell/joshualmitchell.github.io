@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MathJax TeX Test Page</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="/mj/MathJax.js?config=TeX-AMS_HTML-full">
+    </script>
+</head>
+
+<body>
+
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsmath}
+% \usepackage amsthm
+\usepackage{times, verbatim}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\setenumerate[1]{label=(\arabic*)}
+
+
+\newcommand{\bn}{\mathbf{N}}
+\newcommand{\br}{\mathbf{R}}
+\newcommand{\bc}{\mathbf{C}}
+\newcommand{\bp}{\mathb{P}}
+\newcommand{\bq}{\mathbf{Q}}
+\newcommand{\bz}{\mathbf{Z}}
+
+\newcommand{\ep}{\epsilon}
+\newcommand{\fa}{\forall}
+
+\newcommand{\rar}{\Rightarrow}
+
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\lam}{\lambda}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\vep}{\varepsilon}
+\newcommand{\vp}{\varphi}
+\newcommand{\si}{\sigma}
+\newcommand{\vs}{\varsigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\up}{\upsilon}
+\newcommand{\vt}{\vartheta}
+\newcommand{\scc}{\mathcal C}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\hra}{\hookrightarrow}
+\newcommand{\bs}{\backslash}
+\newcommand\proof{\par\noindent{\bf Proof:\ } }
+\newcommand\answer{\par\noindent{\bf Answer:\ } }
+\newcommand\qed{$\blacksquare$}
+
+\title{Lecture 1 - MATH 3380 (Analysis 1)}
+\author{Joshua Lelon Mitchell}
+\date{August 29 2017}
+
+\begin{document}
+
+\maketitle
+
+\section{Theorem 2.3.8 (pg 118)}
+
+Let x, y $\in$ $\mathbb{R}$
+
+\begin{enumerate}[label=\alph*.]
+\item If x $\leq$ y + $\ep$ $\fa$ $\ep$ $>$ $0$, then x $\leq$ y
+\item If $|x - y|$ $\leq$ $\ep$ $\fa$ $\ep$ $>$ $0$, then $|x - y|$ $=$ $0$ or, evidently, $x = y$
+\end{enumerate}
+
+
+\proof (p $\rar$ q, $\neg$q $\rar$ $\neg$p $\therefore$ by contrapositive, p $\Rightarrow$ q):
+
+\bigskip
+
+Suppose that: $$x > y$$
+
+Now: $$x - y > 0$$
+
+\bigskip
+
+Let $$ \ep = \frac{x + y}{2} > 0$$
+
+See that
+
+$$y + \ep$$
+$$= y + \frac{x + y}{2} $$
+$$=  y + \frac{x}{2} - \frac{y}{2}$$
+
+\end{document}
+
+</body>
+
+</html>
