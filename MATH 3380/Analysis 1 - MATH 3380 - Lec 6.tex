@@ -1,0 +1,430 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Class
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Lecture\ \#6}
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mathbb{R}}       % |R
+\newcommand{\bq}{\mathbb{Q}}       % |Q
+\newcommand{\bn}{\mathbb{N}}       % |N
+\newcommand{\bc}{\mathbb{C}}       % |C
+
+\newcommand{\ep}{\epsilon}         % epsilon
+\newcommand{\fa}{\forall}          % for all
+
+\newcommand{\es}{\emptyset}        % empty set
+\newcommand{\sbs}{\subset}         % subset of
+
+\newcommand{\lra}{\longrightarrow} % implies ----->
+\newcommand{\rar}{\Rightarrow}     % implies -->
+
+\newcommand{\lla}{\longleftarrow}  % implies <-----
+\newcommand{\lar}{\Leftarrow}      % implies <--
+
+\newcommand{\pr}{^\prime} 		   % prime (i.e. R')
+\newcommand{\butnot}[2]{#1\setminus{\textrm{#2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   % N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   % N*(x, eps) intersect S = emptyset
+%%%% ACTUAL BEGINNING OF DOCUMENT %%%%
+
+\begin{document}
+
+\bsc{Misc. Notes:}
+
+Ex 3.4.8. e) \ 
+
+$\br$ is both open and closed.
+
+int $\br = \br\pr$
+
+$\es =$ bd $\br \sbs \br$
+
+-----
+
+S $\sbs \br$ \par
+$s \in S\pr$ if, $\fa \ep > 0$, $\dnbho{x}{\epsilon}{S}$
+
+-----
+
+HW: pages 141 - 142, numbers 6, 7, 15, 17, 19, 21
+
+\bsc{Theorem 3.4.17 - pg 118}
+
+\lt{$S \sbs \br$} 
+
+Then
+
+\balist
+\item S is closed iff S$\pr \sbs$ S
+\item cl S is a closed set
+\item S is closed iff S = cl S
+\item cl S = S U S$\pr$ = S $\cup$ bd S
+\elist
+
+\bgpf
+\ssc{a)}
+S is closed iff S$\pr \sbs$ S \
+
+$\lra$
+
+\supp{S is closed.}
+
+\wts{S$\pr \sbs$ S} \
+
+\lt{x $\in$ S'} \
+ 
+Thus, $\fa \ep > 0$ 
+
+\step{\nbhe{x}{\epsilon}{S}}{1}
+
+\wts{x $\in S$} \
+
+\as{x $\not\in$ S} \
+
+Then, from \bpth{1},
+\step{\nbho{x}{\epsilon}{S}}{2}
+and
+\step{\nbho{x}{\epsilon}{$\neg$S}}{3}
+
+From \bpth{2} and \bpth{3}, \
+
+x $\in$ bd S $\subset$ S by definition of a closed set. This is a contradiction. \
+
+Hence, x $\in$ S.
+
+This proves:
+ 
+\[S\pr \subset S\]
+
+$\lla$ \
+
+Conversely, \
+
+\supp{S$\pr \sbs $S}
+
+\wts{$\butnot{\br}{S}$ is open $\rar$ S is closed.} \
+
+\lt{x $\in \butnot{\br}{S}$}
+
+
+\wts{$\exists \ep > 0$ st N(x, $\ep$) $\sbs \butnot{\br}{S}$}
+
+Since x $\not\in$ S, we see that x not $\not\in$ S'.
+
+Thus, $\exists \ep > 0$ st $\nbhe{x}{\epsilon}{S}$ \
+
+Since x $\not\in$ S, we have:
+
+\step{\nbhe{x}{\epsilon}{S}}{1}
+
+Hence, N(x, $\ep$) $\sbs \butnot{\br}{S}$ , which proves that $\butnot{\br}{S}$ is open, or, equivalently, that S is closed. \
+
+This completes the proof of a).
+
+\ssc{b)}
+cl S is a closed set \
+
+Recall that cl S = S $\cup$ S$\pr$.
+
+\wts{$\butnot{\br}{cl S}$ is open $\rar$ cl S is closed}
+
+\lt{x $\in$ cl ($\butnot{\br}{S}$) (aka (S $\cup$ S$\pr$) Compliment)} \
+
+We must find an $\ep > 0$ st N(x, $\ep$) $\subset$ cl ($\butnot{\br}{S}$) \
+
+Now x $\not\in$ S and x $\not\in$ S$\pr$. \
+
+$\exists \ep > 0$ st $\dnbhe{x}{\epsilon}{S}$ \
+
+However, x $\not\in$ S, so \
+
+\step{\nbhe{x}{\epsilon}{S}}{1}
+
+We claim that N(x, $\ep$) $\cap$ S' $= \emptyset$ \
+
+Since:
+
+\[\neg [x \in S \cup S\pr]\]
+\[\neg [x \in S \textrm{ or }x \in S\pr]\]
+\[x \not\in S \textrm{ and }x \not\in S\pr\]
+
+which is equivalent to N(x, $\ep$) $\sbs$ $\butnot{\br}{S$\pr$}$ \
+
+\lt{y $\in$ N(x, $\ep$)}
+
+By Theorem 2(a), the set N(x, $\ep$) is open. \
+
+So $\exists \hat{\epsilon} > 0$ st N(y, $\hat{\epsilon}$) $\subset$ N(x,$\ep$). \
+
+In particular, y $\not\in$ N(x, $\ep$). \
+
+From \bpth{1} \
+
+N*(y, $\hat{\epsilon}$) $\cap$ S $= \emptyset$. \
+
+So, y $\not\in$ S$\pr$ or, equivalently, y $\in \butnot{\br}{S$\pr$}$.
+
+This proves that N(x, $\ep$) $\subset$ $\butnot{\br}{S$\pr$}$ or, equivalently,
+
+\step{\nbhe{x}{\epsilon}{S$\pr$}}{2}
+
+From \bpth{1} and \bpth{2}, N(x, $\ep$) $\cap$ (S $\cup$ S$\pr$) $= \es$. \
+
+Hence, 
+\step{N(x, \ep) \sbs (S \cup S\pr)^C = \textrm{ cl }S^C}{3}
+
+Thus, \bpth{3} and * prove that cl S$^C$ is open. \
+
+Hence, by Theorem 3.4.7, cl S is closed.
+
+\ssc{c)} S is closed iff S $=$ cl S ($=$ S $\cup$ S') \
+
+$\lra$ \
+
+\supp{S is closed.}
+
+\wts{S = S $\cup$ S$\pr$.} \
+
+By definition, S $\subset$ S $\cup$ S$\pr$. \
+
+\wts{S $\cup$ S$\pr \subset$ S}
+
+Let x $\in$ S $\cup$ S'. \
+
+If x $\in$ S, then we are finished. \
+
+If x $\in$ $\butnot{S\pr}{S}$ Venn Diagram: (S     (    )xxS') \
+
+Then by a), S' $\subset$ S, since S is closed.
+
+Hence, x $\in$ S, and we are finished.\
+
+$\lla$ \
+
+Conversely, \
+
+\supp{S $= S \cup S\pr$} \
+
+\wts{S is closed.}\
+
+By (b), cl S is closed. \
+
+Since, S $= S \cup S\pr$ $=$ cl S, S is also closed.
+
+
+
+\ssc{d)} cl S $=$ S $\cup$ S' $=$ S $\cup$ bd S \
+
+\lt{x $\in$ S $\cup$ S'}
+
+If x $\in$ S, then x $\in$ S $\cup$ bd S.\
+
+So, S $\cup$ S\ $\sbs$ S $\cup$ bd S in this case. \
+
+If x $\in$ $\butnot{S\pr}{S}$, then $\fa \ep > 0$, $\nbho{x}{\epsilon}{S}$, which implies x $\in$ $\butnot{\br}{S}$ and $\nbho{x}{\epsilon}{$\butnot{\br}{S}$}$ \
+
+Thus, x $\in$ bd S $\subset$ S $\cup$ bd S. \
+
+Hence, S $\cup$ S' $\subset$ S $\cup$ bd S. \
+
+For the reverse conclusion, let x $\in$ S $\cup$ bd S. \
+
+If x $\in$ S, then x $\in$ S $\cup$ S$\pr$. \
+So, in this case, S $\cup$ bd S $\subset$ S $\cup$ S$\pr$ $=$ cl S. \
+
+if x $\in$ $\butnot{\textrm{bd } S}{S}$, then, in particular, \
+
+$\fa \ep > 0$,
+
+\[N*(x, \ep) \cap S \neq \emptyset\]
+
+which implies that x $\in$ S' $\subset$ S $\cup$ S'. \
+
+Hence, S $\cup$ bd S $\subset$ S $\cup$ S$\pr$. \
+
+Hence, result.
+
+
+
+\epf
+\end{document}
