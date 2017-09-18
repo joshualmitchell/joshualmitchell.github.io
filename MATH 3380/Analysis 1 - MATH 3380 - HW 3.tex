@@ -181,6 +181,7 @@
 \newcommand{\bq}{\mathbb{Q}}       % |Q
 \newcommand{\bn}{\mathbb{N}}       % |N
 \newcommand{\bc}{\mathbb{C}}       % |C
+\newcommand{\bz}{\mathbb{Z}}       % |Z
 
 \newcommand{\ep}{\epsilon}         % epsilon
 \newcommand{\fa}{\forall}          % for all
@@ -268,14 +269,80 @@ Find the closure of each set:
 	Answer: Let S $= (0, 1)$, T $= (1, 2)$. bd (S $\cap$ T) $= \es$, but bd S $\cap$ bd T $=$ 1.
 \elist
 
-\bsc{15)} Prove: If x is an accumulation point of the set S, then every neighborhood of x contains infinitely many points of S.
+\bsc{15)} Prove: If x is an accumulation point of the set S, then every neighborhood of x contains infinitely many points of S.\
+
+\bgpf
+Suppose that $\exists$ a deleted neighborhood of x, called N, that contains n points x$_1$, x$_2$, ... x$_n$ of S where n is a finite amount and x$_1$ $\leq$ x$_2$, $\leq$  ... x$_n$ \
+
+x is an accumulation point on S if $\fa \ep > 0$, $\dnbho{x}{\epsilon}{S	}$. \
+
+N is a deleted neighborhood of S if $\fa$ x $\in \{y \in \br : 0 < |y - x| < \ep\}$, x $\in$ N.\
+
+Let $\hat\epsilon = \ep + \ep$, and x$_0$ = x$_1$ - $\hat\epsilon$. \
+
+By definition, x$_0 \in$ N, since N is a neighborhood $\fa \ep > 0$.\
+
+However, N only has n elements. A contradiction.\
+
+So, N can't be a deleted neighborhood since it has a finite number of elements, which means x can't be an accumulation point.
+
+\epf
+ 
 
 \bsc{17)} Prove: S$\pr$ is a closed set.
 
+\bgpf
+
+Suppose $\exists$ an open set A equal to S$\pr$. \
+
+By definition, A = int S, and $\fa s \in A$, $\exists$ $\ep > 0$ st N(x, $\ep$) $\sbs$ A. \
+
+
+
+\epf
+
 \bsc{19)} Suppose S is a nonempty bounded set and let m $=$ sup S. Prove or give a counter example: m is a boundary point of S.
+
+\bgpf
+
+
+
+
+\epf
+
+\pagebreak
 
 \bsc{21)} Let A be a nonempty open subset of $\br$ and let Q $\sbs \bq$. Prove: A $\cap$ Q $\neq \es$.
 
+\bgpf
+Notice that Q $\sbs \bq \sbs \br$. \
+
+Since A is nonempty, $\exists$ at least one element a $\in \br$. \
+
+Since A is nonempty and open, a $+$ $\ep \in$ A. \
+
+If a $\in \bq$, then result. \
+
+If a $+ \ep \in \bq$, then result. \
+
+If a $\not\in \bq$ and (a $+$ $\ep) \not\in \bq$, then: \
+
+Let x $=$ a, y $=$ a $+$ $\ep$, z $=$ y $-$ x. \
+
+By Archimedes' axiom, $\exists$ n st n $> \frac{1}{z	}$ \
+
+nz $>$ 1
+
+ny $-$ nx $>$ 1
+
+Since the difference between ny and nx is bigger than 1, \
+
+$\exists m \in \bz$ st nx $<$ m $<$ ny.
+
+See that x $< \frac{m}{n	} < y$, $\frac{m}{n}$ is a rational number, and $\frac{m}{n} \in$ A. \
+
+Hence, result. 
+\epf
 
 \pagebreak
 
