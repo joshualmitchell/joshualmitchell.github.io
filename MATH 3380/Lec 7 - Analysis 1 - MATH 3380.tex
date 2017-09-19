@@ -3,6 +3,15 @@
 
 \documentclass{article}
 
+\newcommand{\hmwkTitle}{Lecture\ \#6}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+
+% Packages
+
 \usepackage{fancyhdr}
 \usepackage{extramarks}
 \usepackage{amsmath}
@@ -15,7 +24,9 @@
 \usepackage{enumitem}
 \usepackage{chngcntr}
 
-\usetikzlibrary{automata,positioning}
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
 
 %
 % Basic Document Settings
@@ -41,62 +52,11 @@
 \renewcommand\footrulewidth{0.4pt}
 
 \setlength\parindent{0pt}
-
-%
-% Create Problem Sections
-%
-
-\newcommand{\enterProblemHeader}[1]{
-    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-}
-
-\newcommand{\exitProblemHeader}[1]{
-    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
-    \stepcounter{#1}
-    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
-}
-
 \setcounter{secnumdepth}{0}
-\newcounter{partCounter}
-\newcounter{homeworkProblemCounter}
-\setcounter{homeworkProblemCounter}{1}
-\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
 
-\counterwithin*{equation}{section}
-\counterwithin*{equation}{subsection}
-
-%
-% Homework Problem Environment
-%
-% This environment takes an optional argument. When given, it will adjust the
-% problem counter. This is useful for when the problems given for your
-% assignment aren't sequential. See the last 3 problems of this template for an
-% example.
-%
-\newenvironment{homeworkProblem}[1][-1]{
-    \ifnum#1>0
-        \setcounter{homeworkProblemCounter}{#1}
-    \fi
-    \section{Problem \arabic{homeworkProblemCounter}}
-    \setcounter{partCounter}{1}
-    \enterProblemHeader{homeworkProblemCounter}
-}{
-    \exitProblemHeader{homeworkProblemCounter}
-}
-
-%
-% Homework Details
-%   - Title
-%   - Class
-%   - Instructor
-%   - Author
-%
-
-\newcommand{\hmwkTitle}{Lecture\ \#6}
-\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}
-\newcommand{\hmwkClassInstructor}{Dr. Welsh}
-\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}}
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
 
 %
 % Title Page
@@ -114,6 +74,9 @@
 
 \renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
 
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
 %
 % Various Helper Commands
 %
@@ -124,8 +87,6 @@
 % For partial derivatives
 \newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
 
-% Integral dx
-\newcommand{\dx}{\mathrm{d}x}
 
 % Alias for the Solution section header
 \newcommand{\solution}{\textbf{\large Solution}}
@@ -137,6 +98,10 @@
 \newcommand{\Bias}{\mathrm{Bias}}
 
 % Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
 \newcommand\bsc[2][\DefaultOpt]{%
   \def\DefaultOpt{#2}%
   \section[#1]{#2}%
@@ -173,78 +138,98 @@
 \newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
 \newcommand{\epf}{\end{proof}}
 
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
 
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Notes---------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
 
 % Analysis / Logical commands:
 
-\newcommand{\br}{\mathbb{R}}       % |R
-\newcommand{\bq}{\mathbb{Q}}       % |Q
-\newcommand{\bn}{\mathbb{N}}       % |N
-\newcommand{\bc}{\mathbb{C}}       % |C
-\newcommand{\bz}{\mathbb{Z}}       % |Z
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
 
-\newcommand{\ep}{\epsilon}         % epsilon
-\newcommand{\fa}{\forall}          % for all
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
 
-\newcommand{\es}{\emptyset}        % empty set
-\newcommand{\sbs}{\subset}         % subset of
+\newcommand{\es}{\mt{\emptyset}}        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
 
-\newcommand{\lra}{\longrightarrow} % implies ----->
-\newcommand{\rar}{\Rightarrow}     % implies -->
+\newcommand{\lra}{\mt{\longrightarrow}} % implies ----->
+\newcommand{\rar}{\mt{\Rightarrow}}     % implies -->
 
-\newcommand{\lla}{\longleftarrow}  % implies <-----
-\newcommand{\lar}{\Leftarrow}      % implies <--
+\newcommand{\lla}{\mt{\longleftarrow}}  % implies <-----
+\newcommand{\lar}{\mt{\Leftarrow}}      % implies <--
 
-\newcommand{\pr}{^\prime} 		   % prime (i.e. R')
-\newcommand{\butnot}[2]{#1\setminus{\textrm{#2}}}
+\newcommand{\eql}{\mt{=} }
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_#2}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
 
 \newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
      							   %  N(x, eps) intersect S \= emptyset
 \newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N(x, eps) intersect S  = emptyset
 \newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
-     							   % N*(x, eps) intersect S \= emptyset
+     							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
-     							   % N*(x, eps) intersect S = emptyset
-%%%% ACTUAL BEGINNING OF DOCUMENT %%%%
+     							   %  N*(x, eps) intersect S = emptyset
+     							 
+
+
+% ---------
 
 \begin{document}
 
 \bsc{Section 3.5: Compact Sets}{
 Three big areas of analysis: compactedness, continuity, and connectedness.
 
-\ssc{Definition 3.5.1}{A set s $\sbs \br$ is said to be compact if every \textbf{open cover} has a finite \textbf{subcover} \
+\ssc{Definition 3.5.1}{A set s \sbs \br  is said to be compact if every \textbf{open cover} has a finite \textbf{subcover} \
 
-(i.e. if S $\sbs \bigcup_{\alpha \in I} G_\alpha$), \
+(i.e. if S \sbs \urng{\alpha \in I}{} \uw{G}{\afa}) , \
 
-where G$_\alpha$ is open $\fa \alpha \in I$; then $\exists$ n $\in \bn$ and $\exists$ \{n$_1$, n$_2$, ... n$_k$\} $\sbs$ I \
+where \uw{G}{\afa} is open \fa \afa \mem I; then \exs n \mem \bn and \exs \fs{n}{k} \sbs I \
 
-st S $\sbs \bigcup_{i = 1}^n G_\alpha$i
+st S \sbs \urng{i=1}{n} \dbs{G}{\alpha}{i}
 }
 
 \ssc{Example 3.5.2}{
 \balist
-\item Show that S $=$ (0, 2) is not compact.
-\item Show that S $=$ \{x$_1$, x$_2$, ... x$_n$\} $\sbs \br$ is compact.
+\item Show that S \eql (0, 2) is not compact.
+\item Show that S \eql \{\uw{x}{1}, \uw{x}{2}, ... \uw{x}{n}\} \sbs \br is compact. 
 \elist
 
 \textbf{(a)} \
 
 Notice that:
-\step{(0, 2) \sbs \bigcup^\infty_1 (\frac{1}{n}, 3)}{1}
+\step{(0, 2) \sbs \urng{n=1}{\infty} (\frac{1}{n}, 3)}{1}
 }
 
 If (0,2) were compact, then from \bpth{1} there would exist a \textbf{finite} subcover.
 
 \as{(0, 2) is compact.} \
 
-So $\exists$ k $\in \bn$ and \{n$_1$, n$_2$, ... n$_k$\} $\sbs \bn_k$ st
+So \exs k \mem \bn and \{\uw{n}{1}, \uw{n}{2}, ... \uw{n}{k}\} \sbs \uw{\bn}{k} st
 
-\step{(0, 2) \sbs \bigcup^k_1 (\frac{1}{n_i}, 3)}{2}
+\step{(0, 2) \sbs \urng{i=1}{k} (\frac{1}{n_i}, 3)}{2}
 
-Choose m $=$ max \{n$_1$, n$_2$, ... n$_k$\}. \
+Choose m \eql max \fs{n}{k} \
 
-Then, notice that ($\frac{1}{n_i}$, 3) $\sbs$ ($\frac{1}{m}$, 3) $\fa$ i $=$ 1, 2, ... k \
+Then, notice that (\frc{1}{n_i} , 3) \sbs (\frc{1}{m}, 3) \fa i \eql 1, 2, ... k \
 
 From \bpth{1}, (0, 2) $\sbs$ ($\frac{1}{m}$, 3).
 
@@ -288,7 +273,7 @@ So,
 
 \step{\nbho{\textrm{sup S}}{\ep}{S}}{1}
 
-Also, sup S $+ \frac{\epsilon}{2} \in$ N(sup S, $\ep$) and sup S $+ \frac{\epsilon}{2} \in \butnot{\br}{S}$.
+Also, sup S $+ \frac{\epsilon}{2} \in$ N(sup S, $\ep$) and sup S $+ \frac{\epsilon}{2} \in \bnm{\br}{S}$.
 
 (s $\leq$ sup S $\fa$ s $\in$ S, and sup S $\in$ S)
 
@@ -338,7 +323,7 @@ Hence, S is bounded. \
 
 \supp{S is not closed} \
 
-Thus, $\exists$ p $\in$ $\butnot{cl S}{S}$, i.e. p $\in$ s$\pr$.
+Thus, $\exists$ p $\in$ $\bnt{cl S}{S}$, i.e. p $\in$ s$\pr$.
 
 ---------- \
 
@@ -404,10 +389,9 @@ This proves that \
 
 S$_inf S$ $=$ \{inf S\} $\sbs$ G$_\alpha$ ($\alpha_0$)
 
-Hence, inf S $\in$ Beta $\neq$ $\es$.
+Hence, inf S \mt{\in} Beta $\neq$ $\es$. \
 
 \epf
-
 
 }
 \end{document}
