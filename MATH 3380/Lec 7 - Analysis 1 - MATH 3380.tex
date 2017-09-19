@@ -93,7 +93,7 @@
 %   - Author
 %
 
-\newcommand{\hmwkTitle}{Lecture\ \#2}
+\newcommand{\hmwkTitle}{Lecture\ \#6}
 \newcommand{\hmwkClass}{MATH 3380 / Analysis 1}
 \newcommand{\hmwkClassInstructor}{Dr. Welsh}
 \newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}}
@@ -196,8 +196,7 @@
 \newcommand{\lar}{\Leftarrow}      % implies <--
 
 \newcommand{\pr}{^\prime} 		   % prime (i.e. R')
-\newcommand{\butnot}[2]{\textrm{#1}\setminus{\textrm{#2}}}
-\newcommand{\bi}{\butnot{$\br$}{$\bq$}}
+\newcommand{\butnot}[2]{#1\setminus{\textrm{#2}}}
 
 \newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
      							   %  N(x, eps) intersect S \= emptyset
@@ -207,94 +206,208 @@
      							   % N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   % N*(x, eps) intersect S = emptyset
-     							   
 %%%% ACTUAL BEGINNING OF DOCUMENT %%%%
 
 \begin{document}
 
-\bsc{Theorem 3.3: The Completeness Axiom}{
-Recall the Fundamental Theorem of Arithmetic: \
+\bsc{Section 3.5: Compact Sets}{
+Three big areas of analysis: compactedness, continuity, and connectedness.
 
-if n $\in \bn$ with n $\geq$ 2, then n may be expressed as the product of prime numbers (the prime factorization (PF)). \
+\ssc{Definition 3.5.1}{A set s $\sbs \br$ is said to be compact if every \textbf{open cover} has a finite \textbf{subcover} \
 
-The PF is unique with respect to (WRT) order. \
+(i.e. if S $\sbs \bigcup_{\alpha \in I} G_\alpha$), \
 
-Ex: $12 = 2 * 2 * 2 * 3$
+where G$_\alpha$ is open $\fa \alpha \in I$; then $\exists$ n $\in \bn$ and $\exists$ \{n$_1$, n$_2$, ... n$_k$\} $\sbs$ I \
+
+st S $\sbs \bigcup_{i = 1}^n G_\alpha$i
 }
-\bsc{Theorem 3.3.1}{
-\lt{p be a prime number} \
 
-Then $\sqrt{p} \in $ $\butnot{$\br$}{$\bq$}$ \
+\ssc{Example 3.5.2}{
+\balist
+\item Show that S $=$ (0, 2) is not compact.
+\item Show that S $=$ \{x$_1$, x$_2$, ... x$_n$\} $\sbs \br$ is compact.
+\elist
+
+\textbf{(a)} \
+
+Notice that:
+\step{(0, 2) \sbs \bigcup^\infty_1 (\frac{1}{n}, 3)}{1}
+}
+
+If (0,2) were compact, then from \bpth{1} there would exist a \textbf{finite} subcover.
+
+\as{(0, 2) is compact.} \
+
+So $\exists$ k $\in \bn$ and \{n$_1$, n$_2$, ... n$_k$\} $\sbs \bn_k$ st
+
+\step{(0, 2) \sbs \bigcup^k_1 (\frac{1}{n_i}, 3)}{2}
+
+Choose m $=$ max \{n$_1$, n$_2$, ... n$_k$\}. \
+
+Then, notice that ($\frac{1}{n_i}$, 3) $\sbs$ ($\frac{1}{m}$, 3) $\fa$ i $=$ 1, 2, ... k \
+
+From \bpth{1}, (0, 2) $\sbs$ ($\frac{1}{m}$, 3).
+
+Notice that 0 $< \frac{1}{m + 1} < \frac{1}{m}$ \
+
+and $\frac{1}{m + 1} \in$ (0, 2). \
+
+However, $\frac{1}{m + 1} \not\in$ ($\frac{1}{m}$, 3).
+
+\textbf{(b)} \
+
+Suppose that S $\sbs$ $\bigcup_\alpha G_\alpha$ ($\alpha \in I$)
+
+where I is an index set and G$_\alpha$ is open $\fa \alpha \in$ I.
+
+$\fa i = 1, 2,...$ n, $\exists \alpha_i \in$ I st x$_i \in G_\alpha$ ($\alpha_i$). \
+
+Then, S $\sbs \bigcup^n_i G_\alpha$ ($\alpha_i$).
+
+We see that a \textbf{finite} subset of $\br$ is compact.
+}
+\ssc{Lemma 3.5.4}{
+If $\es \neq S \sbs \br$ and S is \textbf{closed} and \textbf{bounded}, then S has a maximum and a minimum. In fact, in this, max S $=$ sup S, and min S $=$ inf S.
+
 \bgpf
 
-\as{$\sqrt{p} \in \bq$} \
+Since S is bounded, inf S, sup S $\in \br$ both exist.
+\wts{max S $=$ sup S}
 
-Then $\sqrt{p}$ = $\frac{a}{b}$, where a, b $\in \bn$ and gcd(a, b) $=$ 1 \
+For $\epsilon > 0$, $\exists s_1 (\ep) \in$ S st \
 
-So, \
+sup S $- \ep < S_1 \leq$ sup S $<$ sup S $+ \ep$.
 
-p $= \frac{a^2}{b^2}$ \
+So,
 
-$a^2 = pb^2$ \
+$-\ep < s_1 - sup S \leq \ep$
 
-therefore,
+Thus, $s_1 \in$ N(sup S, $\ep$). \
 
-\step{p | a^2}{1}
+So, 
 
-$p | a^2$ $\rar$ $\exists k \in \bz$ st $a^2 = pk$ \
+\step{\nbho{\textrm{sup S}}{\ep}{S}}{1}
 
-Since the PF of $a^2$ and a contain exactly the same distinct primes, \
+Also, sup S $+ \frac{\epsilon}{2} \in$ N(sup S, $\ep$) and sup S $+ \frac{\epsilon}{2} \in \butnot{\br}{S}$.
 
-(i.e. a $=$ p$_1 \times $ p$_2 \times$ ... p$_n$ $\rar$ a$^2 =$ p$^2_1 \times$ p$^2_2 \times$ ... $p^2_n$) \
+(s $\leq$ sup S $\fa$ s $\in$ S, and sup S $\in$ S)
 
-and since p is prime (i.e. p is a component of a$^2$ but can't be, say, p$^2_2$ because that would mean it has an integer square root and therefore isn't prime), it has to be one of the p$_n$'s,
+---
 
-p $|$ a.
+% \step{\nbho{\textrm{sup S}}{\epsilon}{\butnot{\br}{S}}}
 
-Thus, $\exists$ k $\in \bz$ st. a $=$ pk. \
+From \bpth{1} and \bpth{2}, sup S $\in$ bd S $\sbs$ S, since S is closed. Hence, sup S $=$ max S.
 
-Then a$^2$ = p$^2$k$^2$ = pb$^2$ from \bpth{1}.
-
-Thus, b$^2$ = pk$^2$, and we see that p $|$ b$^2$. \
-
-However, we obtain the contradiction that p $|$ b and p $|$ a. \
-
-Hence, $\sqrt{p} \in \bi$.
 \epf
 }
-\bsc{Definition 3.3.7}{
-Let S $\sbs \br$.
 
-If $\exists$ m $\in \br$ st s $\leq$ m $\fa$ s $\in S$, \
+\ssc{Theorem 3.5.5 (Heine-Borel)}{
 
-then m is an upper bound of S and we say that S is \textbf{bounded above}. \
+A subset $\es \neq$ S $\sbs \br$ is compact iff S is closed and bounded.
 
-Similarly, we can define \textbf{bounded below}. \
-
-If S is bounded above and below, then S is said to be \textbf{bounded}.
-
---n--[--S--]--m
-
-If an upper bound m of S is a member of S, then m is called the maximum (or largest element) of S, and we say that m = \textbf{max S}.
-
---n--[--S--m--
-
-Similarly, we may decline \textbf{minimum of S (min S)}.
-}
-
-\bsc{Theorem 1}{
-If a set S $\sbs \br$ possesses a max element, then it is unique. A similar result holds for a minimum element.
 \bgpf
-\supp{$\exists m_1, m_2 \in \br$ st $m_1 =$ max S, $m_2 = $ max S}
+$\lra$ \
 
-Thus, $m_1$, $m_2 \in S$ and, $\fa s \in$ S
+\supp{S is compact}
 
-\step{s \leq m_1}{1}
-\step{s \leq m_2}{2}
+\wts{S$_\infty$ is bounded}
 
-Let m $=$ m$_2$ in \bpth{1} and m $=$ 
+Notice that S $\sbs$ From n=1 to $\infty$, $\bigcup$ ($-$n, n) $= \br$,
+
+where ($-$n, n) $=$ N(0, n) is open $\fa n \in \bn$.
+
+G$_n \sbs$ G sub n + 1 $\fa n \in \bn$.
+
+Since S is compact, $\exists k \in \bn$ and \{n$_1$, n$_2$, ... n$_k$\} $\sbs \bn$ st \
+
+S $\sbs$ from i$=$1 to k $\bigcup$ ($-$n$_i$, n$_i$) \
+
+\lt{m $=$ max \{n$_1$, n$_2$, ... n$_k$\}. \
+
+Then, ($-$n$_i$, n$_i$) $\sbs$ ($-$m, m) $\fa i = 1, 2, ... k$.
+
+Thus, S $\sbs$ ($-$m, m).
+
+So, $|S| <$ m, $\fa s \in$ S. Or, equivalently, \
+
+$-$m $<$ s $<$ m, $\fa$ s $\in$ S.
+
+Hence, S is bounded. \
+
+\wts{S is closed} \
+
+\supp{S is not closed} \
+
+Thus, $\exists$ p $\in$ $\butnot{cl S}{S}$, i.e. p $\in$ s$\pr$.
+
+---------- \
+
+S is closed iff cl S $=$ S $\cup$ S$\pr =$ S \
+
+S $\sbs$ S $\cup$ S$\pr$ \
+
+If cl S $\neq$ S, then S $\sbs$ S $\cup$ S$\pr$
+
+---------- \
+
+Notice that: \
+
+From n $=$ 1 to $\infty$, $\bigcap$ [p $- \frac{1}{n}$, p $+ \frac{1}{n}$] $=$ \{p\}
+
+So, $\br$ but not From n $=$ 1 to $\infty$, $\bigcap$ [p $- \frac{1}{n}$, p $+ \frac{1}{n}$] is equal to $\br$ but not \{p\}.
+
+S $\sbs$ $\br$ but not From n $=$ 1 to $\infty$, $\bigcap$ [p $- \frac{1}{n}$, p $+ \frac{1}{n}$] \
+
+S $\sbs$ From n $=$ 1 to $\infty$, $\bigcup$ $\br$ but not [p $- \frac{1}{n}$, p $+ \frac{1}{n}$]
+
+S $\sbs$ From n $=$ 1 to $\infty$, $\bigcup$ [($-\infty$, p $- \frac{1}{n}$) $\bigcup$ (p $+ \frac{1}{n}$, $\infty$)]
+
+Since S is compact, $\exists$ k $\in \bn$ and \{n$_1$, n$_2$, ... n$_k$\} $\sbs$ $\bn$ st \
+
+S $\sbs$ From i $=$ 1 to k, $\bigcup$ [($-\infty$, p $- \frac{1}{n_i}$) $\bigcup$ (p $+ \frac{1}{n_i}$, $\infty$)]
+
+\lt{m $=$ max \{n$_1$, n$_2$, ... n$_k$\}}
+
+Then ($-\infty$, p $- \frac{1}{n_i}$) $\bigcup$ (p $+ \frac{1}{n_i}$, $\infty$) $\sbs$ ($-\infty$, p $- \frac{1}{m}$) $\bigcup$ (p $+ \frac{1}{m}$, $\infty$).
+
+Thus, S $\sbs$ [($-\infty$, p $- \frac{1}{m}$) $\bigcup$ (p $+ \frac{1}{m}$, $\infty$)]
+
+$\lla$ \
+
+Conversely, \
+ 
+\supp{S is closed and bounded} \
+
+\wts{S is compact} \
+
+Let us suppose that S $\sbs$ when $\alpha \in I, \bigcup$ G$_\alpha$,
+
+where G$_\alpha$ is open $\fa \alpha \in I$, where I is some index.
+
+$\fa x \in \br$, define:
+
+S$_x$ $=$ S $\cap$ ($-\infty$, x] \
+
+Also define the set:
+
+Beta $=$ \{x $\in \br$: S$_x$ is covered by a finite collection of the G$_\alpha$'s\}
+
+Notice that S is bounded, so inf S $\in \br$.
+
+and S$_inf S$ $=$ S $\cap$ ($-\infty$, inf S] $=$ \{inf S\}\
+
+Since by Lemma 3.5.4, inf S $=$ min S.
+
+Now, since min S $=$ inf S $\in$ S, then $\exists$ $\alpha_0$ $\in$ I st inf S $\in$ G$_\alpha$ ($\alpha_0$). \
+
+This proves that \
+
+S$_inf S$ $=$ \{inf S\} $\sbs$ G$_\alpha$ ($\alpha_0$)
+
+Hence, inf S $\in$ Beta $\neq$ $\es$.
 
 \epf
-}
 
+
+}
 \end{document}
