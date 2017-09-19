@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 SEP 2017 08:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 SEP 2017 08:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Analysis 1 - MATH 3380 - HW 3.tex"
-(./Analysis 1 - MATH 3380 - HW 3.tex
+**"HW 3 - Analysis 1 - MATH 3380.tex"
+(./HW 3 - Analysis 1 - MATH 3380.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -396,8 +396,8 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 \c@partCounter=\count129
 \c@homeworkProblemCounter=\count130
- (/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/Analysis 1 - MATH 3380 - HW 3.aux)
-\openout1 = `"Analysis 1 - MATH 3380 - HW 3.aux"'.
+ (/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/HW 3 - Analysis 1 - MATH 3380.aux)
+\openout1 = `"HW 3 - Analysis 1 - MATH 3380.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 211.
 LaTeX Font Info:    ... okay on input line 211.
@@ -485,7 +485,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
-[2] [3] (/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/Analysis 1 - MATH 3380 - HW 3.aux) ) 
+[2] [3] (/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/HW 3 - Analysis 1 - MATH 3380.aux) ) 
 Here is how much of TeX's memory you used:
  14021 strings out of 492995
  281720 string characters out of 6132704
@@ -495,7 +495,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,11n,66p,441b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/Analysis 1 - MATH 3380 - HW 3.pdf" (3 pages, 109337 bytes).
+Output written on "/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/HW 3 - Analysis 1 - MATH 3380.pdf" (3 pages, 109337 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream

@@ -93,7 +93,7 @@
 %   - Author
 %
 
-\newcommand{\hmwkTitle}{Lecture\ \#6}
+\newcommand{\hmwkTitle}{HW\ \#3}
 \newcommand{\hmwkClass}{MATH 3380 / Analysis 1}
 \newcommand{\hmwkClassInstructor}{Dr. Welsh}
 \newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}}
@@ -181,6 +181,7 @@
 \newcommand{\bq}{\mathbb{Q}}       % |Q
 \newcommand{\bn}{\mathbb{N}}       % |N
 \newcommand{\bc}{\mathbb{C}}       % |C
+\newcommand{\bz}{\mathbb{Z}}       % |Z
 
 \newcommand{\ep}{\epsilon}         % epsilon
 \newcommand{\fa}{\forall}          % for all
@@ -209,222 +210,149 @@
 
 \begin{document}
 
-\bsc{Misc. Notes:}
+Assignment Set: {6, 7, 15, 17, 19, 21} from pages 141 - 142
 
-Ex 3.4.8. e) \ 
+\bsc{6)}
 
-$\br$ is both open and closed.
-
-int $\br = \br\pr$
-
-$\es =$ bd $\br \sbs \br$
-
------
-
-S $\sbs \br$ \par
-$s \in S\pr$ if, $\fa \ep > 0$, $\dnbho{x}{\epsilon}{S}$
-
------
-
-HW: pages 141 - 142, numbers 6, 7, 15, 17, 19, 21
-
-\bsc{Theorem 3.4.17 - pg 118}
-
-\lt{$S \sbs \br$} 
-
-Then
+Find the closure of each set:
 
 \balist
-\item S is closed iff S$\pr \sbs$ S
-\item cl S is a closed set
-\item S is closed iff S = cl S
-\item cl S = S U S$\pr$ = S $\cup$ bd S
+\item \{ $\frac{1}{n}$ : n $\in \bn$ \} \
+
+	Answer: $\es$
+\item $\bn$ \
+	
+	Answer: $\bn$
+\item $\bq$ \
+	
+	Answer: $\br$
+\item $\bigcap_{n=1}^\infty$ $(0, \frac{1}{n})$ \
+	
+	Answer: $\es$
+\item \{ x : $|x - 5| \leq \frac{1}{2}$\} \
+
+	$[4.5, 5.5]$ \
+	
+	Answer: $[4.5, 5.5]$
+\item \{ x : $x^2 > 0$\} \
+	
+	$(0, \infty)$ \
+	
+	Answer: $[0, \infty)$ \
 \elist
 
+\bsc{7)} Let S, T $\sbs \br$. Find a counterexample of each of the following:
+\balist
+\item If P is the set of all isolated points of S, then P is a closed set. \
+
+	Answer: Let S = $\bn$
+\item Every open set contains at least two points. \
+
+	Answer: $\es$
+\item If S is closed, then cl(int S) $=$ S. \
+
+	Answer: Let S $= \bq$
+\item If S is open, then int (cl S) $=$ S. \
+
+	Answer: Let S $= (-1, 0) \cup (0, 1)$
+\item bd (cl S) $=$ bd S \
+
+	Answer: Let S $= (-1, 0) \cup (0, 1)$
+\item bd (bd S) $=$ bd S \
+
+	Answer: Let S = $\bq$. Then bd S is $\br$, and bd (bd S) $= \es \neq \br$.
+\item bd (S $\cup$ T) $=$ (bd S) $\cup$ (bd T) \
+
+	Answer: Let S $= \br$, T $= (0, 1)$. bd (S $\cup$ T) = $\es$, but bd S $\cup$ bd T $= \es \cup \{0, 1\}$
+\item bd (S $\cap$ T) $=$ (bd S) $\cap$ (bd T) \
+
+	Answer: Let S $= (0, 1)$, T $= (1, 2)$. bd (S $\cap$ T) $= \es$, but bd S $\cap$ bd T $=$ 1.
+\elist
+
+\bsc{15)} Prove: If x is an accumulation point of the set S, then every neighborhood of x contains infinitely many points of S.\
+
 \bgpf
-\ssc{a)}
-S is closed iff S$\pr \sbs$ S \
+Suppose that $\exists$ a deleted neighborhood of x, called N, that contains n points x$_1$, x$_2$, ... x$_n$ of S where n is a finite amount and x$_1$ $\leq$ x$_2$, $\leq$  ... x$_n$ \
 
-$\lra$
+x is an accumulation point on S if $\fa \ep > 0$, $\dnbho{x}{\epsilon}{S	}$. \
 
-\supp{S is closed.}
+N is a deleted neighborhood of S if $\fa$ x $\in \{y \in \br : 0 < |y - x| < \ep\}$, x $\in$ N.\
 
-\wts{S$\pr \sbs$ S} \
+Let $\hat\epsilon = \ep + \ep$, and x$_0$ = x$_1$ - $\hat\epsilon$. \
 
-\lt{x $\in$ S'} \
+By definition, x$_0 \in$ N, since N is a neighborhood $\fa \ep > 0$.\
+
+However, N only has n elements. A contradiction.\
+
+So, N can't be a deleted neighborhood since it has a finite number of elements, which means x can't be an accumulation point.
+
+\epf
  
-Thus, $\fa \ep > 0$ 
 
-\step{\nbhe{x}{\epsilon}{S}}{1}
+\bsc{17)} Prove: S$\pr$ is a closed set.
 
-\wts{x $\in S$} \
+\bgpf
 
-\as{x $\not\in$ S} \
+By definition, $\fa s \in S\pr$, $\fa \ep > 0$, $\dnbho{s}{\epsilon}{S}$
 
-Then, from \bpth{1},
-\step{\nbho{x}{\epsilon}{S}}{2}
-and
-\step{\nbho{x}{\epsilon}{$\neg$S}}{3}
-
-From \bpth{2} and \bpth{3}, \
-
-x $\in$ bd S $\subset$ S by definition of a closed set. This is a contradiction. \
-
-Hence, x $\in$ S.
-
-This proves:
- 
-\[S\pr \subset S\]
-
-$\lla$ \
-
-Conversely, \
-
-\supp{S$\pr \sbs $S}
-
-\wts{$\butnot{\br}{S}$ is open $\rar$ S is closed.} \
-
-\lt{x $\in \butnot{\br}{S}$}
-
-
-\wts{$\exists \ep > 0$ st N(x, $\ep$) $\sbs \butnot{\br}{S}$}
-
-Since x $\not\in$ S, we see that x not $\not\in$ S'.
-
-Thus, $\exists \ep > 0$ st $\nbhe{x}{\epsilon}{S}$ \
-
-Since x $\not\in$ S, we have:
-
-\step{\nbhe{x}{\epsilon}{S}}{1}
-
-Hence, N(x, $\ep$) $\sbs \butnot{\br}{S}$ , which proves that $\butnot{\br}{S}$ is open, or, equivalently, that S is closed. \
-
-This completes the proof of a).
-
-\ssc{b)}
-cl S is a closed set \
-
-Recall that cl S = S $\cup$ S$\pr$.
-
-\wts{$\butnot{\br}{cl S}$ is open $\rar$ cl S is closed}
-
-\lt{x $\in$ cl ($\butnot{\br}{S}$) (aka (S $\cup$ S$\pr$) Compliment)} \
-
-We must find an $\ep > 0$ st N(x, $\ep$) $\subset$ cl ($\butnot{\br}{S}$) \
-
-Now x $\not\in$ S and x $\not\in$ S$\pr$. \
-
-$\exists \ep > 0$ st $\dnbhe{x}{\epsilon}{S}$ \
-
-However, x $\not\in$ S, so \
-
-\step{\nbhe{x}{\epsilon}{S}}{1}
-
-We claim that N(x, $\ep$) $\cap$ S' $= \emptyset$ \
-
-Since:
-
-\[\neg [x \in S \cup S\pr]\]
-\[\neg [x \in S \textrm{ or }x \in S\pr]\]
-\[x \not\in S \textrm{ and }x \not\in S\pr\]
-
-which is equivalent to N(x, $\ep$) $\sbs$ $\butnot{\br}{S$\pr$}$ \
-
-\lt{y $\in$ N(x, $\ep$)}
-
-By Theorem 2(a), the set N(x, $\ep$) is open. \
-
-So $\exists \hat{\epsilon} > 0$ st N(y, $\hat{\epsilon}$) $\subset$ N(x,$\ep$). \
-
-In particular, y $\not\in$ N(x, $\ep$). \
-
-From \bpth{1} \
-
-N*(y, $\hat{\epsilon}$) $\cap$ S $= \emptyset$. \
-
-So, y $\not\in$ S$\pr$ or, equivalently, y $\in \butnot{\br}{S$\pr$}$.
-
-This proves that N(x, $\ep$) $\subset$ $\butnot{\br}{S$\pr$}$ or, equivalently,
-
-\step{\nbhe{x}{\epsilon}{S$\pr$}}{2}
-
-From \bpth{1} and \bpth{2}, N(x, $\ep$) $\cap$ (S $\cup$ S$\pr$) $= \es$. \
-
-Hence, 
-\step{N(x, \ep) \sbs (S \cup S\pr)^C = \textrm{ cl }S^C}{3}
-
-Thus, \bpth{3} and * prove that cl S$^C$ is open. \
-
-Hence, by Theorem 3.4.7, cl S is closed.
-
-\ssc{c)} S is closed iff S $=$ cl S ($=$ S $\cup$ S') \
-
-$\lra$ \
-
-\supp{S is closed.}
-
-\wts{S = S $\cup$ S$\pr$.} \
-
-By definition, S $\subset$ S $\cup$ S$\pr$. \
-
-\wts{S $\cup$ S$\pr \subset$ S}
-
-Let x $\in$ S $\cup$ S'. \
-
-If x $\in$ S, then we are finished. \
-
-If x $\in$ $\butnot{S\pr}{S}$ Venn Diagram: (S     (    )xxS') \
-
-Then by a), S' $\subset$ S, since S is closed.
-
-Hence, x $\in$ S, and we are finished.\
-
-$\lla$ \
-
-Conversely, \
-
-\supp{S $= S \cup S\pr$} \
-
-\wts{S is closed.}\
-
-By (b), cl S is closed. \
-
-Since, S $= S \cup S\pr$ $=$ cl S, S is also closed.
-
-
-
-\ssc{d)} cl S $=$ S $\cup$ S' $=$ S $\cup$ bd S \
-
-\lt{x $\in$ S $\cup$ S'}
-
-If x $\in$ S, then x $\in$ S $\cup$ bd S.\
-
-So, S $\cup$ S\ $\sbs$ S $\cup$ bd S in this case. \
-
-If x $\in$ $\butnot{S\pr}{S}$, then $\fa \ep > 0$, $\nbho{x}{\epsilon}{S}$, which implies x $\in$ $\butnot{\br}{S}$ and $\nbho{x}{\epsilon}{$\butnot{\br}{S}$}$ \
-
-Thus, x $\in$ bd S $\subset$ S $\cup$ bd S. \
-
-Hence, S $\cup$ S' $\subset$ S $\cup$ bd S. \
-
-For the reverse conclusion, let x $\in$ S $\cup$ bd S. \
-
-If x $\in$ S, then x $\in$ S $\cup$ S$\pr$. \
-So, in this case, S $\cup$ bd S $\subset$ S $\cup$ S$\pr$ $=$ cl S. \
-
-if x $\in$ $\butnot{\textrm{bd } S}{S}$, then, in particular, \
-
-$\fa \ep > 0$,
-
-\[N*(x, \ep) \cap S \neq \emptyset\]
-
-which implies that x $\in$ S' $\subset$ S $\cup$ S'. \
-
-Hence, S $\cup$ bd S $\subset$ S $\cup$ S$\pr$. \
-
-Hence, result.
+\wts{$\butnot{\br}{S$\pr$}$ is open.}
 
 
 
 \epf
+
+\bsc{19)} Suppose S is a nonempty bounded set and let m $=$ sup S. Prove or give a counter example: m is a boundary point of S.
+
+\bgpf
+
+By definition,
+
+s $\leq$ m, $\fa$ s $\in$ S, and,
+
+$\fa$ $\ep > 0$, $\exists$ s' $\in$ S st m $-$ $\ep <$ s'
+
+By the second part of the definition of the supremum of S, $\nbho{m}{\epsilon}{S}$.
+
+Notice also that, by the first part of the definition of the supremum of S, (m $+$ $\ep) \not\in$ S. This means that $\nbho{m}{\epsilon}{$\butnot{\br}{S}$}$.
+
+By definition, m is a boundary point.
+
+
+
+\epf
+
+\pagebreak
+
+\bsc{21)} Let A be a nonempty open subset of $\br$ and let Q $\sbs \bq$. Prove: A $\cap$ Q $\neq \es$.
+
+\bgpf
+Notice that Q $\sbs \bq \sbs \br$. \
+
+Since A is nonempty, $\exists$ at least one element a $\in \br$. \
+
+Since A is nonempty and open, a $+$ $\ep \in$ A. \
+
+If a $\in \bq$, then result. \
+
+If a $+ \ep \in \bq$, then result. \
+
+If a $\not\in \bq$ and (a $+$ $\ep) \not\in \bq$, then: \
+
+Let x $=$ a, y $=$ a $+$ $\ep$, z $=$ y $-$ x. \
+
+By Archimedes' axiom, $\exists$ n st n $> \frac{1}{z	}$ \
+
+nz $>$ 1
+
+ny $-$ nx $>$ 1
+
+Since the difference between ny and nx is bigger than 1, \
+
+$\exists m \in \bz$ st nx $<$ m $<$ ny.
+
+See that since  x $< \frac{m}{n	} < y$, $\frac{m}{n}$ is a rational number, and $\frac{m}{n} \in$ A. \
+
+Hence, result. 
+\epf
+
 \end{document}
