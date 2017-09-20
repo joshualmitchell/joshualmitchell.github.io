@@ -3,9 +3,196 @@
 
 \documentclass{article}
 
-\input{ShortcutsAnalysis}
-
 \newcommand{\hmwkTitle}{Lecture\ \#6}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset}}        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\eql}{\mt{=} }
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							 
+
+
+% ----------
 
 \begin{document}
 
@@ -55,7 +242,7 @@ $\lra$
  
 Thus, $\fa \ep > 0$ 
 
-\step{\nbhe{x}{\epsilon}{S}}{1}
+\step{\dnbho{x}{\epsilon}{S}}{1}
 
 \wts{x $\in S$} \
 
@@ -82,22 +269,22 @@ Conversely, \
 
 \supp{S$\pr \sbs $S}
 
-\wts{$\butnot{\br}{S}$ is open $\rar$ S is closed.} \
+\wts{\bnm{\br}{S} is open \rar S is closed.} \
 
-\lt{x $\in \butnot{\br}{S}$}
+\lt{x \mem \bnm{\br}{S}}
 
 
-\wts{$\exists \ep > 0$ st N(x, $\ep$) $\sbs \butnot{\br}{S}$}
+\wts{\exs \ep $> 0$ st N(x, $\ep$) \sbs \bnm{\br}{S}}
 
-Since x $\not\in$ S, we see that x not $\not\in$ S'.
+Since x $\not\in$ S, we see that x $\not\in$ S\pr because S\pr \sbs S.
 
-Thus, $\exists \ep > 0$ st $\nbhe{x}{\epsilon}{S}$ \
+Thus, $\exists \ep > 0$ st $\dnbhe{x}{\epsilon}{S}$ \
 
 Since x $\not\in$ S, we have:
 
 \step{\nbhe{x}{\epsilon}{S}}{1}
 
-Hence, N(x, $\ep$) $\sbs \butnot{\br}{S}$ , which proves that $\butnot{\br}{S}$ is open, or, equivalently, that S is closed. \
+Hence, N(x, $\ep$) $\sbs \bnm{\br}{S}$ , which proves that $\bnm{\br}{S}$ is open, or, equivalently, that S is closed. \
 
 This completes the proof of a).
 
@@ -106,19 +293,21 @@ cl S is a closed set \
 
 Recall that cl S = S $\cup$ S$\pr$.
 
-\wts{$\butnot{\br}{cl S}$ is open $\rar$ cl S is closed}
+\wts{$\bnt{\br}{cl S}$ is open \rar cl S is closed}
 
-\lt{x $\in$ cl ($\butnot{\br}{S}$) (aka (S $\cup$ S$\pr$) Compliment)} \
+\lt{x \mem cl (\bnt{\br}{S}) (aka (S $\cup$ S\pr) Compliment)} \
 
-We must find an $\ep > 0$ st N(x, $\ep$) $\subset$ cl ($\butnot{\br}{S}$) \
+We must find an $\ep > 0$ st N(x, $\ep$) \sbs \bnt{\br}{S $\cup$ S\pr} \
 
 Now x $\not\in$ S and x $\not\in$ S$\pr$. \
 
 $\exists \ep > 0$ st $\dnbhe{x}{\epsilon}{S}$ \
 
-However, x $\not\in$ S, so \
+However, x $\not\in$ S, so \exs \ep $>$ 0 st \
 
 \step{\nbhe{x}{\epsilon}{S}}{1}
+
+Equivalently, N(x, \ep) \sbs \bnt{\br}{S}
 
 We claim that N(x, $\ep$) $\cap$ S' $= \emptyset$ \
 
@@ -128,23 +317,27 @@ Since:
 \[\neg [x \in S \textrm{ or }x \in S\pr]\]
 \[x \not\in S \textrm{ and }x \not\in S\pr\]
 
-which is equivalent to N(x, $\ep$) $\sbs$ $\butnot{\br}{S$\pr$}$ \
+which is equivalent to N(x, $\ep$) \sbs \bnt{\br}{S\pr} \
 
 \lt{y $\in$ N(x, $\ep$)}
 
 By Theorem 2(a), the set N(x, $\ep$) is open. \
 
-So $\exists \hat{\epsilon} > 0$ st N(y, $\hat{\epsilon}$) $\subset$ N(x,$\ep$). \
+So \exs $\hat{\epsilon} > 0$ st N(y, $\hat{\epsilon}$) $\subset$ N(x,$\ep$). \
 
 In particular, y $\not\in$ N(x, $\ep$). \
 
-From \bpth{1} \
+\
 
-N*(y, $\hat{\epsilon}$) $\cap$ S $= \emptyset$. \
+From \bpth{1}: N*(y, $\hat{\epsilon}$) $\cap$ S $= \emptyset$. \
 
-So, y $\not\in$ S$\pr$ or, equivalently, y $\in \butnot{\br}{S$\pr$}$.
+And since y $\not\in$ S, % \dnbhe{y}{\ep}{S}
 
-This proves that N(x, $\ep$) $\subset$ $\butnot{\br}{S$\pr$}$ or, equivalently,
+So y $\not\in$ S$\pr$ or, equivalently, y \mem \bnt{\br}{S\pr}.
+
+Thus, y \mem N(x, \ep) \rar y \mem \bnt{\br}{S\pr}
+
+This proves that N(x, $\ep$) \sbs \bnt{\br}{S\pr} or, equivalently,
 
 \step{\nbhe{x}{\epsilon}{S$\pr$}}{2}
 
@@ -153,7 +346,7 @@ From \bpth{1} and \bpth{2}, N(x, $\ep$) $\cap$ (S $\cup$ S$\pr$) $= \es$. \
 Hence, 
 \step{N(x, \ep) \sbs (S \cup S\pr)^C = \textrm{ cl }S^C}{3}
 
-Thus, \bpth{3} and * prove that cl S$^C$ is open. \
+Thus, \bpth{3} and \textbf{???} prove that cl S$^C$ is open. \
 
 Hence, by Theorem 3.4.7, cl S is closed.
 
@@ -169,12 +362,15 @@ By definition, S $\subset$ S $\cup$ S$\pr$. \
 
 \wts{S $\cup$ S$\pr \subset$ S}
 
-Let x $\in$ S $\cup$ S'. \
+Let x $\in$ S
+
+Since cl S \eql S $\cup$ S\pr, x \mem S $\cup$ S'. \
 
 If x $\in$ S, then we are finished. \
 
-If x $\in$ $\butnot{S\pr}{S}$ Venn Diagram: (S     (    )xxS') \
+If x $\in$ $\bnt{S\pr}{S}$ \
 
+\sidenote{Venn Diagram: (S     (    )xxS') \textbf{???}}
 Then by a), S' $\subset$ S, since S is closed.
 
 Hence, x $\in$ S, and we are finished.\
@@ -201,18 +397,20 @@ If x $\in$ S, then x $\in$ S $\cup$ bd S.\
 
 So, S $\cup$ S\ $\sbs$ S $\cup$ bd S in this case. \
 
-If x $\in$ $\butnot{S\pr}{S}$, then $\fa \ep > 0$, $\nbho{x}{\epsilon}{S}$, which implies x $\in$ $\butnot{\br}{S}$ and $\nbho{x}{\epsilon}{$\butnot{\br}{S}$}$ \
+If x \mem \bnt{S\pr}{S}, then \fa \ep $>$ 0, $\nbho{x}{\epsilon}{S}$, which implies x \mem \bnt{\br}{S} and $\nbho{x}{\epsilon}{$\bnt{\br}{S}$}$ \
 
 Thus, x $\in$ bd S $\subset$ S $\cup$ bd S. \
 
 Hence, S $\cup$ S' $\subset$ S $\cup$ bd S. \
+
+\
 
 For the reverse conclusion, let x $\in$ S $\cup$ bd S. \
 
 If x $\in$ S, then x $\in$ S $\cup$ S$\pr$. \
 So, in this case, S $\cup$ bd S $\subset$ S $\cup$ S$\pr$ $=$ cl S. \
 
-if x $\in$ $\butnot{\textrm{bd } S}{S}$, then, in particular, \
+if x \mem \bnt{bd S}{S}, then, in particular, \
 
 $\fa \ep > 0$,
 
