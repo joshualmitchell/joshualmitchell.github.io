@@ -126,36 +126,49 @@
 \newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
 \newcommand{\epf}{\end{proof}}
 
-\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Notes---------------------------------------------------------------
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
 #1 \
 
 ---------------------------------------------------------------------------------------------------------------------------------------------}
 
 % Analysis / Logical commands:
 
-\newcommand{\br}{\mathbb{R}}       % |R
-\newcommand{\bq}{\mathbb{Q}}       % |Q
-\newcommand{\bn}{\mathbb{N}}       % |N
-\newcommand{\bc}{\mathbb{C}}       % |C
-\newcommand{\bz}{\mathbb{Z}}       % |Z
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
 
-\newcommand{\ep}{\epsilon}         % epsilon
-\newcommand{\fa}{\forall}          % for all
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
 
-\newcommand{\es}{\emptyset}        % empty set
-\newcommand{\sbs}{\subset}         % subset of
+\newcommand{\es}{\mt{\emptyset}}        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
 
-\newcommand{\lra}{\longrightarrow} % implies ----->
-\newcommand{\rar}{\Rightarrow}     % implies -->
+\newcommand{\lra}{\mt{\longrightarrow}} % implies ----->
+\newcommand{\rar}{\mt{\Rightarrow}}     % implies -->
 
-\newcommand{\lla}{\longleftarrow}  % implies <-----
-\newcommand{\lar}{\Leftarrow}      % implies <--
+\newcommand{\lla}{\mt{\longleftarrow}}  % implies <-----
+\newcommand{\lar}{\mt{\Leftarrow}}      % implies <--
 
-\newcommand{\pr}{^\prime} 		   % prime (i.e. R')
+\newcommand{\eql}{\mt{=} }
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
 
 \newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
 \newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
 \newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
 
 \newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
      							   %  N(x, eps) intersect S \= emptyset
