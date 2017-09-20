@@ -1,31 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdftex 2017.5.23)  19 SEP 2017 13:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdftex 2017.5.23)  20 SEP 2017 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **ShortcutsAnalysis.tex
 (./ShortcutsAnalysis.tex
-./ShortcutsAnalysis.tex:3: Undefined control sequence.
-l.3 \usepackage
-               {fancyhdr}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:4: Undefined control sequence.
-l.4 \usepackage
-               {extramarks}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ./ShortcutsAnalysis.tex:5: Undefined control sequence.
 l.5 \usepackage
-               {amsmath}
+               {fancyhdr}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -34,7 +16,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:6: Undefined control sequence.
 l.6 \usepackage
-               {amssymb}
+               {extramarks}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -43,7 +25,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:7: Undefined control sequence.
 l.7 \usepackage
-               {amsthm}
+               {amsmath}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -52,7 +34,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:8: Undefined control sequence.
 l.8 \usepackage
-               {amsfonts}
+               {amssymb}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -61,7 +43,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:9: Undefined control sequence.
 l.9 \usepackage
-               {tikz}
+               {amsthm}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -70,7 +52,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:10: Undefined control sequence.
 l.10 \usepackage
-                [plain]{algorithm}
+                {amsfonts}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -79,7 +61,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:11: Undefined control sequence.
 l.11 \usepackage
-                {algpseudocode}
+                {tikz}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -88,7 +70,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:12: Undefined control sequence.
 l.12 \usepackage
-                {enumitem}
+                [plain]{algorithm}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -97,6 +79,24 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:13: Undefined control sequence.
 l.13 \usepackage
+                {algpseudocode}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:14: Undefined control sequence.
+l.14 \usepackage
+                {enumitem}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:15: Undefined control sequence.
+l.15 \usepackage
                 {chngcntr}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -104,8 +104,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:17: Undefined control sequence.
-l.17 \usetikzlibrary
+./ShortcutsAnalysis.tex:19: Undefined control sequence.
+l.19 \usetikzlibrary
                     {automata, positioning, arrows}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -113,8 +113,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:23: Undefined control sequence.
-l.23 \topmargin
+./ShortcutsAnalysis.tex:25: Undefined control sequence.
+l.25 \topmargin
                =-0.45in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -122,8 +122,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:24: Undefined control sequence.
-l.24 \evensidemargin
+./ShortcutsAnalysis.tex:26: Undefined control sequence.
+l.26 \evensidemargin
                     =0in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -131,8 +131,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:25: Undefined control sequence.
-l.25 \oddsidemargin
+./ShortcutsAnalysis.tex:27: Undefined control sequence.
+l.27 \oddsidemargin
                    =0in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -140,8 +140,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:26: Undefined control sequence.
-l.26 \textwidth
+./ShortcutsAnalysis.tex:28: Undefined control sequence.
+l.28 \textwidth
                =6.5in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -149,8 +149,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:27: Undefined control sequence.
-l.27 \textheight
+./ShortcutsAnalysis.tex:29: Undefined control sequence.
+l.29 \textheight
                 =9.0in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -158,8 +158,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:28: Undefined control sequence.
-l.28 \headsep
+./ShortcutsAnalysis.tex:30: Undefined control sequence.
+l.30 \headsep
              =0.25in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -167,8 +167,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:30: Undefined control sequence.
-l.30 \linespread
+./ShortcutsAnalysis.tex:32: Undefined control sequence.
+l.32 \linespread
                 {1.1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -176,8 +176,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:32: Undefined control sequence.
-l.32 \pagestyle
+./ShortcutsAnalysis.tex:34: Undefined control sequence.
+l.34 \pagestyle
                {fancy}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -185,8 +185,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:33: Undefined control sequence.
-l.33 \lhead
+./ShortcutsAnalysis.tex:35: Undefined control sequence.
+l.35 \lhead
            {\hmwkAuthorName}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -194,8 +194,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:33: Undefined control sequence.
-l.33 \lhead{\hmwkAuthorName
+./ShortcutsAnalysis.tex:35: Undefined control sequence.
+l.35 \lhead{\hmwkAuthorName
                            }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -203,8 +203,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:34: Undefined control sequence.
-l.34 \chead
+./ShortcutsAnalysis.tex:36: Undefined control sequence.
+l.36 \chead
            {}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -212,8 +212,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:35: Undefined control sequence.
-l.35 \rhead
+./ShortcutsAnalysis.tex:37: Undefined control sequence.
+l.37 \rhead
            {\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -221,8 +221,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:35: Undefined control sequence.
-l.35 \rhead{\hmwkClass
+./ShortcutsAnalysis.tex:37: Undefined control sequence.
+l.37 \rhead{\hmwkClass
                       \ (\hmwkClassInstructor): \hmwkTitle}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -230,8 +230,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:35: Undefined control sequence.
-l.35 \rhead{\hmwkClass\ (\hmwkClassInstructor
+./ShortcutsAnalysis.tex:37: Undefined control sequence.
+l.37 \rhead{\hmwkClass\ (\hmwkClassInstructor
                                              ): \hmwkTitle}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -239,8 +239,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:35: Undefined control sequence.
-l.35 ...kClass\ (\hmwkClassInstructor): \hmwkTitle
+./ShortcutsAnalysis.tex:37: Undefined control sequence.
+l.37 ...kClass\ (\hmwkClassInstructor): \hmwkTitle
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -248,8 +248,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:36: Undefined control sequence.
-l.36 \lfoot
+./ShortcutsAnalysis.tex:38: Undefined control sequence.
+l.38 \lfoot
            {\lastxmark}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -257,8 +257,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:36: Undefined control sequence.
-l.36 \lfoot{\lastxmark
+./ShortcutsAnalysis.tex:38: Undefined control sequence.
+l.38 \lfoot{\lastxmark
                       }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -266,8 +266,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:37: Undefined control sequence.
-l.37 \cfoot
+./ShortcutsAnalysis.tex:39: Undefined control sequence.
+l.39 \cfoot
            {\thepage}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -275,8 +275,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:37: Undefined control sequence.
-l.37 \cfoot{\thepage
+./ShortcutsAnalysis.tex:39: Undefined control sequence.
+l.39 \cfoot{\thepage
                     }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -284,8 +284,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:39: Undefined control sequence.
-l.39 \renewcommand
+./ShortcutsAnalysis.tex:41: Undefined control sequence.
+l.41 \renewcommand
                   \headrulewidth{0.4pt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -293,26 +293,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:39: Undefined control sequence.
-l.39 \renewcommand\headrulewidth
-                                {0.4pt}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:40: Undefined control sequence.
-l.40 \renewcommand
-                  \footrulewidth{0.4pt}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:40: Undefined control sequence.
-l.40 \renewcommand\footrulewidth
+./ShortcutsAnalysis.tex:41: Undefined control sequence.
+l.41 \renewcommand\headrulewidth
                                 {0.4pt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -321,7 +303,25 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:42: Undefined control sequence.
-l.42 \setlength
+l.42 \renewcommand
+                  \footrulewidth{0.4pt}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:42: Undefined control sequence.
+l.42 \renewcommand\footrulewidth
+                                {0.4pt}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:44: Undefined control sequence.
+l.44 \setlength
                \parindent{0pt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -329,19 +329,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:42: Missing number, treated as zero.
+./ShortcutsAnalysis.tex:44: Missing number, treated as zero.
 <to be read again> 
                    {
-l.42 \setlength\parindent{
+l.44 \setlength\parindent{
                           0pt}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./ShortcutsAnalysis.tex:42: Illegal unit of measure (pt inserted).
+./ShortcutsAnalysis.tex:44: Illegal unit of measure (pt inserted).
 <to be read again> 
                    {
-l.42 \setlength\parindent{
+l.44 \setlength\parindent{
                           0pt}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -350,45 +350,9 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-./ShortcutsAnalysis.tex:43: Undefined control sequence.
-l.43 \setcounter
+./ShortcutsAnalysis.tex:45: Undefined control sequence.
+l.45 \setcounter
                 {secnumdepth}{0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:45: Undefined control sequence.
-l.45 \newcommand
-                {\hmwkClass}{MATH 3380 / Analysis 1}        % Class
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:45: Undefined control sequence.
-l.45 \newcommand{\hmwkClass
-                           }{MATH 3380 / Analysis 1}        % Class
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:46: Undefined control sequence.
-l.46 \newcommand
-                {\hmwkClassInstructor}{Dr. Welsh}           % Instructor
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:46: Undefined control sequence.
-l.46 \newcommand{\hmwkClassInstructor
-                                     }{Dr. Welsh}           % Instructor
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -397,6 +361,42 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:47: Undefined control sequence.
 l.47 \newcommand
+                {\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:47: Undefined control sequence.
+l.47 \newcommand{\hmwkClass
+                           }{MATH 3380 / Analysis 1}        % Class
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:48: Undefined control sequence.
+l.48 \newcommand
+                {\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:48: Undefined control sequence.
+l.48 \newcommand{\hmwkClassInstructor
+                                     }{Dr. Welsh}           % Instructor
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:49: Undefined control sequence.
+l.49 \newcommand
                 {\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -404,8 +404,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:47: Undefined control sequence.
-l.47 \newcommand{\hmwkAuthorName
+./ShortcutsAnalysis.tex:49: Undefined control sequence.
+l.49 \newcommand{\hmwkAuthorName
                                 }{\textbf{Joshua Mitchell}} % Author
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -413,8 +413,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:47: Undefined control sequence.
-l.47 \newcommand{\hmwkAuthorName}{\textbf
+./ShortcutsAnalysis.tex:49: Undefined control sequence.
+l.49 \newcommand{\hmwkAuthorName}{\textbf
                                          {Joshua Mitchell}} % Author
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -422,8 +422,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:53: Undefined control sequence.
-l.53 \title
+./ShortcutsAnalysis.tex:55: Undefined control sequence.
+l.55 \title
            {
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -431,8 +431,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:54: Undefined control sequence.
-l.54     \vspace
+./ShortcutsAnalysis.tex:56: Undefined control sequence.
+l.56     \vspace
                 {2in}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -440,8 +440,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:55: Undefined control sequence.
-l.55     \textmd
+./ShortcutsAnalysis.tex:57: Undefined control sequence.
+l.57     \textmd
                 {\textbf{\hmwkClass:\ \hmwkTitle}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -449,8 +449,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:55: Undefined control sequence.
-l.55     \textmd{\textbf
+./ShortcutsAnalysis.tex:57: Undefined control sequence.
+l.57     \textmd{\textbf
                         {\hmwkClass:\ \hmwkTitle}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -458,8 +458,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:55: Undefined control sequence.
-l.55     \textmd{\textbf{\hmwkClass
+./ShortcutsAnalysis.tex:57: Undefined control sequence.
+l.57     \textmd{\textbf{\hmwkClass
                                    :\ \hmwkTitle}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -467,8 +467,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:55: Undefined control sequence.
-l.55     \textmd{\textbf{\hmwkClass:\ \hmwkTitle
+./ShortcutsAnalysis.tex:57: Undefined control sequence.
+l.57     \textmd{\textbf{\hmwkClass:\ \hmwkTitle
                                                 }}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -476,12 +476,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:58: Argument of \\ has an extra }.
+./ShortcutsAnalysis.tex:60: Argument of \\ has an extra }.
 <inserted text> 
                 \par 
 <to be read again> 
                    }
-l.58 }
+l.60 }
       
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -492,19 +492,19 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
  \normalsize \vspace {0.1in}\small \vspace {0.1in}\large {\textit {\hmwkClassInstructor \ETC.
-./ShortcutsAnalysis.tex:58: Paragraph ended before \\ was complete.
+./ShortcutsAnalysis.tex:60: Paragraph ended before \\ was complete.
 <to be read again> 
                    \par 
 <to be read again> 
                    }
-l.58 }
+l.60 }
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./ShortcutsAnalysis.tex:60: Undefined control sequence.
-l.60 \author
+./ShortcutsAnalysis.tex:62: Undefined control sequence.
+l.62 \author
             {\hmwkAuthorName}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -512,8 +512,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:60: Undefined control sequence.
-l.60 \author{\hmwkAuthorName
+./ShortcutsAnalysis.tex:62: Undefined control sequence.
+l.62 \author{\hmwkAuthorName
                             }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -521,8 +521,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:61: Undefined control sequence.
-l.61 \date
+./ShortcutsAnalysis.tex:63: Undefined control sequence.
+l.63 \date
           {}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -530,8 +530,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Undefined control sequence.
-l.63 \renewcommand
+./ShortcutsAnalysis.tex:65: Undefined control sequence.
+l.65 \renewcommand
                   {\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -539,8 +539,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Undefined control sequence.
-l.63 \renewcommand{\part
+./ShortcutsAnalysis.tex:65: Undefined control sequence.
+l.65 \renewcommand{\part
                         }[1]{\textbf{\large Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -548,8 +548,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Undefined control sequence.
-l.63 \renewcommand{\part}[1]{\textbf
+./ShortcutsAnalysis.tex:65: Undefined control sequence.
+l.65 \renewcommand{\part}[1]{\textbf
                                     {\large Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -557,8 +557,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Undefined control sequence.
-l.63 \renewcommand{\part}[1]{\textbf{\large
+./ShortcutsAnalysis.tex:65: Undefined control sequence.
+l.65 \renewcommand{\part}[1]{\textbf{\large
                                             Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -566,8 +566,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Undefined control sequence.
-l.63 ...ommand{\part}[1]{\textbf{\large Part \Alph
+./ShortcutsAnalysis.tex:65: Undefined control sequence.
+l.65 ...ommand{\part}[1]{\textbf{\large Part \Alph
                                                   {partCounter}}\stepcounter...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -575,8 +575,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Undefined control sequence.
-l.63 ...large Part \Alph{partCounter}}\stepcounter
+./ShortcutsAnalysis.tex:65: Undefined control sequence.
+l.65 ...large Part \Alph{partCounter}}\stepcounter
                                                   {partCounter}\\}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -584,12 +584,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:63: Argument of \\ has an extra }.
+./ShortcutsAnalysis.tex:65: Argument of \\ has an extra }.
 <inserted text> 
                 \par 
 <to be read again> 
                    }
-l.63 ...{partCounter}}\stepcounter{partCounter}\\}
+l.65 ...{partCounter}}\stepcounter{partCounter}\\}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -599,19 +599,19 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-./ShortcutsAnalysis.tex:63: Paragraph ended before \\ was complete.
+./ShortcutsAnalysis.tex:65: Paragraph ended before \\ was complete.
 <to be read again> 
                    \par 
 <to be read again> 
                    }
-l.63 ...{partCounter}}\stepcounter{partCounter}\\}
+l.65 ...{partCounter}}\stepcounter{partCounter}\\}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./ShortcutsAnalysis.tex:66: Undefined control sequence.
-l.66 \newcommand
+./ShortcutsAnalysis.tex:68: Undefined control sequence.
+l.68 \newcommand
                 {\dx}{\mathrm{d}x}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -619,8 +619,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:66: Undefined control sequence.
-l.66 \newcommand{\dx
+./ShortcutsAnalysis.tex:68: Undefined control sequence.
+l.68 \newcommand{\dx
                     }{\mathrm{d}x}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -628,8 +628,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:66: Undefined control sequence.
-l.66 \newcommand{\dx}{\mathrm
+./ShortcutsAnalysis.tex:68: Undefined control sequence.
+l.68 \newcommand{\dx}{\mathrm
                              {d}x}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -637,8 +637,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:73: Undefined control sequence.
-l.73 \newcommand
+./ShortcutsAnalysis.tex:75: Undefined control sequence.
+l.75 \newcommand
                 {\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -646,8 +646,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:73: Undefined control sequence.
-l.73 \newcommand{\deriv
+./ShortcutsAnalysis.tex:75: Undefined control sequence.
+l.75 \newcommand{\deriv
                        }[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -655,8 +655,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:73: Undefined control sequence.
-l.73 \newcommand{\deriv}[1]{\frac
+./ShortcutsAnalysis.tex:75: Undefined control sequence.
+l.75 \newcommand{\deriv}[1]{\frac
                                  {\mathrm{d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -664,8 +664,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:73: Undefined control sequence.
-l.73 \newcommand{\deriv}[1]{\frac{\mathrm
+./ShortcutsAnalysis.tex:75: Undefined control sequence.
+l.75 \newcommand{\deriv}[1]{\frac{\mathrm
                                          {d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -673,8 +673,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:73: Undefined control sequence.
-l.73 ...mmand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm
+./ShortcutsAnalysis.tex:75: Undefined control sequence.
+l.75 ...mmand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm
                                                   {d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -682,16 +682,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:73: You can't use `macro parameter character #' in horizontal mode.
-l.73 ...eriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#
+./ShortcutsAnalysis.tex:75: You can't use `macro parameter character #' in horizontal mode.
+l.75 ...eriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#
                                                   1)}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:76: Undefined control sequence.
-l.76 \newcommand
+./ShortcutsAnalysis.tex:78: Undefined control sequence.
+l.78 \newcommand
                 {\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -699,8 +699,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:76: Undefined control sequence.
-l.76 \newcommand{\pderiv
+./ShortcutsAnalysis.tex:78: Undefined control sequence.
+l.78 \newcommand{\pderiv
                         }[2]{\frac{\partial}{\partial #1} (#2)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -708,8 +708,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:76: Undefined control sequence.
-l.76 \newcommand{\pderiv}[2]{\frac
+./ShortcutsAnalysis.tex:78: Undefined control sequence.
+l.78 \newcommand{\pderiv}[2]{\frac
                                   {\partial}{\partial #1} (#2)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -717,18 +717,18 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:76: Missing $ inserted.
+./ShortcutsAnalysis.tex:78: Missing $ inserted.
 <inserted text> 
                 $
 <to be read again> 
                    \partial 
-l.76 \newcommand{\pderiv}[2]{\frac{\partial
+l.78 \newcommand{\pderiv}[2]{\frac{\partial
                                            }{\partial #1} (#2)}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./ShortcutsAnalysis.tex:76: Extra }, or forgotten $.
-l.76 \newcommand{\pderiv}[2]{\frac{\partial}
+./ShortcutsAnalysis.tex:78: Extra }, or forgotten $.
+l.78 \newcommand{\pderiv}[2]{\frac{\partial}
                                             {\partial #1} (#2)}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -736,24 +736,24 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./ShortcutsAnalysis.tex:76: You can't use `macro parameter character #' in math mode.
-l.76 ...and{\pderiv}[2]{\frac{\partial}{\partial #
+./ShortcutsAnalysis.tex:78: You can't use `macro parameter character #' in math mode.
+l.78 ...and{\pderiv}[2]{\frac{\partial}{\partial #
                                                   1} (#2)}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:76: You can't use `macro parameter character #' in math mode.
-l.76 ...pderiv}[2]{\frac{\partial}{\partial #1} (#
+./ShortcutsAnalysis.tex:78: You can't use `macro parameter character #' in math mode.
+l.78 ...pderiv}[2]{\frac{\partial}{\partial #1} (#
                                                   2)}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:76: Extra }, or forgotten $.
-l.76 ...riv}[2]{\frac{\partial}{\partial #1} (#2)}
+./ShortcutsAnalysis.tex:78: Extra }, or forgotten $.
+l.78 ...riv}[2]{\frac{\partial}{\partial #1} (#2)}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -761,18 +761,18 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./ShortcutsAnalysis.tex:77: Missing $ inserted.
+./ShortcutsAnalysis.tex:79: Missing $ inserted.
 <inserted text> 
                 $
 <to be read again> 
                    \par 
-l.77 
+l.79 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./ShortcutsAnalysis.tex:80: Undefined control sequence.
-l.80 \newcommand
+./ShortcutsAnalysis.tex:82: Undefined control sequence.
+l.82 \newcommand
                 {\solution}{\textbf{\large Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -780,8 +780,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:80: Undefined control sequence.
-l.80 \newcommand{\solution
+./ShortcutsAnalysis.tex:82: Undefined control sequence.
+l.82 \newcommand{\solution
                           }{\textbf{\large Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -789,8 +789,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:80: Undefined control sequence.
-l.80 \newcommand{\solution}{\textbf
+./ShortcutsAnalysis.tex:82: Undefined control sequence.
+l.82 \newcommand{\solution}{\textbf
                                    {\large Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -798,63 +798,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:80: Undefined control sequence.
-l.80 \newcommand{\solution}{\textbf{\large
+./ShortcutsAnalysis.tex:82: Undefined control sequence.
+l.82 \newcommand{\solution}{\textbf{\large
                                            Solution}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:83: Undefined control sequence.
-l.83 \newcommand
-                {\E}{\mathrm{E}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:83: Undefined control sequence.
-l.83 \newcommand{\E
-                   }{\mathrm{E}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:83: Undefined control sequence.
-l.83 \newcommand{\E}{\mathrm
-                            {E}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:84: Undefined control sequence.
-l.84 \newcommand
-                {\Var}{\mathrm{Var}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:84: Undefined control sequence.
-l.84 \newcommand{\Var
-                     }{\mathrm{Var}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:84: Undefined control sequence.
-l.84 \newcommand{\Var}{\mathrm
-                              {Var}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -863,7 +809,7 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:85: Undefined control sequence.
 l.85 \newcommand
-                {\Cov}{\mathrm{Cov}}
+                {\E}{\mathrm{E}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -871,8 +817,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:85: Undefined control sequence.
-l.85 \newcommand{\Cov
-                     }{\mathrm{Cov}}
+l.85 \newcommand{\E
+                   }{\mathrm{E}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -880,8 +826,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:85: Undefined control sequence.
-l.85 \newcommand{\Cov}{\mathrm
-                              {Cov}}
+l.85 \newcommand{\E}{\mathrm
+                            {E}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -890,6 +836,60 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsAnalysis.tex:86: Undefined control sequence.
 l.86 \newcommand
+                {\Var}{\mathrm{Var}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:86: Undefined control sequence.
+l.86 \newcommand{\Var
+                     }{\mathrm{Var}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:86: Undefined control sequence.
+l.86 \newcommand{\Var}{\mathrm
+                              {Var}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:87: Undefined control sequence.
+l.87 \newcommand
+                {\Cov}{\mathrm{Cov}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:87: Undefined control sequence.
+l.87 \newcommand{\Cov
+                     }{\mathrm{Cov}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:87: Undefined control sequence.
+l.87 \newcommand{\Cov}{\mathrm
+                              {Cov}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:88: Undefined control sequence.
+l.88 \newcommand
                 {\Bias}{\mathrm{Bias}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -897,8 +897,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:86: Undefined control sequence.
-l.86 \newcommand{\Bias
+./ShortcutsAnalysis.tex:88: Undefined control sequence.
+l.88 \newcommand{\Bias
                       }{\mathrm{Bias}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -906,8 +906,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:86: Undefined control sequence.
-l.86 \newcommand{\Bias}{\mathrm
+./ShortcutsAnalysis.tex:88: Undefined control sequence.
+l.88 \newcommand{\Bias}{\mathrm
                                {Bias}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -915,71 +915,36 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:90: Undefined control sequence.
-l.90 \newcommand
-                {\mt}[1]{\ensuremath{#1}} % Make Math
+./ShortcutsAnalysis.tex:92: Undefined control sequence.
+l.92 \newcommand
+                {\mt}[1]{\ensuremath{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:90: Undefined control sequence.
-l.90 \newcommand{\mt
-                    }[1]{\ensuremath{#1}} % Make Math
+./ShortcutsAnalysis.tex:92: Undefined control sequence.
+l.92 \newcommand{\mt
+                    }[1]{\ensuremath{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:90: Undefined control sequence.
-l.90 \newcommand{\mt}[1]{\ensuremath
-                                    {#1}} % Make Math
+./ShortcutsAnalysis.tex:92: Undefined control sequence.
+l.92 \newcommand{\mt}[1]{\ensuremath
+                                    {#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:90: You can't use `macro parameter character #' in horizontal mode.
-l.90 \newcommand{\mt}[1]{\ensuremath{#
-                                      1}} % Make Math
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./ShortcutsAnalysis.tex:91: Undefined control sequence.
-l.91 \newcommand
-                {\nm}[1]{\textrm{#1}}     % Make not math
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:91: Undefined control sequence.
-l.91 \newcommand{\nm
-                    }[1]{\textrm{#1}}     % Make not math
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:91: Undefined control sequence.
-l.91 \newcommand{\nm}[1]{\textrm
-                                {#1}}     % Make not math
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsAnalysis.tex:91: You can't use `macro parameter character #' in horizontal mode.
-l.91 \newcommand{\nm}[1]{\textrm{#
-                                  1}}     % Make not math
+./ShortcutsAnalysis.tex:92: You can't use `macro parameter character #' in horizontal mode.
+l.92 \newcommand{\mt}[1]{\ensuremath{#
+                                      1}}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
@@ -987,6 +952,41 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 ./ShortcutsAnalysis.tex:93: Undefined control sequence.
 l.93 \newcommand
+                {\nm}[1]{\textrm{#1}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:93: Undefined control sequence.
+l.93 \newcommand{\nm
+                    }[1]{\textrm{#1}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:93: Undefined control sequence.
+l.93 \newcommand{\nm}[1]{\textrm
+                                {#1}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsAnalysis.tex:93: You can't use `macro parameter character #' in horizontal mode.
+l.93 \newcommand{\nm}[1]{\textrm{#
+                                  1}}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./ShortcutsAnalysis.tex:95: Undefined control sequence.
+l.95 \newcommand
                 \bsc[2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -994,8 +994,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:93: Undefined control sequence.
-l.93 \newcommand\bsc
+./ShortcutsAnalysis.tex:95: Undefined control sequence.
+l.95 \newcommand\bsc
                     [2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1003,8 +1003,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:93: Undefined control sequence.
-l.93 \newcommand\bsc[2][\DefaultOpt
+./ShortcutsAnalysis.tex:95: Undefined control sequence.
+l.95 \newcommand\bsc[2][\DefaultOpt
                                    ]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1012,17 +1012,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:94: Illegal parameter number in definition of \DefaultOpt.
+./ShortcutsAnalysis.tex:96: Illegal parameter number in definition of \DefaultOpt.
 <to be read again> 
                    2
-l.94   \def\DefaultOpt{#2
+l.96   \def\DefaultOpt{#2
                          }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ShortcutsAnalysis.tex:95: Undefined control sequence.
-l.95   \section
+./ShortcutsAnalysis.tex:97: Undefined control sequence.
+l.97   \section
                [#1]{#2}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1030,24 +1030,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:95: You can't use `macro parameter character #' in horizontal mode.
-l.95   \section[#
+./ShortcutsAnalysis.tex:97: You can't use `macro parameter character #' in horizontal mode.
+l.97   \section[#
                  1]{#2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:95: You can't use `macro parameter character #' in horizontal mode.
-l.95   \section[#1]{#
+./ShortcutsAnalysis.tex:97: You can't use `macro parameter character #' in horizontal mode.
+l.97   \section[#1]{#
                      2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:97: Undefined control sequence.
-l.97 \newcommand
+./ShortcutsAnalysis.tex:99: Undefined control sequence.
+l.99 \newcommand
                 \ssc[2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1055,8 +1055,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:97: Undefined control sequence.
-l.97 \newcommand\ssc
+./ShortcutsAnalysis.tex:99: Undefined control sequence.
+l.99 \newcommand\ssc
                     [2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1064,8 +1064,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:97: Undefined control sequence.
-l.97 \newcommand\ssc[2][\DefaultOpt
+./ShortcutsAnalysis.tex:99: Undefined control sequence.
+l.99 \newcommand\ssc[2][\DefaultOpt
                                    ]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1073,42 +1073,42 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:98: Illegal parameter number in definition of \DefaultOpt.
+./ShortcutsAnalysis.tex:100: Illegal parameter number in definition of \DefaultOpt.
 <to be read again> 
                    2
-l.98   \def\DefaultOpt{#2
-                         }%
+l.100   \def\DefaultOpt{#2
+                          }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ShortcutsAnalysis.tex:99: Undefined control sequence.
-l.99   \subsection
-                  [#1]{#2}%
+./ShortcutsAnalysis.tex:101: Undefined control sequence.
+l.101   \subsection
+                   [#1]{#2}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:99: You can't use `macro parameter character #' in horizontal mode.
-l.99   \subsection[#
-                    1]{#2}%
+./ShortcutsAnalysis.tex:101: You can't use `macro parameter character #' in horizontal mode.
+l.101   \subsection[#
+                     1]{#2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:99: You can't use `macro parameter character #' in horizontal mode.
-l.99   \subsection[#1]{#
-                        2}%
+./ShortcutsAnalysis.tex:101: You can't use `macro parameter character #' in horizontal mode.
+l.101   \subsection[#1]{#
+                         2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsAnalysis.tex:101: Undefined control sequence.
-l.101 \newcommand
+./ShortcutsAnalysis.tex:103: Undefined control sequence.
+l.103 \newcommand
                  {\bgpf}{\begin{proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1116,8 +1116,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:101: Undefined control sequence.
-l.101 \newcommand{\bgpf
+./ShortcutsAnalysis.tex:103: Undefined control sequence.
+l.103 \newcommand{\bgpf
                        }{\begin{proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1125,8 +1125,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:101: Undefined control sequence.
-l.101 \newcommand{\bgpf}{\begin
+./ShortcutsAnalysis.tex:103: Undefined control sequence.
+l.103 \newcommand{\bgpf}{\begin
                                {proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1134,8 +1134,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:101: Undefined control sequence.
-l.101 \newcommand{\bgpf}{\begin{proof} $ $\newline
+./ShortcutsAnalysis.tex:103: Undefined control sequence.
+l.103 \newcommand{\bgpf}{\begin{proof} $ $\newline
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1143,8 +1143,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:103: Undefined control sequence.
-l.103 \newcommand
+./ShortcutsAnalysis.tex:105: Undefined control sequence.
+l.105 \newcommand
                  {\bgeq}{\begin{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1152,8 +1152,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:103: Undefined control sequence.
-l.103 \newcommand{\bgeq
+./ShortcutsAnalysis.tex:105: Undefined control sequence.
+l.105 \newcommand{\bgeq
                        }{\begin{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1161,8 +1161,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:103: Undefined control sequence.
-l.103 \newcommand{\bgeq}{\begin
+./ShortcutsAnalysis.tex:105: Undefined control sequence.
+l.105 \newcommand{\bgeq}{\begin
                                {equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1170,8 +1170,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:104: Undefined control sequence.
-l.104 \newcommand
+./ShortcutsAnalysis.tex:106: Undefined control sequence.
+l.106 \newcommand
                  {\eeq}{\end{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1179,8 +1179,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsAnalysis.tex:104: Undefined control sequence.
-l.104 \newcommand{\eeq
+./ShortcutsAnalysis.tex:106: Undefined control sequence.
+l.106 \newcommand{\eeq
                       }{\end{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1191,9 +1191,9 @@ and I'll forget about whatever was undefined.
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] )
 (\end occurred inside a group at level 3)
 
-### simple group (level 3) entered at line 104 ({)
-### simple group (level 2) entered at line 76 ({)
-### simple group (level 1) entered at line 76 ({)
+### simple group (level 3) entered at line 106 ({)
+### simple group (level 2) entered at line 78 ({)
+### simple group (level 1) entered at line 78 ({)
 ### bottom level</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 Output written on "/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/ShortcutsAnalysis.pdf" (1 page, 29123 bytes).
 PDF statistics:
