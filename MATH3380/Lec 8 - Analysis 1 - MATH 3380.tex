@@ -196,6 +196,255 @@
 
 \begin{document}
 
+Homework: page 148-149, \#1-4, 6, 8
+
+\bsc{Heine-Borel Theorem}{
+
+\es $\neq$ S \sbs \br is compact iff S is closed and bounded.
+
+\bgpf
+\lra
+Done.
+\lla
+\supp{S is closed and bounded.} \
+
+\lt{S \sbs \urng{\afa \mem I}{} \uw{G}{\afa} where \uw{G}{\afa} is open \fa \afa \mem I}
+
+Since is is bounded, sup S, inf S \mem \br both exist.
+
+Define, for x \mem \br, \
+
+\uw{S}{x} \eql S $\cap$ ($-\infty$, x].
+
+S \sbs \urng{x \mem S}{} N(x, \ep)
+
+\bta \eql \{ x \mem \br : \uw{S}{x} has a finite subcover from the \uw{G}{\afa}'s\}
+
+\bta $\neq$ \es, inf S \mem \bta
+
+\uw{S}{inf S} \eql S $\cap$ ($-\infty$, inf S]
+
+We need to prove that S has a finite subcover of the \uw{G}{\afa}'s.
+
+If \bta is unbounded above, then \exs z \mem \bta st z $>$ sup S.
+
+Then \uw{S}{z} \eql S $\cap$ ($-\infty$, z] \eql S
+
+Since \uw{S}{z} \eql S has a finite subcover of the \uw{G}{\afa}'s, we see that, in this case, S is compact.
+
+We prove that \bta is unbounded above using contradiction.
+
+\supp{\bta is bounded above.} \
+
+Thus, sup \bta \mem \br exists.
+
+Case i: sup \bta \mem S.
+
+In this case, \exs \ep \mem I st sup \bta \mem \dbs{G}{\afa}{0}
+
+Since \dbs{G}{\afa}{0} is open, \exs \uw{\ep}{0} $>$ 0 st
+
+N(sup \bta, \uw{\ep}{0}) \eql (sup \bta $-$ \uw{\ep}{0}, sup \bta $+$ \uw{\ep}{0}) \sbs \dbs{G}{\afa}{0}
+
+By the definition of the supremum,
+
+\exs \uw{x}{0} \mem \bta st \
+
+sup \bta $-$ \uw{\ep}{0} $<$ \uw{y}{0} $\leq$ sup B $<$ sup B $+$ \frc{\uw{\ep}{0}}{2} $<$ sup \bta + \uw{\ep}{0}
+
+Since \uw{x}{0} \mem \uw{\bta}{1}, \exs k \mem \bn and \{\uw{\afa}{1}, \uw{\afa}{2}, ... \uw{\afa}{n}\} \sbs I
+
+st \dbs{S}{x}{0} \sbs \urng{i=1}{k} \dbs{G}{\afa}{i}
+
+\sidenote{
+\dbs{S}{x}{0} \eql S $\cap$ ($-\infty$, \uw{x}{0}]
+
+\uw{S}{sup \bta} + \frc{\uw{\ep}{0}}{2}
+
+\eql S $\cap$ ($-\infty$, sup \bta $+$ \frc{\uw{\ep}{0}}{2}]
+}
+This produces the contradiction that sup \bta $+$ \frc{\uw{\ep}{0}}{2} \mem \bta
+
+Case ii):
+
+sup \bta \mem \bnt{\br}{S}, which is open since S is closed.
+
+Thus, \exs \uw{\ep}{1} $>$ 0 st N(sup \bta, \uw{\ep}{1}) \sbs \bnt{\br}{S}
+
+\sidenote{
+----(-----|---|----)----
+sup - ep1, sup B, sup B $+$ ep1/2, supB $+$ ep1
+}
+
+As in case i), \exs \uw{x}{1} \mem \bta st
+
+sup \bta $-$ \uw{\ep}{1} $<$ \uw{x}{1} $\leq$ sup \bta $<$ sup \bta $+$ \frc{\uw{\ep}{1}}{2} $<$ sup \bta $+$ \uw{\ep}{1}
+
+From \bpth{1}, N(sup \bta, \uw{\ep}{1}) \eql (sup \bta $-$ \uw{\ep}{1}, sup \bta $+$ \uw{\ep}{1} $\cap$ S \eql \es
+
+----(------]---|----]----)---
+supB-ep0, x0inB, supB, supBplusEpOver2, supBplusEp0
+
+Notice that:
+
+\dbs{S}{x}{1} \eql S $\cap$ ($-\infty$, \uw{x}{1}] \eql S $\cap$ ($-\infty$, sup \bta $+$ \frc{\uw{\ep}{1}}{2}] 
+
+% \eql \uw{S}{sup $+$ \frc{\uw{\ep}{1}}{2}}
+
+Again we obtain the contradiction that sup \bta $+$ \frc{\uw{\ep}{1}}{2} \mem \bta
+
+Hence, result by contradiction.
+
+\epf
+
+}
+
+\bsc{Theorem 3.5.6: Bolzond-Weierstrass Theorem}{
+
+If a bounded set S \sbs \br contains an infinite number of points, then there exists at least one point in \br that is an accumulation point of S.
+
+\bgpf
+
+\supp{\exs S \sbs \br where S has an infinite number of points and S is bounded but S\pr \eql \es}
+
+Since cl S \eql S $\cup$ S\pr \eql S $\cup$ \es \eql S, we can see by Theorem 3.4.17 a) that S is closed. \ 
+
+Since S is also bounded, it follows by the Heire-Borel theorem that S is compact.
+
+\lt{x \mem S}
+
+Then x $\not\in$ S\pr, so \exs \uw{\ep}{x} $>$ 0 st 
+
+N(x, \uw{\ep}{x}) $\cap$ S \eql \{x\}
+
+\sidenote{
+-----(----|--|---)-----
+x-ep(x?), x, yMemS, xplusep(x?)
+
+If x \mem S\pr, then:
+
+$\neg$[\fa \ep $>$ 0, $\dnbho{x}{\ep}{S}$]
+
+\exs \ep $>$ 0 st N(x, \ep) $\cap$ S \eql \{x\}
+
+}
+
+Then: 
+
+S \sbs \urng{x \mem S}{} N(x, \uw{\ep}{x})
+
+Since S is compact,
+
+\exs k \mem \bn and \{\uw{x}{1}, \uw{x}{2}, ... \uw{x}{k}\} \sbs S
+
+S \sbs \urng{i=1}{k} N(\dbs{x}{i}{1}, \dbs{\ep}{i}{1})
+
+However, S $\cap$ ( \urng{i=1}{k} N(\dbs{x}{i}{1}, \dbs{\ep}{i}{1}) ) \eql \{\uw{x}{1}, \uw{x}{2}, ... \uw{x}{k}\}
+
+This produces the contradiction that S contains a \textbf{finite} number of points.
+
+Hence, result.
+
+\epf
+
+}
+
+\bsc{Theorem 3.5.7 (F.I.P.)}{
+
+\lt{\uw{\{\uw{K}{\afa}\}}{\afa \mem I} be a family of compact sets, where I is an index.}
+
+Suppose that the intersection of any finite subfamily of the \uw{K}{\afa}'s has a nonempty intersection.
+
+Then \nrng{\afa \mem I}{} \uw{K}{\afa} $\neq$ \es
+
+\bgpf
+
+Assume that \nrng{\afa \mem I}{} \uw{K}{\afa} \eql \es
+
+Then \bnt{\br}{(\nrng{\afa \mem I}{} \uw{K}{\afa})} \eql \urng{\afa \mem I}{} (\bnt{\br}{\uw{K}{\afa}}) \eql \br
+
+Notice, by the Heine-Borel Theorem that \bnt{\br}{\uw{K}{\afa}} is open \fa \afa \mem I.
+
+\lt{\uw{\afa}{0} \mem I}
+
+Since \dbs{K}{\afa}{0} is compact,
+
+\exs k \mem \bn and \{\uw{\afa}{1}, \uw{\afa}{2}, ... \uw{\afa}{n}\} \sbs I st.
+
+\dbs{K}{\afa}{0} \sbs \urng{\afa \mem I}{} (\bnt{\br}{\uw{K}{\afa}})
+
+\sbs \urng{i = 1}{k} (\bnt{\br}{\dbs{K}{\afa}{0}})
+
+\sidenote{
+If A \sbs B, then \bnt{\br}{B} \sbs \bnt{\br}{A}
+
+Let x \mem \bnt{\br}{B}.
+
+Then x $\not\in$ B.
+
+So, x $\not\in$ A.
+
+Thus, x \mem \bnt{\br}{A}
+}
+
+\bnt{\br}{
+	(\urng{i=1}{k}(
+		\bnt{\br}{\uw{K}{\afa}})
+	)
+} \sbs \bnt{\br}{\dbs{K}{\afa}{0}}
+
+\nrng{i = 1}{k} \dbs{K}{\afa}{i} \sbs \bnt{\br}{\dbs{K}{\afa}{0}}
+
+We obtain the contradiction that:
+
+\nrng{i = 0}{k} \dbs{K}{\afa}{i} \eql \es
+
+Hence, result.
+
+\epf
+
+}
+
+\bsc{Corollary 3.5.8 Nested Intervals Theorem}{
+
+\lt{\{\uw{A}{n}\}$^\infty_{n = 1}$ be a family of nonempty closed bounded intervals in \br st A$_{n + 1}$ \sbs A$_n$ \fa n \mem \bn}
+
+Then:
+
+\nrng{n = 1}{\infty} \uw{A}{n} $\neq$ \es
+
+\bgpf
+
+We use Theorem 3.5.7.
+
+Will this be contradiction?
+
+\supp{\fa k \mem \bn, that \{\uw{n}{1}, \uw{n}{2}, ... \uw{n}{k}\} \sbs \bn}
+
+Then,
+
+\nrng{i = 1}{k} \uw{A}{ni} \eql \uw{A}{m} $\neq$ \es
+
+where
+
+m \eql max \{\uw{n}{1}, \uw{n}{2}, ... \uw{n}{k}\}
+
+\sidenote{
+----[-----[---[---]---]---]----
+not imp, not imp, not imp, A3, A2, A1
+}
+
+\epf
+
+}
+
+
+
+
+
+
+\newpage
+
 Assignment Set: {6, 7, 15, 17, 19, 21} from pages 141 - 142
 
 \bsc{6)}
