@@ -189,9 +189,7 @@
      							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
-     							 
-
-
+     							
 % ----------
 
 \begin{document}
@@ -204,8 +202,11 @@ Homework: page 148-149, \#1-4, 6, 8
 
 \bgpf
 \lra
+
 Done.
+
 \lla
+
 \supp{S is closed and bounded.} \
 
 \lt{S \sbs \urng{\afa \mem I}{} \uw{G}{\afa} where \uw{G}{\afa} is open \fa \afa \mem I}
@@ -437,172 +438,5 @@ not imp, not imp, not imp, A3, A2, A1
 \epf
 
 }
-
-
-
-
-
-
-\newpage
-
-Assignment Set: {6, 7, 15, 17, 19, 21} from pages 141 - 142
-
-\bsc{6)}
-
-Find the closure of each set:
-
-\balist
-\item \{ $\frac{1}{n}$ : n $\in \bn$ \} \
-
-	Answer: $\es$
-\item $\bn$ \
-	
-	Answer: $\bn$
-\item $\bq$ \
-	
-	Answer: $\br$
-\item $\bigcap_{n=1}^\infty$ $(0, \frac{1}{n})$ \
-	
-	Answer: $\es$
-\item \{ x : $|x - 5| \leq \frac{1}{2}$\} \
-
-	$[4.5, 5.5]$ \
-	
-	Answer: $[4.5, 5.5]$
-\item \{ x : $x^2 > 0$\} \
-	
-	$(0, \infty)$ \
-	
-	Answer: $[0, \infty)$ \
-\elist
-
-\bsc{7)} Let S, T $\sbs \br$. Find a counterexample of each of the following:
-\balist
-\item If P is the set of all isolated points of S, then P is a closed set. \
-
-	Answer: Let S = $\bn$
-\item Every open set contains at least two points. \
-
-	Answer: $\es$
-\item If S is closed, then cl(int S) $=$ S. \
-
-	Answer: Let S $= \bq$
-\item If S is open, then int (cl S) $=$ S. \
-
-	Answer: Let S $= (-1, 0) \cup (0, 1)$
-\item bd (cl S) $=$ bd S \
-
-	Answer: Let S $= (-1, 0) \cup (0, 1)$
-\item bd (bd S) $=$ bd S \
-
-	Answer: Let S = $\bq$. Then bd S is $\br$, and bd (bd S) $= \es \neq \br$.
-\item bd (S $\cup$ T) $=$ (bd S) $\cup$ (bd T) \
-
-	Answer: Let S $= \br$, T $= (0, 1)$. bd (S $\cup$ T) = $\es$, but bd S $\cup$ bd T $= \es \cup \{0, 1\}$
-\item bd (S $\cap$ T) $=$ (bd S) $\cap$ (bd T) \
-
-	Answer: Let S $= (0, 1)$, T $= (1, 2)$. bd (S $\cap$ T) $= \es$, but bd S $\cap$ bd T $=$ 1.
-\elist
-
-\bsc{15)} Prove: If x is an accumulation point of the set S, then every neighborhood of x contains infinitely many points of S.\
-
-\bgpf
-Suppose that $\exists$ a deleted neighborhood of x, called N, that contains n points x$_1$, x$_2$, ... x$_n$ of S where n is a finite amount and x$_1$ $\leq$ x$_2$, $\leq$  ... x$_n$ \
-
-x is an accumulation point on S if $\fa \ep > 0$, $\dnbho{x}{\epsilon}{S	}$. \
-
-N is a deleted neighborhood of S if $\fa$ x $\in \{y \in \br : 0 < |y - x| < \ep\}$, x $\in$ N.\
-
-Let $\hat\epsilon = \ep + \ep$, and x$_0$ = x$_1$ - $\hat\epsilon$. \
-
-By definition, x$_0 \in$ N, since N is a neighborhood $\fa \ep > 0$.\
-
-However, N only has n elements. A contradiction.\
-
-So, N can't be a deleted neighborhood since it has a finite number of elements, which means x can't be an accumulation point.
-
-\epf
- 
-
-\bsc{17)} Prove: S\pr is a closed set.
-
-\bgpf
-
-By definition, $\fa s \in S\pr$, \ep $> 0$, $\dnbho{s}{\epsilon}{S}$
-
-Notice that if S\pr is empty or S\pr is \br, then S\pr is a closed set and we are done. \
-
-If S\pr is not empty, \exs at least one element. \
-
-\lt{\bnt{\br}{S'} \sbs \br, x \mem \bnt{\br}{S'}}
-
-
-
-\wts{\bnt{\br}{S\pr} is open.}
-
-\bnt{\br}{S\pr} is open iff \bnt{\br}{S\pr} \eql int (\bnt{\br}{S\pr})
-
-int \bnt{\br}{S\pr} \eql \{s: N(s, \ep) \sbs \bnt{\br}{S\pr}\}
-
-
-
-
-
-
-\epf
-
-\bsc{19)} Suppose S is a nonempty bounded set and let m $=$ sup S. Prove or give a counter example: m is a boundary point of S.
-
-\bgpf
-
-By definition,
-
-s $\leq$ m, $\fa$ s $\in$ S, and,
-
-$\fa$ $\ep > 0$, $\exists$ s' $\in$ S st m $-$ $\ep <$ s'
-
-By the second part of the definition of the supremum of S, $\nbho{m}{\epsilon}{S}$.
-
-Notice also that, by the first part of the definition of the supremum of S, (m $+$ $\ep) \not\in$ S. This means that $\nbho{m}{\epsilon}{\bnt{\br}{S}}$.
-
-By definition, m is a boundary point.
-
-
-
-\epf
-
-\pagebreak
-
-\bsc{21)} Let A be a nonempty open subset of $\br$ and let Q $\sbs \bq$. Prove: A $\cap$ Q $\neq \es$.
-
-\bgpf
-Notice that Q $\sbs \bq \sbs \br$. \
-
-Since A is nonempty, $\exists$ at least one element a $\in \br$. \
-
-Since A is nonempty and open, a $+$ $\ep \in$ A. \
-
-If a $\in \bq$, then result. \
-
-If a $+ \ep \in \bq$, then result. \
-
-If a $\not\in \bq$ and (a $+$ $\ep) \not\in \bq$, then: \
-
-Let x $=$ a, y $=$ a $+$ $\ep$, z $=$ y $-$ x. \
-
-By Archimedes' axiom, $\exists$ n st n $> \frac{1}{z	}$ \
-
-nz $>$ 1
-
-ny $-$ nx $>$ 1
-
-Since the difference between ny and nx is bigger than 1, \
-
-$\exists m \in \bz$ st nx $<$ m $<$ ny.
-
-See that since  x $< \frac{m}{n	} < y$, $\frac{m}{n}$ is a rational number, and $\frac{m}{n} \in$ A. \
-
-Hence, result. 
-\epf
 
 \end{document}

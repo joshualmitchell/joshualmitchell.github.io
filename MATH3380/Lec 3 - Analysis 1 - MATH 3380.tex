@@ -1,0 +1,378 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#3}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\eql}{\mt{=} }
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							
+% ----------
+
+\begin{document}
+
+\bsc{Theorem 1 (infinum definition)}{
+
+\lt{\es $\neq$ S \sbs \br, S is bounded below.}
+
+Then S possesses a greatest lower bound denoted by \textbf{inf S} (the \textbf{infinum} of S), where inf S \mem \br, satisfying:
+
+\bilist
+\item inf S $\leq$ s \fa s \mem S
+\item \fa \ep $>$ 0, \exs \uw{s}{1}  st  inf S $+$ \ep $>$ \uw{s}{1}
+\elist
+
+\bgpf
+
+\lt{S be bounded below}
+
+Then 
+
+\step{\exs m \mem \br \textrm{  st  }m \leq s \textrm{  }\fa s \mem S}{1}
+
+Define the set -S to be \{$-s$ : s \mem S\}
+
+So, \es $\neq$ -S \sbs \br
+
+From \bpth{1}, -S $\leq$ $-$m \fa s \mem S.
+
+Thus, $-$m is an upper bound for -S.
+
+By the Axiom of Completeness of \br (AoC), sup(-S) \mem \br exists.
+
+By definition,
+
+\step{-s \leq sup(-S), \textrm{  } \fa s \textrm{ } \mem S}{2}
+
+and \fa \ep $>$ 0, \exs \uw{-s}{1} \mem S  st
+
+\step{sup(-S) - \ep < \uw{-s}{1} \textrm{  where  } \uw{s}{1} \mem S}{3}
+
+From \bpth{2}, 
+
+\step{-sup(-S) \leq S \textrm{  } \fa s \mem S}{4}
+
+\wts{$-$sup(-S) \eql inf S}
+
+From \bpth{3},
+
+\step{-sup(-S) + \ep > \uw{s}{1} \textrm{  where  } \uw{s}{1} \mem S }{5}
+
+We see that from \bpth{4} and \bpth{5},
+
+inf S \eql $-$sup(-S).
+
+Hence, result.
+\epf
+
+}
+
+\newpage
+
+\bsc{Theorem 3.3.7}{
+
+Given nonempty subsets of A, B (A, B \sbs \br),
+
+\lt{C \eql \{x $+$ y: x \mem A, y \mem B\}}
+
+If A and B have suprema, then C has a supremum: sup C \eql sup A $+$ sup B
+
+\bgpf
+
+\lt{c \mem C}
+
+Then c \eql x $+$ y for some x \mem A, y \mem B.
+
+It follows that:
+
+x $\leq$ sup A, y $\leq$ sup B
+
+x $+$ y $\leq$ sup A $+$ sup B
+
+c $\leq$ sup A $+$ sup B
+
+\step{c \leq sup\textrm{ }A + sup\textrm{ }B \textrm{ } \fa\textrm{ }c \mem C}{1}
+
+By the AoC, sup C \mem \br exists.
+
+For \ep $>$ 0, \exs \uw{x}{0} \mem A, \uw{y}{0} \mem B st
+
+\step{sup \textrm{  } A - \frac{\ep}{2} < \uw{x}{0}}{2}
+\step{sup \textrm{  } B - \frac{\ep}{2} < \uw{y}{0}}{3}
+
+From \bpth{2} and \bpth{3}, 
+
+sup A - \frc{\ep}{2} + sup B - \frc{\ep}{2} $<$ \uw{x}{0} $+$ \uw{y}{0} = \uw{c}{0} \mem C
+
+So, 
+
+\step{sup\textrm{ }A + sup\textrm{ }B - \ep < \uw{c}{0}}{4}
+
+From \bpth{1} and \bpth{4}, sup C \eql sup A $+$ sup B
+
+Hence, result.
+
+\epf
+
+}
+
+\newpage
+
+\bsc{Theorem 3.3.8}{
+
+Suppose \es $\neq$ D \sbs \br and 
+
+f : D \lra \br
+
+g : D \lra \br
+
+f(D) \eql \{f(x) : x \mem D\}
+
+If \fa x, y \mem D, f(x) $\leq$ g(y), then
+ 
+f(D) is bounded above and g(D) is bounded below.
+
+Furthermore, sup(f(D)) $\leq$ inf(g(D))
+
+\bgpf
+
+\lt{\uw{y}{0} \mem D}
+
+Then f(x) $\leq$ g(\uw{y}{0}) \fa x \mem D
+
+So, f(D) is bounded above by g(\uw{y}{0}).
+
+By the AoC, sup(f(D)) exists and sup(f(D)) $\leq$ g(\uw{y}{0}) \
+
+\
+
+Since \uw{y}{0} \mem D was arbitrary, we see that
+
+sup(f(D)) $\leq$ g(y) \fa y \mem D
+
+Thus, sup(f(D)) is a lower bound for g(D)
+
+g(D) \eql \{g(y) : y \mem D\}
+
+Hence, inf(g(D)) \mem \br exists and
+
+sup(f(D)) $\leq$ inf(g(D))
+
+Hence, result.
+
+\epf
+}
+
+\bsc{Theorem 3.3.9: Archimedian Property / Principle of \br (AP)}{
+
+The set \bn \eql \{1, 2, 3...\} is unbounded above in \br
+
+\bgpf
+
+\supp{\bn is bounded above.}
+
+By the AoC, sup \bn \mem \br exists.
+
+So,
+
+\bilist
+\item n $\leq$ sup \bn  \fa n \mem \bn \bpth{1}
+\item \fa \ep $>$ 0, \exs n \mem \bn st sup \bn $-$ \ep $<$ \uw{n}{0} \bpth{2}
+\elist
+
+Using \bpth{2} with \ep \eql 1, \exs \uw{n}{0}(1) \mem \bn st sup \bn $-$ \ep $<$ \uw{n}{0}
+
+Then, sup \bn $<$ 1 $+$ \uw{n}{0} \bpth{3}
+
+See that \bpth{3} contradicts \bpth{1} with n \eql 1 + \uw{n}{0} \mem \bn
+
+By contradiction, \bn is unbounded.
+
+\epf
+
+}
+
+\end{document}
