@@ -10,7 +10,7 @@ date: 2017-09-22
 
 [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)
 
-| Tables   |      Are      |  Cool |
+| Content   |      PDF      |  LaTeX Source |
 |:---------|:--------------|:------|
 | Lecture 1|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Lecture 2|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%202%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%202%20-%20Analysis%201%20-%20MATH%203380.tex) |
