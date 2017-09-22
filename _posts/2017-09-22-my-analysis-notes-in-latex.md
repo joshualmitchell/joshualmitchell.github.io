@@ -13,95 +13,13 @@ date: 2017-09-22
 | Tables   |      Are      |  Cool |
 |:---------|:--------------|:------|
 | Lecture 1|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex) |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-
-<table style="text-align: left">
-
-<tbody>
-
-<tr>
-
-<th>Document</th>
-
-<th>PDF Link</th>
-
-<th>TeX Link</th>
-
-</tr>
-
-<tr>
-
-<td>Lecture 1</td>
-
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
-
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
-
-</tr>
-
-<tr>
-
-<td>Lecture 2</td>
-
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%202%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
-
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%202%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
-
-</tr>
-
-<tr>
-
-<td>Lecture 5</td>
-
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%205%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
-
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%205%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
-
-</tr>
-
-<tr>
-
-<td>Lecture 6</td>
-
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%206%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
-
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%206%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
-
-</tr>
-
-<tr>
-
-<td>Homework 3</td>
-
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%203%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
-
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%203%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
-
-</tr>
-
-<tr>
-
-<td>Macros</td>
-
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) (meaningless)</td>
-
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex)</td>
-
-</tr>
-
-<tr>
-
-<td>Definitions</td>
-
-<td>Coming Soon</td>
-
-<td>Coming Soon</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-Last update: 09/20/2017
+| Lecture 2|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%202%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%202%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 3|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%203%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%203%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 4|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%204%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%204%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 5|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%205%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%205%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 6|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%206%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%206%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 7|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%207%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%207%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 8|  Coming Soon | Coming Soon |
+| Lecture 9|  Coming Soon | Coming Soon |
+| Macros|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex) |
+| Definitions|  Coming Soon | Coming Soon |
