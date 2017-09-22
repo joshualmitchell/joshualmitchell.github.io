@@ -4,11 +4,13 @@ title: "My Analysis Notes In LaTeX"
 date: 2017-09-22
 ---
 
-# Lecture notes for Texas State University's MATH 3380: Analysis 1.
+### Lecture notes for Texas State University's MATH 3380: Analysis 1.
 
-## Taught by Dr. Stewart Welsh, Fall 2017
+### Taught by Dr. Stewart Welsh, Fall 2017
 
-Here's the link to my MATH 3380 github repository: [[Click Me](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH3380)]
+[Here](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH3380)'s the link to my repository with all of these files:
+
+[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)
 
 <table style="text-align: left">
 
@@ -28,9 +30,9 @@ Here's the link to my MATH 3380 github repository: [[Click Me](https://github.co
 
 <td>Lecture 1</td>
 
-<td>[[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)]</td>
+<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
 
-<td>[[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex)]</td>
+<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
 
 </tr>
 
