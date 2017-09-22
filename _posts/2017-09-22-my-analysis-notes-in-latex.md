@@ -6,10 +6,6 @@ date: 2017-09-22
 
 ### Here are my class resources for Texas State University's MATH 3380: Analysis 1. Taught by Dr. Stewart Welsh, Fall 2017
 
-[Here](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH3380)'s the link to my repository with all of these files:
-
-[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)
-
 | Content   |      PDF      |  LaTeX Source |
 |:---------|:--------------|:------|
 | Lecture 1|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex) |
@@ -23,3 +19,5 @@ date: 2017-09-22
 | Lecture 9|  Coming Soon | Coming Soon |
 | Macros|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex) |
 | Definitions|  Coming Soon | Coming Soon |
+
+([Here](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH3380)'s a link to the whole repository as well.)
