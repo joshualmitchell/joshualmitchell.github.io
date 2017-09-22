@@ -28,9 +28,9 @@ Here's the link to my MATH 3380 github repository: [[Click Me](https://github.co
 
 <td>Lecture 1</td>
 
-<td>[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)</td>
+<td>[[PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)]</td>
 
-<td>[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex)</td>
+<td>[[TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.tex)]</td>
 
 </tr>
 
