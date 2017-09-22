@@ -4,7 +4,7 @@ title: "My Analysis Notes In LaTeX"
 date: 2017-09-22
 ---
 
-### Lecture notes for Texas State University's MATH 3380: Analysis 1. Taught by Dr. Stewart Welsh, Fall 2017
+### Here are my class resources for Texas State University's MATH 3380: Analysis 1. Taught by Dr. Stewart Welsh, Fall 2017
 
 [Here](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH3380)'s the link to my repository with all of these files:
 
