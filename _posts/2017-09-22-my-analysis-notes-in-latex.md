@@ -12,6 +12,12 @@ date: 2017-09-22
 
 [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%201%20-%20Analysis%201%20-%20MATH%203380.pdf)
 
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
 <table style="text-align: left">
 
 <tbody>
