@@ -189,167 +189,263 @@
      							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
-     							 
-
-
+     							
 % ----------
 
 \begin{document}
 
-Assignment Set: {6, 7, 15, 17, 19, 21} from pages 141 - 142
+\bsc{Theorem 3.3.10}{
 
-\bsc{6)}
-
-Find the closure of each set:
+Each of the following is equivalent to the AP:
 
 \balist
-\item \{ $\frac{1}{n}$ : n $\in \bn$ \} \
-
-	Answer: $\es$
-\item $\bn$ \
-	
-	Answer: $\bn$
-\item $\bq$ \
-	
-	Answer: $\br$
-\item $\bigcap_{n=1}^\infty$ $(0, \frac{1}{n})$ \
-	
-	Answer: $\es$
-\item \{ x : $|x - 5| \leq \frac{1}{2}$\} \
-
-	$[4.5, 5.5]$ \
-	
-	Answer: $[4.5, 5.5]$
-\item \{ x : $x^2 > 0$\} \
-	
-	$(0, \infty)$ \
-	
-	Answer: $[0, \infty)$ \
+\item \fa z \mem \br, \exs n \mem \bn st n $>$ z
+\item \fa x $>$ 0, y \mem \br, \exs n \mem \bn st nx $>$ y
+\item \fa x $>$ 0, \exs n \mem \bn st 0 $<$ \frc{1}{n} $<$ x
 \elist
 
-\bsc{7)} Let S, T $\sbs \br$. Find a counterexample of each of the following:
+\bgpf
+
+We shall prove:
+
+\bilist
+\item AP \rar a
+\item a \rar b
+\item b \rar c
+\item c \rar AP
+\elist
+
+In other words, they all imply each other.
+
+\ssc{a. AP \rar a}{
+
+\supp{a is false.}
+
+So, \fa z \mem \br, \exs n \mem \bn, P(z, n) (st n $\leq$ z) \textbf{???}
+
+\sidenote{
+$\neg$[\exs \uw{x}{1} \fa \uw{x}{2} st p(\uw{x}{1}, \uw{x}{2})] \eql \
+
+\fa \uw{x}{1}, \exs \uw{x}{2} st $\neg$p(\uw{x}{1}, \uw{x}{2})
+}
+
+\exs \uw{z}{0} \mem \br st \fa n \mem \bn, n $\leq$ \uw{z}{0}
+
+This indicates that the AP is false.
+
+Thus, AP \rar a.
+
+}
+\ssc{b. a \rar b}{
+
+\as{a) is true.}
+
+\lt{z \eql \frc{y}{x} \mem \br}
+
+By \bpth{a}, \exs n \mem \bn st
+
+n $>$ \frc{y}{x}
+
+nx $>$ y
+
+Hence, a \rar b is true.
+
+}
+\ssc{c. b \rar c}{
+
+\as{b) is true.}
+
+\fa x $>$ 0, if y \eql 1,
+
+we see from \bpth{b} that \exs n \mem \bn st nx $>$ 1
+
+Then, 
+
+x $>$ \frc{1}{n} $>$ 0.
+
+Hence, b \rar c.
+
+}
+
+\newpage
+
+\ssc{d. c \rar AP}{
+
+Reminder of c: \fa x where 0 $<$ x \mem \br, \exs n \mem \bn st. 0 $<$ \frc{1}{n} $<$ x
+
+\supp{\bn is bounded above. (In other words, that the AP is false.}
+
+Thus, \exs \uw{z}{0} \mem \br st 0 $<$ n $\leq$ \uw{z}{0}, \fa n \mem \bn
+
+0 $<$ n $\leq$ \uw{z}{0}
+
+\frc{1}{n} $\geq$ \frc{1}{\uw{z}{0}}
+
+This contradicts c with x \eql \frc{1}{\uw{z}{0}} where 0 $<$ \frc{1}{\uw{z}{0}} \mem \br
+
+Hence, result.
+}
+
+\epf
+
+}
+
+\bsc{Theorems 3.3.13 and 3.3.15}{
+
+\lt{x, y \mem \br st x $<$ y}
+
+Then:
+
 \balist
-\item If P is the set of all isolated points of S, then P is a closed set. \
-
-	Answer: Let S = $\bn$
-\item Every open set contains at least two points. \
-
-	Answer: $\es$
-\item If S is closed, then cl(int S) $=$ S. \
-
-	Answer: Let S $= \bq$
-\item If S is open, then int (cl S) $=$ S. \
-
-	Answer: Let S $= (-1, 0) \cup (0, 1)$
-\item bd (cl S) $=$ bd S \
-
-	Answer: Let S $= (-1, 0) \cup (0, 1)$
-\item bd (bd S) $=$ bd S \
-
-	Answer: Let S = $\bq$. Then bd S is $\br$, and bd (bd S) $= \es \neq \br$.
-\item bd (S $\cup$ T) $=$ (bd S) $\cup$ (bd T) \
-
-	Answer: Let S $= \br$, T $= (0, 1)$. bd (S $\cup$ T) = $\es$, but bd S $\cup$ bd T $= \es \cup \{0, 1\}$
-\item bd (S $\cap$ T) $=$ (bd S) $\cap$ (bd T) \
-
-	Answer: Let S $= (0, 1)$, T $= (1, 2)$. bd (S $\cap$ T) $= \es$, but bd S $\cap$ bd T $=$ 1.
+\item \exs r \mem \bq st x $<$ r $<$ y
+\item \exs z \mem \bnt{\br}{\bq} st x $<$ z $<$ y
 \elist
 
-\bsc{15)} Prove: If x is an accumulation point of the set S, then every neighborhood of x contains infinitely many points of S.\
+\ssc{a}{
+Case:
+
+\bpth{i}: y $>$ 0
+
+y \eql 0.\uw{a}{1}\uw{a}{2}...\uw{a}{n} i.e. 0.141 \eql \frc{141}{1000}
+
+\bpth{ii}: y $\leq$ 0
+
+$-$y $\geq$ 0, $-$y $<$ $-$x, 0 $\leq$ $-$y $<$ $-$x
+
+By case \bpth{i}, \exs r \mem \bq st 
+
+$-$y $<$ r $<$ $-$x
+
+y $>$ $-$r $>$ x
+
+x $<$ $-$r $<$ y
+
+}
+\ssc{b}{
+
+\exs z \mem \bnt{\br}{\bq} st x $<$ z $<$ y
+
+Apply \bpth{a} to $\frac{x}{\sqrt{2}}$ $<$ $\frac{y}{\sqrt{2}}$  to find r \mem \bq st
+
+$\frac{x}{\sqrt{2}}$ $<$ r $<$ $\frac{y}{\sqrt{2}}$
+
+x $<$ r$\sqrt{2}$ $<$ y
+
+\lt{r$\sqrt{2}$ \eql z}
+
+x $<$ z $<$ y
+
+}
+\
+
+Hence, result.
+}
+
+\newpage
+
+\bsc{Section 3.4: Topology of \br}{}
+
+\bsc{Definitions 3.4.1 and 3.4.2}{
+
+Let x \mem \br and \ep $>$ 0. \
+
+\
+
+
+\bpth{a}
+
+An \ep-neighborhood of x is:
+
+N(x, \ep) \eql \{y \mem \br: $|y - x|$ $<$ \ep\}
+
+\
+
+\bpth{b} \
+
+A deleted \ep-neighborhood of x is:
+
+N*(x, \ep) \eql \{y \mem \br: 0 $<$ $|y - x|$ $<$ \ep\} \
+}
+
+\bsc{Open Set Topology: Definition 3.4.3 (interior / boundary point)}{
+
+\lt{S \sbs \br}
+
+A point x \mem \br is an \textbf{interior point} of S if \exs \ep $>$ 0 st N(x, \ep) \sbs S. \
+
+\
+
+If, \fa \ep $>$ 0,
+
+$\nbho{x}{\ep}{S}$
+
+and 
+
+$\nbho{x}{\ep}{\bnt{\br}{S	}}$
+
+Then x is a \textbf{boundary point} of S.
+
+The set of all interior points is denoted by \textbf{int S}.
+
+The set of all boundary points is denoted by \textbf{bd S}.
+
+\textbf{Nota Bene (N.B.)}:
+
+int S \sbs S and bd S \eql bd (\bnt{\br}{S})
+
+\sidenote{
+\lt{x \mem int S}
+
+Then \exs \ep $>$ 0 st N(x, \ep) \sbs S
+
+In particular, x \mem S. Thus, int S \sbs S.
+
+\lt{S$^C$ \eql \bnt{\br}{S}, and \bnt{\br}{S$^C$ \eql S}}
+
+Then s \mem bd S$^C$ if \fa \ep $>$ 0, 
+
+$\nbho{x}{\ep}{S$^C$}$
+
+$\nbho{x}{\ep}{\bnt{\br}{S$^C$}}$
+
+Thus, N(x, \ep) $\cap$ (\bnt{\br}{S}) $\neq$ \es, and $\nbho{x}{\ep}{S}$
+
+So, x \mem bd S
+}
+}
+\bsc{Theorem 1}{
+
+\lt{x \mem S \sbs \br}
+
+Then either x \mem int S, or x \mem bd S.
 
 \bgpf
-Suppose that $\exists$ a deleted neighborhood of x, called N, that contains n points x$_1$, x$_2$, ... x$_n$ of S where n is a finite amount and x$_1$ $\leq$ x$_2$, $\leq$  ... x$_n$ \
 
-x is an accumulation point on S if $\fa \ep > 0$, $\dnbho{x}{\epsilon}{S	}$. \
+\lt{x \mem S \sbs \br}
 
-N is a deleted neighborhood of S if $\fa$ x $\in \{y \in \br : 0 < |y - x| < \ep\}$, x $\in$ N.\
+\bilist
+\item \exs \ep $>$ 0 st N(x, \ep) \sbs S. Then, by def, x \mem int S
+\item \fa \ep $>$ 0, N(x, \ep) $\cap$ (\bnt{\br}{S}) $\neq$ \es.
+	
+	However, since x \mem S, then $\nbho{x}{\ep}{S}$.
+	
+	By definition, x \mem bd S.
+\elist
 
-Let $\hat\epsilon = \ep + \ep$, and x$_0$ = x$_1$ - $\hat\epsilon$. \
-
-By definition, x$_0 \in$ N, since N is a neighborhood $\fa \ep > 0$.\
-
-However, N only has n elements. A contradiction.\
-
-So, N can't be a deleted neighborhood since it has a finite number of elements, which means x can't be an accumulation point.
-
-\epf
- 
-
-\bsc{17)} Prove: S\pr is a closed set.
-
-\bgpf
-
-By definition, $\fa s \in S\pr$, \ep $> 0$, $\dnbho{s}{\epsilon}{S}$
-
-Notice that if S\pr is empty or S\pr is \br, then S\pr is a closed set and we are done. \
-
-
-\lt{\bnt{\br}{S'} \sbs \br, x \mem \bnt{\br}{S'}}
-
-
-
-\wts{\bnt{\br}{S\pr} is open.}
-
-\bnt{\br}{S\pr} is open iff \bnt{\br}{S\pr} \eql int (\bnt{\br}{S\pr})
-
-int \bnt{\br}{S\pr} \eql \{s: N(s, \ep) \sbs \bnt{\br}{S\pr}\}
-
-
+Hence, result.
 
 \epf
 
-\bsc{19)} Suppose S is a nonempty bounded set and let m $=$ sup S. Prove or give a counter example: m is a boundary point of S.
+}
 
-\bgpf
+\bsc{Section 3.4.4 Examples}{
 
-By definition,
+\balist
+\item \lt{S \eql (0, 5)}
+	
+	Here, int S \eql (0, 5) and bd S \eql \{0, 5\}
+	
+\elist
 
-s $\leq$ m, $\fa$ s $\in$ S, and,
-
-$\fa$ $\ep > 0$, $\exists$ s' $\in$ S st m $-$ $\ep <$ s'
-
-By the second part of the definition of the supremum of S, $\nbho{m}{\epsilon}{S}$.
-
-Notice also that, by the first part of the definition of the supremum of S, (m $+$ $\ep) \not\in$ S. This means that $\nbho{m}{\epsilon}{\bnt{\br}{S}}$.
-
-By definition, m is a boundary point.
-
-
-
-\epf
-
-\pagebreak
-
-\bsc{21)} Let A be a nonempty open subset of $\br$ and let Q $\sbs \bq$. Prove: A $\cap$ Q $\neq \es$.
-
-\bgpf
-Notice that Q $\sbs \bq \sbs \br$. \
-
-Since A is nonempty, $\exists$ at least one element a $\in \br$. \
-
-Since A is nonempty and open, a $+$ $\ep \in$ A. \
-
-If a $\in \bq$, then result. \
-
-If a $+ \ep \in \bq$, then result. \
-
-If a $\not\in \bq$ and (a $+$ $\ep) \not\in \bq$, then: \
-
-Let x $=$ a, y $=$ a $+$ $\ep$, z $=$ y $-$ x. \
-
-By Archimedes' axiom, $\exists$ n st n $> \frac{1}{z	}$ \
-
-nz $>$ 1
-
-ny $-$ nx $>$ 1
-
-Since the difference between ny and nx is bigger than 1, \
-
-$\exists m \in \bz$ st nx $<$ m $<$ ny.
-
-See that since  x $< \frac{m}{n	} < y$, $\frac{m}{n}$ is a rational number, and $\frac{m}{n} \in$ A. \
-
-Hence, result. 
-\epf
-
+}
 \end{document}
