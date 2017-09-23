@@ -5,194 +5,11 @@
 
 \newcommand{\hmwkTitle}{HW\ \#3}
 
-% \input{ShortcutsAnalysis}
-
-% ----------
-
-% Packages
-
-\usepackage{fancyhdr}
-\usepackage{extramarks}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{tikz}
-\usepackage[plain]{algorithm}
-\usepackage{algpseudocode}
-\usepackage{enumitem}
-\usepackage{chngcntr}
-
-% Libraries
-
-\usetikzlibrary{automata, positioning, arrows}
-
-%
-% Basic Document Settings
-%
-
-\topmargin=-0.45in
-\evensidemargin=0in
-\oddsidemargin=0in
-\textwidth=6.5in
-\textheight=9.0in
-\headsep=0.25in
-
-\linespread{1.1}
-
-\pagestyle{fancy}
-\lhead{\hmwkAuthorName}
-\chead{}
-\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
-\lfoot{\lastxmark}
-\cfoot{\thepage}
-
-\renewcommand\headrulewidth{0.4pt}
-\renewcommand\footrulewidth{0.4pt}
-
-\setlength\parindent{0pt}
-\setcounter{secnumdepth}{0}
-
-\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
-\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
-\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
-
-%
-% Title Page
-%
-
-\title{
-    \vspace{2in}
-    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
-    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
-    \vspace{3in}
-}
-
-\author{\hmwkAuthorName}
-\date{}
-
-\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
-
-% Integral dx
-\newcommand{\dx}{\mathrm{d}x}
-
-%
-% Various Helper Commands
-%
-
-% For derivatives
-\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
-
-% For partial derivatives
-\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
-
-
-% Alias for the Solution section header
-\newcommand{\solution}{\textbf{\large Solution}}
-
-% Probability commands: Expectation, Variance, Covariance, Bias
-\newcommand{\E}{\mathrm{E}}
-\newcommand{\Var}{\mathrm{Var}}
-\newcommand{\Cov}{\mathrm{Cov}}
-\newcommand{\Bias}{\mathrm{Bias}}
-
-% Formatting commands:
-
-\newcommand{\mt}[1]{\ensuremath{#1}}
-\newcommand{\nm}[1]{\textrm{#1}}
-
-\newcommand\bsc[2][\DefaultOpt]{%
-  \def\DefaultOpt{#2}%
-  \section[#1]{#2}%
-}
-\newcommand\ssc[2][\DefaultOpt]{%
-  \def\DefaultOpt{#2}%
-  \subsection[#1]{#2}%
-}
-\newcommand{\bgpf}{\begin{proof} $ $\newline}
-
-\newcommand{\bgeq}{\begin{equation*}}
-\newcommand{\eeq}{\end{equation*}}	
-
-\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
-\newcommand{\elist}{\end{enumerate}}
-
-\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
-
-\newcommand{\bgsp}{\begin{split}}
-% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
-
-\newcommand\prs[1]{~~~\textbf{(#1)}}
-
-\newcommand{\lt}[1]{\textbf{Let: } #1}
-     							   %  if you're setting it to be true
-\newcommand{\supp}[1]{\textbf{Suppose: } #1}
-     							   %  Suppose (if it'll end up false)
-\newcommand{\wts}[1]{\textbf{Want to show: } #1}
-     							   %  Want to show
-\newcommand{\as}[1]{\textbf{Assume: } #1}
-     							   %  if you think it follows from truth
-\newcommand{\bpth}[1]{\textbf{(#1)}}
-
-\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
-\newcommand{\epf}{\end{proof}}
-
-\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
-
-\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
-#1 \
-
----------------------------------------------------------------------------------------------------------------------------------------------}
-
-% Analysis / Logical commands:
-
-\newcommand{\br}{\mt{\mathbb{R}} }       % |R
-\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
-\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
-\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
-\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
-
-\newcommand{\ep}{\mt{\epsilon} }         % epsilon
-\newcommand{\fa}{\mt{\forall} }          % for all
-\newcommand{\afa}{\mt{\alpha} }
-\newcommand{\bta}{\mt{\beta} }
-\newcommand{\mem}{\mt{\in} }
-\newcommand{\exs}{\mt{\exists} }
-
-\newcommand{\es}{\mt{\emptyset} }        % empty set
-\newcommand{\sbs}{\mt{\subset} }         % subset of
-\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
-
-\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
-\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
-
-\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
-\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
-
-\newcommand{\eql}{\mt{=} }
-\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
-\newcommand{\uw}[2]{#1\mt{_{#2}}}
-\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
-
-\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
-\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
-\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
-
-\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
-\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
-
-\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
-     							   %  N(x, eps) intersect S \= emptyset
-\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
-     							   %  N(x, eps) intersect S  = emptyset
-\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
-     							   %  N*(x, eps) intersect S \= emptyset
-\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
-     							   %  N*(x, eps) intersect S = emptyset
-     							
-% ----------
+\input{ShortcutsAnalysis}
 
 \begin{document}
+
+HW 2: page 140-141, \#2-5 (Section 3.4)
 
 \bsc{Theorem 3.3.10}{
 
@@ -266,8 +83,6 @@ x $>$ \frc{1}{n} $>$ 0.
 Hence, b \rar c.
 
 }
-
-\newpage
 
 \ssc{d. c \rar AP}{
 
@@ -413,6 +228,9 @@ Thus, N(x, \ep) $\cap$ (\bnt{\br}{S}) $\neq$ \es, and $\nbho{x}{\ep}{S}$
 So, x \mem bd S
 }
 }
+
+\newpage
+
 \bsc{Theorem 1}{
 
 \lt{x \mem S \sbs \br}
@@ -443,9 +261,96 @@ Hence, result.
 \balist
 \item \lt{S \eql (0, 5)}
 	
-	Here, int S \eql (0, 5) and bd S \eql \{0, 5\}
+	Here, int S \eql (0, 5) and bd S \eql \{0, 5\} \
+	
+	To see this*****, \
+	
+	\lt{x \mem (0, 5), \ep \eql min \{x, 5$-$x\}} \
+	
+	Then N(x, \ep) \sbs (0, 5)
+	
+	To see this, let y \mem N(x, \ep).
+	
+	\wts{0 $<$ y $<$ 5}
+	
+	Since y \mem N(x, \ep), we have
+	\step{x - \ep < y < x + \ep}{1}
+	Notice that
+	\step{\ep \leq x}{2}
+	and
+	\step{\ep \leq 5 - x}{3}
+	From \bpth{3},
+	\step{x + \ep \leq x + (5-x) \eql 5}{4}
+	From \bpth{2},
+	\step{x - x \leq x - \ep,\textrm{   } 0 \leq x - \ep}{5}
+	From \bpth{1}, \bpth{4}, \bpth{5}, \
+	
+	0 $\leq$ x $-$ \ep $<$ y $\leq$ x $+$ \ep $<$ 5, \
+	
+	We see that y \mem (0, 5).
+	
+	Hence, 0 $<$ y $<$ 5.
+	
+	Since N(x, \ep) \sbs (0, 5), we see that \
+	
+	int S \eql (0, 5) \eql S
+	
+\newpage
+	
+	\wts{0 \mem bd S}
+	
+	\lt{0 $<$ \ep $<$ 5} 
+	
+	Notice that:
+	
+	N(0, \ep) $\cap$ (0, 5) $\neq$ \es and N(0, \ep) $\cap$ (\bnt{\br}{(0, 5)}) $\neq$ \es
+	
+	Using y \eql ($+$/$-$) \frc{\ep}{2}, notice that:
+	
+	y \mem N(0, \ep) since $|(+/-) \frac{\epsilon}{2}| < \epsilon$
+	
+	**2**
+	
+\item \lt{S \eql [0, 5]}
+
+	Here, int S \eql (0, 5), bd S \eql \{0, 5\}
+	
+	Notice that bd S \sbs S
+	
+\item \lt{S \eql [0, 5)}
+	
+	Here, int S \eql (0, 5), bd S \eql {0, 5}
+	
+	Notice that some bd points are in S, but some aren't.
+	
+\item \lt{S \eql [2, $\infty$)}
+	
+	Here, int S \eql (2, $\infty$), bd S \eql \{2\}
+
+\item \lt{S \eql \br}
+
+	int S \eql \br \eql S, bd S \eql \es
+	
+	Here, bd S \sbs S
 	
 \elist
 
+*****
+
+
+\sidenote{
+----(----(---|---|---)--------)----- \
+
+0, x-ep, y, x, xplEp, 5 \
+
+from 0 to x is x, from x to 5 is 5-x
+}
+**2**
+
+\sidenote{
+-----(---|---(---|---)----)----
+
+0-ep, -ep/2, 0, ep/2, 0plEp, 5
+}
 }
 \end{document}
