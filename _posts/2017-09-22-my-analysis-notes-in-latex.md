@@ -20,6 +20,7 @@ Note: at some point I plan to add more visuals (like number lines). You'll see t
 | Lecture 7|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%207%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%207%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Lecture 8|  Coming Soon | Coming Soon |
 | Lecture 9|  Coming Soon | Coming Soon |
+| ... | ... | ... |
 | Macros|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex) |
 | Definitions|  Coming Soon | Coming Soon |
 
