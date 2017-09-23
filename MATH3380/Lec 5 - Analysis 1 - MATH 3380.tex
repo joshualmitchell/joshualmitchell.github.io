@@ -496,8 +496,75 @@ x-epi, x-ep, x, xplusEp, xplusEpi
 \item Let \uw{F}{i} be closed \fa i from 1 to n.
 	
 	Then ( \urng{i = 1}{n} \uw{F}{i} ) is closed.
-
 \elist
+
+\bpth{a}: \
+
+\
+
+Notice by de Moivre's theorem:
+
+\bnt{\br}{(\nrng{\afa \mem I}{} \uw{F}{\afa})} \eql \urng{\afa \mem I}{} (\bnt{\br}{\uw{F}{\afa}})
+
+Which is open by Theorem 3.4.101 a), since
+
+\bnt{\br}{\uw{F}{\afa}} is open by Theorem 3.4.71 b).
+
+Hence, \nrng{\afa \mem I}{} \uw{F}{\afa} is closed. \
+
+\
+
+\bpth{b}: Similar.
+
+}
+
+\bsc{Example 3.4.12}{
+
+\lt{\uw{G}{n} \eql (\frc{-1}{n}, \frc{1}{n}) \fa n \mem \bn}
+
+Then \nrng{n = 1}{\infty} \uw{G}{n} \eql \{0\}, which is closed.
+
+Compare with Theorem 3.4.101 b):
+
+($-\infty$, 0) $\cup$ (0, $-\infty$)
+
+}
+
+\bsc{Accumulation (or Limit) Points; Definition 3.4.14}{
+
+\lt{S \sbs \br}
+
+If \fa \ep $>$ 0, $\dnbho{x}{\ep}{S}$,
+
+Then x \mem \br is an \textbf{accumulation} or \textbf{limit} point.
+
+The set of all accumulation points of S is denoted by \textbf{S\pr}.
+
+If x \mem \bnt{S}{S\pr},
+
+then x is an \textbf{isolated point},
+
+in which case, \exs \ep $>$ 0 st N(x, \ep) $\cap$ S \eql \{x\}
+
+}
+
+\bsc{Definition 3.4.16 - Closures}{
+
+\lt{S \sbs \br}
+
+Then the \textbf{closure} of S, denoted by \textbf{cl S}, is defined to be:
+
+cl S \eql S $\cup$ S\pr \
+
+\
+
+For example:
+
+S \eql (0, 1) $\cup$ \{2\}
+
+S' \eql [0, 1]
+
+bd S = \{0, 1, 2\}
 
 }
 
