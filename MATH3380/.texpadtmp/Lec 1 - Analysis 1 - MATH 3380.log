@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 SEP 2017 16:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 SEP 2017 09:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -398,7 +398,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen161
-))) (/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/Lec 1 - Analysis 1 - MATH 3380.aux)
+))) (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 1 - Analysis 1 - MATH 3380.aux)
 \openout1 = `"Lec 1 - Analysis 1 - MATH 3380.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -501,17 +501,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
-[3] [4] (/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/Lec 1 - Analysis 1 - MATH 3380.aux) ) 
+[3] [4] (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 1 - Analysis 1 - MATH 3380.aux) ) 
 Here is how much of TeX's memory you used:
  14518 strings out of 492995
- 295426 string characters out of 6132704
- 340276 words of memory out of 5000000
+ 295417 string characters out of 6132704
+ 340277 words of memory out of 5000000
  17782 multiletter control sequences out of 15000+600000
  7822 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,17n,66p,468b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH 3380/.texpadtmp/Lec 1 - Analysis 1 - MATH 3380.pdf" (4 pages, 95531 bytes).
+Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 1 - Analysis 1 - MATH 3380.pdf" (4 pages, 95475 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream

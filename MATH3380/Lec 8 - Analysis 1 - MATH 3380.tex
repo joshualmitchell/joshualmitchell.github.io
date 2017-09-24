@@ -56,9 +56,13 @@ We prove that \bta is unbounded above using contradiction. \
 
 \supp{\bta is bounded above.} \
 
-Thus, sup \bta \mem \br exists.
+Thus, sup \bta \mem \br exists. \
 
-Case i: sup \bta \mem S.
+\
+
+Case i): sup \bta \mem S. \
+
+\
 
 In this case, \exs \ep \mem I st sup \bta \mem \dbs{G}{\afa}{0}
 
@@ -83,11 +87,13 @@ st \dbs{S}{x}{0} \sbs \urng{i=1}{k} \dbs{G}{\afa}{i}
 
 \eql S $\cap$ ($-\infty$, sup \bta $+$ \frc{\uw{\ep}{0}}{2}]
 }
-This produces the contradiction that sup \bta $+$ \frc{\uw{\ep}{0}}{2} \mem \bta \
+This produces the contradiction that (sup \bta $+$ \frc{\uw{\ep}{0}}{2}) \mem \bta \
+
+\newpage
+
+Case ii): \
 
 \
-
-Case ii):
 
 sup \bta \mem \bnt{\br}{S}, which is open since S is closed.
 
@@ -95,6 +101,7 @@ Thus, \exs \uw{\ep}{1} $>$ 0 st N(sup \bta, \uw{\ep}{1}) \sbs \bnt{\br}{S}
 
 \sidenote{
 ----(-----|---|----)----
+
 sup - ep1, sup B, sup B $+$ ep1/2, supB $+$ ep1
 }
 
@@ -113,7 +120,7 @@ Notice that:
 
 % \eql \uw{S}{sup $+$ \frc{\uw{\ep}{1}}{2}}
 
-Again we obtain the contradiction that sup \bta $+$ \frc{\uw{\ep}{1}}{2} \mem \bta
+Again we obtain the contradiction that (sup \bta $+$ \frc{\uw{\ep}{1}}{2}) \mem \bta
 
 Hence, result by contradiction.
 
@@ -121,7 +128,7 @@ Hence, result by contradiction.
 
 }
 
-\bsc{Theorem 3.5.6: Bolzond-Weierstrass Theorem}{
+\bsc{Theorem 3.5.6: Bolzano - Weierstrass Theorem}{
 
 If a bounded set S \sbs \br contains an infinite number of points, then there exists at least one point in \br that is an accumulation point of S.
 
@@ -141,6 +148,7 @@ N(x, \uw{\ep}{x}) $\cap$ S \eql \{x\}
 
 \sidenote{
 -----(----|--|---)-----
+
 x-ep(x?), x, yMemS, xplusep(x?)
 
 If x \mem S\pr, then:
@@ -148,7 +156,6 @@ If x \mem S\pr, then:
 $\neg$[\fa \ep $>$ 0, $\dnbho{x}{\ep}{S}$]
 
 \exs \ep $>$ 0 st N(x, \ep) $\cap$ S \eql \{x\}
-
 }
 
 Then: 
@@ -165,10 +172,8 @@ However, S $\cap$ ( \urng{i=1}{k} N(\dbs{x}{i}{1}, \dbs{\ep}{i}{1}) ) \eql \{\uw
 
 This produces the contradiction that S contains a \textbf{finite} number of points.
 
-Hence, result.
-
+Hence, S\pr $\neq$ \es
 \epf
-
 }
 
 \bsc{Theorem 3.5.7 (F.I.P.)}{
@@ -193,9 +198,7 @@ Since \dbs{K}{\afa}{0} is compact,
 
 \exs k \mem \bn and \{\uw{\afa}{1}, \uw{\afa}{2}, ... \uw{\afa}{n}\} \sbs I st.
 
-\dbs{K}{\afa}{0} \sbs \urng{\afa \mem I}{} (\bnt{\br}{\uw{K}{\afa}})
-
-\sbs \urng{i = 1}{k} (\bnt{\br}{\dbs{K}{\afa}{0}})
+\dbs{K}{\afa}{0} \sbs \urng{\afa \mem I}{} (\bnt{\br}{\uw{K}{\afa}}) \sbs \urng{i = 1}{k} (\bnt{\br}{\dbs{K}{\afa}{0}})
 
 \sidenote{
 If A \sbs B, then \bnt{\br}{B} \sbs \bnt{\br}{A}
@@ -208,12 +211,13 @@ So, x $\not\in$ A.
 
 Thus, x \mem \bnt{\br}{A}
 }
-
 \bnt{\br}{
 	(\urng{i=1}{k}(
 		\bnt{\br}{\uw{K}{\afa}})
 	)
 } \sbs \bnt{\br}{\dbs{K}{\afa}{0}}
+
+So,
 
 \nrng{i = 1}{k} \dbs{K}{\afa}{i} \sbs \bnt{\br}{\dbs{K}{\afa}{0}}
 
@@ -222,9 +226,7 @@ We obtain the contradiction that:
 \nrng{i = 0}{k} \dbs{K}{\afa}{i} \eql \es
 
 Hence, result.
-
 \epf
-
 }
 
 \bsc{Corollary 3.5.8 Nested Intervals Theorem}{

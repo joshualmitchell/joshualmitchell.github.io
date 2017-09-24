@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 SEP 2017 08:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 SEP 2017 10:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -477,64 +477,59 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
 
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 85--87
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 89--91
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
- []
-
-
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 99--100
-[]\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
  []
 
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 152--153
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 106--107
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 159--160
+[]\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 [2]
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 213--219
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
-
- []
-
-
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 257--258
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 259--260
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
@@ -542,13 +537,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 257--258
 Here is how much of TeX's memory you used:
  14522 strings out of 492995
  295529 string characters out of 6132704
- 342272 words of memory out of 5000000
+ 342273 words of memory out of 5000000
  17785 multiletter control sequences out of 15000+600000
  6598 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,13n,66p,468b,293s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,13n,66p,468b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 8 - Analysis 1 - MATH 3380.pdf" (3 pages, 136000 bytes).
+Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 8 - Analysis 1 - MATH 3380.pdf" (3 pages, 135887 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
