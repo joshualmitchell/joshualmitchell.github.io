@@ -38,13 +38,13 @@ n <- 16
 MS_res <- SS_res / (n - 2)
 SE <- sqrt(MS_res / S_xx)
 t_0 <- B_1_hat / SE
-t_0 # -285.759
+t_0 # -0.5994534
 
 # Reject if |t_0| > t_alpha/2, n-2
 
-# |-285.759| > 2.145 (t_0.05/2, 14)
+# |-0.5994534| > 2.145 (t_0.05/2, 14)
 
-# Therefore, reject H_0
+# Therefore, accept H_0
 
 ##########################
 # d) Calculate and plot the 95% confidence and prediction bands.
@@ -68,8 +68,8 @@ lines(x,prd[,3],col="red",lty=2)
 # B_1_hat - t_alpha/2_n-2 * se(B_1_hat) <= B_1 <= B_1_hat + t_alpha/2_n-2 * se(B_1_hat)
 
 lower <- B_1_hat - (2.145 * SE)
-lower # -7.459577
+lower # -33.89744
 upper <- B_1_hat + (2.145 * SE)
-upper # -7.348423
+upper # 19.08944
 
-# So, the CI is: (-7.459577, -7.348423)
+# So, the CI is: (-33.89744, 19.08944)
