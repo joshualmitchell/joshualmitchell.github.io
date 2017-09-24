@@ -25,19 +25,24 @@ model
 
 # Failing to reject H_0: B_1 = 0 is equivalent to saying:
 # there is no linear relationship between y and x
+
+# Find test statistic: 
+
+B_1_hat <- -7.404
+
 SS_T <- sum((y - mean(y))^2)
 S_xy <- sum((y * (x - mean(x))))
-S_xx <- sum((x * mean(x))^2)
-SS_res = SS_T <- (-7.404) * S_xy
+S_xx <- sum((x - mean(x))^2)
+SS_res <- SS_T - B_1_hat * S_xy
 n <- 16
 MS_res <- SS_res / (n - 2)
 SE <- sqrt(MS_res / S_xx)
-t_0 <- -7.404 / SE
-t_0 # -1783.677
+t_0 <- B_1_hat / SE
+t_0 # -285.759
 
 # Reject if |t_0| > t_alpha/2, n-2
 
-# 1783.677 > 2.145 (t_0.05/2, 14)
+# |-285.759| > 2.145 (t_0.05/2, 14)
 
 # Therefore, reject H_0
 
@@ -62,9 +67,9 @@ lines(x,prd[,3],col="red",lty=2)
 
 # B_1_hat - t_alpha/2_n-2 * se(B_1_hat) <= B_1 <= B_1_hat + t_alpha/2_n-2 * se(B_1_hat)
 
-lower <- -7.404 - (2.145 * SE)
-lower # -7.412904
-upper <- -7.404 + (2.145 * SE)
-upper # -7.395096
+lower <- B_1_hat - (2.145 * SE)
+lower # -7.459577
+upper <- B_1_hat + (2.145 * SE)
+upper # -7.348423
 
-# So, the CI is: (-7.412904, -7.395096)
+# So, the CI is: (-7.459577, -7.348423)
