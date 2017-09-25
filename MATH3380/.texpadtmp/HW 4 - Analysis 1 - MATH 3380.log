@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 SEP 2017 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 SEP 2017 15:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -462,20 +462,20 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 219.
+LaTeX Font Info:    Try loading font information for U+msa on input line 220.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 219.
+LaTeX Font Info:    Try loading font information for U+msb on input line 220.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 222.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 223.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 223.
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2] (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/HW 4 - Analysis 1 - MATH 3380.aux) ) 
