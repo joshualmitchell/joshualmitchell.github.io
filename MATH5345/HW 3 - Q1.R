@@ -1,4 +1,5 @@
-setwd("/Users/jm/Desktop/MATH 5345/")
+# Joshua Mitchell - MATH 5345 - HW 3 - Q1
+setwd("/Users/jm/joshualmitchell.github.io/MATH5345")
 data <- read.table("Ex2.7data.txt", header=T)
 data
 

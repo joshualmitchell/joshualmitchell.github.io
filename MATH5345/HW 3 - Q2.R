@@ -1,4 +1,5 @@
-setwd("/Users/jm/Desktop/MATH 5345/")
+# Joshua Mitchell - MATH 5345 - HW 3 - Q2
+setwd("/Users/jm/joshualmitchell.github.io/MATH5345")
 data <- read.table("Ex2.13data.txt", header=T)
 data
 
@@ -50,18 +51,23 @@ t_0 # -0.5994534
 # d) Calculate and plot the 95% confidence and prediction bands.
 ##########################
 
-prd <- predict(model,newdata=data.frame(x=x),interval = c("confidence"), 
-             level = 0.95,type="response")
+# prepare plot, fit model, get predictions,
+# add lines for confidence limits and regression line, add points
+plot(y~x,type="n", xlim=c(15, 18.5), ylim=c(-25, 150))
+m = lm(y~x)
+wx = par("usr")[1:2] # This is just to get two numbers to generate new “X’ observations. 
+new.x = seq(wx[1],  wx[2], len=100)
+conf = predict(m, new=data.frame(x=new.x), interval="conf")
+# This “conf” is a matrix with three columns: “fit”, “lwr”, “upr”. 
+lines(new.x,conf[,"fit"], col="black", lwd=2)
+lines(new.x,conf[,"lwr"], col="blue", lty=3)
+lines(new.x,conf[,"upr"], col="blue", lty=3)
+points(x,y,pch=16,col="steelblue")
 
-prd
+pred = predict(m, new=data.frame(x=new.x), interval="pred")
 
-# predict.lm(model, interval="confidence")
-
-plot(x, y, xlab="Index", ylab="Days", pch=19, main="Confidence Interval")
-
-lines(x,prd[,1], lwd=2)
-lines(x,prd[,2],col="red",lty=2)
-lines(x,prd[,3],col="red",lty=2)
+lines(new.x,pred[,"lwr"], col="red", lty=3)
+lines(new.x,pred[,"upr"], col="red", lty=3)
 
 # A 100(1 - alpha)% CI on B_1 is:
 
