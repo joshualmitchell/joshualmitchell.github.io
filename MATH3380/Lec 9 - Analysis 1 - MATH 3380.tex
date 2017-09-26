@@ -1,0 +1,480 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#9}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\eql}{\mt{=} }
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							 
+
+
+% ----------
+
+\begin{document}
+
+\bsc{Ch 4: Sequences}{}
+
+\bsc{4.1: Convergence}{
+
+\ssc{Definition 1: Sequence}{
+
+A \textbf{sequence} is a function S: \bn \lra \br
+
+We write S(n) \eql \uw{S}{n} \fa n \mem \bn and refer to \{\uw{S}{n}\} (the book uses (\uw{S}{n})) as the \textbf{sequence}.
+
+We refer to the set \{ \uw{S}{n} : n \mem \bn\} as the range of the sequence.
+
+\sidenote{
+\uw{S}{n} \eql ($-$1)$^n$ \fa n \mem \bn
+
+\{($-$1)$^n$\}
+
+range\{\uw{S}{n}\} \eql \{$-$1, 1\}
+
+Here \{\uw{S}{n}\} \eql \{1, $-$1, 1, $-$1...\}
+}
+An alternative to writing \{\uw{S}{n}\} for a sequence is to list the elements: \uw{S}{1}, \uw{S}{2}, ... \uw{S}{n}
+
+Sometimes the domain of the sequence is \bn $\cup$ \{0\} or \{n \mem \bn : n $\geq$ m\} for some m \mem \bn.
+
+In this case, we write \{\uw{S}{n}\}$^\infty_{n = 0}$ or \{\uw{S}{n}\}$^\infty_{n = m}$
+
+\textbf{Note 1}: A denumerable set (or a countably infinite set) S is a set for which there is a bijection S: \bn \lra \br
+
+This bijection may be thought of as a sequence \{\uw{S}{n}\}, where \uw{S}{n} \eql S(n) \fa n \mem \bn of distinct terms.
+
+\ssc{Definition 4.1.2}{
+
+A sequence \{\uw{S}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0, \exs N(\ep) \mem \bn st
+
+$|\uw{S}{n} - S|$ $<$ \ep \textrm{   } \fa n $\geq$ N
+
+\sidenote{
+-|-|-(-|-)-|-|-|-|--
+
+s6, s5, sminusep, S / Sn, splusep, s4, s3, s2, s1
+}
+
+We call s the \textbf{limit} of the sequence and write:
+
+lim$_{n\lra\infty}$ \uw{S}{n} \eql s  or  lim \uw{S}{n}   or \uw{S}{n} \lra s as n \lra $\infty$.
+
+If a sequence does not converge, then it is said to diverge.
+
+\ssc{Example 4.1.3}{
+
+Show that the sequence \{\uw{S}{n}\}, where \uw{S}{n} \eql \frc{1}{n} \fa n \mem \bn, (\{\uw{S}{n}\}) converges to 0.
+
+\bgpf
+\wts{$|$\frc{1}{n} $-$ 0$|$ $<$ \ep for sufficiently large values of n}
+
+Now: 
+
+\step{|\frc{1}{n} - 0| = \frc{1}{n}}{1}
+
+Since \frc{1}{n} $<$ \ep implies n $>$ \frc{1}{\ep},
+
+By the AP (Theorem 3.3.10),
+
+\exs N \mem \bn st N $>$ \frc{1}{\ep}
+
+Thus, 
+
+\frc{1}{N} $<$ \ep and \frc{1}{n} $\leq$ \frc{1}{N} $\leq$ \ep, \fa n $\geq$ N.
+
+From \bpth{1}, $|$\frc{1}{n} $-$ 0$|$ $<$ \ep,   \fa n $\geq$ N
+
+\newpage
+
+[Let N \mem \bn satisfy N $>$ \frc{1}{\ep}.
+
+Then \fa n $\geq$ N, $|$\frc{1}{n} $-$ 0$|$ \eql \frc{1}{n} $<$ \ep]
+
+\epf
+
+}
+
+\ssc{Example 4.1.4}{
+
+Prove that for \{$\frac{1}{\sqrt{n}}$\}, the limit is 0.
+
+\bgpf
+
+\lt{\ep $>$ 0}
+
+Then:
+
+$|$$\frac{1}{\sqrt{n}}$ $-$ 0$|$ \eql $\frac{1}{\sqrt{n}}$ \fa n \mem \bn \bpth{1} \
+
+\
+
+$\frac{1}{\sqrt{n}}$ $<$ \ep
+
+\frc{1}{n} $<$ \ep$^2$
+
+n $>$ $\frac{1}{\epsilon^2}$
+
+By Theorem 3.3.10 a), 
+
+% \exs N \mem \bn st N $>$ \frc{1}{\ep$^2$}
+
+From \bpth{1},
+
+% $|$\frc{1}{$\sqrt{n}$} $-$ 0$|$ \eql $\frac{1}{\sqrt{n}}$ $>$ \ep, \fa n $\geq$ N
+
+\epf
+
+}
+
+\ssc{Example 4.1.5}{
+
+Show that if \uw{S}{n} \eql 1 $+$ $\frac{1}{2^n}$, then \uw{S}{n} \lra 1 as n \lra $\infty$.
+
+\bgpf
+
+\lt{\ep $>$ 0}
+
+Then
+
+\uw{S}{n} $-$ S
+
+$|$1 $+$ $\frac{1}{2^n}$ $-$ 1$|$ \eql $\frac{1}{2^n}$ $\leq$ \frc{1}{n} \eql \frc{1}{N} \fa n \mem \bn
+
+Then if N \mem \bn st \frc{1}{N} $<$ \ep
+
+Then $|$1 $+$ $\frac{1}{2^n}$ $-$1$|$ $<$ \ep  \fa n $\geq$ N
+
+\epf
+
+}
+
+\ssc{Theorem 4.1.8}{
+
+\lt{\{\uw{S}{n}\} and \{\uw{a}{n}\} be sequences, s \mem \br}
+
+If some k $>$ 0 and some m \mem \bn, we have:
+
+$|$\uw{S}{n} $-$ s$|$ $\leq$ k$|$\uw{a}{n}$|$, \fa n $\geq$ m \bpth{1}
+
+and if lim$_{n\lra\infty}$ \uw{a}{n} \eql 0, then lim$_{n\lra\infty}$ \uw{S}{n} \eql s.
+
+\bgpf
+
+For \ep $>$ 0, \exs N \mem \bn st
+
+$|$\uw{a}{n}$|$ \eql $|$\uw{a}{n} $-$ 0$|$ $<$ $\frac{\epsilon}{k}$, \fa n $\geq$ N \bpth{2}
+
+From \bpth{1}, 
+
+$|$\uw{S}{n} $-$ s$|$ $\leq$ k$|$\uw{a}{n}$|$ $<$ k(\frc{\ep}{k}) \eql \ep, \fa n $\geq$ N
+
+Hence, \uw{S}{n} \lra as n \lra $\infty$.
+
+\epf
+
+}
+
+\ssc{Example 4.1.11}{
+
+Prove that if \uw{S}{n} \eql n$^\frac{1}{n}$, \fa n \mem \bn,
+
+then,
+
+\uw{S}{n} \lra 1 as n \lra $\infty$
+
+\bgpf
+
+Recall that
+
+n$^\frac{1}{n}$ \eql  e$^{\frac{1}{n}\textrm{ ln n}}$
+
+a$^x$, 0 $<$ a \mem \br \eql e$^{x ln a}$, x \mem \br
+
+Notice that n$^\frac{1}{n}$ $\geq$ 1, \fa n \mem \bn
+
+We write that:
+
+n$^\frac{1}{n}$ \eql 1 $+$ \uw{b}{n}, where \uw{b}{n} $\geq$ 0
+
+Thus:
+
+(n$^\frac{1}{n}$)$^n$ \eql (1 $+$ \uw{b}{n})$^n$
+
+n \eql (1 $+$ \uw{b}{n})$^n$
+
+\textbf{Recall}:
+
+[(a $+$ b)$^n$ \eql (n choose 0) a$^n$ $+$ (n choose 1) + ... + (n choose r) a$^{n - r}$b$^r$ ... $+$ (n choose n$-$1) ab$^{n - 1}$ $+$ (n choose n) a$^0$b$^{n}$]
+
+where
+
+(n choose r) \eql $\frac{n!}{r!(n - r)!}$ for r \eql 0, 1, ... n
+
+(n choose 0) \eql 1, (n choose 1) \eql n, (n choose 2) \eql \frc{1}{2}n(n $-$ 1)
+
+Thus, 
+
+n \eql (1 $+$ \uw{b}{n})$^n$
+
+\eql 1 $+$ n\uw{b}{n} $+$ \frc{1}{2}n(n $+$ 1)\uw{b}{n}$^2$ $+$ ... $+$ bn$^2$ \bpth{1}
+
+\wts{lim$_{n\lra\infty}$ \uw{b}{n} \eql 0}
+
+From \bpth{1},
+
+n $\geq$ \frc{1}{2}n(n $-$ 1)bn$^2$, \fa n $\geq$ 2
+
+1 $\geq$ \frc{1}{2}(n $-$ 1)bn$^2$, \fa n $\geq$ 2
+
+Then bn$^2$ $\leq$ \frc{2}{n - 1} $<$ \ep, \fa n $\geq$ N, 
+
+where N \mem \bn is chosen st N $>$ 2\ep$^2$ $+$ 1 (FIX) \
+
+\
+
+FIX:
+
+bn$^2$ $\leq$ \frc{2}{n-1} $\leq$ \ep$^2$
+
+\frc{n - 1}{2} $>$ \ep$^2$
+
+n $-$ 1 $>$ 2\ep$^2$
+
+n $>$ 2\ep$^2$ $+$ 1
+
+Hence, \uw{b}{n} $<$ \ep, \fa n $\geq$ N.
+
+This proves that lim$_{n\lra\infty}$ \uw{b}{n} \eql 0, implying that lim$_{n\lra\infty}$ n$^\frac{1}{n}$ \eql 1
+
+\epf 
+}
+
+\ssc{Example 4.1.12}{
+
+Prove that the sequence \{\uw{S}{n}\}, where \uw{S}{n} \eql 1 $+$ ($-$1)$^n$ is divergent.
+
+\bgpf
+Here \{\uw{S}{n}\} \eql 0, 2, 0, 2...
+
+We use contradiction.
+
+\supp{the sequence converges to s \mem \br}
+
+For \ep \eql 1, \exs N \mem \bn st
+
+\step{|1 + (-1)^n - s| < 1}{1}
+\fa n $\geq$ N
+
+Notice that from \bpth{1},
+
+\step{|s| < 1}{2}
+\fa odd n $\geq$ N
+
+Also from \bpth{1},
+
+\step{|2 - s| < 1}{3}
+\fa even n $\geq$ N
+
+From \bpth{2}, $-$1 $<$ s $<$ 1
+
+From \bpth{3},
+
+$-$1 $<$ s $<$ 1
+
+\epf
+
+}
+
+}
+
+
+
+}
+
+}
+
+\end{document}
