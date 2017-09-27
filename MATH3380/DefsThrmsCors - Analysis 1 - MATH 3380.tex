@@ -641,4 +641,65 @@ Then:
 \nrng{n = 1}{\infty} \uw{A}{n} $\neq$ \es
 }
 
+\newpage
+
+\bsc{Lecture 9}{
+
+\ssc{Definition 1: Sequence}{
+
+A \textbf{sequence} is a function S: \bn \lra \br
+
+We write S(n) \eql \uw{S}{n} \fa n \mem \bn and refer to \{\uw{S}{n}\} (the book uses (\uw{S}{n})) as the \textbf{sequence}.
+
+We refer to the set \{ \uw{S}{n} : n \mem \bn\} as the range of the sequence.
+
+\sidenote{
+\uw{S}{n} \eql ($-$1)$^n$ \fa n \mem \bn
+
+\{($-$1)$^n$\}
+
+range\{\uw{S}{n}\} \eql \{$-$1, 1\}
+
+Here \{\uw{S}{n}\} \eql \{1, $-$1, 1, $-$1...\}
+}
+An alternative to writing \{\uw{S}{n}\} for a sequence is to list the elements: \uw{S}{1}, \uw{S}{2}, ... \uw{S}{n}
+
+Sometimes the domain of the sequence is \bn $\cup$ \{0\} or \{n \mem \bn : n $\geq$ m\} for some m \mem \bn.
+
+In this case, we write \{\uw{S}{n}\}$^\infty_{n = 0}$ or \{\uw{S}{n}\}$^\infty_{n = m}$
+
+\textbf{Note 1}: A denumerable set (or a countably infinite set) S is a set for which there is a bijection S: \bn \lra \br
+
+This bijection may be thought of as a sequence \{\uw{S}{n}\}, where \uw{S}{n} \eql S(n) \fa n \mem \bn of distinct terms.
+}
+
+\ssc{Definition 4.1.2}{
+
+A sequence \{\uw{S}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0, \exs N(\ep) \mem \bn st
+
+$|\uw{S}{n} - S|$ $<$ \ep \textrm{   } \fa n $\geq$ N
+}
+
+\ssc{Theorem 4.1.8}{
+
+\lt{\{\uw{S}{n}\} and \{\uw{a}{n}\} be sequences, s \mem \br}
+
+If some k $>$ 0 and some m \mem \bn, we have:
+
+$|$\uw{S}{n} $-$ s$|$ $\leq$ k$|$\uw{a}{n}$|$, \fa n $\geq$ m \bpth{1}
+
+and if lim$_{n\lra\infty}$ \uw{a}{n} \eql 0, then lim$_{n\lra\infty}$ \uw{S}{n} \eql s.
+
+}
+
+}
+
+\newpage
+
+\bsc{Lecture 10}{
+
+TBA
+
+}
+
 \end{document}
