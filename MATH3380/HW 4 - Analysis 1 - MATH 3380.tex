@@ -313,7 +313,18 @@ Mark each statement as true or false. Justify each answer.
 	
 	\bn is a counter example.
 \item \lt{F \eql \{\uw{A}{i}, i \mem \bn\}}. Suppose that the intersection of any finite subfamily of F is nonempty. If $\cap$ F \eql \es, then, for some k \mem \bn, \uw{A}{k} is not compact.
-
+	
+	True.
+	
+	\supp{\fa \uw{A}{i} \mem F, \uw{A}{i} is compact}
+	
+	Then, by Heine-Borel, \uw{A}{i} is closed and bounded.
+	
+	If any finite subfamily of F is nonempty, but $\cap$ F \eql \es, then \lmti{i} F \eql \es, so F gets smaller as i grows.
+	
+	However, as F gets smaller, since \uw{A}{i} is closed, bd \uw{A}{i} \sbs \uw{A}{i}, which means eventually F should converge to a set with a single element in it.
+	
+	But this is not true, so \exs \uw{A}{i} \mem F st \uw{A}{i} is not compact.
 	
 \elist
 
@@ -332,7 +343,7 @@ Show that each subset of \br is not compact by describing an open cover for it t
 	\{n \mem \bn : \urng{i = 1}{n} ((2 $-$ $\sum_{i = 1}^n$ \frc{1}{2^i}), (3 $+$ $\sum_{i = 1}^n$ \frc{1}{2^i}))\}
 \item \bn
 	
-	\{n \mem \bn: \urng{i = 1}{n + 1} (0, n)\}
+	\{\urng{n = 1}{\infty} (0, n)\}
 \item \{\frc{1}{n} : n \mem \bn\}
 	
 	\{ n \mem \bn: \urng{i = 1}{n} (0, $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
@@ -397,9 +408,7 @@ If S \sbs \br is compact and T \sbs S is closed, then T is compact.
 	
 	If S is compact, then \fa \urng{\afa \mem I}{} \uw{G}{\afa} that cover S (\uw{G}{\afa} is open), \exs \urng{i = 1}{n} \dbs{G}{\afa}{i} - a finite subcover of S.
 	
-	S is compact, so we know this is true.
-	
-	\lt{CV be an arbitrary cover for S, SCV be CV's finite subcover for S}
+	\lt{CV be an arbitrary open cover for S, SCV be CV's finite subcover for S}
 	
 	By definition, S \sbs CV and S \sbs SCV
 	
@@ -407,21 +416,7 @@ If S \sbs \br is compact and T \sbs S is closed, then T is compact.
 	
 	So, \fa CV of S and \fa SCV of S, CV and SCV are covers and finite subcovers for T.
 	
-	However, it is possible that there are covers and finite subcovers of T that are not covers and finite subcovers of S, since T could be smaller than S.
-	
-	\wts{\fa covers of T, \exs a finite subcover of T}
-	
-	Since T is closed, bd T \sbs T, 
-	
-	and cl T \eql T $\cup$ T\pr \eql T
-	
-	\lt{TCV be a cover of T}
-	
-	\wts{\exs TSCV, a finite subcover of T for TCV}
-
-	...
-	
-	Therefore, TSCV exists and T is compact.
+	 So, T is compact.
 	
 	
 	
