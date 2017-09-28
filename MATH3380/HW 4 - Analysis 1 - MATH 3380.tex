@@ -172,7 +172,10 @@
 \newcommand{\eql}{\mt{=} }
 \newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
 \newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
 \newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
 
 \newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
 \newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
@@ -180,6 +183,7 @@
 
 \newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
 \newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
 
 \newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
      							   %  N(x, eps) intersect S \= emptyset
@@ -190,8 +194,6 @@
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
      							 
-
-
 % ----------
 
 \begin{document}
@@ -229,42 +231,52 @@ Mark each statement as true or false. Justify each answer.
 
 	True.
 	
-	\lt{S be a finite set}
+	\lt{S be a finite set, 0 $<$ $|$S$|$ $< \infty$, S \eql \{\uw{s}{1}, \uw{s}{2}, ... \uw{s}{n}\}}
 	
-	So, $|S|$ \eql n \mem \bn
+	\lt{l \eql min \{\uw{s}{1}, \uw{s}{2}, ... \uw{s}{n}\}, u \eql max \{\uw{s}{1}, \uw{s}{2}, ... \uw{s}{n}\}}
 	
-	\lt{G \eql S $\cup$ \es}
+	Since S has lower bound l and upper bound u, S is bounded.
 	
-	Notice that \es is open and that G covers S.
+	Since l, u \mem bd S by definition of maximum and minimum, S is closed.
 	
-	Notice also that G \eql S.
-	
-	Since every open cover of S has to contain S, every open cover of S contains G, a finite subcover of S.
-	
-	Hence, result.
+	Hence, by Heine-Borel, S is compact. 
+
 \item No infinite set is compact.
 	
 	Not true.
 	
-	If S \eql (0, 1), there are infinite values between 0 and 1.
+	If S \eql [0, 1], there are infinite values between 0 and 1.
 	
-	However, (0, 1) is compact.
+	However, [0, 1] is compact.
 \item If a set is compact, then it has a maximum and a minimum.
 	
-	Not true.
+	True.
 	
-	If S \eql (0, 1), then S is compact, but the upper and lower bounds of S are not members of S, so S has no maximum and minimum.
+	\lt{S $\neq$ \es be a compact set}
+	
+	Since S is compact, S is also closed and bounded.
+	
+	Since S $\neq$ \es, there is at least one element.
+	
+	Since S is closed, bd S \sbs S.
+	
+	Since there is at least one element, and all boundary points of S are in S, there is a maximum and minimum element.
+	
 \item If a set has a maximum and a minimum, then it is compact.
 	
-	\lt{G \eql S $\cup$ \es}
+	\lt{S $\neq$ \es, l \eql min S, u \eql max S}
 	
-	Notice that \es is open and that G covers S.
+	Since l, u \mem bd S by definition of minimum and maximum, S is bounded.
 	
-	Notice also that G \eql S.
+	Notice that l, u $\not\in$ int S.
 	
-	Since every open cover of S has to contain S, every open cover of S contains G, a finite subcover of S.
+	Since \exs s \mem S st s $\not\in$ int S, S is not open.
 	
-	Hence, result.
+	Therefore, S is closed.
+	
+	By the Heine-Borel theorem, since S is closed and bounded, S is compact.
+	
+	
 \elist
 
 }
@@ -275,21 +287,34 @@ Mark each statement as true or false. Justify each answer.
 \balist
 \item Some unbounded sets are compact.
 
-	False. By Heine-Borel, S is compact only if closed and bounded.
+	False.
+	
+	By Heine-Borel, S is compact only if closed and bounded.
 	
 \item If S \sbs \br is compact, then \exs x \mem \br st s \mem S\pr
 	
-	False. The empty set is compact and contains no elements.
+	False.
+	
+	The empty set is compact and contains no elements.
 	
 \item If S is compact and s \mem S\pr, then s \mem S.
 	
-	True. By Heine-Borel, if S is compact, then S is closed and bounded. If S is closed, then S \eql int S. By Theorem 3.4.17, if S is closed, then S\pr \sbs S. Since s \mem S\pr, s \mem S.
+	True.
+	
+	By Heine-Borel, if S is compact, then S is closed and bounded.
+	
+	If S is closed, then S\pr \sbs S by Theorem 3.4.17
+	
+	So, if s \mem S\pr, then s \mem S
+	
 \item If S is unbounded, then S has at least one accumulation point.
 	
-	False. \bn is a counter example.
+	False.
+	
+	\bn is a counter example.
 \item \lt{F \eql \{\uw{A}{i}, i \mem \bn\}}. Suppose that the intersection of any finite subfamily of F is nonempty. If $\cap$ F \eql \es, then, for some k \mem \bn, \uw{A}{k} is not compact.
 
-	\textbf{???}
+	
 \elist
 
 
@@ -299,11 +324,26 @@ Mark each statement as true or false. Justify each answer.
 Show that each subset of \br is not compact by describing an open cover for it that has no finite subcover.
 
 \balist
-\item `[1, 3) \{n \mem \bn : \urng{i = 1}{n} (0, 2 + $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
-\item `[1,2)  \{n \mem \bn : \urng{i = 1}{n} ((2 $-$ $\sum_{i = 1}^n$ \frc{1}{2^i}), (3 $+$ $\sum_{i = 1}^n$ \frc{1}{2^i}))\}
-\item \bn \textrm{        } \{n \mem \bn: \urng{i = 1}{n + 1} (0, n)\}
-\item \{\frc{1}{n} : n \mem \bn\}   \{ n \mem \bn: \urng{i = 1}{n} (0, $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
-\item \{x \mem \bq : 0 $\leq$ x $\leq$ 2\} - but wait, isn't this a closed and bounded set?
+\item `[1, 3) 
+	
+	\{n \mem \bn : \urng{i = 1}{n} (0, 2 + $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
+\item `[1,2)
+	
+	\{n \mem \bn : \urng{i = 1}{n} ((2 $-$ $\sum_{i = 1}^n$ \frc{1}{2^i}), (3 $+$ $\sum_{i = 1}^n$ \frc{1}{2^i}))\}
+\item \bn
+	
+	\{n \mem \bn: \urng{i = 1}{n + 1} (0, n)\}
+\item \{\frc{1}{n} : n \mem \bn\}
+	
+	\{ n \mem \bn: \urng{i = 1}{n} (0, $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
+\item \{x \mem \bq : 0 $\leq$ x $\leq$ 2\} 
+	
+	but wait, isn't this a closed and bounded set? It's obviously bounded, so why is that not closed?
+	
+	In any case, here's a cover:
+	
+	\urng{i = 0}{\infty} ($-$1, $\sum_{k = 0}^i$ \nck{2k}{k} $\frac{1}{8^k}$) $\cup$ ($\sqrt{2}$ $-$ ($\sqrt{2}$ $-$ $\sum_{k = 0}^i$ \nck{2k}{k} $\frac{1}{8^k}$), 3)
+	
 \elist
 
 }
@@ -311,29 +351,40 @@ Show that each subset of \br is not compact by describing an open cover for it t
 \bsc{4)}{
 Prove that the intersection of any collection of compact sets is compact.
 
-\lt{S be \nrng{\afa \mem I}{} \uw{G}{\afa} where I is an index set}
+\lt{S be \nrng{\afa \mem I}{} \uw{G}{\afa} where I is an index set and all \uw{G}{\afa}'s are compact}
 
-\lt{\nrng{\afa \mem I}{} \uw{G}{\afa} be nonempty (since if it's empty, then it's compact anyhow)}
+\lt{S be nonempty (since if it's empty, then it's compact anyhow)}
 
 
 By Heine-Borel, \uw{G}{\afa} is both closed and bounded \fa \afa.
 
-\lt{U be the set of all least upper bounds \fa \uw{G}{\afa}'s, and L be the set of all greatest lower bounds \fa \uw{G}{\afa}'s}
+\lt{U be the set of all least upper bounds from each \uw{G}{\afa}, and L be the set of all greatest lower bounds from each \uw{G}{\afa}'s}
 
 Since \uw{G}{\afa} is closed \fa \uw{G}{\afa}, each element in U is a max, and each element in L is a min.
 
-Since \nrng{\afa \mem I}{} \uw{G}{\afa} is an intersection, its minimum will be max L, and its maximum will be min U, which we know exists because \nrng{\afa \mem I}{} \uw{G}{\afa} $\neq$ \es
+Since S is an intersection, its minimum will be max L, and its maximum will be min U, which we know exists because S $\neq$ \es
 
-Since \nrng{\afa \mem I}{} \uw{G}{\afa} has a min and a max, and is the intersection of compact sets, it is both closed and bounded, and is therefore compact.
+Since S has a min and a max, the min and max are members of its boundary set.
 
+Since the min and max are members of the boundary set, they can't be interior points.
+
+Since \exs s \mem S that isn't an interior point, S is not open and therefore closed.
+
+Since S has a minimum and a maximum, it is also bounded.
+
+Since S is closed and bounded, it is compact by Heine-Borel.
 }
 
 \bsc{6)}{
 Show that compactedness is necessary in Corollary 3.5.8. That is, find a family of intervals \{\uw{A}{n} : n \mem \bn\} with \uw{A}{n + 1} \sbs \uw{A}{n} \fa n, \urng{n = 1}{\infty} \uw{A}{n} \eql \es, and such that:
 
 \balist
-\item The sets \uw{A}{n} are all closed. \{n \mem \bn : \es\}
-\item The sets \uw{A}{n} are all bounded. \{n \mem \bn : (0, 0)\}
+\item The sets \uw{A}{n} are all closed. 
+	
+	\{n \mem \bn : \es\}
+\item The sets \uw{A}{n} are all bounded.
+	
+	\{n \mem \bn : (0, 0)\}
 \elist
 
 }
@@ -343,7 +394,53 @@ If S \sbs \br is compact and T \sbs S is closed, then T is compact.
 
 \balist
 \item Prove this using the definition of compactness.
-\item Prove this using the Heine-Borel theorem.
+	
+	If S is compact, then \fa \urng{\afa \mem I}{} \uw{G}{\afa} that cover S (\uw{G}{\afa} is open), \exs \urng{i = 1}{n} \dbs{G}{\afa}{i} - a finite subcover of S.
+	
+	S is compact, so we know this is true.
+	
+	\lt{CV be an arbitrary cover for S, SCV be CV's finite subcover for S}
+	
+	By definition, S \sbs CV and S \sbs SCV
+	
+	Since T \sbs S, T \sbs CV and T \sbs SCV
+	
+	So, \fa CV of S and \fa SCV of S, CV and SCV are covers and finite subcovers for T.
+	
+	However, it is possible that there are covers and finite subcovers of T that are not covers and finite subcovers of S, since T could be smaller than S.
+	
+	\wts{\fa covers of T, \exs a finite subcover of T}
+	
+	Since T is closed, bd T \sbs T, 
+	
+	and cl T \eql T $\cup$ T\pr \eql T
+	
+	\lt{TCV be a cover of T}
+	
+	\wts{\exs TSCV, a finite subcover of T for TCV}
+
+	...
+	
+	Therefore, TSCV exists and T is compact.
+	
+	
+	
+	
+\item Prove using the Heine-Borel theorem: If S \sbs \br is compact and T \sbs S is closed, then T is compact.
+
+	Since S is compact, by Heine-Borel, S is closed and bounded.
+	
+	\lt{T $\neq$ \es} (since if T \eql \es then it is compact anyhow)
+	
+	Since T is closed, bd T \sbs T.
+	
+	Since T $\neq$ \es and bd T \sbs T, T contains a maximum and a minimum.
+	
+	Therefore, T is bounded.
+	
+	Since T is both closed and bounded, T is compact.
+	
+	
 \elist
 
 }
