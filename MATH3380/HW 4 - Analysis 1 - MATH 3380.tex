@@ -338,22 +338,34 @@ Show that each subset of \br is not compact by describing an open cover for it t
 \item `[1, 3) 
 	
 	\{n \mem \bn : \urng{i = 1}{n} (0, 2 + $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
+	
+	Simpler solution: \urng{n = 1}{\infty} (0, 3 $-$ \frc{1}{n})
 \item `[1,2)
 	
 	\{n \mem \bn : \urng{i = 1}{n} ((2 $-$ $\sum_{i = 1}^n$ \frc{1}{2^i}), (3 $+$ $\sum_{i = 1}^n$ \frc{1}{2^i}))\}
+	
+	Simpler solution: \urng{n = 1}{\infty} (0, 2 $-$ \frc{1}{n})
 \item \bn
 	
 	\{\urng{n = 1}{\infty} (0, n)\}
-\item \{\frc{1}{n} : n \mem \bn\}
+	
+	Other solution: \urng{n = 1}{\infty} (n $-$ \frc{1}{2}, n $+$ \frc{1}{2})
+\item \{\frc{1}{n} : n \mem \bn\} (Closed in \br, but not closed in \bq)
 	
 	\{ n \mem \bn: \urng{i = 1}{n} (0, $\sum_{k = 1}^i$ \frc{1}{2^k} )\}
+	
+	Simpler solution: \urng{n = 1}{\infty} (0, 1 $-$ \frc{1}{n})
 \item \{x \mem \bq : 0 $\leq$ x $\leq$ 2\} 
 	
 	but wait, isn't this a closed and bounded set? It's obviously bounded, so why is that not closed?
 	
+	Because the set only contains rational numbers and there are some irrational numbers that are accumulation points. A set has to contain all of its accumulation points to be closed.
+	
 	In any case, here's a cover:
 	
 	\urng{i = 0}{\infty} ($-$1, $\sum_{k = 0}^i$ \nck{2k}{k} $\frac{1}{8^k}$) $\cup$ ($\sqrt{2}$ $-$ ($\sqrt{2}$ $-$ $\sum_{k = 0}^i$ \nck{2k}{k} $\frac{1}{8^k}$), 3)
+	
+	Other solution: \urng{n = 1}{\infty} [($-$1, $\sqrt{2}$), $\cup$ ($\sqrt{2}$ $+$ \frc{1}{n}, 3)]
 	
 \elist
 
