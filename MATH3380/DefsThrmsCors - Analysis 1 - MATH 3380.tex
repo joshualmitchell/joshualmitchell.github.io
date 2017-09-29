@@ -172,7 +172,10 @@
 \newcommand{\eql}{\mt{=} }
 \newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
 \newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
 \newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
 
 \newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
 \newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
@@ -180,6 +183,7 @@
 
 \newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
 \newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
 
 \newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
      							   %  N(x, eps) intersect S \= emptyset
@@ -189,8 +193,9 @@
      							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
-     							
+     							 
 % ----------
+
 
 \begin{document}
 
@@ -697,8 +702,49 @@ and if lim$_{n\lra\infty}$ \uw{a}{n} \eql 0, then lim$_{n\lra\infty}$ \uw{S}{n} 
 \newpage
 
 \bsc{Lecture 10}{
+\bsc{Theorem 4.1.13}{
 
-TBA
+Every convergent sequence is bounded.
+}
+
+\bsc{Theorem 4.1.14}{
+
+If a sequence converges, then its limit is unique.
+}
+
+\bsc{4.2 Limit Theorems}{
+
+\ssc{Theorem 4.2.1}{
+
+Suppose that \{\uw{s}{n}\} and \{\uw{t}{n}\} are convergent sequences with \lmti{n} \uw{s}{n} \eql s and \lmti{n} \uw{t}{n} \eql t.
+
+Then,
+
+\balist
+\item \lmti{n} (\uw{s}{n} $+$ \uw{t}{n}) \eql s $+$ t
+\item \lmti{n} k\uw{s}{n} \eql ks and \lmti{n}(k $+$ \uw{s}{n}) \eql k $+$ s, for any k \mem \br
+\item \lmti{n}(\uw{s}{n}\uw{t}{n}) \eql st
+\item \lmti{n}(\frc{\uw{s}{n}}{\uw{t}{n}}) \eql \frc{s}{t}, provided that \uw{t}{n} $\neq$ 0 \fa n \mem \bn and t $\neq$ 0
+\elist
+
+}
+
+\bsc{Theorem 4.2.4}{
+
+Assume that
+
+\lmti{n} \uw{s}{n} \eql s
+
+and
+
+\lmti{n} \uw{t}{n} \eql t
+
+If \uw{s}{n} $\leq$ \uw{t}{n} \fa n \mem \bn
+
+then s $\leq$ t
+
+}
+}
 
 }
 

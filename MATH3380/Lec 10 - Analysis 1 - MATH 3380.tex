@@ -208,27 +208,27 @@ Every convergent sequence is bounded.
 
 \bgpf
 
-\as{\uw{S}{n} \lra S as r \lra $\infty$}
+\as{\uw{s}{n} \lra s as r \lra $\infty$}
 
 Then for \ep \eql 1, \exs N(\ep) \mem \bn st, \fa n $\geq$ N,
 
-$|$\uw{S}{n}$|$ $-$ $|$S$|$ $\leq$ $|$ $|$\uw{S}{n}$|$ $-$ $|$S$|$ $|$ $\leq$ $|$\uw{S}{n} $-$ S$|$ $<$ 1  (page 121, Ex 61(a))
+$|$\uw{s}{n}$|$ $-$ $|$s$|$ $\leq$ $|$ $|$\uw{s}{n}$|$ $-$ $|$s$|$ $|$ $\leq$ $|$\uw{s}{n} $-$ s$|$ $<$ 1  (page 121, Ex 61(a))
 
 \sidenote{
 x $\leq$ $|$x$|$ \fa x \mem \br
 }
 
-So $|$\uw{S}{n}$|$ $<$ 1 $+$ $|$S$|$, \fa n $\geq$ N
+So $|$\uw{s}{n}$|$ $<$ 1 $+$ $|$s$|$, \fa n $\geq$ N
 
-$|$\uw{S}{n}$|$ $\leq$ $|$ $|$\uw{S}{n} $-$ S $+$ S$|$ $\leq$ $|$\uw{S}{n} $-$ S$|$ $+$ $|$S$|$ $<$ 1 $+$ $|$S$|$ \fa n $\geq$ N
+$|$\uw{s}{n}$|$ $\leq$ $|$ $|$\uw{s}{n} $-$ s $+$ s$|$ $\leq$ $|$\uw{s}{n} $-$ s$|$ $+$ $|$s$|$ $<$ 1 $+$ $|$s$|$ \fa n $\geq$ N
 
 Then,
 
-\lt{m \eql max \{$|$\uw{S}{1}$|$, $|$\uw{S}{2}$|$, ... $|$\uw{S}{N - 1}$|$, $|$S$|$}\}
+\lt{m \eql max \{$|$\uw{s}{1}$|$, $|$\uw{s}{2}$|$, ... $|$\uw{s}{N - 1}$|$, $|$s$|$}\}
 
-Then $|$\uw{S}{n}$|$ $\leq$ m, \fa n \mem \bn
+Then $|$\uw{s}{n}$|$ $\leq$ m, \fa n \mem \bn
 
-Hence, \{\uw{S}{n}\} is bounded.
+Hence, \{\uw{s}{n}\} is bounded.
 
 \epf
 
@@ -240,23 +240,23 @@ If a sequence converges, then its limit is unique.
 
 \bgpf
 
-\as{\{\uw{S}{n}\} is a sequence and \uw{S}{n} \lra S as n \lra $\infty$ and \uw{S}{n} \lra t as n \lra $\infty$}
+\as{\{\uw{s}{n}\} is a sequence and \uw{s}{n} \lra s as n \lra $\infty$ and \uw{s}{n} \lra t as n \lra $\infty$}
 
 Then \fa \ep $>$ 0, \exs N,(\ep) st
 
-$|$\uw{S}{n} $-$ S$|$ $<$ \frc{\epsilon}{2}, \fa n $\geq$ N \bpth{1}
+$|$\uw{s}{n} $-$ s$|$ $<$ \frc{\epsilon}{2}, \fa n $\geq$ N \bpth{1}
 
 Also,
 
 \exs \uw{N}{2}(\ep) \mem \bn st
 
-$|$\uw{S}{n} $-$ t$|$ $<$ \frc{\ep}{2}, \fa n $\geq$ \uw{N}{2} \bpth{2}
+$|$\uw{s}{n} $-$ t$|$ $<$ \frc{\ep}{2}, \fa n $\geq$ \uw{N}{2} \bpth{2}
 
 Set N \eql max \{\uw{N}{1}, \uw{N}{2}\}
 
 From \bpth{1}, \bpth{2}
 
-$|$S $-$ t$|$ \eql $|$(S $-$ \uw{S}{n}) $+$ (\uw{S}{n} $-$ t)$|$ $\leq$ $|$S $-$ \uw{S}{n}$|$ $+$ $|$\uw{S}{n} $-$ t$|$ $<$ \frc{\epsilon}{2} $+$ \frc{\epsilon}{2} \eql \ep, \fa n $\geq$ N
+$|$s $-$ t$|$ \eql $|$(s $-$ \uw{s}{n}) $+$ (\uw{s}{n} $-$ t)$|$ $\leq$ $|$s $-$ \uw{s}{n}$|$ $+$ $|$\uw{s}{n} $-$ t$|$ $<$ \frc{\epsilon}{2} $+$ \frc{\epsilon}{2} \eql \ep, \fa n $\geq$ N
 
 Hence,
 
@@ -266,19 +266,21 @@ s \eql t
 
 }
 
+\newpage
+
 \bsc{4.2 Limit Theorems}{
 
 \ssc{Theorem 4.2.1}{
 
-Suppose that \{\uw{S}{n}\} and \{\uw{t}{n}\} are convergent sequences with \lmti{n} \uw{S}{n} \eql S and \lmti{n} \uw{t}{n} \eql t.
+Suppose that \{\uw{s}{n}\} and \{\uw{t}{n}\} are convergent sequences with \lmti{n} \uw{s}{n} \eql s and \lmti{n} \uw{t}{n} \eql t.
 
 Then,
 
 \balist
-\item \lmti{n} (\uw{S}{n} $+$ \uw{t}{n}) \eql s $+$ t
-\item \lmti{n} k\uw{S}{n} \eql ks and \lmti{n}(k $+$ \uw{S}{n}) \eql k $+$ s, for any k \mem \br
-\item \lmti{n}(\uw{S}{n}\uw{t}{n}) \eql st
-\item \lmti{n}(\frc{\uw{S}{n}}{\uw{t}{n}}) \eql \frc{s}{t}, provided that \uw{t}{n} $\neq$ 0 \fa n \mem \bn and t $\neq$ 0
+\item \lmti{n} (\uw{s}{n} $+$ \uw{t}{n}) \eql s $+$ t
+\item \lmti{n} k\uw{s}{n} \eql ks and \lmti{n}(k $+$ \uw{s}{n}) \eql k $+$ s, for any k \mem \br
+\item \lmti{n}(\uw{s}{n}\uw{t}{n}) \eql st
+\item \lmti{n}(\frc{\uw{s}{n}}{\uw{t}{n}}) \eql \frc{s}{t}, provided that \uw{t}{n} $\neq$ 0 \fa n \mem \bn and t $\neq$ 0
 \elist
 
 \bgpf
@@ -293,13 +295,13 @@ $|$(t $-$ \uw{t}{n}) $+$ (s $-$ \uw{s}{n})$|$ $\leq$ $|$t $-$ \uw{t}{n}$|$ $+$ $
 
 \step{|t - \uw{t}{n}| < \frac{\epsilon}{2} \textrm{  } \fa n \geq \uw{N}{1}}{2}
 and
-\step{|S - \uw{S}{n}| < \frac{\epsilon}{2}, \textrm{  } \fa n \geq \uw{N}{2}}{3}
+\step{|s - \uw{s}{n}| < \frac{\epsilon}{2}, \textrm{  } \fa n \geq \uw{N}{2}}{3}
 
 \lt{N \eql max \{\uw{N}{1}, \uw{N}{2}\}}
 
 From \bpth{1} - \bpth{3},
 
-$|$S $+$ t - (\uw{s}{n} $+$ \uw{t}{n})$|$ $<$ \frc{\ep}{2} $+$ \frc{\ep}{2} \eql \ep \fa n $\geq$ N
+$|$s $+$ t - (\uw{s}{n} $+$ \uw{t}{n})$|$ $<$ \frc{\ep}{2} $+$ \frc{\ep}{2} \eql \ep \fa n $\geq$ N
 
 Hence, result. \
 
@@ -333,7 +335,7 @@ $|$st $-$ \uw{s}{n}\uw{t}{n}$|$ $<$ $|$t$|$ $\frac{\epsilon}{|t| + M}$ $+$ $\fra
 
 Hence, result. \
 
-\
+\newpage
 
 \bpth{d}
 
@@ -414,6 +416,8 @@ By Theorem 4.2.11 (d),
 }
 
 }
+
+\newpage
 
 \bsc{Theorem 4.2.4}{
 
