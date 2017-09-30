@@ -229,11 +229,15 @@ Mark each statement True or False. Justify each answer.
 	\lt{\prn{\uw{s}{n}}} \eql \bk{\uf{1}{n}}
 \item If \uw{s}{n} \lra s, then, for every \ep $>$ 0, \exs N \mem \bn st n $\geq$ N implies $|$\uw{s}{n} $-$ s$|$ $<$ \ep.
 	
-	A sequence \{\uw{S}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0
+	True.
+	
+	A sequence \{\uw{s}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0
 
 	\exs N \mem \bn $\leq$ n st 
 
-	$|\uw{S}{n} - S|$ $<$ \ep \textrm{   } 
+	$|\uw{s}{n} - s|$ $<$ \ep \textrm{   }
+	
+	This is the definition of convergence, so this implies that \uw{s}{n} \lra s
 \item If \uw{s}{n} \lra k and \uw{t}{n} \lra k, then \uw{s}{n} \eql \uw{t}{n} \fa n \mem \bn.
 	
 	False.
@@ -244,15 +248,17 @@ Mark each statement True or False. Justify each answer.
 	By Theorem 4.1.13, this is true.
 \elist
 }
+\newpage
 
 \bsc{6(b)}{
+
 \textbf{Definition 4.1.2}
 
 A sequence \{\uw{s}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0
 
-\exs N \mem \bn $\leq$ n st 
+\exs N \mem \bn st
 
-$|\uw{s}{n} - s|$ $<$ \ep \textrm{   } \
+n \gre N \lra $|\uw{s}{n} - s|$ $<$ \ep \textrm{   } \
 
 \
 
@@ -260,17 +266,113 @@ Using only definition 4.1.2, prove the following:
 
 For k $>$ 0, k \mem \br, \lmti{n}(\frc{1}{\uf{n}{k}}) \eql 0
 
-\lt{\frc{1}{n^k} \eql \bk{\uw{s}{n}}}
+\bgpf
 
+\lt{ \bk{\uw{s}{n}} \eql \frc{1}{\mt{n^k}}, s \eql 0}
 
+\av{\uw{s}{n} \ms s} \eql \av{\frc{1}{\mt{n^k}} \ms 0} \eql \av{\frc{1}{\uf{n}{k}}}
+
+\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N \lra \av{\frc{1}{\uf{n}{k}}} \ls \ep}
+
+\lt{\ep \gr 0, N \mem \bn, k \mem \br \gr 0}
+
+\wts{\exs N \mem \bn st \av{\frc{1}{\uf{N}{k}}} \ls \ep}
+
+\lt{\av{\frc{1}{\uf{N}{k}}} \ls \ep}
+
+\frc{1}{\av{\uf{N}{k}}} \ls \ep
+
+\frc{1}{\ep} \ls \av{\uf{N}{k}} \
+
+\av{\uf{N}{k}} \eql \uf{N}{k} since N \mem \bn and k \gr 0 \bpth{1}
+
+\frc{1}{\ep} \ls \uf{N}{k}
+
+\prn{\frc{1}{\ep}}$^\frac{1}{k}$ \ls N
+
+If N is the ceiling of \prn{\frc{1}{\ep}}$^\frac{1}{k}$ \ps 1, then N exists. \
+
+\
+
+\wts{\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \ep}
+
+If we know that \av{\frc{1}{\uf{N}{k}}} \ls \ep, 
+
+then showing 
+
+\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \av{\frc{1}{\uf{N}{k}}} \
+
+\
+
+shows \
+
+\
+
+\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \ep \
+
+\
+
+\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \av{\frc{1}{\uf{N}{k}}}
+
+\frc{1}{\av{\uf{(N + 1)}{k}}} \ls \frc{1}{\av{\uf{N}{k}}}
+
+\av{\uf{N}{k}} \ls \av{\uf{(N + 1)}{k}}
+
+From \bpth{1}, 
+
+\av{\uf{N}{k}} \eql \uf{N}{k} \ls \av{\uf{(N + 1)}{k}} \eql \uf{(N + 1)}{k}
+
+\uf{N}{k} \ls \uf{(N + 1)}{k}
+
+This is true since N \mem \bn and k \gr 0 \
+
+So, \av{\frc{1}{\uf{N}{k}}} decreases as N grows.
+
+Since \fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\frc{1}{\uf{n}{k}}} \ls \ep,
+
+\lmti{n}\frc{1}{\uf{n}{k}} \eql 0
+
+\epf
 
 }
+
+\newpage
 
 \bsc{7(f)}{
 
 Using any of the results in this section (4.1), prove the following:
 
 If \av{x} \ls 1, then \lmti{n}\uf{x}{n} \eql 0
+
+\bgpf
+
+\av{x} \ls 1 implies  0 \lse \av{x} \ls 1 \bpth{1}
+
+\lt{\uw{s}{n} \eql \uf{x}{n}, s \eql 0}
+
+\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep}
+
+\lt{\ep \gr 0}
+
+\av{\uw{s}{n} \ms s} \ls \ep \eql \av{\uf{x}{n}} \ls \ep
+
+\wts{\exs N \mem \bn st \av{\uf{x}{N}} \ls \ep}
+
+\av{\uf{x}{N}} \ls \ep \
+
+\av{\av{\uf{x}{N}}} \ls \av{ \ep}
+
+We know that because of \bpth{1} and because N \mem \bn, 
+
+\av{\uf{x}{N + 1}} \ls \av{\uf{x}{N}}
+
+We also know that \ep \gr 0
+
+So, 0 \ls \av{\uf{x}{N +\textrm{ }k}} \ls ... \ls \av{\uf{x}{N + 1}} \ls \av{\uf{x}{N}} where k \mem \bn
+
+
+
+\epf
 
 }
 
@@ -279,10 +381,104 @@ For each of the following, prove or give a counter example:
 
 If (\uw{s}{n}) converges to s, then \prn{\av{\uw{s}{n}}} converges to \av{s}.
 
+\bgpf
+
+If \uw{s}{n} converges to s, then by definition,
+
+\fa \ep \gr 0, \exs N \mem \bn st N \lse n implies \av{\uw{s}{n} \ms s} \ls \ep
+
+\wts{\av{\av{\uw{s}{n}} \ms \av{s}} \ls \ep}
+
+Case 1: \uw{s}{n} and s are the same sign.
+
+\av{\av{\uw{s}{n}} \ms \av{s}} \eql \av{\uw{s}{n} \ms s}
+
+Therefore, N \lse n implies \av{\av{\uw{s}{n}} \ms \av{s}} \ls \ep
+
+If we let \uw{s}{n} \eql \av{\uw{s}{n}} and \av{s} \eql s, then \av{\uw{s}{n}} converges to \av{s}.
+
+Case 2: \uw{s}{n} and s are different signs.
+
+\av{\av{\uw{s}{n}} \ms \av{s}} \lse \av{\uw{s}{n} \ms s} \ls \ep
+
+\av{\av{\uw{s}{n}} \ms \av{s}} \ls \ep
+
+Therefore, N \lse n implies \av{\av{\uw{s}{n}} \ms \av{s}} \ls \ep
+
+If we let \uw{s}{n} \eql \av{\uw{s}{n}} and \av{s} \eql s, then \av{\uw{s}{n}} converges to \av{s}.
+
+Hence, result.
+
+\epf
+
 }
+
+\newpage
 
 \bsc{11}{
 Given the sequence \prn{\uw{s}{n}}, k \mem \bn, let \prn{\uw{t}{n}} be the sequence defined by \uw{t}{n} \eql \uw{s}{n + k}. That is, the terms in (\uw{t}{n}) are the same as that of the terms in (\uw{s}{n}) after the first k terms have been skipped. Prove that \prn{\uw{t}{n}} converges iff \prn{\uw{s}{n}} converges, and if they converge, show that lim \uw{t}{n} \eql lim \uw{s}{n}. Thus, the convergence of a sequence is not affected by omitting (or changing) a finite number of terms.
+
+\bgpf
+
+\lra
+
+\prn{\uw{t}{n}} converges \lra \prn{\uw{s}{n}} converges
+
+If \uw{t}{n} converges, then by definition,
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms L} \ls \ep
+
+Since \uw{t}{n} \eql \uw{s}{n + k},
+
+we know that \uw{s}{n + k} converges.
+
+\lt{\uw{n}{1} \eql n \ps k}
+
+So,
+
+\fa \ep \gr 0, \exs N \mem \bn st \uw{n}{1} \gre N implies \av{\uw{s}{\uw{n}{1}} \ms L} \ls \ep
+
+\fa \ep \gr 0, \exs N \mem \bn st n \ps k \gre N implies \av{\uw{s}{\uw{n}{1}} \ms L} \ls \ep
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre N \ms k implies \av{\uw{s}{\uw{n}{1}} \ms L} \ls \ep
+
+Notice that N \ms k \mem \bn. Let's call it \uw{N}{1}
+
+\fa \ep \gr 0, \exs \uw{N}{1} \mem \bn st n \gre \uw{N}{1} implies \av{\uw{s}{\uw{n}{1}} \ms L} \ls \ep
+
+Since there is still a natural number \uw{N}{1} st n \gre \uw{N}{1} implies \av{\uw{s}{\uw{n}{1}} \ms L} \ls \ep,
+
+If \uw{t}{n} converges, then \uw{s}{n} converges.
+
+\lla
+
+\prn{\uw{s}{n}} converges \lra \prn{\uw{t}{n}} converges
+
+If \uw{s}{n} converges, then by definition,
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms L} \ls \ep
+
+Since \uw{t}{n} \eql \uw{s}{n + k}, \uw{t}{n - k} \eql \uw{s}{n}
+
+So since \uw{s}{n} converges, \uw{t}{n - k} converges.
+
+If we let \uw{n}{1} \eql n \ms k,
+
+\fa \ep \gr 0, \exs N \mem \bn st \uw{n}{1} \gre N implies \av{\uw{t}{\uw{n}{1}} \ms L} \ls \ep
+
+\fa \ep \gr 0, \exs N \mem \bn st n \ms k \gre N implies \av{\uw{t}{\uw{n}{1}} \ms L} \ls \ep
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre (N \ps k) implies \av{\uw{t}{\uw{n}{1}} \ms L} \ls \ep
+
+Notice that N \ps k \mem \bn. Let's call it \uw{N}{1}
+
+\fa \ep \gr 0, \exs \uw{N}{1} \mem \bn st n \gre \uw{N}{1} implies \av{\uw{t}{\uw{n}{1}} \ms L} \ls \ep
+
+Since there is still a natural number \uw{N}{1} st n \gre \uw{N}{1} implies \av{\uw{t}{\uw{n}{1}} \ms L} \ls \ep,
+
+If \uw{s}{n} converges, then \uw{t}{n} converges.
+
+\epf
 
 }
 
@@ -290,7 +486,65 @@ Given the sequence \prn{\uw{s}{n}}, k \mem \bn, let \prn{\uw{t}{n}} be the seque
 
 \balist
 \item Assume that lim \uw{s}{n} \eql 0. If \prn{\uw{t}{n}} is a bounded sequence, prove that lim(\uw{s}{n}\uw{t}{n}) \eql 0.
+	
+	If lim \uw{s}{n} \eql 0, then by definition,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n} - 0} \ls \ep
+	
+	If \uw{t}{n} is a bounded sequence, then \fa n \mem \bn, a \lse \uw{t}{n} \lse b, where a, b \mem \br
+	
+	We know that \uw{t}{n} will always be between two constants a and b, so lets let \uw{t}{n} \eql c, where a \lse c \lse b.
+	
+	Since \uw{s}{n} converges,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n} - 0} \ls \ep
+	
+	can be simplified to
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}} \ls \ep
+	
+	\wts{lim(\uw{s}{n}\uw{t}{n}) \eql 0}
+	
+	lim(\uw{s}{n}\uw{t}{n}) \eql 0 if
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}\uw{t}{n}} \ls \ep
+	
+	Since we let \uw{t}{n} \eql c, some bounded real number, this is equivalent to
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{c\uw{s}{n}} \ls \ep
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}} \ls \av{c}\ep
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}} \ls \uw{\ep}{1}
+	
+	which is equivalent to
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}} \ls \ep
+	
+	Hence, result.
+	
 \item Show by example that the boundedness of \prn{\uw{t}{n}} is a necessary condition in part (a).
+	
+	If lim \uw{s}{n} \eql 0, then by definition,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n} - 0} \ls \ep
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}} \ls \ep
+	
+	However, if we let \uw{t}{n} be unbounded (i.e. let \uw{t}{n} \eql \uf{e}{n}), this doesn't work. See below:
+	
+	\uw{s}{n}\uw{t}{n} is bounded if 
+	
+	\fa \ep \gr 0, \exs N \mem \bn st if n \gre N, then \av{\uw{s}{n}\uw{t}{n}} \ls \ep
+	
+	\supp{\uw{s}{n} \eql \frc{1}{n}}
+	
+	Then \uw{s}{n}\uw{t}{n} \eql \frc{\uf{e}{n}}{n}
+	
+	Since \uf{e}{n} grows faster than \frc{1}{n}, \uw{s}{n}\uw{t}{n} grows overall as n approaches infinity.
+	
+	Hence, the boundedness of \uw{t}{n} is necessary.
+	
 \elist
 
 }
@@ -299,6 +553,8 @@ Given the sequence \prn{\uw{s}{n}}, k \mem \bn, let \prn{\uw{t}{n}} be the seque
 
 \balist
 \item Prove that x is an accumulation point of a set S iff \exs a sequence \prn{\uw{s}{n}} of points in \bnt{S}{\bk{x}} st \prn{\uw{s}{n}} converges to x.
+
+	
 \item Prove that a set S is closed iff, whenever \prn{\uw{s}{n}} is a convergent sequence of points in S, it follows that lim \uw{s}{n} is in S.
 \elist
 
