@@ -1,0 +1,307 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#5}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							 
+% ----------
+
+\begin{document}
+
+Homework Due 10/5/17 (7 problems): 
+
+Section 4.1 pages 169 - 170; 1, 6(b), 7(f), 9(a), 11, 12, 15
+
+\bsc{\#1}{
+
+Mark each statement True or False. Justify each answer.
+
+\balist
+\item If (\uw{s}{n}) is a sequence and \uw{s}{i} \eql \uw{s}{j} then i \eql j.
+	
+	False.
+	
+	\lt{\prn{\uw{s}{n}}} \eql \bk{\uf{1}{n}}
+\item If \uw{s}{n} \lra s, then, for every \ep $>$ 0, \exs N \mem \bn st n $\geq$ N implies $|$\uw{s}{n} $-$ s$|$ $<$ \ep.
+	
+	A sequence \{\uw{S}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0
+
+	\exs N \mem \bn $\leq$ n st 
+
+	$|\uw{S}{n} - S|$ $<$ \ep \textrm{   } 
+\item If \uw{s}{n} \lra k and \uw{t}{n} \lra k, then \uw{s}{n} \eql \uw{t}{n} \fa n \mem \bn.
+	
+	False.
+	
+	\lt{\uw{s}{n} \eql $\sum_{i = 0}^\infty$\frc{1}{2^i}, \uw{t}{n} \eql 2 \ms $\sum_{i = 0}^\infty$\frc{1}{2^i} }
+\item Every convergent sequence is bounded.
+	
+	By Theorem 4.1.13, this is true.
+\elist
+}
+
+\bsc{6(b)}{
+\textbf{Definition 4.1.2}
+
+A sequence \{\uw{s}{n}\} is said to \textbf{converge} to s \mem \br provided that \fa \ep $>$ 0
+
+\exs N \mem \bn $\leq$ n st 
+
+$|\uw{s}{n} - s|$ $<$ \ep \textrm{   } \
+
+\
+
+Using only definition 4.1.2, prove the following:
+
+For k $>$ 0, k \mem \br, \lmti{n}(\frc{1}{\uf{n}{k}}) \eql 0
+
+\lt{\frc{1}{n^k} \eql \bk{\uw{s}{n}}}
+
+
+
+}
+
+\bsc{7(f)}{
+
+Using any of the results in this section (4.1), prove the following:
+
+If \av{x} \ls 1, then \lmti{n}\uf{x}{n} \eql 0
+
+}
+
+\bsc{9(a)}{
+For each of the following, prove or give a counter example:
+
+If (\uw{s}{n}) converges to s, then \prn{\av{\uw{s}{n}}} converges to \av{s}.
+
+}
+
+\bsc{11}{
+Given the sequence \prn{\uw{s}{n}}, k \mem \bn, let \prn{\uw{t}{n}} be the sequence defined by \uw{t}{n} \eql \uw{s}{n + k}. That is, the terms in (\uw{t}{n}) are the same as that of the terms in (\uw{s}{n}) after the first k terms have been skipped. Prove that \prn{\uw{t}{n}} converges iff \prn{\uw{s}{n}} converges, and if they converge, show that lim \uw{t}{n} \eql lim \uw{s}{n}. Thus, the convergence of a sequence is not affected by omitting (or changing) a finite number of terms.
+
+}
+
+\bsc{12}{
+
+\balist
+\item Assume that lim \uw{s}{n} \eql 0. If \prn{\uw{t}{n}} is a bounded sequence, prove that lim(\uw{s}{n}\uw{t}{n}) \eql 0.
+\item Show by example that the boundedness of \prn{\uw{t}{n}} is a necessary condition in part (a).
+\elist
+
+}
+
+\bsc{15}{
+
+\balist
+\item Prove that x is an accumulation point of a set S iff \exs a sequence \prn{\uw{s}{n}} of points in \bnt{S}{\bk{x}} st \prn{\uw{s}{n}} converges to x.
+\item Prove that a set S is closed iff, whenever \prn{\uw{s}{n}} is a convergent sequence of points in S, it follows that lim \uw{s}{n} is in S.
+\elist
+
+}
+
+\end{document}
