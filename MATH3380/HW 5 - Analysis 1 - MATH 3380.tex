@@ -428,6 +428,10 @@ If \uw{t}{n} converges, then by definition,
 
 \fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms L} \ls \ep
 
+(or)
+
+\fa \ep \gr 0, \exs N \mem \bn st \av{\uw{t}{n} \ms L} \ls \ep \fa n \gre N
+
 Since \uw{t}{n} \eql \uw{s}{n + k},
 
 we know that \uw{s}{n + k} converges.
@@ -560,7 +564,7 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 	
 	\lt{x \mem S\pr}
 	
-	This means that $\dnbho{x}{\ep}{S}$, \fa \ep \gr 0.
+	This means that $\dnbho{x}{\ep}{S}$, \fa \ep \gr 0. \bpth{1}
 	
 	N*(x, \ep) means \bk{y \mem \br : 0 \ls \av{y \ms x} \ls \ep}
 	
@@ -568,39 +572,45 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 	
 	Then \prn{\uw{s}{n}} converges to x.
 	
-	\lt{\uw{s}{n} \mem N*(x, \frc{1}{n}\ep)}
+	\lt{\uw{s}{n} \mem $\dnbho{x}{\frc{1}{n}}{S}$}
 	
-	So,
+	Then
 	
-	\uw{s}{n} \mem \bk{\uw{s}{n} \mem \br : 0 \ls \av{\uw{s}{n} \ms x} \ls \frc{1}{n}\ep}
+	\av{\uw{s}{n} \ms x} \ls \frc{1}{n} and \uw{s}{n} \mem \bnt{S}{\bk{x}}
 	
-	\lt{\ep \gr 0, N \eql \frc{1}{n}\ep}
+	\lt{\ep \gr 0}
 	
-	N \eql \frc{1}{n}\ep
+	\exs N(\ep) \mem \bn st \frc{1}{N} \ls \ep (By AP)
 	
-	Nn \eql \ep
+	Thus, from \bpth{1}, 
 	
-	n \eql \frc{\ep}{N}
+	\av{\uw{s}{n} \ms x} \ls \ep, \fa n \gre N.
+	
+	Hence, lim \uw{s}{n} \eql x and \uw{s}{n} \mem \bnt{S}{\bk{x}} \fa n \mem \bn
 	
 	\lla
 	
-	\exs a sequence \prn{\uw{s}{n}} of points in \bnt{S}{\bk{x}} st \prn{\uw{s}{n}} converges to x.
+	Conversely,
 	
-	\wts{\uw{s}{n} \mem N*(x, \ep) \fa \ep \gr 0}
+	\as{\bk{\uw{s}{n}} is a sequence in \bnt{S}{\bk{x}} st \lmti{n}\uw{s}{n} \eql x}
 	
-	Since \prn{\uw{s}{n}} converges to x,
+	\wts{x \mem S\pr}
 	
-	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms x} \ls \ep
+	\fa \ep \gr 0, \exs N(\ep) (as in N is chosen based on \ep) \mem \bn st
 	
-	So, given any \ep, \uw{s}{n} \mem N*(x, \ep) for n \gre some N \mem \bn 
+	\av{\uw{s}{n} \ms x} \ls \ep \fa n \gre N and \uw{s}{n} \mem \bnt{S}{\bk{X}}
 	
-	So, since \uw{s}{n} \mem S and \uw{s}{n} \mem N*(x, \ep) \fa \ep \gr 0,
+	\uw{s}{n} \mem (x \ms \ep, x \ps \ep), \uw{s}{n} $\neq$ x
 	
-	\fa \ep \gr 0, $\dnbho{x}{\ep}{S}$
+	(theorem 4.2.1 is a possibility on test)
 	
-	This is the definition of an accumulation point.
+	4.2.4, 4.2.7 not on exam
 	
-	Hence, x is an accumulation point.
+	Thus, $\dnbho{x}{\ep}{S}$
+	
+	So, x \mem S\pr
+	
+	Hence result.
 	
 \item Prove that a set S is closed iff, whenever \prn{\uw{s}{n}} is a convergent sequence of points in S, it follows that lim \uw{s}{n} is in S.
 	
@@ -608,25 +618,46 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 	
 	\lt{S be a closed set.}
 	
-	Thus, S \eql cl S \eql S $\cup$ S\pr, bd S \sbs S
+	\wts{\prn{\uw{s}{n}} is a sequence in S st \lmti{n}\uw{s}{n} \eql s implies s \mem S}
+	
+	If S is closed, then S \eql cl S \eql S $\cup$ S\pr, bd S \sbs S
+	
+	\fa \ep \gr 0, \exs N(\ep) \mem \bn st \av{\uw{s}{n} \ms s} \ls \ep \fa n \gre N
+	
+	\wts{s \mem S}
+	
+	Case
+	
+	\bilist
+	\item s \mem S.
+		
+		In this case, we are done.
+	\item s $\not\in$ S
+		
+		Hence, \prn{\uw{s}{n}} is a sequence in \bnt{S}{\bk{s}}  st \lmti{n} \uw{s}{n} \eql s. By \bpth{a}, s \mem S\pr. 
+		
+		Since S is closed, s \mem S.
+	\elist
+	
+	\textbf{Note: The above is what we did in class. Below (until \lla) is my original answer. Can you tell me if the next 11 or so lines are valid?}
 	
 	\supp{lim \uw{s}{n} $\not\in$ S}
 	
-	This implies that L $\not\in$ S where
+	This implies that s $\not\in$ S where
 	
-	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms L} \ls \ep
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep
 	
 	Since S is closed,
 	
-	\lt{u be the closest boundary point to L}
+	\lt{u be the closest boundary point to s}
 	
-	Now, let \ep \eql \av{\frc{u \ms L}{2}}
+	Now, let \ep \eql \av{\frc{u \ms s}{2}}
 	
-	We know that \av{\uw{s}{n} \ms L} \ls \ep for this epsilon.
+	We know that \av{\uw{s}{n} \ms s} \ls \ep for this epsilon.
 	
-	\av{\uw{s}{n} \ms L} \ls \av{\frc{u \ms L}{2}}
+	\av{\uw{s}{n} \ms s} \ls \av{\frc{u \ms L}{2}}
 	
-	Which implies that the distance between \uw{s}{n} and L is less than the distance between \uw{s}{n} and the nearest boundary point of S.
+	Which implies that the distance between \uw{s}{n} and s is less than the distance between \uw{s}{n} and the nearest boundary point of S.
 	
 	This means there is an \uw{s}{n} st \uw{s}{n} $\not\in$ S, a contradiction.
 	
@@ -634,25 +665,33 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 	
 	\lla
 	
-	\wts{\fa \uw{s}{n}, \prn{\uw{s}{n}} is a convergent sequence \mem S \bpth{1} \rar lim \uw{s}{n} \mem S \bpth{2} \rar a set S is closed \bpth{3}}
+	Conversely, 
 	
-	We already showed that \bpth{1} implies \bpth{2} in the first part of this proof.
+	\as{whenever \prn{\uw{s}{n}} is a sequence in S st \lmti{n}\uw{s}{n} \eql s, then s \mem S}
 	
-	now,
+	\wts{S is closed}
 	
-	\wts{if \bpth{1} implies \bpth{2}, then \bpth{3}}, which is essentially \bpth{1} implies \bpth{3} but you get \bpth{2} for free.
+	We will use Theorem 3.4.17 (a): S is closed iff S\pr \sbs S
 	
-	Seems like it'd be easier to show \bpth{1} and \bpth{2} and not \bpth{3} is false.
+	\lt{s \mem S\pr}
 	
-	\supp{\fa \uw{s}{n}, \prn{\uw{s}{n}} is a convergent sequence \mem S \rar S is open}
+	s \mem S\pr means \fa \ep \gr 0, $\dnbho{s}{\ep}{S}$
 	
-	Since S is open, \exs some s st s \mem bd S and s $\not\in$ S
+	\lt{\uw{s}{n} \mem $\dnbho{s}{\frc{1}{n}}{S}$, n \mem \bn}
 	
-	\lt{\uw{s}{n} be a convergent sequence st its limit is s}
+	So,
 	
-	However, by \bpth{2}, the limit of \uw{s}{n} should be in S. A contradiction.
+	\av{\uw{s}{n} \ms s} \ls \frc{1}{n}, \uw{s}{n} \mem S \fa n \mem \bn 
 	
-	Hence, result.
+	Hence \lmti{n}\uw{s}{n} \eql s
+	
+	We know \exs N \mem \bn st \frc{1}{N} \ls \ep by AP.
+	
+	From \bpth{1}, \av{\uw{s}{n} \ms s} \ls \frc{1}{n} \ls \ep \fa n \gre N
+	
+	Hence, \lmti{n} \uw{s}{n} \eql s, \uw{s}{n} \mem S, \fa n \mem \bn
+	
+	By assuming s \mem S, S is closed.
 	
 \elist
 
