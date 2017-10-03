@@ -549,13 +549,111 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 
 }
 
+\newpage
+
 \bsc{15}{
 
 \balist
 \item Prove that x is an accumulation point of a set S iff \exs a sequence \prn{\uw{s}{n}} of points in \bnt{S}{\bk{x}} st \prn{\uw{s}{n}} converges to x.
 
+	\lra
+	
+	\lt{x \mem S\pr}
+	
+	This means that $\dnbho{x}{\ep}{S}$, \fa \ep \gr 0.
+	
+	N*(x, \ep) means \bk{y \mem \br : 0 \ls \av{y \ms x} \ls \ep}
+	
+	If \fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} - x} \ls \ep,
+	
+	Then \prn{\uw{s}{n}} converges to x.
+	
+	\lt{\uw{s}{n} \mem N*(x, \frc{1}{n}\ep)}
+	
+	So,
+	
+	\uw{s}{n} \mem \bk{\uw{s}{n} \mem \br : 0 \ls \av{\uw{s}{n} \ms x} \ls \frc{1}{n}\ep}
+	
+	\lt{\ep \gr 0, N \eql \frc{1}{n}\ep}
+	
+	N \eql \frc{1}{n}\ep
+	
+	Nn \eql \ep
+	
+	n \eql \frc{\ep}{N}
+	
+	\lla
+	
+	\exs a sequence \prn{\uw{s}{n}} of points in \bnt{S}{\bk{x}} st \prn{\uw{s}{n}} converges to x.
+	
+	\wts{\uw{s}{n} \mem N*(x, \ep) \fa \ep \gr 0}
+	
+	Since \prn{\uw{s}{n}} converges to x,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms x} \ls \ep
+	
+	So, given any \ep, \uw{s}{n} \mem N*(x, \ep) for n \gre some N \mem \bn 
+	
+	So, since \uw{s}{n} \mem S and \uw{s}{n} \mem N*(x, \ep) \fa \ep \gr 0,
+	
+	\fa \ep \gr 0, $\dnbho{x}{\ep}{S}$
+	
+	This is the definition of an accumulation point.
+	
+	Hence, x is an accumulation point.
 	
 \item Prove that a set S is closed iff, whenever \prn{\uw{s}{n}} is a convergent sequence of points in S, it follows that lim \uw{s}{n} is in S.
+	
+	\lra 
+	
+	\lt{S be a closed set.}
+	
+	Thus, S \eql cl S \eql S $\cup$ S\pr, bd S \sbs S
+	
+	\supp{lim \uw{s}{n} $\not\in$ S}
+	
+	This implies that L $\not\in$ S where
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms L} \ls \ep
+	
+	Since S is closed,
+	
+	\lt{u be the closest boundary point to L}
+	
+	Now, let \ep \eql \av{\frc{u \ms L}{2}}
+	
+	We know that \av{\uw{s}{n} \ms L} \ls \ep for this epsilon.
+	
+	\av{\uw{s}{n} \ms L} \ls \av{\frc{u \ms L}{2}}
+	
+	Which implies that the distance between \uw{s}{n} and L is less than the distance between \uw{s}{n} and the nearest boundary point of S.
+	
+	This means there is an \uw{s}{n} st \uw{s}{n} $\not\in$ S, a contradiction.
+	
+	So, \uw{s}{n} is not a convergent sequence of points in S if lim \uw{s}{n} is not in S. 
+	
+	\lla
+	
+	\wts{\fa \uw{s}{n}, \prn{\uw{s}{n}} is a convergent sequence \mem S \bpth{1} \rar lim \uw{s}{n} \mem S \bpth{2} \rar a set S is closed \bpth{3}}
+	
+	We already showed that \bpth{1} implies \bpth{2} in the first part of this proof.
+	
+	now,
+	
+	\wts{if \bpth{1} implies \bpth{2}, then \bpth{3}}, which is essentially \bpth{1} implies \bpth{3} but you get \bpth{2} for free.
+	
+	Seems like it'd be easier to show \bpth{1} and \bpth{2} and not \bpth{3} is false.
+	
+	\supp{\fa \uw{s}{n}, \prn{\uw{s}{n}} is a convergent sequence \mem S \rar S is open}
+	
+	Since S is open, \exs some s st s \mem bd S and s $\not\in$ S
+	
+	\lt{\uw{s}{n} be a convergent sequence st its limit is s}
+	
+	However, by \bpth{2}, the limit of \uw{s}{n} should be in S. A contradiction.
+	
+	Hence, result.
+	
 \elist
 
 }
