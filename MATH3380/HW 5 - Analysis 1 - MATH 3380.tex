@@ -217,6 +217,10 @@ Homework Due 10/5/17 (7 problems):
 
 Section 4.1 pages 169 - 170; 1, 6(b), 7(f), 9(a), 11, 12, 15
 
+Test up to 4.2.4
+
+(theorem 4.2.1 is a possibility on test)
+
 \bsc{\#1}{
 
 Mark each statement True or False. Justify each answer.
@@ -242,8 +246,10 @@ Mark each statement True or False. Justify each answer.
 	
 	False.
 	
-	\lt{\uw{s}{n} \eql $\sum_{i = 0}^\infty$\frc{1}{2^i}, \uw{t}{n} \eql 2 \ms $\sum_{i = 0}^\infty$\frc{1}{2^i} }
+	\lt{k \eql 1, \uw{s}{n} \eql \frc{1}{n}, \uw{t}{n} \eql \frc{-1}{n}}
 \item Every convergent sequence is bounded.
+
+	True.
 	
 	By Theorem 4.1.13, this is true.
 \elist
@@ -268,13 +274,13 @@ For k $>$ 0, k \mem \br, \lmti{n}(\frc{1}{\uf{n}{k}}) \eql 0
 
 \bgpf
 
-\lt{ \bk{\uw{s}{n}} \eql \frc{1}{\mt{n^k}}, s \eql 0}
+\lt{ \bk{\uw{s}{n}} \eql \frc{1}{\mt{n^k}}}
 
 \av{\uw{s}{n} \ms s} \eql \av{\frc{1}{\mt{n^k}} \ms 0} \eql \av{\frc{1}{\uf{n}{k}}}
 
 \wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N \lra \av{\frc{1}{\uf{n}{k}}} \ls \ep}
 
-\lt{\ep \gr 0, N \mem \bn, k \mem \br \gr 0}
+\lt{\ep \gr 0, k \mem \br \gr 0}
 
 \wts{\exs N \mem \bn st \av{\frc{1}{\uf{N}{k}}} \ls \ep}
 
@@ -288,49 +294,13 @@ For k $>$ 0, k \mem \br, \lmti{n}(\frc{1}{\uf{n}{k}}) \eql 0
 
 \frc{1}{\ep} \ls \uf{N}{k}
 
-\prn{\frc{1}{\ep}}$^\frac{1}{k}$ \ls N
+\uf{\prn{\frc{1}{\ep}}}{\frc{1}{k}} \ls N
 
-If N is the ceiling of \prn{\frc{1}{\ep}}$^\frac{1}{k}$ \ps 1, then N exists. \
+By the AP, there is an N bigger than \uf{\prn{\frc{1}{\ep}}}{\frc{1}{k}}.
 
-\
+Hence, there is a natural number N \fa \ep \gr 0 st n \gre N implies \av{\frc{1}{\uf{n}{k}}} \ls \ep
 
-\wts{\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \ep}
-
-If we know that \av{\frc{1}{\uf{N}{k}}} \ls \ep, 
-
-then showing 
-
-\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \av{\frc{1}{\uf{N}{k}}} \
-
-\
-
-shows \
-
-\
-
-\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \ep \
-
-\
-
-\av{\frc{1}{\uf{(N + 1)}{k}}} \ls \av{\frc{1}{\uf{N}{k}}}
-
-\frc{1}{\av{\uf{(N + 1)}{k}}} \ls \frc{1}{\av{\uf{N}{k}}}
-
-\av{\uf{N}{k}} \ls \av{\uf{(N + 1)}{k}}
-
-From \bpth{1}, 
-
-\av{\uf{N}{k}} \eql \uf{N}{k} \ls \av{\uf{(N + 1)}{k}} \eql \uf{(N + 1)}{k}
-
-\uf{N}{k} \ls \uf{(N + 1)}{k}
-
-This is true since N \mem \bn and k \gr 0 \
-
-So, \av{\frc{1}{\uf{N}{k}}} decreases as N grows.
-
-Since \fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\frc{1}{\uf{n}{k}}} \ls \ep,
-
-\lmti{n}\frc{1}{\uf{n}{k}} \eql 0
+Thus, the limit of \uw{s}{n} is 0.
 
 \epf
 
@@ -345,32 +315,29 @@ Using any of the results in this section (4.1), prove the following:
 If \av{x} \ls 1, then \lmti{n}\uf{x}{n} \eql 0
 
 \bgpf
-
 \av{x} \ls 1 implies  0 \lse \av{x} \ls 1 \bpth{1}
 
 \lt{\uw{s}{n} \eql \uf{x}{n}, s \eql 0}
 
-\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep}
+\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \uf{\av{x}}{N} \ls \ep}
 
 \lt{\ep \gr 0}
 
-\av{\uw{s}{n} \ms s} \ls \ep \eql \av{\uf{x}{n}} \ls \ep
+\wts{\exs N \mem \bn st N \lse n implies \uf{\av{x}}{N} \ls \ep}
 
-\wts{\exs N \mem \bn st \av{\uf{x}{N}} \ls \ep}
+\uf{\av{x}}{N} \ls \ep
 
-\av{\uf{x}{N}} \ls \ep \
+ln \uf{\av{x}}{N} \ls ln \ep
 
-\av{\av{\uf{x}{N}}} \ls \av{ \ep}
+N ln \av{x} \ls ln \ep
 
-We know that because of \bpth{1} and because N \mem \bn, 
+N \gr \frc{ln\textrm{ }\ep}{ln \av{x}}
 
-\av{\uf{x}{N + 1}} \ls \av{\uf{x}{N}}
+By the AP, there is an N greater than \frc{ln\textrm{ }\ep}{ln \av{x}}
 
-We also know that \ep \gr 0
+Hence, there is a natural number N \fa \ep \gr 0 st n \gre N implies \uf{\av{x}}{N} \ls \ep
 
-So, 0 \ls \av{\uf{x}{N +\textrm{ }k}} \ls ... \ls \av{\uf{x}{N + 1}} \ls \av{\uf{x}{N}} where k \mem \bn
-
-
+Thus, the limit of \uw{s}{n} is 0.
 
 \epf
 
@@ -497,7 +464,7 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 	
 	If \uw{t}{n} is a bounded sequence, then \fa n \mem \bn, a \lse \uw{t}{n} \lse b, where a, b \mem \br
 	
-	We know that \uw{t}{n} will always be between two constants a and b, so lets let \uw{t}{n} \eql c, where a \lse c \lse b.
+	We know that \uw{t}{n} will always be between two constants a and b, so lets let \uw{t}{n} be some constant c dependent on n, where a \lse \uw{c}{n} \lse b.
 	
 	Since \uw{s}{n} converges,
 	
@@ -601,10 +568,6 @@ If \uw{s}{n} converges, then \uw{t}{n} converges.
 	\av{\uw{s}{n} \ms x} \ls \ep \fa n \gre N and \uw{s}{n} \mem \bnt{S}{\bk{X}}
 	
 	\uw{s}{n} \mem (x \ms \ep, x \ps \ep), \uw{s}{n} $\neq$ x
-	
-	(theorem 4.2.1 is a possibility on test)
-	
-	4.2.4, 4.2.7 not on exam
 	
 	Thus, $\dnbho{x}{\ep}{S}$
 	

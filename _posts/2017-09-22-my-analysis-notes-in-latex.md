@@ -24,5 +24,3 @@ Note: at some point I plan to add more visuals (like number lines). You'll see t
 | Lecture 11|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2011%20-%20Analysis%201%20-%20MATH%203380.pdf) (empty) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2011%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Macros|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) (useless) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex) |
 | Defs/Thrms/Cors | [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/DefsThrmsCors%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/DefsThrmsCors%20-%20Analysis%201%20-%20MATH%203380.tex) |
-
-[Here](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH3380)'s a link to the whole repository.
