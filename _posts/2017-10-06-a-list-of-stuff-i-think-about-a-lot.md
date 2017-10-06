@@ -62,9 +62,7 @@ The list goes (neither the lists nor the list of lists are in any particular ord
 
 - Is there a way to decide if a graph has to be at least n-dimensional based on its edges and vertices? What practical applications would this have? For example (a Q3 hypergraph):
 
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Q3 Hypergraph")
-
+![alt text](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/img/q3.png "Q3 Hypergraph")
 
 Can we flatten this such that no edges are laying on another edge? Does this mean it has to be 3D?
 
