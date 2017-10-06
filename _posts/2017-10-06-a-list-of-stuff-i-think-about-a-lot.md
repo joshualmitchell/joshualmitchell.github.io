@@ -14,13 +14,12 @@ The list goes (neither the lists nor the list of lists are in any particular ord
 - Concepts / Known Problems
 - Questions / Unknown Concepts
 
-__General Subjects__
+##General Subjects##
 
 test
 
-* Formal Languages
-
-* Automata Theory
+- Formal Languages
+- Automata Theory
 
 hi
 
