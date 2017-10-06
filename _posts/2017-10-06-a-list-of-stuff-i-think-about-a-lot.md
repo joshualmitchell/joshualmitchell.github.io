@@ -66,4 +66,57 @@ The list goes (neither the lists nor the list of lists are in any particular ord
 
 Can we flatten this such that no edges are laying on another edge? Does this mean it has to be 3D?
 
+- Imagine summarizing an entire textbook into one word. It’s kind of like shrinking a 500x500px picture to one pixel, right? In the sense that whatever you’re leftover with probably won’t have much relevance to the original object.
+
+It would be THE most important part though. It’s just that, depending on what you’re summarizing, the variance of importance might not be that high.
+
+However, if we had an incredibly great summary system that spit out one word or one pixel based on a whole object, and we knew for a fact this was the most important thing… wouldn’t that be a GREAT feature to have for prediction models?
+
+We’d have a hard time getting to the most important single piece, but it’d be a lot easier (but still hard) to get to the most important, say, 25 pieces, right? a 5x5 pixel summary? A 25 word summary?
+
+In terms of the 80/20 principle, in theory, how much information could we keep while still wiping out content?
+
+According to it, we only need 0.001% of the effort to get 20% of the way there. So, in the case of the 500x500px picture, to get a 224x224px picture (20% of the information), we should, in theory, need only 0.001% of the effort. That seems too easy to me, but maybe there’s something there?
+
+- Highly related to the previous train of thought, what if we started teaching courses this way? What if we literally started with the top 0.001% of information? (Assuming we had a way to get the top 0.001% of information). I feel that we wouldn’t necessarily be delivering 20% of the content with 0.001% of the effort, but whatever we deliver would be THE most important information (and also enough to get the whole idea).
+
+In other words, we would start with an original idea, shrinking it down to a sentence or two (so that they still understand the whole principle without actually learning much yet), and then any further information can be added onto that model / perspective. This has the advantage that you can quit at any point you feel like you know enough, and you’re still able to be productive.
+
+There are many other ways I feel this could go. More than likely, summarizing stuff won’t be that smooth. Chunks of information are likely discrete. There might be a gap between 2% and 5% of the most important information that includes a critical concept. It’s interesting to me to think about how this could be smoothed out (could making it slightly inaccurate make it able to be broken down? It might be easier to teach it wrong, then correct a mistake later as opposed to teaching the whole thing…)
+
+- Compilers + Context - 100% Accuracy = New Machine Learning Model? If we found some ancient tablet, and we decided we were going to analyze it at some point, so we wanted to come up with as many features as possible for it based entirely on the tablet itself and any context… how would we do it? We could take a picture and come up with features from there (a whole field of study itself). We could add the date the picture was taken, the date the tablet appears to have been created, and any other features we wouldn’t know immediately from looking at the tablet but we know right then because of context.
+
+I think this is parallel to what a compiler does except without the context. If we think of the compiler as a statistical model, it makes a prediction with literally one data point with tons of features and 100% accuracy. (Of course, we assume the data is incredibly clean, complete, and follows an extremely comprehensive pattern). But what if we add in context? Could we make it more powerful? Compilers can’t take some shortcuts because they have to be 100% reflective of the code they compile, but what if they only had to be 99.9% accurate? What if we could add, as another parameter, a list of information about the context for the code?
+
+- An algorithm to teach any concept in the most efficient way possible:
+
+So let’s say we’re trying to teach a concept: x, where |x| is the cardinality ("amount") of how complicated x is.
+
+When we teach something, in theory, we want to start with something that is “x” minus some amount of complexity, that happens to have a cardinality as close to 0 as possible.
+
+If we want to avoid teaching someone false information (specifically, oversimplifying something), usually we can reduce the complexity of x at least a little bit, but for a lot of concepts, x can’t be reduced in complexity without either a) blatantly leaving out critical information (i.e. information whose presence is necessary to understanding a bigger piece of information that has the critical information as a component) or just changing the information slightly so it’s still mostly true, but a lot of complexity is cut out.
+
+Let’s say x is composed of y and z, and z is composed of a and b.
+
+So: 
+
+x = y + z
+z  = a + b
+
+Let’s say 
+
+a has 5 complexity, 
+b has 40 complexity, and
+y has 5 complexity,
+
+This means that z has 45 complexity, but without b, it only has 5.
+So if we took x to be just y + z where z just contains a,
+
+Then, in theory, we can explain x using 10 complexity, where as if we included b, it’d be 50.
+
+Only 20% of the work.
+
+The question would be - how critical is b to understanding x? If b is a massive amount of edge cases and a is the general concept, then we could probably get 80% understanding with only 20% of the work.
+
+
 
