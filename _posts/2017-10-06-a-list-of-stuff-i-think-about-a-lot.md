@@ -56,7 +56,7 @@ For example (a Q3 hypergraph):
 
 ![Q3 Hypergraph - Image Not Found](https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/img/q3.png "Q3 Hypergraph")
 
-Can we flatten this such that no edges are laying on another edge? Does this mean it has to be 3D?
+Can we flatten this such that no edge is lying on another edge? Does this mean it has to be 3D?
 - Summarizing an entire textbook or picture into one word or pixel is kind of useless, but how big/small does the summary have to be before it becomes useful?
 
 Imagine summarizing an entire textbook into one word. It’s kind of like shrinking a 500x500px picture to one pixel, right? In the sense that whatever you’re leftover with probably won’t have much relevance to the original object.
