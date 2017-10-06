@@ -11,6 +11,7 @@
 
 % Packages
 
+\usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{extramarks}
 \usepackage{amsmath}
@@ -22,6 +23,8 @@
 \usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{chngcntr}
+
+\graphicspath{ {images/} }
 
 % Libraries
 
@@ -264,4 +267,13 @@ Thus, we conclude that s \lse t
 \epf
 
 }
+
+\begin{figure}[h]
+  \includegraphics{test.jpeg} % [width=\linewidth]
+  \caption{A boat.}
+  \label{fig:boat1}
+\end{figure}
+
+Figure \ref{fig:boat1} shows a boat.
+
 \end{document}

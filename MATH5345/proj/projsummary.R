@@ -30,8 +30,9 @@ carmodel = lm(y~x)
 summary(carmodel)
 
 pokedata <- read.csv("Pokemon.csv", header=T)
-
+dim(pokedata)
 summary(pokedata$HP)
+colnames(pokedata)
 hist(pokedata$HP)
 
 # Multi co-linearity / multilinearity
