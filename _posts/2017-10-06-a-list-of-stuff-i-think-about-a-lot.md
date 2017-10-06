@@ -10,9 +10,9 @@ I expect that, as I learn more, new vocabulary and paths will emerge, but for no
 
 The list goes (neither the lists nor the list of lists are in any particular order of importance or significance):
 
-### General Subjects
-### Concepts / Known Problems
-### Questions / Unknown Concepts
+- General Subjects
+- Concepts / Known Problems
+- Questions / Unknown Concepts
 
 ## General Subjects
 
