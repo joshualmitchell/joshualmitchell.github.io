@@ -44,6 +44,8 @@ In other words, can we order literally anything and everything in such a way tha
 
 This has to depend on the compressor at some point, since it would just be trivial to map all the information to one bit and then compress it to that bit. However, can we define that compressor by some compressible amount of information? Can we then compress that compressor with another compressor? Can we create a system of these in such a way that the last compressor can be compressed by the first (like a snake eating its tail)? What implications does this have for the information?
 - If one proof for a statement is valid and another proof for a statement is valid (e.g. the Pythagorean Theorem has hundreds of known proofs), is it possible to find/generate an exhaustive list of all possible proofs for a certain statement and prove that list is exhaustive?
+
+The way I see this working is by abstracting certain logical statements into more general ones (somehow) and then looking for patterns in the other proofs. It wouldn't solve the exhaustive part but it might bear an idea for what to look for.
 - How do we create information? Is information created or discovered?
 
 In order to generate information randomly, we need categories or previously established groups. For example, generating numbers requires a list of numbers to chose from or a list of numerable properties to pick a permutation of. Generating information doesn't really seem like generating information itself, more like taking our current information and exhausting all possible combinations of its qualities. If the information is the categories itself. How do we generate new categories? Categories for categories. Where does it end, if it does? Where does it begin?
