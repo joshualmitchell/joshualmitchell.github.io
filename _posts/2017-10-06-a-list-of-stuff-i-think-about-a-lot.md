@@ -98,14 +98,15 @@ x = y + z
 
 z = a + b
 
+Hence: x = y + a + b
+
 Let’s say 
 
-a has 5 complexity, 
-b has 40 complexity, and
-y has 5 complexity,
+- a has 5 complexity, 
+- b has 40 complexity, and
+- y has 5 complexity,
 
-This means that z has 45 complexity, but without b, it only has 5.
-So if we just took z to only contain a, we can explain x (y = 5 + z = 5) using 10 complexity, where as if we included b, it’d be 50.
+This means that z has 45 complexity, but without b, it only has 5. So if we just took z to only contain a, we can explain x (y = 5 + z = 5) using 10 complexity, where as if we included b, it’d be 50.
 
 Only 20% of the work.
 
