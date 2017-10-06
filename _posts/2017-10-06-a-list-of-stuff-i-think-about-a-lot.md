@@ -18,9 +18,9 @@ The list goes (neither the lists nor the list of lists are in any particular ord
 
 test
 
-- Formal Languages
+* Formal Languages
 
-- Automata Theory
+* Automata Theory
 
 - Category Theory
 
