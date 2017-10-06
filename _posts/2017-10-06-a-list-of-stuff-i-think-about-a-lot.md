@@ -64,7 +64,7 @@ test
 
 - Is there a way to decide if a graph has to be at least n-dimensional based on its edges and vertices? What practical applications would this have? For example (a Q3 hypergraph):
 
-![alt text](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/img/q3.png "Q3 Hypergraph")
+![Q3 Hypergraph](https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/img/q3.png "Q3 Hypergraph")
 
 Can we flatten this such that no edges are laying on another edge? Does this mean it has to be 3D?
 
