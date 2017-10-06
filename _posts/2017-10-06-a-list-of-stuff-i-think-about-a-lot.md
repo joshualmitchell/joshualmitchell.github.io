@@ -90,18 +90,18 @@ I think this is parallel to what a compiler does except without the context. If 
 
 - An algorithm to teach any concept in the most efficient way possible:
 
-So let’s say we’re trying to teach a concept: x, where |x| is the cardinality ("amount") of how complicated x is.
+So let’s say we’re trying to teach a concept: x
 
-When we teach something, in theory, we want to start with something that is “x” minus some amount of complexity, that happens to have a cardinality as close to 0 as possible.
+When we teach something, in theory, we want to start with something that is “x” minus some amount of complexity, that happens to be as close to 0 complexity as possible.
 
-If we want to avoid teaching someone false information (specifically, oversimplifying something), usually we can reduce the complexity of x at least a little bit, but for a lot of concepts, x can’t be reduced in complexity without either a) blatantly leaving out critical information (i.e. information whose presence is necessary to understanding a bigger piece of information that has the critical information as a component) or just changing the information slightly so it’s still mostly true, but a lot of complexity is cut out.
+If we want to avoid teaching someone false information (specifically: oversimplifying something), usually we can reduce the complexity of x at least a little bit, but for a lot of concepts, x can’t be reduced in complexity without either (a) blatantly leaving out critical information (i.e. information whose presence is necessary to understanding a bigger piece of information that has the critical information as a component) or (b) just changing the information slightly so it’s still mostly true, but a lot of complexity is cut out.
 
 Let’s say x is composed of y and z, and z is composed of a and b.
 
 So: 
 
 x = y + z
-z  = a + b
+z = a + b
 
 Let’s say 
 
@@ -110,9 +110,7 @@ b has 40 complexity, and
 y has 5 complexity,
 
 This means that z has 45 complexity, but without b, it only has 5.
-So if we took x to be just y + z where z just contains a,
-
-Then, in theory, we can explain x using 10 complexity, where as if we included b, it’d be 50.
+So if we just took z to only contain a, we can explain x (y = 5 + z = 5) using 10 complexity, where as if we included b, it’d be 50.
 
 Only 20% of the work.
 
