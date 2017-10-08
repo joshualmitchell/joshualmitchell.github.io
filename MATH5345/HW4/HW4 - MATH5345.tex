@@ -1,0 +1,372 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#4}
+
+% \input{ShortcutsStatistics}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 5345 / Regression Analysis}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Sun}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{\operatorname{+}}}
+\newcommand{\ms}{\mt{\operatorname{-}}}
+
+\newcommand{\ls}{\mt{\operatorname{<}}}
+\newcommand{\gr}{\mt{\operatorname{>}}}
+
+\newcommand{\lse}{\mt{\operatorname{\leq}}}
+\newcommand{\gre}{\mt{\operatorname{\geq}}}
+
+\newcommand{\eql}{ \mt{\operatorname{=}} }
+
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand*\mn[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+
+\newcommand{\exv}[1]{E[#1]}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}			 
+% ----------
+
+\begin{document}
+
+\bsc{Definitions:}{
+
+
+\ssc{Pearson's correlation coefficient:}{
+The covariance of two variables divided by the product of their standard deviations.
+}
+
+\ssc{For a population:} {
+
+\
+
+\uw{p}{x, y} \eql \frc{\cov{X}{Y}}{\uw{\sg}{X}\uw{\sg}{Y}}
+
+where
+
+\cov{X}{Y} \eql \exv{(X \ms \exv{X})(Y \ms \exv{Y})}
+}
+\ssc{For a sample:}{
+
+It's often referred to as the sample correlation coefficient, commonly abbreviated to just "r"
+
+\img{reqn.png}
+
+(Above: the sample covariance divided by the product of the sample standard deviations)
+
+which can be manipulated to get:
+
+\img{reqn2.png}
+}
+
+The correlation coefficient always takes a value between -1 and 1, with 1 or -1 indicating perfect correlation (all points would lie along a straight line in this case).
+\balist
+\item A positive correlation indicates a positive association between the variables (increasing values in one variable correspond to increasing values in the other variable).
+\item A negative correlation indicates a negative association between the variables (increasing values is one variable correspond to decreasing values in the other variable).
+\item A correlation value close to 0 indicates no association between the variables.
+\elist
+
+The square of the correlation coefficient, \uf{R}{2}	, is a useful value in linear regression. This value represents the fraction of the variation in one variable that may be explained by the other variable. Thus, if a correlation of r \eql 0.8 is observed between two variables (say, height and weight, for example), then a linear regression model attempting to explain either variable in terms of the other variable will account for 64\% (\uf{r}{2} \eql \uf{0.8}{2} \eql .64) of the variability in the data.
+
+The correlation coefficient also relates directly to the regression line Y \eql a \ps bX for any two variables, where b \eql r\frc{\uw{s}{x}}{\uw{s}{y}}
+
+I found this info here: 
+
+http://www.stat.yale.edu/Courses/1997-98/101/correl.htm
+
+and on the wikipedia page.
+
+
+}
+\newpage
+
+Future Notes
+
+\newpage
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llllll}
+  \hline
+ & Q1 & Q2 & Q3 & Q4 & Q5 \\ 
+  \hline
+50 Points & 10 & 14 & 8 & 8 & 10 \\ 
+   &  &  &  &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+\bsc{Question 1}{
+
+For multiple regression
+\eqn{y \eql X\beta \ps \ep, \txt{ \ep\tl N(0, \ssq)}}
+Derive or show that
+
+\balist
+\item \bth \eql \uf{(X\pr X)}{-1}X\pr Y
+\item \exv{\bth} \eql \bta
+\item \vrn{\bth} \eql \ssq\uf{(X\pr X)}{-1}
+\item \exv{\yh} \eql X\bta
+\item \vrn{\yh} \eql \ssq H, where H is the hat matrix and H \eql X\uf{(X\pr X)}{-1}X\pr
+\elist
+
+}
+
+\bsc{Question 2 (problems 3.1 and 3.3 on page 121)}{
+\balist
+\item Fit a multiple linear regression model relating the number of games won to the team's passing yardage (\uw{x}{2}), the percentage of rushing plays (\uw{x}{7}), and the opponents' yards rushing (\uw{x}{8}).
+\item Construct the analysis-of-variance table and test for significance of regression.
+\item Calculate t statistics for testing the hypotheses \uw{H}{0}: \uw{\bta}{2} \eql 0, \uw{H}{0}: \uw{\bta}{7} \eql 0, \uw{H}{0}: \uw{\bta}{8} \eql 0. What conclusions can you draw about the roles the variables \uw{x}{2}, \uw{x}{7}, and \uw{x}{8} play in the model?
+\item Calculate \uf{R}{2} and \uw{\uf{R}{2}}{adj} for this model.
+\item Using the partial F test, determine the contribution of \uw{x}{7} to the model. How is this partial F statistic related to the t test for \uw{\bta}{7} calculated in part c above?
+\item Find a 95\% CI on \uw{\bta}{7}. (This is part a of problem 3.3, and the following one is part b of problem 3.3.)
+\item Find a 95\% CI on the mean number of games won by a team when \uw{x}{2} \eql 2300, \uw{x}{7} \eql 56.0, and \uw{x}{8} \eql 2100.
+\elist
+
+
+Note: For c, d, f, and g, please show two versions of your results: (1) obtained using R code and (2) based on your manual calculation (please show detailed step for your manual calculation. You can use the partial output from the lm or ANOVA, e.g., the \uw{SS}{reg}, \uw{SS}{res}, the estimated value of \bta and its variance or standard deviation).
+
+}
+
+\bsc{Question 3 (Exercise 3.4 on page 122}{
+Reconsider the National Football League data from Problem 3.1. Fit a model to this data using only \uw{x}{7} and \uw{x}{8} as the regressors.
+\balist
+\item Test for significance of the regression.
+\item Calculate \uf{R}{2} and \uw{\uf{R}{2}}{adj}. How do these quantities compare to the values computed for the model in problem 3.1, which included an additional regressor (\uf{x}{2})?
+\item Calculate a 95\% CI on \uw{\bta}{7}. Also, find a 95\% CI on the mean number of games won by a team when \uw{x}{7} \eql 56.0 and \uw{x}{8} \eql 2100. Compare the lengths of these CIs to the lengths of the corresponding CIs from problem 3.3 (that is, the above part f and g in question 2)
+\item What conclusions can you draw from this problem about the consequences of omitting an important regressor from a model?
+\elist
+
+}
+
+\bsc{Question 4 (exercise 4.2 on page 165}{
+Consider the multiple regression model fit to the National Football League (NFL) team performance data in problem 3.1.
+
+\balist
+\item Construct a normal probability plot of the residuals. Does there seem to be any problem with the normality assumption?
+\item Construct and interpret a plot of the residuals versus the predicted response.
+\item Construct plots of the residuals versus each of the regressor variables. Do these plots imply that the regressor is correctly specified?
+\item Construct the partial regression plots for this model. Compare the plots with the plots of residuals versus regressors from part c above. Discuss the type of information provided by these plots.
+\elist
+}
+
+\bsc{Question 5}{
+Show that the hat matrix H \eql X\uf{(X\pr X)}{-1}X\pr and I \ms H (where I is the identity matrix) are symmetric and idempotent. That is, please show:
+\balist
+\item H\pr \eql H and HH \eql H (H\pr means the transpose of H, HH means H * H)
+\item (I \ms H)\pr \eql I \ms H and (I \ms H)(I \ms H) \eql I \ms H
+\elist
+
+Hint: A\eql X\pr X is a symmetric matrix, and for a symmetric matrix, \uf{(A\pr)}{-1} \eql (\uf{A}{-1})\pr. You can use this property directly in your proof of \bpth{a} and \bpth{b}. If you are interested in the proof of this property, you may check the following web page:
+
+https://math.stackexchange.com/questions/325082/is-the-inverse-of-a-symmetric-matrix-also-symmetric
+
+}
+\end{document}
