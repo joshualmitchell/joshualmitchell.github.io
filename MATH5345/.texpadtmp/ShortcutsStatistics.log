@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdftex 2017.5.23)  8 OCT 2017 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdftex 2017.5.23)  9 OCT 2017 18:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -807,116 +807,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:85: Undefined control sequence.
-l.85 \newcommand
-                {\E}{\mathrm{E}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:85: Undefined control sequence.
-l.85 \newcommand{\E
-                   }{\mathrm{E}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:85: Undefined control sequence.
-l.85 \newcommand{\E}{\mathrm
-                            {E}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ./ShortcutsStatistics.tex:86: Undefined control sequence.
 l.86 \newcommand
-                {\Var}{\mathrm{Var}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:86: Undefined control sequence.
-l.86 \newcommand{\Var
-                     }{\mathrm{Var}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:86: Undefined control sequence.
-l.86 \newcommand{\Var}{\mathrm
-                              {Var}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:87: Undefined control sequence.
-l.87 \newcommand
-                {\Cov}{\mathrm{Cov}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:87: Undefined control sequence.
-l.87 \newcommand{\Cov
-                     }{\mathrm{Cov}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:87: Undefined control sequence.
-l.87 \newcommand{\Cov}{\mathrm
-                              {Cov}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:88: Undefined control sequence.
-l.88 \newcommand
-                {\Bias}{\mathrm{Bias}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:88: Undefined control sequence.
-l.88 \newcommand{\Bias
-                      }{\mathrm{Bias}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:88: Undefined control sequence.
-l.88 \newcommand{\Bias}{\mathrm
-                               {Bias}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsStatistics.tex:92: Undefined control sequence.
-l.92 \newcommand
                 {\mt}[1]{\ensuremath{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -924,8 +816,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:92: Undefined control sequence.
-l.92 \newcommand{\mt
+./ShortcutsStatistics.tex:86: Undefined control sequence.
+l.86 \newcommand{\mt
                     }[1]{\ensuremath{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -933,8 +825,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:92: Undefined control sequence.
-l.92 \newcommand{\mt}[1]{\ensuremath
+./ShortcutsStatistics.tex:86: Undefined control sequence.
+l.86 \newcommand{\mt}[1]{\ensuremath
                                     {#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -942,16 +834,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:92: You can't use `macro parameter character #' in horizontal mode.
-l.92 \newcommand{\mt}[1]{\ensuremath{#
+./ShortcutsStatistics.tex:86: You can't use `macro parameter character #' in horizontal mode.
+l.86 \newcommand{\mt}[1]{\ensuremath{#
                                       1}}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsStatistics.tex:93: Undefined control sequence.
-l.93 \newcommand
+./ShortcutsStatistics.tex:87: Undefined control sequence.
+l.87 \newcommand
                 {\nm}[1]{\textrm{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -959,8 +851,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:93: Undefined control sequence.
-l.93 \newcommand{\nm
+./ShortcutsStatistics.tex:87: Undefined control sequence.
+l.87 \newcommand{\nm
                     }[1]{\textrm{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -968,8 +860,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:93: Undefined control sequence.
-l.93 \newcommand{\nm}[1]{\textrm
+./ShortcutsStatistics.tex:87: Undefined control sequence.
+l.87 \newcommand{\nm}[1]{\textrm
                                 {#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -977,16 +869,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:93: You can't use `macro parameter character #' in horizontal mode.
-l.93 \newcommand{\nm}[1]{\textrm{#
+./ShortcutsStatistics.tex:87: You can't use `macro parameter character #' in horizontal mode.
+l.87 \newcommand{\nm}[1]{\textrm{#
                                   1}}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsStatistics.tex:95: Undefined control sequence.
-l.95 \newcommand
+./ShortcutsStatistics.tex:89: Undefined control sequence.
+l.89 \newcommand
                 \bsc[2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -994,8 +886,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:95: Undefined control sequence.
-l.95 \newcommand\bsc
+./ShortcutsStatistics.tex:89: Undefined control sequence.
+l.89 \newcommand\bsc
                     [2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1003,8 +895,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:95: Undefined control sequence.
-l.95 \newcommand\bsc[2][\DefaultOpt
+./ShortcutsStatistics.tex:89: Undefined control sequence.
+l.89 \newcommand\bsc[2][\DefaultOpt
                                    ]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1012,17 +904,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:96: Illegal parameter number in definition of \DefaultOpt.
+./ShortcutsStatistics.tex:90: Illegal parameter number in definition of \DefaultOpt.
 <to be read again> 
                    2
-l.96   \def\DefaultOpt{#2
+l.90   \def\DefaultOpt{#2
                          }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ShortcutsStatistics.tex:97: Undefined control sequence.
-l.97   \section
+./ShortcutsStatistics.tex:91: Undefined control sequence.
+l.91   \section
                [#1]{#2}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1030,24 +922,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:97: You can't use `macro parameter character #' in horizontal mode.
-l.97   \section[#
+./ShortcutsStatistics.tex:91: You can't use `macro parameter character #' in horizontal mode.
+l.91   \section[#
                  1]{#2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsStatistics.tex:97: You can't use `macro parameter character #' in horizontal mode.
-l.97   \section[#1]{#
+./ShortcutsStatistics.tex:91: You can't use `macro parameter character #' in horizontal mode.
+l.91   \section[#1]{#
                      2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsStatistics.tex:99: Undefined control sequence.
-l.99 \newcommand
+./ShortcutsStatistics.tex:93: Undefined control sequence.
+l.93 \newcommand
                 \ssc[2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1055,8 +947,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:99: Undefined control sequence.
-l.99 \newcommand\ssc
+./ShortcutsStatistics.tex:93: Undefined control sequence.
+l.93 \newcommand\ssc
                     [2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1064,8 +956,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:99: Undefined control sequence.
-l.99 \newcommand\ssc[2][\DefaultOpt
+./ShortcutsStatistics.tex:93: Undefined control sequence.
+l.93 \newcommand\ssc[2][\DefaultOpt
                                    ]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1073,105 +965,105 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:100: Illegal parameter number in definition of \DefaultOpt.
+./ShortcutsStatistics.tex:94: Illegal parameter number in definition of \DefaultOpt.
 <to be read again> 
                    2
-l.100   \def\DefaultOpt{#2
-                          }%
+l.94   \def\DefaultOpt{#2
+                         }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ShortcutsStatistics.tex:101: Undefined control sequence.
-l.101   \subsection
-                   [#1]{#2}%
+./ShortcutsStatistics.tex:95: Undefined control sequence.
+l.95   \subsection
+                  [#1]{#2}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:101: You can't use `macro parameter character #' in horizontal mode.
-l.101   \subsection[#
-                     1]{#2}%
+./ShortcutsStatistics.tex:95: You can't use `macro parameter character #' in horizontal mode.
+l.95   \subsection[#
+                    1]{#2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsStatistics.tex:101: You can't use `macro parameter character #' in horizontal mode.
-l.101   \subsection[#1]{#
-                         2}%
+./ShortcutsStatistics.tex:95: You can't use `macro parameter character #' in horizontal mode.
+l.95   \subsection[#1]{#
+                        2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsStatistics.tex:103: Undefined control sequence.
-l.103 \newcommand
-                 {\bgpf}{\begin{proof} $ $\newline}
+./ShortcutsStatistics.tex:97: Undefined control sequence.
+l.97 \newcommand
+                {\bgpf}{\begin{proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:103: Undefined control sequence.
-l.103 \newcommand{\bgpf
-                       }{\begin{proof} $ $\newline}
+./ShortcutsStatistics.tex:97: Undefined control sequence.
+l.97 \newcommand{\bgpf
+                      }{\begin{proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:103: Undefined control sequence.
-l.103 \newcommand{\bgpf}{\begin
-                               {proof} $ $\newline}
+./ShortcutsStatistics.tex:97: Undefined control sequence.
+l.97 \newcommand{\bgpf}{\begin
+                              {proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:103: Undefined control sequence.
-l.103 \newcommand{\bgpf}{\begin{proof} $ $\newline
-                                                  }
+./ShortcutsStatistics.tex:97: Undefined control sequence.
+l.97 \newcommand{\bgpf}{\begin{proof} $ $\newline
+                                                 }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:105: Undefined control sequence.
-l.105 \newcommand
-                 {\bgeq}{\begin{equation*}}
+./ShortcutsStatistics.tex:99: Undefined control sequence.
+l.99 \newcommand
+                {\bgeq}{\begin{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:105: Undefined control sequence.
-l.105 \newcommand{\bgeq
-                       }{\begin{equation*}}
+./ShortcutsStatistics.tex:99: Undefined control sequence.
+l.99 \newcommand{\bgeq
+                      }{\begin{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:105: Undefined control sequence.
-l.105 \newcommand{\bgeq}{\begin
-                               {equation*}}
+./ShortcutsStatistics.tex:99: Undefined control sequence.
+l.99 \newcommand{\bgeq}{\begin
+                              {equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:106: Undefined control sequence.
-l.106 \newcommand
+./ShortcutsStatistics.tex:100: Undefined control sequence.
+l.100 \newcommand
                  {\eeq}{\end{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1179,8 +1071,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsStatistics.tex:106: Undefined control sequence.
-l.106 \newcommand{\eeq
+./ShortcutsStatistics.tex:100: Undefined control sequence.
+l.100 \newcommand{\eeq
                       }{\end{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1191,11 +1083,11 @@ and I'll forget about whatever was undefined.
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] )
 (\end occurred inside a group at level 3)
 
-### simple group (level 3) entered at line 106 ({)
+### simple group (level 3) entered at line 100 ({)
 ### simple group (level 2) entered at line 78 ({)
 ### simple group (level 1) entered at line 78 ({)
 ### bottom level</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on /Users/jm/joshualmitchell.github.io/MATH5345/.texpadtmp/ShortcutsStatistics.pdf (1 page, 28888 bytes).
+Output written on /Users/jm/joshualmitchell.github.io/MATH5345/.texpadtmp/ShortcutsStatistics.pdf (1 page, 28102 bytes).
 PDF statistics:
  16 PDF objects out of 1000 (max. 8388607)
  10 compressed objects within 1 object stream

@@ -1,0 +1,453 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#4}
+
+% \input{ShortcutsStatistics}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 5345 / Regression Analysis}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Sun}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{\operatorname{+}} }
+\newcommand{\ms}{\mt{\operatorname{-}} }
+
+\newcommand{\ls}{\mt{\operatorname{<}} }
+\newcommand{\gr}{\mt{\operatorname{>}} }
+
+\newcommand{\lse}{\mt{\operatorname{\leq}} }
+\newcommand{\gre}{\mt{\operatorname{\geq}} }
+
+\newcommand{\eql}{ \mt{\operatorname{=}} }
+
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand{\mn}[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+\newcommand{\exv}[1]{E[#1]}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\gv}{ \mt{|} }
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}	
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}		 
+% ----------
+
+\begin{document}
+
+\bsc{Definitions:}{
+
+
+\ssc{Pearson's correlation coefficient:}{
+The covariance of two variables divided by the product of their standard deviations.
+}
+
+\ssc{For a population:} {
+
+\
+
+\uw{p}{x, y} \eql \frc{\cov{X}{Y}}{\uw{\sg}{X}\uw{\sg}{Y}}
+
+where
+
+\cov{X}{Y} \eql \exv{(X \ms \exv{X})(Y \ms \exv{Y})}
+}
+\ssc{For a sample:}{
+
+It's often referred to as the sample correlation coefficient, commonly abbreviated to just "r"
+
+\img{reqn.png}
+
+(Above: the sample covariance divided by the product of the sample standard deviations)
+
+which can be manipulated to get:
+
+\img{reqn2.png}
+}
+
+The correlation coefficient always takes a value between -1 and 1, with 1 or -1 indicating perfect correlation (all points would lie along a straight line in this case).
+\balist
+\item A positive correlation indicates a positive association between the variables (increasing values in one variable correspond to increasing values in the other variable).
+\item A negative correlation indicates a negative association between the variables (increasing values is one variable correspond to decreasing values in the other variable).
+\item A correlation value close to 0 indicates no association between the variables.
+\elist
+
+The square of the correlation coefficient, \uf{R}{2}	, is a useful value in linear regression. This value represents the fraction of the variation in one variable that may be explained by the other variable. Thus, if a correlation of r \eql 0.8 is observed between two variables (say, height and weight, for example), then a linear regression model attempting to explain either variable in terms of the other variable will account for 64\% (\uf{r}{2} \eql \uf{0.8}{2} \eql .64) of the variability in the data.
+
+The correlation coefficient also relates directly to the regression line Y \eql a \ps bX for any two variables, where b \eql r\frc{\uw{s}{x}}{\uw{s}{y}}
+
+I found this info here: 
+
+http://www.stat.yale.edu/Courses/1997-98/101/correl.htm
+
+and on the wikipedia page.
+
+
+}
+\newpage
+
+\bsc{Regression Analysis definition}{A statistical technique for modeling and investigating the relationship between variables.}
+
+The basic model is:
+\eqn{y \eql \uw{\bta}{0} \ps \uw{\bta}{1}x \ps \ep}
+
+The \textbf{response variable}, y, is the variable you're analyzing to see how much it's influenced by the other variable(s).
+
+The \textbf{regressor variable(s)}, x, is (are) the variable(s) you're estimating regression coefficients for in order to predict future response variables.
+
+The \textbf{regression coefficients}, \uw{\bta}{0}, \uw{\bta}{1}, ... are the coefficients for each regressor variable (and a slope, usually) that best minimize the random error ( \ep) for the model.
+
+The \textbf{random error} term, \ep, is the random variable that accounts for the failure of the model to fit the data exactly. For example, for a particular (\uw{x}{i}, \uw{y}{i}), the \uw{\ep}{i} is
+\eqn{\uw{y}{i} \eql \uw{\bta}{0} \ps \uw{\bta}{1}\uw{x}{i} \ps \uw{\ep}{i}}
+
+where
+
+\ep \tl N(0, \ssq)
+
+The expected values of each of these quantities are:
+
+
+
+\exv{y\gv x} \eql \uw{\mt{\mu}}{y\gv x} \eql \exv{\uw{\bta}{0} \ps \uw{\bta}{1}x \ps \ep} \eql \exv{\uw{\bta}{0}} + \exv{\uw{\bta}{1}x} + \exv{ \ep} \eql \uw{\bta}{0} \ps \uw{\bta}{1}x \ps 0
+
+\vrn{y\gv x} \eql \uw{\ssq}{y\gv x} \eql \vrn{\uw{\bta}{0} \ps \uw{\bta}{1}x \ps \ep} \eql \vrn{\uw{\bta}{0}} \ps \vrn{\uw{\bta}{1}x} \ps \vrn{ \ep} \eql 0 \ps 0 \ps \ssq \eql \ssq \
+
+\
+
+\textbf{What're the 3 key assumptions?}
+
+\balist
+\item Uncorrelated Errors (what does this mean specifically?)
+\item Constant Variance (\textbf{between what?})
+\item and one other...
+\elist
+
+\newpage 
+\ssc{Constructing a Regression model:}{
+The \bta's must all be estimated.
+
+For a sample regression model:
+
+\eqn{\uw{y}{i} = \uw{\beta}{0} \ps \uw{\bta}{1}\uw{x}{i, 1} + ... + \uw{\bta}{i, k}\uw{x}{i, k} \ps \uw{\ep}{i} \txt{   for i \eql 0, 1, 2 ... n}}
+
+\textbf{Least squares estimation} seeks to minimize the sum of the squares of the differences between the observed responses (the \uw{y}{i}'s) and the straight line.
+}
+
+\eqn{\txt{S(\uw{\bta}{0}, \uw{\bta}{1}, ...)} = \sum \uw{\epsilon}{i}^2 = \sum [y - (\uw{\beta}{0} \ps \uw{\bta}{1}\uw{x}{i, 1} + ...)]^2}
+
+When you take the partial derivative of each \bta, you get k \ps 1 equations. Since you have k \ps 1 unknowns, you can do some linear algebra to solve for each \bta. In the case of simple linear regression:
+
+\eqn{\uw{\bth}{0} = \mn{y} - \uw{\bth}{1}x}
+\eqn{\uw{\bth}{1} = \frac{\sum_{i = 1}^n y_{i}x_{i} - \frac{(\sum_{i = 1}^n y_i)\sum_{i = 1}^n x_i)}{n}}{\sum_{i = 1}^n x_i^2 - \frac{(\sum_{i = 1}^n x_i)^2}{n}}}
+
+Put another way:
+
+\eqn{\uw{S}{xx} = \sum_{i = 1}^n(x_i - \mn{x})^2}
+\eqn{\uw{S}{xy} = \sum_{i = 1}^n(x_i - \mn{x})y_i}
+\eqn{\uw{\bth}{1} = \frac{\uw{S}{xy}}{\uw{S}{xx}}}
+
+\newpage
+
+\ssc{Residuals}{
+
+The \textbf{residuals} of a linear regression model are the errors for each sample which will later be used to determine the adequacy of the model.
+\eqn{\uw{\ep}{i} = y_i - \bh{y}_i}
+
+}
+\ssc{Some properties of the Least Squares Estimators (2.2.2)}{
+
+The ordinary least-squares (OLS) estimator of the
+slope (\uw{\bth}{1}) is a linear combination of the observations,
+\uw{y}{i}:
+\eqn{\uw{\bth}{1} = \frac{\uw{S}{xy}}{\uw{S}{xx}} = \sum_{i = 1}^n c_i y_i}
+where
+\eqn{c_i = \frac{(x_i - \mn{x})}{S_{xx}}\txt{,\tab}\sum_{i = 1}^n c_i = 0\txt{,\tab}\sum_{i = 1}^n c_i^2 = \frac{1}{S_{xx}}\txt{,\tab}\sum_{i = 1}^n c_{i}x_{i} = 1}
+The last 3 are useful in showing expected value and variance properties:
+
+\eqn{\exv{\uw{\bth}{1}} = \uw{\bta}{1}\tab \exv{\uw{\bth}{0}} = \uw{\bta}{0}}
+
+\eqn{\vrn{\uw{\bth}{1}} = \frac{\ssq}{\uw{S}{xx}}\tab \vrn{\uw{\bth}{0}} = \ssq(\frac{1}{n} + \frac{\mn{x}^2}{\uw{S}{xx}})}
+
+The OLS Estimators are the \textbf{Best Linear Unbiased Estimators (BLUE)} by the \textbf{Gauss-Markov Theorem}, which states that:
+
+In a linear regression model in which the errors 
+
+\balist
+\item have expectation zero,
+\item are uncorrelated, and
+\item have equal variances,
+\elist 
+the best linear unbiased estimator (BLUE) of the coefficients is given by the ordinary least squares (OLS) estimator. Here, "best" means the estimator has the lowest variance as compared to other unbiased, linear estimators.
+
+The errors do not need to be normal, nor do they need to be
+independent and identically distributed (only uncorrelated with
+mean zero and \textbf{homoscedastic} (i.e. all random variables have the same finite variance)).
+
+More useful properties of the least squares fit:
+
+\eqn{\sum_{i = 1}^n y_i = \sum_{i = 1}^n \bh{y}_i,\tab \sum_{i = 1}^n (y_i - \bh{y}_i) = \sum_{i = 1}^n \ep_i = 0,\tab \sum_{i = 1}^n \ep_{i}x_i = \sum_{i = 1}^n \ep_{i}\bh{y}_i = 0}
+The regression line also always passes through the centroid (\mn{y}, \mn{x}) of the data.
+}
+
+\ssc{Estimation of \ssq (2.2.3)}{
+
+The \textbf{residual (error) sum of squares} (\textbf{\uw{SS}{res}}), is defined to be:
+\eqn{\uw{SS}{res} = \sumin{(y_i - \bh{y}_i)^2} = \sumin{\ep^2_i}}
+
+The \textbf{total sum of squares} is defined to be
+\eqn{\uw{SS}{total} = \uw{SS}{model} + \uw{SS}{res}}
+
+To estimate \ssq, we use
+\eqn{\bh{\ssq} = \frac{\uw{SS}{res}}{n - 2} = \uw{MS}{res}}
+}
+The quantity n \ms 2 is the number of \textbf{degrees of freedom} (df) for the residual sum of squares. The df \eql n \ms 2 because... \textbf{***}
+
+Since this estimate depends on the model and \uw{SS}{res}, any model error assumption violations could impact this estimate as well.
+
+\ssc{Hypothesis Testing on the Slope and Intercept}{
+Three assumptions needed to apply procedures such as hypothesis testing and confidence intervals. Model errors, \uw{\ep}{i}, are
+\balist 
+\item normally distributed,
+\item independently distributed, and
+\item have constant variance
+\elist
+i.e. \uw{\ep}{i} \tl N(0, \ssq)
+
+Let's say we want to test if the slope (\uw{\bth}{1}) is \textbf{NOT} equal to some constant, c.
+
+This means we'd want to disprove the null hypothesis, \uw{H}{0}, that \uw{\bth}{1} \eql c.
+
+At this point, we'd need to calculate the \textbf{standard error} (aka standard deviation aka $\sqrt{\vrn{\ssq}}$) of \uw{\bth}{1}. This is defined like so:
+\eqn{\txt{se}(\uw{\bth}{1}) = \sqrt{\frac{MS_{res}}{S_{xx}}}}
+
+Our test statistic will then be:
+\eqn{\uw{t}{0} = \frac{\uw{\bth}{1} - c}{\txt{se}(\uw{\bth}{1})}}
+
+We reject \uw{H}{0} (i.e. conclude there is sufficient evidence to believe that \uw{H}{a} is true) if:
+\eqn{\av{\uw{t}{0}} > \uw{t}{\frc{\afa}{2}, n - 2}}
+We can also use the p-value approach here as well.
+
+To test if the intercept (\uw{\bth}{0}) is \textbf{NOT} equal to some constant, c, we would do the same procedure except use \uw{\bth}{0}'s standard error:
+\eqn{\txt{se}(\uw{\bth}{0}) = \sqrt{MS_{res}(\frac{1}{n} + \frac{\mn{x}^2}{S_{xx}})}}
+}
+\ssc{Testing the significance of the regression (2.3.2)}{
+\uw{H}{0}: \uw{\bta}{1} \eql 0,\tab \uw{H}{a}: \uw{\bta}{1} $\neq$ 0
+
+This tests the significance of regression; that is, is there a linear relationship between the response and the regressor?
+
+
+Failing to reject \uw{H}{0}, implies that there is no linear relationship between y and x.
+
+There is also an \textbf{analysis of variance} (ANOVA) approach.
+
+\uw{SS}{T} (or \uw{SS}{Total}) \eql \uw{SS}{\txt{Model or Regression or R}} \ps \uw{SS}{\txt{Residual}}, so:
+\eqn{SS_T = SS_R + SS_{Res}, \tab \txt{where \uw{SS}{R} }\eql \uw{\bth}{1}S_{xy}}
+\eqn{df_T = df_R + df_{Res} \lra n - 1 = 1 + (n - 2)}
+}
+\newpage
+
+Mean Squares:
+
+\uw{MS}{R} \eql \frc{\uw{SS}{R}}{1}
+
+\uw{MS}{Res} \eql \frc{\uw{SS}{Res}}{n - 2}
+\end{document}

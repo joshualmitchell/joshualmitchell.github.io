@@ -81,12 +81,6 @@
 % Alias for the Solution section header
 \newcommand{\solution}{\textbf{\large Solution}}
 
-% Probability commands: Expectation, Variance, Covariance, Bias
-\newcommand{\E}{\mathrm{E}}
-\newcommand{\Var}{\mathrm{Var}}
-\newcommand{\Cov}{\mathrm{Cov}}
-\newcommand{\Bias}{\mathrm{Bias}}
-
 % Formatting commands:
 
 \newcommand{\mt}[1]{\ensuremath{#1}}
@@ -165,18 +159,18 @@
 \newcommand{\prn}[1]{(#1)}
 \newcommand{\bk}[1]{\{#1\}}
 
-\newcommand{\ps}{\mt{+} }
-\newcommand{\ms}{\mt{-} }
+\newcommand{\ps}{\mt{\operatorname{+}} }
+\newcommand{\ms}{\mt{\operatorname{-}} }
 
-\newcommand{\ls}{\mt{<} }
-\newcommand{\gr}{\mt{>} }
+\newcommand{\ls}{\mt{\operatorname{<}} }
+\newcommand{\gr}{\mt{\operatorname{>}} }
 
-\newcommand{\lse}{\mt{\leq} }
-\newcommand{\gre}{\mt{\geq} }
+\newcommand{\lse}{\mt{\operatorname{\leq}} }
+\newcommand{\gre}{\mt{\operatorname{\geq}} }
 
-\newcommand{\eql}{\mt{=} }
+\newcommand{\eql}{ \mt{\operatorname{=}} }
 
-\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
 \newcommand{\uw}[2]{#1\mt{_{#2}}}
 \newcommand{\uf}[2]{#1\mt{^{#2}}}
 \newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
@@ -199,5 +193,32 @@
      							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
-     							 
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand{\mn}[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+\newcommand{\exv}[1]{E[#1]}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\gv}{ \mt{|} }
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}	
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}		 
 % ----------
