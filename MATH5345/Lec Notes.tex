@@ -450,4 +450,83 @@ Mean Squares:
 \uw{MS}{R} \eql \frc{\uw{SS}{R}}{1}
 
 \uw{MS}{Res} \eql \frc{\uw{SS}{Res}}{n - 2}
+
+10/8/17
+
+for
+
+y \eql x\bta \ps \ep,
+
+\ep \tl N(0, \ssq I)
+
+Mid-term: Oct 19, Thursday
+Covers up to ch 4, some parts of ch 5 (depending)
+
+- linear
+- constant variance
+- independent
+- Normal
+- E(\ep) \eql 0
+
+4.4 Outliers:
+
+- An outlier si an observation considerably different from the others
+- Formal tests for outliers
+- Points with large residuals may be outliers
+- Impact can be assessed by removing the points and refitting
+- How should they be treated?
+
+4.5 Lack of Fit of the Regression Model
+
+A formal test for lack of fit:
+
+Assumes
+- Normality, independence, constant variance assumptions have been met
+- Only the first-order or straight line model is in doubt
+
+Requires
+- replication of y for at least one level of x
+
+With replication, we can obtain a "model-independent" estimate of \ssq
+
+Say there are \uw{n}{i} observations of the response at the ith level of the regressor \uw{x}{i}, i \eql 1, 2, ... m
+
+In other words, for a given x, you might have i occurences of it.
+
+\uw{y}{ij} denotes the jth observation on the response at \uw{x}{i}, j \eql 1, 2, ... \uw{n}{i}
+
+Total number of observations is n \eql $\sum_{i = 1}^m$ \uw{n}{i}
+
+i.e. if you have 3 occurances of x \eql 3.3, and 3.3 is the nth x, then \uw{n}{3} is 3.
+
+\uw{SS}{total} (n \ms 1) \eql \uw{SS}{regr} (1) \ps \uw{SS}{resid} (n \ms 2)
+
+\uw{SS}{resid} \eql \uw{SS}{pE} \ps \uw{SS}{LOF}
+
+\uw{SS}{pE} \eql (\uw{y}{ij} \ms \uw{\mn{y}}{i})$^2$
+
+\uw{SS}{LOF} \eql (\uw{\mn{y}}{i} \ms \uw{$\bh{y}$}{ij})$^2$
+
+\uw{SS}{res} \eql (\uw{y}{ij} \ms \uw{$\bh{y}$}{ij})$^2$
+
+\eqn{\sum_{i = 1}^m\sum_{j = 1}^{n_i} (y_{ij} - \hat y_{ij})^2 = \sum_{i = 1}^m\sum_{j = 1}^{n_i} (y_{ij} - \mn{y}_{i})^2 + \sum_{i = 1}^m\sum_{j = 1}^{n_i} (\mn{y}_{i} - \hat y_{ij})^2}
+
+\eqn{(n - 2) = (n - m) + (m - 2)}
+
+\eqn{SS_{res} = SS_{PE} + SS_{LOF}}
+
+How small is small?
+
+Residual plots:
+
+\uw{e}{i} vs $\hat y_i$
+
+\uw{x}{i} vs $\hat e_i$
+
+something vs normal 
+
+If you have 10 distinct data points, then m is 10. If you have 17 data points total (not necessarily distinct) then n is 17.
+
+In R, you isntall the package alr3, and do ?pureErrorAnova
+
 \end{document}

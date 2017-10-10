@@ -245,13 +245,6 @@
 \end{tabular}
 \end{table}
 \bsc{Question 1}{
-\begin{equation}
-\begin{split}
-A & = (y - X\bta)\pr(y - X\bta) \\
-& = y\pr y - \bta\pr X\pr y - y\pr X\bta + \bta\pr X\pr X\bta
-\end{split}
-\end{equation}
-
 For multiple regression
 \eqn{y \eql X\beta \ps \ep, \txt{ \ep\tl N(0, \ssq)}}
 \eqn{\underset{n\times 1}{y}\tab\underset{n\times p}{X}\tab\underset{p\times 1}{\bta}\tab\underset{n\times 1}{\ep}}
@@ -319,9 +312,8 @@ Derive or show that
 		\splt{
 			\vrn{\yh} & = \vrn{\uw{\bth}{0} + \uw{\bth}{1}\uw{X}{1} + \uw{\bth}{2}\uw{X}{2} ...} \\
 			& = \vrn{X\bth} \\
-			& = X\pr \vrn{\bth}X \txt{\textbf{ *** correct?}}\\
-			& = X\pr \ssq\uf{(X\pr X)}{-1}X	\\
-			& = \ssq X\pr\uf{(X\pr X)}{-1}X \\
+			& = X \vrn{\bth}X\pr \\
+			& = X\ssq\uf{(X\pr X)}{-1}X\pr	\\
 			& = \ssq X\uf{(X\pr X)}{-1}X\pr \\
 			& = \ssq H
 		}
@@ -376,7 +368,7 @@ To test for significance of regression, we establish \uw{H}{0} and \uw{H}{a}:
 
 \uw{H}{a}: \uw{\bta}{j} $\neq$ 0 for at least one of j \eql 2, 7, 8
 
-We reject \uw{H}{0} if \uw{F}{0, j} \gr \uw{F}{0.05 \eql \afa, \tab 9,\tab 18 \eql (28 - 9 - 1)} for any \uw{F}{0, j}
+We reject \uw{H}{0} if \uw{F}{0, j} \gr \uw{F}{0.05 \eql \afa, \tab 9,\tab 18 \eql (28 - 9 - 1)} for any \uw{F}{0, j} \textbf{*** 28\ms9\ms1 or 28\ms3\ms1?}
 
 \uw{F}{0, 2} \eql 26.17 \gr 2.4563
 
@@ -388,11 +380,152 @@ So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relat
 
 \item Calculate t statistics for testing the hypotheses \uw{H}{0}: \uw{\bta}{2} \eql 0, \uw{H}{0}: \uw{\bta}{7} \eql 0, \uw{H}{0}: \uw{\bta}{8} \eql 0. What conclusions can you draw about the roles the variables \uw{x}{2}, \uw{x}{7}, and \uw{x}{8} play in the model?
 
-	Hi
+	\bpth{1} R:
+	\bilist
+	\item \uw{H}{0}: \uw{\bta}{2} \eql 0
+		
+		\uw{\bta}{2} \eql 0.003598, t \eql 5.177, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064 \lra \av{5.117} \gr 2.064 \rar Reject \uw{H}{0}
+	\item \uw{H}{0}: \uw{\bta}{7} \eql 0
+		
+		\uw{\bta}{7} \eql 0.193960, t \eql 2.198, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064 \lra \av{2.198} \gr 2.064 \rar Reject \uw{H}{0}
+	\item \uw{H}{0}: \uw{\bta}{8} \eql 0
+		
+		\uw{\bta}{8} \eql -0.004816, t \eql -3.771, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064 \lra \av{-3.771} \gr 2.064 \rar Reject \uw{H}{0}
+	\elist
+	\bpth{2} Manual:
+	\bilist
+	\item \uw{H}{0}: \uw{\bta}{2} \eql 0
+		
+		\uw{\bta}{2} \eql 0.003598, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064
+		\eqn{
+			\splt{
+				t & = \frac{\uw{\bth}{2} - 0}{se(\uw{\bth}{2})} \\
+				 & = \frac{0.003598}{0.000695} \\
+				 & = 5.177
+			}
+		}
+		
+		\av{5.117} \gr 2.064 \rar Reject \uw{H}{0}
+	\item \uw{H}{0}: \uw{\bta}{7} \eql 0
+		
+		\uw{\bta}{7} \eql 0.193960, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064
+		\eqn{
+			\splt{
+				t & = \frac{\uw{\bth}{7} - 0}{se(\uw{\bth}{7})} \\
+				 & = \frac{0.193960}{0.088233} \\
+				 & = 2.198
+			}
+		}
+		
+		\av{2.198} \gr 2.064 \rar Reject \uw{H}{0}
+	\item \uw{H}{0}: \uw{\bta}{8} \eql 0
+		
+		\uw{\bta}{8} \eql -0.004816, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064
+		\eqn{
+			\splt{
+				t & = \frac{\uw{\bth}{8} - 0}{se(\uw{\bth}{8})} \\
+				 & = \frac{-0.004816}{0.001277} \\
+				 & = \ms3.771
+			}
+		}
+		
+		\av{ \ms3.771 } \gr 2.064 \rar Reject \uw{H}{0}
+	\elist
 \item Calculate \uf{R}{2} and \uw{\uf{R}{2}}{adj} for this model.
+	
+	\bpth{1} R:
+	
+	\uf{R}{2} \lra summary(model)\$r.squared yields \textbf{0.7863069}
+	
+	\uw{\uf{R}{2}}{adj} \lra  summary(model)\$adj.r.squared yields \textbf{0.7595953}
+	
+	\bpth{2} Manual:
+	
+	Knowing: \uw{SS}{T} \eql \uw{SS}{R} \ps \uw{SS}{res}
+	
+	From anova(model) in R:
+	
+	\uw{SS}{T} \eql (76.193 \ps 139.501 \ps 41.400) (\uw{SS}{R}) \ps 69.870 (\uw{SS}{res}) \eql 326.964
+	
+	\eqn{
+		\splt{
+			\uf{R}{2} & = 1 - \frac{SS_{res}}{SS_{T}} \\
+			& = 1 - \frac{69.870}{326.964} \\
+			& = 0.7863067
+		}
+	}
+	
+	\eqn{
+		\splt{
+			\uf{R}{2}_{\txt{adj}} & = \frac{1 - \frac{SS_{\txt{res}}}{(n - p)}}{\frac{SS_\txt{T}}{(n - 1)}} \\
+			& = 1 - \frac{SS_{res}(n - 1)}{SS_T(n - k - 1)} \\
+			& = 1 - \frac{69.870(27)}{326.964(24)} \\
+			& = 0.7595951
+		}
+	}
+	
 \item Using the partial F test, determine the contribution of \uw{x}{7} to the model. How is this partial F statistic related to the t test for \uw{\bta}{7} calculated in part c above?
+	
+	\textbf{Knowing:} 
+	
+	The partial F-test is the most common method of testing for a nested normal linear regression model. "Nested" model is just a fancy way of saying a reduced model in terms of variables included.
+	
+	If \uw{F}{0} \gr \uw{F}{\afa, r, n \ms p}, we reject \uw{H}{0}, concluding that at least one of the parameters in \uw{\bta}{2} is not zero, and consequently at least one of the regressors \uw{x}{k \ms r \ps 1}, \uw{x}{k \ms r \ps 2}, . . . , \uw{x}{k} in \uw{X}{2} contribute significantly to the regression model. Some authors call the test in (3.35) a partial F test because it measures the contribution of the regressors in \uw{X}{2} given that the other regressors in \uw{X}{1} are in the model.
+	
+	Partial F-Test:
+	
+	\uw{H}{0}: \uw{\bta}{2} \eql 0
+	
+	\eqn{F_0 = \frac{SS_R(\bta_1|\bta_2)}{r\times MS_{res}}}
+	
+	where \uw{\bta}{1} \eql \bta \ms \bk{\uw{\bta}{7}}, \uw{\bta}{2} \eql \uw{\bta}{7}
+	
+	\eqn{SS_R(\bta_2|\bta_1) = SS_R(\bta) - SS_R(\bta_1)}
+	\eqn{SS_R(\bta_2|\bta_1) = (76.193 + 139.501 + 41.400) - (76.193 + 41.400)}
+	\eqn{= 139.501}
+	
+	r \eql 1
+	
+	\uw{MS}{res} \eql 2.911
+	
+	\eqn{F_0 = \frac{139.501}{1 \times 2.911}}
+	\eqn{= 47.92202}
+	
+	\uw{F}{\afa, r, n \ms p} \eql \uw{F}{0.05, 1, (28 \ms (3 \ps 1) \eql 24} \eql 4.2597
+	
+	Reject \uw{H}{0} if \uw{F}{0} \gr \uw{F}{0.05, 1, 24}
+	
+	47.92202 \gr 4.2597 \lra reject \uw{H}{0}
+	
+	anova(lm(y \tl x7))\$F yields 11.00524
+	
+	qf(0.025, df1 = 1, df2 = 24, lower.tail = F) yields 5.713369
+	
 \item Find a 95\% CI on \uw{\bta}{7}. (This is part a of problem 3.3, and the following one is part b of problem 3.3.)
+	
+	\bpth{1} R:
+	
+	\bpth{2} Manual:
+	
+	A CI for \uw{\bta}{j} is \uw{\bth}{j} (\ps or \ms) \uw{t}{\frc{\afa}{2}, n \ms p}SE(\uw{\bth}{j})
+	
+	\uw{\bth}{7} \eql 0.193960
+	
+	\uw{t}{\frc{\afa}{2}, n \ms p} \eql \uw{t}{0.025, 28 \ms 4 \eql 24} \eql 2.064
+	
+	SE(\uw{\bth}{j} \eql 0.088233
+	
+	(0.193960 \ms (2.064$\times$0.088233), 0.193960 \ps (2.064$\times$0.088233)
+	
 \item Find a 95\% CI on the mean number of games won by a team when \uw{x}{2} \eql 2300, \uw{x}{7} \eql 56.0, and \uw{x}{8} \eql 2100.
+	
+	
+	\bpth{1} R:
+	
+	prediction(
+	
+	\bpth{2} Manual:
+	
 \elist
 
 
@@ -462,7 +595,7 @@ Show that the hat matrix H \eql X\uf{(X\pr X)}{-1}X\pr and I \ms H (where I is t
 		\splt{
 			(I - H)(I - H) & = (I - X\uf{(X\pr X)}{-1}X\pr)(I - X\uf{(X\pr X)}{-1}X\pr) \\
 			& = I - 2X\uf{(X\pr X)}{-1}X\pr + (X\uf{(X\pr X)}{-1}X\pr)(X\uf{(X\pr X)}{-1}X\pr) \\
-			& = I - 2X\uf{(X\pr X)}{-1}X\pr + X\uf{(X\pr X)}{-1}X\pr \\
+			& = I - 2X\uf{(X\pr X)}{-1}X\pr + X\uf{(X\pr X)}{-1}X\pr \txt{ by (a)} \\
 			& = I - X\uf{(X\pr X)}{-1}X\pr \\
 			& = I - H
 		}
