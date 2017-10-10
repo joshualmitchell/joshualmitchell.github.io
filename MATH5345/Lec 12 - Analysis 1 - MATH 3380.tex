@@ -1,0 +1,463 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#12}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+     							 
+% ----------
+
+\begin{document}
+
+Homework Due 10/12/17: (13 problems) Section 4.2 pages 177 - 178; 1, 2, 4, 5(a)(c)(e)(g)(i)(k), 9, 10, 17, 18 (for 5(i) define tn to be 1 over sm, and then show that 1 over sm goes to 0)
+
+\bsc{Corollary 4.2.5}{
+If \bk{\uw{t}{n}} converges to t and \uw{t}{n} \gre 0 \fa n \mem \bn, then t \gre 0
+}
+\bsc{Example 4.2.6}{
+If \bk{\uw{t}{n}} converges to t and \uw{t}{n} \gre 0 \fa n \mem \bn, then
+\eqn{\lmti{n}\sqrt{\uw{t}{n}} = \sqrt{t}}
+\bgpf
+
+\sidenote{
+For \ep \gr 0, \exs N \mem \bn st
+
+\av{$\sqrt{\uw{t}{n}} - \sqrt{t}$} \ls \ep \fa m \gre N
+}
+
+Notice that \lmti{n} \uw{t}{n} \eql t, t \gre 0
+
+Case \bpth{i}:
+
+\eqn{
+	\splt{
+		\av{\sqrt{t_n} - \sqrt{t}} & = \frac{\av{(\sqrt{\uw{t}{n}} - \sqrt{t})( \sqrt{\uw{t}{n}} + \sqrt{t})}}{\av{\sqrt{\uw{t}{n}} + \sqrt{t}}} \\
+		& = \frac{\av{\uw{t}{n} - t}}{\sqrt{\uw{t}{n}} + \sqrt{t}} \\
+		& \lse \frac{\av{\uw{t}{n} - t}}{\sqrt{t}} \\
+		& = (\frac{1}{\sqrt{t}})\av{\uw{t}{n} - t}
+		}
+} 
+
+For \ep \gr 0, \exs N \mem \bn st
+
+\av{\uw{t}{n} - t} \ls $\sqrt{t}\times\epsilon$, \fa n \gre N \bpth{2}
+
+\sidenote{
+\eqn{\sqrt{t} + \sqrt{t_n} \gre \sqrt{t}}
+\eqn{\frac{1}{\sqrt{t} + \sqrt{t_n}} \lse \frac{1}{\sqrt{t}}}
+\eqn{\sqrt{\uw{t}{n}} \gre 0}
+\eqn{\sqrt{t} \gr 0}
+So, $\sqrt{\uw{t}{n}}$ \ps $\sqrt{t}$ \gr 0 \fa n \mem \bn
+}
+
+From \bpth{1} and \bpth{2}, \
+
+\
+
+\av{$\sqrt{\uw{t}{n}} - \sqrt{t}$} \lse $\frac{\av{\uw{t}{n} \ms t}}{\sqrt{t}}$ \ls $\frac{\sqrt{t}\times\epsilon}{\sqrt{t}}$ \eql \ep, \fa n \gre N
+
+Hence, result in this case.
+
+\sidenote{
+If
+
+\av{\uw{s}{n} - s} \lse k\av{\uw{a}{n}} \fa n \gre N
+
+and if
+
+\lmti{n} \uw{a}{n} \eql 0,
+
+then \lmti{n} \uw{s}{n} \eql s
+}
+
+Case \bpth{ii}: t \eql 0
+
+Then, for \ep \gr 0, \exs N \mem \bn st
+
+\uw{t}{n} \eql \av{\uw{t}{n} - 0} \ls \ep$^2$, \fa n \gre N
+
+Thus, $\sqrt{\uw{t}{n}}$ \ls \ep, \fa n \gre N
+
+In other words,
+
+\av{$\sqrt{\uw{t}{n}}$ \ms 0} \ls \ep, \fa n \gre N
+
+So, \lmti{n} $\sqrt{\uw{t}{n}}$ \eql 0 \eql $\sqrt{t}$
+
+Hence, result.
+
+\epf
+}
+
+\bsc{Theorem 4.2.7 - "The Ratio Test"}{
+Suppose that \bk{\uw{s}{n}} is a sequence of \textbf{positive} terms (i.e. \uw{s}{n} \gr 0, \fa n \mem \bn) and \lmti{n} \frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \eql L.
+
+If L \ls 1, then \lmti{n}\uw{s}{n} \eql 0
+
+\bgpf
+
+For \ep \eql \frc{1 \ms L}{2} \gr 0,
+
+\exs N \mem \bn st
+
+\av{\frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \ms L} \ls \frc{1 \ms L}{2}, \fa n \gre N
+
+So,
+
+\frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \eql \av{\frc{\uw{s}{n \ps 1}}{\uw{s}{n}}} \eql \av{(\frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \ms L) \ps L} \lse \av{\frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \ms L} \ps \av{L} \ls \prn{\frc{1 \ms L}{2}} \ps L \eql \frc{1 \ps L}{2} \eql \frc{1}{2} \ps \frc{L}{2} \ls \frc{1}{2} \ps \frc{1}{2} (which is 1)
+
+Define c \eql \frc{1 \ps L}{2}
+
+Then,
+
+\uw{s}{n} $\times$ \frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \ls \sbs \uw{s}{n}, \fa n \gre N where c \ls 1
+
+So, \uw{s}{n \ps 1} \ls \sbs \uw{s}{n}, \fa n \gre N
+
+Now
+
+\eqn{\uw{s}{N + 1} < c^1\uw{s}{N}}
+\eqn{\uw{s}{N + 2} < c\uw{N}{N + 1} < c^2\uw{s}{N}}
+\eqn{\uw{s}{N + 3} < c\uw{s}{N + 2} < c^3\uw{s}{N}\textrm{, etc.}}
+
+So,
+
+\uw{s}{N \ps K} \lse c$^k$\uw{s}{N}, \fa k \mem \bn $\cup$ \bk{0}
+
+Thus,
+
+\uw{s}{m} \lse c$^{m - N}$\uw{s}{N} \fa m \gre N
+
+\uw{s}{m} \lse c$^{m}$\frc{\uw{s}{N}}{\uf{c}{N}} \fa m $\gre$ N
+
+N \ps k \eql m
+
+k \eql m \ms N
+
+\av{\uw{s}{m} \ms 0} \eql \prn{\frc{\uw{s}{N}}{\uf{c}{N}}} \bpth{1}
+
+\sidenote{
+Theorem 4.1.8
+
+If \av{\uw{s}{m} \ms s} \lse k\av{\uw{a}{m}} and
+
+\lmti{m} \uw{a}{m} \eql 0
+
+then lim \uw{s}{m} \eql s
+
+Also, recall HW 5 7(f): If \av{x} \ls 1, then \lmti{n} \prn{\uf{x}{n}} \eql 0
+}
+
+From \bpth{1}, it follows by Example 7(f) pg 170 and Theorem 4.1.8, that \lmti{n} \uw{s}{n} \eql 0
+
+\textbf{Example 5(g):} \uw{s}{n} \eql \frc{1 \ms n}{\uf{2}{n}} \eql \frc{1}{\uf{2}{n}} \ms \frc{n}{\uf{2}{n}} (or, \uw{v}{n} \ms \uw{u}{n})
+
+Suppose \uw{u}{n} \eql \frc{n}{\uf{2}{n}} \gr 0 \fa n \mem \bn,
+
+\frc{\uw{t}{n \ps 1}}{\uw{t}{n}} \eql \frc{n \ps 1}{\uf{2}{n \ps 1}}$\times$\frc{\uf{2}{n}}{n} \eql \frc{1}{2}\frc{n(1 \ps \frc{1}{n}}{n} \eql \frc{1}{2}\frc{1 \ps \frc{1}{n}}{1} \eql \frc{1 \ps \frc{1}{n}}{2} \eql \frc{1}{2} \ps \frc{1}{2n}
+
+Which approaches \frc{1}{2} as n \lra $\infty$ \
+
+\ssc{Definition 4.2.9}{
+
+\textbf{Infinite Limits:}
+
+A sequence \bk{\uw{s}{n}} is said to \textbf{diverge} to $\infty$, written as \lmti{n} \uw{s}{n} \eql $\infty$, provided that
+
+\fa M \mem \br, \exs N \mem \bn st
+
+\uw{s}{n} \gr M, \fa n \gre N
+
+(i.e. \uw{s}{n} \eql (\ms1)$^n$
+
+Similarly, \bk{\uw{s}{n}} diverges to \ms$\infty$, written as \lmti{n} \uw{s}{n} \eql \ms$\infty$, if, provided that
+
+for every M \mem \br, \exs N(M) \mem \bn st
+
+\uw{s}{n} \ls M, \fa n \gre N
+}
+
+\ssc{Theorem 4.2.12}{
+Suppose that \bk{\uw{s}{n}}, \bk{\uw{t}{n}} are sequences st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn 
+
+\balist
+\item If \lmti{n} \uw{s}{n} \eql $\infty$, then \lmti{n} \uw{t}{n} \eql $\infty$
+\item If \lmti{n} \uw{s}{n} \eql \ms$\infty$, then \lmti{n} \uw{t}{n} \eql \ms$\infty$
+\elist
+
+On the homework, the proof, using the definition, about "one comment away" from being done.
+}
+
+\ssc{Theorem 4.2.13}{
+\lt{\bk{\uw{s}{n}} be a sequence of \textbf{positive} numbers}
+
+Then \lmti{n} \uw{s}{n} \eql $\infty$
+
+iff \lmti{n} \frc{1}{\uw{s}{n}} \eql 0
+
+Proof:
+
+\lra
+
+Suppose that \lmti{n} \uw{s}{n} \eql $\infty$
+
+\wts{\lmti{n} \frc{1}{\uw{s}{n}} \eql 0}
+
+\sidenote{
+\fa \ep \gr 0, \exs N \mem \bn st
+
+\av{\frc{1}{\uw{s}{n}} \ms 0} \eql \frc{1}{\uw{s}{n}} \ls \ep
+
+(which implies that \uw{s}{n} \gr \frc{1}{\ep})
+
+\fa n \gre N}
+
+}
+
+\fa \ep \gr 0, \exs N \mem \bn st
+
+\uw{s}{n} \gr \frc{1}{\ep}, \fa n \gre N
+
+Hence,
+
+\av{\frc{1}{\uw{s}{n}} \ms 0} \eql \frc{1}{\uw{s}{n}} \ls \ep, \fa n \gre N
+
+Which shows that \lmti{n} \frc{1}{\uw{s}{n}} \eql 0
+
+\lla
+
+Conversely, assume that \lmti{n} \frc{1}{\uw{s}{n}} \eql 0
+
+\wts{\lmti{n} \uw{s}{n} \eql $\infty$}
+
+\sidenote{
+For M \mem \br, \exs N \mem \bn st
+
+\frc{1}{\uw{s}{n}} \ls \frc{1}{M}
+
+\uw{s}{n} \gr M
+
+\fa n \gre N
+}
+
+\lt{M \mem \br, M \gr 0}
+
+Then \exs N(M) \mem \bn st
+
+\frc{1}{\uw{s}{n}} \eql \av{\frc{1}{\uw{s}{n}} \ms 0} \ls \frc{1}{M} \fa n \gre N
+
+Hence, \uw{s}{n} \gr M, \fa n \gre N.
+
+Hence, result.
+
+\epf
+}
+
+\end{document}
