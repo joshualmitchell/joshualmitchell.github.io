@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 OCT 2017 10:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 OCT 2017 11:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -533,16 +533,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 356--357
  []
 
 
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 420--421
-[]\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
 
  []
 
 [3]
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 422--423
+[]\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+
 Overfull \hbox (0.24573pt too wide) in paragraph at lines 448--449
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
@@ -552,7 +557,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
-[4] (/Users/jm/joshualmitchell.github.io/MATH5345/.texpadtmp/Lec 12 - Analysis 1 - MATH 3380.aux) ) 
+[4] (/Users/jm/joshualmitchell.github.io/MATH5345/.texpadtmp/Lec 12 - Analysis 1 - MATH 3380.aux) )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 299 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
  14544 strings out of 492995
  295691 string characters out of 6132704
@@ -560,9 +569,9 @@ Here is how much of TeX's memory you used:
  17810 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,17n,66p,443b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,17n,66p,443b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH5345/.texpadtmp/Lec 12 - Analysis 1 - MATH 3380.pdf" (4 pages, 130669 bytes).
+Output written on "/Users/jm/joshualmitchell.github.io/MATH5345/.texpadtmp/Lec 12 - Analysis 1 - MATH 3380.pdf" (4 pages, 130154 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
