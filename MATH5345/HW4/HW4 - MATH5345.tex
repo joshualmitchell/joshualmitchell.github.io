@@ -334,8 +334,61 @@ Derive or show that
 \bsc{Question 2 (problems 3.1 and 3.3 on page 121)}{
 \balist
 \item Fit a multiple linear regression model relating the number of games won to the team's passing yardage (\uw{x}{2}), the percentage of rushing plays (\uw{x}{7}), and the opponents' yards rushing (\uw{x}{8}).
+
+	\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & -1.8084 & 7.9009 & -0.23 & 0.8209 \\ 
+  x\$x2 & 0.0036 & 0.0007 & 5.18 & 0.0000 \\ 
+  x\$x7 & 0.1940 & 0.0882 & 2.20 & 0.0378 \\ 
+  x\$x8 & -0.0048 & 0.0013 & -3.77 & 0.0009 \\ 
+   \hline
+\end{tabular}
+\end{table}
 \item Construct the analysis-of-variance table and test for significance of regression.
+	
+	\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+x\$x2 & 1 & 76.19 & 76.19 & 26.17 & 0.0000 \\ 
+  x\$x7 & 1 & 139.50 & 139.50 & 47.92 & 0.0000 \\ 
+  x\$x8 & 1 & 41.40 & 41.40 & 14.22 & 0.0009 \\ 
+  Residuals & 24 & 69.87 & 2.91 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\ 
+
+\
+
+\
+
+To test for significance of regression, we establish \uw{H}{0} and \uw{H}{a}:
+
+\uw{H}{0}: \uw{\bta}{2} \eql \uw{\bta}{7} \eql \uw{\bta}{8} \eql 0 
+
+\uw{H}{a}: \uw{\bta}{j} $\neq$ 0 for at least one of j \eql 2, 7, 8
+
+We reject \uw{H}{0} if \uw{F}{0, j} \gr \uw{F}{0.05 \eql \afa, \tab 9,\tab 18 \eql (28 - 9 - 1)} for any \uw{F}{0, j}
+
+\uw{F}{0, 2} \eql 26.17 \gr 2.4563
+
+\uw{F}{0, 7} \eql 47.92 \gr 2.4563
+
+\uw{F}{0, 8} \eql 14.22 \gr 2.4563
+
+So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relationship for y \tl \uw{x}{2}, y \tl \uw{x}{7}, and y \tl \uw{x}{8}
+
 \item Calculate t statistics for testing the hypotheses \uw{H}{0}: \uw{\bta}{2} \eql 0, \uw{H}{0}: \uw{\bta}{7} \eql 0, \uw{H}{0}: \uw{\bta}{8} \eql 0. What conclusions can you draw about the roles the variables \uw{x}{2}, \uw{x}{7}, and \uw{x}{8} play in the model?
+
+	Hi
 \item Calculate \uf{R}{2} and \uw{\uf{R}{2}}{adj} for this model.
 \item Using the partial F test, determine the contribution of \uw{x}{7} to the model. How is this partial F statistic related to the t test for \uw{\bta}{7} calculated in part c above?
 \item Find a 95\% CI on \uw{\bta}{7}. (This is part a of problem 3.3, and the following one is part b of problem 3.3.)
@@ -343,7 +396,7 @@ Derive or show that
 \elist
 
 
-Note: For c, d, f, and g, please show two versions of your results: (1) obtained using R code and (2) based on your manual calculation (please show detailed step for your manual calculation. You can use the partial output from the lm or ANOVA, e.g., the \uw{SS}{reg}, \uw{SS}{res}, the estimated value of \bta and its variance or standard deviation).
+Note: For c, d, f, and g, please show two versions of your results: (1) obtained using R code and (2) based on your manual calculation (please show detailed step for your manual calculation. You can use the partial output from the lm or ANOVA, e.g., the \uw{SS}{reg}, \uw{SS}{res}, the estimated value of \bta and its variance or standard deviation). If you can show how to get the t-statistics (or CI, R-square) based on part of the output obtained from R, that will be fine.
 
 }
 
