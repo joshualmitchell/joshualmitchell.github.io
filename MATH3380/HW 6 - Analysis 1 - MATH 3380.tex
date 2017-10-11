@@ -326,8 +326,49 @@ Prove Theorem 4.2.12:
 Suppose that \prn{\uw{s}{n}} and \prn{\uw{t}{n}} are sequences st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn
 
 \balist
-\item If lim \uw{s}{n} \eql $+\infty$ then lim \uw{t}{n} \eql $+\infty$ 
-\item If lim \uw{s}{n} \eql $-\infty$ then lim \uw{t}{n} \eql $-\infty$ 
+\item If lim \uw{s}{n} \eql $+\infty$ then lim \uw{t}{n} \eql $+\infty$
+	
+	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{s}{n} \eql $+\infty$ and  lim \uw{t}{n} is NOT $+\infty$.
+	
+	\uw{t}{n} diverges to $+\infty$ if \fa M \mem \br, \exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
+	
+	\lt{M \mem \br}
+	
+	We know that
+	
+	\exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
+	
+	Since \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn,
+	
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gre \uw{t}{n} \gr M
+	
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gr M
+	
+	This is the definition of diverging to $+\infty$, a contradiction.
+	
+	Hence, \uw{s}{n} diverges to $+\infty$.
+	
+\item If lim \uw{t}{n} \eql $-\infty$ then lim \uw{s}{n} \eql $-\infty$
+	
+	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{s}{n} \eql $-\infty$ and  lim \uw{t}{n} is NOT $-\infty$.
+	
+	\uw{t}{n} diverges to $-\infty$ if \fa M \mem \br, \exs N \mem \bn st n \gre N implies \uw{t}{n} \ls M
+	
+	\lt{M \mem \br}
+	
+	We know that
+	
+	\exs N \mem \bn st n \gre N implies \uw{t}{n} \ls M
+	
+	Since \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn,
+	
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \lse \uw{t}{n} \ls M
+	
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \ls M
+	
+	This is the definition of diverging to $-\infty$, a contradiction.
+	
+	Hence, \uw{s}{n} diverges to $-\infty$.
 \elist
 }
 
