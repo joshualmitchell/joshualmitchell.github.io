@@ -223,9 +223,17 @@ Mark each statement True or False. Justify each answer.
 
 \balist
 \item If \prn{\uw{s}{n}} and (\uw{t}{n}) are convergent sequences with \uw{s}{n} \lra s and \uw{t}{n} \lra t, then lim (\uw{s}{n} \ps \uw{t}{n}) \eql s \ps t and lim (\uw{s}{n}\uw{t}{n}) \eql st.
+	
+	\textbf{True.} By Theorem 4.2.1 (a) and (c).
 \item If \prn{\uw{s}{n}} converges to s and \uw{s}{n} \gr 0 \fa n \mem \bn, then s \gr 0.
+	
+	\textbf{False.} Counter example: \prn{\uw{s}{n}} \eql \frc{1}{n} (s \eql 0, but the moment you define n, \uw{s}{n} \gr 0)
 \item The sequence \prn{\uw{s}{n}} converges to s iff lim \uw{s}{n} \eql s.
+	
+	\textbf{False.} The sequence converges to s iff s exists \textbf{as a real number}. If s \eql $+\infty$ then it can't converge.
 \item lim \uw{s}{n} \eql $+\infty$ iff lim (\frc{1}{\uw{s}{n}}) \eql 0.
+	
+	\textbf{False.} If lim (\frc{1}{\uw{s}{n}}) \eql 0 but \prn{\uw{s}{n}} \eql $-1, -2, -3, ...$ then \uw{s}{n} does not diverge to $+\infty$
 \elist
 }
 
@@ -234,11 +242,41 @@ Mark each statement True or False. Justify each answer.
 
 \balist
 \item If \uw{s}{n} \eql s and lim \uw{t}{n} \eql t, then lim (\uw{s}{n}\uw{t}{n}) \eql st.
+	
+	\textbf{False.} We don't know \uw{s}{n}'s limit (which could be, for example, (\uw{s}{n}) \eql n, which diverges)
 \item If lim \uw{s}{n} \eql $+\infty$, then \prn{\uw{s}{n}} is said to converge to $+\infty$.
 	
 	\textbf{False.} You can only converge to a finite number.
 \item Given sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} with \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn, if lim \uw{s}{n} \eql $+\infty$, then lim \uw{t}{n} \eql $+\infty$.
+	
+	\textbf{True.} 
+	
+	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{s}{n} \eql $+\infty$ and  lim \uw{t}{n} is NOT $+\infty$.
+	
+	\uw{t}{n} diverges to $+\infty$ if \fa M \mem \br, \exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
+	
+	\lt{M \mem \br}
+	
+	We know that
+	
+	\exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
+	
+	Since \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn
+	
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gre \uw{t}{n} \gr M
+	
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gr M
+	
+	This is the definition of diverging to $+\infty$, a contradiction.
+	
+	Hence, result.
 \item Suppose \prn{\uw{s}{n}} is a sequence st the sequence of ratios (\frc{\uw{s}{n \ps 1}}{\uw{s}{n}}) converges to L. If L \ls 1, then lim \uw{s}{n} \eql 0.
+	
+	\textbf{False.}
+	
+	\lt{\uw{s}{n} \eql n(1)$^{-n}$ \lra (\frc{\uw{s}{n \ps 1}}{\uw{s}{n}}) \eql $\frac{(n + 1)(1)^{-(n + 1)}}{n(1)^{-n}}$}
+	
+	which converges to $-$1 which is less than 1 but does not have a limit of 0. 
 \elist
 }
 
@@ -270,13 +308,13 @@ For \uw{s}{n} given by the following formulas, determine the convergence or dive
 \item \uw{s}{n} \eql \frc{3 - 2n}{1 + n} \lra \frc{1}{2}
 \item \uw{s}{n} \eql \frc{(-1)^n}{n + 3} \lra 0
 \item \uw{s}{n} \eql \frc{(-1)^n}{2n - 1} \lra 0
-\item \uw{s}{n} \eql \frc{2^{3n}}{3^{2n}} \lra 0?
+\item \uw{s}{n} \eql \frc{2^{3n}}{3^{2n}} \eql \frc{8^n}{9^n} \lra 0
 \item \uw{s}{n} \eql \frc{n^2 - 2}{n + 1} \lra $\infty$
 \item \uw{s}{n} \eql \frc{3 + n - n^2}{1 + 2n} \lra $-\infty$
 \item \uw{s}{n} \eql \frc{1 - n}{2^n	} \lra 0
 \item \uw{s}{n} \eql \frc{3^n}{n^3 + 5} \lra $\infty$
 \item \uw{s}{n} \eql \frc{n!}{2^n} \lra $\infty$
-\item \uw{s}{n} \eql \frc{n!}{n^n} \lra 0?
+\item \uw{s}{n} \eql \frc{n!}{n^n} \eql \frc{1 * 2 * 3 * 4 * 5}{5 * 5 * 5 * 5 * 5} where n \eql 5 \lra 0
 \item \uw{s}{n} \eql \frc{n^2}{2^n} \lra 0
 \item \uw{s}{n} \eql \frc{n^2}{n!} \lra 0
 \elist
