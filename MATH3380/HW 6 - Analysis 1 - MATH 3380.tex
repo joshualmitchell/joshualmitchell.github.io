@@ -288,16 +288,84 @@ Mark each statement True or False. Justify each answer.
 	
 	\bpth{b} lim (k\uw{s}{n}) \eql ks and lim (k \ps \uw{s}{n}) \eql k \ps s, for any k \mem \br
 	
+	We know that since \uw{s}{n} and \uw{t}{n} are convergent sequences with limits s and t, respectively.
 	
-\item Prove Corollary 4.2.5
+	So,
 	
-	Theorem 4.2.4:
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep
 	
-	Suppose that (\uw{s}{n}) and (\uw{t}{n}) are convergent sequences with lim \uw{s}{n} \eql s and lim \uw{t}{n} \eql t. If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn, then s \lse t.
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms t} \ls \ep
 	
-	Corollary 4.2.5:
+	\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{k\uw{s}{n} \ms ks} \ls \ep}
+	
+	\av{k\uw{s}{n} \ms ks} \eql \av{k(\uw{s}{n} \ms s)} \eql \av{k}\av{\uw{s}{n} \ms s}
+	
+	So,
+	
+	\av{k\uw{s}{n} \ms ks} \eql \av{k}\av{\uw{s}{n} \ms s} \ls \ep
+	
+	\av{\uw{s}{n} \ms s} \ls \av{k}\ep \eql \uw{\ep}{1}(\ep)
+	
+	Since
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep
+	
+	thus,
+	
+	\fa \uw{\ep}{1} \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \uw{\ep}{1}
+	
+	and
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{k\uw{s}{n} \ms ks} \ls \ep
+	
+	Hence, lim (k\uw{s}{n}) \eql ks
+	
+	\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{k \ps \uw{s}{n} \ms (k \ps s)} \ls \ep}
+	
+	We know:
+		
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep
+	
+	So,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ps k \ms s \ms k} \ls \ep
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ps k \ms (s \ps k)} \ls \ep
+	
+	Since this is true,
+	
+	lim (\uw{s}{n} \ps k) \eql k \ps s
+\item Prove Corollary 4.2.5:
 	
 	If \prn{\uw{t}{n}} converges to t and \uw{t}{n} \gre 0 \fa n \mem \bn, then t \gre 0.
+	
+	We know that 
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms t} \ls \ep
+	
+	\supp{t \ls 0}
+	
+	\lt{\ep \eql \av{t}}
+	
+	\fa n \mem \bn, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms t} \ls \av{t}
+	
+	Since t is negative,
+	
+	\fa n \mem \bn, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ps \av{t}} \ls \av{t}
+	
+	
+	Since \uw{t}{n} \gre 0,
+	
+	\fa n \mem \bn, \exs N \mem \bn st n \gre N implies \uw{t}{n} \ps \av{t} \ls \av{t}
+	
+	So,
+	
+	\fa n \mem \bn, \exs N \mem \bn st n \gre N implies \uw{t}{n} \ls 0
+	
+	but \uw{t}{n} \gre 0, a contradiction.
+	
+	Hence, result.
+	
 \elist
 }
 

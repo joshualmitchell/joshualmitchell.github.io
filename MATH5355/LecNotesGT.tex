@@ -414,7 +414,7 @@ If G $\neq$ a line segment with a vertex at each end, then no leaf can be a cent
 
 }
 
-\ssc{Theorem 2.1.10}{
+\ssc{Theorem 2.1.10 [Not On Test]}{
 Not on test
 }
 
@@ -437,6 +437,138 @@ In the case
 
 \epf
 }
+
+\ssc{hi}{
+
+How many simple graphs with vertex set [n] are there?
+
+[n] \eql \bk{1, 2, 3, ... n}
+
+In other words, how many labelled graphs on n vertices are there?
+
+Answer: \uf{2}{\nck{n}{2}}
+
+How many trees with vertex set [n] are there?
+
+Cayley's formula: \uf{n}{n - 2} (proof is very complicated, only need to understand conclusion) (the number of labelled trees on n vertices)
+
+Labelled trees: 1:1 (\uw{a}{1}, \uw{a}{2}, ... \uw{a}{n - 2}) : \uw{a}{i} \mem [n]
+
+Suppose I have 3 vertices. How many labeled trees can I get?
+
+Answer: 3 possible labeled trees. If you have vertices 1, 2, and 3, then you can have 3 graphs: \bpth{1} 12, 23, \bpth{2} 23, 31, \bpth{3} 31, 12
+
+Let's say I have a complete graph, \uw{K}{n}, with labelled vertices. How many labelled spanning trees does it have? Answer: \uf{n}{n - 2} (Cayley's formula)
+
+To generalize the problem:
+
+Contraction of edge:
+
+<picture with edge uv and vertices A, B, C \lra picture with multiple edges between w and each vertex in C>
+
+Example 2.2.9:
+
+<picture of a square with a diagonal edge, same picture minus diagonal edge (G \ms e), bird (G dot e))
+
+Proposition 2.2.8
+
+$\tau$(G) (the number of spanning trees of G) \eql $\tau$(G \ms e) \ps $\tau$(G dot e)
+
+\lt{T be a spanning tree of G}
  
+ case i: e (the diagonal edge in the picture) is not in E(T)
+ 
+ Any spanning tree of the original graph without using the diagonal is still a spanning tree. If you don't use the diagonal edge, it's from G \ms e.
+ 
+ case ii: e (the diagonal edge in the picture) is in E(T)
+ 
+ You should prove Prop 2.2.8 for practice.
+ 
+ Remark 2.2.10 (Basis case for computing $\tau$(G))
+
+Suppose G has no cycle other than multiple edges. Then:
+
+$\tau$(G) \eql \bk{product of edge multiplicities if G is connected, 0 if disconnected}
+
+<Remark picture>
+
+1 * 2 * 3 choices
+
+You're encouraged to try an example. For example: \uw{K}{4}
+
+For a general graph, the Cayley formula doesn't work. Here's a 3rd way:
+
+Theorem 2.2.12
+
+\lt{G be a loopless n-graph (graph with n vertices)}
+
+Q \eql \prn{\uw{q}{ij}}$_{n\times n}$ is defined by:
+
+\uw{q}{ij} \eql \bk{d(\uw{v}{i}) if i \eql j, $-a_{ij}$ if i $\neq$ j}
+
+\uw{a}{ij} : the number of edges joining \uw{v}{i} and \uw{v}{j}
+
+\uf{Q}{*} : obtained by deleting any row s and column t of Q.
+
+Then $\tau$(G) \eql $(-1)^{s + t}$ det \uf{Q}{*}
+
+<picture 3>
+
+The sum of every row and every column is equal to 0. Why?
+
+The diagonal talks about the degree, but the off diagonal takes off each edge.
+
+Determining the determinant of the matrix Q doesn't give you any new information, but deleting any row or column and making a submatrix, \uw{Q}{*}, of the matrix, and then taking the determinant will.
+
+The absolute value of det \uw{Q}{*} (or just multiplying by $(-1)^{s + t}$ will give you $\tau$(G)
+
+(we took both a row (1st row) and a column (1st column) to make it symmetric and make it easier to take the determinant)
+
+\ssc{Conjecture 2.2.13 (still open)}{
+
+\uw{K}{2m + 1} decomposes into 2m \ps 1 copies of T with m edges.
+
+So \uw{K}{2m + 1} has \frc{(2m + 1)(2m)}{2} edges
+
+Therefore, there are 2m \ps 1 copies of T.
+
+}
+
+Graceful labeling: a 1-1 correspondence between the vertices and a set of numbers for each vertex (packed very closely from 0 to n \ms 1 (where n is the number of vertices))
+
+f: V \lra distinct number \mem \bk{0, 1, ... m} (a bijection from a vertex set to "this" set)
+
+For example. If T has m edges, how many vertices do you have? Answer: m \ps 1
+
+You want every vertex to have a distinct number.
+
+<graceful labelling picture>
+
+f(uv): \eql \av{f(u) \ms f(v)}
+
+\bk{f(u, v): uv \mem E} \eql \bk{1, 2, ... m}
+
+\ssc{Conjecture 2.2.15 (Kotzig, Ringel, 1964) (open, stronger than conjecture 2.2.13)}{
+
+Every tree has a graceful labeling. 
+
+}
+
+\ssc{Theorem 2.2.16}{
+T is graceful \rar Conjecture 2.2.12 holds
+
+<picture 1, picture 2 - examples of this>
+
+Remember, we want all edges to receive different numbers (Graceful labelling), so when we do a rotation, all of the different edges are covered exactly once
+
+displacement(i, j): number of unit moves from i to j
+
+\uw{K}{2m + 1} 
+}
+
+end of 10/11 lecture
+}
+
+
 
 \end{document}
