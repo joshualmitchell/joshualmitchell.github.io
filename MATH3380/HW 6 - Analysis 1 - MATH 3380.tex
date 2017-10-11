@@ -11,7 +11,6 @@
 
 % Packages
 
-\usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{extramarks}
 \usepackage{amsmath}
@@ -23,8 +22,6 @@
 \usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{chngcntr}
-
-\graphicspath{ {images/} }
 
 % Libraries
 
@@ -211,69 +208,123 @@
      							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
      							 
 % ----------
 
 \begin{document}
 
-Homework Due 10/12/17: (13 problems) 
+Homework Due 10/12/17: (13 problems) Section 4.2 pages 177 - 178; 1, 2, 4, 5(a)(c)(e)(g)(i)(k), 9, 10, 17, 18 (for 5(i) define tn to be 1 over sm, and then show that 1 over sm goes to 0)
 
-Section 4.2 pages 177 - 178; 1, 2, 4, 5(a)(c)(e)(g)(i)(k), 9, 10, 17, 18
+\bsc{Problem 1}{
+Mark each statement True or False. Justify each answer.
 
-Test up to 4.2.4 on 10/5/17
+\balist
+\item If \prn{\uw{s}{n}} and (\uw{t}{n}) are convergent sequences with \uw{s}{n} \lra s and \uw{t}{n} \lra t, then lim (\uw{s}{n} \ps \uw{t}{n}) \eql s \ps t and lim (\uw{s}{n}\uw{t}{n}) \eql st.
+\item If \prn{\uw{s}{n}} converges to s and \uw{s}{n} \gr 0 \fa n \mem \bn, then s \gr 0.
+\item The sequence \prn{\uw{s}{n}} converges to s iff lim \uw{s}{n} \eql s.
+\item lim \uw{s}{n} \eql $+\infty$ iff lim (\frc{1}{\uw{s}{n}}) \eql 0.
+\elist
+}
 
-(theorem 4.2.1 is a possibility on test)
+\bsc{Problem 2}{
+Mark each statement True or False. Justify each answer.
 
-\
+\balist
+\item If \uw{s}{n} \eql s and lim \uw{t}{n} \eql t, then lim (\uw{s}{n}\uw{t}{n}) \eql st.
+\item If lim \uw{s}{n} \eql $+\infty$, then \prn{\uw{s}{n}} is said to converge to $+\infty$.
+	
+	\textbf{False.} You can only converge to a finite number.
+\item Given sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} with \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn, if lim \uw{s}{n} \eql $+\infty$, then lim \uw{t}{n} \eql $+\infty$.
+\item Suppose \prn{\uw{s}{n}} is a sequence st the sequence of ratios (\frc{\uw{s}{n \ps 1}}{\uw{s}{n}}) converges to L. If L \ls 1, then lim \uw{s}{n} \eql 0.
+\elist
+}
 
-\textbf{Since 4.2.1 is a possibility, I'm going to redo it here}:
+\bsc{Problem 4}{
+\balist
+\item Prove Theorem 4.2.1(b):
+	
+	Suppose that \prn{\uw{s}{n}} and (\uw{t}{n}) are convergent sequences with lim \uw{s}{n} \eql s and lim \uw{t}{n} \eql t. Then
+	
+	\bpth{b} lim (k\uw{s}{n}) \eql ks and lim (k \ps \uw{s}{n}) \eql k \ps s, for any k \mem \br
+	
+	
+\item Prove Corollary 4.2.5
+	
+	Theorem 4.2.4:
+	
+	Suppose that (\uw{s}{n}) and (\uw{t}{n}) are convergent sequences with lim \uw{s}{n} \eql s and lim \uw{t}{n} \eql t. If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn, then s \lse t.
+	
+	Corollary 4.2.5:
+	
+	If \prn{\uw{t}{n}} converges to t and \uw{t}{n} \gre 0 \fa n \mem \bn, then t \gre 0.
+\elist
+}
 
-\bsc{Theorem 4.2.1}{
+\bsc{Problem 5}{
+For \uw{s}{n} given by the following formulas, determine the convergence or divergence of the sequence \prn{\uw{s}{n}}. Find any limits that exist.
 
-Assume that \prn{\uw{s}{n}} and \prn{\uw{t}{n}} are convergent sequences with lim \uw{s}{n} \eql s and lim \uw{t}{n} \eql t. If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn, then s \lse t.
+\balist
+\item \uw{s}{n} \eql \frc{3 - 2n}{1 + n} \lra \frc{1}{2}
+\item \uw{s}{n} \eql \frc{(-1)^n}{n + 3} \lra 0
+\item \uw{s}{n} \eql \frc{(-1)^n}{2n - 1} \lra 0
+\item \uw{s}{n} \eql \frc{2^{3n}}{3^{2n}} \lra 0?
+\item \uw{s}{n} \eql \frc{n^2 - 2}{n + 1} \lra $\infty$
+\item \uw{s}{n} \eql \frc{3 + n - n^2}{1 + 2n} \lra $-\infty$
+\item \uw{s}{n} \eql \frc{1 - n}{2^n	} \lra 0
+\item \uw{s}{n} \eql \frc{3^n}{n^3 + 5} \lra $\infty$
+\item \uw{s}{n} \eql \frc{n!}{2^n} \lra $\infty$
+\item \uw{s}{n} \eql \frc{n!}{n^n} \lra 0?
+\item \uw{s}{n} \eql \frc{n^2}{2^n} \lra 0
+\item \uw{s}{n} \eql \frc{n^2}{n!} \lra 0
+\elist
+}
 
-\bgpf
+\bsc{Problem 9}{
+Prove Theorem 4.2.12:
 
-Suppose, instead, that s \gr t.
+Suppose that \prn{\uw{s}{n}} and \prn{\uw{t}{n}} are sequences st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn
 
-\lt{\ep \eql \frc{\prn{s \ms t}}{2} \gr 0}
+\balist
+\item If lim \uw{s}{n} \eql $+\infty$ then lim \uw{t}{n} \eql $+\infty$ 
+\item If lim \uw{s}{n} \eql $-\infty$ then lim \uw{t}{n} \eql $-\infty$ 
+\elist
+}
 
-Now, we have 2\ep \eql s \ms t
+\bsc{Problem 10}{
+Prove the converse part of Theorem 4.2.13:
 
-t \eql s \ms 2\ep
+Let \prn{\uw{s}{n}} be a sequence of positive numbers. Then, lim \uw{s}{n} \eql $+\infty$ iff lim (\frc{1}{\uw{s}{n}}) \eql 0.
 
-s \eql t \ps 2\ep
+\lra
 
-t \ps \ep \eql s \ms \ep
+\as{lim \uw{s}{n} \eql $+\infty$}
 
-By the definition of convergent sequences, 
+Given any \ep \gr 0, let M \eql \frc{1}{\ep}. Then there exists a natural number N st n \gre N implies that \uw{s}{n} \gr M \eql \frc{1}{\ep}.
 
-\exs \uw{N}{1} \mem \bn st n \gre \uw{N}{1} implies s \ms \ep \gr \uw{s}{n} \gr s \ps \ep
+Since each \uw{s}{n} is positive, we have:
 
-and, similarly
+\av{\frc{1}{\uw{s}{n}} \ms 0} \ls \ep, whenever n \gre N
 
-\exs \uw{N}{2} \mem \bn st n \gre \uw{N}{2} implies t \ms \ep \gr \uw{t}{n} \gr t \ps \ep
+Thus, lim (\frc{1}{\uw{s}{n}}) \eql 0.
 
-\lt{N \eql max \bk{\uw{N}{1}, \uw{N}{2}}}
-
-Then, for n \gre N, we have
-
-\uw{t}{n} \gr t \ps \ep \eql s \ms \ep \gr \uw{s}{n}
-
-Which contradicts the assumption that \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn
-
-Thus, we conclude that s \lse t
-
-\epf
+\lla 
 
 }
 
-\begin{figure}[h]
-  \includegraphics{test.jpeg} % [width=\linewidth]
-  \caption{A boat.}
-  \label{fig:boat1}
-\end{figure}
+\bsc{Problem 17}{
+\balist
+\item Show that \lmti{n} \frc{k^n}{n!} \eql 0 \fa k \mem \br
+\item What can be said about \lmti{n} \frc{n!}{k^n}?
+\elist
+}
 
-Figure \ref{fig:boat1} shows a boat.
+\bsc{Problem 18}{
+Assume that \prn{\uw{s}{n}} is a convergent sequence with a \gre \uw{s}{n} \gre b \fa n \mem \bn.
+
+Prove that a \lse lim \uw{s}{n} \lse b.
+}
 
 \end{document}
