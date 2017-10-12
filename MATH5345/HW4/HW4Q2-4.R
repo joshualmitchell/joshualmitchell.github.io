@@ -94,9 +94,19 @@ qqline(model.resid)
 plot(model$fitted.values, model.resid)
 
 ####################################################
-#Q4: b) ############################################
+#Q4: c) ############################################
 ####################################################
 
 plot(x$x2, model.resid)
 plot(x$x7, model.resid)
 plot(x$x8, model.resid)
+
+####################################################
+#Q4: d) ############################################
+####################################################
+
+model_wo_x2 = lm(y~x$x7+x$x8)
+x2_tl_x7_x8 = lm(x$x2~x$x7+x$x8)
+plot(resid(model_wo_x2)~resid(x2_tl_x7_x8))
+plot(resid(model_wo_x2)~resid(x2_tl_x7_x8), xlab = "residuals of x2 regressed against x7,x8", ylab = "residuals of y regressed against x7,x8")
+                                                                                                     
