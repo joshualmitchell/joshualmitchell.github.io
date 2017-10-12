@@ -541,13 +541,19 @@ Note: For c, d, f, and g, please show two versions of your results: (1) obtained
 Reconsider the National Football League data from Problem 3.1. Fit a model to this data using only \uw{x}{7} and \uw{x}{8} as the regressors.
 \balist
 \item Test for significance of the regression.
+	
+	
 \item Calculate \uf{R}{2} and \uw{\uf{R}{2}}{adj}. How do these quantities compare to the values computed for the model in problem 3.1, which included an additional regressor (\uf{x}{2})?
+	
+	
 \item Calculate a 95\% CI on \uw{\bta}{7}. Also, find a 95\% CI on the mean number of games won by a team when \uw{x}{7} \eql 56.0 and \uw{x}{8} \eql 2100. Compare the lengths of these CIs to the lengths of the corresponding CIs from problem 3.3 (that is, the above part f and g in question 2)
+	
+	
 \item What conclusions can you draw from this problem about the consequences of omitting an important regressor from a model?
+	
+	hi
 \elist
-
 }
-
 \bsc{Question 4 (exercise 4.2 on page 165)}{
 Consider the multiple regression model fit to the National Football League (NFL) team performance data in problem 3.1.
 
@@ -588,7 +594,26 @@ can use qq norm for this one
 	All 3 plots imply that the regressor is correctly specified. For \uw{x}{7} specifically, it looks like the variance is a little higher on the right side, implying the variance isn't exactly constant, but it doesn't look like it changes the distribution, so it should still be good.
 	
 \item Construct the partial regression plots for this model. Compare the plots with the plots of residuals versus regressors from part c above. Discuss the type of information provided by these plots.
+\begin{verbatim}
+model_wo_x2 = lm(y~x$x7+x$x8)
+x2_tl_x7_x8 = lm(x$x2~x$x7+x$x8)
+plot(resid(model_wo_x2)~resid(x2_tl_x7_x8), xlab = "x2 residuals regressed against x7, x8",
+     ylab = "y residuals regressed against x7, x8")
 
+model_wo_x7 = lm(y~x$x2+x$x8)
+x7_tl_x2_x8 = lm(x$x7~x$x2+x$x8)
+plot(resid(model_wo_x7)~resid(x7_tl_x2_x8), xlab = "x7 residuals regressed against x2, x8",
+     ylab = "y residuals regressed against x2, x8")
+
+model_wo_x8 = lm(y~x$x7+x$x2)
+x8_tl_x7_x2 = lm(x$x8~x$x7+x$x2)
+plot(resid(model_wo_x8)~resid(x8_tl_x7_x2), xlab = "x8 residuals regressed against x7, x2",
+     ylab = "y residuals regressed against x7, x2")
+\end{verbatim}
+
+	\simg{q4d1.png}
+	\simg{q4d2.png}
+	\simg{q4d3.png}
 	
 \elist
 }

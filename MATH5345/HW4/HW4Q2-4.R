@@ -107,6 +107,15 @@ plot(x$x8, model.resid)
 
 model_wo_x2 = lm(y~x$x7+x$x8)
 x2_tl_x7_x8 = lm(x$x2~x$x7+x$x8)
-plot(resid(model_wo_x2)~resid(x2_tl_x7_x8))
-plot(resid(model_wo_x2)~resid(x2_tl_x7_x8), xlab = "residuals of x2 regressed against x7,x8", ylab = "residuals of y regressed against x7,x8")
-                                                                                                     
+plot(resid(model_wo_x2)~resid(x2_tl_x7_x8), xlab = "x2 residuals regressed against x7, x8",
+     ylab = "y residuals regressed against x7, x8")
+
+model_wo_x7 = lm(y~x$x2+x$x8)
+x7_tl_x2_x8 = lm(x$x7~x$x2+x$x8)
+plot(resid(model_wo_x7)~resid(x7_tl_x2_x8), xlab = "x7 residuals regressed against x2, x8",
+     ylab = "y residuals regressed against x2, x8")
+
+model_wo_x8 = lm(y~x$x7+x$x2)
+x8_tl_x7_x2 = lm(x$x8~x$x7+x$x2)
+plot(resid(model_wo_x8)~resid(x8_tl_x7_x2), xlab = "x8 residuals regressed against x7, x2",
+     ylab = "y residuals regressed against x7, x2")
