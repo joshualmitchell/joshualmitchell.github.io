@@ -284,6 +284,8 @@ Derive or show that
 		}
 	}
 	
+\newpage
+	
 \item \vrn{\bth} \eql \ssq\uf{(X\pr X)}{-1}
 	
 	\eqn{
@@ -344,6 +346,9 @@ Derive or show that
    \hline
 \end{tabular}
 \end{table}
+
+\newpage 
+
 \item Construct the analysis-of-variance table and test for significance of regression.
 	
 	\begin{table}[ht]
@@ -359,12 +364,6 @@ x\$x2 & 1 & 76.19 & 76.19 & 26.17 & 0.0000 \\
    \hline
 \end{tabular}
 \end{table}
-
-\ 
-
-\
-
-\
 
 To test for significance of regression, we establish \uw{H}{0} and \uw{H}{a}:
 
@@ -410,6 +409,7 @@ So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relat
 		}
 		
 		\av{5.117} \gr 2.064 \rar Reject \uw{H}{0}
+\newpage
 	\item \uw{H}{0}: \uw{\bta}{7} \eql 0
 		
 		\uw{\bta}{7} \eql 0.193960, \uw{t}{\frc{0.05}{2}, 24} \eql 2.064
@@ -519,6 +519,9 @@ So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relat
 	fit      lwr      upr
 	7.216424 6.436203 7.996645
 \end{verbatim}
+
+\newpage
+
 	\bpth{2} Manual:
 	
 	A CI for \exv{\uw{y}{0}$|$\uw{x}{0}} is \yh$_0$ (\ps or \ms) \uw{t}{\frc{\afa}{2}, n \ms p} $\sqrt{x_0\pr(x\pr x)^{-1}x_0\hat\ssq}$
@@ -576,6 +579,8 @@ Reconsider the National Football League data from Problem 3.1. Fit a model to th
 	
 	x7: (-0.19716429,  0.293906022)
 	
+\newpage
+	
 \item Also, find a 95\% CI on the mean number of games won by a team when \uw{x}{7} \eql 56.0 and \uw{x}{8} \eql 2100. Compare the lengths of these CIs to the lengths of the corresponding CIs from problem 3.3 (that is, the above part f and g in question 2)
 	\begin{verbatim}
 	test_X <- data.frame(x7=56, x8=2100)
@@ -592,6 +597,9 @@ Reconsider the National Football League data from Problem 3.1. Fit a model to th
 	If you leave out a regressor, you can make your model a lot less accurate.
 \elist
 }
+
+\newpage
+
 \bsc{Question 4 (exercise 4.2 on page 165)}{
 Consider the multiple regression model fit to the National Football League (NFL) team performance data in problem 3.1.
 
@@ -610,6 +618,9 @@ can use qq norm for this one
 	\img{q4a.png}
 	
 	I don't think so. Since the model's data follows an imagined normal distribution line fairly closely, it seems reasonable to assume normality.
+
+\newpage
+
 \item Construct and interpret a plot of the residuals versus the predicted response.
 	
 	plot(model\$fitted.values, model.resid)
@@ -617,6 +628,7 @@ can use qq norm for this one
 	\img{q4b.png}
 	
 	It looks like static, indicating that there is no relationship between the residuals and predicted response, supporting the assumption that the errors are independent.
+
 \item Construct plots of the residuals versus each of the regressor variables. Do these plots imply that the regressor is correctly specified?
 	
 	plot(x\$x2, model.resid)
@@ -630,7 +642,9 @@ can use qq norm for this one
 	\simg{q4c3.png}
 	
 	All 3 plots imply that the regressor is correctly specified. For \uw{x}{7} specifically, it looks like the variance is a little higher on the right side, implying the variance isn't exactly constant, but it doesn't look like it changes the distribution, so it should still be good.
-	
+
+\newpage
+
 \item Construct the partial regression plots for this model. Compare the plots with the plots of residuals versus regressors from part c above. Discuss the type of information provided by these plots.
 \begin{verbatim}
 model_wo_x2 = lm(y~x$x7+x$x8)
@@ -657,6 +671,8 @@ plot(resid(model_wo_x8)~resid(x8_tl_x7_x2), xlab = "x8 residuals regressed again
 	
 \elist
 }
+
+\newpage
 
 \bsc{Question 5}{
 Show that the hat matrix H \eql X\uf{(X\pr X)}{-1}X\pr and I \ms H (where I is the identity matrix) are symmetric and idempotent. That is, please show:
