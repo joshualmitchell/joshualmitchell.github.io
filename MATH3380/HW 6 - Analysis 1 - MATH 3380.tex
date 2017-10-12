@@ -396,7 +396,7 @@ Suppose that \prn{\uw{s}{n}} and \prn{\uw{t}{n}} are sequences st \uw{s}{n} \lse
 \balist
 \item If lim \uw{s}{n} \eql $+\infty$ then lim \uw{t}{n} \eql $+\infty$
 	
-	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{s}{n} \eql $+\infty$ and  lim \uw{t}{n} is NOT $+\infty$.
+	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{s}{n} \eql $+\infty$.
 	
 	\uw{t}{n} diverges to $+\infty$ if \fa M \mem \br, \exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
 	
@@ -404,21 +404,21 @@ Suppose that \prn{\uw{s}{n}} and \prn{\uw{t}{n}} are sequences st \uw{s}{n} \lse
 	
 	We know that
 	
-	\exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
+	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gr M
 	
 	Since \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn,
 	
-	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gre \uw{t}{n} \gr M
+	\exs N \mem \bn st n \gre N implies \uw{t}{n} \gre \uw{s}{n} \gr M
 	
-	\exs N \mem \bn st n \gre N implies \uw{s}{n} \gr M
+	\exs N \mem \bn st n \gre N implies \uw{t}{n} \gr M
 	
-	This is the definition of diverging to $+\infty$, a contradiction.
+	This is the definition of diverging to $+\infty$.
 	
-	Hence, \uw{s}{n} diverges to $+\infty$.
+	Hence, \uw{t}{n} diverges to $+\infty$.
 	
 \item If lim \uw{t}{n} \eql $-\infty$ then lim \uw{s}{n} \eql $-\infty$
 	
-	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{s}{n} \eql $-\infty$ and  lim \uw{t}{n} is NOT $-\infty$.
+	Suppose \exs sequences \prn{\uw{s}{n}} and \prn{\uw{t}{n}} st \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn where lim \uw{t}{n} \eql $-\infty$.
 	
 	\uw{t}{n} diverges to $-\infty$ if \fa M \mem \br, \exs N \mem \bn st n \gre N implies \uw{t}{n} \ls M
 	
@@ -434,7 +434,7 @@ Suppose that \prn{\uw{s}{n}} and \prn{\uw{t}{n}} are sequences st \uw{s}{n} \lse
 	
 	\exs N \mem \bn st n \gre N implies \uw{s}{n} \ls M
 	
-	This is the definition of diverging to $-\infty$, a contradiction.
+	This is the definition of diverging to $-\infty$.
 	
 	Hence, \uw{s}{n} diverges to $-\infty$.
 \elist
@@ -459,19 +459,101 @@ Thus, lim (\frc{1}{\uw{s}{n}}) \eql 0.
 
 \lla 
 
+\as{lim (\frc{1}{\uw{s}{n}}) \eql 0}
+
+Thus,
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\frc{1}{\uw{s}{n}} \ms 0} \ls \ep
+
+So,
+
+\av{\frc{1}{\uw{s}{n}}} \ls \ep
+
+Since \prn{\uw{s}{n}} is a sequence of positive numbers,
+
+\frc{1}{\uw{s}{n}} \ls \ep
+
+\frc{1}{\ep} \ls \uw{s}{n}
+
+\lt{\frc{1}{\ep} \eql M}
+
+So,
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies M\eql\frc{1}{\ep} \ls \uw{s}{n}
+
+Thus, lim \uw{s}{n} \eql $+\infty$
+
 }
 
 \bsc{Problem 17}{
 \balist
 \item Show that \lmti{n} \frc{k^n}{n!} \eql 0 \fa k \mem \br
+	
+	\lt{\ep \gr 0, k \mem \br \gr 0}
+	
+	\wts{\exs N \mem \bn st n \gre N implies \av{\frc{k^n}{n!} \ms 0} \ls \ep}
+	
+	Recall Theorem 4.2.7 - "The Ratio Test"
+	
+	Assume \bk{\uw{s}{n}} is a sequence of \textbf{positive} terms (i.e. \uw{s}{n} \gr 0, \fa n \mem \bn) and \lmti{n} \frc{\uw{s}{n \ps 1}}{\uw{s}{n}} \eql L.
+		
+	If L \ls 1, then \lmti{n}\uw{s}{n} \eql 0
+	
+	\lt{\uw{s}{n} \eql \frc{k^n}{n!}}
+	
+	\wts{\lmti{n} \frc{\frc{k^{n + 1}}{{(n + 1)}!}}{\frc{k^n}{n!}} \ls 1}
+	
+	\frc{\frc{k^{n + 1}}{{(n + 1)}!}}{\frc{k^n}{n!}} \eql \frc{n!k^{n + 1}}{(n + 1)!k^n} \eql \frc{k}{n \ps 1}
+	
+	\lmti{n} \frc{k}{n + 1} \eql 0 \eql L
+	
+	L \ls 1
+	
+	Hence, \lmti{n} \uw{s}{n} \eql 0 if k \mem \br \gr 0 (why does this not apply to k \lse 0 again?)
+
 \item What can be said about \lmti{n} \frc{n!}{k^n}?
+	
+	It diverges to $+\infty$
 \elist
 }
 
 \bsc{Problem 18}{
-Assume that \prn{\uw{s}{n}} is a convergent sequence with a \gre \uw{s}{n} \gre b \fa n \mem \bn.
+Assume that \prn{\uw{s}{n}} is a convergent sequence with a \lse \uw{s}{n} \lse b \fa n \mem \bn.
 
 Prove that a \lse lim \uw{s}{n} \lse b.
+
+\lt{lim \uw{s}{n} \eql s}
+
+\wts{a \lse s \lse b}
+
+\supp{a \gr s or s \gr b}
+
+We know that 
+
+\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{s}{n} \ms s} \ls \ep
+
+\lt{\ep \eql a \ms s}
+
+So,
+
+\eqn{-(a - s) \ls \uw{s}{n} - s \ls a - s}
+\eqn{-a + s \ls \uw{s}{n} - s \ls a - s }
+\eqn{-a + 2s \ls \uw{s}{n} \ls a}
+
+but a \lse \uw{s}{n}, a contradiction.
+
+\lt{\ep \eql s \ms b}
+
+So,
+
+\eqn{-(s - b) \ls \uw{s}{n} - s \ls s - b}
+\eqn{-s + b \ls \uw{s}{n} - s \ls s - b}
+\eqn{b \ls \uw{s}{n} \ls 2s - b}
+
+but \uw{s}{n} \lse b, a contradiction.
+
+Hence, a \lse lim \uw{s}{n} \lse b
+
 }
 
 \end{document}
