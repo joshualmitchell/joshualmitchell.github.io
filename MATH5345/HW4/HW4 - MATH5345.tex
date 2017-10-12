@@ -372,13 +372,13 @@ To test for significance of regression, we establish \uw{H}{0} and \uw{H}{a}:
 
 \uw{H}{a}: \uw{\bta}{j} $\neq$ 0 for at least one of j \eql 2, 7, 8
 
-We reject \uw{H}{0} if \uw{F}{0, j} \gr \uw{F}{0.05 \eql \afa, \tab 9,\tab 18 \eql (28 - 9 - 1)} for any \uw{F}{0, j} \textbf{*** 28\ms9\ms1 or 28\ms3\ms1?}
+We reject \uw{H}{0} if \uw{F}{0, j} \gr F \eql 29.44 (from R)
 
-\uw{F}{0, 2} \eql 26.17 \gr 2.4563
+\uw{F}{0, 2} \eql 26.17 \gr 29.44 (uh oh)
 
-\uw{F}{0, 7} \eql 47.92 \gr 2.4563
+\uw{F}{0, 7} \eql 47.92 \gr 29.44 
 
-\uw{F}{0, 8} \eql 14.22 \gr 2.4563
+\uw{F}{0, 8} \eql 14.22 \gr 29.44 (uh oh)
 
 So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relationship for y \tl \uw{x}{2}, y \tl \uw{x}{7}, and y \tl \uw{x}{8}
 
@@ -470,44 +470,29 @@ So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relat
 	
 \item Using the partial F test, determine the contribution of \uw{x}{7} to the model. How is this partial F statistic related to the t test for \uw{\bta}{7} calculated in part c above?
 	
-	\textbf{Knowing:} 
-	
-	The partial F-test is the most common method of testing for a nested normal linear regression model. "Nested" model is just a fancy way of saying a reduced model in terms of variables included.
-	
-	If \uw{F}{0} \gr \uw{F}{\afa, r, n \ms p}, we reject \uw{H}{0}, concluding that at least one of the parameters in \uw{\bta}{2} is not zero, and consequently at least one of the regressors \uw{x}{k \ms r \ps 1}, \uw{x}{k \ms r \ps 2}, . . . , \uw{x}{k} in \uw{X}{2} contribute significantly to the regression model. Some authors call the test in (3.35) a partial F test because it measures the contribution of the regressors in \uw{X}{2} given that the other regressors in \uw{X}{1} are in the model.
-	
-	Partial F-Test:
-	
-	\uw{H}{0}: \uw{\bta}{2} \eql 0
-	
-	\eqn{F_0 = \frac{SS_R(\bta_1|\bta_2)}{r\times MS_{res}}}
-	
-	where \uw{\bta}{1} \eql \bta \ms \bk{\uw{\bta}{7}}, \uw{\bta}{2} \eql \uw{\bta}{7}
-	
-	\eqn{SS_R(\bta_2|\bta_1) = SS_R(\bta) - SS_R(\bta_1)}
-	\eqn{SS_R(\bta_2|\bta_1) = (76.193 + 139.501 + 41.400) - (76.193 + 41.400)}
-	\eqn{= 139.501}
-	
-	r \eql 1
-	
-	\uw{MS}{res} \eql 2.911
-	
-	\eqn{F_0 = \frac{139.501}{1 \times 2.911}}
-	\eqn{= 47.92202}
-	
-	\uw{F}{\afa, r, n \ms p} \eql \uw{F}{0.05, 1, (28 \ms (3 \ps 1) \eql 24} \eql 4.2597
-	
-	Reject \uw{H}{0} if \uw{F}{0} \gr \uw{F}{0.05, 1, 24}
-	
-	47.92202 \gr 4.2597 \lra reject \uw{H}{0}
-	
 	anova(lm(y \tl x7))\$F yields 11.00524
 	
 	qf(0.025, df1 = 1, df2 = 24, lower.tail = F) yields 5.713369
 	
+	11.00524 \gr 5.713369 \lra reject \uw{H}{0}
+	
+	The partial F statistic is related because you're essentially testing the full model (the regular model) vs the reduced model (without B$_7$) and seeing if the reduced model is actually a better model. This is equivalent to testing if B$_7$ \eql 0 with a t statistic: you're just evaluating the effect of B$_7$ on the model.
+	
+	\textbf{From the book:} 
+	
+	The partial F-test is the most common method of testing for a nested normal linear regression model. "Nested" model is just a fancy way of saying a reduced model in terms of variables included.
+	
+	If \uw{F}{0} \gr \uw{F}{\afa, r, n \ms p}, we reject \uw{H}{0}, concluding that at least one of the parameters in \uw{\bta}{2} is not zero, and consequently at least one of the regressors \uw{x}{k \ms r \ps 1}, \uw{x}{k \ms r \ps 2}, . . . , \uw{x}{k} in \uw{X}{2} contribute significantly to the regression model. Some authors call the test in (3.35) a partial F test because it measures the contribution of the regressors in \uw{X}{2} given that the other regressors in \uw{X}{1} are in the model.		
+	
 \item Find a 95\% CI on \uw{\bta}{7}. (This is part a of problem 3.3, and the following one is part b of problem 3.3.)
 	
+	\textbf{Question: Why does R say t \eql 2.198 with summary(model)? But 2.064 works for calculations?}
+	
 	\bpth{1} R:
+	
+	confint(model)
+	
+	x\$x7: (0.011855322, 0.376065098)
 	
 	\bpth{2} Manual:
 	
@@ -517,19 +502,39 @@ So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relat
 	
 	\uw{t}{\frc{\afa}{2}, n \ms p} \eql \uw{t}{0.025, 28 \ms 4 \eql 24} \eql 2.064
 	
-	SE(\uw{\bth}{j} \eql 0.088233
+	SE(\uw{\bth}{j}) \eql 0.088233
 	
 	(0.193960 \ms (2.064$\times$0.088233), 0.193960 \ps (2.064$\times$0.088233)
+	
+	(0.011847088, 0.376072912)
 	
 \item Find a 95\% CI on the mean number of games won by a team when \uw{x}{2} \eql 2300, \uw{x}{7} \eql 56.0, and \uw{x}{8} \eql 2100.
 	
 	
 	\bpth{1} R:
+\begin{verbatim}
+	test_X <- data.frame(x2=2300, x7=56, x8=2100)
+	predict(model, test_X, interval="confidence")
 	
-	prediction(
-	
+	fit      lwr      upr
+	7.216424 6.436203 7.996645
+\end{verbatim}
 	\bpth{2} Manual:
 	
+	A CI for \exv{\uw{y}{0}$|$\uw{x}{0}} is \yh$_0$ (\ps or \ms) \uw{t}{\frc{\afa}{2}, n \ms p} $\sqrt{x_0\pr(x\pr x)^{-1}x_0\hat\ssq}$
+	
+	 \yh$_0$ \eql 7.216424 
+	
+	\uw{t}{\frc{\afa}{2}, n \ms p} \eql \uw{t}{0.025, 28 \ms 4 \eql 24} \eql 2.064
+	
+	\eqn{
+		\splt{
+			& \yh_0 \pm \uw{t}{\frc{\afa}{2}, n \ms p}\sqrt{x_0\pr(x\pr x)^{-1}x_0\hat\ssq} \\
+			& 7.216424 \pm 2.064\sqrt{x_0\pr(x\pr x)^{-1}x_0(2.911)} \\
+			& 7.216424 \pm 2.064\sqrt{0.04908781253(2.911)} \\
+			& (6.436203, 7.996645)
+		}
+	}
 \elist
 
 
@@ -540,18 +545,51 @@ Note: For c, d, f, and g, please show two versions of your results: (1) obtained
 \bsc{Question 3 (Exercise 3.4 on page 122)}{
 Reconsider the National Football League data from Problem 3.1. Fit a model to this data using only \uw{x}{7} and \uw{x}{8} as the regressors.
 \balist
-\item Test for significance of the regression.
+\item Test for significance of the regression (using only \uw{x}{7} and \uw{x}{8}).
+
+	To test for significance of regression, we establish \uw{H}{0} and \uw{H}{a}:
+
+	\uw{H}{0}: \uw{\bta}{7} \eql \uw{\bta}{8} \eql 0 
+
+	\uw{H}{a}: \uw{\bta}{j} $\neq$ 0 for at least one of j \eql 7, 8
+
+	We reject \uw{H}{0} if \uw{F}{0, j} \gr 15.13
+	
+	\uw{F}{0, 7} \eql 16.437 \gr 15.13
+
+	\uw{F}{0, 8} \eql 13.832 \gr 15.13 (uh oh)
+
+	So, reject \uw{H}{0}. There is evidence to conclude that there is a linear relationship for y \tl \uw{x}{7}, and y \tl \uw{x}{8}
 	
 	
 \item Calculate \uf{R}{2} and \uw{\uf{R}{2}}{adj}. How do these quantities compare to the values computed for the model in problem 3.1, which included an additional regressor (\uf{x}{2})?
 	
+	summary(model)\$r.squared \lra 0.5476628
 	
-\item Calculate a 95\% CI on \uw{\bta}{7}. Also, find a 95\% CI on the mean number of games won by a team when \uw{x}{7} \eql 56.0 and \uw{x}{8} \eql 2100. Compare the lengths of these CIs to the lengths of the corresponding CIs from problem 3.3 (that is, the above part f and g in question 2)
+	summary(model)\$adj.r.squared \lra 0.5114759
 	
+	They're lower than the other values, which means that the model fits the data less effectively (i.e. SS$_{Residual}$ is higher)
+	
+\item Calculate a 95\% CI on \uw{\bta}{7}.
+
+	confint(model)
+	
+	x7: (-0.19716429,  0.293906022)
+	
+\item Also, find a 95\% CI on the mean number of games won by a team when \uw{x}{7} \eql 56.0 and \uw{x}{8} \eql 2100. Compare the lengths of these CIs to the lengths of the corresponding CIs from problem 3.3 (that is, the above part f and g in question 2)
+	\begin{verbatim}
+	test_X <- data.frame(x7=56, x8=2100)
+	predict(model, test_X, interval="confidence")
+    
+    fit      lwr      upr
+	6.926243 5.828643 8.023842
+	\end{verbatim}
+	
+	The CI is definitely wider (since it's a less accurate model it has to be wider to be 95\% sure).
 	
 \item What conclusions can you draw from this problem about the consequences of omitting an important regressor from a model?
 	
-	hi
+	If you leave out a regressor, you can make your model a lot less accurate.
 \elist
 }
 \bsc{Question 4 (exercise 4.2 on page 165)}{
@@ -614,6 +652,8 @@ plot(resid(model_wo_x8)~resid(x8_tl_x7_x2), xlab = "x8 residuals regressed again
 	\simg{q4d1.png}
 	\simg{q4d2.png}
 	\simg{q4d3.png}
+	
+	These plots tell us how much the error of one regressor affects the error of the whole model when taking into account the effect of other regressors on both the one regressor and the model itself.
 	
 \elist
 }
