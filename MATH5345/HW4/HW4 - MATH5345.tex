@@ -228,6 +228,10 @@
   \includegraphics[width=0.5\linewidth]{#1}
 \end{figure}
 }
+\newcommand{\simg}[1]{
+  \includegraphics[width=0.35\linewidth]{#1}
+}
+
 \newcommand\tab[1][1cm]{\hspace*{#1}}	
 \newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}		 
 % ----------
@@ -551,9 +555,41 @@ can use qq norm for this one
 
 \balist
 \item Construct a normal probability plot of the residuals. Does there seem to be any problem with the normality assumption?
+	
+	model.resid = resid(model)
+	
+	qqnorm(model.resid, main = "Games Won vs Passing Yards / Rushing",
+       xlab = "Passing Yards / \% Rushing / Opponents Rushing", ylab = "Games Won")
+	
+	qqline(model.resid)
+	
+	\img{q4a.png}
+	
+	I don't think so. Since the model's data follows an imagined normal distribution line fairly closely, it seems reasonable to assume normality.
 \item Construct and interpret a plot of the residuals versus the predicted response.
+	
+	plot(model\$fitted.values, model.resid)
+	
+	\img{q4b.png}
+	
+	It looks like static, indicating that there is no relationship between the residuals and predicted response, supporting the assumption that the errors are independent.
 \item Construct plots of the residuals versus each of the regressor variables. Do these plots imply that the regressor is correctly specified?
+	
+	plot(x\$x2, model.resid)
+	
+	plot(x\$x7, model.resid)
+	
+	plot(x\$x8, model.resid)
+	
+	\simg{q4c1.png}
+	\simg{q4c2.png}
+	\simg{q4c3.png}
+	
+	All 3 plots imply that the regressor is correctly specified. For \uw{x}{7} specifically, it looks like the variance is a little higher on the right side, implying the variance isn't exactly constant, but it doesn't look like it changes the distribution, so it should still be good.
+	
 \item Construct the partial regression plots for this model. Compare the plots with the plots of residuals versus regressors from part c above. Discuss the type of information provided by these plots.
+
+	
 \elist
 }
 
