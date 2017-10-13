@@ -40,6 +40,9 @@ The list goes (neither the lists nor the list of lists are in any particular ord
 - For all things (i.e. every person, place, idea, entity, "everything"), is it possible to create a 1 dimensional spectrum (like the real number line), such that there is a bijective function (or, maybe an algorithm) that maps each thing to a spot on the spectrum?
 
 In other words, can we order literally anything and everything in such a way that no matter what we discover, create, or think about, we can take that thing and map it to a spot on that spectrum? The moment we know something exists, can we find out where it exists on the spectrum next to everything else that exists or could possibly exist?
+- How do you generalize the concept of distance so that you can apply it to, say, language? Or pictures?
+
+In other words, what's the distance between "of" and "cat"? or "pencil" and "ocean"? How do we define that? Could we do something like wiki wars? (i.e. where you start on the wikipedia page for a subject and you try and get to the wikipedia page for another subject solely by clicking as few hyperlinks as possible) Should we judge by average number of words between them when they both appear in the same sentence? Maybe how many times they appear in the same corpus? How many significant words their definitions have in common?
 - What is the largest amount of incompressible information possible?
 
 This has to depend on the compressor at some point, since it would just be trivial to map all the information to one bit and then compress it to that bit. However, can we define that compressor by some compressible amount of information? Can we then compress that compressor with another compressor? Can we create a system of these in such a way that the last compressor can be compressed by the first (like a snake eating its tail)? What implications does this have for the information?

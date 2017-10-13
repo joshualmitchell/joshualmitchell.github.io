@@ -216,7 +216,7 @@
 \newcommand{\bth}{\mt{\bh{\beta}}}
 \newcommand{\yh}{\mt{\bh{Y}}}
 
-\newcommand{\exv}[1]{E[#1]}
+\newcommand{\exv}[1]{\txt{E[}#1\txt{]}}
 \newcommand{\vrn}[1]{V[#1]}
 
 \newcommand{\gv}{ \mt{|} }
@@ -228,6 +228,10 @@
   \includegraphics[width=0.5\linewidth]{#1}
 \end{figure}
 }
+\newcommand{\simg}[1]{
+  \includegraphics[width=0.35\linewidth]{#1}
+}
+
 \newcommand\tab[1][1cm]{\hspace*{#1}}	
 \newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}		 
 % ----------
@@ -528,5 +532,78 @@ something vs normal
 If you have 10 distinct data points, then m is 10. If you have 17 data points total (not necessarily distinct) then n is 17.
 
 In R, you isntall the package alr3, and do ?pureErrorAnova
+
+-----------
+
+10/12/17
+
+Midterm will be Ch 0 - 5. 
+
+Ch 0 - Review (The Review HW and other basic stats. Specifically: estimating/hypothesizing/CI'ing u and \ssq)
+
+Ch 1 - Intro
+
+Ch 2 - Simple Linear Regression
+
+Ch 3 - Multiple Linear Regression
+
+Ch 4 - Model Adequacy Checking / Diagnosis
+
+Ch 5 - Transformation and Weighting to Correct Model Inadequacies
+
+As far as Ch 5 goes
+
+y \eql x\bta \ps \ep
+
+Key assumptions:
+
+Independence - 
+
+Constant Variance -
+
+Normally distributed - 
+
+\exv{\ep} \eql 0
+
+Linearity - 
+
+5.1 introduction
+
+Data Transformation (fix the problem of assumption violation e.g. non-constant variance)
+
+Generalized and Weighted Least Squares (fix the problem of assumption violation, e.g. correlated errors or non-constant variance)
+
+Subject-Matter Knowledge (Ideally, the choice of metric should be made by the engineer or scientist with subject-matter knowledge)
+
+5.2 Variance stabilizing Transformations
+
+Constant variance assumption:
+- Often violated when the variance is \textbf{functionally related} to the mean
+
+i.e. \ssq \afa \exv{y} or \ssq \eql f(\exv{y})
+
+- Transformation on the response may eliminate the problem
+
+- 
+
+----
+
+An electric utility is interested in developing a model relating peak-hour demand (y) to total energy usage during the month (x).
+
+This is an important planning problem because while most customers pay directly for energy usage (in kilowatt-hours), the generation system must be large enough to meet the maximum demand imposed.
+
+
+Nonlinearity may be detected via the lack-of-fit test of Section 4.5
+
+If a transformation of a nonlinear function can result in a linear function - we say it is intrinsically or transformably linear.
+
+Ex:
+
+y \eql \uw{\bta}{0}\uf{e}{\bta_1x}\ep 
+
+ln y \eql ln \uw{\bta}{0} \ps \uw{\bta}{1}x \ps ln \ep
+
+
+
 
 \end{document}
