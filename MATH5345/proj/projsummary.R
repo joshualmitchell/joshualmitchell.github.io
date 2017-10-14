@@ -31,6 +31,7 @@ head(pokedata)
 # Possible explanation: data comes from different TV show versions, maybe different video game versions...
 
 # To start: What percentage of our data is like this?
+# Let's make a copy of our data without those duplicates.
 pokedata_without_duplicates <- pokedata[!duplicated(pokedata$pokemon_num_mvd),]
 # Long story short, if the row has a pokemon number (i.e. 3 for Venusaur) we've already seen, we delete it.
 
@@ -38,18 +39,20 @@ pokedata_without_duplicates <- pokedata[!duplicated(pokedata$pokemon_num_mvd),]
 percentage <- (nrow(pokedata_without_duplicates)/nrow(pokedata))*100
 percentage
 
-# Okay, so duplicates are about ~10% of our data.
+# Okay, so duplicates are about ~10% of our data. That sounds like a lot.
 # I'm not entirely sure what implications that has, so let's look at statistics with and without duplicates.
 
 # First, autodata:
 summary(autodata)
 # This will give us some quick numbers about each of our features / columns.
+
 # It might be easier to see trends and distributions with some plots and graphs.
 # Let's look at the first 4: mpg_c, cylnum_mvd, displ_c, hp_c
 
 hist(autodata$mpg_c, xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
 # Looks somewhat normally distributed with a longer tail on the right.
-# This makes sense since there are probably more consumer cars with >30 mpg than there are with <10 mpg.
+# This makes sense since, if the mean is ~20,
+# there are probably more consumer cars with >30 mpg than there are with <10 mpg.
 
 barplot(table(autodata$cylnum_mvd), main="Occurrences of cars with x cylinders", 
         xlab="Number of Cylinders", ylab="Frequency")
@@ -79,7 +82,12 @@ autodata$hp_c
 
 dim(autodata)
 # Okay, so 6/397 is about 1.5% of our data that we'd be missing.
-# Doesn't seem like we'd be missing out much if we just deleted those.
+# Doesn't seem like we'd be missing out *too* much if we just deleted those, in this case.
+# We are implicitly assuming a lot by deleting them - there are cases where we shouldn't.
+
+# For example: We're looking at cancer data with a sample of 100 people. 10 have cancer, 90 don't.
+# If the 1.5% of our "bad" data came from the 10 cancer samples, we'd be removing 10-20% of the
+# information we have about an important feature.
 
 autodata_formatted <- subset(autodata, !autodata[ , 4] == "?")
 # What I did here is replaced our data with a subset of the data containing only rows where hp_c isn't "?"
@@ -87,6 +95,43 @@ autodata_formatted <- subset(autodata, !autodata[ , 4] == "?")
 dim(autodata)
 dim(autodata_formatted)
 # Cool, looks like we got rid of those 6 values.
+
+# Let's try again.
+hist(autodata_formatted$hp_c)
+# What?? But they're all numeric now!
+# Or are they? Let's look at the structure of what we know worked (displacement) vs horsepower:
+
+str(autodata$displ_c)
+# Okay, a list of numbers, awesome.
+
+str(autodata_formatted$hp_c)
+# Factors??
+# Hmm, it looks like, since we had ?'s at first, so R thought that column was a list of strings
+
+# Let's convert all our values back to integers:
+autodata_formatted$hp_c <- as.numeric(as.character(autodata_formatted$hp_c))
+
+# Now let's take another look
+str(autodata_formatted$hp_c)
+# Cool! Looks like displacement.
+
+# Let's try again:
+hist(autodata_formatted$hp_c)
+# Bingo.
+# Okay. Looks normally distributed with a hump and a long tail.
+
+# At this point, we've looked at mpg, cylnum, displ, and hp.
+# Let's do a quick look at the others:
+
+str(autodata_formatted)
+# Since cylnum, modelyr, and origin are multivariate discrete
+# (a list of numbers that act more like categories), 
+# a list of ints is fine.
+
+# The only other feature is just the car name, which we could possibly do some NLP or something with,
+# but that's for another time, so a list of name factors is fine.
+
+# Now, time to look at them in relation to each other! And build a model if we have time.
 
 write.table(pokedata_without_duplicates, file = "pokedata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
 write.table(autodata_formatted, file = "autodata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
