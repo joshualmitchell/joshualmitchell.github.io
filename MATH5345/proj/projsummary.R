@@ -19,11 +19,13 @@ head(pokedata)
 colnames(autodata) <- c("mpg_c", "cylnum_mvd", "displ_c", "hp_c", "wgt_c", "acc_c", "modelyr_mvd", "origin_mvd", "name_str")
 colnames(pokedata) <- c("pokemon_num_mvd", "name_str", "type_1_str", "type_2_str", "total_c", "hp_c", "attack_c", "defense_c", "sp_attack_c", "sp_defense_c", "speed_c", "generation_mvd", "legendary_bool")
 
+# Now for a quick peek at our data:
+
 head(autodata)
 # I'm still not sure what origin means. It's possible values are: {1, 2, 3}.
 # The data's description:
 # https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.names
-# doesn't say much. Oh well, let's see how it affects our data.
+# doesn't say much. Oh well, let's see how it affects our models later.
 
 head(pokedata)
 # A problem: there are duplicate pokemon in our pokemon data set.
@@ -40,9 +42,9 @@ percentage <- (nrow(pokedata_without_duplicates)/nrow(pokedata))*100
 percentage
 
 # Okay, so duplicates are about ~10% of our data. That sounds like a lot.
-# I'm not entirely sure what implications that has, so let's look at statistics with and without duplicates.
+# I'm not entirely sure what implications that has, so let's look at statistics with and without duplicates later.
 
-# First, autodata:
+# Another way to do a quick (more quantitative) glance is with summary:
 summary(autodata)
 # This will give us some quick numbers about each of our features / columns.
 
@@ -131,7 +133,47 @@ str(autodata_formatted)
 # The only other feature is just the car name, which we could possibly do some NLP or something with,
 # but that's for another time, so a list of name factors is fine.
 
-# Now, time to look at them in relation to each other! And build a model if we have time.
+# Let's look at the relationship between a few features.
+# Remember how displacement is the total volume of all cylinders?
+# Let's see what it looks like when we graph them against each other.
+
+plot(autodata_formatted$cylnum_mvd, autodata_formatted$displ_c,
+     pch = 18, 
+     cex = 1.0, 
+     col = "blue", 
+     main = "Displacement vs Number of Cylinders", 
+     xlab = "Cylinder Number", 
+     ylab = "Displacement")
+# Yup, looks like a pretty linear relationship.
+
+# What if we wanted to predict, based on the shown relationship between displacement and cylinders,
+# how much displacement a car with 7 cylinders would have?
+
+# I'm going to gloss over all the math for now, but this is where machine learning would take over.
+# In this case, we're going to do a simple linear regression, 
+# which just means finding a best fit line and plugging in the x (7) we want a predicted y (displacement) for.
+
+displ_c <- autodata_formatted$displ_c
+cylnum_mvd <- autodata_formatted$cylnum_mvd
+autodata_formatted.lm <- lm(displ_c ~ cylnum_mvd) 
+# We just created a simple linear regression model for displacement and cylinders.
+abline(autodata_formatted.lm) 
+# Now we're going to graph that line.
+
+# To get an exact value:
+prediction <- predict(autodata_formatted.lm, data.frame(cylnum_mvd = 7))
+prediction # 283.7525 displacement, in theory, for 7 cylinders.
+
+# What if we wanted to take into account all of our features?
+
+
+
+# Since the data is relatively small, we can just use R's linear model function to generate our line.
+# Under the ho
+# We would essentially put all this data in matrices, do least squares, take partial derivatives, etc,
+# and then get a best fit line.
+
+# We can plot a line to make it a little more obvious:
 
 write.table(pokedata_without_duplicates, file = "pokedata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
 write.table(autodata_formatted, file = "autodata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
