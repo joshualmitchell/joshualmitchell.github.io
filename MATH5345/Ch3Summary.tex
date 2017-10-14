@@ -1,0 +1,360 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Chapter 3 Summary}
+
+% \input{ShortcutsStatistics}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage{blkarray}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 5345 / Regression Analysis}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Sun}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{\operatorname{+}} }
+\newcommand{\ms}{\mt{\operatorname{-}} }
+
+\newcommand{\ls}{\mt{\operatorname{<}} }
+\newcommand{\gr}{\mt{\operatorname{>}} }
+
+\newcommand{\lse}{\mt{\operatorname{\leq}} }
+\newcommand{\gre}{\mt{\operatorname{\geq}} }
+
+\newcommand{\eql}{ \mt{\operatorname{=}} }
+
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand{\mn}[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+\newcommand{\exv}[1]{\txt{E[}#1\txt{]}}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\gv}{ \mt{|} }
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}
+\newcommand{\simg}[1]{
+  \includegraphics[width=0.35\linewidth]{#1}
+}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}	
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}	
+
+\newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\inm}[1]{\mt{\left\[ \begin{smallmatrix} #1 \end{smallmatrix} \right\]}}
+
+\newcommand{\lbm}[4]{
+	  \begin{blockarray}{#1} % a c for every row, plus the c-labels
+        #2 \\ % & c-label1 & c-label2 & c-label3...
+      \begin{block}{c(#3)} % a c for every column only
+        #4 % r-label1 & data & data & data ... \\
+           % r-label2 & data & data & data ... \\
+           % ...
+           % r-labeln & data & data & data ... \\
+      \end{block}
+    \end{blockarray}
+}
+
+% Example:
+% \[\lbm{ccccc}{& H & y & d}{cccc}{H & 4 & 4 & 4 \\
+% Y & 3 & 3 & 3 \\
+% D & 2 & 2 & 2 \\
+% D & 2 & 2 & 2 \\}\]
+
+\newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!	 
+% ----------
+
+\begin{document}
+
+\bsc{Chapter 3: Multiple Linear Regression}{
+
+\ssc{Regression}{
+
+\eqn{\unds{n\times1}{y} = \unds{n\times(k + 1)}{x}\times\unds{(k + 1)\times1}{\bta} + \unds{n\times1}{\epsilon}}
+\eqn{or}
+\eqn{\unds{n\times1}{y} = \unds{n\times p}{x}\times\unds{p\times1}{\bta} + \unds{n\times1}{\epsilon}}
+
+\ep \tl N(0, \ssq I) where I is the identity matrix of whatever size it needs to be.
+
+\exv{y} \eql x\bta 
+
+\vrn{y} \eql \vrn{$\epsilon$} \eql \ssq I
+
+y \tl N(x\bta, \ssq I)
+
+}
+\ssc{Least Square Estimate for \bta and \ssq}{
+
+\eqn{\bth = (x\pr x)^{-1}x\pr y}
+\exv{\bth} \eql \bta 
+
+\vrn{\bth} \eql (x\pr x)$^{-1}$\ssq \eql c\ssq
+
+\vrn{\bth$_j$} \eql c$_{jj}$\ssq 
+
+\exv{\bta$_j$} \eql \uw{\bta}{j}
+
+\uw{\bth}{j} \tl N(\uw{\bta}{j}, \uw{c}{jj}\ssq)
+
+\eqn{\hat y = x\hat\beta= x(x\pr x)^{-1}x\pr y = Hy}
+
+\exv{$\bh{y}$} \eql \exv{x\bth} \eql x\bta 
+
+\vrn{$\bh{y}$} \eql \vrn{x\bth} \eql x\vrn{\bth}x\pr \eql x(x\pr x)$^{-1}$x\pr\ssq \eql H\ssq
+
+$\bh{y}$ \tl N(x\bta, H\ssq)
+
+$\bh{y}_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq) where
+
+\eqn{h_{jj} = x_j\pr(x\pr x)^{-1}x_j}
+\eqn{x_j = [x_{j0}, x_{j1}, ... x_{jk}]}
+and
+\eqn{\hat\epsilon = y - \hat y = y - Hy = (I - H)y}
+where $\hat\epsilon$ is the estimated error.
+
+\eqn{\hat\ssq = \frac{SS_{res}}{n - p} = MS_{res}}
+where p \eql k \ps 1 \eql the number of parameters (i.e. \bta's: \uw{\bta}{0}, \uw{\bta}{1}, ... \uw{\bta}{k})
+}
+
+\ssc{Confidence Intervals}{
+
+\eqn{\hat\beta_j \tl N(\beta_j, c_{jj}\ssq) \lra \frac{\hat\beta_j - \beta_j}{\sqrt{c_{jj}\ssq}} \tl N(0, 1)}
+or, if variance is unknown,
+\eqn{\hat\beta_j \tl N(\beta_j, c_{jj}MS_{res}) \lra \frac{\hat\beta_j - \beta_j}{\sqrt{c_{jj}MS_{res}}} or \frac{\hat\beta_j - \beta_j}{se(\hat\beta_j)} \tl t_{n - p}}
+variance:
+\eqn{\hat\ssq = MS_{res} = \frac{SS_{res}}{n - p} \tl \chi^2_{n - p}}
+
+So, the (1 \ms \afa) confidence interval for \uw{\bta}{j} is
+\eqn{\hat\beta_j \pm \uw{t}{\frac{\afa}{2}, n - p}se(\hat\beta_j)}
+
+$\hat y_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq)
+\eqn{\frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}\ssq}} \tl N(0, 1) \lra \frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}MS_{res}}} \tl t_{n - p}}
+where \ssq \eql \uw{MS}{res}
+
+A 1 \ms \afa confidence interval for \exv{\uw{y}{0}$|$\uw{x}{0}} is:
+\eqn{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0\hat\ssq}}
+or
+\eqn{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0MS_{res}}}
+}
+
+\ssc{Analysis of Variance (ANOVA)}{
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+Regression & p \ms 1 (or k) & \uw{SS}{Reg} & \uw{MS}{Reg} & \frc{\uw{MS}{Reg}}{\uw{MS}{res}} & n/a \\ 
+  Residuals & n \ms p or n \ms(k \ps1) & \uw{SS}{res} & \uw{MS}{res} &  &  \\
+  Total & n \ms 1 & \uw{SS}{total} &  &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\uf{R}{2} \eql \frc{\uw{SS}{Reg}}{\uw{SS}{Tot}}
+
+\uf{R}{2}$_{adj}$ \eql ?
+
+}
+
+}
+
+\end{document}
