@@ -39,10 +39,57 @@ percentage <- (nrow(pokedata_without_duplicates)/nrow(pokedata))*100
 percentage
 
 # Okay, so duplicates are about ~10% of our data.
-# I'm not entirely sure what implications that has, so let's look at statistics with both data sets.
+# I'm not entirely sure what implications that has, so let's look at statistics with and without duplicates.
+
+# First, autodata:
+summary(autodata)
+# This will give us some quick numbers about each of our features / columns.
+# It might be easier to see trends and distributions with some plots and graphs.
+# Let's look at the first 4: mpg_c, cylnum_mvd, displ_c, hp_c
+
+hist(autodata$mpg_c, xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
+# Looks somewhat normally distributed with a longer tail on the right.
+# This makes sense since there are probably more consumer cars with >30 mpg than there are with <10 mpg.
+
+barplot(table(autodata$cylnum_mvd), main="Occurrences of cars with x cylinders", 
+        xlab="Number of Cylinders", ylab="Frequency")
+# Most cars are 4 cylinder engines, followed by 8, and then 6. Makes sense.
+# Looks like there are a few outliers that have 3 and 5 cylinders.
+
+hist(autodata$displ_c, main="Occurrences of cars with x displacement", 
+     xlab="Displacement Amount", ylab="Frequency")
+# So this is all over the place.
+# Since displacement is a measure of the total volume of all the cylinders in an engine,
+# we should expect to see a relationship or correlation between displacement and cylinders.
+# More on that in a minute.
+
+hist(autodata$hp_c)
+# What? This doesn't work? What do you mean 'x' must be numeric?
+# I thought our data was numeric? It's labeled as continuous (aka numeric).
+# Let's look at the data again:
+
+autodata$hp_c
+# Ohhhhh.. there are a few question marks where numbers should be.
+# Questions to ask: What does this mean? Should we throw out all rows with question marks in at least 1 column?
+# Should we replace all question marks with 0?
+# Let's start with how many of our rows have question marks.
+# Luckily, the webpage I got this data set from:
+# https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.names
+# Tells us that yes, it does have missing values, and that there are 6 of them with horse power missing.
+
+dim(autodata)
+# Okay, so 6/397 is about 1.5% of our data that we'd be missing.
+# Doesn't seem like we'd be missing out much if we just deleted those.
+
+autodata_formatted <- subset(autodata, !autodata[ , 4] == "?")
+# What I did here is replaced our data with a subset of the data containing only rows where hp_c isn't "?"
+
+dim(autodata)
+dim(autodata_formatted)
+# Cool, looks like we got rid of those 6 values.
 
 write.table(pokedata_without_duplicates, file = "pokedata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
-write.table(autodata, file = "autodata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
+write.table(autodata_formatted, file = "autodata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
 
 auto_y = autodata[, 1]
 auto_x = autodata[, 2:8]

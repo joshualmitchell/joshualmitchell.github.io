@@ -13,6 +13,7 @@
 \usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{chngcntr}
+\usepackage{blkarray}
 
 % Libraries
 
@@ -202,5 +203,30 @@
      							   
 \newcommand{\eqn}[1]{\[#1\]}
 \newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+
+\newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\inm}[1]{\mt{\left\[ \begin{smallmatrix} #1 \end{smallmatrix} \right\]}}
+
+\newcommand{\lbm}[4]{
+	  \begin{blockarray}{#1} % a c for every row, plus the c-labels
+        #2 \\ % & c-label1 & c-label2 & c-label3...
+      \begin{block}{c(#3)} % a c for every column only
+        #4 % r-label1 & data & data & data ... \\
+           % r-label2 & data & data & data ... \\
+           % ...
+           % r-labeln & data & data & data ... \\
+      \end{block}
+    \end{blockarray}
+}
+
+% Example:
+% \[\lbm{ccccc}{& H & y & d}{cccc}{H & 4 & 4 & 4 \\
+% Y & 3 & 3 & 3 \\
+% D & 2 & 2 & 2 \\
+% D & 2 & 2 & 2 \\}\]
+
+\newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!	
      							 
 % ----------

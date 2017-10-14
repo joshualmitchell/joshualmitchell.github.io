@@ -13,6 +13,7 @@
 \usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{chngcntr}
+\usepackage{blkarray}
 
 % Libraries
 
@@ -207,7 +208,7 @@
 \newcommand{\bth}{\mt{\bh{\beta}}}
 \newcommand{\yh}{\mt{\bh{Y}}}
 
-\newcommand{\exv}[1]{E[#1]}
+\newcommand{\exv}[1]{\txt{E[}#1\txt{]}}
 \newcommand{\vrn}[1]{V[#1]}
 
 \newcommand{\gv}{ \mt{|} }
@@ -219,6 +220,34 @@
   \includegraphics[width=0.5\linewidth]{#1}
 \end{figure}
 }
+\newcommand{\simg}[1]{
+  \includegraphics[width=0.35\linewidth]{#1}
+}
+
 \newcommand\tab[1][1cm]{\hspace*{#1}}	
-\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}		 
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}	
+
+\newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\inm}[1]{\mt{\left\[ \begin{smallmatrix} #1 \end{smallmatrix} \right\]}}
+
+\newcommand{\lbm}[4]{
+	  \begin{blockarray}{#1} % a c for every row, plus the c-labels
+        #2 \\ % & c-label1 & c-label2 & c-label3...
+      \begin{block}{c(#3)} % a c for every column only
+        #4 % r-label1 & data & data & data ... \\
+           % r-label2 & data & data & data ... \\
+           % ...
+           % r-labeln & data & data & data ... \\
+      \end{block}
+    \end{blockarray}
+}
+
+% Example:
+% \[\lbm{ccccc}{& H & y & d}{cccc}{H & 4 & 4 & 4 \\
+% Y & 3 & 3 & 3 \\
+% D & 2 & 2 & 2 \\
+% D & 2 & 2 & 2 \\}\]
+
+\newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!	 
 % ----------
