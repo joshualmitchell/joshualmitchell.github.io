@@ -258,6 +258,169 @@
 
 \begin{document}
 
+\bsc{Notes Packet 1}{
+
+\ssc{Graph Definition} {
+Figure n1.1
+
+A graph G \eql (V, E, f)
+
+V is the vertex set (e.g. w, x, y...)
+
+E is the edge set (e.g. \uw{e}{1}, \uw{e}{2}...)
+
+f is the function mapping edges to vertices (i.e. f: \uw{e}{1} \lra xw, \uw{e}{2} \lra xw, \uw{e}{3} \lra yw ...)
+}
+\ssc{Simple Graph Definition}{
+A \textbf{simple graph} G (aside from the null graph) is a graph with n \gre 1 vertices and m \gre 0 edges that consists of a vertex set
+
+V(G) \eql \bk{\uw{v}{1}, \uw{v}{2}... \uw{v}{n}}
+
+and an edge set
+
+E(G) \eql \bk{\uw{e}{1}, \uw{e}{2}... \uw{e}{m}}
+
+where each edge is an unordered pair of vertices.
+}
+
+An example graph theory problem: Can x workers do y jobs such that all of the jobs can be done by at least one worker?
+
+Here's a table of workers and the corresponding jobs they can do.
+
+\begin{tabular}{l|c}
+  Worker \# & Job \\
+  \hline
+  1 & a\\
+  2 & a, b\\
+  3 & b, c, d\\
+  4 & a, b
+\end{tabular}
+
+Here's a graph of what that might look like:
+
+Figure n1.3
+
+If we look at jobs c and d, we notice that both can only be done by worker \#3.
+
+Figure n1.4
+
+\ssc{Subgraph Definition}{
+
+A \textbf{subgraph} of a graph G is a graph H such that V(H) \sbs V(G) and E(H) \sbs E(G).
+
+We write this as H \sbs G
+
+An \textbf{induced subgraph} of G is a subgraph H \sbs G such that if e \mem E(G) and e's endpoints are both members of V(H), then e \mem E(H).
+
+}
+}
+
+\bsc{Notes Packet 2}{
+
+A \textbf{path} is a sequence of unique edges that connects a sequence of unique vertices. You can't repeat any vertices or edges, but the path doesn't have to contain all the edges or vertices from the graph.
+
+A \textbf{cycle} is a path that, instead of its endpoint being another unique vertex, it ends at its beginning vertex. Both vertices and edges are not allowed to be repeated here as well.
+
+A graph is \textbf{connected} if, given any two vertices a and b, there is a path between a and b.
+
+A \textbf{simple} graph G is a graph such that G has no \textbf{loops} (an edge such that its two endpoints are the same vertex), and, given any two vertices a and b, a and b have no more than one edge between them.
+
+A \textbf{loopless} graph G has all the qualities of a simple graph, but allows any two vertices to have more than one edge between them.
+
+The \textbf{Adjacency Matrix} of a graph G, A(G), is a matrix whose entries are the number of edges between two vertices. It is symmetric if the graph is undirected.
+
+The \textbf{Incidence Matrix} of a graph G, M(G), is a matrix whose entries indicate whether a vertex and an edge are \textbf{incident} (i.e. touching or connected). The number of rows doesn't necessarily equal the number of columns (i.e. \av{E(G)} \eql \av{V(G)} can be true or false).
+
+For example, here is a loopless graph G:
+
+Figure n2.2
+
+And here is A(G) and M(G):
+
+Example:
+\[\underset{\textrm{A(G) - Adjacency Matrix of G}}{\lbm{ccccc}{
+  & w & x & y & z}{cccc}
+{w & 0 & 1 & 1 & 0 \\
+ x & 1 & 0 & 2 & 0 \\
+ y & 1 & 2 & 0 & 1 \\
+ z & 0 & 0 & 1 & 0 \\}}
+ \tab
+Figure-n2.2
+ \tab
+\underset{\textrm{M(G) - Incidence Matrix of G}}{\lbm{cccccc}{
+ & a & b & c & d & e}{ccccc}{
+ w & 1 & 1 & 0 & 0 & 0 \\
+ x & 1 & 0 & 1 & 1 & 0 \\
+ y & 0 & 1 & 1 & 1 & 1 \\
+ z & 0 & 0 & 0 & 0 & 1 \\}}\]
+
+The \textbf{degree} of a vertex x, d(x), is how many edges are incident (connected to) x.
+
+A(G) and M(G) are related like so:
+
+\eqn{\textrm{A(G)} + \lbm{ccccc}{
+  &  &  &  & }{cccc}
+{ & d(w) &  &  &  \\
+  &  & d(x) &  &  \\
+  &  &  & d(y) &  \\
+  &  &  &  & d(z) \\} = MM^T}
+}
+
+Edges can also cross one another. From most perspectives, \uw{G}{1} and \uw{G}{2} are the same graph.
+
+Figure n2.4, Figure n2.5
+
+In fact, \uw{G}{1} and \uw{G}{2} are \textbf{isomorphic}.
+
+f: V(\uw{G}{1}) \lra V(\uw{G}{2})
+
+1 \lra a
+
+2 \lra b
+
+...
+
+5 \lra e
+
+ij \mem E(\uw{G}{1} iff f(i)f(j) \mem E(\uw{G}{2})
+
+The full definition is this:
+
+An \textbf{isomorphism} from G to H is a \textbf{bijection} (a 1 to 1 correspondence) f: V(G) \lra V(H) such that
+
+given an edge uv, uv \mem E(G) iff f(u)f(v) \mem E(H)
+
+We say G $\cong$ H to indicate that G is isomorphic to H.
+
+The \textbf{compliment} of a graph G, notated as $\bar G$, is a graph with the same vertex set as G, but if uv \mem E(G), then uv $\not\in$ E($\bar G$) and vise versa.
+
+G $\cong$ H iff $\bar G$ $\cong$ $\bar H$
+
+\ssc{Bipartite Graph Definition}{
+
+A \textbf{bipartite graph} G, also called a \textbf{bigraph}, is a graph st V(G) can be decomposed into two \textbf{disjoint} sets (i.e. any vertex v \mem V(G) is either in one set or the other, not both) such that no two vertices within the same set are \textbf{adjacent} (connected by an edge). A bipartite graph is a special case of a \textbf{k-partite} graph with k\eql 2.
+
+}
+
+Some other vocabularly:
+
+A \textbf{complete} graph, \uw{K}{n}, is a simple graph with n vertices such that there is one edge between any two vertices.
+
+The number of edges in \uw{K}{n}, \av{E(\uw{K}{n})}, is equal to \nck{n}{2}. Mathematically,
+
+\eqn{|\textrm{E(\uw{K}{n})}| = \frac{n(n - 1)}{2} = \nck{n}{2}}
+
+\textbf{\uw{C}{n}} is shorthand for a cycle with n vertices.
+
+\textbf{\uw{P}{n}} is shorthand for a path with n vertices.
+
+\textbf{\uw{K}{r, s}} is shorthand for a complete, bipartite graph such that the independent sets have r and s vertices, respectively.
+
+
+\newpage
+
+\sidenote{END OF NOTES FROM BEFORE TEST 1, BEGINNING OF POST TEST 1 NOTES}
+
 Definition of a king:
 
 For any x, either King \lra x, or King \lra y \lra x for some path y.
