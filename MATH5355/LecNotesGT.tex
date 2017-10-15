@@ -258,6 +258,10 @@
 
 \begin{document}
 
+An excellent resource for Graph Theory powerpoint slides:
+
+http://people.qc.cuny.edu/faculty/christopher.hanusa/courses/634sp11/Documents/Forms/AllItems.aspx
+
 \bsc{Notes Packet 1}{
 
 \ssc{Graph Definition} {
@@ -412,10 +416,113 @@ The number of edges in \uw{K}{n}, \av{E(\uw{K}{n})}, is equal to \nck{n}{2}. Mat
 
 \textbf{\uw{C}{n}} is shorthand for a cycle with n vertices.
 
-\textbf{\uw{P}{n}} is shorthand for a path with n vertices.
+\textbf{\uw{P}{n}} is shorthand for a path with n vertices and n \ms 1 edges.
 
 \textbf{\uw{K}{r, s}} is shorthand for a complete, bipartite graph such that the independent sets have r and s vertices, respectively.
 
+The notation \uw{K}{5} \ms \bk{e} means a complete graph with 5 vertices minus an edge e.
+
+\ssc{Decomposition}{
+
+A \textbf{decomposition} of a graph G is a set of subgraphs \uw{H}{1}, \uw{H}{2}, ... \uw{H}{k} that partition the edges of G.
+
+That is, \fa i, j,
+
+\eqn{\bigcup_{1\lse i\lse k}\uw{H}{i} = G,\tab E(H_i) \cap E(H_j) = \es}
+
+An \textbf{H-decomposition} is a decomposition of G such that each subgraph \uw{H}{i} in the decomposition is \textbf{isomorphic} to H.
+
+For example, we know that \uw{K}{5} \ms \bk{e} decomposes into 3\uw{P}{4} (3 paths with 4 vertices):
+
+Figure 2.6
+
+Can \uw{K}{6} decompose into 5\uw{P}{4}?
+
+Yes. Using the "rotation" trick.
+
+Figure 2.7
+
+How many copies of \uw{P}{4} can \uw{K}{8} decompose into?
+
+So, \uw{K}{8} has \frc{8(8 - 1)}{2} \eql 23 edges.
+
+However, \uw{P}{4} has 4 vertices, and therefore 3 edges.
+
+There is no integer k such that k\uw{P}{4} \eql 23, so the answer is: it can't.
+}
+
+\ssc{Peterson Graph Definition}{
+
+A \textbf{Peterson graph} G is a graph with
+
+V(G) \eql \bk{A : A \sbs \bk{1, 2, 3, 4, 5}, and \av{A} \eql 2}
+
+and
+
+AB \mem E iff A $\cap$ B \eql \es
+
+In other words, if the vertex is named 34, then it can only be connected to vertices that have neither 3 nor 4 in the name (i.e. 51, 52, 12)
+
+Example:
+
+Figure N2.8
+
+}
+
+\newpage
+
+\bsc{Notes Packet 3}{
+\ssc{Induction Example}{
+P(n) is true for every positive integer n.
+
+Step \bpth{1}: P(1) is true (should be a trivial case).
+
+Step \bpth{2}: Assume that, \fa k \gre 1, P(n) is true for n\eql k
+
+Step \bpth{3}: Prove that if P(n) is true for n\eql k, then P(n) is true for n\eql k \ps 1 (this is "weak" induction)
+
+Step \bpth{4}: This proves that since P(1) is true, P(2) is true. Since P(2) is true, P(3) is true. And so on...
+}
+
+\
+
+A \textbf{walk} is a sequence of edges and vertices in a graph (i.e. a path with no restrictions, so you can cross over the same edge and/or vertex more than once).
+
+A \textbf{trail} is a walk with no repeated edges. Repeated vertices are still okay.
+
+A \textbf{path} is, again, a sequence of connected edges and vertices in a graph such that there are no repeated edges nor vertices.
+
+A \textbf{circuit} is a cycle that allows repeated vertices. No repeated edges still, though. Also known as a \textbf{closed trail}.
+
+A \textbf{cycle} is a path that begins and ends at the same vertex. Also known as a \textbf{closed path}.
+
+A \textbf{u, v walk / trail / path} is a walk / trail / path that begins at u and ends at v.
+
+In the above definition for u, v walk / trail / path, u and v would be the \textbf{endpoints}.
+
+The \textbf{internal vertices} are the vertices that aren't endpoints.
+
+The \textbf{length} of a walk / trail / path / circuit / cycle is how many edges it has. 
+
+\
+
+\ssc{Lemma 1.2.5}{
+
+Every u, v walk contains a u, v path.
+
+\bgpf
+Insert proof here.
+
+Figure N3.1
+\epf
+
+Be careful, though. If you have a u, v path and a v, w path, that doesn't mean you have a u, w path containing both a u, v path and a v, w path (they might not necessarily be head to tail).
+
+}
+
+Stopped at 3nd page of 3rd packet.
+
+}
 
 \newpage
 
