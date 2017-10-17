@@ -169,7 +169,22 @@
 \newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
 \newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
 
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
 \newcommand{\eql}{\mt{=} }
+
 \newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
 \newcommand{\uw}[2]{#1\mt{_{#2}}}
 \newcommand{\uf}[2]{#1\mt{^{#2}}}
@@ -193,9 +208,11 @@
      							   %  N*(x, eps) intersect S \= emptyset
 \newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
      							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
      							 
 % ----------
-
 
 \begin{document}
 
@@ -748,12 +765,90 @@ then s $\leq$ t
 
 }
 
+\newpage 
+
 \bsc{Lecture 11}{
-Homework 5 Review
+Spent doing Homework 5 Review
 }
 
-\bsc{Lecture 12}{
-Test 1
+\bsc{Lecture "12"}{
+Spent taking Test 1
+}
+
+\newpage
+
+\bsc{Lecture 13}{
+
+\ssc{Definition 4.3.1}{
+
+A sequence \prn{\uw{s}{n}} is \textbf{increasing} (or \textbf{decreasing}) if \uw{s}{n} \lse \uw{s}{n + 1} (or \uw{s}{n + 1} \lse \uw{s}{n}) \fa n \mem \bn. A sequence is \textbf{monotonic} if it is increasing or decreasing.
+}
+
+\ssc{Theorem 4.3.3 (Monotone Convergence Theorem)}{
+
+A \textbf{monotonic sequence} is convergent iff it is bounded.
+
+}
+
+}
+
+\newpage
+
+\bsc{Lecture 14}{
+
+\ssc{Theorem 4.3.8}{
+
+\balist
+\item If \bk{\uw{s}{n}} is an unbounded increasing sequence, then \lmti{n} \uw{s}{n} \eql $\infty$
+\item If \bk{\uw{s}{n}} is an unbounded decreasing sequence, then \lmti{n} \uw{s}{n} \eql $-\infty$
+\elist
+
+}
+
+\ssc{Definition 4.3.9}{
+
+A sequence \bk{\uw{s}{n}} is \textbf{Cauchy} if \fa \ep \gr 0, \exs N(\ep) \mem \bn st
+
+\eqn{|s_n - s_m| < \ep\textrm{, for m, n }\gre N}
+
+}
+
+\ssc{Lemma 4.3.10}{
+
+Every convergent sequence is Cauchy.
+
+}
+
+\ssc{Lemma 4.3.11}{
+
+Every Cauchy sequence is bounded (similar to exam question: Every convergent sequence is bounded)
+
+}
+
+\ssc{Theorem 4.3.12 - Cauchy Convergence Criterion}{
+
+A sequence of real numbers is convergent iff it is a Cauchy sequence.
+
+}
+
+\bsc{4.4.1 Subsequences}{
+
+\ssc{Definition 4.4.1}{
+
+\lt{\bk{\uw{s}{n}}$^\infty_{n = 1}$ be a sequence}
+
+Also, let \bk{\uw{n}{k}} be a sequence \mem \bn st
+
+\eqn{n_1 < n_2 < n_3 ...}
+
+The sequence \bk{\dbs{s}{n}{k}}$^\infty_{k = 1}$ is called a \textbf{subsequence} of \bk{\uw{s}{n}}.
+
+Notice that, in this case, \uw{n}{k} \gre k (i.e. k \lse \uw{t}{k}) \fa k \mem \bn
+
+Thus, \lmti{n} \uw{n}{k} \eql $\infty$
+}
+}
+
 }
 
 \end{document}

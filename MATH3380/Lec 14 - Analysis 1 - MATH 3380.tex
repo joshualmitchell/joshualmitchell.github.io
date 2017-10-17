@@ -288,7 +288,7 @@ Every Cauchy sequence is bounded (similar to exam question: Every convergent seq
 
 \bgpf
 
-This also appeared in a similar context in the HW: Example 13, page 186
+This appeared in a similar context in the HW: Example 13, page 186
 
 \epf
 
@@ -347,6 +347,46 @@ Conversely, assume that \bk{\uw{s}{n}} is Cauchy.
 	Hence, \lmti{n} \uw{s}{n} \eql \dbs{s}{n}{l}
 \item S is infinite.
 	
+	Since \bk{\uw{s}{n}} is Cauchy, it follows by Lemma 4.3.11 that S is bounded.
+	
+	By the Bolzano-Weierstrass theorem, 
+	
+	\exs s mem \br st
+	
+	s \mem S\pr (i.e. s is an accumulation point of S)
+	
+	\wts{\lmti{n} \eql s}
+	
+	For \ep \gr 0, \exs N(\ep) \mem \bn st
+	
+	\step{|s_n - s_m| < \frac{\epsilon}{2}\textrm{ for n, m}\gre N}{1}
+	
+	Also by Exercise 15, Section 1.4, page 142, since s \mem S\pr,
+	
+	Every deleted neighborhood of s, N*(s,$\epsilon$) contains \textbf{an infinite number} of points from S.
+	
+	Since there are an infinite number of points in N*(s,$\epsilon$), it's totally reasonable that there are an infinite number of points in N*(s,$\frac{\epsilon}{2}$)
+	
+	Thus, \exs m \mem \bn with M \gre N st
+	
+	\uw{s}{m} \mem N(s,$\frac{\epsilon}{2}$)
+	
+	So,
+	
+	\step{|s - s_m| < \frac{\epsilon}{2}}{2}
+	
+	From \bpth{1} and \bpth{2},
+	
+	\eqn{
+		\splt{
+			|s - s_n| & = |(s - s_m) + (s_m - s_n)| \\
+			& \lse |s - s_m| + |s_m - s_n| \\
+			& < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \\
+			& \fa n \gre N
+		}
+	}
+	
+	Hence, \lmti{n} \uw{s}{n} \eql s, which completes the proof.
 	
 \elist
 
@@ -376,4 +416,94 @@ The reason is because, if you're not careful, you can conclude something like, s
 which would tell you, in theory, that the limit is 0. Which is \textbf{not} true.
 }
 
+\bsc{Example 4.3.13}{
+
+Show that the harmonic series \uw{s}{n} \eql $\sum_{n = 1}^\infty$ \frc{1}{n} diverges.
+
+\eqn{\frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ... + \frac{1}{n}}
+
+\textbf{Solution:}
+
+Let n \mem \bn and
+
+\eqn{\uw{s}{n} = 1 + \frac{1}{2} + \frac{1}{3} + ... + \frac{1}{n} + \frac{1}{n + 1} + ... + \frac{1}{m}}
+
+Then, for m \gr n,
+
+\eqn{
+	\splt{
+	|s_n - s_m| & = s_m - s_n \\
+	& = \frac{1}{n + 1} + \frac{1}{n + 2} + ... + \frac{1}{n + (m - n)} \\
+	& > \frac{m - n}{n + (m - n)} = \frac{m - n}{m}
+	}
+}
+
+So, if m \eql 2n, then
+
+\eqn{|s_n - s_{2n}| > \frac{2n - n}{2n} = \frac{n}{2n} = \frac{1}{2}\textrm{, }\fa n \mem \bn}
+
+This tells me that \bk{\uw{s}{n}} is \textbf{not} Cauchy.
+
+Hence, by the Cauchy Convergence Criterion, \av{\uw{s}{n}} diverges.
+
+Notice that \bk{\uw{s}{n}} is a monotonically increasing sequence that is unbounded.
+
+So, by Theorem 4.3.8(a), \lmti{n} \uw{s}{n} \eql $\infty$
+
+}
+
+\bsc{4.4.1 Subsequences}{
+
+\ssc{Definition 4.4.1}{
+
+\lt{\bk{\uw{s}{n}}$^\infty_{n = 1}$ be a sequence}
+
+Also, let \bk{\uw{n}{k}} be a sequence \mem \bn st
+
+\eqn{n_1 < n_2 < n_3 ...}
+
+The sequence \bk{\dbs{s}{n}{k}}$^\infty_{k = 1}$ is called a \textbf{subsequence} of \bk{\uw{s}{n}}.
+
+Notice that, in this case, \uw{n}{k} \gre k (i.e. k \lse \uw{t}{k}) \fa k \mem \bn
+
+Thus, \lmti{n} \uw{n}{k} \eql $\infty$
+
+\sidenote{
+If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn, and
+
+if \lmti{n} \uw{s}{n} \eql $\infty$,
+
+then \lmti{n} \uw{t}{n} \eql $\infty$
+}
+
+}
+
+\ssc{Practice 4.4.3}{
+Let \bk{\uw{n}{k}} be a sequence in \bn such that \uw{n}{k} \ls \uw{n}{k + 1} \fa k \mem \bn.
+
+Use induction to prove that \uw{n}{k} \gre k, \fa k \mem \bn 
+
+\textbf{Solution:}
+
+Notice that 1 \lse \uw{n}{1}
+
+For l \mem \bn, 
+
+assume that l \lse \uw{n}{l}
+
+Now, consider l \ps 1 \lse \uw{n}{l} \ps 1
+
+\sidenote{
+\uw{n}{k} \ls \uw{n}{k + 1}
+
+\uw{n}{k} \ps 1 \lse \uw{n}{k + 1}
+}
+
+So, l \ps 1 \lse \uw{n}{l} \ps 1 \lse \uw{n}{l + 1}
+
+Hence,
+
+k \lse \uw{n}{k} \fa k \mem \bn 
+}
+}
 \end{document}
