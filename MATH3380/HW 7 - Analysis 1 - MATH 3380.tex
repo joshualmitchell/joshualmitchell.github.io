@@ -308,11 +308,11 @@ P(n) (Proposition as a function of n):
 
 Suppose that, \fa k \mem \bn,
 
-\eqn{\sqrt{4\uw{s}{k} + 1} \gre \sqrt{4\uw{s}{k + 1} + 1}}
+\eqn{s_{k} = \sqrt{4\uw{s}{k - 1} + 1} \gre \sqrt{4\uw{s}{k} + 1} = s_{k + 1}}
 
 Now,
 
-\eqn{s_{k + 1} = \sqrt{4\uw{s}{k + 1} + 1} \gre \sqrt{4\uw{s}{k + 2} + 1} = s_{k + 2}}
+\eqn{s_{k + 1} = \sqrt{4\uw{s}{k} + 1} \gre \sqrt{4\uw{s}{k + 1} + 1} = s_{k + 2}}
 
 So,
 
@@ -398,30 +398,251 @@ Find an example of a sequence of real numbers satisfying each set of properties.
 	
 	In other words, find \lmti{n} \frc{1 - r^{n - 1}}{1 - r}
 	
-	P(n): \uw{s}{n} \eql \frc{1 - r^{n - 1}}{1 - r} is increasing and bounded.
+	By Theorem 4.2.1, \lmti{n} \frc{1 - r^{n - 1}}{1 - r} \eql \frc{1 - \lmti{n} r^{n - 1}}{1 - r}
 	
-	\uw{s}{1} \eql 0, \uw{s}{2} \eql 1
+	\wts{\lmti{n} r$^{n - 1}$ \eql 0}
 	
-	Assume: \uw{s}{k} \lse \uw{s}{k + 1}
+	Correct me if I'm wrong, but 
 	
-	\eqn{\uw{s}{k + 1} = }
+	\lmti{n} \av{r}$^{n - 1}$ \eql 0 \lra \lmti{n} r$^{n - 1}$ \eql 0
+	
+	\wts{\lmti{n} \av{r}$^{n - 1}$ \eql 0}
+	
+	We know that 0 \lse \av{r} \ls 1,
+	
+	So,
+	
+	for 1 \ls N \mem \bn, \av{r}$^N$ \ls \av{r} (assuming it is not the trivial case that r \eql 0)
+	
+	\lt{\ep \gr 0}
+	
+	\av{\av{r}$^{n-1}$ - 0} \ls \ep
+	
+	\av{r}$^{n-1}$ - 0 \ls \ep (since that's always positive)
+	
+	\av{r}$^{n-1}$ \ls \ep
+	
+	(n - 1) ln \av{r} \ls ln \ep
+	
+	n ln \av{r} \ls \ep \ps ln \av{r	}
+	
+	n \gr \frc{\ep + \textrm{ ln \av{r}}}{\textrm{ln \av{r}}}
+	
+	So, if 
+	
+	n \gr \frc{\ep + \textrm{ ln \av{r}}}{\textrm{ln \av{r}}}
+	
+	Then, 
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\av{r}$^{n-1}$ \ms 0} \ls \ep
+	
+	Hence, 
+	
+	\lmti{n} r$^{n - 1}$ \eql 0
+	
+	Hence,
+	
+	\frc{1 - \lmti{n} r^{n - 1}}{1 - r} \eql \frc{1 - 0}{1 - r} \eql \frc{1}{1 - r}
+	
 \item If we let the infinite repeating decimal 0.9999... stand for the limit:
 \eqn{\lmti{n}(\frac{9}{10} + \frac{9}{10^2} + ... + \frac{9}{10^n}),}
 	Show that 0.99999.... \eql 1.
+
+	From 10\bpth{a},
+	
+\eqn{\lmti{n} 1 + r + r^2 + ... r^n \eql \frc{1}{1 - r}}
+So,
+
+\eqn{
+	\splt{
+		\frac{9}{10} + \frac{9}{10^2} + ... + \frac{9}{10^n} & = 9(\frac{1}{10} + \frac{1}{10^2} + ... + \frac{1}{10^n}) \\
+		& =  9((\frc{1}{10})^{1} + (\frc{1}{10})^{2} + ... + (\frc{1}{10})^{n})
+	}
+}
+
+If we let r \eql \frc{1}{10}, then
+
+\eqn{\lmti{n} 1 + (\frc{1}{10})^1 + (\frc{1}{10})^2 + ... (\frc{1}{10})^n = \frc{1}{1 - \frc{1}{10}}}
+
+So,
+
+\eqn{
+	\splt{
+		\lmti{n} 9((\frc{1}{10})^{1} + (\frc{1}{10})^{2} + ... + (\frc{1}{10})^{n}) & = 9 \lmti{n}((\frc{1}{10})^{1} + (\frc{1}{10})^{2} + ... + (\frc{1}{10})^{n}) \\
+		& = 9 (\frac{1}{1 - \frac{1}{10}} - 1) \\
+		& = 10 - 9 \\
+		& = 1
+	}
+}
+
+Hence,
+
+0.9999999... \eql 1
+	
 \elist
 }
 
 \bsc{Problem 13}{
 Prove Lemma 4.3.11:
 
-Every Cauchy sequence is bounded. (Similar to the proof of Theorem 4.1.13)
+Every Cauchy sequence is bounded. (Similar to the proof of Theorem 4.1.13) \
+
+\
+
+\bgpf
+\lt{\uw{s}{n} be a Cauchy sequence}
+
+\uw{s}{n} is Cauchy if,
+
+\fa \ep \gr 0, \exs N \mem \bn st for n, m \gre N, \av{\uw{s}{n} \ms \uw{s}{m}} \ls \ep
+
+With \ep \eql 1, we obtain N \mem \bn st
+
+\av{\uw{s}{n} \ms \uw{s}{m}} \ls 1 when n, m \gre N
+
+Thus, n \gre N implies \av{\uw{s}{n}} \ls \av{\uw{s}{m}} \ps 1
+
+If we let
+
+\eqn{M = max \bk{\av{s_1}, \av{s_2}, ... \av{s_N}, \av{\uw{s}{m}} + 1}}
+
+Then we have \av{\uw{s}{n}} \lse M \fa n \mem \bn 
+
+Thus, \prn{\uw{s}{n}} is bounded.
+
+\epf
 }
+
+\newpage
 
 \bsc{Problem 14}{
 Let \prn{\uw{s}{n}} be the sequence defined by \uw{s}{n} \eql (1 \ps \frc{1}{n})$^n$.
 
 Use the binomial theorem (Exercise 3.1.30) to show that \prn{\uw{s}{n}} is an increasing sequence with \uw{s}{n} \ls 3 \fa n.
 
-Conclude that \prn{\uw{s}{n}} is convergent. The limit of (\uw{s}{n}) is referred to as e and is used as the base for natural logarithms. The approximate value of e is 2.71828.
+Conclude that \prn{\uw{s}{n}} is convergent. The limit of (\uw{s}{n}) is referred to as e and is used as the base for natural logarithms. The approximate value of e is 2.71828. \
+
+\
+
+\lt{\uw{s}{n} \eql (1 \ps \frc{1}{n})$^n$}
+
+\wts{\prn{\uw{s}{n}} is increasing, using the binomial theorem (Exercise 3.1.30)}
+
+\uf{\prn{1 \ps b}}{n} \eql 1 \ps nb \ps \frc{n(n - 1)}{2!}\uf{b}{n} \ps ... \ps \frc{n(n - 1)... (n - (r - 1))}{r!}\uf{b}{r} \ps ... \ps \uf{b}{n}
+
+So,
+
+\uf{\prn{1 \ps (\frc{1}{n})}}{n} \eql 1 \ps n(\frc{1}{n}) \ps \frc{n(n - 1)}{2!}\uf{(\frc{1}{n})}{n} \ps ... \ps \frc{n(n - 1)... (n - (r - 1))}{r!}\uf{(\frc{1}{n})}{r} \ps ... \ps \uf{(\frc{1}{n})}{n}
+
+In other words,
+
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql \sum_{r = 0}^n \nck{n}{r}(\frac{1}{n})^r}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \nck{n}{r}(\frac{1}{n})^r}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{n!}{r!(n-r)!} (\frac{1}{n})^r}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{n(n - 1)(n - 2)...(2)(1)}{(r)(r - 1)...(2)(1)(n-r)(n-r-1)...(2)(1)} (\frac{1}{n})^r}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{n(n - 1)(n - 2)...(2)(1)}{(r)(r - 1)...(2)(1)(n-r)(n-r-1)...(2)(1)} \frac{1}{n^r}}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{n(n - 1)(n - 2)...(n - (r - 1))}{(r)(r - 1)...(2)(1)} \frac{1}{n^r}}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{n(n - 1)...(n - (r - 1))}{r!} \frac{1}{n^r}}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{n}{n}\frac{n - 1}{n}...\frac{n - (r - 1)}{n}\frac{1}{r!}}
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n 1 * ( 1 - \frac{1}{n}) * ( 1 - \frac{2}{n})...(1 - \frac{r - 1}{n})\frac{1}{r!}}
+\eqn{\uf{\prn{1 \ps \frc{1}{n + 1}}}{n + 1} \eql 1 \ps \sum_{r = 1}^{n + 1} 1 * ( 1 - \frac{1}{n + 1}) * ( 1 - \frac{2}{n + 1})...(1 - \frac{r - 1}{n + 1})\frac{1}{r!}}
+
+Let i \mem \bk{0, 1, 2, ... r \ms 1}
+
+We know that
+
+\eqn{n + 1 \gre n}
+\eqn{\frac{1}{n + 1} \lse \frac{1}{n}}
+\eqn{\frac{i}{n + 1} \lse \frac{i}{n}}
+\eqn{\fa i}
+
+So,
+
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \eql 1 \ps \sum_{r = 1}^n \frac{1}{r!}\prod_i(1 - \frac{i}{n})}
+\eqn{\uf{\prn{1 \ps \frc{1}{n + 1}}}{n + 1} \eql 1 \ps \sum_{r = 1}^{n} \frac{1}{r!}\prod_i(1 - \frac{i}{n + 1}) + \frac{1}{r!}\prod_i(1 - \frac{i}{n + 1})}
+
+Since
+\eqn{\frac{i}{n + 1} \lse \frac{i}{n}}
+\fa i,
+
+\eqn{\sum_{r = 1}^n \frac{1}{r!}\prod_i(1 - \frac{i}{n}) \ls \sum_{r = 1}^{n} \frac{1}{r!}\prod_i(1 - \frac{i}{n + 1}) + \frac{1}{r!}\prod_i(1 - \frac{i}{n + 1})}
+In other words:
+\eqn{\uf{\prn{1 \ps \frc{1}{n}}}{n} \ls \uf{\prn{1 \ps \frc{1}{n + 1}}}{n + 1}}
+\fa n \mem \bn 
+
+Hence, \uw{s}{n} is increasing.
+
+
+
+P(n) (Proposition as a function of n):
+
+\uw{s}{n} \lse \uw{s}{n + 1}, \fa n \mem \bn 
+
+\uw{s}{1} \eql 2
+
+\uw{s}{2} \eql 2.25
+
+\as{\uw{s}{k} \lse \uw{s}{k + 1} \fa k \mem \bn}
+
+\eqn{1 \ps \sum_{r = 1}^k \frac{k(k - 1)...(k - (r - 1))}{r!} \frac{1}{k^r} \lse 1 \ps \sum_{r = 1}^{k + 1} \frac{(k + 1)(k)(k - 1)...(k - (r - 1))}{r!} \frac{1}{(k + 1)^r}}
+\eqn{\sum_{r = 1}^k \frac{k(k - 1)...(k - (r - 1))}{r!k^r} \lse \sum_{r = 1}^{k + 1} \frac{(k + 1)(k)(k - 1)...(k - (r - 1))}{r!(k + 1)^r}}
+\eqn{\sum_{r = 1}^k \frac{k(k - 1)...(k - (r - 1))}{r!k^r} \lse \sum_{r = 1}^{k} \frac{(k + 1)(k)(k - 1)...(k - (r - 1))}{r!(k + 1)^r} + \frac{(k)(k - 1)...(k - ((k + 1) - 1))}{(k + 1)!(k + 1)^{k}}}
+
+
+asdfasdf
+
+\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \lse \sum_{r = 1}^{k + 1} \frac{k + 1}{r!(k + 1)^r}}
+\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \lse \sum_{r = 1}^{k + 1} \frac{1}{r!(k + 1)^{r - 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{1}{r!k^r} - \frac{1}{(k + 1)!(k + 1)^{k + 1}} \lse \sum_{r = 1}^{k + 1} \frac{1}{r!(k + 1)^{r - 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{1}{r!k^r} -  \sum_{r = 1}^{k + 1} \frac{1}{r!(k + 1)^{r - 1}} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{r!(k + 1)^{r - 1}}{(r!(k + 1)^{r - 1})r!k^r} - \frac{r!k^r}{(r!(k + 1)^{r - 1})r!k^r} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{r!(k + 1)^{r - 1} - r!k^r}{(r!(k + 1)^{r - 1})r!k^r} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{(k + 1)^{r - 1} - k^r}{(k + 1)^{r - 1}r!k^r} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{(k + 1)^{r - 1}}{(k + 1)^{r - 1}r!k^r} - \frac{k^r}{{(k + 1)^{r - 1}r!k^r}} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
+\eqn{\sum_{r = 1}^{k + 1} \frac{1}{r!k^r} - \frac{1}{{(k + 1)^{r - 1}r!}} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
+
+asdfasd
+
+\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \gre \sum_{r = 1}^{k} \frac{1}{r!(k + 1)^{r - 1}} + \frac{1}{(k + 1)!(k + 1)^{(k + 1) - 1}}}
+\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \gre \sum_{r = 1}^{k} \frac{1}{r!(k + 1)^{r - 1}} + \frac{1}{(k + 1)!(k + 1)^{k}}}
+\eqn{\frac{1}{k} + \frac{1}{2!k^2} ... + \frac{1}{k!k^k} \gre \frac{1}{(k + 1)^{0}} + \frac{1}{2!(k + 1)^{1}} + ... + \frac{1}{k!(k + 1)^{k - 1}} + \frac{1}{(k + 1)!(k + 1)^{k}}}
+\eqn{\frac{1}{k} + \frac{1}{2!k^2} ... + \frac{1}{k!k^k} \gre \frac{1}{(k + 1)^{0}} + \frac{1}{2!(k + 1)^{1}} + ... + \frac{1}{k!(k + 1)^{k - 1}} + \frac{1}{(k + 1)!(k + 1)^{k}}}
+
+
+Now,
+
+\eqn{s_{k + 1} = \sqrt{4\uw{s}{k + 1} + 1} \gre \sqrt{4\uw{s}{k + 2} + 1} = s_{k + 2}}
+
+So,
+
+\eqn{s_k \gre s_{k + 1}}
+
+Hence, by induction, P(n): \uw{s}{n} \gre \uw{s}{n + 1} is true \fa n \mem \bn 
+
+
+
+\wts{\prn{\uw{s}{n}} is bounded with \uw{s}{n} \ls 3 \fa n, using the binomial theorem (Exercise 3.1.30)}
+
+\wts{\prn{\uw{s}{n}} is convergent}
+
+Look at it as 1 \ps $\sum_{r = 1}^n$ \frc{n(n - 1)...(n - (r - 1))}{r!}\frc{1}{n^r}
+
+\prn{1 \ps \frc{1}{n}}$^n$ goes in there somewhere somehow.
+
+About the last homework (HW 6), problem 9:
+
+If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql $\infty$,
+
+then \lmti{n} \uw{t}{n} \eql $\infty$
+
+So, \fa M \mem \br, \exs N \mem \bn st
+
+\uw{s}{n} \gr M, \fa n \gre N
+
+Notice that:
+
+\uw{t}{n} \gre \uw{s}{n} \gr M, \fa n \gre N
+
+So by definition, \lmti{n} \uw{t}{n} \eql $\infty$
 }
 \end{document}
