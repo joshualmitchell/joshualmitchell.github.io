@@ -1,4 +1,4 @@
-setwd("/Users/jm/joshualmitchell.github.io/MATH5345/proj")
+setwd("/Users/jm/joshualmitchell.github.io/pokecars")
 # Set's the working directory (i.e. tells R where the data is)
 
 autodata <- read.table("raw_auto-mpg.text", header=TRUE) # see line 4
@@ -196,23 +196,3 @@ prediction # 24.35382
 # Okay, so an origin of 2 predicts about 3 MPG more than origin 1 for this car.
 
 # A "higher" origin correlates with a higher MPG.
-
-
-
-
-
-
-write.table(pokedata_without_duplicates, file = "pokedata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
-write.table(autodata_formatted, file = "autodata_formatted.csv", sep = ",", na = "NA", row.names = TRUE, col.names = TRUE)
-
-
-
-# Multi co-linearity / multilinearity
-# variable selection to get rid of colinearity (possibly)
-
-par(mfrow = c(2, 2))
-plot(pokedata$HP, pokedata$Defense)
-plot(pokedata$HP, pokedata$Sp..Atk)
-plot(pokedata$Attack, pokedata$Defense)
-
-as.factor(x3)

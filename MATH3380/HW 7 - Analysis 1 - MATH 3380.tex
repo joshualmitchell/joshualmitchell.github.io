@@ -3,7 +3,7 @@
 
 \documentclass{article}
 
-\newcommand{\hmwkTitle}{Lec\ \#13}
+\newcommand{\hmwkTitle}{HW\ \#7}
 
 % \input{ShortcutsAnalysis}
 
@@ -216,7 +216,7 @@
 
 \begin{document}
 
-Homework 7: pages 184 - 185 numbers 1, 21(a)(b), 3(e), 4, 10, 13, 14 \lla 14 is difficult, but not impossible! (want to show that lim (1 \ps \frc{1}{n})$^n$ exists)
+Homework 7: pages 184 - 185 numbers 1, 2(a)(b), 3(e), 4, 10, 13, 14 \lla 14 is difficult, but not impossible! (want to show that lim (1 \ps \frc{1}{n})$^n$ exists)
 
 Hint:
 
@@ -228,192 +228,107 @@ Look at it as 1 \ps $\sum_{r = 1}^n$ \frc{n(n - 1)...(n - (r - 1))}{r!}\frc{1}{n
 
 \prn{1 \ps \frc{1}{n}}$^n$ goes in there somewhere somehow.
 
-About the last homework (HW 6):
-
-\bpth{9}
-
-If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql $\infty$,
-
-then \lmti{n} \uw{t}{n} \eql $\infty$
-
-So,
-
-\fa M \mem \br, \exs N \mem \bn st
-
-\uw{s}{n} \gr M, \fa n \gre N
-
-Notice that:
-
-\uw{t}{n} \gre \uw{s}{n} \gr M, \fa n \gre N
-
-So by definition, \lmti{n} \uw{t}{n} \eql $\infty$
-
-\bsc{Section 4.3: Monotone Sequences and Cauchy Sequences}{
-
-\ssc{Definition 4.3.1}{
-
-A sequence \prn{\uw{s}{n}} is \textbf{increasing} (or \textbf{decreasing}) if \uw{s}{n} \lse \uw{s}{n + 1} (or \uw{s}{n + 1} \lse \uw{s}{n}) \fa n \mem \bn. A sequence is \textbf{monotonic} if it is increasing or decreasing.
-}
-
-\ssc{Example 4.3.2}{
+\bsc{Problem 1}{
+Mark each statement True or False. Justify each answer.
 \balist
-\item \uw{a}{n} \eql n, \fa n \mem \bn
+\item If a monotone sequence is bounded, then it is convergent.
 	
-	increasing
-\item \uw{b}{n} \eql \uf{2}{n}, \fa n \mem \bn
+	\textbf{True}
 	
-	increasing
-\item \uw{c}{n} \eql 2 \ms \frc{1}{n}, \fa n \mem \bn
+	by Theorem 4.3.3
+\item If a bounded sequence is monotone, then it is convergent.
 	
-	increasing
-\item \prn{\uw{d}{n}} \eql 1, 1, 2, 2, 3, 3...
+	\textbf{True}
 	
-	increasing
-\item \uw{e}{n} \eql \frc{2}{n}, \fa ...
+	by Theorem 4.3.3
+\item If a convergent sequence is monotone, then it is bounded.
 	
-	decreasing
-\item \uw{f}{n} \eql \ms3n
+	\textbf{True}
 	
-	decreasing
-\item \prn{\uw{g}{n}} \eql 1, 1, 1, ... (\uw{g}{n} \eql 1, \fa n \mem \bn)
-	
-	increasing and decreasing
-\item \uw{h}{n} \eql \uf{-1}{n}, \fa n \mem \bn
-	
-	not monotonic
-\item \uw{i}{n} \eql cos(\frc{n\pi}{3}) \fa n \mem \bn
-	
-	not monotonic
+	by Theorem 4.3.3
 \elist
 }
 
-\ssc{Theorem 4.3.3 (Monotone Convergence Theorem)}{
-
-A \textbf{monotonic sequence} is convergent iff it is bounded.
-
-\bgpf
-\lt{\bk{\uw{s}{n}} be a monotonically increasing sequence}
-
-\lra 
-
-Assume \bk{\uw{s}{n}} is convergent.
-
-By Theorem 4.1.13, \bk{\uw{s}{n}} is bounded.
-
-\lla
-
-Conversely, assume \bk{\uw{s}{n}} is bounded.
-
-\wts{\bk{\uw{s}{n}} converges}
-
-Let the range of \bk{\uw{s}{n}} be denoted by S \eql \bk{\uw{s}{n} : n \mem \bn}
-
-Since \bk{\uw{s}{n}} is bounded, S is bounded above.
-
-Thus, sup S exists.
-
-\wts{\bk{\uw{s}{n}} converges to sup S}
-
-Recall: The supremum is the least upper bound.
-
-Thus,
-
-\uw{s}{n} \lse sup S, \fa n \mem \bn \bpth{1}
-
-and for \ep \gr 0, \exs N( \ep) \mem \bn st \fa n \gre N,
-
-sup S \ms \ep \ls \uw{s}{n}
-
-sup S \ms \ep \ls \uw{s}{N} \lse \uw{s}{n} \lse sup S \ls sup S \ps \ep \bpth{2}
-
-Since \bk{\uw{s}{n}} is increasing and, using \bpth{1}, 
-
-From \bpth{2}, we see that
-
-\ms\ep \ls \uw{s}{n} \ms sup S \ls \ep, \fa n \gre N
-
-Hence, 
-
-\av{\uw{s}{n} \ms sup S} \ls \ep, \fa n \gre N,
-
-which is equivalent to \lmti{n} \uw{s}{n} \eql sup S
-
-(since \av{x} \ls a iff \ms a \ls x \ls a)
-
-\epf
+\bsc{Problem 2(a)(b)}{
+Mark each statement True or False. Justify each answer.
+\balist
+\item If a convergent sequence is bounded, then it is monotone.
+	
+	\textbf{False.}
+	
+	Counterexample: \uw{s}{n} \eql
+	\eqn{(-1)^n\frac{1}{n}}
+\item If \prn{\uw{s}{n}} is an unbounded increasing sequence, then lim \uw{s}{n} \eql $+\infty$
+	
+	\textbf{True.}
+	
+	By Theorem 4.3.8
+	
+	\as{\prn{\uw{s}{n}} is an unbounded, increasing sequence.}
+	
+	Then, \fa n \mem \bn, \uw{s}{n} \lse \uw{s}{n + 1}
+	
+	and
+	
+	\fa m \mem \br, \exs N \mem \bn st. n \gre N implies \uw{s}{n} \gr m
+	
+	By Definition 4.2.9:
+	
+	We say a sequence diverges to $\infty$ if \fa m \mem \br, \exs N \mem \bn st n \gre N implies \uw{s}{n} \gr m
+	
+	Hence, result.
+	
+	
+\elist
 
 }
 
+\bsc{Problem 3(e)}{
+Prove that each sequence is monotone and bounded. Then, find the limit.
 
-\textbf{The difficult homework problem is going to come from here.}
+\bpth{e} \uw{s}{1} \eql 5 and \uw{s}{n + 1} \eql $\sqrt{4\uw{s}{n} + 1}$ for n \gre 1
 
-Additional help:
+\uw{s}{n} is monotone if it's either increasing or decreasing.
 
-\uw{s}{n} \eql (1 \ps \frc{1}{n})$^n$
+\uw{s}{1} \eql 5, \uw{s}{2} \eql $\sqrt{21}$ \eql 4.58257569496, \uw{s}{3} \eql $\sqrt{4\sqrt{21} + 1}$ \eql $\sqrt{\sqrt{336} + 1}$ \eql $\sqrt{19.3303028}$ \eql 4.39662402304
 
-First thing, show that it's increasing:
+Hmm, limit's probably 4. Let's see. \
 
-a \ls \uw{s}{n} \lse \uw{s}{n + 1}
+\
 
-\prn{1 \ps \frc{1}{n}}$^n$ \lse \prn{1 \ps \frc{1}{n + 1}}$^{n + 1}$
+\textbf{Conjecture}
 
-Second thing, show this:
+\bk{\uw{s}{n}} is decreasing and 4 \lse \uw{s}{n} \lse 5, \fa n \mem \bn
 
-(mini hint: \av{\uw{s}{n} \ms s} \ls \ep \fa n \gre W (written on board, maybe he means M?)
+P(n) (Proposition as a function of n):
 
-\uw{s}{n} \ls 3 \fa n \mem \bn 
+\uw{s}{n} \gre \uw{s}{n + 1}, \fa n \mem \bn 
 
-Turns up naturally:
-
-\lmti{n} \prn{1 \ps \frc{1}{n}}$^n$ \eql e
-
-\ssc{Example 4.3.4}{
-
-\lt{\uw{s}{1} \eql 1, \uw{s}{n + 1} \eql $\sqrt{1 + s_n}$ \fa n \mem \bn with n \gre 2}
-
-Prove that \bk{\uw{s}{n}} converges and find its limit.
-
-\uw{s}{1} \eql 1, \uw{s}{2} \eql $\sqrt{2}$, \uw{s}{3} \eql $\sqrt{1 \ps \sqrt{2}}$, \uw{s}{4} \eql $\sqrt{1 + \sqrt{1 \ps \sqrt{2}}}$ ...
-
-}
-
-\ssc{Conjecture}{
-
-\bk{\uw{s}{n}} is increasing and 1 \lse \uw{s}{n} \lse 2, \fa n \mem \bn
-
-Proposition as a function of n [P(n)]:
-
-\uw{s}{n} \lse \uw{s}{n + 1}, \fa n \mem \bn 
-
-\uw{s}{1} \eql 1 \ls $\sqrt{2}$ \eql \uw{s}{2}
+\uw{s}{1} \eql 5 \gr $\sqrt{21}$ \eql \uw{s}{2}
 
 Suppose that, \fa k \mem \bn,
 
-\eqn{\sqrt{1 + s_k} \lse \sqrt{1 + s_{k + 1}}}
+\eqn{\sqrt{4\uw{s}{k} + 1} \gre \sqrt{4\uw{s}{k + 1} + 1}}
 
 Now,
 
-\eqn{s_{k + 1} = \sqrt{1	 + s_k} \lse \sqrt{1 + s_{k + 1}} = s_{k + 2}}
+\eqn{s_{k + 1} = \sqrt{4\uw{s}{k + 1} + 1} \gre \sqrt{4\uw{s}{k + 2} + 1} = s_{k + 2}}
 
 So,
 
-\eqn{s_k \lse s_{k + 1}}
+\eqn{s_k \gre s_{k + 1}}
 
-Hence, by induction, P(n): \uw{s}{n} \lse \uw{s}{n + 1} is true \fa n \mem \bn 
+Hence, by induction, P(n): \uw{s}{n} \gre \uw{s}{n + 1} is true \fa n \mem \bn 
 
-Q(n): \uw{s}{n} \lse 2 \fa n \mem \bn 
+Q(n): \uw{s}{n} \gre 4 \fa n \mem \bn
 
-\uw{s}{1} \eql 1 \ls 2
+\uw{s}{1} \eql 5 \gr 4
 
-Assume for k \mem \bn that \uw{s}{k} \ls 2
+Assume for k \mem \bn that \uw{s}{k} \gr 4
 
-Consider:
+\eqn{s_{k + 1} = \sqrt{4\uw{s}{k} + 1} \gr \sqrt{4(3.75) + 1} = 4}
 
-\eqn{s_{k + 1} = \sqrt{1 + s_k} < \sqrt{1 + 3} = \sqrt{2 + 2} = 2}
-
-Hence, by induction, Q(n): \uw{s}{n} \ls 2 is true \fa n \mem \bn 
-
-}
+Hence, by induction, Q(n): \uw{s}{n} \gr 4 is true \fa n \mem \bn 
 
 By the Montone Convergence Theorem,
 
@@ -427,13 +342,7 @@ Thus,
 
 \lmti{n} \uw{s}{n + 1} \eql \lmti{n} \uw{s}{n} \eql s
 
-\sidenote{
-\bk{\uw{s}{n}} \lra s
-
-\bk{\uw{t}{n}}: \uw{t}{n} \eql \uw{s}{n + k}, k \mem \bn 
-}
-
-So, we claim that \lmti{n} \uw{s}{n + 1} \eql s \eql \lmti{n} $\sqrt{1 + s_n}$ \eql $\sqrt{1 + s}$
+So, we claim that \lmti{n} \uw{s}{n + 1} \eql s \eql \lmti{n} $\sqrt{4s_n + 1}$ \eql $\sqrt{4s + 1}$
 
 From Example 4.2.6,
 
@@ -447,11 +356,10 @@ Hence,
 
 \eqn{
 	\splt{
-		s & = \sqrt{1 + s} \\
-		s^2 & = 1 + s \\
-		s^2 - s - 1 & = 0 \\
-		s & = \frac{1 (+/-) \sqrt{1 - (-4)}}{2} \\
-		& = \frac{1 (+/-) \sqrt{5}}{2} 
+		s & = \sqrt{4s + 1} \\
+		s^2 & = 4s + 1 \\
+		s^2 - 4s - 1 & = 0 \\
+		s & = \frac{4 \pm \sqrt{20}}{2}
 	}
 }
 
@@ -465,14 +373,55 @@ then \lmti{n} \uw{s}{n} \eql s \gre 0, \fa n \mem \bn
 
 Hence, 
 
-s \eql $\frac{1 + \sqrt{5}}{2}$
+s \eql $\frac{4 + \sqrt{20}}{2}$ \eql $2 + \sqrt{5}$
 
-\bk{\uw{s}{n}} is Cauchy if for \ep \gr 0, \exs N \mem \bn
+\bsc{Problem 4}{
+Find an example of a sequence of real numbers satisfying each set of properties.
+\balist
+\item Cauchy, but not monotone.
+	
+	\uw{s}{n} \eql \prn{\ms1}$^{n}$\frc{1}{n}
+\item Monotone, but not cauchy.
 
-st
-
-\av{\uw{s}{n} - \uw{s}{m}} \ls \ep \fa m, n \gre N
-
+	\uw{s}{n} \eql n
+\item Bounded, but not cauchy.
+	
+	\uw{s}{n} \eql \prn{\ms1}$^{n}$
+\elist
 }
 
+\bsc{Problem 10}{
+\balist
+\item Suppose that \av{r} \ls 1. Recall from Exercise 3.1.7 that
+\eqn{1 + r + r^2 + ... r^n = \frac{1 - r^{n - 1}}{1 - r}}
+	Find \lmti{n} (1 \ps r \ps r$^2$ \ps ... \uf{r}{n}).
+	
+	In other words, find \lmti{n} \frc{1 - r^{n - 1}}{1 - r}
+	
+	P(n): \uw{s}{n} \eql \frc{1 - r^{n - 1}}{1 - r} is increasing and bounded.
+	
+	\uw{s}{1} \eql 0, \uw{s}{2} \eql 1
+	
+	Assume: \uw{s}{k} \lse \uw{s}{k + 1}
+	
+	\eqn{\uw{s}{k + 1} = }
+\item If we let the infinite repeating decimal 0.9999... stand for the limit:
+\eqn{\lmti{n}(\frac{9}{10} + \frac{9}{10^2} + ... + \frac{9}{10^n}),}
+	Show that 0.99999.... \eql 1.
+\elist
+}
+
+\bsc{Problem 13}{
+Prove Lemma 4.3.11:
+
+Every Cauchy sequence is bounded. (Similar to the proof of Theorem 4.1.13)
+}
+
+\bsc{Problem 14}{
+Let \prn{\uw{s}{n}} be the sequence defined by \uw{s}{n} \eql (1 \ps \frc{1}{n})$^n$.
+
+Use the binomial theorem (Exercise 3.1.30) to show that \prn{\uw{s}{n}} is an increasing sequence with \uw{s}{n} \ls 3 \fa n.
+
+Conclude that \prn{\uw{s}{n}} is convergent. The limit of (\uw{s}{n}) is referred to as e and is used as the base for natural logarithms. The approximate value of e is 2.71828.
+}
 \end{document}

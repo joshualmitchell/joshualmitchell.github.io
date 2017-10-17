@@ -13,3 +13,13 @@ head(normal_sample_arr)
 
 # Cool! At this point, we have a population with 10,000 random samples from N(10, 3^2),
 # and we have an array of 100 samples, each containing 50 entries (n = 50)
+
+mean(normal_sample_arr[77, ])
+var(normal_sample_arr[77, ])
+
+mean(normal_sample_arr[56, ])
+var(normal_sample_arr[56, ])
+
+mean(normal_sample_arr[34, ])
+var(normal_sample_arr[34, ])
+

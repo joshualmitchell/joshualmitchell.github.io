@@ -313,9 +313,6 @@ Figure n1.4
 A \textbf{subgraph} of a graph G is a graph H such that V(H) \sbs V(G) and E(H) \sbs E(G).
 
 We write this as H \sbs G
-
-An \textbf{induced subgraph} of G is a subgraph H \sbs G such that if e \mem E(G) and e's endpoints are both members of V(H), then e \mem E(H).
-
 }
 }
 
@@ -520,7 +517,123 @@ Be careful, though. If you have a u, v path and a v, w path, that doesn't mean y
 
 }
 
-Stopped at 3nd page of 3rd packet.
+\ssc{Connected / Disconnected Graphs}{
+A graph is \textbf{connected} if there is a path between any two vertices. It is \textbf{disconnected} \exs a vertex such that that's not the case.
+
+If G is disconnected, then we can think of G as a set of components.
+
+A component is \textbf{non-trivial} if it has at least one edge.
+
+Adding an edge can either decrease the number of components, c(G), or not change it.
+
+Deleting an edge can either increase c(G) or not change it.
+
+Deleting a vertex (which also deletes the attached edges) can increase c(G) by n where 0 \lse n \lse $\infty$.
+}
+
+\ssc{Proposition 1.2.11}{
+If you have a graph with n vertices and k edges, then c(G) \gre n \ms k
+}
+
+An edge is \textbf{cut-edge} if removing the edge increases c(G) (i.e. the edge is a "bridge").
+
+A vertex is a \textbf{cut-vertex} if removing the vertex increases c(G).
+
+An \textbf{induced subgraph} of G is a subgraph H \sbs G such that if e \mem E(G) and e's endpoints are both members of V(H), then e \mem E(H). (i.e. G[T] where T \sbs V)
+
+\ssc{Theorem 1.2.14}{
+e is a cut-edge iff e belongs to no cycle
+
+INSERT FULL PROOF HERE
+\bgpf
+\lra 
+
+\lla
+By contrapositive: e is not a cut-edge \lra e belongs to a cycle
+\epf
+
+Recall: Bipartite graphs
+
+Figure n3.2
+
+}
+
+\ssc{Theorem 1.2.17}{
+A graph G is bipartite iff there are no odd cycles.
+
+INSERT FULL PROOF
+\bgpf 
+\lra 
+
+\lla
+If there is no odd cycle then every walk is odd.
+Any closed walk can be decomposed into cycles.
+\epf 
+
+To prove G is bipartite, find a bipartition X and Y.
+
+To prove G is not bipartite, find an odd cycle.
+
+To test if G is bipartite or not uses an algorithm of O(\av{E[G]})
+}
+
+\ssc{Eulerian Graph Definition}{
+
+A \textbf{Eulerian} graph G is a graph containing a Eulerian circuit. It can also mean a graph such that every vertex is of even degree. These definitions coincide for connected graphs.
+
+A \textbf{Eulerian Circuit} is a circuit containing all the edges of a graph.
+
+In other words, if a graph is connected and every vertex has even degree, then it has at least one Eulerian Circuit. 
+
+If a graph has more than 2 vertices of odd degree, then it cannot have a Eulerian Circuit or Eulerian Path.
+
+If a graph is connected and has exactly 2 vertices of odd degree, then it has at least one Eulerian Circuit.
+
+}
+
+An \textbf{even} graph G is a graph such that \fa v \mem V(G), deg(v) is even.
+
+\textbf{Lemma:} If \fa v \mem V(G), deg(v) \gre 2, then G contains a cycle.
+
+The \textbf{maximum} path is the path with the largest number of edges (if there's a tie there is no maximum path).
+
+A \textbf{maximal} path is a path such that it is contained by no larger path.
+
+\ssc{Theorem 1.2.26}{
+
+A graph G is Eulerian iff c(G) \lse 1 and G is an even graph
+\lra 
+
+
+\lla 
+
+Induction on \av{E} \eql m
+
+}
+
+\ssc{Application 2.3.10 - The Chinese Postman Problem}{
+
+Pictures, maybe?
+
+Something about weighted \uw{K}{8}...
+
+Something about the Hungarian theorem/algorithm
+
+Find the minimum total weight of 4 edges that pair up the 8 vertices.
+
+2nd to last page of packet 3, there's some pictures that maybe go here
+
+}
+
+\ssc{Proof Technique: Extremality}{
+
+Proposition 1.2.28: if, \fa v \mem V(G), d(v) \gre k, then \exs a path of length k.
+
+There's some other stuff, but some is repeats (maximum, maximal...)
+
+}
+
+
 
 }
 
@@ -843,14 +956,15 @@ f(uv): \eql \av{f(u) \ms f(v)}
 
 \bk{f(u, v): uv \mem E} \eql \bk{1, 2, ... m}
 
-\ssc{Conjecture 2.2.15 (Kotzig, Ringel, 1964) (open, stronger than conjecture 2.2.13)}{
+\ssc{Conjecture 2.2.15: The Graceful Tree Conjecture (Kotzig, Ringel, 1964)}{
+Open, stronger than conjecture 2.2.13.
 
 Every tree has a graceful labeling. 
 
 }
 
 \ssc{Theorem 2.2.16}{
-T is graceful \rar Conjecture 2.2.12 holds
+T is graceful \rar Conjecture 2.2.13 holds
 
 <picture 1, picture 2 - examples of this>
 
@@ -862,6 +976,87 @@ displacement(i, j): number of unit moves from i to j
 }
 
 end of 10/11 lecture
+
+beginning of 10/16 lecture
+
+\ssc{Caterpillar (special type of tree)}{
+
+Example of a caterpillar tree:
+
+Figure n6.1
+
+Any caterpillar is graceful.
+
+Figure n6.2
+
+}
+
+\ssc{Theorem 2.2.19}{
+
+T is a caterpillar iff T has no component like this:
+
+Figure n6.3
+
+\bgpf
+
+T\pr = T \ms \bk{all leaves}
+
+What is T\pr?
+
+A path.
+
+T is a caterpillar iff T\pr is a path
+
+T has no Figure n6.3 iff T\pr has no Figure n6.4
+
+NEED MORE PROOF
+
+\epf
+
+}
+
+\ssc{Minimum Spanning Tree Problem}{
+
+A super important problem in Graph Theory.
+
+Suppose we have a really remote area. There are a few villages, with some distances between all of them. We know all of the distance between any two villages.
+
+A spanning tree is the most efficient structure in the sense that it has the fewest (number of edges) while still being connected.
+
+A \textbf{weighted graph} G is a graph s.t all the edges of G have nonnegative weights. In other words, for a graph G, there is a function W that maps all e \mem E(G) to nonnegative weights.
+
+If G is the following graph:
+
+Figure n6.5
+
+What is the minimum weight of a path from x to y?
+
+The running time to solve this is O(f(n), where
+
+the number of computational steps \lse c\av{f(n)} for n \gre a
+
+where c is a constant and n is the size of the input.
+
+The \textbf{minimum spanning tree} is the tree of a graph that connects all the vertices of a graph with edges such that
+
+\eqn{\sum_{e \mem T} W(e)}
+
+is minimized.
+}
+
+\ssc{Example 2.3.2 - The Greedy Algorithm}{
+\lt{G be the below graph}
+
+Figure n6.6
+
+\textbf{Algorithm 2.3.3}:
+
+Set V(H) \eql V(G), E(H) \eql \es
+
+If H is disconnected, add to H the cheapest edge (the edge with the smallest weight) joining two components of H.
+
+}
+
 }
 
 
