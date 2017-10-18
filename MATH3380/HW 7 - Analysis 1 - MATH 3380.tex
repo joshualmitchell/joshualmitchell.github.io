@@ -572,77 +572,30 @@ In other words:
 
 Hence, \uw{s}{n} is increasing.
 
-
-
-P(n) (Proposition as a function of n):
-
-\uw{s}{n} \lse \uw{s}{n + 1}, \fa n \mem \bn 
-
-\uw{s}{1} \eql 2
-
-\uw{s}{2} \eql 2.25
-
-\as{\uw{s}{k} \lse \uw{s}{k + 1} \fa k \mem \bn}
-
-\eqn{1 \ps \sum_{r = 1}^k \frac{k(k - 1)...(k - (r - 1))}{r!} \frac{1}{k^r} \lse 1 \ps \sum_{r = 1}^{k + 1} \frac{(k + 1)(k)(k - 1)...(k - (r - 1))}{r!} \frac{1}{(k + 1)^r}}
-\eqn{\sum_{r = 1}^k \frac{k(k - 1)...(k - (r - 1))}{r!k^r} \lse \sum_{r = 1}^{k + 1} \frac{(k + 1)(k)(k - 1)...(k - (r - 1))}{r!(k + 1)^r}}
-\eqn{\sum_{r = 1}^k \frac{k(k - 1)...(k - (r - 1))}{r!k^r} \lse \sum_{r = 1}^{k} \frac{(k + 1)(k)(k - 1)...(k - (r - 1))}{r!(k + 1)^r} + \frac{(k)(k - 1)...(k - ((k + 1) - 1))}{(k + 1)!(k + 1)^{k}}}
-
-
-asdfasdf
-
-\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \lse \sum_{r = 1}^{k + 1} \frac{k + 1}{r!(k + 1)^r}}
-\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \lse \sum_{r = 1}^{k + 1} \frac{1}{r!(k + 1)^{r - 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{1}{r!k^r} - \frac{1}{(k + 1)!(k + 1)^{k + 1}} \lse \sum_{r = 1}^{k + 1} \frac{1}{r!(k + 1)^{r - 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{1}{r!k^r} -  \sum_{r = 1}^{k + 1} \frac{1}{r!(k + 1)^{r - 1}} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{r!(k + 1)^{r - 1}}{(r!(k + 1)^{r - 1})r!k^r} - \frac{r!k^r}{(r!(k + 1)^{r - 1})r!k^r} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{r!(k + 1)^{r - 1} - r!k^r}{(r!(k + 1)^{r - 1})r!k^r} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{(k + 1)^{r - 1} - k^r}{(k + 1)^{r - 1}r!k^r} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{(k + 1)^{r - 1}}{(k + 1)^{r - 1}r!k^r} - \frac{k^r}{{(k + 1)^{r - 1}r!k^r}} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
-\eqn{\sum_{r = 1}^{k + 1} \frac{1}{r!k^r} - \frac{1}{{(k + 1)^{r - 1}r!}} \lse \frac{1}{(k + 1)!(k + 1)^{k + 1}}}
-
-asdfasd
-
-\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \gre \sum_{r = 1}^{k} \frac{1}{r!(k + 1)^{r - 1}} + \frac{1}{(k + 1)!(k + 1)^{(k + 1) - 1}}}
-\eqn{\sum_{r = 1}^k \frac{1}{r!k^r} \gre \sum_{r = 1}^{k} \frac{1}{r!(k + 1)^{r - 1}} + \frac{1}{(k + 1)!(k + 1)^{k}}}
-\eqn{\frac{1}{k} + \frac{1}{2!k^2} ... + \frac{1}{k!k^k} \gre \frac{1}{(k + 1)^{0}} + \frac{1}{2!(k + 1)^{1}} + ... + \frac{1}{k!(k + 1)^{k - 1}} + \frac{1}{(k + 1)!(k + 1)^{k}}}
-\eqn{\frac{1}{k} + \frac{1}{2!k^2} ... + \frac{1}{k!k^k} \gre \frac{1}{(k + 1)^{0}} + \frac{1}{2!(k + 1)^{1}} + ... + \frac{1}{k!(k + 1)^{k - 1}} + \frac{1}{(k + 1)!(k + 1)^{k}}}
-
-
-Now,
-
-\eqn{s_{k + 1} = \sqrt{4\uw{s}{k + 1} + 1} \gre \sqrt{4\uw{s}{k + 2} + 1} = s_{k + 2}}
-
-So,
-
-\eqn{s_k \gre s_{k + 1}}
-
-Hence, by induction, P(n): \uw{s}{n} \gre \uw{s}{n + 1} is true \fa n \mem \bn 
-
-
-
 \wts{\prn{\uw{s}{n}} is bounded with \uw{s}{n} \ls 3 \fa n, using the binomial theorem (Exercise 3.1.30)}
+
+Q(n): \uw{s}{n} \ls 3 \fa n \mem \bn
+
+\uw{s}{1} \eql 2 \ls 3
+
+\uw{s}{2} \eql 2.25 \ls 3
+
+Assume for k \mem \bn that \uw{s}{k} \ls 3
+
+\eqn{s_{k} = \uf{\prn{1 \ps \frc{1}{k}}}{k} \ls 3}
+
+\wts{\uw{s}{k + 1} \ls 3}
+
+\eqn{\uf{\prn{1 \ps \frc{1}{k}}}{k} \ls 3}
+\eqn{1 \ps \sum_{r = 1}^n \frac{1}{r!}\prod_i(1 - \frac{i}{n}) \ls 3}
+\eqn{\fa n \mem \bn}
+
+\eqn{\prod_i(1 - \frac{i}{n}) \ls 1}
+\eqn{\textrm{(I think... I don't know where to go from here. How would you use } \frac{1}{1 - r}?)}
 
 \wts{\prn{\uw{s}{n}} is convergent}
 
-Look at it as 1 \ps $\sum_{r = 1}^n$ \frc{n(n - 1)...(n - (r - 1))}{r!}\frc{1}{n^r}
+Since we just showed that \uw{s}{n} is increasing and bounded above (in theory), \uw{s}{n} is convergent by Theorem 4.3.3 (the Monotone Convergence Theorem)
 
-\prn{1 \ps \frc{1}{n}}$^n$ goes in there somewhere somehow.
-
-About the last homework (HW 6), problem 9:
-
-If \uw{s}{n} \lse \uw{t}{n} \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql $\infty$,
-
-then \lmti{n} \uw{t}{n} \eql $\infty$
-
-So, \fa M \mem \br, \exs N \mem \bn st
-
-\uw{s}{n} \gr M, \fa n \gre N
-
-Notice that:
-
-\uw{t}{n} \gre \uw{s}{n} \gr M, \fa n \gre N
-
-So by definition, \lmti{n} \uw{t}{n} \eql $\infty$
 }
 \end{document}
