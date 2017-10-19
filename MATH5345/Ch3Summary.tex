@@ -284,7 +284,7 @@
 
 $F_0 = \frac{MS_{Reg}}{MS_{res}} = t_0^2$ \tab Reject if $F_0 \gr F_\alpha, 1, n-1$ \tab CI: $\bth_1 - t_{\frac{\alpha}{2}, n - 2}se(\bth_{10}) < \bth_{10} < \bth_1 + t_{\frac{\alpha}{2}, n - 2}se(\bth_{10})$ \tab se($\bth_1$)$=\sqrt{\frac{MS_{res}}{S_{xx}}}$, se($\bth_0$)$=\sqrt{\vrn{\bth_0}}$
 
-\uf{R}{2}$=1 - \frac{SS_{res}}{SS_T} = \frac{SS_{Reg}}{SS_T}$\tab R$^2_{adj} = 1 - \frac{SS_{res}(n - 1)}{SS_T(n - k - 1}$
+\uf{R}{2}$=1 - \frac{SS_{res}}{SS_T} = \frac{SS_{Reg}}{SS_T}$\tab R$^2_{adj} = 1 - \frac{SS_{res}(n - 1)}{SS_T(n - k - 1}$ (penalizes you for adding nonsignificant terms to the model)
 }
 }
 \ssc{Chapter 3: Multiple Linear Regression}{
@@ -300,11 +300,12 @@ where p \eql k \ps 1, p is the total number of betas (or parameters), k is the n
 
 \mt{\bth = (x\pr x)^{-1}x\pr y}\tab \exv{\bth} \eql \mt{\exv{(x\pr x)^{-1}x\pr y}}\eql \mt{\exv{(x\pr x)^{-1}x\pr(x\bta + \ep)}} \eql \bta \tab \vrn{\bth} \eql (x\pr x)$^{-1}$\ssq \eql c\ssq \tab \vrn{\bth$_j$} \eql c$_{jj}$\ssq \tab \exv{\bta$_j$} \eql \uw{\bta}{j} 
 
-\uw{\bth}{j} \tl N(\uw{\bta}{j}, \uw{c}{jj}\ssq) \mt{\hat y = x\hat\beta= x(x\pr x)^{-1}x\pr y = Hy} \tab \exv{$\bh{y}$} \eql \exv{x\bth} \eql x\bta \tab \vrn{$\bh{y}$} \eql \vrn{x\bth} \eql x\vrn{\bth}x\pr \eql x(x\pr x)$^{-1}$x\pr\ssq \eql H\ssq
+\uw{\bth}{j} \tl N(\uw{\bta}{j}, \uw{c}{jj}\ssq) \mt{\hat y = x\hat\beta= (x(x\pr x)^{-1}x\pr) y = \textbf{H}y} \tab \exv{$\bh{y}$} \eql \exv{x\bth} \eql x\bta \tab \vrn{$\bh{y}$} \eql \vrn{x\bth} \eql x\vrn{\bth}x\pr \eql x(x\pr x)$^{-1}$x\pr\ssq \eql H\ssq
 
 $\bh{y}$ \tl N(x\bta, H\ssq) \tab $\bh{y}_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq), where \mt{h_{jj} = x_j\pr(x\pr x)^{-1}x_j} \tab \mt{x_j = [x_{j0}, x_{j1}, ... x_{jk}]} and \tab \mt{\hat\epsilon = y - \hat y = y - Hy = (I - H)y}
 
-\mt{\hat\ssq (estimator) = \frac{SS_{res}}{n - p} = MS_{res}} where p \eql k \ps 1 \eql the number of parameters (i.e. \bta's: \uw{\bta}{0}, \uw{\bta}{1}, ... \uw{\bta}{k})
+\mt{\hat\ssq (estimator) = \frac{SS_{res}}{n - p} = MS_{res}} where p \eql k \ps 1 \eql the number of parameters (i.e. \bta's: \uw{\bta}{0}, \uw{\bta}{1}, ... \uw{\bta}{k}) \tab
+\textbf{Cov[\bth]}$=\ssq(X\pr X)^{-1}$ (cov matrix c)
 
 \mt{SS_{res} (\textbf{n - p}) = (y - x\bth)\pr(y - x\bth) = y\pr y - 2\bth\pr X\pr y + \bth\pr x\pr x \bth = y\pr y - \bth\pr x\pr y} \tab 
 \mt{SS_{Reg} (\textbf{k}) =\bth\pr x\pr y - \frac{(\sum_{i = 1}^n y_i)^2}{n}} \tab
@@ -314,13 +315,14 @@ $\bh{y}$ \tl N(x\bta, H\ssq) \tab $\bh{y}_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq
 \mt{MS_{Reg}=\frac{SS_{Reg}}{k}} \tab 
 \mt{MS_T = \frac{SS_T}{n - 1}} \tab
 
-If $\frac{SS_{res}}{\ssq}$\tl$\chi^2_{n - k - 1}$ and SS$_{res}$, SS$_{Reg}$ are indep, then \mt{F_0 = \frac{\frac{SS_{Reg}}{k}}{\frac{SS_{Res}}{n - k - 1}} = \frac{MS_{Reg}}{MS_{res}}}
+If $\frac{SS_{res}}{\ssq}$\tl$\chi^2_{n - k - 1}$ and SS$_{res}$, SS$_{Reg}$ are indep, then \mt{F_0 = \frac{\frac{SS_{Reg}}{k}}{\frac{SS_{Res}}{n - k - 1}} = \frac{MS_{Reg}}{MS_{res}}} \textbf{F statistic} \tab 
+We reject \uw{H}{0} if \uw{F}{0} \gr \uw{F}{\afa, k, n - k - 1}
 
 error \eql (I \ms H)y \eql (I \ms H)\ep \tab \exv{MS$_{Res}$} \eql \ssq \tab \exv{MS$_{Reg}$} \eql \ssq \mt{+ \frac{\bta^{*'}x\pr_c x_c \bta^*}{k\ssq}} where \mt{\beta^* = (\beta_1, \beta_2, ... \beta_k)} and \mt{x_c} is the center
 
-We reject \uw{H}{0} if \uw{F}{0} \gr \uw{F}{\afa, k, n - k - 1}
 
-\textbf{Testing Individual Coefficients:} If \uw{H}{0}: \uw{\bta}{j} \eql 0 is not rejected then delete it: \mt{t_0 = \frac{\bth_j}{\sqrt{\ssq c_{jj}}} = \frac{\bth_j}{se(\bth_j)}} \tab
+
+\textbf{Testing Individual Coefficients (Partial Test):} If \uw{H}{0}: \uw{\bta}{j} \eql 0 is not rejected then delete it: \mt{t_0 = \frac{\bth_j}{\sqrt{\ssq c_{jj}}} = \frac{\bth_j}{se(\bth_j)}} \tab
 reject if \av{\uw{t}{0}} \gr \uw{t}{\frc{\afa}{2}, n - k - 1}
 }
 \ssc{Confidence Intervals}{
@@ -331,8 +333,8 @@ or, if variance is unknown,
 
 Then the variance estimator is \mt{\hat\ssq = MS_{res} = \frac{SS_{res}}{n - p} \tl \chi^2_{n - p}} \tab So, the (1 \ms \afa) \textbf{confidence interval} for \uw{\bta}{j} is \mt{\hat\beta_j \pm \uw{t}{\frac{\afa}{2}, n - p}se(\hat\beta_j)}
 
-$\hat y_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq), so \tab \mt{\frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}\ssq}} \tl N(0, 1) \textrm{\tab} \frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}MS_{res}}} \tl t_{n - p}}
-where \ssq estimates \uw{MS}{res}
+\mt{100(1-\alpha)\%} for \ssq: \mt{\frac{(n - 2)MS_{res}}{\chi^2_{\frac{\alpha}{2}, n - 2}} \lse \ssq \lse \frac{(n - 2)MS_{res}}{\chi^2_{\frac{1 - \alpha}{2}, n - 2}}} \tab
+ $\hat y_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq), so \tab \mt{\frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}\ssq}} \tl N(0, 1) \textrm{\tab} \frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}MS_{res}}} \tl t_{n - p}} \uw{MS}{res} ests \ssq 
 
 A 1 \ms \afa confidence interval for \exv{\uw{y}{0}$|$\uw{x}{0}} is \mt{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0\hat\ssq}} 
 or 
