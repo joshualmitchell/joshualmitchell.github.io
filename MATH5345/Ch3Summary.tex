@@ -342,16 +342,25 @@ or
 }
 
 \ssc{Chapter 4: Model Testing}{
-Properties of residuals: mean 0, \mt{MS_{res} = \sum_{i = 1}^n \frac{(\epsilon_i - \bar\epsilon)^2}{n - p} = \sum_{i = 1}^n \frac{\epsilon^2_i}{n - p} = \frac{SS_{res}}{n - p}}
+Properties of residuals: mean 0, \mt{MS_{res} = \sum_{i = 1}^n \frac{(\epsilon_i - \bar\epsilon)^2}{n - p} = \sum_{i = 1}^n \frac{\epsilon^2_i}{n - p} = \frac{SS_{res}}{n - p}} \tab
+Assumptions: Linear, uncorrelated errors, \ep \tl NID(0, \ssq)
 
 \textbf{Scaling Residuals:} Standardized Residuals: \mt{d_i = \frac{\epsilon_i}{\sqrt{MS_{res}}}} Studentized: \mt{r_i = \frac{\epsilon_i}{\sqrt{MS_{res}(1 - h_{ii})}}}, \textbf{\vrn{\uw{\ep}{i}}} \eql \ssq(1 \ms \uw{h}{ii}), \textbf{cov(\uw{\ep}{i}, \uw{\ep}{j})} \eql $-\ssq h_{ij}$
-}
 
-Other model testing: plot \uw{x}{i} and \uw{x}{j}: linear rln means high corr.
+Other model testing: plot \uw{x}{i} and \uw{x}{j}: linear rln means high corr. \tab
+SS$_{PE} = $\mt{\sum_{i = 1}^m \sum_{j = 1}^{n_i} (y_{ij} - \bar y_i)^2 \textrm{ Model independent: df: n - m}}, SSLOF df is m\ms2
 
 Formal test for lack of fit: Assuming everything is tested and ideal, to test for linearity, we use: \mt{SS_{res} = SS_{PE} + SS_{LOF}}
 
 \uw{F}{0} \eql \mt{\frac{SS_{LOF} / (m - 2)}{SS_{PE} / (n - m)}} \eql \mt{\frac{MS_{LOF}}{MS_{PE}}} \tab
 \exv{\mt{MS_{LOF}}} \eql \mt{} \exv{\mt{MS_{PE}}} \eql \ssq, where m is num regressors, n is num samples
 \tab \vrn{$\bar y$} \eql \mt{\frac{p\ssq}{n}} (indpure e)
+
+Not linear if \uw{F}{0} \gr \uw{F}{\afa, m - 2, n - m} \tab
+Plot residuals against yhat: want no rln, plot resids against regressors, want no rln (di or ri)
+}
+\ssc{Chapter 5: Model Transformations}{
+
+}
+
 \end{document}
