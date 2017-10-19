@@ -1,7 +1,7 @@
 % Thank you Josh Davis for this template!
 % https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
 
-\documentclass{article}
+\documentclass[8pt]{extarticle}
 
 \newcommand{\hmwkTitle}{Chapter 3 Summary}
 
@@ -23,6 +23,7 @@
 \usepackage{enumitem}
 \usepackage{chngcntr}
 \usepackage{blkarray}
+\usepackage{extsizes}
 
 % Libraries
 
@@ -32,12 +33,12 @@
 % Basic Document Settings
 %
 
-\topmargin=-0.45in
-\evensidemargin=0in
-\oddsidemargin=0in
-\textwidth=6.5in
-\textheight=9.0in
-\headsep=0.25in
+\topmargin=-0.85in
+\evensidemargin=-0.75in
+\oddsidemargin=-0.75in
+\textwidth=8in
+\textheight=10.0in
+\headsep=0.1in
 
 \linespread{1.1}
 
@@ -48,8 +49,8 @@
 \lfoot{\lastxmark}
 \cfoot{\thepage}
 
-\renewcommand\headrulewidth{0.4pt}
-\renewcommand\footrulewidth{0.4pt}
+\renewcommand\headrulewidth{0.2pt}
+\renewcommand\footrulewidth{0.2pt}
 
 \setlength\parindent{0pt}
 \setcounter{secnumdepth}{0}
@@ -263,99 +264,92 @@
 
 \begin{document}
 
-\bsc{Chapter 3: Multiple Linear Regression}{
+\ssc{Chapter 0: Review}{
 
-\ssc{Regression}{
+}
+\ssc{Chapter 2: Simple Linear Regression}{
+\textbf{\exv{y$|$x}}$=\mu_{y|x}=$\exv{$\beta_0+\beta_1x+\epsilon$}$=\beta_0+\beta_1x$ \tab \textbf{\vrn{y$|$x}}$=\ssq_{y|x}=$\textbf{\vrn{$\beta_0+\beta_1x+\epsilon$}}$=\ssq$\tab \textbf{\uw{\bth}{0}}$=\bar y - \bth_1\bar x$ \tab \textbf{\uw{\bth}{1}}$=\frac{S_{xy}}{S_{xx}}=\frac{\sum_{i = 1}^n(x_i - \bar x)y_i}{\sum_{i = 1}^n(x_i - \bar x)^2}$
 
-\eqn{\unds{n\times1}{y} = \unds{n\times p}{x}\times\unds{p\times1}{\bta} + \unds{n\times1}{\epsilon}}
-where p \eql k \ps 1
+\textbf{\exv{\bth$_1$}}$=\sum_{i = 1}^n c_i\exv{y_i}=\beta_0\sum_{i = 1}^nc_i + \beta_0\sum_{i = 1}^nc_ix_i=\beta_1$\tab \textbf{\vrn{\bth$_1$}}$=\sum_{i = 1}^nc_i^2(\ssq)=\ssq \frac{\sum_{i = 1}^n(x_i - \bar x)^2}{S_{xx}^2}=\frac{\ssq}{S_{xx}}$
 
-p is the total number of betas (or parameters), k is the number of regressor variables.
+\textbf{\exv{\bth$_0$}}$=\beta_0$\tab \textbf{\vrn{\bth$_0$}}$=\ssq(\frac{1}{n} + \frac{\bar x^2}{S_{xx}})=\vrn{\bar y - \beta_1\bar x)}=\vrn{\bar y} + x^2 \vrn{\bth_1} - cov(\bar y, \bth_1)$\tab \textbf{\uw{c}{i}}$=\frac{x - \bar x}{S_{xx}}$
 
-\ep \tl N(0, \ssq I) where I is the identity matrix of whatever size it needs to be.
+\textbf{SS$_{res}$}$=\sum_{i = 1}^n(y_i - \hat y_i)^2=\sum_{i = 1}^n \epsilon_i^2$\tab \textbf{SS$_T$}$=\sum_{i = 1}^n y_i^2 - n{\bar y}^2, n-1$ df \tab \textbf{SS$_{Reg}$}$=\bth_1S_{xy}$, if df\eql1, then $=MS_{Res}$
 
-\exv{y} \eql x\bta 
+\textbf{MS$_{res}$}$=\ssq=\frac{SS_{res}}{n - 2}$
 
-\vrn{y} \eql \vrn{$\epsilon$} \eql \ssq I
+\ssc{Hypothesis Testing (Regression)}{
 
-y \tl N(x\bta, \ssq I)
+\textbf{Reject \uw{H}{0} if} \av{\uw{t}{0}} \gre \uw{t}{\frc{\afa}{2}, n \ms 2} where $t_0 = \frac{\bth_1 - \bta_{10}}{\sqrt{\frac{MS_{res}}{S_{xx}}}}$ \tab Failing to reject \uw{H}{0}: $\bta_i = 0$ implies no rlshp between x and y. \tab \exv{$y_i$} \eql \uw{\bta}{1}x \ps \uw{\bta}{0}
+
+$F_0 = \frac{MS_{Reg}}{MS_{res}} = t_0^2$ \tab Reject if $F_0 \gr F_\alpha, 1, n-1$ \tab CI: $\bth_1 - t_{\frac{\alpha}{2}, n - 2}se(\bth_{10}) < \bth_{10} < \bth_1 + t_{\frac{\alpha}{2}, n - 2}se(\bth_{10})$ \tab se($\bth_1$)$=\sqrt{\frac{MS_{res}}{S_{xx}}}$, se($\bth_0$)$=\sqrt{\vrn{\bth_0}}$
+
+\uf{R}{2}$=1 - \frac{SS_{res}}{SS_T} = \frac{SS_{Reg}}{SS_T}$\tab R$^2_{adj} = 1 - \frac{SS_{res}(n - 1)}{SS_T(n - k - 1}$
+}
+}
+\ssc{Chapter 3: Multiple Linear Regression}{
+
+\mt{\unds{n\times1}{y} = \unds{n\times p}{x}\times\unds{p\times1}{\bta} + \unds{n\times1}{\epsilon}}
+where p \eql k \ps 1, p is the total number of betas (or parameters), k is the number of regressor variables.
+
+\ep \tl N(0, \ssq I) where I is the identity matrix whatever size\tab \exv{y} \eql x\bta \tab \vrn{y} \eql \vrn{$\epsilon$} \eql \ssq I \tab y \tl N(x\bta, \ssq I)
 
 }
 \ssc{Least Square Estimate for \bta and \ssq}{
+\mt{S(\beta)=\sum_{i = 1}^n \epsilon^2 = \epsilon\pr \epsilon = (y - x\beta)\pr(y - x\beta) = y\pr y - 2\beta\pr x\pr y + \beta\pr x\pr x\beta}
 
-\eqn{\bth = (x\pr x)^{-1}x\pr y}
-\exv{\bth} \eql \bta 
+\mt{\bth = (x\pr x)^{-1}x\pr y}\tab \exv{\bth} \eql \mt{\exv{(x\pr x)^{-1}x\pr y}}\eql \mt{\exv{(x\pr x)^{-1}x\pr(x\bta + \ep)}} \eql \bta \tab \vrn{\bth} \eql (x\pr x)$^{-1}$\ssq \eql c\ssq \tab \vrn{\bth$_j$} \eql c$_{jj}$\ssq \tab \exv{\bta$_j$} \eql \uw{\bta}{j} 
 
-\vrn{\bth} \eql (x\pr x)$^{-1}$\ssq \eql c\ssq
+\uw{\bth}{j} \tl N(\uw{\bta}{j}, \uw{c}{jj}\ssq) \mt{\hat y = x\hat\beta= x(x\pr x)^{-1}x\pr y = Hy} \tab \exv{$\bh{y}$} \eql \exv{x\bth} \eql x\bta \tab \vrn{$\bh{y}$} \eql \vrn{x\bth} \eql x\vrn{\bth}x\pr \eql x(x\pr x)$^{-1}$x\pr\ssq \eql H\ssq
 
-\vrn{\bth$_j$} \eql c$_{jj}$\ssq 
+$\bh{y}$ \tl N(x\bta, H\ssq) \tab $\bh{y}_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq), where \mt{h_{jj} = x_j\pr(x\pr x)^{-1}x_j} \tab \mt{x_j = [x_{j0}, x_{j1}, ... x_{jk}]} and \tab \mt{\hat\epsilon = y - \hat y = y - Hy = (I - H)y}
 
-\exv{\bta$_j$} \eql \uw{\bta}{j}
+\mt{\hat\ssq (estimator) = \frac{SS_{res}}{n - p} = MS_{res}} where p \eql k \ps 1 \eql the number of parameters (i.e. \bta's: \uw{\bta}{0}, \uw{\bta}{1}, ... \uw{\bta}{k})
 
-\uw{\bth}{j} \tl N(\uw{\bta}{j}, \uw{c}{jj}\ssq)
+\mt{SS_{res} (\textbf{n - p}) = (y - x\bth)\pr(y - x\bth) = y\pr y - 2\bth\pr X\pr y + \bth\pr x\pr x \bth = y\pr y - \bth\pr x\pr y} \tab 
+\mt{SS_{Reg} (\textbf{k}) =\bth\pr x\pr y - \frac{(\sum_{i = 1}^n y_i)^2}{n}} \tab
+\mt{SS_T (\textbf{n - 1}) = y\pr y - \frac{(\sum_{i = 1}^n y_i)^2}{n}}
 
-\eqn{\hat y = x\hat\beta= x(x\pr x)^{-1}x\pr y = Hy}
+\mt{MS_{res}=\frac{SS_{res}}{n - k - 1}} \tab
+\mt{MS_{Reg}=\frac{SS_{Reg}}{k}} \tab 
+\mt{MS_T = \frac{SS_T}{n - 1}} \tab
 
-\exv{$\bh{y}$} \eql \exv{x\bth} \eql x\bta 
+If $\frac{SS_{res}}{\ssq}$\tl$\chi^2_{n - k - 1}$ and SS$_{res}$, SS$_{Reg}$ are indep, then \mt{F_0 = \frac{\frac{SS_{Reg}}{k}}{\frac{SS_{Res}}{n - k - 1}} = \frac{MS_{Reg}}{MS_{res}}}
 
-\vrn{$\bh{y}$} \eql \vrn{x\bth} \eql x\vrn{\bth}x\pr \eql x(x\pr x)$^{-1}$x\pr\ssq \eql H\ssq
+error \eql (I \ms H)y \eql (I \ms H)\ep \tab \exv{MS$_{Res}$} \eql \ssq \tab \exv{MS$_{Reg}$} \eql \ssq \mt{+ \frac{\bta^{*'}x\pr_c x_c \bta^*}{k\ssq}} where \mt{\beta^* = (\beta_1, \beta_2, ... \beta_k)} and \mt{x_c} is the center
 
-$\bh{y}$ \tl N(x\bta, H\ssq)
+We reject \uw{H}{0} if \uw{F}{0} \gr \uw{F}{\afa, k, n - k - 1}
 
-$\bh{y}_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq) where
-
-\eqn{h_{jj} = x_j\pr(x\pr x)^{-1}x_j}
-\eqn{x_j = [x_{j0}, x_{j1}, ... x_{jk}]}
-and
-\eqn{\hat\epsilon = y - \hat y = y - Hy = (I - H)y}
-where $\hat\epsilon$ is the estimated error.
-
-\eqn{\hat\ssq = \frac{SS_{res}}{n - p} = MS_{res}}
-where p \eql k \ps 1 \eql the number of parameters (i.e. \bta's: \uw{\bta}{0}, \uw{\bta}{1}, ... \uw{\bta}{k})
+\textbf{Testing Individual Coefficients:} If \uw{H}{0}: \uw{\bta}{j} \eql 0 is not rejected then delete it: \mt{t_0 = \frac{\bth_j}{\sqrt{\ssq c_{jj}}} = \frac{\bth_j}{se(\bth_j)}} \tab
+reject if \av{\uw{t}{0}} \gr \uw{t}{\frc{\afa}{2}, n - k - 1}
 }
-
 \ssc{Confidence Intervals}{
 
-\eqn{\hat\beta_j \tl N(\beta_j, c_{jj}\ssq) \lra \frac{\hat\beta_j - \beta_j}{\sqrt{c_{jj}\ssq}} \tl N(0, 1)}
+\textbf{\ssq known}: \mt{\hat\beta_j \tl N(\beta_j, c_{jj}\ssq) \lra \frac{\hat\beta_j - \beta_j}{\sqrt{c_{jj}\ssq}} \tl N(0, 1)}
 or, if variance is unknown,
-\eqn{\hat\beta_j \tl N(\beta_j, c_{jj}MS_{res}) \lra \frac{\hat\beta_j - \beta_j}{\sqrt{c_{jj}MS_{res}}} or \frac{\hat\beta_j - \beta_j}{se(\hat\beta_j)} \tl t_{n - p}}
-variance:
-\eqn{\hat\ssq = MS_{res} = \frac{SS_{res}}{n - p} \tl \chi^2_{n - p}}
+\mt{\hat\beta_j \tl N(\beta_j, c_{jj}MS_{res}) \lra \frac{\hat\beta_j - \beta_j}{\sqrt{c_{jj}MS_{res}}} \textrm{or \tab} \frac{\hat\beta_j - \beta_j}{se(\hat\beta_j)} \tl t_{n - p}}
 
-So, the (1 \ms \afa) confidence interval for \uw{\bta}{j} is
-\eqn{\hat\beta_j \pm \uw{t}{\frac{\afa}{2}, n - p}se(\hat\beta_j)}
+Then the variance estimator is \mt{\hat\ssq = MS_{res} = \frac{SS_{res}}{n - p} \tl \chi^2_{n - p}} \tab So, the (1 \ms \afa) \textbf{confidence interval} for \uw{\bta}{j} is \mt{\hat\beta_j \pm \uw{t}{\frac{\afa}{2}, n - p}se(\hat\beta_j)}
 
-$\hat y_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq)
-\eqn{\frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}\ssq}} \tl N(0, 1) \lra \frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}MS_{res}}} \tl t_{n - p}}
-where \ssq \eql \uw{MS}{res}
+$\hat y_j$ \tl N(\uw{x}{j}\bta, \uw{h}{jj}\ssq), so \tab \mt{\frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}\ssq}} \tl N(0, 1) \textrm{\tab} \frac{\hat y_j - x_j\beta}{\sqrt{h_{jj}MS_{res}}} \tl t_{n - p}}
+where \ssq estimates \uw{MS}{res}
 
-A 1 \ms \afa confidence interval for \exv{\uw{y}{0}$|$\uw{x}{0}} is:
-\eqn{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0\hat\ssq}}
-or
-\eqn{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0MS_{res}}}
+A 1 \ms \afa confidence interval for \exv{\uw{y}{0}$|$\uw{x}{0}} is \mt{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0\hat\ssq}} 
+or 
+\mt{\hat y_0 \pm t_{\frac{\alpha}{2}, n - p}\sqrt{\uw{x}{0}\pr (x\pr x)^{-1}x_0MS_{res}}}
 }
 
-\ssc{Analysis of Variance (ANOVA)}{
+\ssc{Chapter 4: Model Testing}{
+Properties of residuals: mean 0, \mt{MS_{res} = \sum_{i = 1}^n \frac{(\epsilon_i - \bar\epsilon)^2}{n - p} = \sum_{i = 1}^n \frac{\epsilon^2_i}{n - p} = \frac{SS_{res}}{n - p}}
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{lrrrrr}
-  \hline
- & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
-  \hline
-Regression & p \ms 1 (or k) & \uw{SS}{Reg} & \uw{MS}{Reg} & \frc{\uw{MS}{Reg}}{\uw{MS}{res}} & n/a \\ 
-  Residuals & n \ms p or n \ms(k \ps1) & \uw{SS}{res} & \uw{MS}{res} &  &  \\
-  Total & n \ms 1 & \uw{SS}{total} &  &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-\uf{R}{2} \eql \frc{\uw{SS}{Reg}}{\uw{SS}{Tot}}
-
-\uf{R}{2}$_{adj}$ \eql ?
-
+\textbf{Scaling Residuals:} Standardized Residuals: \mt{d_i = \frac{\epsilon_i}{\sqrt{MS_{res}}}} Studentized: \mt{r_i = \frac{\epsilon_i}{\sqrt{MS_{res}(1 - h_{ii})}}}, \textbf{\vrn{\uw{\ep}{i}}} \eql \ssq(1 \ms \uw{h}{ii}), \textbf{cov(\uw{\ep}{i}, \uw{\ep}{j})} \eql $-\ssq h_{ij}$
 }
 
-}
+Other model testing: plot \uw{x}{i} and \uw{x}{j}: linear rln means high corr.
 
+Formal test for lack of fit: Assuming everything is tested and ideal, to test for linearity, we use: \mt{SS_{res} = SS_{PE} + SS_{LOF}}
+
+\uw{F}{0} \eql \mt{\frac{SS_{LOF} / (m - 2)}{SS_{PE} / (n - m)}} \eql \mt{\frac{MS_{LOF}}{MS_{PE}}} \tab
+\exv{\mt{MS_{LOF}}} \eql \mt{} \exv{\mt{MS_{PE}}} \eql \ssq, where m is num regressors, n is num samples
+\tab \vrn{$\bar y$} \eql \mt{\frac{p\ssq}{n}} (indpure e)
 \end{document}
