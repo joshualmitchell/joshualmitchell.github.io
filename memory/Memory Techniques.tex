@@ -1,0 +1,358 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{From The Memory Book by Harry Lorayne and Jerry Lucas}
+
+% \input{ShortcutsGraphTheory}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage{blkarray}
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{}        % Class
+\newcommand{\hmwkClassInstructor}{}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Memory Techniques Cheatsheet}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{\operatorname{+}} }
+\newcommand{\ms}{\mt{\operatorname{-}} }
+
+\newcommand{\ls}{\mt{\operatorname{<}} }
+\newcommand{\gr}{\mt{\operatorname{>}} }
+
+\newcommand{\lse}{\mt{\operatorname{\leq}} }
+\newcommand{\gre}{\mt{\operatorname{\geq}} }
+
+\newcommand{\eql}{ \mt{\operatorname{=}} }
+
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand{\mn}[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+\newcommand{\exv}[1]{E[#1]}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\gv}{ \mt{|} }
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}	
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}
+
+\newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\inm}[1]{\mt{\left\[ \begin{smallmatrix} #1 \end{smallmatrix} \right\]}}
+
+\newcommand{\lbm}[4]{
+	  \begin{blockarray}{#1} % for all rows (including column names), put a c (i.e. ccc for 2 rows + column names)
+        #2 \\ % & c-label1 & c-label2 & c-label3...
+      \begin{block}{c(#3)} % a c for every column only (including row labels)
+        #4 % r-label1 & data & data & data ... \\
+           % r-label2 & data & data & data ... \\
+           % ...
+           % r-labeln & data & data & data ... \\
+      \end{block}
+    \end{blockarray}
+}
+
+% Example:
+% \[
+% \lbm{ccccc}{
+% & H & y & d}{cccc}{H & 4 & 4 & 4 \\
+% Y & 3 & 3 & 3 \\
+% D & 2 & 2 & 2 \\
+% D & 2 & 2 & 2 \\}
+% \]
+
+\newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!
+	 
+% ----------
+
+\begin{document}
+
+\bsc{Memory Techniques}{
+
+\ssc{Key Concepts:}{
+- When we can't remember stuff, it's because we either \bpth{a} don't have a link or association to it (even though it's in there somewhere) or \bpth{b} never learned / internalized / processed it in the first place.
+
+- So, the goal with most of these concepts is to \bpth{a} induce \textbf{Original Awareness} (i.e. make it so it sticks) for whatever we're memorizing in \bpth{b} the most effortless, natural possible way for us as humans (which usually involves visual/auditory memory and piggy backing off what we already remember very well).
+
+}
+\ssc{Chaining / Linking:}{
+If you have a list of things, it's usually easier to recall them one by one if you link them together in absurd (i.e. more memorable) ways.
+
+\
+
+For example, if you want to memorize [\textbf{Airplane}, \textbf{Tree}, \textbf{Envelope}, \textbf{Sing}], then picture an airplane and a tree in a memorable way (i.e. an airplane with trees for propellors), a tree and an envelope in a memorable way, and so on. Once you do this, it should be easier to, once you start with the first object, to effortlessly remember one after the other. It can also be done backwards.
+
+}
+
+\ssc{Substitute Word (for remembering abstract / arbitrary / foreign words):}{
+Whenever you have to memorize foreign (at least, to you) vocabulary, it can be difficult. The substitute word technique makes it easier (and also allows it to be used in conjunction with the other techniques).
+
+\
+
+All you have to do is take a word you have no visual association for, and come up with a series of words that are highly visual / emotional, sound the same or similar as the original word, and indicate the meaning of the original word.
+
+\
+
+For example, if I wanted to remember that Berkeley was a university: Berkeley sounds like Brr, Kelly, which makes me picture a girl named Kelly who's shivering. If I picture this same image on a university campus, then every time I hear Berkeley, I'll picture that image, and it'll remind me that Berkeley is a university.
+}
+
+\ssc{Memory Palace (another way of memorizing lists, speeches, or other sequences):}{
+In ancient Rome, there were folks called orators whose job was to recite canonical texts. This involved memorizing very long scripts or stories. They did this by thinking of a place they knew very well (i.e. their homes), picking significant and easily visualizable objects in the place, and associating some concept to each object.
+
+For example, when they imagined touring their home, they'd open the door, see their coat rack first, and because they previously associated the coat rack to, say, a llama (e.g. they visualized a llama balanced on top of a coat rack, getting stabbed by one, etc), now they remember the llama. The same thing happens as they mentally traverse their home and see other significant objects.
+
+}
+
+\newpage
+
+\ssc{Memorizing Numbers:}{
+
+Once each of these sounds is associated (memorized) with each of these numbers (and vise versa), it becomes easy to see a number (e.g. 1049) and automatically map it to consonants (e.g. tsrp) and then add vowels (e.g. teaser pie), making remembering the word(s) equivalent to remembering the numbers (e.g. teaser pie is easier to remember than 1049). This scales pretty well, since remembering sentences is still pretty easy.
+
+\begin{tabular}{l|cc}
+  Number & Associated Sounds\\
+  \hline
+  0 & z, s, \textit{soft c} \\
+  1 & t, d, th \\
+  2 & n \\
+  3 & m \\
+  4 & r \\
+  5 & l \\
+  6 & j, sh, ch, \textit{soft g} \\
+  7 & k, q, \textbf{hard c}, \textbf{hard g} \\
+  8 & f, v, ph \\
+  9 & p, b 
+\end{tabular}
+
+\textbf{Disregarded letters (when making words):}
+
+- a, e, i, o, u, y
+
+- w, h when there is no sound change (i.e. when [\textbf{1}], whirl [\textbf{45}])
+
+- silent letters (i.e. knit [\textbf{21}], bought [\textbf{91}])
+
+- double letters with no sound change (i.e. battle [\textbf{915}], manner [\textbf{324}] - accident [\textbf{70121}] does \textbf{not} count since it's ak-sid-ent)
+}
+\ssc{Pegging (when you want to remember a list of things out of order):}{
+
+If we use the above technique, we can come up with a list of 100 words (below) that each correspond to the numbers 0 through 99. This allows us to, given a number, recall something associated with that number specifically.
+
+For example, if we wanted to memorize each of the 50 states in alphabetical order and then recall the position in the order on command later, we would memorize this word bank (or a similar one), and then associate each word to its corresponding state (e.g. Kansas, the 16th state, would be associated with with dish, the word that translates to 16. To form the association, we could visualize a can that says dish on it, i.e. can says dish \lra Kansas dish).
+
+\
+
+\begin{tabular}{l|ccccccccccccc}
+ 1st \# $\downarrow$, 2nd \# $\rightarrow$ & none & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+  \hline
+  0 & \textbf{z}oo & \\
+  1 & \textbf{t}ie & \textbf{t}oe\textbf{s} &  tot & tin & tomb & tire & towel & dish & tack & dove & tub \\
+  2 & \textbf{N}oah & nose & net & nun & name & Nero & nail & notch & neck & knife & knob \\
+  3 & \textbf{M}a & mouse & mat & moon & mummy & mower & mule & match & mug & movie & mop \\
+  4 & \textbf{r}ye & rose & rod & rain & ram & rower & roll & roach & rock & roof & rope \\
+  5 & \textbf{l}aw & lace & lot & lion & loom & lure & lily & leech & log & lava & lip \\
+  6 & \textbf{sh}oe & cheese & sheet & chain & chum & cherry & jail & choo choo & chalk & chef & ship \\
+  7 & \textbf{c}ow & case & cot & coin & comb & car & coal & cage & coke & cave & cob \\
+  8 & i\textbf{v}y & fuzz & fit & phone & foam & fur & file & fish & fog & fife & fob\\
+  9 & \textbf{b}ee & bus & bat & bone & bum & bear & bell & beach & book & puff & pipe
+\end{tabular}
+
+}
+
+}
+
+\end{document}
