@@ -1,0 +1,316 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#15}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+     							 
+% ----------
+
+\begin{document}
+HW 8: pages 193, \#1, 2, 3, 5, 9, 10, 17
+
+For 2(c), see Theorem 1 and Example 9 from Lecture 15
+
+Make sure when you do these problems, justify the answer by either writing down the theorem name or providing a counter example.
+
+\bsc{Exercise 1}{
+
+Mark each statement True or False. Justify each answer.
+
+\balist
+\item A sequence \prn{\uw{s}{n}} converges to s iff every subsequence of (\uw{s}{n}) converges to s.
+	
+	\textbf{True.}
+	
+	
+\item Every bounded sequence is convergent.
+	
+	\textbf{False.}
+	
+	Counter example: \prn{\uw{s}{n}} \eql \uf{(-1)}{n}
+\item Let (\uw{s}{n}) be a bounded sequence. If \prn{\uw{s}{n}} oscillates, then the set S of subsequential limits of \prn{\uw{s}{n}} contains at least two points.
+\item Let \prn{\uw{s}{n}} be a bounded sequence and let m \eql lim sup \uw{s}{n}. Then, \fa \ep \gr 0, \exs N \mem \bn st N \gre n implies \uw{s}{n} \gr m \ms \ep
+\item If \prn{\uw{s}{n}} is unbounded above, then \prn{\uw{s}{n}} contains a subsequence that has \infy as a limit.
+\elist
+
+}
+
+\bsc{Exercise 2}{
+
+Mark each statement True or False. Justify each answer.
+
+\balist
+\item Every sequence has a convergent subsequence.
+\item The set of subsequential limits of a bounded sequence is always nonempty.
+\item \prn{\uw{s}{n}} converges to s iff lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s
+\item Let (\uw{s}{n}) be a bounded sequence and let m \eql lim sup \uw{s}{n}. Then, \fa \ep \gr 0, there are infinitely many terms in the sequence greater than m \ms \ep.
+\item If \prn{\uw{s}{n}} is unbounded above, then lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql \infy 
+\elist 
+
+}
+
+\bsc{Exercise 3}{
+
+For each sequence, find the set S of subsequential limits, the limit inferior, and the limit inferior.
+
+\balist
+\item \uw{s}{n} \eql 1 + $(-1)^n$
+\item \uw{t}{n} \eql (0, \frc{1}{2}, \frc{2}{3}, \frc{1}{4}, \frc{4}{5}, \frc{1}{6}, \frc{6}{7})
+\item \uw{u}{n} \eql \uf{n}{2}($-1$ \ps ($-1$)$^n$)
+\item \uw{v}{n} \eql n sin \frc{n\pi}{2}
+\elist
+
+}
+
+\bsc{Exercise 5}{
+
+Use exercise 4.3.14 to find the limit of each sequence:
+
+\balist
+\item \uw{s}{n} \eql (1 + \frc{1}{2n})$^{2n}$
+\item \uw{s}{n} \eql (1 + \frc{1}{n})$^{2n}$
+\item \uw{s}{n} \eql (1 + \frc{1}{n})$^{n - 1}$
+\item \uw{s}{n} \eql (\frc{n	}{n + 1})$^{n}$
+\item \uw{s}{n} \eql (1 + \frc{1	}{2n})$^{n}$
+\item \uw{s}{n} \eql (\frc{n + 2	}{n + 1})$^{n + 3}$
+\elist
+
+}
+
+\bsc{Exercise 9}{
+
+Let \prn{\uw{s}{n}} be a bounded sequence.
+
+\as{lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s}
+
+Prove that \prn{\uw{s}{n}} is convergent and that lim \uw{s}{n} \eql s
+
+}
+
+\bsc{Exercise 10}{
+
+\as{x \gr 1}
+
+Prove that lim \uf{x}{\frc{1}{n}} \eql 1
+
+}
+
+\bsc{Exercise 17}{
+
+Prove that if lim sup \uw{s}{n} \eql \infy and k \gr 0, then lim sup (k\uw{s}{n}) \eql \infy 
+
+}
+
+\end{document}
