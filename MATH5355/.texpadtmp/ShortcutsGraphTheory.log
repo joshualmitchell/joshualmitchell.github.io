@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdftex 2017.5.23)  14 OCT 2017 07:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdftex 2017.5.23)  21 OCT 2017 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -122,18 +122,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:25: Undefined control sequence.
-l.25 \topmargin
-               =-0.45in
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:26: Undefined control sequence.
-l.26 \evensidemargin
-                    =0in
+./ShortcutsGraphTheory.tex:21: Undefined control sequence.
+l.21 \graphicspath
+                  {{/Users/jm/iclouddrive/5355pics/}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -141,8 +132,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:27: Undefined control sequence.
-l.27 \oddsidemargin
-                   =0in
+l.27 \topmargin
+               =-0.45in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -150,8 +141,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:28: Undefined control sequence.
-l.28 \textwidth
-               =6.5in
+l.28 \evensidemargin
+                    =0in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -159,8 +150,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:29: Undefined control sequence.
-l.29 \textheight
-                =9.0in
+l.29 \oddsidemargin
+                   =0in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -168,8 +159,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:30: Undefined control sequence.
-l.30 \headsep
-             =0.25in
+l.30 \textwidth
+               =6.5in
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:31: Undefined control sequence.
+l.31 \textheight
+                =9.0in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -177,8 +177,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:32: Undefined control sequence.
-l.32 \linespread
-                {1.1}
+l.32 \headsep
+             =0.25in
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -186,26 +186,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:34: Undefined control sequence.
-l.34 \pagestyle
-               {fancy}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:35: Undefined control sequence.
-l.35 \lhead
-           {\hmwkAuthorName}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:35: Undefined control sequence.
-l.35 \lhead{\hmwkAuthorName
-                           }
+l.34 \linespread
+                {1.1}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -213,7 +195,34 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:36: Undefined control sequence.
-l.36 \chead
+l.36 \pagestyle
+               {fancy}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:37: Undefined control sequence.
+l.37 \lhead
+           {\hmwkAuthorName}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:37: Undefined control sequence.
+l.37 \lhead{\hmwkAuthorName
+                           }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:38: Undefined control sequence.
+l.38 \chead
            {}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -221,8 +230,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:37: Undefined control sequence.
-l.37 \rhead
+./ShortcutsGraphTheory.tex:39: Undefined control sequence.
+l.39 \rhead
            {\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -230,8 +239,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:37: Undefined control sequence.
-l.37 \rhead{\hmwkClass
+./ShortcutsGraphTheory.tex:39: Undefined control sequence.
+l.39 \rhead{\hmwkClass
                       \ (\hmwkClassInstructor): \hmwkTitle}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -239,8 +248,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:37: Undefined control sequence.
-l.37 \rhead{\hmwkClass\ (\hmwkClassInstructor
+./ShortcutsGraphTheory.tex:39: Undefined control sequence.
+l.39 \rhead{\hmwkClass\ (\hmwkClassInstructor
                                              ): \hmwkTitle}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -248,8 +257,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:37: Undefined control sequence.
-l.37 ...kClass\ (\hmwkClassInstructor): \hmwkTitle
+./ShortcutsGraphTheory.tex:39: Undefined control sequence.
+l.39 ...kClass\ (\hmwkClassInstructor): \hmwkTitle
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -257,8 +266,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:38: Undefined control sequence.
-l.38 \lfoot
+./ShortcutsGraphTheory.tex:40: Undefined control sequence.
+l.40 \lfoot
            {\lastxmark}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -266,8 +275,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:38: Undefined control sequence.
-l.38 \lfoot{\lastxmark
+./ShortcutsGraphTheory.tex:40: Undefined control sequence.
+l.40 \lfoot{\lastxmark
                       }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -275,8 +284,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:39: Undefined control sequence.
-l.39 \cfoot
+./ShortcutsGraphTheory.tex:41: Undefined control sequence.
+l.41 \cfoot
            {\thepage}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -284,8 +293,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:39: Undefined control sequence.
-l.39 \cfoot{\thepage
+./ShortcutsGraphTheory.tex:41: Undefined control sequence.
+l.41 \cfoot{\thepage
                     }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -293,8 +302,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:41: Undefined control sequence.
-l.41 \renewcommand
+./ShortcutsGraphTheory.tex:43: Undefined control sequence.
+l.43 \renewcommand
                   \headrulewidth{0.4pt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -302,26 +311,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:41: Undefined control sequence.
-l.41 \renewcommand\headrulewidth
-                                {0.4pt}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:42: Undefined control sequence.
-l.42 \renewcommand
-                  \footrulewidth{0.4pt}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:42: Undefined control sequence.
-l.42 \renewcommand\footrulewidth
+./ShortcutsGraphTheory.tex:43: Undefined control sequence.
+l.43 \renewcommand\headrulewidth
                                 {0.4pt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -330,7 +321,25 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:44: Undefined control sequence.
-l.44 \setlength
+l.44 \renewcommand
+                  \footrulewidth{0.4pt}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:44: Undefined control sequence.
+l.44 \renewcommand\footrulewidth
+                                {0.4pt}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:46: Undefined control sequence.
+l.46 \setlength
                \parindent{0pt}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -338,19 +347,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:44: Missing number, treated as zero.
+./ShortcutsGraphTheory.tex:46: Missing number, treated as zero.
 <to be read again> 
                    {
-l.44 \setlength\parindent{
+l.46 \setlength\parindent{
                           0pt}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./ShortcutsGraphTheory.tex:44: Illegal unit of measure (pt inserted).
+./ShortcutsGraphTheory.tex:46: Illegal unit of measure (pt inserted).
 <to be read again> 
                    {
-l.44 \setlength\parindent{
+l.46 \setlength\parindent{
                           0pt}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -359,45 +368,9 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-./ShortcutsGraphTheory.tex:45: Undefined control sequence.
-l.45 \setcounter
+./ShortcutsGraphTheory.tex:47: Undefined control sequence.
+l.47 \setcounter
                 {secnumdepth}{0}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:47: Undefined control sequence.
-l.47 \newcommand
-                {\hmwkClass}{MATH 5355 / Graph Theory}        % Class
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:47: Undefined control sequence.
-l.47 \newcommand{\hmwkClass
-                           }{MATH 5355 / Graph Theory}        % Class
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:48: Undefined control sequence.
-l.48 \newcommand
-                {\hmwkClassInstructor}{Dr. Shen}           % Instructor
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:48: Undefined control sequence.
-l.48 \newcommand{\hmwkClassInstructor
-                                     }{Dr. Shen}           % Instructor
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -406,6 +379,42 @@ and I'll forget about whatever was undefined.
 
 ./ShortcutsGraphTheory.tex:49: Undefined control sequence.
 l.49 \newcommand
+                {\hmwkClass}{MATH 5355 / Graph Theory}        % Class
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:49: Undefined control sequence.
+l.49 \newcommand{\hmwkClass
+                           }{MATH 5355 / Graph Theory}        % Class
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:50: Undefined control sequence.
+l.50 \newcommand
+                {\hmwkClassInstructor}{Dr. Shen}           % Instructor
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:50: Undefined control sequence.
+l.50 \newcommand{\hmwkClassInstructor
+                                     }{Dr. Shen}           % Instructor
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:51: Undefined control sequence.
+l.51 \newcommand
                 {\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -413,8 +422,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:49: Undefined control sequence.
-l.49 \newcommand{\hmwkAuthorName
+./ShortcutsGraphTheory.tex:51: Undefined control sequence.
+l.51 \newcommand{\hmwkAuthorName
                                 }{\textbf{Joshua Mitchell}} % Author
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -422,8 +431,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:49: Undefined control sequence.
-l.49 \newcommand{\hmwkAuthorName}{\textbf
+./ShortcutsGraphTheory.tex:51: Undefined control sequence.
+l.51 \newcommand{\hmwkAuthorName}{\textbf
                                          {Joshua Mitchell}} % Author
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -431,8 +440,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:55: Undefined control sequence.
-l.55 \title
+./ShortcutsGraphTheory.tex:57: Undefined control sequence.
+l.57 \title
            {
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -440,8 +449,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:56: Undefined control sequence.
-l.56     \vspace
+./ShortcutsGraphTheory.tex:58: Undefined control sequence.
+l.58     \vspace
                 {2in}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -449,8 +458,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:57: Undefined control sequence.
-l.57     \textmd
+./ShortcutsGraphTheory.tex:59: Undefined control sequence.
+l.59     \textmd
                 {\textbf{\hmwkClass:\ \hmwkTitle}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -458,8 +467,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:57: Undefined control sequence.
-l.57     \textmd{\textbf
+./ShortcutsGraphTheory.tex:59: Undefined control sequence.
+l.59     \textmd{\textbf
                         {\hmwkClass:\ \hmwkTitle}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -467,8 +476,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:57: Undefined control sequence.
-l.57     \textmd{\textbf{\hmwkClass
+./ShortcutsGraphTheory.tex:59: Undefined control sequence.
+l.59     \textmd{\textbf{\hmwkClass
                                    :\ \hmwkTitle}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -476,8 +485,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:57: Undefined control sequence.
-l.57     \textmd{\textbf{\hmwkClass:\ \hmwkTitle
+./ShortcutsGraphTheory.tex:59: Undefined control sequence.
+l.59     \textmd{\textbf{\hmwkClass:\ \hmwkTitle
                                                 }}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -485,12 +494,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:60: Argument of \\ has an extra }.
+./ShortcutsGraphTheory.tex:62: Argument of \\ has an extra }.
 <inserted text> 
                 \par 
 <to be read again> 
                    }
-l.60 }
+l.62 }
       
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -501,19 +510,19 @@ your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
  \normalsize \vspace {0.1in}\small \vspace {0.1in}\large {\textit {\hmwkClassInstructor \ETC.
-./ShortcutsGraphTheory.tex:60: Paragraph ended before \\ was complete.
+./ShortcutsGraphTheory.tex:62: Paragraph ended before \\ was complete.
 <to be read again> 
                    \par 
 <to be read again> 
                    }
-l.60 }
+l.62 }
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./ShortcutsGraphTheory.tex:62: Undefined control sequence.
-l.62 \author
+./ShortcutsGraphTheory.tex:64: Undefined control sequence.
+l.64 \author
             {\hmwkAuthorName}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -521,8 +530,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:62: Undefined control sequence.
-l.62 \author{\hmwkAuthorName
+./ShortcutsGraphTheory.tex:64: Undefined control sequence.
+l.64 \author{\hmwkAuthorName
                             }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -530,8 +539,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:63: Undefined control sequence.
-l.63 \date
+./ShortcutsGraphTheory.tex:65: Undefined control sequence.
+l.65 \date
           {}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -539,8 +548,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Undefined control sequence.
-l.65 \renewcommand
+./ShortcutsGraphTheory.tex:67: Undefined control sequence.
+l.67 \renewcommand
                   {\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -548,8 +557,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Undefined control sequence.
-l.65 \renewcommand{\part
+./ShortcutsGraphTheory.tex:67: Undefined control sequence.
+l.67 \renewcommand{\part
                         }[1]{\textbf{\large Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -557,8 +566,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Undefined control sequence.
-l.65 \renewcommand{\part}[1]{\textbf
+./ShortcutsGraphTheory.tex:67: Undefined control sequence.
+l.67 \renewcommand{\part}[1]{\textbf
                                     {\large Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -566,8 +575,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Undefined control sequence.
-l.65 \renewcommand{\part}[1]{\textbf{\large
+./ShortcutsGraphTheory.tex:67: Undefined control sequence.
+l.67 \renewcommand{\part}[1]{\textbf{\large
                                             Part \Alph{partCounter}}\stepcou...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -575,8 +584,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Undefined control sequence.
-l.65 ...ommand{\part}[1]{\textbf{\large Part \Alph
+./ShortcutsGraphTheory.tex:67: Undefined control sequence.
+l.67 ...ommand{\part}[1]{\textbf{\large Part \Alph
                                                   {partCounter}}\stepcounter...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -584,8 +593,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Undefined control sequence.
-l.65 ...large Part \Alph{partCounter}}\stepcounter
+./ShortcutsGraphTheory.tex:67: Undefined control sequence.
+l.67 ...large Part \Alph{partCounter}}\stepcounter
                                                   {partCounter}\\}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -593,12 +602,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:65: Argument of \\ has an extra }.
+./ShortcutsGraphTheory.tex:67: Argument of \\ has an extra }.
 <inserted text> 
                 \par 
 <to be read again> 
                    }
-l.65 ...{partCounter}}\stepcounter{partCounter}\\}
+l.67 ...{partCounter}}\stepcounter{partCounter}\\}
                                                   
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -608,19 +617,19 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-./ShortcutsGraphTheory.tex:65: Paragraph ended before \\ was complete.
+./ShortcutsGraphTheory.tex:67: Paragraph ended before \\ was complete.
 <to be read again> 
                    \par 
 <to be read again> 
                    }
-l.65 ...{partCounter}}\stepcounter{partCounter}\\}
+l.67 ...{partCounter}}\stepcounter{partCounter}\\}
                                                   
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-./ShortcutsGraphTheory.tex:68: Undefined control sequence.
-l.68 \newcommand
+./ShortcutsGraphTheory.tex:70: Undefined control sequence.
+l.70 \newcommand
                 {\dx}{\mathrm{d}x}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -628,8 +637,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:68: Undefined control sequence.
-l.68 \newcommand{\dx
+./ShortcutsGraphTheory.tex:70: Undefined control sequence.
+l.70 \newcommand{\dx
                     }{\mathrm{d}x}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -637,8 +646,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:68: Undefined control sequence.
-l.68 \newcommand{\dx}{\mathrm
+./ShortcutsGraphTheory.tex:70: Undefined control sequence.
+l.70 \newcommand{\dx}{\mathrm
                              {d}x}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -646,8 +655,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:75: Undefined control sequence.
-l.75 \newcommand
+./ShortcutsGraphTheory.tex:77: Undefined control sequence.
+l.77 \newcommand
                 {\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -655,8 +664,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:75: Undefined control sequence.
-l.75 \newcommand{\deriv
+./ShortcutsGraphTheory.tex:77: Undefined control sequence.
+l.77 \newcommand{\deriv
                        }[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -664,8 +673,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:75: Undefined control sequence.
-l.75 \newcommand{\deriv}[1]{\frac
+./ShortcutsGraphTheory.tex:77: Undefined control sequence.
+l.77 \newcommand{\deriv}[1]{\frac
                                  {\mathrm{d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -673,8 +682,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:75: Undefined control sequence.
-l.75 \newcommand{\deriv}[1]{\frac{\mathrm
+./ShortcutsGraphTheory.tex:77: Undefined control sequence.
+l.77 \newcommand{\deriv}[1]{\frac{\mathrm
                                          {d}}{\mathrm{d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -682,8 +691,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:75: Undefined control sequence.
-l.75 ...mmand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm
+./ShortcutsGraphTheory.tex:77: Undefined control sequence.
+l.77 ...mmand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm
                                                   {d}x} (#1)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -691,16 +700,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:75: You can't use `macro parameter character #' in horizontal mode.
-l.75 ...eriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#
+./ShortcutsGraphTheory.tex:77: You can't use `macro parameter character #' in horizontal mode.
+l.77 ...eriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#
                                                   1)}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:78: Undefined control sequence.
-l.78 \newcommand
+./ShortcutsGraphTheory.tex:80: Undefined control sequence.
+l.80 \newcommand
                 {\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -708,8 +717,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:78: Undefined control sequence.
-l.78 \newcommand{\pderiv
+./ShortcutsGraphTheory.tex:80: Undefined control sequence.
+l.80 \newcommand{\pderiv
                         }[2]{\frac{\partial}{\partial #1} (#2)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -717,8 +726,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:78: Undefined control sequence.
-l.78 \newcommand{\pderiv}[2]{\frac
+./ShortcutsGraphTheory.tex:80: Undefined control sequence.
+l.80 \newcommand{\pderiv}[2]{\frac
                                   {\partial}{\partial #1} (#2)}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -726,18 +735,18 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:78: Missing $ inserted.
+./ShortcutsGraphTheory.tex:80: Missing $ inserted.
 <inserted text> 
                 $
 <to be read again> 
                    \partial 
-l.78 \newcommand{\pderiv}[2]{\frac{\partial
+l.80 \newcommand{\pderiv}[2]{\frac{\partial
                                            }{\partial #1} (#2)}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./ShortcutsGraphTheory.tex:78: Extra }, or forgotten $.
-l.78 \newcommand{\pderiv}[2]{\frac{\partial}
+./ShortcutsGraphTheory.tex:80: Extra }, or forgotten $.
+l.80 \newcommand{\pderiv}[2]{\frac{\partial}
                                             {\partial #1} (#2)}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -745,24 +754,24 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./ShortcutsGraphTheory.tex:78: You can't use `macro parameter character #' in math mode.
-l.78 ...and{\pderiv}[2]{\frac{\partial}{\partial #
+./ShortcutsGraphTheory.tex:80: You can't use `macro parameter character #' in math mode.
+l.80 ...and{\pderiv}[2]{\frac{\partial}{\partial #
                                                   1} (#2)}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:78: You can't use `macro parameter character #' in math mode.
-l.78 ...pderiv}[2]{\frac{\partial}{\partial #1} (#
+./ShortcutsGraphTheory.tex:80: You can't use `macro parameter character #' in math mode.
+l.80 ...pderiv}[2]{\frac{\partial}{\partial #1} (#
                                                   2)}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:78: Extra }, or forgotten $.
-l.78 ...riv}[2]{\frac{\partial}{\partial #1} (#2)}
+./ShortcutsGraphTheory.tex:80: Extra }, or forgotten $.
+l.80 ...riv}[2]{\frac{\partial}{\partial #1} (#2)}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -770,18 +779,18 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./ShortcutsGraphTheory.tex:79: Missing $ inserted.
+./ShortcutsGraphTheory.tex:81: Missing $ inserted.
 <inserted text> 
                 $
 <to be read again> 
                    \par 
-l.79 
+l.81 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./ShortcutsGraphTheory.tex:82: Undefined control sequence.
-l.82 \newcommand
+./ShortcutsGraphTheory.tex:84: Undefined control sequence.
+l.84 \newcommand
                 {\solution}{\textbf{\large Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -789,8 +798,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:82: Undefined control sequence.
-l.82 \newcommand{\solution
+./ShortcutsGraphTheory.tex:84: Undefined control sequence.
+l.84 \newcommand{\solution
                           }{\textbf{\large Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -798,8 +807,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:82: Undefined control sequence.
-l.82 \newcommand{\solution}{\textbf
+./ShortcutsGraphTheory.tex:84: Undefined control sequence.
+l.84 \newcommand{\solution}{\textbf
                                    {\large Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -807,8 +816,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:82: Undefined control sequence.
-l.82 \newcommand{\solution}{\textbf{\large
+./ShortcutsGraphTheory.tex:84: Undefined control sequence.
+l.84 \newcommand{\solution}{\textbf{\large
                                            Solution}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -816,8 +825,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:86: Undefined control sequence.
-l.86 \newcommand
+./ShortcutsGraphTheory.tex:88: Undefined control sequence.
+l.88 \newcommand
                 {\mt}[1]{\ensuremath{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -825,8 +834,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:86: Undefined control sequence.
-l.86 \newcommand{\mt
+./ShortcutsGraphTheory.tex:88: Undefined control sequence.
+l.88 \newcommand{\mt
                     }[1]{\ensuremath{#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -834,8 +843,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:86: Undefined control sequence.
-l.86 \newcommand{\mt}[1]{\ensuremath
+./ShortcutsGraphTheory.tex:88: Undefined control sequence.
+l.88 \newcommand{\mt}[1]{\ensuremath
                                     {#1}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -843,44 +852,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:86: You can't use `macro parameter character #' in horizontal mode.
-l.86 \newcommand{\mt}[1]{\ensuremath{#
+./ShortcutsGraphTheory.tex:88: You can't use `macro parameter character #' in horizontal mode.
+l.88 \newcommand{\mt}[1]{\ensuremath{#
                                       1}}
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./ShortcutsGraphTheory.tex:87: Undefined control sequence.
-l.87 \newcommand
-                {\nm}[1]{\textrm{#1}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:87: Undefined control sequence.
-l.87 \newcommand{\nm
-                    }[1]{\textrm{#1}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:87: Undefined control sequence.
-l.87 \newcommand{\nm}[1]{\textrm
-                                {#1}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./ShortcutsGraphTheory.tex:87: You can't use `macro parameter character #' in horizontal mode.
-l.87 \newcommand{\nm}[1]{\textrm{#
-                                  1}}
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
@@ -888,6 +862,41 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 ./ShortcutsGraphTheory.tex:89: Undefined control sequence.
 l.89 \newcommand
+                {\nm}[1]{\textrm{#1}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:89: Undefined control sequence.
+l.89 \newcommand{\nm
+                    }[1]{\textrm{#1}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:89: Undefined control sequence.
+l.89 \newcommand{\nm}[1]{\textrm
+                                {#1}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./ShortcutsGraphTheory.tex:89: You can't use `macro parameter character #' in horizontal mode.
+l.89 \newcommand{\nm}[1]{\textrm{#
+                                  1}}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./ShortcutsGraphTheory.tex:91: Undefined control sequence.
+l.91 \newcommand
                 \bsc[2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -895,8 +904,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:89: Undefined control sequence.
-l.89 \newcommand\bsc
+./ShortcutsGraphTheory.tex:91: Undefined control sequence.
+l.91 \newcommand\bsc
                     [2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -904,8 +913,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:89: Undefined control sequence.
-l.89 \newcommand\bsc[2][\DefaultOpt
+./ShortcutsGraphTheory.tex:91: Undefined control sequence.
+l.91 \newcommand\bsc[2][\DefaultOpt
                                    ]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -913,17 +922,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:90: Illegal parameter number in definition of \DefaultOpt.
+./ShortcutsGraphTheory.tex:92: Illegal parameter number in definition of \DefaultOpt.
 <to be read again> 
                    2
-l.90   \def\DefaultOpt{#2
+l.92   \def\DefaultOpt{#2
                          }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ShortcutsGraphTheory.tex:91: Undefined control sequence.
-l.91   \section
+./ShortcutsGraphTheory.tex:93: Undefined control sequence.
+l.93   \section
                [#1]{#2}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -931,24 +940,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:91: You can't use `macro parameter character #' in horizontal mode.
-l.91   \section[#
+./ShortcutsGraphTheory.tex:93: You can't use `macro parameter character #' in horizontal mode.
+l.93   \section[#
                  1]{#2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:91: You can't use `macro parameter character #' in horizontal mode.
-l.91   \section[#1]{#
+./ShortcutsGraphTheory.tex:93: You can't use `macro parameter character #' in horizontal mode.
+l.93   \section[#1]{#
                      2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:93: Undefined control sequence.
-l.93 \newcommand
+./ShortcutsGraphTheory.tex:95: Undefined control sequence.
+l.95 \newcommand
                 \ssc[2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -956,8 +965,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:93: Undefined control sequence.
-l.93 \newcommand\ssc
+./ShortcutsGraphTheory.tex:95: Undefined control sequence.
+l.95 \newcommand\ssc
                     [2][\DefaultOpt]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -965,8 +974,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:93: Undefined control sequence.
-l.93 \newcommand\ssc[2][\DefaultOpt
+./ShortcutsGraphTheory.tex:95: Undefined control sequence.
+l.95 \newcommand\ssc[2][\DefaultOpt
                                    ]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -974,17 +983,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:94: Illegal parameter number in definition of \DefaultOpt.
+./ShortcutsGraphTheory.tex:96: Illegal parameter number in definition of \DefaultOpt.
 <to be read again> 
                    2
-l.94   \def\DefaultOpt{#2
+l.96   \def\DefaultOpt{#2
                          }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./ShortcutsGraphTheory.tex:95: Undefined control sequence.
-l.95   \subsection
+./ShortcutsGraphTheory.tex:97: Undefined control sequence.
+l.97   \subsection
                   [#1]{#2}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -992,24 +1001,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:95: You can't use `macro parameter character #' in horizontal mode.
-l.95   \subsection[#
+./ShortcutsGraphTheory.tex:97: You can't use `macro parameter character #' in horizontal mode.
+l.97   \subsection[#
                     1]{#2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:95: You can't use `macro parameter character #' in horizontal mode.
-l.95   \subsection[#1]{#
+./ShortcutsGraphTheory.tex:97: You can't use `macro parameter character #' in horizontal mode.
+l.97   \subsection[#1]{#
                         2}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./ShortcutsGraphTheory.tex:97: Undefined control sequence.
-l.97 \newcommand
+./ShortcutsGraphTheory.tex:99: Undefined control sequence.
+l.99 \newcommand
                 {\bgpf}{\begin{proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1017,8 +1026,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:97: Undefined control sequence.
-l.97 \newcommand{\bgpf
+./ShortcutsGraphTheory.tex:99: Undefined control sequence.
+l.99 \newcommand{\bgpf
                       }{\begin{proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1026,8 +1035,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:97: Undefined control sequence.
-l.97 \newcommand{\bgpf}{\begin
+./ShortcutsGraphTheory.tex:99: Undefined control sequence.
+l.99 \newcommand{\bgpf}{\begin
                               {proof} $ $\newline}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1035,8 +1044,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:97: Undefined control sequence.
-l.97 \newcommand{\bgpf}{\begin{proof} $ $\newline
+./ShortcutsGraphTheory.tex:99: Undefined control sequence.
+l.99 \newcommand{\bgpf}{\begin{proof} $ $\newline
                                                  }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1044,35 +1053,35 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:99: Undefined control sequence.
-l.99 \newcommand
-                {\bgeq}{\begin{equation*}}
+./ShortcutsGraphTheory.tex:101: Undefined control sequence.
+l.101 \newcommand
+                 {\bgeq}{\begin{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:99: Undefined control sequence.
-l.99 \newcommand{\bgeq
-                      }{\begin{equation*}}
+./ShortcutsGraphTheory.tex:101: Undefined control sequence.
+l.101 \newcommand{\bgeq
+                       }{\begin{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:99: Undefined control sequence.
-l.99 \newcommand{\bgeq}{\begin
-                              {equation*}}
+./ShortcutsGraphTheory.tex:101: Undefined control sequence.
+l.101 \newcommand{\bgeq}{\begin
+                               {equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:100: Undefined control sequence.
-l.100 \newcommand
+./ShortcutsGraphTheory.tex:102: Undefined control sequence.
+l.102 \newcommand
                  {\eeq}{\end{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1080,8 +1089,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ShortcutsGraphTheory.tex:100: Undefined control sequence.
-l.100 \newcommand{\eeq
+./ShortcutsGraphTheory.tex:102: Undefined control sequence.
+l.102 \newcommand{\eeq
                       }{\end{equation*}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1092,11 +1101,11 @@ and I'll forget about whatever was undefined.
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] )
 (\end occurred inside a group at level 3)
 
-### simple group (level 3) entered at line 100 ({)
-### simple group (level 2) entered at line 78 ({)
-### simple group (level 1) entered at line 78 ({)
+### simple group (level 3) entered at line 102 ({)
+### simple group (level 2) entered at line 80 ({)
+### simple group (level 1) entered at line 80 ({)
 ### bottom level</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on /Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/ShortcutsGraphTheory.pdf (1 page, 28069 bytes).
+Output written on /Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/ShortcutsGraphTheory.pdf (1 page, 28673 bytes).
 PDF statistics:
  16 PDF objects out of 1000 (max. 8388607)
  10 compressed objects within 1 object stream

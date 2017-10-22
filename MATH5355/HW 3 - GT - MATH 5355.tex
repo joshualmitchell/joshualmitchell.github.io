@@ -1,3 +1,12 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW \#3}
+
+% \input{ShortcutsGraphTheory}
+
 % ----------
 
 % Packages
@@ -248,3 +257,195 @@
 \newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!
 	 
 % ----------
+
+\begin{document}
+
+\bsc{Hand In: (1.4): 8, 23, 37\tab (2.1): 4, 10, 29}{
+\ssc{Exercise 1.4.8}{
+Prove that \exs an n-vertex tournament with \uf{d}{-}(v) \eql \uf{d}{+}(v) \fa v \mem V(T) iff n is odd.
+\bgpf
+\lra 
+
+\lt{T be a complete, oriented graph st \uf{d}{-}(v) \eql \uf{d}{+}(v) \fa v \mem V(T)}
+
+We know that v is adjacent to all the other n \ms 1 vertices, and that \av{E(T)} \eql \frc{n(n - 1)}{2} where \av{V(T)} \eql n
+
+By Proposition 1.4.18, we know that:
+\eqn{\sum_{v\textrm{ \mem }V(D)} d^+(v) = \sum_{v\textrm{ \mem }V(D)} d^-(v) = E(D)}
+So, 
+\eqn{d^+(v) + d^-(v) = n - 1}
+Case:
+\bilist
+\item n is even
+	
+	Then,
+	\eqn{d^+(v) + d^-(v) = n - 1 = 2k - 1, k \mem \bn}
+	(an odd number)
+	
+	So, one of \bk{\uf{d}{+}(v), \uf{d}{-}(v)} is even, and the other is odd.
+	
+	This implies that \uf{d}{+}(v) cannot equal \uf{d}{-}(v).
+\item n is odd
+	
+	Then,
+	\eqn{d^+(v) + d^-(v) = n - 1 = 2k + 1 - 1 = 2k, k \mem \bn}
+	(an even number)
+	
+	If we let \uf{d}{+}(v) \eql \uf{d}{-}(v) \fa v \mem V(T), then we can imagine all vertices \mem V(T) in a circle with k edges with v as a head, and k edges with v as a tail. Simply rotating this configuration around creates a tournament st \uf{d}{+}(v) \eql \uf{d}{-}(v) \fa v \mem V(T) and n is odd.
+\elist
+
+\lla
+
+We have seen above that if n is odd, then creating a tournament such that \uf{d}{+}(v) \eql \uf{d}{-}(v) \fa v \mem V(T) is possible.
+\epf
+}
+
+\newpage
+
+\ssc{Exercise 1.4.23}{
+
+Prove that every graph G has an orientation D that is "balanced" at each vertex, meaning that
+\step{\av{\uf{d}{+}_D(v) - \uf{d}{-}_D(v)} \lse 1 \textrm{ \fa v \mem V(G)}}{1}
+\bgpf
+Recall that a graph is Eulerian iff it has at most one non-trivial component and its vertices all have an even degree.
+
+First off, let's make sure that G has no trivial components by adding an edge between any vertices of degree 0.
+
+Now, \fa v \mem V(G) st deg(v) is odd, let's add edges such that each v is paired with another v of odd degree.
+
+If the number of vertices of odd degree is odd, then we can just pair up all the odd vertices except one, and save the last odd vertex for later - let's call it \uw{v}{1} if it exists.
+
+Now, at this point, we can make a Eulerian trail of G such that each edge in the trail is oriented the same way. If \uw{v}{1} exists, it becomes the start of the trail. If not, pick any arbitrary v \mem V(G) to be the start.
+
+Notice that, at this point, G fits condition \bpth{1}.
+
+If we delete all the edges we added, then G is still balanced since
+
+\balist
+\item all the vertices of degree 0 are balanced by definition
+\item all the vertices of even degree that became odd are still balanced since \uf{d}{+}(v) \ms \uf{d}{-}(v) is either 1 or $-1$.
+\item \uw{v}{1}, if it existed, is balanced since \uf{d}{+}(v) \ms \uf{d}{-}(v) is either 1 or $-1$.
+\elist
+
+Hence, result.
+\epf
+}
+
+\ssc{Exercise 1.4.37}{
+
+Consider the following algorithm whose input is a tournament T.
+
+\begin{enumerate}
+  \item Select a vertex x in T.
+  \item if (\uf{d}{-}(v) == 0) call x a king of T and stop
+  \item else: delete \bk{x} $\cup$ \uf{N}{+}(x) from T to form T\pr
+  \item Run the algorithm on T\pr. Call the output a king in T and then stop.
+\end{enumerate}
+
+Prove that this algorithm terminates and produces a king in T.
+\bgpf
+Case
+\bilist
+\item x is a king. Then, result.
+\item x is not a king.
+	
+	So, after \bk{x} $\cup$ \uf{N}{+}(x) is deleted, \uf{N}{-}(v) will still exist, which is nonempty by definition.
+	
+	In fact, what's leftover is actually a tournament since deleting a vertex deletes all edges attached to it, which makes every leftover vertex still connected to every other leftover vertex.
+	
+	By induction, a king will eventually chosen since, at the very worst, you'll end up with a vertex with no edges (which is a king by default).
+\elist
+\epf
+
+}
+
+\ssc{Exercise 2.1.4}{
+
+Prove or disprove:
+
+Every graph with fewer edges than vertices has a component that is a tree.
+\bgpf
+\lt{G be a graph st \av{E(G)} \ls \av{V(G)}}
+
+Then \av{V(G)} \ms \av{E(G)} \gre 1
+	
+If \mt{\delta}(G) \eql 0, then there must exist a vertex with no edges, which is by definition a tree component.
+	
+On the other hand, if \mt{\delta}(G) \gr 0, then \mt{\Delta}(G) must be 1, which makes G contain at least one path, and therefore contains at least one tree component.
+\epf
+
+}
+\ssc{Exercise 2.1.10}{
+
+Let u and v be vertices in a connected n-vertex simple graph.
+
+Prove that if d(u, v) \gr 2, then d(u) \ps d(v) \lse n \ps 1 \ms d(u, v).
+\bgpf 
+\lt{u, v \mem V(G) st d(u, v) \gr 2 and \av{V(G)}\eql n}
+
+Notice that if G is only a u, v-path with two vertices in between, then
+
+n \eql 4
+
+d(u, v) \eql 3
+
+d(u) \eql 1
+
+d(v) \eql 1
+
+For this specific base case, d(u) \ps d(v) \lse n \ps 1 \ms d(u, v), since 1 \ps 1 \lse 4 \ps 1 \ms 3 \lra 2 \lse 2
+
+Notice that if a vertex is added between who adjacent vertices in the u, v-path, d(u,v) increases by one and n increases by 1.
+
+However, if a vertex is added that doesn't increase the path length, d(u,v) does not increase, but n still increases.
+
+Hence, you can add a vertex anywhere, and if d(u, v) \gre 3, then the inequality holds. You can also do this any number of times.
+
+Notice also that any vertices added to be either adjacent to u or adjacent to v will increase n by that amount.
+
+Notice also that this will not change d(u, v) if the vertices are simply appended.
+
+Since any net increase in d(u) or d(v) will result in the same net increase on the other side of the inequality through n, the inequality holds for any degree of u or v \gr 0
+
+Hence, if u, v \mem V(G) where G is a connected n-vertex simple graph and d(u, v) \gr 2, then d(u) \ps d(v) \lse n \ps 1 - d(u, v).
+
+\epf
+
+Construct examples to show that this can fail whenever n \gre 3 and d(u, v) \lse 2.
+
+\uw{K}{3}
+
+Pick any two unique vertices from V(\uw{K}{3}). 
+
+d(u) \ps d(v) \lse n \ps 1 \ms d(u, v)
+
+2 \ps 2 \lse 3 \ps 1 \ms 1
+
+4 \lse 3 (which is untrue)
+
+}
+
+\newpage
+
+\ssc{Exercise 2.1.29}{
+
+Prove that, since every tree is bipartite, every tree has a leaf in its larger partite set (in both if they have equal size).
+
+\bgpf
+\lt{T be a tree, X and Y be the partitions of T st \av{X} \gre \av{Y}}
+
+\supp{X has no leaf}
+
+This implies that the minimum degree of each v \mem X is 2.
+
+So, X must be adjacent to at least \av{X} \ps 1 other vertices not in X.
+
+Since \av{Y} \lse \av{X}, there must be at least one other vertex that X is adjacent to that is part of neither Y nor X. A contradiction.
+
+Hence, every partite set equal to or larger than the other partite set of a tree must contain a leaf.
+
+\epf 
+}
+}
+
+\end{document}
