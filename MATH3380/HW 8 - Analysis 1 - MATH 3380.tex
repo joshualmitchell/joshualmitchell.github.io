@@ -265,12 +265,14 @@ Mark each statement True or False. Justify each answer.
 	
 	m \ms \ep \ls \dbs{s}{n}{k} \ls m \ps \ep \bpth{1}
 	
-	So, by \bpth{1} and \bpth{2},
+	So, by \bpth{1},
 	
 	\exs some N \mem \bn st n \gre N implies \uw{s}{n} \gr m \ms \ep
 	
 	\epf
 \item If \prn{\uw{s}{n}} is unbounded above, then \prn{\uw{s}{n}} contains a subsequence that has \infy as a limit.
+	
+	\textbf{True.} By Theorem 4.4.8.
 \elist
 
 }
@@ -281,10 +283,68 @@ Mark each statement True or False. Justify each answer.
 
 \balist
 \item Every sequence has a convergent subsequence.
+	
+	\textbf{False.} Let \uw{s}{n} \eql n
 \item The set of subsequential limits of a bounded sequence is always nonempty.
+	
+	\textbf{True.} By Theorem 4.4.8
 \item \prn{\uw{s}{n}} converges to s iff lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s
+	
+	\textbf{True.} By Definition 4.4.9 and exercise 9.
 \item Let (\uw{s}{n}) be a bounded sequence and let m \eql lim sup \uw{s}{n}. Then, \fa \ep \gr 0, there are infinitely many terms in the sequence greater than m \ms \ep.
-\item If \prn{\uw{s}{n}} is unbounded above, then lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql \infy 
+	
+	\textbf{True.} By Theorem 4.4.7, \uw{s}{n} has a convergent subsequence.
+	
+	Let \uw{t}{n} be a subsequence of \uw{s}{n} st \lmti{n} \uw{t}{n} \eql m
+	
+	By definition,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms m} \ls \ep
+	
+	so,
+	
+	$-$\ep \ls \uw{t}{n} \ms m \ls \ep
+	
+	m $-$ \ep \ls \uw{t}{n}
+	
+	Pick \uw{\ep}{2} to be \frc{\ep}{2}
+	
+	Then, 
+	
+	\exs N(\uw{\ep}{2}) st m $-$ \ep \ls \uw{t}{N(\uw{\ep}{2})}
+	
+	Inductively, we can let \uw{\ep}{3} \eql \frc{\epsilon_2}{2}, and so on.
+	
+	Hence, since there are infinitely many terms in \uw{t}{n} greater than m \ms \ep, the same is true for \uw{s}{n}.
+	
+	
+\item If \prn{\uw{s}{n}} is unbounded above, then lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql \infy
+	
+	\textbf{True.}
+	
+	\supp{\uw{s}{n} has a subsequence \uw{t}{n} such that \lmti{n} \uw{t}{n} \eql t where t $\neq$ \infy (but could be negative infinity)}
+	
+	So,
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{t}{n} \ms t} \ls \ep
+	
+	Notice also, that since \uw{s}{n} is unbounded above,
+	
+	\fa m \mem \br, \exs \uw{N}{m} \mem \bn st \dbs{s}{N}{m} \gr m
+	
+	That means that \exs some N for \uw{t}{n} st \uw{t}{N} \gr m
+	
+	If we let m \eql t, then
+	
+	\exs some \uw{N}{1} for \uw{t}{n} st \uw{t}{N_1} \gr t \eql m
+	
+	If we let m \eql t \ps 1, then
+	
+	\exs some \uw{N}{2} for \uw{t}{n} st \uw{t}{N_2} \gr m \eql t \ps 1
+	
+	Inductively, \uw{t}{n} has an infinite amount of values above t, and is increasing: a contradiction.
+	
+	Thus, \uw{t}{n} is unbounded above.
 \elist 
 
 }
