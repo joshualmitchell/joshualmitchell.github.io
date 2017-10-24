@@ -232,7 +232,7 @@ Mark each statement True or False. Justify each answer.
 \balist
 \item A sequence \prn{\uw{s}{n}} converges to s iff every subsequence of (\uw{s}{n}) converges to s.
 	
-	\textbf{True.}
+	\textbf{True.} By Theorem 4.4.4.
 	
 	
 \item Every bounded sequence is convergent.
@@ -241,7 +241,35 @@ Mark each statement True or False. Justify each answer.
 	
 	Counter example: \prn{\uw{s}{n}} \eql \uf{(-1)}{n}
 \item Let (\uw{s}{n}) be a bounded sequence. If \prn{\uw{s}{n}} oscillates, then the set S of subsequential limits of \prn{\uw{s}{n}} contains at least two points.
-\item Let \prn{\uw{s}{n}} be a bounded sequence and let m \eql lim sup \uw{s}{n}. Then, \fa \ep \gr 0, \exs N \mem \bn st N \gre n implies \uw{s}{n} \gr m \ms \ep
+
+	\textbf{True.} If S oscillates, then lim inf S \ls lim sup S. This implies that these are two different points.
+\item Let \prn{\uw{s}{n}} be a bounded sequence and let m \eql lim sup \uw{s}{n}.
+	
+	Then, \fa \ep \gr 0, \exs N \mem \bn st N \gre n implies \uw{s}{n} \gr m \ms \ep
+	
+	\textbf{True.}
+	\bgpf
+	\lt{\ep \gr 0}
+	
+	Since \uw{s}{n} is bounded, let S be the set containing the range of \uw{s}{n}.
+	
+	By definition, \exs some \dbs{s}{n}{k} st lim \dbs{s}{n}{k} \eql m where k \mem \bn 
+	
+	Since lim \dbs{s}{n}{k} \eql m,
+	
+	\exs N \mem \bn st N \gre \uw{n}{k} implies \av{\dbs{s}{n}{k} \ms m} \ls \ep
+	
+	\av{\dbs{s}{n}{k} \ms m} \ls \ep
+	
+	$-$\ep \ls \dbs{s}{n}{k} \ms m \ls \ep
+	
+	m \ms \ep \ls \dbs{s}{n}{k} \ls m \ps \ep \bpth{1}
+	
+	So, by \bpth{1} and \bpth{2},
+	
+	\exs some N \mem \bn st n \gre N implies \uw{s}{n} \gr m \ms \ep
+	
+	\epf
 \item If \prn{\uw{s}{n}} is unbounded above, then \prn{\uw{s}{n}} contains a subsequence that has \infy as a limit.
 \elist
 
