@@ -1,0 +1,474 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#16}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+     							 
+% ----------
+
+\begin{document}
+
+Exam Tuesday, 31st of October (Halloween)
+
+Covers: Section 4.2 (4.2.5 through end of section), 4.3, 4.4
+
+\bsc{Limit Superior \& Limit Inferior}{
+
+\ssc{Definition 4.4.9}{
+
+Let \bk{\uw{s}{n}} be a bounded sequence.
+
+A \textbf{subsequential limit} of \bk{\uw{s}{n}} is a real number s such that s \eql \lmti{k} \dbs{s}{n}{k} for some subsequence \bk{\dbs{s}{n}{k}}.
+
+If S \eql \bk{s \mem \br : \lmti{k} \dbs{s}{n}{k} \eql s for some \bk{\dbs{s}{n}{k}} of \bk{\uw{s}{n}}}, then
+
+\balist
+\item the \textbf{limit superior} (or \textbf{upper limit}) of \bk{\uw{s}{n}} is given by lim sup \uw{s}{n} \eql sup S
+\item the \textbf{limit inferior} (or \textbf{lower limit}) of \bk{\uw{s}{n}} is given by lim inf \uw{s}{n} \eql inf S
+\item Clearly, lim inf \uw{s}{n} \lse lim sup \uw{s}{n}. If it happens that lim inf \uw{s}{n} \ls lim sup \uw{s}{n}, then we say that \bk{\uw{s}{n}} \textbf{oscillates}.
+\elist
+
+}
+
+\sidenote{
+\av{\uw{s}{n}} \lse M, \fa n \mem \bn
+
+$-$M \ls \uw{s}{n} \ls M
+
+If \lmti{k}\dbs{s}{n}{k} \eql s \mem S, then
+
+$-$M \ls \dbs{s}{n}{k} \ls M, so
+
+$-$M \ls s \ls M
+
+\#18, page 179
+}
+
+\ssc{Theorem 1}{A bounded sequence \bk{\uw{s}{n}} converges to s iff lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s}
+
+\bgpf
+\lra 
+Assume \bk{\uw{s}{n}} converges to s.
+
+By Theorem 4.4.4, S \eql \bk{s} (contains only one element).
+
+Then, 
+
+lim inf \uw{s}{n} \eql inf S \eql s
+
+lim sup \uw{s}{n} \eql sup S \eql s
+
+So,
+
+lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s
+
+\lla 
+
+(see HW 8, Exercise 9, page 194)
+
+\epf
+}
+
+\newpage
+
+\ssc{Example 4.4.10}{
+
+\lt{\uw{s}{n} \eql \prn{$-$1}$^n$ \ps \frc{1}{n}}
+
+Show that
+
+lim inf \uw{s}{n} \eql $-$1,
+
+lim sup \uw{s}{n} \eql 1
+
+Notice that if
+
+n is even \rar \uw{s}{n} \eql 1 \ps \frc{1}{n}
+
+n is odd \rar \uw{s}{n} \eql $-$1 \ps \frc{1}{n}
+
+Thus,
+
+\lmti{k} \uw{s}{2k} \eql 1
+
+\lmti{k} \uw{s}{2k + 1} \eql $-$1
+
+Thus,
+
+S \eql \bk{$-$1, 1}
+
+Hence,
+
+lim sup \uw{s}{n} \eql 1
+
+lim inf \uw{s}{n} \eql $-$1
+
+}
+
+\ssc{Theorem 4.4.11}{
+
+Let \bk{\uw{s}{n}} be a bounded sequence and let 
+
+\uf{s}{*} \eql lim sup \uw{s}{n} 
+
+\uw{s}{*} \eql lim inf \uw{s}{n}
+
+\balist
+\item \fa \ep \gr 0, \exs N(\ep) \mem \bn st
+	\eqn{s_n < s^* + \epsilon \textrm{ for n \gre N}}
+\item \fa \ep \gr 0 and i \mem \bn, \exs j \gr i st
+	\eqn{s_j > s^* - \epsilon}
+	i.e. there are an infinite number of terms of \bk{\uw{s}{n}} that are greater than \uf{s}{*} \ms \ep
+	
+	i.e. in the interval (\uf{s}{*} \ms \ep, \uf{s}{*} \ps \ep), there are an infinite number of terms of \uw{s}{n}.
+	
+	Outside of that interval, there are a finite number of terms of \uw{s}{n}.
+\item \fa \ep \gr 0, \exs N(\ep) \mem \bn st
+	\eqn{s_n > s_* - \epsilon \textrm{ \fa n \gre N}}
+
+\item \fa \ep \gr 0 and i \mem \bn, \exs j \gr i st
+	\eqn{s_j < s_* + \epsilon}
+\elist
+
+\newpage
+
+\bgpf
+
+We shall prove a and b. c and d are similar.
+
+\bpth{a}
+
+Suppose it's false. i.e.:
+
+\supp{\exs \ep \gr 0 st \fa N \mem \bn, \exs n \gre N st}
+\eqn{s_n \gre s^* + \epsilon}
+
+\sidenote{
+In other words, suppose: \bk{\dbs{s}{n}{k} \gre \uf{s}{*} \ps \ep}
+
+By Theorem 4.4.4, every bounded sequence has a convergent subsequence.
+
+If we let \bk{\dbs{s}{n}{k}} be a subsequence of itself and label it differently:
+
+\bk{\dbs{s}{n}{l}}$_{i = 1}^\infty$, 
+
+then
+
+\dbs{s}{n}{l} \lra s as l \lra $\infty$
+}
+
+So, for N \eql 1, \exs \uw{n}{1} \gre N st
+\eqn{\dbs{s}{n}{1} \gre s^* + \epsilon}
+Then,
+
+for N \eql \uw{n}{1} \ps 1, \exs \uw{n}{2} \gre \uw{n}{1} \ps 1 \gr \uw{n}{1} st
+\eqn{\dbs{s}{n}{2} \gre s^* + \epsilon}
+So, inductively, we find a subsequence \bk{\dbs{s}{n}{k}} st
+\eqn{\dbs{s}{n}{k} \gre \uf{s}{*} + \epsilon \textrm{ \fa k \mem \bn}}
+Since \bk{\dbs{s}{n}{k}} is itself a bounded sequence, there is a subsequence of \bk{\dbs{s}{n}{k}} that we refer to by:
+
+\bk{\dbs{s}{n}{l}}$^\infty_{l = 1}$
+
+st
+
+\lmti{l} \dbs{s}{n}{l} \eql s \mem k (Theorem 4.4.7)
+
+where s \gre \uf{s}{*} \ps \ep
+
+Since s \mem S, we see that lim sup \uw{s}{n} \eql \uf{s}{*} \gre \uf{s}{*} \ps \ep, which is a contradiction.
+
+Hence, \bpth{a} is true.
+
+\bpth{b}
+
+Suppose it's false. i.e.:
+
+\supp{\exs \ep \gr 0 and \exs i \mem \bn st \fa j \gr i,}
+\eqn{s_j \lse s^* - \epsilon}
+Thus, if \bk{\dbs{s}{n}{k}} is a subsequence st \lmti{k} \dbs{s}{n}{k} \eql s, then
+\eqn{s \lse s^* - \epsilon}
+which is like saying:
+
+\uf{s}{*} \lse \uf{s}{*} \ms \ep
+
+(a contradiction)
+
+For further clarification, notice that \uf{s}{*} \ms \ep is an upper bound for all s \mem S, which says: \uf{s}{*} \lse \uf{s}{*} \ms \ep
+
+(a contradiction)
+
+\textbf{Summary:}
+
+In \bpth{a}, we said \exs \uw{N}{1} \mem \bn st \uw{s}{n} \ls s \ps \ep \fa n \gre \uw{N}{1}
+
+In \bpth{b}, we said \exs \uw{N}{2} \mem \bn st s \ms \ep \ls \uw{s}{n} \fa n \gre \uw{N}{2}
+
+\newpage
+
+At the bottom of page 190:
+
+Furthermore, 
+
+if \uf{s}{*} \mem \br satisfying \bpth{a} and \bpth{b}, 
+
+then \uf{s}{*} \eql lim sup \uw{s}{n}
+
+Also,
+
+if \uw{s}{*} \mem \br satisfying \bpth{c} and \bpth{d},
+
+then \uw{s}{*} \eql lim inf \uw{s}{n}
+
+We shall complete the proof by proving the result for \uf{s}{*}
+
+\
+
+\lt{\uf{s}{*} \mem \br satisfy \bpth{a} and \bpth{b}}
+
+We claim that \uf{s}{*} \eql lim sup \uw{s}{n}, and will prove it by contradiction.
+
+\supp{\uf{s}{*} $\neq$ lim sup \uw{s}{n}}
+
+Case:
+
+\bilist
+\item \uf{s}{*} \gr lim sup \uw{s}{n}
+	
+	So, \uf{s}{*} \ms \ep is between lim sup \uw{s}{n} and \uf{s}{*}
+	
+	Let:
+	\eqn{\epsilon = \frac{s^* - \textrm{lim sup \uw{s}{n}}}{2}}
+	By \bpth{b}, for this \ep \gr 0, and for i \mem \bn, \exs j \mem \bn st
+	
+	j \gr i and
+	\eqn{s_j \gr s^* - \epsilon}
+	
+	Since there are an infinite number of possible values of j, there is a subsequence \bk{\dbs{s}{n}{k}} st
+	\eqn{\dbs{s}{n}{k} \gr s^* - \epsilon}
+	\fa k \mem \bn
+	
+	This contradicts the definition of lim sup \uw{s}{n}.
+	
+	Thus, there is a further subsequence converging to a limit s st
+	\eqn{s \gre s^* - \epsilon \gre s^*}
+	
+	Which is also a contradiction.
+\item 
+\elist
+\epf
+
+}
+
+\end{document}
