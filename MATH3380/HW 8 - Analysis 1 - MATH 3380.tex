@@ -351,13 +351,21 @@ Mark each statement True or False. Justify each answer.
 
 \bsc{Exercise 3}{
 
-For each sequence, find the set S of subsequential limits, the limit inferior, and the limit inferior.
+For each sequence, find the set S of subsequential limits, the limit inferior, and the limit superior.
 
 \balist
 \item \uw{s}{n} \eql 1 + $(-1)^n$
+	
+	S \eql \bk{0, 2}, \uw{s}{*} \eql 0, \uf{s}{*} \eql 2 
 \item \uw{t}{n} \eql (0, \frc{1}{2}, \frc{2}{3}, \frc{1}{4}, \frc{4}{5}, \frc{1}{6}, \frc{6}{7})
+	
+	S \eql \bk{0, \frc{1}{2}, \frc{2}{3}, \frc{1}{4}, \frc{4}{5}, \frc{1}{6}, \frc{6}{7}}, \uw{s}{*} \eql 0, \uf{s}{*} \eql \frc{6}{7}
 \item \uw{u}{n} \eql \uf{n}{2}($-1$ \ps ($-1$)$^n$)
+	
+	S \eql \bk{0}, \uw{s}{*} \eql $-\infty$, \uf{s}{*} \eql 0
 \item \uw{v}{n} \eql n sin \frc{n\pi}{2}
+	
+	S \eql \bk{0}, \uw{s}{*} \eql $-\infty$, \uf{s}{*} \eql $\infty$
 \elist
 
 }
@@ -366,13 +374,46 @@ For each sequence, find the set S of subsequential limits, the limit inferior, a
 
 Use exercise 4.3.14 to find the limit of each sequence:
 
+\textbf{Known:} \uw{t}{n} \eql \prn{1 \ps \frc{1}{n}}$^n$  and \lmti{n} \uw{t}{n} \eql e
+
 \balist
 \item \uw{s}{n} \eql (1 + \frc{1}{2n})$^{2n}$
+	
+	We can just think of \uw{s}{n} as a subsequence of \uw{t}{n} (the original e sequence),
+	
+	so therefore it has the same limit: e.
 \item \uw{s}{n} \eql (1 + \frc{1}{n})$^{2n}$
+	
+	\eql ((1 + \frc{1}{n})$^n$)$^2$
+	
+	so, \lmti{n} \uw{s}{n} \eql e$^2$
 \item \uw{s}{n} \eql (1 + \frc{1}{n})$^{n - 1}$
+
+	\eql (1 + \frc{1}{n})$^{n}$(1 + \frc{1}{n})$^{-1}$
+	
+	so, \lmti{n} \uw{s}{n} \eql e * 1 \eql e
 \item \uw{s}{n} \eql (\frc{n	}{n + 1})$^{n}$
+	
+	\eql \frc{1}{(\frc{n + 1}{n})^n}
+	
+	\eql \frc{1}{(1 + \frc{1}{n})^n}
+	
+	so, \lmti{n} \uw{s}{n} \eql \frc{1}{e}
 \item \uw{s}{n} \eql (1 + \frc{1	}{2n})$^{n}$
+	
+	\eql ((1 + \frc{1}{2n})$^{2n}$)$^\frac{1}{2}$
+	
+	so, \lmti{n} \uw{s}{n} \eql $\sqrt{e}$
+	
 \item \uw{s}{n} \eql (\frc{n + 2	}{n + 1})$^{n + 3}$
+	
+	\eql (\frc{n + 2}{n + 1})$^{n}$(\frc{n + 2	}{n + 1})$^{3}$
+	
+	\eql (\frc{n}{n + 1} \ps \frc{2}{n + 1})$^{n}$(\frc{n + 2	}{n + 1})$^{3}$
+	
+	Now, \lmti{n} (\frc{n}{n + 1} \ps \frc{2}{n + 1})$^{n}$(\frc{n + 2	}{n + 1})$^{3}$ \eql (e + 0) $\times$ 1 by \bpth{d}
+	
+	so, \lmti{n} \uw{s}{n} \eql e
 \elist
 
 }
