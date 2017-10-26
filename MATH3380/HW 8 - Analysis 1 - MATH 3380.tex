@@ -3,7 +3,7 @@
 
 \documentclass{article}
 
-\newcommand{\hmwkTitle}{Lec\ \#15}
+\newcommand{\hmwkTitle}{HW\ \#8}
 
 % \input{ShortcutsAnalysis}
 
@@ -426,6 +426,12 @@ Let \prn{\uw{s}{n}} be a bounded sequence.
 
 Prove that \prn{\uw{s}{n}} is convergent and that lim \uw{s}{n} \eql s
 
+By Theorem 4.4.7, since \uw{s}{n} is bounded, \uw{s}{n} has a convergent subsequence.
+
+Since lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s, any subsequence of \uw{s}{n} has a limit of s.
+
+Since \uw{s}{n} is a subsequence of \uw{s}{n}, \uw{s}{n} has a limit of s.
+
 }
 
 \bsc{Exercise 10}{
@@ -434,11 +440,57 @@ Prove that \prn{\uw{s}{n}} is convergent and that lim \uw{s}{n} \eql s
 
 Prove that lim \uf{x}{\frc{1}{n}} \eql 1
 
+\lmti{n}\uf{x}{\frc{1}{n}} \eql 1 if
+
+\fa \ep \gr 0, \exs N \mem \bn st N \gre n implies \av{\uf{x}{\frc{1}{n}} \ms 1} \ls \ep
+
+\lt{\ep \gr 0}
+
+\av{\uf{x}{\frc{1}{n}} \ms 1} \ls \ep
+
+Since x \gr 1 and n \mem \bn,
+
+\uf{x}{\frc{1}{n}} \ms 1 \ls \ep
+
+\uf{x}{\frc{1}{n}} \ls \ep \ps 1
+
+(\uf{x}{\frc{1}{n}})$^n$ \ls (\ep \ps 1)$^n$
+
+x \ls (\ep \ps 1)$^n$
+
+ln x \ls n ln (\ep \ps 1)
+
+\frc{\textrm{ln x}}{\textrm{ln (\ep + 1)}} \ls n
+
+So, if \frc{\textrm{ln x}}{\textrm{ln (\ep + 1)}} \ls N,
+
+then \exs N st \av{\uf{x}{\frc{1}{n}} \ms 1} \ls \ep
+
+Hence, result.
 }
 
 \bsc{Exercise 17}{
 
-Prove that if lim sup \uw{s}{n} \eql \infy and k \gr 0, then lim sup (k\uw{s}{n}) \eql \infy 
+Prove that if lim sup \uw{s}{n} \eql \infy and k \gr 0, then lim sup (k\uw{s}{n}) \eql \infy
+
+\sidenote{
+\textbf{Question}: Is it a valid proof to say that since
+\eqn{t_n = \sum_{i = 1}^n \frac{1}{n}}
+is the slowest possible diverging sequence (without constants of course),
+
+since
+\eqn{\lmti{n} kt_n = k \infty = \infty}
+then \lmti{n} of k $\times$ any sequence diverging to \infy is also $\infty$?
+
+So, therefore lim sup (k * any sequence diverging to \infy) is also \infy?
+}
+
+\lt{\uw{t}{n} be a subsequence of \uw{s}{n} st \lmti{n} \uw{t}{n} \eql \infy}
+
+Algebraically, k \lmti{n} \uw{t}{n} \eql \lmti{n} k\uw{t}{n} \eql k\infy \eql \infy
+
+Hence, lim sup (k\uw{s}{n}) \eql \infy
+
 
 }
 
