@@ -335,6 +335,7 @@ Let \bk{\uw{s}{n}} be a bounded sequence and let
 	i.e. in the interval (\uf{s}{*} \ms \ep, \uf{s}{*} \ps \ep), there are an infinite number of terms of \uw{s}{n}.
 	
 	Outside of that interval, there are a finite number of terms of \uw{s}{n}.
+	
 \item \fa \ep \gr 0, \exs N(\ep) \mem \bn st
 	\eqn{s_n > s_* - \epsilon \textrm{ \fa n \gre N}}
 
@@ -450,11 +451,13 @@ Case:
 	
 	Let:
 	\eqn{\epsilon = \frac{s^* - \textrm{lim sup \uw{s}{n}}}{2}}
+	
+	\textbf{Version One:}
+	
 	By \bpth{b}, for this \ep \gr 0, and for i \mem \bn, \exs j \mem \bn st
 	
 	j \gr i and
 	\eqn{s_j \gr s^* - \epsilon}
-	
 	Since there are an infinite number of possible values of j, there is a subsequence \bk{\dbs{s}{n}{k}} st
 	\eqn{\dbs{s}{n}{k} \gr s^* - \epsilon}
 	\fa k \mem \bn
@@ -463,11 +466,134 @@ Case:
 	
 	Thus, there is a further subsequence converging to a limit s st
 	\eqn{s \gre s^* - \epsilon \gre s^*}
-	
 	Which is also a contradiction.
-\item 
+	
+	\textbf{Version Two:}
+	
+	By \bpth{b}, for i \eql 1, \exs j \eql \uw{n}{1} \gr 1 st
+	\eqn{\dbs{s}{n}{1} \gr s^* - \epsilon}
+	Then, for i \eql \uw{n}{1}, \exs j \ms \uw{n}{2} \gr \uw{n}{1} st
+	\eqn{\dbs{s}{n}{2} \gr \uf{s}{*} - \epsilon}
+	So, inductively, we find a subsequence \bk{\dbs{s}{n}{k}} of \bk{\uw{s}{n}} st
+	\eqn{\dbs{s}{n}{k} \gr s^* - \epsilon}
+	Since \bk{\dbs{s}{n}{k}} is a bounded sequence.
+	
+	So, there is a convergent subsequence \bk{\dbs{s}{n}{l}} of \bk{\dbs{s}{n}{k}} st \lmti{l} \dbs{s}{n}{l} \eql s where s \gre \uf{s}{*} \ms \ep
+	
+	So, for s \mem S, lim sup \uw{s}{n} \gre s \gre \uf{s}{*} \ms \ep \eql \frc{\textrm{lim sup \uw{s}{n}} + s^*}{2} \gr lim sup \uw{s}{n}, \textbf{a contradiction}.
+	
+	Hence, \uf{s}{*} $\not>$ lim sup \uw{s}{n}.
+\item \uf{s}{*} \ls lim sup \uw{s}{n}
+	
+	\lt{\ep \eql \frc{\textrm{lim sup \uw{s}{n} \ms \uf{s}{*}}}{2}}
+	
+	By \bpth{a}, \exs N(\ep) \mem \bn st
+	\eqn{s_n < s^* + \epsilon \textrm{ for n \gre N}}
+	Thus, \exs s \mem S st
+	\eqn{s \lse s^* + \epsilon}
+	Thus, lim sup \uw{s}{n} \lse \uf{s}{*} \ps \ep \eql \frc{\textrm{lim sup \uw{s}{n}} + s^*}{2} \ls lim sup \uw{s}{n}, \textbf{a contradiction}.
+	
+	Hence, \uf{s}{*} \ls lim sup \uw{s}{n}
+	
+	
 \elist
 \epf
+
+Cases (i) and (ii) together yield the contradiction that \uf{s}{*} \eql lim sup \uw{s}{n}, another contradiction.
+
+On page 195, problem \# (a): Prove that lim sup \uw{s}{n} \eql \lmti{n} \prn{sup \bk{\uw{s}{n + 1}, \uw{s}{n + 2}, \uw{s}{n + 3}...}}
+
+\sidenote{
+If \bk{\dbs{s}{n}{k}} is a subsequence of \bk{\uw{s}{n}} st \lmti{k} \dbs{s}{n}{k} \eql s.
+
+Then s \mem S}
+\ssc{Corollary 4.4.12}{
+
+Let \bk{\uw{s}{n}} be a bounded sequence and let \uf{s}{*} \eql lim sup \uw{s}{n}, \uw{s}{*} \eql lim inf \uw{s}{n}.
+
+Then, \uw{s}{*}, \uf{s}{*} \mem S (i.e. \uw{s}{*}, \uf{s}{*} are themselves subsequential limit points).
+
+\bgpf
+
+For \ep \eql 1, by Theorem 4.4.11 \bpth{a}, \exs \uw{N}{1} \mem \bn st
+\step{s_n < s^* + 1 \textrm{, for n \gre \uw{N}{1}}}{1}
+By Theorem 4.4.11, \bpth{b}, for \ep \eql 1, i \eql \uw{N}{1}, \exs \uw{n}{1} \gr i \eql \uw{N}{1} st
+\eqn{\dbs{s}{n}{1} > s^* - 1}
+and
+\eqn{s^* - 1 < \dbs{s}{n}{1} < s^* + 1 \textrm{ using (1)}}
+For \ep \eql \frc{1}{2}, \exs \uw{N}{2} \mem \bn st
+\step{s_n < s^* + \frac{1}{2} \textrm{ for n \gre \uw{N}{2} using (a)}}{2}
+Also, for i \eql max\bk{\uw{n}{1}, \uw{N}{2}}, \exs j \eql \uw{n}{2} \gr i (i.e. \uw{n}{2} \gr \uw{n}{1} and \uw{n}{2} \gr \uw{N}{2}) st
+\eqn{s^* - \frac{1}{2} < \dbs{s}{n}{2} < s^* + \frac{1}{2}}
+Inductively, we can construct a sequence \bk{\dbs{s}{n}{k}} of \bk{\uw{s}{n}} st
+\eqn{s^* - \frac{1}{k} < \dbs{s}{n}{k} < s^* + \frac{1}{k}}
+Hence, \av{\dbs{s}{n}{k} \ms \uf{s}{*}} \ls \frc{1}{k} \lra 0 as k \lra \infy
+
+Hence, \uf{s}{*} \eql \lmti{k} \dbs{s}{n}{k}, which completes the proof.
+\epf
+
+}
+
+\ssc{Theorem 4.4.14}{
+Assume that \bk{\uw{r}{n}} converges to r \mem \br where r \gr 0 and \bk{\uw{s}{n}} is bounded.
+
+Then lim sup \uw{r}{n}\uw{s}{n} \eql r lim sup \uw{s}{n}
+
+\bgpf
+
+\exs \uw{M}{1}, \uw{M}{2} \mem \br st
+\eqn{|s_n| \lse M_1 \textrm{ and } |r_n| \lse  M_2 \textrm{, }\fa n \mem \bn}
+So,
+\eqn{|r_ns_n| \lse M_1M_2}
+Thus, the sequence \bk{\uw{r}{n}\uw{s}{n}} is bounded, which means lim sup \uw{r}{n}\uw{s}{n} exists.
+
+By Corollary 4.4.12, \exs a subsequence \bk{\dbs{s}{n}{k}} of \bk{\uw{s}{n}} st \lmti{k} \dbs{s}{n}{k} \eql lim sup \uw{s}{n}
+
+Then, \lmti{k} \dbs{r}{n}{k}\dbs{s}{n}{k} \eql (\lmti{k} \dbs{r}{n}{k})(\lmti{k} \dbs{s}{n}{k}) \eql r lim sup \uw{s}{n}
+
+(i.e. r lim sup \uw{s}{n} is a subsequential limit point of the sequence \bk{\uw{r}{n}\uw{s}{n}})
+
+Thus, r lim sup \uw{s}{n} \lse lim sup \uw{r}{n}\uw{s}{n} \bpth{1}
+
+\
+
+Also, assume that \bk{\dbs{r}{n}{l}\dbs{s}{n}{l}} is a subsequence of \bk{\uw{r}{n}\uw{s}{n}} st
+\eqn{\lmti{l} \dbs{r}{n}{l} \dbs{s}{n}{l} = t}
+Then,
+\eqn{\lmti{l} \dbs{s}{n}{l} = \lmti{l} \dbs{s}{n}{l} ( \lmti{l} \frac{\dbs{r}{n}{l}}{r}) = \lmti{l} \frac{\dbs{s}{n}{l} \dbs{r}{n}{l}}{r} = \frac{t}{r} \lse \textrm{lim sup \uw{s}{n}}}
+So, t \lse r lim sup \uw{s}{n} (which says r lim sup \uw{s}{n} is an upper bound)
+
+So, lim sup \uw{r}{n}\uw{s}{n} \lse r lim sup \uw{s}{n} \bpth{2}
+
+\bpth{1} and \bpth{2} imply that lim sup \uw{r}{n} \uw{s}{n} \eql r lim sup \uw{s}{n}
+\epf
+}
+
+\ssc{Unbounded Sequences}{
+
+Case:
+\bilist
+\item \bk{\uw{s}{n}} is unbounded above.
+	
+	By Theorem 4.4.8, there is a monotonic subsequence \bk{\dbs{s}{n}{k}} of \bk{\uw{s}{n}} st \lmti{k} \dbs{s}{n}{k} \eql \infy 
+	
+	In this case, we define lim sup \uw{s}{n} \eql \infy 
+\item \bk{\uw{s}{n}} is bounded above but unbounded below.
+	
+	\textbf{subcase (i)}: \exs a subsequence \bk{\dbs{s}{n}{k}} st \lmti{k} \dbs{s}{n}{k} \eql s \mem \br
+	
+	In this case, s \mem S, and, as before, lim sup \uw{s}{n} \eql sup S
+	
+	\textbf{subcase (ii)}: No subsequence of \bk{\uw{s}{n}} converges to a finite limit.
+	
+	In this case, \lmti{n} \uw{s}{n} \eql $-$\infy, and we define lim sup \uw{s}{n} \eql $-$\infy
+	
+	So for any M \mem \br, \exs N \mem \bn st
+	\eqn{s_n < M \textrm{ for n \gre N}}
+	and S \eql \bk{$-$\infy}
+\elist
+
+}
 
 }
 
