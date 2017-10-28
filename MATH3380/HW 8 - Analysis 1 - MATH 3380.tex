@@ -438,17 +438,21 @@ By Corollary 4.4.12, S contains s.
 
 Since inf S \eql sup S \eql s, the range of S is just \bk{s}. \bpth{1}
 
-By Theorem 4.4.7, since \uw{s}{n} is bounded, \uw{s}{n} has at least one convergent subsequence.
+Since \uw{s}{n} is bounded, it can't diverge to \infy or $-\infty$.
 
-Let \uw{C}{\uw{s}{n}} be the set of all convergent subsequences of \uw{s}{n}, and let \uw{D}{\uw{s}{n}} be the set of all divergent subsequences of \uw{s}{n}.
+However, suppose \uw{s}{n} diverges in general.
 
-Since \uw{s}{n} is technically a subsequence of \uw{s}{n}, \uw{s}{n} \mem \uw{C}{\uw{s}{n}} $\cup$ \uw{D}{\uw{s}{n}}
+Then, \exs \ep(\uw{s}{n}) st \av{\uw{s}{n} \ms s} \gr \ep(\uw{s}{n}) for all n \gre some N \mem \bn
 
-\wts{\uw{D}{\uw{s}{n}} is empty. (i.e. \uw{s}{n} has no divergent subsequences)}
+Since there are infinitely many n \gre N, \exs \dbs{s}{n}{k} (a subsequence of \uw{s}{n}) st 
 
-\supp{\uw{t}{n} \mem \uw{D}{\uw{s}{n}} (i.e. there exists a divergent subsequence of \uw{s}{n}: \uw{t}{n}})
+\av{\dbs{s}{n}{k} \ms s} \gre \ep(\uw{s}{n}) where \uw{n}{k} \eql N \ps k, k \mem \bn
 
-\fa \ep \gr 0, \exs N \mem \bn st N \gre n implies \av{\uw{t}{n} \ms s} \ls \ep
+Since \dbs{s}{n}{k} is bounded (because \uw{s}{n} is bounded), it itself has a convergent subsequence (for notation reasons lets call it \dbs{t}{n}{k})
+
+Notice that \dbs{t}{n}{k} is a convergent subsequence of \uw{s}{n}, but it's limit is not s (since \exs an \ep st \av{\uw{s}{n} \ms s} \gr \ep), a contradiction.
+
+Hence, \uw{s}{n} must converge to s.
 
 }
 
