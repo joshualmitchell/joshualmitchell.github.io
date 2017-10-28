@@ -18,6 +18,10 @@ str(autodata)
 
 autodata$hp_c <- gsub("?",NA, autodata$hp_c, fixed = TRUE)
 
+
+
+hist(as.numeric(autodata_formatted$hp_c), xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
+
 hist(autodata_formatted$mpg_c, xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
 
 barplot(table(autodata_formatted$cylnum_mvd), main="Occurrences of cars with x cylinders", 

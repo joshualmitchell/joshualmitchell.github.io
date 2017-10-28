@@ -426,11 +426,29 @@ Let \prn{\uw{s}{n}} be a bounded sequence.
 
 Prove that \prn{\uw{s}{n}} is convergent and that lim \uw{s}{n} \eql s
 
-By Theorem 4.4.7, since \uw{s}{n} is bounded, \uw{s}{n} has a convergent subsequence.
+\
 
-Since lim inf \uw{s}{n} \eql lim sup \uw{s}{n} \eql s, any subsequence of \uw{s}{n} has a limit of s.
+Let S \sbs \br be the range of limits for any subsequence of \uw{s}{n}.
 
-Since \uw{s}{n} is a subsequence of \uw{s}{n}, \uw{s}{n} has a limit of s.
+Since lim inf \uw{s}{n} \eql s, inf S \eql s.
+
+Since lim sup \uw{s}{n} \eql s, sup S \eql s.
+
+By Corollary 4.4.12, S contains s.
+
+Since inf S \eql sup S \eql s, the range of S is just \bk{s}. \bpth{1}
+
+By Theorem 4.4.7, since \uw{s}{n} is bounded, \uw{s}{n} has at least one convergent subsequence.
+
+Let \uw{C}{\uw{s}{n}} be the set of all convergent subsequences of \uw{s}{n}, and let \uw{D}{\uw{s}{n}} be the set of all divergent subsequences of \uw{s}{n}.
+
+Since \uw{s}{n} is technically a subsequence of \uw{s}{n}, \uw{s}{n} \mem \uw{C}{\uw{s}{n}} $\cup$ \uw{D}{\uw{s}{n}}
+
+\wts{\uw{D}{\uw{s}{n}} is empty. (i.e. \uw{s}{n} has no divergent subsequences)}
+
+\supp{\uw{t}{n} \mem \uw{D}{\uw{s}{n}} (i.e. there exists a divergent subsequence of \uw{s}{n}: \uw{t}{n}})
+
+\fa \ep \gr 0, \exs N \mem \bn st N \gre n implies \av{\uw{t}{n} \ms s} \ls \ep
 
 }
 
