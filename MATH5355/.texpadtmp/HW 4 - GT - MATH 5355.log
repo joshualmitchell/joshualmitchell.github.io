@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 OCT 2017 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 OCT 2017 10:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -478,40 +478,40 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 265.
+LaTeX Font Info:    Try loading font information for U+msa on input line 263.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 265.
+LaTeX Font Info:    Try loading font information for U+msb on input line 263.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 275.
+(amsmath)                 on input line 273.
 
-</Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg, id=4, 4047.12pt x 3035.34pt>
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2] </Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg, id=22, 4047.12pt x 3035.34pt>
 File: /Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg Graphic file (type jpg)
  <use /Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg>
-Package pdftex.def Info: /Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg used on input line 317.
+Package pdftex.def Info: /Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg used on input line 345.
 (pdftex.def)             Requested size: 469.75499pt x 352.27568pt.
- [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-] [2 </Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg>] (/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 4 - GT - MATH 5355.aux) ) 
+ [3 </Users/jm/iclouddrive/5355pics/HW4Q1P1.jpg>] (/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 4 - GT - MATH 5355.aux) ) 
 Here is how much of TeX's memory you used:
  14744 strings out of 492995
  297654 string characters out of 6132704
- 344897 words of memory out of 5000000
+ 343897 words of memory out of 5000000
  18006 multiletter control sequences out of 15000+600000
  6857 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,66p,613b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 4 - GT - MATH 5355.pdf" (2 pages, 1883553 bytes).
+ 55i,11n,66p,776b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on "/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 4 - GT - MATH 5355.pdf" (3 pages, 1893166 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

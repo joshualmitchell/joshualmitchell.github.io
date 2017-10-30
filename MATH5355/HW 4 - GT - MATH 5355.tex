@@ -259,8 +259,6 @@
 % ----------
 
 \begin{document}
-\bsc{Practice: (2.2) 3, 4, \tab (2.3) 2, 3}{
-}
 \bsc{Hand In: (2.2) 7, 10, \tab (2.3) 16, 28}{
 Hint for 2.2.7: By symmetry, each edge of \uw{K}{n} appears in the same number of spanning trees of \uw{K}{n}.
 
@@ -276,9 +274,26 @@ Given n vertices, there are \uf{2}{\nck{n}{2}} possible simple graphs. Using thi
 
 Since \uw{K}{n} contains the maximum possible amount of edges, \uw{K}{n} also contains the maximum possible amount of spanning trees for n vertices: \uf{n}{n - 2}
 
+Since there are n \ms 1 edges per spanning tree and \frc{n(n - 1)}{2} edges per complete graph, it makes sense to say that
+\eqn{\frac{(n - 1) \times n^{n - 2}}{\frac{n(n - 1)}{2}}}
+represents the total number of spanning trees containing any edge in the graph.
 
+Since \uf{n}{n - 2} is the number of possible spanning trees in \uw{K}{n}, then
+\eqn{n^{n - 2} - \frac{(n - 1) \times n^{n - 2}}{\frac{n(n - 1)}{2}}}
+must be the total number of possible spanning trees in \uw{K}{n} \ms the total number of spanning trees that use a particular edge.
+
+Starting with:
+\eqn{n^{n - 2} - \frac{(n - 1) \times n^{n - 2}}{\frac{n(n - 1)}{2}}}
+\eqn{n^{n - 2} - \frac{n^{n - 2}}{\frac{n}{2}}}
+\eqn{n^{n - 2} - 2n^{n - 3}}
+\eqn{n \times n^{n - 3} - 2n^{n - 3}}
+\eqn{(n - 2)n^{n - 3}}
+Hence, result.
 
 }
+
+\newpage
+
 \ssc{2.2.10}{
 
 Compute $\tau$(\uw{K}{2, m}).
@@ -286,6 +301,16 @@ Compute $\tau$(\uw{K}{2, m}).
 \
 
 $\tau$(\uw{K}{2, m}) \eql the number of spanning trees in G.
+
+\
+
+I find it easier to think of the tree as as a striped parallelogram (with one vertex from the 2 vertex partite on the left and the other on the right with the m vertices in the middle).
+
+\
+
+A spanning tree can be made made from choosing either the left or right vertex, including all the edges to the m partite set, and then picking one of the edges from the m partite set to the other vertex from the 2 partite set. So at this point we have m possible spanning trees. If we fix one minimal path from the left vertex to the right (which includes one vertex from the m set), then we have m - 1 leftover vertices in the m set. We can actually make a spanning tree from choosing any one of the two edges that go to the left vertex and right vertex to make our claw. So, given that we chose a particular minimal path from m objects, then, from the leftover m - 1 minimal paths, we can choose one edge or the other to make our claw, we have:
+
+\textbf{m\uf{2}{m - 1} possible spanning trees}.
 
 }
 \ssc{2.3.16}{
@@ -309,6 +334,9 @@ Finally, we're trying to get from some initial state to the ending state in the 
 
 
 }
+
+\newpage 
+
 \ssc{2.3.28}{
 
 Compute a code with minimum expected length for a set of ten messages whose relative frequencies are 1, 2, 3, 4, 5, 5, 6, 7, 8, 9. What is the expected length of a message in this optimal code?
@@ -333,9 +361,7 @@ Compute a code with minimum expected length for a set of ten messages whose rela
 \end{tabular}
 
 \eqn{1 + 2 + 3 + 4 + 5 + 5 + 6 + 7 + 8 + 9 = 50 \textrm{ occurrences.}}
-\eqn{5 + 5 + 4 + 3 + 3 + 3 + 3 + 3 + 3 + 3 = 35 \textrm{ total length of all codes.}}
-\eqn{35/10 = 3.5 \textrm{ expected value of a code or message}} 5
-
+\eqn{ \textrm{Expected Length: } \frac{1}{50}5 + \frac{2}{50}5 + \frac{3}{50}4 + \frac{4}{50}3 + \frac{5}{50}3 + \frac{5}{50}3 + \frac{6}{50}3 + \frac{7}{50}3 + \frac{8}{50}3 + \frac{9}{50}3 = 3.18}
 
 
 }
