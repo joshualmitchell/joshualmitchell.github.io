@@ -1,0 +1,337 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#18}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+     							 
+% ----------
+
+\begin{document}
+
+\bsc{Example 1: Page 195 \#16(a)}{
+
+Prove that \uf{S}{*} \eql \lmti{n} ( sup \bk{\uw{s}{n + 1}, \uw{s}{n + 2}, \uw{s}{n + 3}...}) \eql lim sup \uw{s}{n}, s \mem \br
+
+Want to show that, although we know \uf{s}{*} \eql \lmti{n} ( sup \bk{\uw{s}{n + 1}, \uw{s}{n + 2}, \uw{s}{n + 3}...}), \uf{s}{*} is in fact lim sup \uw{s}{n}.
+
+Let \uw{t}{n} \eql sup \bk{\uw{s}{n + 1}, \uw{s}{n + 2}, \uw{s}{n + 3}...}
+
+\sidenote{
+\av{\uw{s}{n}} \lse M \fa n \mem \bn
+
+$-$M \lse \uw{s}{n} \lse M \fa n \mem \bn
+}
+
+\bk{\uw{t}{n}} is a bounded, decreasing sequence and
+\eqn{t_{n + 1} = sup \bk{s_{n + 2}, s_{n + 3}...} \lse t_n = sup \bk{\uw{s}{n + 1}, \uw{s}{n + 3}, ...} \textrm{ \fa n \mem } \bn}
+
+If U is a bounded set in \br and V \sbs U, then sup V \lse sup U.
+
+So, sup U \mem \br exists.
+
+\bilist
+\item u \lse sup U \fa u \mem U
+\item \fa \ep \gr 0, exs \uw{u}{1} \mem U st sup U \ms \ep \ls \uw{u}{1}
+\elist
+
+Notice that for v \mem V, v \lse sup U.
+
+So, sup V \lse sup U.
+
+\textbf{Is \uw{t}{n} bounded?}
+
+It's bounded below since $-$M \lse \uw{s}{n + 1} \lse \uw{t}{n} \fa n \mem \bn
+
+By the monotonic convergence theorem,
+
+\lmti{n} \uw{t}{n} \eql \uf{s}{*} exists.
+
+From Theorem 4.4.11, conditions (a) and (b):
+
+\balist
+\item \fa \ep \gr 0, \exs N \mem \bn st \uw{s}{n} \ls \uf{s}{*} \ps \ep, \fa n \gre N
+\item \fa \ep \gr 0, i \mem \bn, \exs j \gr i st \uw{s}{j} \gr \uf{s}{*} \ms \ep
+\elist
+
+Notice that \uf{s}{*} \lse \uw{t}{n} \fa n \mem \bn
+
+(since \uw{t}{n} is decreasing and it has a limit)
+
+Let n \mem \bn and notice that \uw{t}{n + k} \lse \uw{t}{n} \fa k \mem \bn
+
+So, 
+
+\lmti{k} \uw{t}{n + k} \lse \uw{t}{n} \fa n \mem \bn
+
+So,
+
+\uf{s}{*} \eql \lmti{k} \uw{t}{n + k}, therefore \uf{s}{*} \lse \uw{t}{n} \fa n \mem \bn
+
+Thus,
+
+\fa \ep \gr 0, \exs \uw{N}{1} \mem \bn st 
+\eqn{|t_n - s^*| < \epsilon \textrm{ for n \gre N}_1}
+\eqn{t_n - s^* < \epsilon \textrm{ for n \gre N}_1}
+\eqn{t_n < s^* + \epsilon \textrm{ for n \gre N}_1}
+\eqn{s_{n + 1} \lse t_n < s^* + \epsilon \textrm{ for n + 1 \gre N}_1 + 1}
+So,
+\eqn{s_M < s^* + \epsilon \textrm{ for M \gre N}_1 + 1}
+So, \uf{s}{*} satisfies (a).
+
+Define \uw{t}{n} \eql sup \bk{\uw{s}{n + 1}, \uw{s}{n + 2}, \uw{s}{n + 3}...}
+
+Now for any \ep \gr 0,
+\step{t_n \gre s^* > s^* - \frac{\epsilon}{2} \textrm{ \fa n \mem \bn}}{1}
+Also, for any i \eql n \mem \bn, \exs \uw{s}{j} where j \gr i st
+\step{t_n - \frac{\epsilon}{2} < s_j}{2}
+Notice that \uw{t}{n} \ms \frc{\epsilon}{2} is no longer a least upper bound for the set.
+
+From \bpth{1} and \bpth{2}, \uw{s}{j} \gr \uw{t}{n} \ms \frc{\epsilon}{2} \gr \uf{s}{*} \ms \ep
+
+So, since \uf{s}{*} satisfies \bpth{a} and \bpth{b}, \uf{s}{*} is the lim sup \uw{s}{n}.
+}
+
+\bsc{Unbounded Sequences}{
+S \eql \bk{all subsequential limits of \uw{s}{n}}
+
+We know that S is not empty if \uw{s}{n} is bounded since every bounded sequence has a convergent subsequence.
+
+But what if \uw{s}{n} is bounded? page 192
+
+Case:
+\bilist
+\item \bk{\uw{s}{n}} is unbounded above.
+	
+	From the proof of Theorem 4.4.8, \exs a monotonic subsequence \bk{\dbs{s}{n}{k}} of \bk{\uw{s}{n}} st \lmti{k} \dbs{s}{n}{k} \eql \infy
+	
+	Although \infy is not a real number, we say that, if \uw{s}{n} is unbounded above, then lim sup \uw{s}{n} \eql \infy
+\item \bk{\uw{s}{n}} is bounded above but unbounded below.
+	
+	\textbf{Subcase i:} \exs a subsequence \bk{\dbs{s}{n}{k}} st \lmti{k} \dbs{s}{n}{k} \eql s \mem \br. Then, set lim sup \uw{s}{n} \eql sup S
+	
+	\textbf{Subcase ii:} There is no subsequence \bk{\dbs{s}{n}{k}} st \lmti{k} \dbs{s}{n}{k} \eql s \mem \br (a finite number).
+	
+	Then, \lmti{n} \uw{s}{n} \eql $-\infty$
+	
+	and, lim sup \uw{s}{n} \eql $-\infty$, so sup S \eql $-\infty$
+	
+	which means, since lim inf \uw{s}{n} \lse lim sup \uw{s}{n}, lim inf \eql $-\infty$
+	
+	
+	
+\elist
+}
+
+\end{document}

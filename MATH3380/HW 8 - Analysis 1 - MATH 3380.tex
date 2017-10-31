@@ -454,6 +454,29 @@ Notice that \dbs{t}{n}{k} is a convergent subsequence of \uw{s}{n}, but it's lim
 
 Hence, \uw{s}{n} must converge to s.
 
+\
+
+\textbf{Alternative way:}
+
+\
+
+Using Theorem 4.4.11(a) and (c) (or (a)(i) / (b)(i) according to Welsh):
+
+\bpth{a}: \fa \ep \gr 0, \exs \uw{N}{1} (\ep) \mem \bn st
+\eqn{s_n < s^* + \epsilon \textrm{ for n \gre N}_1(\epsilon)}
+\bpth{c}: \fa \ep \gr 0, \exs \uw{N}{2} (\ep) \mem \bn st
+\eqn{s_n > s_* - \epsilon \textrm{ for n \gre N}_2(\epsilon)}
+Let N \eql max\bk{\uw{N}{1}, \uw{N}{2}} st
+
+s \ms \ep \ls \uw{s}{n} \ms s \ls s \ps \ep, for n \gre N
+
+Hence,
+
+\av{\uw{s}{n} \ms s} \ls \ep, for n \gre N.
+
+So,
+
+\lmti{n} \uw{s}{n} \eql s
 }
 
 \bsc{Exercise 10}{
@@ -489,6 +512,24 @@ So, if \frc{\textrm{ln x}}{\textrm{ln (\ep + 1)}} \ls N,
 then \exs N st \av{\uf{x}{\frc{1}{n}} \ms 1} \ls \ep
 
 Hence, result.
+
+\
+
+\textbf{Alternative way:}
+
+\
+
+Recall: \lmti{n} \uf{x}{\frc{1}{n}} \eql 1, 0 \ls x \ls 1
+
+\lmti{n} \prn{\frc{1}{x}}$^{\frac{1}{n}}$ \eql 1
+
+But,
+
+\eqn{(\frac{1}{x})^\frac{1}{n} = \frac{1^\frac{1}{n}}{x^{\frac{1}{n}}} = \frac{1}{x^\frac{1}{n}}}
+\eqn{\lmti{n}\frac{1}{x^{\frac{1}{n}}} = 1}
+\eqn{\lmti{n} \frac{1}{\frac{1}{x^\frac{1}{n}}} = \frac{1}{1} = 1}
+Hence,
+\eqn{\lmti{n} x^\frac{1}{n} = 1}
 }
 
 \bsc{Exercise 17}{
