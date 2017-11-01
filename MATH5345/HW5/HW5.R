@@ -103,7 +103,7 @@ anova(max_r2.lm)
 
 # A final look: 
 
-# RSS
+# RSS (which is MS_Res * (n - 2), so looking at RSS is similar to looking at MS_Res, we want both minimal)
 # [1] 148.87197  83.93820  69.87000  65.00435  63.13983  61.94123
 # CP
 # [1] 26.472221  6.457655  3.688101  4.038492  5.406361  7.000000
