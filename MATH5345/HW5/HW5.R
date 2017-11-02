@@ -103,17 +103,19 @@ anova(max_r2.lm)
 
 # A final look: 
 
-# RSS (which is MS_Res * (n - 2), so looking at RSS is similar to looking at MS_Res, we want both minimal)
+# RSS
 # [1] 148.87197  83.93820  69.87000  65.00435  63.13983  61.94123
-# CP
-# [1] 26.472221  6.457655  3.688101  4.038492  5.406361  7.000000
+# MSS    / 2       /3       /4        /5        /6        /7
+# [1] 74.53599   27.9794   17.4675   13.00087  10.52331  8.848747
+# CP - p
+# 26.472221 - 2,  6.457655 - 3,  3.688101 - 4,  4.038492 - 5,  5.406361 - 6,  7.000000 - 7
+# 24.472221       3.457655      -.312 (ish)     -0.97 (ish)   -0.6 (ish)      0
 # R^2 adj
 # [1] 0.5271722 0.7227426 0.7595953 0.7666123 0.7630023 0.7564299
 # R^2
 # [1] 0.5446843 0.7432802 0.7863069 0.8011882 0.8068908 0.8105566
 
-# Since, for models with 4, 5, and 6 regressors
-# have approximately equal RSS's, R^2 adj's, and R^2's, 
-# and the 6 regressor model has a CP - p equal to 0,
+# Since, for models with 4, 5, and 6 regressors have approximately equal R^2 adj's, and R^2's, 
+# and the 6 regressor model has a CP - p equal to 0 and the lowest MS_Res,
 # All else being equal I'd go with the model with 6 regressors.
                           
