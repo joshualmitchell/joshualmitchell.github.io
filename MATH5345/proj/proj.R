@@ -17,14 +17,14 @@ summary(autodata)
 autodata <- subset(autodata, !autodata[ , 4] == "?")
 autodata$hp_c <- as.numeric(as.character(autodata$hp_c))
 
-hist(autodata$mpg_c, xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
-barplot(table(autodata$cylnum_mvd), main="Occurrences of cars with x cylinders", xlab="Number of Cylinders", ylab="Frequency")
-hist(autodata$displ_c, main="Occurrences of cars with x displacement", xlab="Displacement Amount", ylab="Frequency")
-hist(as.numeric(autodata$hp_c), xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
-hist(autodata$wgt_c, xlab="Weight", ylab="Number of cars that weigh x")
-hist(autodata$acc_c, xlab="Acceleration", ylab="Number of cars with x acceleration")
-barplot(table(autodata$modelyr_mvd), main="Occurrences of cars with x model year", xlab="Model Year", ylab="Frequency")
-barplot(table(autodata$origin_mvd), main="Occurrences of cars with x origin type", xlab="Origin Type", ylab="Frequency")
+hist(autodata$mpg_c, main="MPG Frequency", xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
+barplot(table(autodata$cylnum_mvd), main="Cylinders Frequency", xlab="Number of Cylinders", ylab="Frequency")
+hist(autodata$displ_c, main="Displacement Frequency", xlab="Displacement Amount", ylab="Frequency")
+hist(autodata$hp_c, main="Horsepower Frequency", xlab="HP", ylab="Number of cars with x HP")
+hist(autodata$wgt_c, main="Weight Frequency", xlab="Weight", ylab="Number of cars that weigh x")
+hist(autodata$acc_c, main="Acceleration Frequency", xlab="Acceleration", ylab="Number of cars with x acceleration")
+barplot(table(autodata$modelyr_mvd), main="Model Year Frequency", xlab="Model Year", ylab="Frequency")
+barplot(table(autodata$origin_mvd), main="Origin Frequency", xlab="Origin Type", ylab="Frequency")
 
 # Step 2: Fit a multiple linear regression model
 # -- Use lm to fit y ~ x1, x2 ..
@@ -43,7 +43,7 @@ anova(forw.lm)
 # Backwards Selection
 
 back <- step(full, data=autodata, direction="backward")
-back.lm <- lm(mpg_c ~ cylnum_mvd + displ_c + as.numeric(hp_c) + wgt_c + modelyr_mvd + 
+back.lm <- lm(mpg_c ~ cylnum_mvd + displ_c + hp_c + wgt_c + modelyr_mvd + 
                 origin_mvd, data = autodata)
 summary(back.lm)
 anova(back.lm)
@@ -89,13 +89,27 @@ summary.out
 # Let's check normality and constant variance:
 
 lm7 <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-qqline(resid(lm7)) 
+plot(lm7)
+# qqline(resid(lm7)) 
 # Mostly normal except for the upper right tail...
-plot(lm7$fitted.values, resid(lm7))
+
+# Residual Plots:
+
+plot(resid(lm7), autodata$wgt_c, main="Residuals vs Weight", xlab="Weight", ylab="Residuals")
+plot(resid(lm7), autodata$modelyr_mvd, main="Residuals vs Model Year", xlab="Model Year", ylab="Residuals")
+plot(resid(lm7), autodata$origin_mvd, main="Residuals vs Origin", xlab="Origin", ylab="Residuals")
+plot(resid(lm7), autodata$hp_c, main="Residuals vs HP", xlab="HP", ylab="Residuals")
+plot(resid(lm7), autodata$displ_c, main="Residuals vs Displacement", xlab="Displacement", ylab="Residuals")
+plot(resid(lm7), autodata$cylnum_mvd, main="Residuals vs Cylinder Amount", xlab="Cylinder Amount", ylab="Residuals")
+plot(resid(lm7), autodata$acc_c, main="Residuals vs Acceleration", xlab="Acceleration", ylab="Residuals")
+
+plot(lm7$fitted.values, resid(lm7), main="Fitted Values vs Residuals", xlab="Residuals", ylab="Fitted Values")
 # Oooh, has kind of a horseshoe pattern, let's apply a log transformation:
 lm7 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(lm7$fitted.values, resid(lm7))
+plot(lm7$fitted.values, resid(lm7), main="[Transformed] Fitted Values vs Residuals", xlab="Residuals", ylab="Fitted Values")
+
 # Much better! Let's check normality again:
+plot(lm7)
 qqnorm(resid(lm7))
 qqline(resid(lm7))
 # Still mostly normal, but now it has a lower left tail in addition to an upper right..
@@ -105,37 +119,85 @@ qqline(resid(lm7))
 # wgt_c - Contributes some!
 lm7_no_wgt <- lm(log(mpg_c) ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 lm7_wgt_to_rest <- lm(wgt_c ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(resid(lm7_no_wgt), resid(lm7_wgt_to_rest))
+plot(resid(lm7_no_wgt), resid(lm7_wgt_to_rest), main="(full - wgt_c) residuals vs (wgt_c vs the rest) residuals", xlab="(wgt_c vs the rest) residuals", ylab="(full - wgt_c) residuals")
 
 # modelyr_mvd - Contributes some!
 lm7_no_modelyr <- lm(log(mpg_c) ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 lm7_modelyr_to_rest <- lm(modelyr_mvd ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(resid(lm7_no_modelyr), resid(lm7_modelyr_to_rest))
+plot(resid(lm7_no_modelyr), resid(lm7_modelyr_to_rest), main="(full - modelyr_mvd) residuals vs (modelyr_mvd vs the rest) residuals", xlab="(modelyr_mvd vs the rest) residuals", ylab="(full - modelyr_mvd) residuals")
 
 # origin_mvd - Looks really weird - 3 horizontal layers on top of each other??
 lm7_no_origin <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 lm7_origin_to_rest <- lm(origin_mvd ~ wgt_c + modelyr_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(resid(lm7_no_origin), resid(lm7_origin_to_rest))
+plot(resid(lm7_no_origin), resid(lm7_origin_to_rest), main="(full - origin_mvd) residuals vs (origin_mvd vs the rest) residuals", xlab="(origin_mvd vs the rest) residuals", ylab="(full - origin_mvd) residuals")
 
 # acc_c - Looks like it doesn't contribute much
 lm7_no_acc <- lm(log(mpg_c) ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + modelyr_mvd, data = autodata)
 lm7_acc_to_rest <- lm(acc_c ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_acc), resid(lm7_acc_to_rest))
+plot(resid(lm7_no_acc), resid(lm7_acc_to_rest), main="(full - acc_c) residuals vs (acc_c vs the rest) residuals", xlab="(acc_c vs the rest) residuals", ylab="(full - acc_c) residuals")
 
 # cylnum_mvd - Looks like it doesn't contribute much
 lm7_no_cylnum <- lm(log(mpg_c) ~ wgt_c + origin_mvd + hp_c + displ_c + acc_c + modelyr_mvd, data = autodata)
 lm7_cylnum_to_rest <- lm(cylnum_mvd ~ wgt_c + origin_mvd + hp_c + displ_c + acc_c + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_cylnum), resid(lm7_cylnum_to_rest))
+plot(resid(lm7_no_cylnum), resid(lm7_cylnum_to_rest), main="(full - cylnum_mvd) residuals vs (cylnum_mvd vs the rest) residuals", xlab="(cylnum_mvd vs the rest) residuals", ylab="(full - cylnum_mvd) residuals")
 
 # hp_c - Looks like it doesn't contribute much
 lm7_no_hp <- lm(log(mpg_c) ~ wgt_c + origin_mvd + cylnum_mvd + displ_c + acc_c + modelyr_mvd, data = autodata)
 lm7_hp_to_rest <- lm(hp_c ~ wgt_c + origin_mvd + cylnum_mvd + displ_c + acc_c + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_hp), resid(lm7_hp_to_rest))
+plot(resid(lm7_no_hp), resid(lm7_hp_to_rest), main="(full - hp_c) residuals vs (hp_c vs the rest) residuals", xlab="(hp_c vs the rest) residuals", ylab="(full - hp_c) residuals")
 
 # displ_c - Looks like it doesn't contribute much, maybe BARELY a linear relationship
 lm7_no_displ <- lm(log(mpg_c) ~ wgt_c + origin_mvd + cylnum_mvd + hp_c + acc_c + modelyr_mvd, data = autodata)
 lm7_displ_to_rest <- lm(displ_c ~ wgt_c + origin_mvd + cylnum_mvd + hp_c + acc_c + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_displ), resid(lm7_displ_to_rest))
+plot(resid(lm7_no_displ), resid(lm7_displ_to_rest), main="(full - displ_c) residuals vs (displ_c vs the rest) residuals", xlab="(displ_c vs the rest) residuals", ylab="(full - displ_c) residuals")
+
+
+##################
+### STARTING OVER
+### ISH
+##################
+
+full <- lm(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata) 
+null <- lm(log(mpg_c) ~ 1, data=autodata) 
+
+# Perform "forward" selection starting from the NULL model and set up the scope to have an upper = FULL model. 
+
+forw <- step(null, scope=list(lower=null, upper=full), direction="forward")
+forw.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c, data = autodata)
+summary(forw.lm)
+anova(forw.lm)
+
+# Backwards Selection
+
+back <- step(full, data=autodata, direction="backward")
+back.lm <- lm(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + modelyr_mvd + 
+                origin_mvd, data = autodata)
+summary(back.lm)
+anova(back.lm)
+
+# Stepwise Selection
+
+stepwise<- step(null, scope = list(upper=full), data=autodata, direction="both")
+stepwise.lm <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c, data = autodata)
+summary(stepwise.lm)
+anova(stepwise.lm)
+
+# Per Regressor Selection (using regsub)
+
+regsub.exhaust<-regsubsets(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
+regsub.exhaust
+
+summary.out <- summary(regsub.exhaust)
+summary.out
+
+
+
+
+
+
+
+
+
 
 
 # Let's check influential points:
