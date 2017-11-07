@@ -1,0 +1,427 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#19}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+     							 
+% ----------
+
+\begin{document}
+
+Final is \textbf{not} cumulative! Covers this material and onward.
+
+\bsc{Chapter 5 - Limits and Continuity}{
+
+\ssc{5.1.1: Definition (Limits of Functions)}{
+
+\lt{D \sbs \br, f : D \lra \br, and c \mem D\pr (i.e. c is an accumulation point)}
+
+We say that L \mem \br is a \textbf{limit} of f at c if, \fa \ep \gr 0, \exs $\delta(\epsilon)$ \gr 0 st
+\eqn{|f(x) - L| - \epsilon}
+wherever x \mem D and 0 \ls \av{x - c} \ls $\delta$
+
+(i.e. the limit as x goes to c of f(x) \eql L)
+
+\eqn{x \pm c}
+\eqn{-\delta < x - c < \delta}
+\eqn{c - \delta < x < c + \delta}
+
+Recall the definition of a limit:
+
+\eqn{f(x) = \lmti{h} \frac{f(x + h) - f(x)}{h}}
+
+where x is fixed.
+}
+\ssc{Theorem 5.1.2}{
+\lt{f : D \lra \br, c \mem D\pr}
+
+Then:
+
+The limit x \lra c of f(x) \eql L exists iff for each neighborhood V of L, \exs a deleted neighborhood U of c st 
+
+f(U $\cap$ D) \sbs V.
+
+\bgpf
+\lra 
+
+Suppose lim x \lra c of f(x) \eql L.
+
+Then,
+
+for each neighborhood V of L (i.e. for each \ep \gr 0, V \eql N(L, \ep)), \exs a deleted neighborhood U of c 
+
+(i.e. \exs $\delta(\epsilon)$ \gr 0 st N*(c, $\delta$) \eql U)
+
+st f(U $\cap$ D) \sbs V
+
+\lla 
+
+The converse is similar.
+
+Remember: definitions are iff
+
+\epf
+}
+
+\ssc{Example 5.1.3}{
+\lt{k \mem \br}
+
+Define f : \br \lra \br by f(x) \eql k, \fa x \mem \br
+
+Let c \mem \br
+
+Show that lim x \lra c of f(x) \eql k
+
+\textbf{Solution:} 
+
+For each \ep \gr 0,
+
+\eqn{|f(x) - k| = |k - k| = 0 < \epsilon}
+whenever 0 \ls \av{x - c} \ls \ep
+}
+\ssc{Example 5.1.4}{
+Confirm that lim x \lra c of f(x) \eql c for the function f(x) \eql x, where c \mem \br and f : \br \lra \br
+
+\textbf{Solution:}
+
+For each \ep \gr 0,
+\eqn{|f(x) - c| = |x - c| < \epsilon}
+whenever 0 \ls \av{x - c} \ls $\delta$ \eql \ep
+}
+
+\ssc{Theorem 5.1.8}{
+
+\lt{f : D \lra \br, c \mem D\pr}
+
+Then,
+
+lim x \lra c of f(x) \eql L iff for \textbf{every} sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c,
+
+it follows that the sequence \bk{f(\uw{s}{n})} converges to L.
+
+(i.e. the values of \uw{s}{n} eventually get within a $\delta$ neighborhood of c)
+
+\bgpf
+\lra
+
+Suppose that lim x \lra c f(x) \eql L
+
+\lt{\bk{\uw{s}{n}} be a sequence in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c}
+
+\wts{\lmti{n} f(\uw{s}{n}) \eql L}
+
+Now, \fa \ep \gr 0, \exs $\delta(\epsilon)$ \gr 0 st
+\step{|f(x) - L| < \epsilon}{1}
+whenever 0 \ls \av{x \ms c} \ls $\delta$ \textbf{and x \mem D} (we need this part so that \av{f(x) \ms L} makes sense.
+
+I'd like to know that \av{f(\uw{s}{n}) \ms L} gets close to 0, so:
+
+Since \lmti{n} \uw{s}{n} \eql c, \exs N \mem \bn st
+
+\step{0 < |s_n - c| < \delta}{2}
+for n \gre N
+
+From \bpth{1} and \bpth{2},
+
+\eqn{|f(s_n) - L| < \epsilon}
+for n \gre N
+
+(if we think of f(\uw{s}{n}) as our \uw{t}{n}, where \uw{t}{n} \lra L as n \lra \infy)
+
+By definition,
+
+\lmti{n} f(\uw{s}{n}) \eql L
+
+\newpage
+
+\lla
+
+Conversely, using the contrapositive,
+
+\as{lim x \lra c of f(x) does not exist.}
+
+\sidenote{
+Negating that:
+
+\exs L \mem \br st
+
+lim x \lra c of f(x) \eql L
+
+\fa \ep \gr 0, \exs $\delta$ \gr 0 st
+
+\fa x st 0 \ls \av{x \ms c} \ls $\delta$,
+
+\av{f(x) \ms L} \ls \ep
+}
+
+Thus,
+
+for each L \mem \br, \exs \uw{\ep}{0} \gr 0 st
+
+\fa $\delta$ \gr 0, \exs x st 0 \ls \av{x \ms c} \ls $\delta$ st
+\eqn{|f(x) - L| \gre \epsilon_0}
+
+\sidenote{
+First we proved p \rar q.
+
+Now we're going to prove q \rar p by proving:
+
+not p \rar not q
+}
+
+\wts{\exs a sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c}
+
+but, \bk{f(\uw{s}{n})} to fail to converge to L.
+
+\lt{$\delta_n$ \eql \frc{1}{n}}
+
+Now, for each n \mem \bn, \exs \uw{s}{n} \mem D st
+\step{0 < |s_n - c| < \frac{1}{n} \textrm{ and } |f(s_n) - L| \gre \epsilon_0}{3}
+
+Notice that \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c.
+
+\sidenote{
+Is \lmti{n} f(\uw{s}{n}) \eql L?
+
+For \ep \eql \frc{\uw{\ep}{0}}{2} \gr 0,
+
+\exs N \mem \bn st
+
+\eqn{|f(s_n) - L| < \frac{\epsilon_0}{2}}
+for n \gre N
+
+So, no. \lmti{n} f(\uw{s}{n}) $\neq$ L
+}
+
+From \bpth{3}, \lmti{n} f(\uw{s}{n}) $\neq$ L
+
+\
+
+(page 166, Theorem 4.1.8 says 
+
+\av{\uw{s}{n} \ms s} \lse k\av{\uw{a}{n}} for n \gre N
+
+and
+
+if \lmti{n} \uw{a}{n} \eql 0, then \lmti{n} \uw{s}{n} \eql s)
+
+
+\epf
+
+}
+
+}
+
+\end{document}
