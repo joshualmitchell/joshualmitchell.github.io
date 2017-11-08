@@ -125,60 +125,48 @@ anova(back.lm)
 # Stepwise Selection
 
 stepwise<- step(null, scope = list(upper=full), data=autodata, direction="both")
-stepwise.lm <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
+stepwise.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
 # Same as forward and backward
 summary(stepwise.lm)
 anova(stepwise.lm)
 
-# Per Regressor Selection (using regsub)
+# All Possible Regressor Selection (using regsub)
 
 regsub.exhaust<-regsubsets(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
 summary.out <- summary(regsub.exhaust)
 summary.out
 
-# Results:
-# 1: wgt_c
-# R^2: 0.7665656, AR^2: 0.7659655, MSQ: 18.8, CP: 368.355467 (- 2) = 366.355467
+model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
+model_info
 
-# 2: wgt_c + modelyr_mvd
-# R^2: 0.8710307, AR^2: 0.8703659, MSQ: 11.8, CP: 32.323543 (- 3) = 29.323543
+# At this point, Forward, Backward, and Stepwise tell us to choose the full model minus cylnum and acc
+# Right before we add cylnum and acc, CP - p goes negative, which also indicates we should choose full - (cylnum + acc) model
 
-# 3: wgt_c + modelyr_mvd + origin_mvd2
-# R^2: 0.8734732, AR^2: 0.8724924, MSQ: 11.2, CP: 26.419955 (- 4) = 22.419955
+final_lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
+summary(final_lm)
+anova(final_lm)
+# Let's look at VIF:
 
-# 4: wgt_c + modelyr_mvd + origin_mvd2 + origin_mvd3
-# R^2: 0.8765522, AR^2: 0.8752729, MSQ: 11.1, CP: 18.456847 (- 5) = 13.456847
+vif(final_lm)
 
-# 5: wgt_c + modelyr_mvd + origin_mvd2 + origin_mvd3 + hp_c
-# R^2: 0.8790556, AR^2: 0.8774849, MSQ: 11.1, CP: 12.356194 (- 6) = 6.356194
-
-# 6: wgt_c + modelyr_mvd + origin_mvd2 + origin_mvd3 + hp_c + displ_c
-# R^2: 0.8799724, AR^2: 0.8780970, MSQ: 11.0, CP: 11.389496 (- 7) = 4.389496
-
-# 7: wgt_c + modelyr_mvd + origin_mvd2 + origin_mvd3 + hp_c + displ_c + cylnum_mvd
-# R^2: 0.8819156, AR^2: 0.8797574, MSQ: 10.9, CP: 7.101676 (- 8) = -0.898324
-# Selected by forward, backward, and stepwise selection!
-
-# 8: wgt_c + modelyr_mvd + origin_mvd2 + origin_mvd3 + hp_c + displ_c + cylnum_mvd + acc_c
-# R^2: 0.8819470, AR^2: 0.8794747, MSQ: 10.9, CP: 9.000000 (- 9) = 0
-
-
+# hp, disp, cylnum, and wgt appear to be similar (> 2, which makes sense because they should correlate)
+# But, does correlation necessarily mean dependency?
 
 # Let's check influential points:
 
-print(influence.measures(lm7))
-inflpnts <- influence.measures(lm7)
+print(influence.measures(final_lm))
+inflpnts <- influence.measures(final_lm)
 summary(inflpnts)
 which(apply(inflpnts$is.inf, 1, any))
 
 # remove studentized residuals larger than 3 and data points with cooks D > 4/n:
 
-w <- abs(rstudent(lm7)) < 3 & abs(cooks.distance(lm7)) < 4/nrow(lm7$model)
-lm7_2 <- update(lm7, weights=as.numeric(w))
+w <- abs(rstudent(final_lm)) < 3 & abs(cooks.distance(final_lm)) < 4/nrow(final_lm$model)
+final_lm_2 <- update(final_lm, weights=as.numeric(w))
 
-summary(lm7_2) # They all become significant except displacement
-# Multiple R-squared:  0.9196,	Adjusted R-squared:  0.9178
-anova(lm7_2)
+summary(final_lm_2) # They all become significant except displacement
+# Multiple R-squared:  0.9159,	Adjusted R-squared:  0.9142
+anova(final_lm_2)
 # Mean Sq Res: 0.009
 
 # Should you include a regressor if it's not significant (no stars) but it increases all the metrics (R^2, etc)?
