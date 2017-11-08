@@ -17,16 +17,13 @@ summary(autodata)
 autodata <- subset(autodata, !autodata[ , 4] == "?")
 autodata$hp_c <- as.numeric(as.character(autodata$hp_c))
 
-hist(autodata$mpg_c, main="MPG Frequency", xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
-barplot(table(autodata$cylnum_mvd), main="Cylinders Frequency", xlab="Number of Cylinders", ylab="Frequency")
-hist(autodata$displ_c, main="Displacement Frequency", xlab="Displacement Amount", ylab="Frequency")
-hist(autodata$hp_c, main="Horsepower Frequency", xlab="HP", ylab="Number of cars with x HP")
-hist(autodata$wgt_c, main="Weight Frequency", xlab="Weight", ylab="Number of cars that weigh x")
-hist(autodata$acc_c, main="Acceleration Frequency", xlab="Acceleration", ylab="Number of cars with x acceleration")
-barplot(table(autodata$modelyr_mvd), main="Model Year Frequency", xlab="Model Year", ylab="Frequency")
-barplot(table(autodata$origin_mvd), main="Origin Frequency", xlab="Origin Type", ylab="Frequency")
 
+# Check normality of "y" (we don't care about normality of x):
+hist(autodata$mpg_c, main="MPG Frequency", xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
+
+# Make origin a factor (since it's not continuous)
 autodata$origin_mvd <- as.factor(autodata$origin_mvd)
+
 # Step 2: Fit a multiple linear regression model
 # -- Use lm to fit y ~ x1, x2 ..
 # -- Get estimated linear model, R2, ANOVA, test significance of regression
@@ -55,111 +52,49 @@ stepwise.lm <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + hp_c + cy
 summary(stepwise.lm)
 anova(stepwise.lm)
 
-# Per Regressor Selection (using regsub)
+# All Possible Regressor Selection (using regsub)
 
 regsub.exhaust<-regsubsets(mpg_c ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
 summary.out <- summary(regsub.exhaust)
 summary.out
 
-# Results:
-# 1: wgt_c
-# R^2: 0.6923, AR^2: 0.6915404, MSQ: 18.8, CP: 282.222846 (- 2) = 271.677433
-
-# 2: wgt_c + modelyr_mvd
-# R^2: 0.8082216, AR^2: 0.8072331, MSQ: 11.8, CP: 32.145081 (- 3) = 29.145081
-
-# 3: wgt_c + modelyr_mvd + origin_mvd3
-# R^2: 0.8122894, AR^2: 0.8108343, MSQ: 11.2, CP: 25.297005 (- 4) = 21.297005
-
-# 4: wgt_c + modelyr_mvd + origin_mvd3 + origin_mvd2
-# R^2: 0.8192026, AR^2: 0.8173290, MSQ: 11.1, CP: 12.259949 (- 5) = 7.259949
-
-# 5: wgt_c + modelyr_mvd + origin_mvd3 + origin_mvd2 + displ_c
-# R^2: 0.8207515, AR^2: 0.8184236, MSQ: 11.1, CP: 10.890883 (- 6) = 4.890833
-
-# 6: wgt_c + modelyr_mvd + origin_mvd3 + origin_mvd2 + displ_c + hp_c
-# R^2: 0.8228173, AR^2: 0.8200488, MSQ: 11.0, CP: 8.397418 (- 7) = 1.397418
-
-
-# 7: wgt_c + modelyr_mvd + origin_mvd3 + origin_mvd2 + displ_c + hp_c + cylnum_mvd
-# R^2: 0.8240406, AR^2: 0.8208246, MSQ: 10.9, CP: 7.736603 (- 8) = -0.263397
-# Selected by forward, backward, and stepwise selection!
-
-# 8: wgt_c + modelyr_mvd + origin_mvd3 + origin_mvd2 + displ_c + hp_c + cylnum_mvd + acc_c
-# R^2: 0.8243792, AR^2: 0.8207013, MSQ: 10.9, CP: 9.000000 (- 9) = 0
+model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
 
 # Let's check normality and constant variance:
 
 lm7 <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(lm7)
-# qqline(resid(lm7)) 
-# Mostly normal except for the upper right tail...
 
 # Residual Plots:
 
-plot(resid(lm7), autodata$wgt_c, main="Residuals vs Weight", xlab="Weight", ylab="Residuals")
-# Non-constant variance
-plot(resid(lm7), autodata$modelyr_mvd, main="Residuals vs Model Year", xlab="Model Year", ylab="Residuals")
-# I don't know...
-plot(resid(lm7), autodata$origin_mvd, main="Residuals vs Origin", xlab="Origin", ylab="Residuals")
-# No idea
-plot(resid(lm7), autodata$hp_c, main="Residuals vs HP", xlab="HP", ylab="Residuals")
-# Non-constant variance
-plot(resid(lm7), autodata$displ_c, main="Residuals vs Displacement", xlab="Displacement", ylab="Residuals")
-# Non-constant variance
-plot(resid(lm7), autodata$cylnum_mvd, main="Residuals vs Cylinder Amount", xlab="Cylinder Amount", ylab="Residuals")
-# No idea
-plot(resid(lm7), autodata$acc_c, main="Residuals vs Acceleration", xlab="Acceleration", ylab="Residuals")
-# No idea - looks like a big blob. Not necessarily noise - mostly concentrated around center
+plot(autodata$wgt_c, resid(lm7), main="Residuals vs Weight", ylab="Residuals", xlab="Weight")
+# possibly do a squared transformation
+abline(h = 0, col="red")
+plot(autodata$modelyr_mvd, resid(lm7),  main="Residuals vs Model Year", xlab="Model Year", ylab="Residuals")
+abline(h = 0, col="red")
+plot(autodata$origin_mvd, resid(lm7),  main="Residuals vs Origin", xlab="Origin", ylab="Residuals")
+abline(h = 0, col="red")
+plot(autodata$hp_c, resid(lm7), main="Residuals vs HP", xlab="HP", ylab="Residuals")
+# Possibly add a second beta for hp^2
+abline(h = 0, col="red")
+plot(autodata$displ_c, resid(lm7), main="Residuals vs Displacement", xlab="Displacement", ylab="Residuals")
+abline(h = 0, col="red")
+plot(autodata$cylnum_mvd, resid(lm7),  main="Residuals vs Cylinder Amount", xlab="Cylinder Amount", ylab="Residuals")
+abline(h = 0, col="red")
+plot(autodata$acc_c, resid(lm7),  main="Residuals vs Acceleration", xlab="Acceleration", ylab="Residuals")
+abline(h = 0, col="red")
 
-plot(lm7$fitted.values, resid(lm7), main="Fitted Values vs Residuals", xlab="Residuals", ylab="Fitted Values")
+plot(lm7$fitted.values, resid(lm7), main="Residuals vs Fitted Values", xlab="Fitted Values", ylab="Residuals")
+abline(h = 0, col="red")
+
 # Oooh, has kind of a horseshoe pattern, let's apply a log transformation:
 lm7 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(lm7$fitted.values, resid(lm7), main="[Transformed] Fitted Values vs Residuals", xlab="Residuals", ylab="Fitted Values")
+plot(lm7$fitted.values, resid(lm7), main="[Transformed] Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")
+abline(h = 0, col="red")
 
 # Much better! Let's check normality again:
-plot(lm7)
 qqnorm(resid(lm7))
 qqline(resid(lm7))
 # Still mostly normal, but now it has a lower left tail
-
-# Some partial regression plots:
-
-# wgt_c - Contributes some!
-lm7_no_wgt <- lm(log(mpg_c) ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-lm7_wgt_to_rest <- lm(wgt_c ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(resid(lm7_no_wgt), resid(lm7_wgt_to_rest), main="(full - wgt_c) residuals vs (wgt_c vs the rest) residuals", xlab="(wgt_c vs the rest) residuals", ylab="(full - wgt_c) residuals")
-
-# modelyr_mvd - Contributes some!
-lm7_no_modelyr <- lm(log(mpg_c) ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-lm7_modelyr_to_rest <- lm(modelyr_mvd ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(resid(lm7_no_modelyr), resid(lm7_modelyr_to_rest), main="(full - modelyr_mvd) residuals vs (modelyr_mvd vs the rest) residuals", xlab="(modelyr_mvd vs the rest) residuals", ylab="(full - modelyr_mvd) residuals")
-
-# origin_mvd - Looks really weird - 3 horizontal layers on top of each other?? Says not meaningful for factors
-lm7_no_origin <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-lm7_origin_to_rest <- lm(origin_mvd ~ wgt_c + modelyr_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
-plot(resid(lm7_no_origin), resid(lm7_origin_to_rest), main="(full - origin_mvd) residuals vs (origin_mvd vs the rest) residuals", xlab="(origin_mvd vs the rest) residuals", ylab="(full - origin_mvd) residuals")
-
-# acc_c - Looks like it doesn't contribute much - concentrated around center
-lm7_no_acc <- lm(log(mpg_c) ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + modelyr_mvd, data = autodata)
-lm7_acc_to_rest <- lm(acc_c ~ wgt_c + origin_mvd + hp_c + displ_c + cylnum_mvd + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_acc), resid(lm7_acc_to_rest), main="(full - acc_c) residuals vs (acc_c vs the rest) residuals", xlab="(acc_c vs the rest) residuals", ylab="(full - acc_c) residuals")
-
-# cylnum_mvd - Looks like it doesn't contribute much - concentrated around center
-lm7_no_cylnum <- lm(log(mpg_c) ~ wgt_c + origin_mvd + hp_c + displ_c + acc_c + modelyr_mvd, data = autodata)
-lm7_cylnum_to_rest <- lm(cylnum_mvd ~ wgt_c + origin_mvd + hp_c + displ_c + acc_c + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_cylnum), resid(lm7_cylnum_to_rest), main="(full - cylnum_mvd) residuals vs (cylnum_mvd vs the rest) residuals", xlab="(cylnum_mvd vs the rest) residuals", ylab="(full - cylnum_mvd) residuals")
-
-# hp_c - Looks like it doesn't contribute much
-lm7_no_hp <- lm(log(mpg_c) ~ wgt_c + origin_mvd + cylnum_mvd + displ_c + acc_c + modelyr_mvd, data = autodata)
-lm7_hp_to_rest <- lm(hp_c ~ wgt_c + origin_mvd + cylnum_mvd + displ_c + acc_c + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_hp), resid(lm7_hp_to_rest), main="(full - hp_c) residuals vs (hp_c vs the rest) residuals", xlab="(hp_c vs the rest) residuals", ylab="(full - hp_c) residuals")
-
-# displ_c - Looks like it doesn't contribute much, maybe BARELY a linear relationship
-lm7_no_displ <- lm(log(mpg_c) ~ wgt_c + origin_mvd + cylnum_mvd + hp_c + acc_c + modelyr_mvd, data = autodata)
-lm7_displ_to_rest <- lm(displ_c ~ wgt_c + origin_mvd + cylnum_mvd + hp_c + acc_c + modelyr_mvd, data = autodata)
-plot(resid(lm7_no_displ), resid(lm7_displ_to_rest), main="(full - displ_c) residuals vs (displ_c vs the rest) residuals", xlab="(displ_c vs the rest) residuals", ylab="(full - displ_c) residuals")
-
 
 ##################
 ### STARTING OVER

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 NOV 2017 10:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 NOV 2017 14:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -472,39 +472,39 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 310.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 309.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 310.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 309.
  [2]
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 367--368
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 366--367
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--368
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
 
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 382--383
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 381--382
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 
-Overfull \hbox (0.24573pt too wide) in paragraph at lines 406--407
+Overfull \hbox (0.24573pt too wide) in paragraph at lines 405--406
 []\OT1/cmr/m/n/10 ---------------------------------------------------------------------------------------------------------------------------------------------
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
 
  []
 
@@ -516,9 +516,9 @@ Here is how much of TeX's memory you used:
  17803 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,66p,443b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,66p,443b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 19 - Analysis 1 - MATH 3380.pdf" (3 pages, 118628 bytes).
+Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 19 - Analysis 1 - MATH 3380.pdf" (3 pages, 118604 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
