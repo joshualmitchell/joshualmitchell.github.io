@@ -232,23 +232,47 @@ summary.out
 # Let's check influential points:
 
 print(influence.measures(lm7))
-# We have at least 7 seemingly influential points (of the first 65 or so)
+inflpnts <- influence.measures(lm7)
+summary(inflpnts)
+which(apply(inflpnts$is.inf, 1, any))
+
+# remove studentized residuals larger than 3 and data points with cooks D > 4/n:
+
+w <- abs(rstudent(lm7)) < 3 & abs(cooks.distance(lm7)) < 4/nrow(lm7$model)
+lm7_2 <- update(lm7, weights=as.numeric(w))
+
+summary(lm7_2) # They all become significant except displacement
+# Multiple R-squared:  0.9196,	Adjusted R-squared:  0.9178
+anova(lm7_2)
+# Mean Sq Res: 0.009
+
+# Should you include a regressor if it's not significant (no stars) but it increases all the metrics (R^2, etc)?
 
 vif(lm7)
-# wgt_c        modelyr_mvd origin_mvd  hp_c       displ_c     cylnum_mvd   acc_c 
-# 10.822442    1.243182    1.770100    9.968706   21.775021   10.738102    2.623655
+
+#             GVIF       Df GVIF^(1/(2*Df))
+# wgt_c       11.065046  1        3.326416
+# modelyr_mvd  1.299455  1        1.139936
+# origin_mvd   2.092968  2        1.202792
+# hp_c         9.981999  1        3.159430
+# displ_c     22.873643  1        4.782640
+# cylnum_mvd  10.738293  1        3.276934
+# acc_c        2.623743  1        1.619797
+
+vif(lm7_2)
+
+#             GVIF       Df       GVIF^(1/(2*Df))
+# wgt_c       15.219019  1        3.901156
+# modelyr_mvd  1.317332  1        1.147751
+# origin_mvd   2.110562  2        1.205312
+# hp_c        10.563281  1        3.250120
+# displ_c     27.099357  1        5.205704
+# cylnum_mvd  11.552526  1        3.398901
+# acc_c        2.663166  1        1.631921
 
 # -- test if each β =0, make residual plots to check the key assumptions,
 # -- investigate the relationship 
 # -- (1) between different predictors (e.g., check VIF), 
-
-plot(autodata$cylnum_mvd, autodata$displ_c,
-     pch = 18, 
-     cex = 1.0, 
-     col = "blue", 
-     main = "Displacement vs Number of Cylinders", 
-     xlab = "Cylinder Number", 
-     ylab = "Displacement")
 
 # -- (2) between y and predictors (e.g., using partial regression plots, and so on)
 # Step 3: Fix the assumption violation problems and refit a model
@@ -256,16 +280,6 @@ plot(autodata$cylnum_mvd, autodata$displ_c,
 # -- repeat step 2, then step 3 again until you get satisfied with your data analysis results.
 
 # Step 4: Summarize your data analysis results
-
-summary(autodata.lm.full)
-anova(autodata.lm.full)
-
-autodata$hp_c <- as.numeric(as.character(autodata$hp_c))
-
-autodata.lm.full <- lm(mpg_c ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata) 
-
-summary(autodata.lm.full)
-anova(autodata.lm.full)
 
 # Latent variable discrete choice (structural equations model)
 # Latent variables - not directly observed but rather inferred from observed variables (factor analysis, PCA, HMM, structured equation models)
