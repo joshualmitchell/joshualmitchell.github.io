@@ -145,64 +145,34 @@ model_info
 final_lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
 summary(final_lm)
 anova(final_lm)
-# Let's look at VIF:
-
-vif(final_lm)
-
-# hp, disp, cylnum, and wgt appear to be similar (> 2, which makes sense because they should correlate)
-# But, does correlation necessarily mean dependency?
 
 # Let's check influential points:
 
-print(influence.measures(final_lm))
-inflpnts <- influence.measures(final_lm)
-summary(inflpnts)
-which(apply(inflpnts$is.inf, 1, any))
+print(influence.measures(final_lm)) 
+data_with_inflpnts <- influence.measures(final_lm)
+inflpnts <- which(apply(data_with_inflpnts$is.inf, 1, any)) 
+data_wo_inflpnts <- autodata[-inflpnts,] 
 
-# remove studentized residuals larger than 3 and data points with cooks D > 4/n:
+# 368/391 = 0.9411765 which means 5.9% of our data is influential points.
 
-w <- abs(rstudent(final_lm)) < 3 & abs(cooks.distance(final_lm)) < 4/nrow(final_lm$model)
-final_lm_2 <- update(final_lm, weights=as.numeric(w))
+final_lm_2 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = data_wo_inflpnts)
 
-summary(final_lm_2) # They all become significant except displacement
-# Multiple R-squared:  0.9159,	Adjusted R-squared:  0.9142
+summary(final_lm_2)
 anova(final_lm_2)
-# Mean Sq Res: 0.009
 
-# Should you include a regressor if it's not significant (no stars) but it increases all the metrics (R^2, etc)?
+# Multiple R-squared:  0.9037,	Adjusted R-squared:  0.9018,   MS_res: 0.0104
+# without influential points
 
-vif(lm7)
+# VIFS:
 
-#             GVIF       Df GVIF^(1/(2*Df))
-# wgt_c       11.065046  1        3.326416
-# modelyr_mvd  1.299455  1        1.139936
-# origin_mvd   2.092968  2        1.202792
-# hp_c         9.981999  1        3.159430
-# displ_c     22.873643  1        4.782640
-# cylnum_mvd  10.738293  1        3.276934
-# acc_c        2.623743  1        1.619797
+# hp, disp, cylnum, and wgt appear to be similar (which makes sense because they should correlate)
+# But, does correlation necessarily mean dependency?
 
-vif(lm7_2)
+lm7_vif <- vif(lm7)
+lm7_vif <- as.data.frame(lm7_vif)
 
-#             GVIF       Df       GVIF^(1/(2*Df))
-# wgt_c       15.219019  1        3.901156
-# modelyr_mvd  1.317332  1        1.147751
-# origin_mvd   2.110562  2        1.205312
-# hp_c        10.563281  1        3.250120
-# displ_c     27.099357  1        5.205704
-# cylnum_mvd  11.552526  1        3.398901
-# acc_c        2.663166  1        1.631921
+final_lm_vif <- vif(final_lm)
+final_lm_vif <- as.data.frame(final_lm_vif)
 
-# -- test if each β =0, make residual plots to check the key assumptions,
-# -- investigate the relationship 
-# -- (1) between different predictors (e.g., check VIF), 
-
-# -- (2) between y and predictors (e.g., using partial regression plots, and so on)
-# Step 3: Fix the assumption violation problems and refit a model
-# -- If necessary, transform your data, then refit a model, do variable selection, etc.
-# -- repeat step 2, then step 3 again until you get satisfied with your data analysis results.
-
-# Step 4: Summarize your data analysis results
-
-# Latent variable discrete choice (structural equations model)
-# Latent variables - not directly observed but rather inferred from observed variables (factor analysis, PCA, HMM, structured equation models)
+final_lm_2_vif <- vif(final_lm_2)
+final_lm_2_vif <- as.data.frame(final_lm_2_vif)

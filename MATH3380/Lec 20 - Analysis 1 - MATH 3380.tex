@@ -1,0 +1,478 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#19}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+     							 
+% ----------
+
+\begin{document}
+HW 9: page 203 - 205, \#1, 2, 3(a)(c)(e)(g), 7(c), 13, 16, 18, 19
+
+\bsc{Chapter 5 Continued:}{
+\ssc{Theorem 5.1.8}{
+
+Let f : D \lra \br and let c \mem D\pr
+
+Then,
+
+\limt{x}{c} f(x) \eql L \mem \br iff for \textbf{every} sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c it follows that \lmti{n} \bk{f(\uw{s}{n})} \eql L
+
+So,
+
+\limt{x}{c} f(x) \eql L
+
+for \ep \gr 0, \exs $\delta$ \gr 0 st
+
+\av{f(x) \ms L} \ls \ep (i.e. L \ms \ep \ls f(x) \ls L \ps \ep) whenever 0 \ls \av{x	 \ms c} \ls $\delta$
+}
+
+\ssc{Corollary 5.1.9}{
+
+If f : D \lra \br and if c \mem D\pr,
+
+then
+
+if \limt{x}{c} f(x) \eql L, then L is unique.
+
+\bgpf
+Assume that
+
+\step{\limt{x}{c} f(x) = L_1}{1}
+and
+\step{\limt{x}{c} f(x) = L_2}{2}
+
+Let \bk{\uw{s}{n}} be a sequence in D st
+
+\uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c
+
+By \bpth{1} and Theorem 5.1.8, \lmti{n} f(\uw{s}{n}) \eql \uw{L}{1}.
+
+And by \bpth{2} and Theorem 5.1.8, \lmti{n} f(\uw{s}{n}) \eql \uw{L}{2}
+
+However, by Theorem 4.1.14, if a sequence converges, then its limit is unique.
+
+So, \uw{L}{1} \eql \uw{L}{2}, hence, uniqueness.
+\epf
+
+}
+
+\ssc{Theorem 5.1.10}{
+
+Let f : D \lra \br and let c \mem D\pr
+
+Then the following are equivalent:
+
+\balist
+\item f does not have a limit at c
+\item \exs a sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c but \bk{f(\uw{s}{n})} is not convergent in \br
+
+	(looks like the second part of Thm 5.1.8 except the opposite)
+\elist
+
+\bgpf
+\lra 
+
+We first prove that a \rar b by using the contrapositive. (i.e. not b implies not a)
+
+Assume \bpth{b} is false.
+
+Thus, for every sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c
+
+it follows that \bk{f(\uw{s}{n})} converges in \br
+
+\wts{\limt{x}{c} f(x) exists}
+
+Let \bk{\uw{s}{n}} and \bk{\uw{t}{n}} be sequences in D st \uw{s}{n} $\neq$ c and \uw{t}{n} $\neq$ c \fa n \mem \bn in \lmti{n} \uw{s}{n} \eql c, \lmti{n} \uw{t}{n} \eql c.
+
+Thus,
+
+\exs \uw{L}{1}, \uw{L}{2} \mem \br st \lmti{n} f(\uw{s}{n}) \eql \uw{L}{1} and \lmti{n} f(\uw{t}{n}) \eql \uw{L}{2}
+
+\wts{\uw{L}{1} \eql \uw{L}{2}}
+
+Define the sequence \bk{\uw{u}{n}} in D by
+
+\bk{\uw{u}{n}} \eql \uw{s}{1}, \uw{t}{1}, \uw{s}{2}, \uw{t}{2}, ... 
+
+Then \uw{u}{n} $\neq$ c \fa n \mem \bn (should be obvious) and \lmti{n} \uw{u}{n} \eql c
+
+So \exs L \mem \br st \lmti{n} f(\uw{u}{n}) \eql L
+
+Since \uw{s}{n} and \uw{t}{n} are subsequences of \uw{u}{n}, \uw{s}{n} and \uw{t}{n} must also converge to L.
+
+Thus, 
+
+\uw{L}{1} \eql \uw{L}{2}
+
+\sidenote{
+To see that \lmti{n} \uw{u}{n} \eql c, 
+
+\lt{\ep \gr 0}
+
+Then \exs \uw{N}{1}, \uw{N}{2} \mem \bn st \av{\uw{s}{n} \ms c} \ls \ep for n \gre \uw{N}{1}, and
+
+\av{\uw{t}{n} \ms c} \ls \ep for n \gre \uw{N}{2}
+
+Let N \eql max \bk{\uw{N}{1}, \uw{N}{2}}
+
+\
+
+Also, consider \av{\uw{u}{n} \ms c}
+
+Case:
+\bilist
+\item n is even
+	
+	Then n \eql 2k for some k \mem \bn and
+	\eqn{|u_n - c| = |u_{2k} - c| = |t_k - c| < \epsilon \textrm{ for } k \gre N}
+	So,
+	\step{|u_n - c| < \epsilon \textrm{ for } n \gre 2N}{1}
+\item n is odd
+	
+	Then n \eql 2k \ms 1 for some k \mem \bn and
+	\eqn{|u_n - c| = |u_{2k - 1} - c| = |s_k - c| < \epsilon \textrm{ for } k \gre N}
+	So,
+	\step{|u_n - c| < \epsilon \textrm{ for } n = 2k - 1 \gre 2N - 1}{2}
+\elist
+
+From \bpth{1} and \bpth{2}, \lmti{n} \uw{u}{n} \eql c
+}
+
+Since \bk{f(\uw{u}{n})} converges to L and \bk{f(\uw{s}{n})}, \bk{f(\uw{t}{n})} are subsequences of \bk{f(\uw{f}{n})}, 
+
+it follows by Theorem 4.4.4 that \uw{L}{1} \eql \uw{L}{2} \eql L
+
+Hence, by Theorem 5.1.8, \limt{x}{c} f(x) \eql L
+\epf
+\lla
+
+Direct proof of \bpth{b} implies \bpth{a}.
+
+Assume \bpth{a} is false.
+
+Then,
+
+\exs L \mem \br st \limt{x}{c} f(x) \eql L. The result follows directly from Theorem 5.1.8
+
+}
+
+Recall: a iff b \lra not a iff not b
+
+\ssc{Example 5.1.11}{
+
+\lt{f(x) \eql sin(\frc{1}{x}) for x \gr 0}
+
+Prove that \limt{x}{0} f(x) does not exist.
+
+\bgpf
+
+\lt{\uw{x}{n} \eql \frc{2}{n\pi} for n \mem \bn}
+
+Then, 
+
+\bk{\uw{x}{n}} is a sequence in D (x \gr 0) st
+
+\uw{x}{n} $\neq$ 0 \fa n \mem \bn and \lmti{n} \uw{x}{n} \eql 0, but,  \fa n \mem \bn,
+
+\eqn{f(x_n) = \sin(\frac{1}{x_n}) = \sin(\frac{n\pi}{2})}
+Now, \bk{f(\uw{x}{n})} \eql 1, 0, $-$1, 0, 1, 0, $-1$, 0 ...
+
+Notice that \bk{f(\uw{x}{n})} does not converge since it possesses subsequences that converge to different limits.
+
+(i.e. \lmti{k} f(\uw{x}{2k}) \eql 0, \lmti{k} f(\uw{x}{4k - 3}) \eql 1, etc.)
+
+By Theorem 5.1.10, f(x) does not have a limit at x \eql 0.
+\epf
+
+}
+
+\ssc{Definition 5.1.12}{
+Let f : D \lra \br and g : D \lra \br
+
+Define:
+
+\balist
+\item The \textbf{sum} f \ps g : D \lra \br by (f \ps g)(x) \eql f(x) \ps g(x) \fa x \mem D
+\item The \textbf{product} fg : D \lra \br by (fg)(x) \eql f(x)g(x) \fa x \mem D
+\item The \textbf{multiple} kf : D \lra \br (kf)(x) \eql kf(x) \fa x \mem D, k \mem \br
+\item The \textbf{quotient} \frc{f}{g} : D \lra \br (\frc{f}{g})(x) \eql \frc{f(x)}{g(x)} \fa x \mem D provided that g(x) $\neq$ 0 \fa x \mem D
+\elist
+}
+
+\newpage
+
+\ssc{Theorem 5.1.13}{
+
+Let f : D \lra \br, g : D \lra \br and let c \mem D\pr
+
+If \limt{x}{c} f(x) \eql L and \limt{x}{c} g(x) \eql M, then
+
+\balist
+\item \limt{x}{c} (f \ps g) \eql L \ps M
+\item Let k \mem \br, \limt{x}{c} kf \eql kL
+\item \limt{x}{c} (fg) \eql LM
+\item \limt{x}{c} (\frc{f}{g}) \eql \frc{L}{M}, provided that M $\neq$ 0
+\elist
+
+\bgpf
+\bpth{a} through \bpth{c} are similar to \bpth{d}.
+
+\bpth{d}: Let \bk{\uw{s}{n}} be a sequence in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c.
+
+Then, by Theorem 5.1.8, \lmti{n} f(\uw{s}{n}) \eql L.
+
+Now, \lmti{n} g(x) \eql M $\neq$ 0.
+
+So \exs N \mem \bn st
+\eqn{g(s_n) \neq 0 \textrm{ for } n \gre N}
+(ask why? next time)
+
+Then, \lmti{n} (\frc{f}{g})(\uw{s}{n}) \eql \lmti{n} \frc{f(s_n)}{g(s_n)} \eql \frc{\lmti{n} f(s_n)}{\lmti{n} g(s_n)} (by Theorem 4.2.11d) \eql \frc{L}{M}
+
+Recall:
+
+\av{x} \ms \av{y} \lse \av{\av{x} \ms \av{y}} \lse \av{x \ms y}
+
+\av{y} \gre \av{x} \ms \av{x \ms y}
+
+So,
+
+\av{g(\uw{s}{n})} \gre \av{M} \ms \av{M \ms g(\uw{s}{n})}
+
+and since,
+
+\lmti{n} g(\uw{s}{n}) \eql M $\neq$ 0
+
+\av{g(\uw{s}{n}) \ms M} \ls \frc{\av{M}}{2}
+
+$-$\av{g(\uw{s}{n}) \ms M} \gr \frc{-\av{M}}{2}
+
+for n \gre N
+
+So,
+
+\av{g(\uw{s}{n})} \gr \av{M} \ms \frc{\av{M}}{2} \eql \frc{\av{M}}{2} for n \gre N 
+\epf 
+}
+
+\
+
+Also, for the homework:
+
+\limt{x}{c} P(x) \eql P(c) where P is a polynomial.
+}
+
+\end{document}
