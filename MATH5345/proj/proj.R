@@ -107,26 +107,25 @@ summary.out
 model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
 model_info
 
+regsub.exhaust<-regsubsets(mpg_c ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
+summary.out <- summary(regsub.exhaust)
+summary.out
+
+model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
+model_info
 # At this point, Forward, Backward, and Stepwise tell us to choose the full model minus cylnum and acc
 # Right before we add cylnum and acc, CP - p goes negative, which also indicates we should choose full - (cylnum + acc) model
 
-final_lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
-summary(final_lm)
-anova(final_lm)
+final_lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c, data = autodata)
+# R^2: 0.88    Adj R^2: 0.8781    MS_Res: 0.014
 
-# Let's check influential points:
-
-print(influence.measures(final_lm)) 
 data_with_inflpnts <- influence.measures(final_lm)
 inflpnts <- which(apply(data_with_inflpnts$is.inf, 1, any)) 
 data_wo_inflpnts <- autodata[-inflpnts,] 
-
 # 368/391 = 0.9411765 which means 5.9% of our data is influential points.
 
-final_lm_2 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = data_wo_inflpnts)
-
-summary(final_lm_2)
-anova(final_lm_2)
+final_lm_2 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c, data = data_wo_inflpnts)
+# R^2: 0.9017    Adj R^2: 0.900    MS_Res: 0.011
 
 # Multiple R-squared:  0.9037,	Adjusted R-squared:  0.9018,   MS_res: 0.0104
 # without influential points
@@ -138,9 +137,12 @@ anova(final_lm_2)
 
 lm7_vif <- vif(lm7)
 lm7_vif <- as.data.frame(lm7_vif)
+lm7_vif
 
 final_lm_vif <- vif(final_lm)
 final_lm_vif <- as.data.frame(final_lm_vif)
+final_lm_vif
 
 final_lm_2_vif <- vif(final_lm_2)
 final_lm_2_vif <- as.data.frame(final_lm_2_vif)
+final_lm_2_vif
