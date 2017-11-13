@@ -1,0 +1,46 @@
+install.packages("leaps")
+install.packages("car")
+library(leaps)
+library(car)
+# ?regsubsets. # No documentation for ‘regsubsets.’ in specified packages and libraries
+setwd("/Users/jm/joshualmitchell.github.io/MATH5345/HW6/")
+
+########################################################################################
+###################### Question 1
+########################################################################################
+
+q1data <- read.table("HW6Q1.txt", header=T)
+
+q1lm <- lm(y ~ as.factor(x1) + as.factor(x2) + as.factor(x3), data=q1data)
+plot(q1data$x1, resid(q1lm),  main="Residuals vs x1", xlab="x1", ylab="Residuals")
+abline(h = 0, col="red")
+plot(q1data$x2, resid(q1lm),  main="Residuals vs x2", xlab="x2", ylab="Residuals")
+abline(h = 0, col="red")
+plot(q1data$x3, resid(q1lm),  main="Residuals vs x3", xlab="x3", ylab="Residuals")
+abline(h = 0, col="red")
+
+# plot(model) --> graph 4 indicates which points are "causing problems", graph 3 "scale location" for non-constant variance (lots of variance "in the middle" in this case)
+
+########################################################################################
+###################### Question 2
+########################################################################################
+
+q2data <- read.table("HW6Q2.txt", header=T)
+
+########################################################################################
+###################### Question 3
+########################################################################################
+
+q3data <- read.table("HW6Q3.txt", header=T)
+
+########################################################################################
+###################### Question 4
+########################################################################################
+
+q4data <- read.table("HW6Q4.txt", header=T)
+
+########################################################################################
+###################### Question 5
+########################################################################################
+
+q5data <- read.table("HW6Q5.txt", header=T)

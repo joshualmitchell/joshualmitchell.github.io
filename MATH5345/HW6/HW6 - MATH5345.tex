@@ -3,9 +3,9 @@
 
 \documentclass{article}
 
-\newcommand{\hmwkTitle}{Lec\ \#19}
+\newcommand{\hmwkTitle}{HW\ \#6}
 
-% \input{ShortcutsAnalysis}
+% \input{ShortcutsStatistics}
 
 % ----------
 
@@ -22,10 +22,9 @@
 \usepackage{algpseudocode}
 \usepackage{enumitem}
 \usepackage{chngcntr}
+\usepackage{blkarray}
 
 % Libraries
-
-\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
 
 \usetikzlibrary{automata, positioning, arrows}
 
@@ -55,8 +54,8 @@
 \setlength\parindent{0pt}
 \setcounter{secnumdepth}{0}
 
-\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
-\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkClass}{MATH 5345 / Regression Analysis}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Sun}           % Instructor
 \newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
 
 %
@@ -91,12 +90,6 @@
 
 % Alias for the Solution section header
 \newcommand{\solution}{\textbf{\large Solution}}
-
-% Probability commands: Expectation, Variance, Covariance, Bias
-\newcommand{\E}{\mathrm{E}}
-\newcommand{\Var}{\mathrm{Var}}
-\newcommand{\Cov}{\mathrm{Cov}}
-\newcommand{\Bias}{\mathrm{Bias}}
 
 % Formatting commands:
 
@@ -176,18 +169,18 @@
 \newcommand{\prn}[1]{(#1)}
 \newcommand{\bk}[1]{\{#1\}}
 
-\newcommand{\ps}{\mt{+} }
-\newcommand{\ms}{\mt{-} }
+\newcommand{\ps}{\mt{\operatorname{+}} }
+\newcommand{\ms}{\mt{\operatorname{-}} }
 
-\newcommand{\ls}{\mt{<} }
-\newcommand{\gr}{\mt{>} }
+\newcommand{\ls}{\mt{\operatorname{<}} }
+\newcommand{\gr}{\mt{\operatorname{>}} }
 
-\newcommand{\lse}{\mt{\leq} }
-\newcommand{\gre}{\mt{\geq} }
+\newcommand{\lse}{\mt{\operatorname{\leq}} }
+\newcommand{\gre}{\mt{\operatorname{\geq}} }
 
-\newcommand{\eql}{\mt{=} }
+\newcommand{\eql}{ \mt{\operatorname{=}} }
 
-\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
 \newcommand{\uw}[2]{#1\mt{_{#2}}}
 \newcommand{\uf}[2]{#1\mt{^{#2}}}
 \newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
@@ -214,213 +207,121 @@
 \newcommand{\eqn}[1]{\[#1\]}
 \newcommand{\splt}[1]{\begin{split}#1\end{split}}
 
-\newcommand{\infy}{\mt{\infty} }
-     							 
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand{\mn}[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+\newcommand{\exv}[1]{\txt{E[}#1\txt{]}}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\gv}{ \mt{|} }
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}
+\newcommand{\simg}[1]{
+  \includegraphics[width=0.35\linewidth]{#1}
+}
+\newcommand{\wimg}[1]{
+\begin{figure}[h]
+  \includegraphics[width=1\linewidth]{#1}
+\end{figure}
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}	
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}	
+
+\newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\inm}[1]{\mt{\left\[ \begin{smallmatrix} #1 \end{smallmatrix} \right\]}}
+
+\newcommand{\lbm}[4]{
+	  \begin{blockarray}{#1} % a c for every row, plus the c-labels
+        #2 \\ % & c-label1 & c-label2 & c-label3...
+      \begin{block}{c(#3)} % a c for every column only
+        #4 % r-label1 & data & data & data ... \\
+           % r-label2 & data & data & data ... \\
+           % ...
+           % r-labeln & data & data & data ... \\
+      \end{block}
+    \end{blockarray}
+}
+
+% Example:
+% \[\lbm{ccccc}{& H & y & d}{cccc}{H & 4 & 4 & 4 \\
+% Y & 3 & 3 & 3 \\
+% D & 2 & 2 & 2 \\
+% D & 2 & 2 & 2 \\}\]
+
+\newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!	 
 % ----------
 
 \begin{document}
+\begin{table}[ht]
+\centering
+\begin{tabular}{llllll}
+  \hline
+ & Q1 & Q2 & Q3 & Q4 & Q5 \\ 
+  \hline
+50 Points & 10 & 10 & 10 & 10 & 10 \\ 
+   &  &  &  &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+\bsc{Question 1}{
+\wimg{HW6Q1}
+\ssc{Part (a)}{
 
-Final is \textbf{not} cumulative! Covers this material and onward.
+The five key assumptions:
 
-\bsc{Chapter 5 - Limits and Continuity}{
+\balist
+\item Normality - Our response variable(s) (by themselves), residuals (by themselves), and residuals vs regressors, when histogrammed, look normal.
 
-\ssc{5.1.1: Definition (Limits of Functions)}{
+\simg{HW6Q1A1}
 
-\lt{D \sbs \br, f : D \lra \br, and c \mem D\pr (i.e. c is an accumulation point)}
+\textbf{The distribution of our response variable seems mostly normal - I don't know what to make of the gap in the middle, though.}
 
-We say that L \mem \br is a \textbf{limit} of f at c if, \fa \ep \gr 0, \exs $\delta(\epsilon)$ \gr 0 st when x \mem D and 0 \ls \av{x - c} \ls $\delta$, then
-\eqn{|f(x) - L| < \epsilon}
+\item Independence - Our samples are independent (i.e. the value of one does not affect the value of any other). This is usually the hardest one to test for - usually it's argued from a sampling side. If you plot the residuals vs the predicted values, if they're independent, you should see no pattern.
 
-(i.e. the limit as x goes to c of f(x) \eql L)
+\simg{HW6Q1X1}
+\simg{HW6Q1X2}
+\simg{HW6Q1X3}
 
-\eqn{x \pm c}
-\eqn{-\delta < x - c < \delta}
-\eqn{c - \delta < x < c + \delta}
+\textbf{Our samples appear to be independent - there doesn't seem to be a pattern in the data (but then again, there's only 13 data points).}
 
-Recall the definition of a limit:
+\item Constant Variance - The residual plots should just be bands (i.e. no funnels, cones, or any weird shape).
 
-\eqn{f(x) = \limt{h}{0} \frac{f(x + h) - f(x)}{h}}
+\textbf{It does appear that we have a "bowtie" kind of pattern, so I would assume that we don't have constant variance.}
 
-where x is fixed.
-}
-\ssc{Theorem 5.1.2}{
-\lt{f : D \lra \br, c \mem D\pr}
-
-Then:
-
-The limit x \lra c of f(x) \eql L exists iff for each neighborhood V of L, \exs a deleted neighborhood U of c st 
-
-f(U $\cap$ D) \sbs V.
-
-\bgpf
-\lra 
-
-Suppose lim x \lra c of f(x) \eql L.
-
-Then,
-
-for each neighborhood V of L (i.e. for each \ep \gr 0, V \eql N(L, \ep)), \exs a deleted neighborhood U of c 
-
-(i.e. \exs $\delta(\epsilon)$ \gr 0 st N*(c, $\delta$) \eql U)
-
-st f(U $\cap$ D) \sbs V
-
-\lla 
-
-The converse is similar.
-
-Remember: definitions are iff
-
-\epf
-}
-
-\ssc{Example 5.1.3}{
-\lt{k \mem \br}
-
-Define f : \br \lra \br by f(x) \eql k, \fa x \mem \br
-
-Let c \mem \br
-
-Show that \limt{x}{c} f(x) \eql k
-
-\textbf{Solution:} 
-
-For each \ep \gr 0,
-
-\eqn{|f(x) - k| = |k - k| = 0 < \epsilon}
-whenever 0 \ls \av{x - c} \ls \ep
-}
-\ssc{Example 5.1.4}{
-Confirm that \limt{x}{c} f(x) \eql c for the function f(x) \eql x, where c \mem \br and f : \br \lra \br
-
-\textbf{Solution:}
-
-For each \ep \gr 0,
-\eqn{|f(x) - c| = |x - c| < \epsilon}
-whenever 0 \ls \av{x - c} \ls $\delta$ \eql \ep
-}
-
-\ssc{Theorem 5.1.8}{
-
-\lt{f : D \lra \br, c \mem D\pr}
-
-Then,
-
-\limt{x}{c} f(x) \eql L iff for \textbf{every} sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c,
-
-it follows that the sequence \bk{f(\uw{s}{n})} converges to L.
-
-(i.e. the values of \uw{s}{n} eventually get within a $\delta$ neighborhood of c)
-
-\bgpf
-\lra
-
-\as{\limt{x}{c} f(x) \eql L}
-
-\lt{\bk{\uw{s}{n}} be a sequence in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c}
-
-\wts{\lmti{n} f(\uw{s}{n}) \eql L}
-
-Now, \fa \ep \gr 0, \exs $\delta(\epsilon)$ \gr 0 st
-\step{|f(x) - L| < \epsilon}{1}
-whenever 0 \ls \av{x \ms c} \ls $\delta$ \textbf{and x \mem D} (we need this part so that \av{f(x) \ms L} makes sense).
-
-I'd like to know that \av{f(\uw{s}{n}) \ms L} gets close to 0, so:
-
-Since \lmti{n} \uw{s}{n} \eql c, \exs N \mem \bn st
-
-\step{0 < |s_n - c| < \delta}{2}
-for n \gre N
-
-From \bpth{1} and \bpth{2},
-
-\eqn{|f(s_n) - L| < \epsilon}
-for n \gre N
-
-(if we think of f(\uw{s}{n}) as our \uw{t}{n}, where \uw{t}{n} \lra L as n \lra \infy)
-
-By definition,
-
-\lmti{n} f(\uw{s}{n}) \eql L
-
-\newpage
-
-\lla
-
-Conversely, using the contrapositive,
-
-\as{\limt{x}{c} f(x) does not exist.}
-
-\sidenote{
-Negating that:
-
-\exs L \mem \br st
-
-\limt{x}{c} f(x) \eql L
-
-\fa \ep \gr 0, \exs $\delta$ \gr 0 st
-
-\fa x st 0 \ls \av{x \ms c} \ls $\delta$,
-
-\av{f(x) \ms L} \ls \ep
-}
-
-Thus,
-
-for each L \mem \br, \exs \uw{\ep}{0} \gr 0 st
-
-\fa $\delta$ \gr 0, \exs x st 0 \ls \av{x \ms c} \ls $\delta$ st
-\eqn{|f(x) - L| \gre \epsilon_0}
-
-\sidenote{
-First we proved p \rar q.
-
-Now we're going to prove q \rar p by proving:
-
-not p \rar not q
-}
-
-\wts{\exs a sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c}
-
-but, \bk{f(\uw{s}{n})} to fail to converge to L.
-
-\lt{$\delta_n$ \eql \frc{1}{n}}
-
-Now, for each n \mem \bn, \exs \uw{s}{n} \mem D st
-\step{0 < |s_n - c| < \frac{1}{n} \textrm{ and } |f(s_n) - L| \gre \epsilon_0}{3}
-
-Notice that \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c.
-
-\sidenote{
-Is \lmti{n} f(\uw{s}{n}) \eql L?
-
-For \ep \eql \frc{\uw{\ep}{0}}{2} \gr 0,
-
-\exs N \mem \bn st
-
-\eqn{|f(s_n) - L| < \frac{\epsilon_0}{2}}
-for n \gre N
-
-So, no. \lmti{n} f(\uw{s}{n}) $\neq$ L
-}
-
-From \bpth{3}, \lmti{n} f(\uw{s}{n}) $\neq$ L
-
-\
-
-(page 166, Theorem 4.1.8 says 
-
-\av{\uw{s}{n} \ms s} \lse k\av{\uw{a}{n}} for n \gre N
-
-and
-
-if \lmti{n} \uw{a}{n} \eql 0, then \lmti{n} \uw{s}{n} \eql s)
-
-
-\epf
+\item \exv{$\epsilon$} \eql 0 - This is assumed since that's the way we build our model (i.e. via least squares)
+\item Linearity - The model actually fits (i.e. the data follows the shape of the model: R$^2$ is high)
+\elist
 
 }
 
 }
 
+\bsc{Question 2}{
+\wimg{HW6Q2}
+}
+
+\bsc{Question 3}{
+\wimg{HW6Q3}
+}
+
+\bsc{Question 4}{
+\wimg{HW6Q4}
+}
+\bsc{Question 5}{
+\wimg{HW6Q5}
+}
 \end{document}

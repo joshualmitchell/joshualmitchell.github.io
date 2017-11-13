@@ -3,7 +3,7 @@
 
 \documentclass{article}
 
-\newcommand{\hmwkTitle}{Lec\ \#19}
+\newcommand{\hmwkTitle}{HW\ \#9}
 
 % \input{ShortcutsAnalysis}
 
@@ -158,6 +158,7 @@
 \newcommand{\fa}{\mt{\forall} }          % for all
 \newcommand{\afa}{\mt{\alpha} }
 \newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
 \newcommand{\mem}{\mt{\in} }
 \newcommand{\exs}{\mt{\exists} }
 
@@ -215,212 +216,108 @@
 \newcommand{\splt}[1]{\begin{split}#1\end{split}}
 
 \newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+
      							 
 % ----------
 
 \begin{document}
+HW 9: page 203 - 205, \#1, 2, 3(a)(c)(e)(g), 7(c), 13, 16, 18, 19
 
-Final is \textbf{not} cumulative! Covers this material and onward.
+\bsc{Exercise 1}{
 
-\bsc{Chapter 5 - Limits and Continuity}{
+\lt{f : D \lra \br and c \mem D\pr}
 
-\ssc{5.1.1: Definition (Limits of Functions)}{
+Mark each statement True or False. Justify each answer.
 
-\lt{D \sbs \br, f : D \lra \br, and c \mem D\pr (i.e. c is an accumulation point)}
+\balist
+\item \limt{x}{c} f(x) \eql L iff \fa \ep \gr 0, \exs a \dta \gr 0 st \av{f(x) \ms L} \ls \ep whenever x \mem D and \av{x \ms c} \ls \dta
+	
+	\textbf{False. Can't figure out why exactly, but I know there's a case where x \eql c (and thus, 0 \ls \dta) that makes it not true.}
+\item \limt{x}{c} f(x) \eql L iff for every deleted neighborhood U of c, there exists a neighborhood V of L st f(U \inn D) \sbs V
 
-We say that L \mem \br is a \textbf{limit} of f at c if, \fa \ep \gr 0, \exs $\delta(\epsilon)$ \gr 0 st when x \mem D and 0 \ls \av{x - c} \ls $\delta$, then
-\eqn{|f(x) - L| < \epsilon}
+	\textbf{True, by Theorem 5.1.2 (since it's iff).}
 
-(i.e. the limit as x goes to c of f(x) \eql L)
-
-\eqn{x \pm c}
-\eqn{-\delta < x - c < \delta}
-\eqn{c - \delta < x < c + \delta}
-
-Recall the definition of a limit:
-
-\eqn{f(x) = \limt{h}{0} \frac{f(x + h) - f(x)}{h}}
-
-where x is fixed.
-}
-\ssc{Theorem 5.1.2}{
-\lt{f : D \lra \br, c \mem D\pr}
-
-Then:
-
-The limit x \lra c of f(x) \eql L exists iff for each neighborhood V of L, \exs a deleted neighborhood U of c st 
-
-f(U $\cap$ D) \sbs V.
-
-\bgpf
-\lra 
-
-Suppose lim x \lra c of f(x) \eql L.
-
-Then,
-
-for each neighborhood V of L (i.e. for each \ep \gr 0, V \eql N(L, \ep)), \exs a deleted neighborhood U of c 
-
-(i.e. \exs $\delta(\epsilon)$ \gr 0 st N*(c, $\delta$) \eql U)
-
-st f(U $\cap$ D) \sbs V
-
-\lla 
-
-The converse is similar.
-
-Remember: definitions are iff
-
-\epf
-}
-
-\ssc{Example 5.1.3}{
-\lt{k \mem \br}
-
-Define f : \br \lra \br by f(x) \eql k, \fa x \mem \br
-
-Let c \mem \br
-
-Show that \limt{x}{c} f(x) \eql k
-
-\textbf{Solution:} 
-
-For each \ep \gr 0,
-
-\eqn{|f(x) - k| = |k - k| = 0 < \epsilon}
-whenever 0 \ls \av{x - c} \ls \ep
-}
-\ssc{Example 5.1.4}{
-Confirm that \limt{x}{c} f(x) \eql c for the function f(x) \eql x, where c \mem \br and f : \br \lra \br
-
-\textbf{Solution:}
-
-For each \ep \gr 0,
-\eqn{|f(x) - c| = |x - c| < \epsilon}
-whenever 0 \ls \av{x - c} \ls $\delta$ \eql \ep
-}
-
-\ssc{Theorem 5.1.8}{
-
-\lt{f : D \lra \br, c \mem D\pr}
-
-Then,
-
-\limt{x}{c} f(x) \eql L iff for \textbf{every} sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c,
-
-it follows that the sequence \bk{f(\uw{s}{n})} converges to L.
-
-(i.e. the values of \uw{s}{n} eventually get within a $\delta$ neighborhood of c)
-
-\bgpf
-\lra
-
-\as{\limt{x}{c} f(x) \eql L}
-
-\lt{\bk{\uw{s}{n}} be a sequence in D st \uw{s}{n} $\neq$ c \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c}
-
-\wts{\lmti{n} f(\uw{s}{n}) \eql L}
-
-Now, \fa \ep \gr 0, \exs $\delta(\epsilon)$ \gr 0 st
-\step{|f(x) - L| < \epsilon}{1}
-whenever 0 \ls \av{x \ms c} \ls $\delta$ \textbf{and x \mem D} (we need this part so that \av{f(x) \ms L} makes sense).
-
-I'd like to know that \av{f(\uw{s}{n}) \ms L} gets close to 0, so:
-
-Since \lmti{n} \uw{s}{n} \eql c, \exs N \mem \bn st
-
-\step{0 < |s_n - c| < \delta}{2}
-for n \gre N
-
-From \bpth{1} and \bpth{2},
-
-\eqn{|f(s_n) - L| < \epsilon}
-for n \gre N
-
-(if we think of f(\uw{s}{n}) as our \uw{t}{n}, where \uw{t}{n} \lra L as n \lra \infy)
-
-By definition,
-
-\lmti{n} f(\uw{s}{n}) \eql L
-
-\newpage
-
-\lla
-
-Conversely, using the contrapositive,
-
-\as{\limt{x}{c} f(x) does not exist.}
-
-\sidenote{
-Negating that:
-
-\exs L \mem \br st
-
-\limt{x}{c} f(x) \eql L
-
-\fa \ep \gr 0, \exs $\delta$ \gr 0 st
-
-\fa x st 0 \ls \av{x \ms c} \ls $\delta$,
-
-\av{f(x) \ms L} \ls \ep
-}
-
-Thus,
-
-for each L \mem \br, \exs \uw{\ep}{0} \gr 0 st
-
-\fa $\delta$ \gr 0, \exs x st 0 \ls \av{x \ms c} \ls $\delta$ st
-\eqn{|f(x) - L| \gre \epsilon_0}
-
-\sidenote{
-First we proved p \rar q.
-
-Now we're going to prove q \rar p by proving:
-
-not p \rar not q
-}
-
-\wts{\exs a sequence \bk{\uw{s}{n}} in D st \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c}
-
-but, \bk{f(\uw{s}{n})} to fail to converge to L.
-
-\lt{$\delta_n$ \eql \frc{1}{n}}
-
-Now, for each n \mem \bn, \exs \uw{s}{n} \mem D st
-\step{0 < |s_n - c| < \frac{1}{n} \textrm{ and } |f(s_n) - L| \gre \epsilon_0}{3}
-
-Notice that \uw{s}{n} $\neq$ c, \fa n \mem \bn and \lmti{n} \uw{s}{n} \eql c.
-
-\sidenote{
-Is \lmti{n} f(\uw{s}{n}) \eql L?
-
-For \ep \eql \frc{\uw{\ep}{0}}{2} \gr 0,
-
-\exs N \mem \bn st
-
-\eqn{|f(s_n) - L| < \frac{\epsilon_0}{2}}
-for n \gre N
-
-So, no. \lmti{n} f(\uw{s}{n}) $\neq$ L
-}
-
-From \bpth{3}, \lmti{n} f(\uw{s}{n}) $\neq$ L
-
-\
-
-(page 166, Theorem 4.1.8 says 
-
-\av{\uw{s}{n} \ms s} \lse k\av{\uw{a}{n}} for n \gre N
-
-and
-
-if \lmti{n} \uw{a}{n} \eql 0, then \lmti{n} \uw{s}{n} \eql s)
-
-
-\epf
+\item \limt{x}{c} f(x) \eql L iff for every sequence \bk{\uw{s}{n}} in D that converges to c with \uw{s}{n} $\neq$ c \fa n, the sequence \bk{f(\uw{s}{n})} converges to L.
+	
+	
+\item If f does not have a limit at c, then \exs a sequence \bk{\uw{s}{n}} in D with each \uw{s}{n} $\neq$ c st \bk{\uw{s}{n}} converges to c, but \bk{f(\uw{s}{n})} is divergent.
+\elist
 
 }
 
+\bsc{Exercise 2}{
+\lt{f : D \lra \br and c \mem D\pr}
+
+Mark each statement True or False. Justify each answer.
+
+\balist
+\item For any polynomial P and any c \mem \br, \limt{x}{c} P(x) \eql P(c)
+\item For any polynomials P and Q, and any c \mem \br,
+	\eqn{\limt{x}{c} \frac{P(x)}{Q(x)} = \frac{P(c)}{Q(c)}}
+\item In evaluating \limt{x}{a-} f(x) we only consider points that are greater than a.
+\item If f is defined in a deleted neighborhood of c, then \limt{x}{c} f(x) \eql L iff \limt{x}{c+} f(x) \eql \limt{x}{c-} f(x) \eql L
+\elist
+
 }
+
+\bsc{Exercise 3(a)(c)(e)(g)}{
+
+Determine the following limits:
+
+\balist
+\item \limt{x}{1} \frc{3x^2 + 5}{x^3 + 1}
+\item \limt{x}{1} \frc{\sqrt{x} - 1}{x - 1}
+\item \limt{x}{0} \frc{x^2 + 5x}{x^2 - 2}
+\item \limt{x}{0-} \frc{4x}{\av{x}}
+\elist
+}
+
+\bsc{Exercise 7(c)}{
+
+Find the following limit and prove your answer.
+
+\limt{x}{c} $\sqrt{x}$, where c \gre 0
+}
+
+\bsc{Exercise 13}{
+
+Let f, g, and h be functions from D into \br, and let c \mem D\pr
+
+\as{f(x) \lse g(x) \lse h(x) \fa x \mem D with x $\neq$ c}
+\as{\limt{x}{c} f(x) \eql \limt{x}{c} h(x) \eql L}
+
+Prove that \limt{x}{c} g(x) \eql L
+
+}
+
+\bsc{Exercise 16}{
+
+\lt{f : D \lra \br and c \mem D\pr}
+
+\as{\limt{x}{c} f(x) \gr 0}
+
+Prove that \exs a deleted neighborhood U of c st f(x) \gr 0 \fa x \mem (U \inn D)
+
+}
+
+\bsc{Exercise 18}{
+
+\lt{f : D \lra \br and c \mem D\pr}
+
+\as{f has a limit at c}
+Prove that f is bounded on a neighborhood of c. That is, prove that \exs a neighborhood U of c and a real number M st \av{f(x)} \lse M \fa x \mem (U \inn D)
+
+}
+
+\bsc{Exercise 19}{
+
+\as{f : \br \lra \br is a function st f(x \ps y) \eql f(x) \ps f(y) \fa x, y \mem \br}
+
+Prove that f has a limit at 0 iff f has a limit at every point c \mem \br
+
+}
+
 
 \end{document}
