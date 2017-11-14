@@ -480,12 +480,62 @@ plot(exp(q2data$temp), resid(q2lm_t), main="[Transformed] Residuals vs e^(temp)"
 \simg{HW6Q2PC5}
 \simg{HW6Q2PC6}
 
-}
+\textbf{Looks like we still have non-constant variance, but the p values and R$^2$ got better after both the additional \bta and the log transformation.}
 
 }
+}
+
+\newpage
 
 \bsc{Question 3}{
 \wimg{HW6Q3}
+
+\ssc{Q3 Part (a)}{
+The five key assumptions:
+
+\balist
+\item Normality
+
+\simg{HW6Q3PAHist}
+
+\textbf{Looks somewhat normal, maybe with a long right tail.}
+
+\item Independence
+
+\simg{HW6Q3PARes}
+
+\textbf{Since there doesn't appear to be any pattern in the residuals vs fitted values, I would say the errors are independent.}
+
+\item Constant Variance
+
+\textbf{By the plot in above in (b), it looks like there aren't any particular shapes in the residuals vs fitted, so the variance looks constant to me.}
+
+\item \exv{$\epsilon$} \eql 0 - \textbf{This is assumed since that's the way we build our model (i.e. via least squares).}
+
+\item Linearity - The model actually fits (i.e. the data follows the shape of the model: R$^2$ is high)
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 5.8945 & 4.3251 & 1.36 & 0.1783 \\ 
+  x1 & -0.4779 & 0.3400 & -1.41 & 0.1653 \\ 
+  x2 & 0.1827 & 0.0172 & 10.63 & 0.0000 \\ 
+  x3 & 35.4028 & 11.0996 & 3.19 & 0.0023 \\ 
+  x4 & 5.8439 & 2.9098 & 2.01 & 0.0494 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+Multiple R-squared:  0.6914 \tab 	Adjusted R-squared:  0.6697
+
+\textbf{\uw{x}{2} (***), \uw{x}{3} (**), and \uw{x}{4} (*) are all significant, so if \uw{H}{0} is that there is no linear relationship between any of our regressors and our response variable, then we reject \uw{H}{0}.}
+
+\elist
+
+}
 }
 
 \bsc{Question 4}{

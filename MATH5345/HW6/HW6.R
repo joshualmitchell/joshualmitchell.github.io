@@ -65,6 +65,14 @@ abline(h = 0, col="red")
 ########################################################################################
 
 q3data <- read.table("HW6Q3.txt", header=T)
+q3lm <- lm(y ~ x1 + x2 + x3 + x4, data = q3data)
+
+## A
+
+hist(q3data$y)
+plot(q3lm$fitted.values, resid(q3lm), main="Residuals vs Fitted", xlab="Fitted", ylab="Residuals")
+abline(h = 0, col="red")
+summary(q3lm)
 
 ########################################################################################
 ###################### Question 4
