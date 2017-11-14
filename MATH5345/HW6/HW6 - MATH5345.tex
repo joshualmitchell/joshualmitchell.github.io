@@ -279,7 +279,7 @@
 \end{table}
 \bsc{Question 1}{
 \wimg{HW6Q1}
-\ssc{Part (a)}{
+\ssc{Q1 Part (a)}{
 
 The five key assumptions:
 
@@ -303,15 +303,185 @@ The five key assumptions:
 \textbf{It does appear that we have a "bowtie" kind of pattern, so I would assume that we don't have constant variance.}
 
 \item \exv{$\epsilon$} \eql 0 - This is assumed since that's the way we build our model (i.e. via least squares)
+
+\textbf{Since we made our model this same way, I think it's valid to say we have \exv{$\epsilon$} \eql 0.}
+
 \item Linearity - The model actually fits (i.e. the data follows the shape of the model: R$^2$ is high)
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 27.7692 & 5.3190 & 5.22 & 0.0008 \\ 
+  as.factor(x1)0 & 0.7308 & 6.5577 & 0.11 & 0.9140 \\ 
+  as.factor(x1)1 & 31.8462 & 6.7280 & 4.73 & 0.0015 \\ 
+  as.factor(x2)1 & -8.4615 & 6.2935 & -1.34 & 0.2157 \\ 
+  as.factor(x3)1 & -9.9615 & 6.2935 & -1.58 & 0.1521 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+Multiple R-squared:  0.7393, 	Adjusted R-squared:  0.609
+
+F-statistic: 5.672 on 4 and 8 DF,  p-value: 0.01828
+
+Only the intercept (***) and as.factor(x1)0 (**) are significant.
+
+\textbf{I would say the model somewhat fits - it's hard to say since we only have 13 data points. Our R$^2$ is mediocre, and we have a lot of degrees of freedom relative to our number of samples.}
+
+\textbf{Technically, if we do a hypothesis test and assume \uw{H}{0}: all \bta's are 0, then we can disprove the null hypothesis with our \bta for \uw{x}{1}'s 2nd factor (as shown in the table: as.factor(x1)1). But, everything else is insignificant. I'd say the model fits, but barely (needs changes).}
+
 \elist
 
 }
+\ssc{Q1 Part (b)}{
+
+Data:
+
+\simg{HW6Q1Data}
+
+Recall:
+
+\uw{SS}{Res} \eql \uw{SS}{PE} \ps \uw{SS}{LOF}
+
+Our test statistic is:
+\eqn{F_0 = \frac{SS_{LOF} / (m - 2)}{SS_{PE} / (n - m)} = \frac{MS_{LOF}}{MS_{PE}}}
+
+If \uw{F}{0} \gr \uw{F}{m \ms 2, n \ms m}, conclude that the regression function is not linear.
+
+From R:
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+as.factor(x1) & 2 & 1372.44 & 686.22 & 9.33 & 0.0081 \\ 
+  as.factor(x2) & 1 & 112.12 & 112.12 & 1.52 & 0.2520 \\ 
+  as.factor(x3) & 1 & 184.29 & 184.29 & 2.51 & 0.1521 \\ 
+  Residuals & 8 & 588.46 & 73.56 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+Since we have 5 levels of (\uw{x}{1} \eql 0, \uw{x}{2} \eql 0, \uw{x}{3} \eql 0),
+\eqn{m = 5}
+\eqn{(29 + 28.5 + 30 + 27 + 28) / 5 = 28.5 = \bar y_i}
+\eqn{(29 - 28.5)^2 + (28.5 - 28.5)^2 + (30 - 28.5)^2 + (27 - 28.5)^2 + (28 - 28.5)^2 \eql 5 = SS_{PE}}
+\eqn{588.46 = 5 + SS_{LOF} \lra SS_{LOF} = 583.46}
+\eqn{F_0 = \frac{583.46 / (5 - 2)}{5 / (13 - 5)} = \frac{194.486666667}{0.625} = 311.178666667}
+
+Test:
+
+\eqn{311.178666667 > \uw{F}{m \ms 2, n \ms m} = F_{3, 8} = 2.92380 \textrm{ (even at \afa \eql 0.10 it still fails)}}
+
+\textbf{So we conclude that the regression function is not linear.}
 
 }
 
+}
+
+\newpage
+
 \bsc{Question 2}{
 \wimg{HW6Q2}
+\ssc{Q2 Part (a)}{
+\simg{HW6Q2ScPlt}
+
+\textbf{Yes, it seems likely that a straight line model will be adequate.}
+}
+\ssc{Q2 Part (b)}{
+
+\begin{verbatim}
+q2lm <- lm(q2data$visc ~ q2data$temp)
+summary(q2lm)
+plot(q2lm$fitted.values, resid(q2lm))
+abline(h = 0, col="red")
+\end{verbatim}
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 1.2815 & 0.0469 & 27.34 & 0.0000 \\ 
+  q2data\$temp & -0.0088 & 0.0007 & -12.02 & 0.0000 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+Residual standard error: 0.04743 on 6 degrees of freedom
+
+Multiple R-squared:  0.9602 \tab Adjusted R-squared:  0.9535
+
+\simg{HW6Q2PBPlt}
+
+\textbf{It looks like all 5 of our assumptions hold except for non constant variance for our error term (due to the quadratic pattern).}
+}
+
+\newpage
+
+\ssc{Q2 Part (c)}{
+
+\begin{verbatim}
+q2lm <- lm(q2data$visc ~ q2data$temp + exp(q2data$temp))
+summary(q2lm)
+plot(q2lm$fitted.values, resid(q2lm))
+plot(q2data$temp, resid(q2lm))
+plot(exp(q2data$temp), resid(q2lm))
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 1.3195 & 0.0424 & 31.11 & 0.0000 \\ 
+  q2data\$temp & -0.0096 & 0.0007 & -13.27 & 0.0000 \\ 
+  exp(q2data\$temp) & 0.0000 & 0.0000 & 2.03 & 0.0986 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\simg{HW6Q2PC1}
+\simg{HW6Q2PC2}
+\simg{HW6Q2PC3}
+
+\textbf{Post-Transformation:}
+
+\begin{verbatim}
+q2lm_t <- lm(log(q2data$visc) ~ q2data$temp + exp(q2data$temp))
+summary(q2lm_t)
+plot(q2lm_t$fitted.values, resid(q2lm_t), main="[Transformed] Residuals vs Fitted", xlab="Fitted", ylab="Residuals")
+plot(q2data$temp, resid(q2lm_t), main="[Transformed] Residuals vs Temp", xlab="Temp", ylab="Residuals")
+plot(exp(q2data$temp), resid(q2lm_t), main="[Transformed] Residuals vs e^(temp)", xlab="e^(temp)", ylab="Residuals")
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 0.4036 & 0.0192 & 20.99 & 0.0000 \\ 
+  q2data\$temp & -0.0121 & 0.0003 & -37.02 & 0.0000 \\ 
+  exp(q2data\$temp) & 0.0000 & 0.0000 & 3.23 & 0.0232 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\simg{HW6Q2PC4}
+\simg{HW6Q2PC5}
+\simg{HW6Q2PC6}
+
+}
+
 }
 
 \bsc{Question 3}{
