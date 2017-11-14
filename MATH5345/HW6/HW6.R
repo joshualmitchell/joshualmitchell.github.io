@@ -78,10 +78,52 @@ summary(q3lm)
 ###################### Question 4
 ########################################################################################
 
+## A
 q4data <- read.table("HW6Q4.txt", header=T)
+q4data
+q4lm <- lm(y ~ x, data=q4data)
+plot(q4data$x, q4data$y)
+abline(q4lm, col="red") # regression line (y~x) 
+summary(q4lm)
+
+## B
+
+plot(q4data$y, q4lm$fitted.values)
+hist(q4data$y)
+
+## C
+
+plot(q4lm$fitted.values, resid(q4lm))
+abline(h = 0, col="red")
+
+## D
+
+q4lm_t <- lm(y ~ x + I(x^2), data=q4data)
+summary(q4lm_t)
+
+## E
+
+# y vs x^2 (scatterplot)
+plot((q4data$x)^2, q4data$y)
+# Predicted vs Observed (scatterplot)
+plot(q4data$y, q4lm_t$fitted.values)
+# Residuals vs Predicted
+plot(q4lm_t$fitted.values, resid(q4lm_t))
+abline(h = 0, col="red")
 
 ########################################################################################
 ###################### Question 5
 ########################################################################################
 
+## A
+
 q5data <- read.table("HW6Q5.txt", header=T)
+q5lm <- lm(y ~ x1 + as.factor(x11), data=q5data)
+summary(q5lm)
+
+## B
+
+q5lm_B <- lm(y ~ x1 + as.factor(x11) + (x1 * as.factor(x11)), data=q5data)
+summary(q5lm_B)
+
+plot()

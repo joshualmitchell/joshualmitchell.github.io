@@ -340,7 +340,28 @@ Only the intercept (***) and as.factor(x1)0 (**) are significant.
 
 Data:
 
-\simg{HW6Q1Data}
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+  \hline
+ & x1 & x2 & x3 & y & level \\ 
+  \hline
+1 &  -1 &  -1 &  -1 & 17.00 & 1 \\ 
+  2 &  -1 &  -1 &  -1 & 44.00 & 1 \\ 
+  3 &  -1 &   1 &  -1 & 19.00 & 2 \\ 
+  4 &   1 &   1 &  -1 & 46.00 & 3 \\ 
+  5 &  -1 &  -1 &   1 & 7.00 & 4 \\ 
+  6 &   1 &  -1 &   1 & 55.00 & 5 \\ 
+  7 &  -1 &   1 &   1 & 15.00 & 6 \\ 
+  8 &   1 &   1 &   1 & 41.00 & 7 \\ 
+  9 &   0 &   0 &   0 & 29.00 & 8 \\ 
+  10 &   0 &   0 &   0 & 28.50 & 8 \\ 
+  11 &   0 &   0 &   0 & 30.00 & 8 \\ 
+  12 &   0 &   0 &   0 & 27.00 & 8 \\ 
+  13 &   0 &   0 &   0 & 28.00 & 8 \\ 
+   \hline
+\end{tabular}
+\end{table}
 
 Recall:
 
@@ -367,12 +388,14 @@ as.factor(x1) & 2 & 1372.44 & 686.22 & 9.33 & 0.0081 \\
 \end{tabular}
 \end{table}
 
-Since we have 5 levels of (\uw{x}{1} \eql 0, \uw{x}{2} \eql 0, \uw{x}{3} \eql 0),
-\eqn{m = 5}
-\eqn{(29 + 28.5 + 30 + 27 + 28) / 5 = 28.5 = \bar y_i}
-\eqn{(29 - 28.5)^2 + (28.5 - 28.5)^2 + (30 - 28.5)^2 + (27 - 28.5)^2 + (28 - 28.5)^2 \eql 5 = SS_{PE}}
+Since we have 8 levels of (\uw{x}{1}, \uw{x}{2}, \uw{x}{3}),
+\eqn{m = 8}
+\eqn{(29 + 28.5 + 30 + 27 + 28) / 5 = 28.5 = ??}
+\eqn{(17 + 44) / 2 = 30.5 = ??}
+\eqn{(29 - 28.5)^2 + (28.5 - 28.5)^2 + (30 - 28.5)^2 + (27 - 28.5)^2 + (28 - 28.5)^2 \eql 5 = ?? (SS_{PE}?)}
+\eqn{(17 - 30.5)^2 + (44 - 30.5)^2 = 364.5 = ??}
 \eqn{588.46 = 5 + SS_{LOF} \lra SS_{LOF} = 583.46}
-\eqn{F_0 = \frac{583.46 / (5 - 2)}{5 / (13 - 5)} = \frac{194.486666667}{0.625} = 311.178666667}
+\eqn{F_0 = \frac{583.46 / (8 - 2)}{5 / (13 - 8)} = \frac{194.486666667}{0.625} = 311.178666667}
 
 Test:
 
@@ -491,28 +514,9 @@ plot(exp(q2data$temp), resid(q2lm_t), main="[Transformed] Residuals vs e^(temp)"
 \wimg{HW6Q3}
 
 \ssc{Q3 Part (a)}{
-The five key assumptions:
-
-\balist
-\item Normality
 
 \simg{HW6Q3PAHist}
-
-\textbf{Looks somewhat normal, maybe with a long right tail.}
-
-\item Independence
-
 \simg{HW6Q3PARes}
-
-\textbf{Since there doesn't appear to be any pattern in the residuals vs fitted values, I would say the errors are independent.}
-
-\item Constant Variance
-
-\textbf{By the plot in above in (b), it looks like there aren't any particular shapes in the residuals vs fitted, so the variance looks constant to me.}
-
-\item \exv{$\epsilon$} \eql 0 - \textbf{This is assumed since that's the way we build our model (i.e. via least squares).}
-
-\item Linearity - The model actually fits (i.e. the data follows the shape of the model: R$^2$ is high)
 
 \begin{table}[ht]
 \centering
@@ -528,8 +532,18 @@ The five key assumptions:
    \hline
 \end{tabular}
 \end{table}
+The five key assumptions:
 
-Multiple R-squared:  0.6914 \tab 	Adjusted R-squared:  0.6697
+\balist
+\item Normality - \textbf{Looks somewhat normal, maybe with a long right tail.}
+
+\item Independence - \textbf{Since there doesn't appear to be any pattern in the residuals vs fitted values, I would say the errors are independent.}
+
+\item Constant Variance - \textbf{By the plot in above in (b), it looks like there aren't any particular shapes in the residuals vs fitted, so the variance looks constant to me.}
+
+\item \exv{$\epsilon$} \eql 0 - \textbf{This is assumed since that's the way we build our model (i.e. via least squares).}
+
+\item Linearity - Multiple R-squared:  0.6914 \tab 	Adjusted R-squared:  0.6697
 
 \textbf{\uw{x}{2} (***), \uw{x}{3} (**), and \uw{x}{4} (*) are all significant, so if \uw{H}{0} is that there is no linear relationship between any of our regressors and our response variable, then we reject \uw{H}{0}.}
 
@@ -538,10 +552,100 @@ Multiple R-squared:  0.6914 \tab 	Adjusted R-squared:  0.6697
 }
 }
 
+\newpage
+
 \bsc{Question 4}{
 \wimg{HW6Q4}
+
+\ssc{Q4 Part (a)}{
+
+\simg{HW6Q4LM}
+
+\textbf{It fits okay. Could be better. R$^2$ \eql 0.9038}
+
 }
+\ssc{Q4 Part (b)}{
+
+\simg{HW6Q4PB}
+
+\textbf{It suggests that, since there's a slight curve, perhaps y isn't linear.}
+
+}
+\ssc{Q4 Part (c)}{
+
+\simg{HW6Q4PC}
+
+\textbf{It looks like we have non constant variance (due to the quadratic shape).}
+}
+\ssc{Q4 Part (d)}{
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 20.1000 & 6.3360 & 3.17 & 0.0504 \\ 
+  x & -1.4696 & 0.4145 & -3.55 & 0.0382 \\ 
+  I(x\verb|^|2) & 0.0598 & 0.0058 & 10.31 & 0.0019 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\textbf{Yes, the x$^2$ term is statistically significant (**).}
+
+}
+\ssc{Q4 Part (e)}{
+
+\simg{HW6Q4PE1}
+\simg{HW6Q4PE2}
+\simg{HW6Q4PE3}
+
+\textbf{Yes, there is evidence it is a better fit. The non-constant variance problem seems to be reduced (although you could argue that there is still a slight quadratic shape, but there's not enough data to really say either way). The R$^2$ is also a lot better: 0.9974} 
+
+}
+}
+
+\newpage
+
 \bsc{Question 5}{
 \wimg{HW6Q5}
+\ssc{Q5 Part (a)}{
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 33.6184 & 1.5395 & 21.84 & 0.0000 \\ 
+  x1 & -0.0457 & 0.0087 & -5.27 & 0.0000 \\ 
+  as.factor(x11)1 & -0.4987 & 2.2282 & -0.22 & 0.8245 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\textbf{The p value of x11 in the model is 0.8245, so there isn't significant evidence to conclude that there is a linear relationship between y and x11.}
+
+}
+\ssc{Q5 Part (b)}{
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 42.9196 & 2.7349 & 15.69 & 0.0000 \\ 
+  x1 & -0.1168 & 0.0198 & -5.89 & 0.0000 \\ 
+  as.factor(x11)1 & -13.4637 & 3.8441 & -3.50 & 0.0016 \\ 
+  x1:as.factor(x11)1 & 0.0816 & 0.0213 & 3.84 & 0.0006 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\textbf{x1 (***), x11 (**), and x1:x11(***) are significant. It looks like the type of transmission (x11) has a significant effect on the gasoline mileage (y) when you account for the interaction between the engine displacement (x1) and type of transmission (x11).}
+
+}
 }
 \end{document}
