@@ -280,6 +280,8 @@ Mark each statement True or False. Justify each answer.
 
 }
 
+\newpage
+
 \bsc{Exercise 3(a)(c)(e)(g)}{
 
 Determine the following limits:
@@ -313,7 +315,20 @@ I think the limit is just $\sqrt{c}$.
 \fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \dta \rar \av{$\sqrt{x}$ \ms $\sqrt{c}$} \ls \ep
 
 We know that since the domain for $\sqrt{x}$ is x \gre 0, D is \bk{x : x \gre 0}
+
+\lt{\dta \eql $\epsilon^2$}
+
+Then,
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \av{$\sqrt{x}$ \ms $\sqrt{c}$}\av{$\sqrt{x}$ \ms $\sqrt{c}$} \rar \av{$\sqrt{x}$ \ms $\sqrt{c}$} \ls \ep
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \av{$x^2 - 2\sqrt{x}\sqrt{c} + c^2$} \rar \av{$\sqrt{x}$ \ms $\sqrt{c}$} \ls \ep
+
+Hence, result.*
+
 }
+
+\newpage
 
 \bsc{Exercise 13}{
 
@@ -381,6 +396,8 @@ Hence, result.
 
 }
 
+\newpage
+
 \bsc{Exercise 18}{
 
 \lt{f : D \lra \br and c \mem D\pr}
@@ -391,6 +408,8 @@ Prove that f is bounded on a neighborhood of c.
 
 That is, prove that \exs a neighborhood U of c and a real number M st \av{f(x)} \lse M \fa x \mem (U \inn D)
 
+\
+
 Since \limt{x}{c} f(x) \eql L,
 
 \fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \dta \rar \av{f(x) \ms L} \ls \ep
@@ -399,9 +418,17 @@ and,
 
 for each neighborhood V of L, \exs a deleted neighborhood U of c st f(U $\cap$ D) \sbs V.
 
+\lt{V be a neighborhood of L, and U be the deleted neighborhood U of c st f(U \inn D) \sbs V}
 
+Pick x \mem U \inn D
 
+(Can we assume that V is a neighborhood with a finite boundary here since the definition of a neighborhood is with some real number \ep \gr 0?)
 
+If we let LB \eql min V, and UB \eql max V, then we see that V is bounded.
+
+We also know that since f(x) \mem V \fa x \mem U \inn D, that means f(x) is bounded.
+
+We see that \exs M \mem \br st \av{f(x)} \lse M, and that completes our proof.
 
 }
 
@@ -411,19 +438,41 @@ for each neighborhood V of L, \exs a deleted neighborhood U of c st f(U $\cap$ D
 
 Prove that f has a limit at 0 iff f has a limit at every point c \mem \br
 
+\
+
 \lra
 
 f has a limit at 0, so,
 
-\fa \ep \gr 0, \exs \dta \gr 0 st m \mem D and 0 \ls \av{m} \ls \dta \rar \av{f(m) \ms L} \ls \ep
-
-\lt{m \eql x \ps y where x, y \mem \br}
-
-Then:
-
 \fa \ep \gr 0, \exs \dta \gr 0 st (x \ps y) \mem D and 0 \ls \av{x \ps y} \ls \dta \rar \av{f(x \ps y) \ms L} \ls \ep
 
-\av{f(x) \ps f(y) \ms L} \ls \ep
+Notice:
+
+D \eql \br and f(x \ps y) \ms f(y) \eql f(x)
+
+So,
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x} \ls \dta \rar \av{f(x) \ms L} \ls \ep
+
+By the definition of f, and since x \ps c \mem D,
+
+0 \ls \av{x \ms c} \ls \dta \rar \av{f(x) \ps f($-$c) \ms L} \ls \ep
+
+If we let L(c) \eql L \ms f($-$c), then:
+
+0 \ls \av{x \ms c} \ls \dta \rar \av{f(x) \ms L(c)} \ls \ep
+
+\
+
+\lla
+
+f has a limit at every point c \mem \br
+
+0 \mem \br
+
+Hence,
+
+f has a limit at 0
 
 }
 
