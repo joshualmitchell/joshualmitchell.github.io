@@ -146,3 +146,6 @@ final_lm_vif
 final_lm_2_vif <- vif(final_lm_2)
 final_lm_2_vif <- as.data.frame(final_lm_2_vif)
 final_lm_2_vif
+
+# 
+# 

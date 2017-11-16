@@ -1,10 +1,14 @@
 install.packages("leaps")
 install.packages("car")
+install.packages("alr3")
 library(leaps)
 library(car)
 library(xtable)
 # ?regsubsets. # No documentation for ‘regsubsets.’ in specified packages and libraries
 setwd("/Users/jm/joshualmitchell.github.io/MATH5345/HW6/")
+
+library(alr3)
+pureErrorAnova(model)
 
 ########################################################################################
 ###################### Question 1
@@ -73,6 +77,10 @@ hist(q3data$y)
 plot(q3lm$fitted.values, resid(q3lm), main="Residuals vs Fitted", xlab="Fitted", ylab="Residuals")
 abline(h = 0, col="red")
 summary(q3lm)
+
+## B
+
+q3lm_fact <- lm(y ~ as.factor(x1) + as.factor(x2) + as.factor(x3) + x4, data = q3data)
 
 ########################################################################################
 ###################### Question 4

@@ -224,7 +224,6 @@
 
 \begin{document}
 HW 9: page 203 - 205, \#1, 2, 3(a)(c)(e)(g), 7(c), 13, 16, 18, 19
-
 \bsc{Exercise 1}{
 
 \lt{f : D \lra \br and c \mem D\pr}
@@ -234,30 +233,49 @@ Mark each statement True or False. Justify each answer.
 \balist
 \item \limt{x}{c} f(x) \eql L iff \fa \ep \gr 0, \exs a \dta \gr 0 st \av{f(x) \ms L} \ls \ep whenever x \mem D and \av{x \ms c} \ls \dta
 	
-	\textbf{False. Can't figure out why exactly, but I know there's a case where x \eql c (and thus, 0 \ls \dta) that makes it not true.}
+	\textbf{False. Let f(c) $\neq$ L as a counter example.}
 \item \limt{x}{c} f(x) \eql L iff for every deleted neighborhood U of c, there exists a neighborhood V of L st f(U \inn D) \sbs V
 
 	\textbf{True, by Theorem 5.1.2 (since it's iff).}
 
 \item \limt{x}{c} f(x) \eql L iff for every sequence \bk{\uw{s}{n}} in D that converges to c with \uw{s}{n} $\neq$ c \fa n, the sequence \bk{f(\uw{s}{n})} converges to L.
 	
-	
+	\textbf{True, by Theorem 5.1.8.}
 \item If f does not have a limit at c, then \exs a sequence \bk{\uw{s}{n}} in D with each \uw{s}{n} $\neq$ c st \bk{\uw{s}{n}} converges to c, but \bk{f(\uw{s}{n})} is divergent.
+	
+	\textbf{True by Theorem 5.1.10(b).}
 \elist
 
 }
 
 \bsc{Exercise 2}{
+
 \lt{f : D \lra \br and c \mem D\pr}
 
 Mark each statement True or False. Justify each answer.
 
 \balist
 \item For any polynomial P and any c \mem \br, \limt{x}{c} P(x) \eql P(c)
+
+	\textbf{True.}
+	
+	\limt{x}{c} P(x) \eql P(c) iff \fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \dta \rar \av{P(x) \ms P(c)} \ls \ep
+	
+	From lecture: \limt{x}{c} P(x) \eql P(c) where P is a polynomial.
+
 \item For any polynomials P and Q, and any c \mem \br,
 	\eqn{\limt{x}{c} \frac{P(x)}{Q(x)} = \frac{P(c)}{Q(c)}}
+	\textbf{False.} This is not the case if Q(c) is 0.
+	
 \item In evaluating \limt{x}{a-} f(x) we only consider points that are greater than a.
+	
+	\textbf{False, by the definition of One Sided Limits.}
 \item If f is defined in a deleted neighborhood of c, then \limt{x}{c} f(x) \eql L iff \limt{x}{c+} f(x) \eql \limt{x}{c-} f(x) \eql L
+	
+	\textbf{True.} If f is defined in a deleted neighborhood of c, then by Theorem 5.1.2,
+	
+	\limt{x}{c} f(x) \eql L iff \limt{x}{c+} f(x) \eql \limt{x}{c-} f(x) \eql L
+	
 \elist
 
 }
@@ -268,9 +286,15 @@ Determine the following limits:
 
 \balist
 \item \limt{x}{1} \frc{3x^2 + 5}{x^3 + 1}
+	\eqn{\limt{x}{1} \frc{3x^2 + 5}{x^3 + 1} = \frac{3(1)^2 + 5}{1^3 + 1} = \frac{8}{2} = 4}
 \item \limt{x}{1} \frc{\sqrt{x} - 1}{x - 1}
+	\eqn{\limt{x}{1} \frc{\sqrt{x} - 1}{x - 1} = \limt{x}{1} \frc{\sqrt{x} - 1}{(\sqrt{x} - 1)(\sqrt{x} + 1)} = \limt{x}{1} \frac{1}{\sqrt{x} + 1} = \frac{1}{1 + 1} = \frac{1}{2}}
 \item \limt{x}{0} \frc{x^2 + 5x}{x^2 - 2}
+	\eqn{\limt{x}{0} \frc{x^2 + 5x}{x^2 - 2} = \frc{0^2 + 5(0)}{0^2 - 2} = \frac{0}{-2} = 0}
+	
 \item \limt{x}{0-} \frc{4x}{\av{x}}
+	
+	Since we're only taking x \ls 0, \frc{4x}{|x|} will always be $-$4, so the limit from the left side is $-$4.
 \elist
 }
 
@@ -279,6 +303,16 @@ Determine the following limits:
 Find the following limit and prove your answer.
 
 \limt{x}{c} $\sqrt{x}$, where c \gre 0
+
+\lt{f(x) \eql $\sqrt{x}$}
+
+I think the limit is just $\sqrt{c}$.
+
+\limt{x}{c} $\sqrt{x}$ \eql $\sqrt{c}$ iff
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \dta \rar \av{$\sqrt{x}$ \ms $\sqrt{c}$} \ls \ep
+
+We know that since the domain for $\sqrt{x}$ is x \gre 0, D is \bk{x : x \gre 0}
 }
 
 \bsc{Exercise 13}{
@@ -286,9 +320,40 @@ Find the following limit and prove your answer.
 Let f, g, and h be functions from D into \br, and let c \mem D\pr
 
 \as{f(x) \lse g(x) \lse h(x) \fa x \mem D with x $\neq$ c}
+
 \as{\limt{x}{c} f(x) \eql \limt{x}{c} h(x) \eql L}
 
 Prove that \limt{x}{c} g(x) \eql L
+
+We know that \limt{x}{c} f(x) \eql L and \limt{x}{c} h(x) \eql L, so:
+
+\fa \ep \gr 0, \exs $\delta_f$ \gr 0 st x \mem D and 0 \ls \av{x - c} \ls $\delta_f$ \rar \av{f(x) \ms L} \ls \ep
+
+\fa \ep \gr 0, \exs $\delta_h$  \gr 0 st x \mem D and 0 \ls \av{x - c} \ls $\delta_h$ \rar \av{h(x) \ms L} \ls \ep
+
+\lt{\dta \eql min \bk{$\delta_h$, $\delta_f$}}
+
+Now:
+
+\fa \ep \gr 0, \exs $\delta$  \gr 0 st x \mem D and 0 \ls \av{x - c} \ls $\delta$ \rar \av{f(x) \ms L} \ls \ep and \av{h(x) \ms L} \ls \ep
+
+\av{f(x) \ms L} \ls \ep and \av{h(x) \ms L} \ls \ep
+
+$-\epsilon$ \ls f(x) \ms L \ls $\epsilon$ and $-\epsilon$ \ls h(x) \ms L \ls $\epsilon$
+
+$-\epsilon$ \ls f(x) \ms L \lse g(x) \ms L \lse h(x) \ms L \ls $\epsilon$
+
+$-\epsilon$ \ls g(x) \ms L \ls $\epsilon$
+
+\av{g(x) \ms L} \ls \ep
+
+Hence,
+
+\limt{x}{c} g(x) \eql L
+
+
+
+
 
 }
 
@@ -300,14 +365,43 @@ Prove that \limt{x}{c} g(x) \eql L
 
 Prove that \exs a deleted neighborhood U of c st f(x) \gr 0 \fa x \mem (U \inn D)
 
+\lt{\limt{x}{c} f(x) \eql L, where L \gr 0}
+
+So, 
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \dta \rar \av{f(x) \ms L} \ls \ep
+
+Define \ep st L \ms 2\ep \eql 0
+
+Notice that f(x) \gr 0, \fa f(x) \mem V \eql N(L, $\epsilon$).
+
+By Theorem 5.1.2, \exs \dta \gr 0 st U \eql N*(c, $\delta$) and f(U \inn D) \sbs V
+
+Hence, result.
+
 }
 
 \bsc{Exercise 18}{
 
 \lt{f : D \lra \br and c \mem D\pr}
 
-\as{f has a limit at c}
-Prove that f is bounded on a neighborhood of c. That is, prove that \exs a neighborhood U of c and a real number M st \av{f(x)} \lse M \fa x \mem (U \inn D)
+\as{f has a limit at c (i.e. \limt{x}{c} f(x) \eql L)}
+
+Prove that f is bounded on a neighborhood of c.
+
+That is, prove that \exs a neighborhood U of c and a real number M st \av{f(x)} \lse M \fa x \mem (U \inn D)
+
+Since \limt{x}{c} f(x) \eql L,
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and 0 \ls \av{x \ms c} \ls \dta \rar \av{f(x) \ms L} \ls \ep
+
+and,
+
+for each neighborhood V of L, \exs a deleted neighborhood U of c st f(U $\cap$ D) \sbs V.
+
+
+
+
 
 }
 
@@ -317,7 +411,20 @@ Prove that f is bounded on a neighborhood of c. That is, prove that \exs a neigh
 
 Prove that f has a limit at 0 iff f has a limit at every point c \mem \br
 
-}
+\lra
 
+f has a limit at 0, so,
+
+\fa \ep \gr 0, \exs \dta \gr 0 st m \mem D and 0 \ls \av{m} \ls \dta \rar \av{f(m) \ms L} \ls \ep
+
+\lt{m \eql x \ps y where x, y \mem \br}
+
+Then:
+
+\fa \ep \gr 0, \exs \dta \gr 0 st (x \ps y) \mem D and 0 \ls \av{x \ps y} \ls \dta \rar \av{f(x \ps y) \ms L} \ls \ep
+
+\av{f(x) \ps f(y) \ms L} \ls \ep
+
+}
 
 \end{document}
