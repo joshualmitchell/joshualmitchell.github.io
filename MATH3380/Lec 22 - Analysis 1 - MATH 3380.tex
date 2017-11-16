@@ -1,0 +1,521 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#21}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+     							 
+% ----------
+
+\begin{document}
+
+HW 10: page 212 - 214, \#1, 2 (omit d), 3, 5 (prove the result), 10, 11 (just prove the "max" result), 13, 16 (First prove that for any H \sbs \br, \uf{f}{-1}(\bnt{R}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}, use this in conjunction with Theorem 5.2.14)
+
+\bsc{Lec 21 Continued}{
+
+\ssc{Theorem 5.2.2}{
+
+\lt{f : D \lra \br and c \mem D}
+
+Then the following are equivalent:
+
+\balist
+\item f is continuous at c
+\item If \bk{\uw{x}{n}} is any sequence in D st \uw{x}{n} \lra c as n \lra \infy (\uw{x}{n} can actually be c),
+	
+	then \lmti{n} f(\uw{x}{n}) \eql f(c)
+\item For every neighborhood V of f(c), \exs a neighborhood U of c st f(U \inn D) \sbs V
+	
+	Furthermore, if c \mem D\pr, then the above are all equivalent to d
+\item f has a limit at c and \limt{x}{c} f(x) \eql f(c)
+\elist
+
+\bgpf
+
+Case:
+\bilist
+\item c \mem \bnt{D}{D\pr} (i.e. c is an isolated point)
+	
+	Thus, \exs a neighborhood U \sbs \br of c st
+	\eqn{U \cap D \eql \bk{c}}
+	(i.e. U \eql (c \ms \dta, c \ps \dta) \eql \bk{c})
+	
+	\bpth{a}
+	
+	\wts{f is continuous at x \eql c}
+	
+	For \ep \gr 0, \exs \dta \gr 0 st (c \ms \dta, c \ps \dta) \sbs U.
+	
+	This follows since a neighborhood is open. Thus,
+	\eqn{|f(x) - f(c)| = 0 < \epsilon \textrm{ whenever} |x - c| < \delta \textrm{ and } x \mem D}
+	This means by definition that f(x) is continuous at x \eql c.
+	
+	\bpth{b}
+	
+	\lt{\bk{\uw{x}{n}} \sbs D st \uw{x}{n} \lra c as n \lra \infy}
+	
+	and
+	
+	For \ep \gr 0, \exs \dta \gr 0 st (c \ms \dta, c \ps \dta) \sbs U
+		
+	\wts{\lmti{n} f(\uw{x}{n}) \eql f(c).}
+	
+	Since U is open, \exs N \mem \bn st
+	\eqn{|x_n - c| < \delta \textrm{ for } n \gre N}
+	Thus, \uw{x}{n} \mem U for n \gre N
+	
+	We see that
+	\eqn{|f(x_n) - f(c)| = 0 < \epsilon \textrm{ for } n \gre N}
+	Hence,
+	\lmti{n} f(\uw{x}{n}) \eql f(c)
+	
+	\bpth{c}
+	
+	Now,
+	
+	\lt{V be a neighborhood of f(c)}
+	
+	Then, using U as defined prior to (a):
+	\eqn{f(U \cap D) \sbs V}
+	Hence, a, b, and c, are equivalent if c \mem \bnt{D}{D\pr}
+
+\item c \mem D \inn D\pr (i.e. c is an accumulation point)
+	
+	\bpth{a} is equivalent to \bpth{d} by Definition 5.2.1
+	
+	\bpth{b} is equivalent to \bpth{d} by Theorem 5.2.2
+	
+	\bpth{c} is equivalent to \bpth{d} by Theorem 5.1.8
+	
+	\textbf{N.B.}: In case \bpth{i}, we proved that a function is always continuous at an isolated point in its domain.
+	
+	Sometimes in calculus one, we tell a student that a function is continuous in the interval [A, B] if you can trace it on the chalkboard without having to take your hand off. This is a white lie.
+	
+	It turns out that as long as it's defined at all points on its domain, it's continuous (i.e. sequences are continuous).
+	
+	\textbf{N.B.}: In definition 5.2.1, we defined continuity of f at a \textbf{point} c in the domain D of f. If S \sbs D and f is continuous at each point of S, then f is continuous on S. If f is continuous at all points of D, then f is a continuous function on D.
+\elist
+
+\epf
+
+}
+
+\ssc{Example 5.2.3}{
+
+\lt{p : \br \lra \br be a polynomial}
+
+In Example 5.1.14, we saw that \limt{x}{c} p(x) \eql p(c).
+
+By \bpth{d} iff \bpth{a}, from Theorem 5.2.2, we see that p is a continuous function on \br
+}
+
+\ssc{Example 5.2.5}{
+
+Define f(x) \eql x sin(\frc{1}{x}), x $\neq$ 0, but 0 if x \eql 0
+
+Then f: \br \lra \br
+
+Prove that f is continuous at x \eql 0
+
+\
+
+We're thinking that the limit of this function at 0 is 0, so,
+
+\lt{\ep \gr 0}
+
+Now,
+\eqn{|f(x) - f(0)| = |x\sin\frac{1}{x} - 0| = |x||\sin\frac{1}{x}| \lse |x| * 1 = |x| \ls \ep}
+whenever 0 \ls \av{x} \ls \dta \eql \ep (but since we have 0 in there, it's also true whenever \av{x} \ls \dta \eql \ep) and x \mem D
+
+Hence, by Definition 5.2.1, \limt{x}{0} f(x) \eql f(0), i.e. f is continuous at x \eql 0
+
+}
+
+\ssc{Theorem 5.2.6}{
+\lt{f : D \lra \br and c \mem D}
+
+Then,
+
+f is \textbf{discontinuous} at c iff \exs a sequence \bk{\uw{x}{n}} in D st \uw{x}{n} \lra c but \lmti{n} f(\uw{x}{n}) is not f(c).
+
+\bgpf
+
+This is not \bpth{a} iff not \bpth{b} in Theorem 5.2.2
+
+\epf
+}
+
+\ssc{Example 5.2.7}{
+
+\lt{f : \br \lra \br, where f(x) \eql \frc{1}{x} if x $\neq$ 0, k if x \eql 0}
+
+Prove that f is discontinuous at x \eql 0.
+
+So,
+
+for \ep \gr 0, \exs \dta \gr 0 st
+\eqn{|f(x) - f(0)| = |\frac{1}{x} - k| < \ep}
+whenever \av{x \ms 0} \ls \dta and x \mem D
+
+\lt{\uw{x}{n} \eql \frc{1}{n} \fa n \mem \bn}
+
+Then,
+
+\lmti{n} \uw{x}{n} \eql 0 but \lmti{n} f(\uw{x}{n}) \eql \lmti{n} \frc{1}{\frc{1}{n}} \eql \lmti{n} n \eql \infy
+
+So,
+
+\lmti{n} f(x) $\neq$ f(0) \eql k \mem \br
+
+Note: If we define D = ($-\infty$, 0) \unn (0, \infy) and let f : D \lra \br be defined by f(x) \eql \frc{1}{x}, 
+
+then f is continuous on D.
+
+If c \mem D, then \limt{x}{c} f(x) \eql \frc{1}{c} \eql f(c).
+
+Since c \mem D\pr, it follows from Theorem 5.2.2 that f is continuous at c.
+
+}
+
+\ssc{5.2.8}{
+
+The Dirichlet function is f: \br \lra \br defined by:
+
+f(x) \eql 1 if x \mem \bq, 0 if x \mem \bnt{\br}{\bq}
+
+Prove that f is discontinuous everywhere.
+
+For \ep \eql \frc{1}{4}, we must find \dta \gr 0 st \av{f(x) \ms f(c)} \ls \frc{1}{4} whenever 0 \ls \av{x \ms c} \ls \dta and x \mem D
+
+\textbf{Solution:}
+
+\lt{c \mem \br}
+Case:
+\bilist
+\item c \mem \bq
+	
+	\lt{\uw{x}{n} \eql c \ps \frc{\sqrt{2}}{n}}
+	
+	Then \uw{x}{n} \mem \bnt{\br}{\bq}, \fa n \mem \bn
+	
+	and \lmti{n} \uw{x}{n} \eql c
+	
+	\lmti{n} f(\uw{x}{n}) \eql 0 $\neq$ f(c) \eql 1
+	
+	By Theorem 5.2.6, f is not continuous at x \eql c
+	
+\item c \mem \bnt{\br}{\bq}
+	
+	\lt{\uw{x}{n} \mem \bq \fa n \mem \bn st \uw{x}{n} \lra c as n \lra \infy}
+	
+	Then \lmti{n} f(\uw{x}{n}) \eql 1 $\neq$ f(c) \eql 0
+\elist
+
+}
+
+Take a look at 5.2.9, but it won't be discussed in this class.
+
+\ssc{Theorem 5.2.10}{
+
+\lt{f, g : D \lra \br and c \mem D}
+
+\as{f and g are continuous at c}
+
+\balist
+\item f \ps g and fg are continuous at c
+\item \frc{f}{g} is continuous at c provided that g(c) $\neq$ 0
+\elist
+
+\bgpf
+
+\bpth{a}: Similar to b.
+
+\bpth{b}:
+
+\lt{\bk{\uw{x}{n}} be a sequence in D st \uw{x}{n} \lra c as n \lra \infy}
+
+Then, 
+
+\eqn{\lmti{n} (\frc{f}{g})(\uw{x}{n}) = \lmti{n} \frc{f(\uw{x}{n})}{g(\uw{x}{n})} = \frac{\lmti{n} f(x_n)}{\lmti{n} g(x_n)} = \frc{f(c)}{g(c)} = (\frc{f}{g})(c)}
+
+By Theorem 5.2.2, \bpth{a} iff \bpth{b}, \frc{f}{g} is continuous at c.
+\epf
+}
+
+\ssc{Example 5.2.11}{
+See Exercise \#11, page 214
+
+Prove:
+
+(max \bk{f, g})(x) \eql max \bk{f(x), g(x)} \eql \frc{1}{2}(f(x) \ps g(x)) \ps \frc{1}{2}\av{f(x) \ms g(x)} \fa x \mem D
+
+Use 2 cases.
+}
+
+\ssc{Theorem 5.2.12}{
+
+\lt{f : D \lra \br, g : E \lra \br where f(D) \sbs E.}
+
+If f is continuous at c \mem D and g is continuous at f(c) \mem E, then the composition of f and g given by g o f is continuous at x \eql c
+
+(This is essentially saying the composition of two continuous functions is also continuous.)
+
+\bgpf
+
+\lt{W be a neighborhood of g(f(c)).}
+
+Since g is continuous at f(c), \exs a neighborhood V of f(c) st 
+g(V \inn E) \sbs W by Theorem 5.2.2. (a) iff (c) \bpth{1}
+
+Since f is continuous at c, there is a neighborhood U of c st f(U \inn D) \sbs V \bpth{2}
+
+Now, f(D) \sbs E, so f(U \inn D) \sbs E.
+
+Thus,
+
+\bpth{2} implies f(U \inn D) \sbs V \inn E
+
+So g(f((U \inn D))) \sbs W (i.e. (g o f)(U \inn D) \sbs W)
+
+By Theorem 5.2.2, g o f is continuous at x \eql c.
+
+\epf
+}
+
+\ssc{Example 5.2.13}{
+
+q(x) \eql x sin(\frc{1}{x}) is continuous at any c \mem \br st c $\neq$ 0
+
+\bgpf
+q(x) \eql [h(g o f)](x), where f(x) \eql \frc{1}{x}, \tab g(x) \eql sin x, \tab h(x) \eql x
+
+Since f, g, and h are all continuous, so is q(x).
+\epf
+}
+
+\ssc{Theorem 5.2.14 (Links Topology with Analysis)}{
+
+A function f : D \lra \br is continuous on D iff 
+
+for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D
+
+(This is a way of talking about continuity without using distance (i.e. using open sets instead))
+}
+}
+\end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 NOV 2017 09:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 NOV 2017 10:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Lec 21 - Analysis 1 - MATH 3380.tex"
-(./Lec 21 - Analysis 1 - MATH 3380.tex
+**"Lec 22 - Analysis 1 - MATH 3380.tex"
+(./Lec 22 - Analysis 1 - MATH 3380.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -398,8 +398,8 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen161
-)) (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 21 - Analysis 1 - MATH 3380.aux)
-\openout1 = `"Lec 21 - Analysis 1 - MATH 3380.aux"'.
+)) (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 22 - Analysis 1 - MATH 3380.aux)
+\openout1 = `"Lec 22 - Analysis 1 - MATH 3380.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 226.
 LaTeX Font Info:    ... okay on input line 226.
@@ -462,36 +462,56 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 232.
+LaTeX Font Info:    Try loading font information for U+msa on input line 228.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 232.
+LaTeX Font Info:    Try loading font information for U+msb on input line 228.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 246.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 240.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 246.
- [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 240.
 
-] [2] (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 21 - Analysis 1 - MATH 3380.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+ []
+
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 445--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+[4] [5] (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 22 - Analysis 1 - MATH 3380.aux) ) 
 Here is how much of TeX's memory you used:
  14550 strings out of 492995
  295711 string characters out of 6132704
- 343473 words of memory out of 5000000
+ 342473 words of memory out of 5000000
  17816 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,66p,443b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,66p,443b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 21 - Analysis 1 - MATH 3380.pdf" (2 pages, 124249 bytes).
+Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/Lec 22 - Analysis 1 - MATH 3380.pdf" (5 pages, 133927 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
