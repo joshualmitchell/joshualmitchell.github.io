@@ -284,9 +284,10 @@
 The five key assumptions:
 
 \balist
-\item Normality - Our response variable(s) (by themselves), residuals (by themselves), and residuals vs regressors, when histogrammed, look normal.
+\item Normality - Our response variable(s) (by themselves), residuals (by themselves), and residuals vs regressors, look normal.
 
 \simg{HW6Q1A1}
+\simg{HW6Q1A2}
 
 \textbf{The distribution of our response variable seems mostly normal - I don't know what to make of the gap in the middle, though.}
 
@@ -304,7 +305,7 @@ The five key assumptions:
 
 \item \exv{$\epsilon$} \eql 0 - This is assumed since that's the way we build our model (i.e. via least squares)
 
-\textbf{Since we made our model this same way, I think it's valid to say we have \exv{$\epsilon$} \eql 0.}
+\textbf{The cluster of residuals for all the residual plots seems to be centered around 0.}
 
 \item Linearity - The model actually fits (i.e. the data follows the shape of the model: R$^2$ is high)
 
@@ -347,18 +348,18 @@ Data:
  & x1 & x2 & x3 & y & level \\ 
   \hline
 1 &  -1 &  -1 &  -1 & 17.00 & 1 \\ 
-  2 &  -1 &  -1 &  -1 & 44.00 & 1 \\ 
-  3 &  -1 &   1 &  -1 & 19.00 & 2 \\ 
-  4 &   1 &   1 &  -1 & 46.00 & 3 \\ 
-  5 &  -1 &  -1 &   1 & 7.00 & 4 \\ 
-  6 &   1 &  -1 &   1 & 55.00 & 5 \\ 
-  7 &  -1 &   1 &   1 & 15.00 & 6 \\ 
-  8 &   1 &   1 &   1 & 41.00 & 7 \\ 
-  9 &   0 &   0 &   0 & 29.00 & 8 \\ 
-  10 &   0 &   0 &   0 & 28.50 & 8 \\ 
-  11 &   0 &   0 &   0 & 30.00 & 8 \\ 
-  12 &   0 &   0 &   0 & 27.00 & 8 \\ 
-  13 &   0 &   0 &   0 & 28.00 & 8 \\ 
+  2 &  1 &  -1 &  -1 & 44.00 & 2 \\ 
+  3 &  -1 &   1 &  -1 & 19.00 & 3 \\ 
+  4 &   1 &   1 &  -1 & 46.00 & 4 \\ 
+  5 &  -1 &  -1 &   1 & 7.00 & 5 \\ 
+  6 &   1 &  -1 &   1 & 55.00 & 6 \\ 
+  7 &  -1 &   1 &   1 & 15.00 & 7 \\ 
+  8 &   1 &   1 &   1 & 41.00 & 8 \\ 
+  9 &   0 &   0 &   0 & 29.00 & 9 \\ 
+  10 &   0 &   0 &   0 & 28.50 & 9 \\ 
+  11 &   0 &   0 &   0 & 30.00 & 9 \\ 
+  12 &   0 &   0 &   0 & 27.00 & 9 \\ 
+  13 &   0 &   0 &   0 & 28.00 & 9 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -380,26 +381,26 @@ From R:
   \hline
  & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
   \hline
-as.factor(x1) & 2 & 1372.44 & 686.22 & 9.33 & 0.0081 \\ 
-  as.factor(x2) & 1 & 112.12 & 112.12 & 1.52 & 0.2520 \\ 
-  as.factor(x3) & 1 & 184.29 & 184.29 & 2.51 & 0.1521 \\ 
-  Residuals & 8 & 588.46 & 73.56 &  &  \\ 
+as.factor(x1) & 2 & 2060.31 & 1030.15 & 824.12 & 0.0000 \\ 
+  as.factor(x2) & 1 & 0.50 & 0.50 & 0.40 & 0.5614 \\ 
+  as.factor(x3) & 1 & 8.00 & 8.00 & 6.40 & 0.0647 \\ 
+  Residuals & 8 & 188.50 & 23.56 &  &  \\ 
+   Lack of fit & 4 & 183.50 & 45.87 & 36.70 & 0.0021 \\ 
+   Pure Error & 4 & 5.00 & 1.25 &  &  \\ 
    \hline
 \end{tabular}
 \end{table}
 
-Since we have 8 levels of (\uw{x}{1}, \uw{x}{2}, \uw{x}{3}),
-\eqn{m = 8}
-\eqn{(29 + 28.5 + 30 + 27 + 28) / 5 = 28.5 = ??}
-\eqn{(17 + 44) / 2 = 30.5 = ??}
-\eqn{(29 - 28.5)^2 + (28.5 - 28.5)^2 + (30 - 28.5)^2 + (27 - 28.5)^2 + (28 - 28.5)^2 \eql 5 = ?? (SS_{PE}?)}
-\eqn{(17 - 30.5)^2 + (44 - 30.5)^2 = 364.5 = ??}
-\eqn{588.46 = 5 + SS_{LOF} \lra SS_{LOF} = 583.46}
-\eqn{F_0 = \frac{583.46 / (8 - 2)}{5 / (13 - 8)} = \frac{194.486666667}{0.625} = 311.178666667}
+Since we have 9 levels of (\uw{x}{1}, \uw{x}{2}, \uw{x}{3}),
+\eqn{m = 9}
+\eqn{(29 + 28.5 + 30 + 27 + 28) / 5 = 28.5}
+\eqn{(29 - 28.5)^2 + (28.5 - 28.5)^2 + (30 - 28.5)^2 + (27 - 28.5)^2 + (28 - 28.5)^2 \eql 5 (SS_{PE})}
+\eqn{188.50 = 5 + SS_{LOF} \lra SS_{LOF} = 183.50}
+\eqn{F_0 = \frac{183.50 / (9 - 2)}{5 / (13 - 9)} = \frac{26.214}{1.25} = 36.70???}
 
 Test:
 
-\eqn{311.178666667 > \uw{F}{m \ms 2, n \ms m} = F_{3, 8} = 2.92380 \textrm{ (even at \afa \eql 0.10 it still fails)}}
+\eqn{36.70 > \uw{F}{m \ms 2, n \ms m} = F_{3, 8} = 2.92380 \textrm{ (even at \afa \eql 0.10 it still fails)}}
 
 \textbf{So we conclude that the regression function is not linear.}
 
@@ -518,6 +519,9 @@ plot(exp(q2data$temp), resid(q2lm_t), main="[Transformed] Residuals vs e^(temp)"
 \simg{HW6Q3PAHist}
 \simg{HW6Q3PARes}
 
+\simg{HW6Q3PA}
+\simg{HW6Q3R4}
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -532,6 +536,13 @@ plot(exp(q2data$temp), resid(q2lm_t), main="[Transformed] Residuals vs e^(temp)"
    \hline
 \end{tabular}
 \end{table}
+
+\begin{verbatim}
+  Multiple R-squared:  0.6914,		Adjusted R-squared:  0.6697 
+\end{verbatim}
+
+\newpage
+
 The five key assumptions:
 
 \balist
@@ -539,7 +550,7 @@ The five key assumptions:
 
 \item Independence - \textbf{Since there doesn't appear to be any pattern in the residuals vs fitted values, I would say the errors are independent.}
 
-\item Constant Variance - \textbf{By the plot in above in (b), it looks like there aren't any particular shapes in the residuals vs fitted, so the variance looks constant to me.}
+\item Constant Variance - \textbf{It looks okay, but there might be a slight quadratic pattern.}
 
 \item \exv{$\epsilon$} \eql 0 - \textbf{This is assumed since that's the way we build our model (i.e. via least squares).}
 
@@ -548,6 +559,141 @@ The five key assumptions:
 \textbf{\uw{x}{2} (***), \uw{x}{3} (**), and \uw{x}{4} (*) are all significant, so if \uw{H}{0} is that there is no linear relationship between any of our regressors and our response variable, then we reject \uw{H}{0}.}
 
 \elist
+
+}
+
+\ssc{Q3 Part (b)}{
+
+\simg{HW6Q3PBHist}
+\simg{HW6Q3PBRF}
+
+\simg{HW6Q3PBQQPlot}
+\simg{HW6Q3PBR4}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 2.2285 & 0.2033 & 10.96 & 0.0000 \\ 
+  x1 & -0.0162 & 0.0160 & -1.01 & 0.3159 \\ 
+  x2 & 0.0066 & 0.0008 & 8.13 & 0.0000 \\ 
+  x3 & 1.8502 & 0.5218 & 3.55 & 0.0008 \\ 
+  x4 & 0.2548 & 0.1368 & 1.86 & 0.0677 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+Multiple R-squared:  0.5894 \tab Adjusted R-squared:  0.5606
+
+\textbf{Oddly enough, it looks like we improved some aspects of our model (our y looks more normal and our residuals look a little better, but our R$^2$ went down significantly.}
+}
+
+\newpage
+
+\ssc{Q3 Part (c): Pre-Log Transformation, Influential Points Removed}{
+
+\simg{HW6Q3PCRegHist}
+\simg{HW6Q3PCRegResFitted}
+
+\simg{HW6Q3PCRegQQ}
+\simg{HW6Q3PCRegResX4}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & -13.1146 & 9.4792 & -1.38 & 0.1728 \\ 
+  x1 & 0.0268 & 0.3511 & 0.08 & 0.9395 \\ 
+  x2 & 0.1984 & 0.0192 & 10.35 & 0.0000 \\ 
+  x3 & 87.5725 & 27.1116 & 3.23 & 0.0022 \\ 
+  x4 & 4.2155 & 2.8757 & 1.47 & 0.1491 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{verbatim}
+  Multiple R-squared:  0.7178,	 Adjusted R-squared:  0.6947
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+x1 & 1 & 20.96 & 20.96 & 0.97 & 0.3291 \\ 
+  x2 & 1 & 2402.11 & 2402.11 & 111.37 & 0.0000 \\ 
+  x3 & 1 & 218.45 & 218.45 & 10.13 & 0.0025 \\ 
+  x4 & 1 & 46.35 & 46.35 & 2.15 & 0.1491 \\ 
+  Residuals & 49 & 1056.90 & 21.57 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\textbf{Influential Points (by data sample index):}
+
+22 50 51 52 53 54 56 59
+}
+
+\newpage
+
+\ssc{Q3 Part (c): Post-Log Transformation, Influential Points Removed}{
+
+\simg{HW6Q3PCLogHist}
+\simg{HW6Q3PCLogResFitted}
+
+\simg{HW6Q3PCLogQQPlot}
+\simg{HW6Q3PCLogResX4}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & 2.2988 & 0.3211 & 7.16 & 0.0000 \\ 
+  x1 & -0.0128 & 0.0172 & -0.75 & 0.4591 \\ 
+  x2 & 0.0057 & 0.0011 & 5.04 & 0.0000 \\ 
+  x3 & 1.6190 & 0.8849 & 1.83 & 0.0735 \\ 
+  x4 & 0.2822 & 0.1371 & 2.06 & 0.0450 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{verbatim}
+  Multiple R-squared:  0.4198, 	Adjusted R-squared:  0.3715
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+x1 & 1 & 0.00 & 0.00 & 0.00 & 0.9613 \\ 
+  x2 & 1 & 1.47 & 1.47 & 27.53 & 0.0000 \\ 
+  x3 & 1 & 0.16 & 0.16 & 2.96 & 0.0918 \\ 
+  x4 & 1 & 0.23 & 0.23 & 4.24 & 0.0450 \\ 
+  Residuals & 48 & 2.56 & 0.05 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\textbf{Influential Points (by data sample index):}
+
+35 50 51 52 54 57 59 60 62
+
+\textbf{Influential Points in both the pre and post transformed models:}
+
+50 51 52 54 59
+
+\textbf{Conclusion:}
+
+Transforming the data via log(y) actually does worse in both cases (with and without influential points). It turns out that the transformed model without influential points had the worst $R^2$ out of the four, but the original model without influential points had the best $R^2$ out of the four. Transforming the data overall tends to improve how normally distributed the predictor is (and slightly improve the consistency of the variance of the error term), but still makes the model worse in terms of $R^2$.
 
 }
 }
