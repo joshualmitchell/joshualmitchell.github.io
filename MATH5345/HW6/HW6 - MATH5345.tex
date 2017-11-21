@@ -369,9 +369,9 @@ Recall:
 \uw{SS}{Res} \eql \uw{SS}{PE} \ps \uw{SS}{LOF}
 
 Our test statistic is:
-\eqn{F_0 = \frac{SS_{LOF} / (m - 2)}{SS_{PE} / (n - m)} = \frac{MS_{LOF}}{MS_{PE}}}
+\eqn{F_0 = \frac{SS_{LOF} / (m - p)}{SS_{PE} / (n - m)} = \frac{MS_{LOF}}{MS_{PE}}}
 
-If \uw{F}{0} \gr \uw{F}{m \ms 2, n \ms m}, conclude that the regression function is not linear.
+If \uw{F}{0} \gr \uw{F}{m \ms p, n \ms m}, conclude that the regression function is not linear.
 
 From R:
 
@@ -391,15 +391,15 @@ as.factor(x1) & 2 & 2060.31 & 1030.15 & 824.12 & 0.0000 \\
 \end{tabular}
 \end{table}
 
-\eqn{m = 6 (or is it 9?)}
+\eqn{m = 9}
 \eqn{(29 + 28.5 + 30 + 27 + 28) / 5 = 28.5}
 \eqn{(29 - 28.5)^2 + (28.5 - 28.5)^2 + (30 - 28.5)^2 + (27 - 28.5)^2 + (28 - 28.5)^2 \eql 5 (SS_{PE})}
 \eqn{188.50 = 5 + SS_{LOF} \lra SS_{LOF} = 183.50}
-\eqn{F_0 = \frac{183.50 / (6 - 2)}{5 / (13 - 9)} = \frac{26.214}{1.25} = 36.70???}
+\eqn{F_0 = \frac{183.50 / (9 - 5)}{5 / (13 - 9)} = \frac{45.875}{1.25} = 36.70}
 
 Test:
 
-\eqn{36.70 > \uw{F}{m \ms 2, n \ms m} = F_{3, 8} = 2.92380 \textrm{ (even at \afa \eql 0.10 it still fails)}}
+\eqn{36.70 > \uw{F}{m \ms p, n \ms m} = F_{4, 4} = 4.10725 \textrm{ (even at \afa \eql 0.10 it still fails)}}
 
 \textbf{So we conclude that the regression function is not linear.}
 

@@ -17,7 +17,10 @@ setwd("/Users/jm/joshualmitchell.github.io/MATH5345/HW6/")
 
 q1data <- read.table("HW6Q1.txt", header=T)
 
+q1data_modified = q1data[1:8, ]
+
 q1lm <- lm(y ~ as.factor(x1) + as.factor(x2) + as.factor(x3), data=q1data)
+q1lm_modified <- lm(y ~ as.factor(x1) + as.factor(x2) + as.factor(x3), data=q1data_modified)
 qqnorm(q1data$y)
 summary(q1lm)
 plot(q1data$x1, resid(q1lm),  main="Residuals vs x1", xlab="x1", ylab="Residuals")
@@ -32,6 +35,7 @@ plot(resid(q1lm), q1lm$fitted.values)
 ## B
 
 pureErrorAnova(q1lm)
+pureErrorAnova(q1lm_modified)
 
 ########################################################################################
 ###################### Question 2
