@@ -1,0 +1,505 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#23}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+     							 
+% ----------
+
+\begin{document}
+
+\bsc{Section 5.2 Continued}{
+\ssc{Theorem 5.2.14}{
+
+A function f : D \lra \br is continuous on D iff for every open set G in \br \exs an open set H in \br st H \inn D \eql \uf{f}{-1}(G)
+
+\bgpf
+
+\lra 
+
+\lt{G be an open subset of \br}
+
+\as{f is continuous on D}
+
+If c \mem \uf{f}{-1}(G), then f(c) \mem G.
+
+Since G is open, \exs a neighborhood V of f(c) such that v \sbs G
+
+By Theorem 5.2.2(c), \exs a neighborhood U(c) of c, such that 
+
+f(U(c) \inn D) \sbs V
+
+Now, let H \eql \urng{c \mem \uf{f}{-1}(G)}{} U(G)
+
+Since each neighborhood U(c) is open, it follows that H is open and that H \inn D \eql \uf{f}{-1}(G)
+
+\lla
+
+\lt{V be a neighborhood of f(c) since c \mem D}
+
+
+Since V is an open set, our hypothesis implies that \exs an open set H \sbs \br st H \inn D \eql \uf{f}{-1}(V)
+
+Since f(c) \mem V, we have c \mem H
+
+But, H is an open set, so \exs a neighborhood U of c st U \sbs H.
+
+Thus, f(U \inn D) \sbs f(H \inn D) \sbs V
+
+From Theorem 5.2.2, f is continuous on D.
+
+\epf
+
+}
+
+\ssc{Corollary 5.2.15}{
+
+A function f : \br \lra \br is continuous iff \uf{f}{-1}(G) is open in \br whenever G is open in \br
+}
+
+\ssc{Example 5.2.16}{
+
+Define f : \br \lra \br
+
+f(x) \eql \bk{x if x \lse 2, 4 if x \gr 2}
+
+If G \eql (1, 3), then \uf{f}{-1}(G) \eql (1, 2]
+
+}
+
+}
+
+\bsc{Section 5.3: Properties of Continuous Functions}{
+
+\ssc{Definition 5.3.1: Boundedness of Function}{
+
+A function f: D \lra \br is said to be bounded if the range f(D) is a bounded subset of \br (i.e. f is bounded if there exists M \mem \br such that \av{f(x)} \lse M for all x \mem D).
+
+Note: A continuous function may not be bounded even when the domain is bounded.
+}
+
+\ssc{Theorem 5.3.2}{
+
+If D \sbs \br is compact and f : D \lra \br is continuous, then
+
+f(D) is compact
+
+\bgpf
+
+\lt{J \eql \bk{\uw{G}{\afa}} be an open cover of f(D)}
+
+\wts{J has a finite subcover.}
+
+Since f is continuous on D, 
+
+Theorem 5.2.14 implies that for each open set \uw{G}{\afa} in J, \exs an open set \uw{H}{\afa} st \uw{H}{\afa} \inn D \eql \uf{f}{-1}(\uw{G}{\afa})
+
+Moreover, since f(D) \sbs \urng{}{}\uw{G}{\afa},
+
+it follows that D \sbs \urng{}{} \uf{f}{-1}(\uw{G}{\afa}) \sbs \urng{}{}\uw{H}{\afa},
+
+Thus, the collection \bk{\uw{H}{\afa}} is an open cover of D.
+
+Since D is compact, \exs finitely many sets \dbs{H}{\afa}{1}, \dbs{H}{\afa}{2}, .. \dbs{H}{\afa}{n} such that
+
+D \sbs \dbs{H}{\afa}{1} \unn \dbs{H}{\afa}{2} ... \dbs{H}{\afa}{n}
+
+But then D \sbs (\dbs{H}{\afa}{1} \inn D) \unn (\dbs{H}{\afa}{2} \inn D) ... (\dbs{H}{\afa}{n} \inn D)
+
+f(D) \sbs \dbs{G}{\afa}{1} \unn \dbs{G}{\afa}{2} ... \dbs{G}{\afa}{n}
+
+Therefore,
+
+\bk{\dbs{G}{\afa}{1}, ... \dbs{G}{\afa}{n}} is a finite subcover of J for f(D)
+
+Therefore, f(D) is compact.
+
+\epf
+
+}
+
+\ssc{Corollary 5.3.5}{
+
+\lt{D \sbs \br be compact}
+
+f : D \lra \br is continuous implies f assumes min and max values on D.
+
+That is to say: \exs points \uw{x}{1}, \uw{x}{2} \mem D such that f(\uw{x}{1}) \lse f(x) \lse f(\uw{x}{2}) \fa x \mem D
+
+\bgpf
+
+By Theorem 5.3.2, f(D) is compact.
+
+From Lemma 3.5.4, f(D) has both a minimum, \uw{y}{1}, and a maximum, \uw{y}{2}.
+
+Since \uw{y}{1}, \uw{y}{2} \mem f(D), there exists \uw{x}{1}, \uw{x}{2} \mem D st f(\uw{x}{1}) \eql \uw{y}{1} and f(\uw{x}{2}) \eql \uw{y}{2}
+
+Thus, 
+
+f(\uw{x}{1}) \lse f(x) \lse f(\uw{x}{2}) \fa x \mem D
+
+\epf
+}
+
+\ssc{Lemma 5.3.5}{
+
+\lt{f : [a, b] \lra \br be continuous}
+
+f(a) \ls 0 \ls f(b) \rar \exs c \mem (a, b) st f(c) \eql 0
+
+\bgpf
+
+\lt{c \eql max\bk{x : f(x) \lse 0} and S \eql \bk{x \mem [a, b] : f(x) \lse 0}}
+
+Since a \mem S, S is nonempty.
+
+Notice that S is bounded above by b, so c \eql sup S exists as a real number in [a, b]
+
+\wts{f(c) \eql 0}
+
+\supp{f(c) \ls 0}
+
+Then \exs a neighborhood U of c such that f(x) \ls 0 for all x \mem U \inn [a, b]
+
+(This comes from Exercise 5.2.13)
+
+Now c $\neq$ b, since f(c) \ls 0 \ls f(b)
+
+Thus, U contains an in between point p st c \ls p \ls b
+
+But f(p) \ls 0 since p \mem U
+
+Therefore, p \mem S
+
+This contradicts c being an upper bound for S.
+
+\supp{f(c) \gr 0}
+
+Similarly,
+
+If f(c) \gr 0, then \exs a neighborhood U of c such that f(x) \gr 0 for all x \mem U \inn [a, b]
+
+Now, c $\neq$ a, since f(c) \gr 0 \gr f(a)
+
+Thus, U contains a point p st a \ls p \ls c
+
+Since f(x) \gr 0 \fa x \mem U, no points of S are in [p, c]
+
+That is to say, p is an upper bound for S.
+
+This contradicts c being the least upper bound (supremum) of S.
+
+Hence, f(c) \eql 0
+
+Since f(a) \ls 0 \ls f(b) and f(c) \eql 0,
+
+\exs c \mem (a, b)
+\epf
+}
+
+\ssc{Theorem 5.3.6 - Intermediate Value Theorem}{
+
+\as{f : [a, b] \lra \br is continuous}
+
+Then f has the intermediate value property on [a, b].
+
+That is, if k is any value between f(a) and f(b), 
+
+i.e. f(a) \ls k \ls f(b) or f(b) \ls k \ls f(a), 
+
+then \exs c \mem (a, b) st f(c) \eql k
+
+
+\bgpf
+
+\lt{k be between f(a) and f(b)}
+
+If f(a) \ls f(b), from Lemma 5.3.5, consider the continuous function:
+
+g : [a, b] \lra \br given by g(x) \eql f(x) \ms k
+
+Then, 
+
+g(a) \eql f(a) \ms k \ls 0 
+
+and 
+
+g(b) \eql f(b) \ms k \gr 0
+
+From Lemma 5.3.5, \exs c \mem (a, b) 
+
+st 
+
+g(c) \eql 0 \eql f(c) \ms k \rar f(c) \eql k
+
+Similarly, we can prove when f(a) \gr f(b)
+
+\epf
+
+}
+
+\ssc{Exercise 5.3.7}{
+
+Using the intermediate value theorem, we can show that every positive number has a positive nth root.
+
+\as{k \gr 0, n \mem \bn}
+
+\lt{f(x) \eql \uf{x}{n}}
+
+Notice that f(0) \eql 0 \ls k
+
+if b \eql k \ps 1, then from Bernolli's inequality (Exercise 3.1.24),
+\eqn{b^n = (k + 1)^n \gre 1 + kn > k}
+\eqn{f(b) = b^n = (k + 1)^n \gre 1 + kn > k}
+Since f is continuous, 
+
+\exs c \mem (0, b) st f(c) \eql k \eql \uf{c}{n}, where c is the nth root of k
+}
+
+\ssc{Theorem 5.3.10}{
+
+\lt{I be a compact interval}
+
+\as{f : I \lra \br is a continuous function}
+
+Then, the set f(I) is a compact interval.
+
+\bgpf
+
+From Corollary 5.3.3,
+
+\exs \uw{x}{1}, \uw{x}{2} \mem I st f(\uw{x}{1}) \lse f(x) \lse f(\uw{x}{2}), for all x \mem I
+
+\lt{\uw{m}{1} \eql f(\uw{x}{1}), \uw{m}{2} \eql f(\uw{x}{2}), and f(I) \sbs \sbs [\uw{m}{1}, \uw{m}{2}]}
+
+If \uw{m}{1} \eql \uw{m}{2}, then f(I) \eql \bk{\uw{m}{1}} \eql [\uw{m}{1}, \uw{m}{2}], and we're done.
+
+If \uw{m}{1} \ls \uw{m}{2} and k \mem (\uw{m}{1}, \uw{m}{2}), then by Theorem 5.3.6, we have
+
+k \eql f(c), c \mem (\uw{x}{1}, \uw{x}{2}) and (\uw{m}{1}, \uw{m}{2}) \sbs f(I).
+
+\uw{m}{1}, \uw{m}{2} \mem f(I), [\uw{m}{1}, \uw{m}{2}] \sbs f(I), f(I) is the compact interval [\uw{m}{1}, \uw{m}{2}], and we are done.
+
+\epf
+
+}
+
+}
+\end{document}

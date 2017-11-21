@@ -227,13 +227,25 @@
 
 \bsc{Exercise 1}{
 
-Let f : D \lra R and let c \mem D. Mark each statement True or False. Justify each answer.
+Let f : D \lra \br and let c \mem D. Mark each statement True or False. Justify each answer.
 
 \balist
 \item f is continuous at c iff \fa \ep \gr 0, \exs a \dta \gr 0 such that \av{f(x) \ms f(c)} \ls \ep whenever \av{x \ms c} \ls \dta and x \mem D
+	
+	\textbf{True.} By definition of continuous.
 \item if f(D) is a bounded set, then f is continuous on D
+	
+	\textbf{False.}
+	
+	\lt{f : D \lra \br be defined by D = \bk{\br} and f \eql \bk{1 if x $\neq$ 0, 0 otherwise.}}
+	
+	Pick \ep \eql 0.5. Notice that there is no \dta such that \av{f(x) \ms f(0)} \ls 0.5
 \item if c is an isolated point of D, then f is continuous at c
+	
+	\textbf{True.} If you just pick a \dta st only x \eql c fits in \av{x \ms c} \ls \dta (which is possible since it's an isolated point), then that works for any \ep \gr 0 since \av{f(x) \ms f(c)} will always be 0.
 \item if f is continuous at c and \prn{\uw{x}{n}} is a sequence in D, then \uw{x}{n} \lra c whenever f(\uw{x}{n}) \lra f(c)
+	
+	
 \item if f is continuous at c, then for every neighborhood V of f(c), there exists a neighborhood U of c such that f(U \inn D) \eql V
 \elist
 
