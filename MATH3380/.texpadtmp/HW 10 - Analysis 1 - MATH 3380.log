@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 NOV 2017 18:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 NOV 2017 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"HW6 - MATH5345.tex"
-(./HW6 - MATH5345.tex
+**"HW 10 - Analysis 1 - MATH 3380.tex"
+(./HW 10 - Analysis 1 - MATH 3380.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -365,83 +365,67 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enitdp@description=\count128
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2009/09/02 v1.0a change counter resetting
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/blkarray/blkarray.sty
-Package: blkarray 2015/02/27 v0.07 Block array (dpc)
-\c@BAenumi=\count129
-\BA@col=\count130
-\BA@block@cnt=\count131
-\BA@final@box=\box42
-\BA@first@box=\box43
-\BA@colsep=\dimen161
-\BA@ftn=\toks43
-\BAextrarowheight=\dimen162
-\BAextraheightafterhline=\dimen163
-\BAarrayrulewidth=\dimen164
-\BAdoublerulesep=\dimen165
-\BAfootskip=\dimen166
-\BA@dashbox=\box44
-\BA@ddashbox=\box45
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box46
-\pgfnodeparttwobox=\box47
-\pgfnodepartthreebox=\box48
-\pgfnodepartfourbox=\box49
-\pgfnodeparttwentybox=\box50
-\pgfnodepartnineteenbox=\box51
-\pgfnodeparteighteenbox=\box52
-\pgfnodepartseventeenbox=\box53
-\pgfnodepartsixteenbox=\box54
-\pgfnodepartfifteenbox=\box55
-\pgfnodepartfourteenbox=\box56
-\pgfnodepartthirteenbox=\box57
-\pgfnodeparttwelvebox=\box58
-\pgfnodepartelevenbox=\box59
-\pgfnodeparttenbox=\box60
-\pgfnodepartninebox=\box61
-\pgfnodeparteightbox=\box62
-\pgfnodepartsevenbox=\box63
-\pgfnodepartsixbox=\box64
-\pgfnodepartfivebox=\box65
+\pgfnodepartlowerbox=\box42
+\pgfnodeparttwobox=\box43
+\pgfnodepartthreebox=\box44
+\pgfnodepartfourbox=\box45
+\pgfnodeparttwentybox=\box46
+\pgfnodepartnineteenbox=\box47
+\pgfnodeparteighteenbox=\box48
+\pgfnodepartseventeenbox=\box49
+\pgfnodepartsixteenbox=\box50
+\pgfnodepartfifteenbox=\box51
+\pgfnodepartfourteenbox=\box52
+\pgfnodepartthirteenbox=\box53
+\pgfnodeparttwelvebox=\box54
+\pgfnodepartelevenbox=\box55
+\pgfnodeparttenbox=\box56
+\pgfnodepartninebox=\box57
+\pgfnodeparteightbox=\box58
+\pgfnodepartsevenbox=\box59
+\pgfnodepartsixbox=\box60
+\pgfnodepartfivebox=\box61
 ))) (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen167
-)) (/Users/jm/joshualmitchell.github.io/MATH5345/HW6/.texpadtmp/HW6 - MATH5345.aux)
-\openout1 = `"HW6 - MATH5345.aux"'.
+\arrowsize=\dimen161
+)) (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/HW 10 - Analysis 1 - MATH 3380.aux)
+\openout1 = `"HW 10 - Analysis 1 - MATH 3380.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 268.
-LaTeX Font Info:    ... okay on input line 268.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 268.
-LaTeX Font Info:    ... okay on input line 268.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 268.
-LaTeX Font Info:    ... okay on input line 268.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 268.
-LaTeX Font Info:    ... okay on input line 268.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 268.
-LaTeX Font Info:    ... okay on input line 268.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 268.
-LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 226.
+LaTeX Font Info:    ... okay on input line 226.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 226.
+LaTeX Font Info:    ... okay on input line 226.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 226.
+LaTeX Font Info:    ... okay on input line 226.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 226.
+LaTeX Font Info:    ... okay on input line 226.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 226.
+LaTeX Font Info:    ... okay on input line 226.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 226.
+LaTeX Font Info:    ... okay on input line 226.
  ABD: EveryShipout initializing macros (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
-\scratchdimen=\dimen168
-\scratchbox=\box66
-\nofMPsegments=\count133
-\nofMParguments=\count134
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count135
-\MPscratchDim=\dimen169
-\MPnumerator=\count136
-\makeMPintoPDFobject=\count137
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count129
+\scratchdimen=\dimen162
+\scratchbox=\box62
+\nofMPsegments=\count130
+\nofMParguments=\count131
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count132
+\MPscratchDim=\dimen163
+\MPnumerator=\count133
+\makeMPintoPDFobject=\count134
+\everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -478,284 +462,36 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 271.
+LaTeX Font Info:    Try loading font information for U+msa on input line 230.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 271.
+LaTeX Font Info:    Try loading font information for U+msb on input line 230.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) <HW6Q1.png, id=4, 689.57625pt x 378.41376pt>
-File: HW6Q1.png Graphic file (type png)
- <use HW6Q1.png>
-Package pdftex.def Info: HW6Q1.png used on input line 281.
-(pdftex.def)             Requested size: 469.75499pt x 257.78564pt.
- <HW6Q1A1.png, id=6, 341.275pt x 327.2225pt>
-File: HW6Q1A1.png Graphic file (type png)
- <use HW6Q1A1.png>
-Package pdftex.def Info: HW6Q1A1.png used on input line 289.
-(pdftex.def)             Requested size: 155.66695pt x 149.25595pt.
- <HW6Q1A2.png, id=7, 645.41125pt x 515.9275pt>
-File: HW6Q1A2.png Graphic file (type png)
- <use HW6Q1A2.png>
-Package pdftex.def Info: HW6Q1A2.png used on input line 290.
-(pdftex.def)             Requested size: 155.66695pt x 124.4313pt.
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 249.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./HW6Q1.png> <./HW6Q1A1.png> <./HW6Q1A2.png>] <HW6Q1X1.png, id=19, 397.485pt x 527.9725pt>
-File: HW6Q1X1.png Graphic file (type png)
- <use HW6Q1X1.png>
-Package pdftex.def Info: HW6Q1X1.png used on input line 296.
-(pdftex.def)             Requested size: 155.66695pt x 206.77045pt.
- <HW6Q1X2.png, id=20, 399.4925pt x 526.96875pt>
-File: HW6Q1X2.png Graphic file (type png)
- <use HW6Q1X2.png>
-Package pdftex.def Info: HW6Q1X2.png used on input line 297.
-(pdftex.def)             Requested size: 155.66695pt x 205.34007pt.
- <HW6Q1X3.png, id=21, 401.5pt x 527.9725pt>
-File: HW6Q1X3.png Graphic file (type png)
- <use HW6Q1X3.png>
-Package pdftex.def Info: HW6Q1X3.png used on input line 298.
-(pdftex.def)             Requested size: 155.66695pt x 204.70807pt.
-
-Overfull \hbox (35.57916pt too wide) in paragraph at lines 296--299
-[][]   []   []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 296--299
-
- []
-
-[2 <./HW6Q1X1.png> <./HW6Q1X2.png> <./HW6Q1X3.png>] [3] <HW6Q2.png, id=35, 705.63625pt x 589.20125pt>
-File: HW6Q2.png Graphic file (type png)
- <use HW6Q2.png>
-Package pdftex.def Info: HW6Q2.png used on input line 413.
-(pdftex.def)             Requested size: 469.75499pt x 392.24545pt.
- <HW6Q2ScPlt.png, id=36, 283.0575pt x 246.9225pt>
-File: HW6Q2ScPlt.png Graphic file (type png)
- <use HW6Q2ScPlt.png>
-Package pdftex.def Info: HW6Q2ScPlt.png used on input line 415.
-(pdftex.def)             Requested size: 164.4171pt x 143.42989pt.
- [4 <./HW6Q2.png> <./HW6Q2ScPlt.png>] <HW6Q2PBPlt.png, id=42, 364.36125pt x 281.05pt>
-File: HW6Q2PBPlt.png Graphic file (type png)
- <use HW6Q2PBPlt.png>
-Package pdftex.def Info: HW6Q2PBPlt.png used on input line 445.
-(pdftex.def)             Requested size: 164.4171pt x 126.82297pt.
- [5 <./HW6Q2PBPlt.png>] <HW6Q2PC1.png, id=48, 364.36125pt x 300.12125pt>
-File: HW6Q2PC1.png Graphic file (type png)
- <use HW6Q2PC1.png>
-Package pdftex.def Info: HW6Q2PC1.png used on input line 475.
-(pdftex.def)             Requested size: 164.4171pt x 135.42882pt.
- <HW6Q2PC2.png, id=49, 354.32375pt x 301.125pt>
-File: HW6Q2PC2.png Graphic file (type png)
- <use HW6Q2PC2.png>
-Package pdftex.def Info: HW6Q2PC2.png used on input line 476.
-(pdftex.def)             Requested size: 164.4171pt x 139.7322pt.
- <HW6Q2PC3.png, id=50, 366.36874pt x 309.155pt>
-File: HW6Q2PC3.png Graphic file (type png)
- <use HW6Q2PC3.png>
-Package pdftex.def Info: HW6Q2PC3.png used on input line 477.
-(pdftex.def)             Requested size: 164.4171pt x 138.74107pt.
-
-Overfull \hbox (36.82959pt too wide) in paragraph at lines 475--478
-[][]   []   []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--478
-
- []
-
-
-Overfull \hbox (139.2397pt too wide) in paragraph at lines 487--487
-[]\OT1/cmtt/m/n/10 plot(q2lm_t$fitted.values, resid(q2lm_t), main="[Transformed] Residuals vs Fitted", xlab="Fitted", ylab="Residuals")[] 
- []
-
-
-Overfull \hbox (70.9903pt too wide) in paragraph at lines 487--487
-[]\OT1/cmtt/m/n/10 plot(q2data$temp, resid(q2lm_t), main="[Transformed] Residuals vs Temp", xlab="Temp", ylab="Residuals")[] 
- []
-
-
-Overfull \hbox (139.2397pt too wide) in paragraph at lines 487--487
-[]\OT1/cmtt/m/n/10 plot(exp(q2data$temp), resid(q2lm_t), main="[Transformed] Residuals vs e^(temp)", xlab="e^(temp)", ylab="Residuals")[] 
- []
-
-<HW6Q2PC4.png, id=51, 476.78125pt x 315.1775pt>
-File: HW6Q2PC4.png Graphic file (type png)
- <use HW6Q2PC4.png>
-Package pdftex.def Info: HW6Q2PC4.png used on input line 502.
-(pdftex.def)             Requested size: 164.4171pt x 108.68826pt.
- <HW6Q2PC5.png, id=52, 387.4475pt x 255.95625pt>
-File: HW6Q2PC5.png Graphic file (type png)
- <use HW6Q2PC5.png>
-Package pdftex.def Info: HW6Q2PC5.png used on input line 503.
-(pdftex.def)             Requested size: 164.4171pt x 108.61787pt.
- <HW6Q2PC6.png, id=53, 401.5pt x 259.97125pt>
-File: HW6Q2PC6.png Graphic file (type png)
- <use HW6Q2PC6.png>
-Package pdftex.def Info: HW6Q2PC6.png used on input line 504.
-(pdftex.def)             Requested size: 164.4171pt x 106.46196pt.
-
-Overfull \hbox (36.82959pt too wide) in paragraph at lines 502--505
-[][]   []   []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 502--505
-
- []
-
-[6 <./HW6Q2PC1.png> <./HW6Q2PC2.png> <./HW6Q2PC3.png> <./HW6Q2PC4.png> <./HW6Q2PC5.png> <./HW6Q2PC6.png>] <HW6Q3.png, id=63, 702.625pt x 176.66pt>
-File: HW6Q3.png Graphic file (type png)
- <use HW6Q3.png>
-Package pdftex.def Info: HW6Q3.png used on input line 514.
-(pdftex.def)             Requested size: 469.75499pt x 118.11357pt.
- <HW6Q3PAHist.png, id=64, 368.37625pt x 312.16624pt>
-File: HW6Q3PAHist.png Graphic file (type png)
- <use HW6Q3PAHist.png>
-Package pdftex.def Info: HW6Q3PAHist.png used on input line 518.
-(pdftex.def)             Requested size: 164.4171pt x 139.32556pt.
- <HW6Q3PARes.png, id=65, 350.30875pt x 301.125pt>
-File: HW6Q3PARes.png Graphic file (type png)
- <use HW6Q3PARes.png>
-Package pdftex.def Info: HW6Q3PARes.png used on input line 519.
-(pdftex.def)             Requested size: 164.4171pt x 141.33578pt.
- <HW6Q3PA.png, id=66, 367.3725pt x 304.13625pt>
-File: HW6Q3PA.png Graphic file (type png)
- <use HW6Q3PA.png>
-Package pdftex.def Info: HW6Q3PA.png used on input line 521.
-(pdftex.def)             Requested size: 164.4171pt x 136.11752pt.
- <HW6Q3R4.png, id=67, 367.3725pt x 305.14pt>
-File: HW6Q3R4.png Graphic file (type png)
- <use HW6Q3R4.png>
-Package pdftex.def Info: HW6Q3R4.png used on input line 522.
-(pdftex.def)             Requested size: 164.4171pt x 136.56674pt.
- [7 <./HW6Q3.png> <./HW6Q3PAHist.png> <./HW6Q3PARes.png> <./HW6Q3PA.png> <./HW6Q3R4.png>] <HW6Q3PBHist.png, id=77, 365.365pt x 300.12125pt>
-File: HW6Q3PBHist.png Graphic file (type png)
- <use HW6Q3PBHist.png>
-Package pdftex.def Info: HW6Q3PBHist.png used on input line 566.
-(pdftex.def)             Requested size: 164.4171pt x 135.05789pt.
- <HW6Q3PBRF.png, id=78, 361.35pt x 305.14pt>
-File: HW6Q3PBRF.png Graphic file (type png)
- <use HW6Q3PBRF.png>
-Package pdftex.def Info: HW6Q3PBRF.png used on input line 567.
-(pdftex.def)             Requested size: 164.4171pt x 138.8389pt.
- <HW6Q3PBQQPlot.png, id=79, 366.36874pt x 302.12875pt>
-File: HW6Q3PBQQPlot.png Graphic file (type png)
- <use HW6Q3PBQQPlot.png>
-Package pdftex.def Info: HW6Q3PBQQPlot.png used on input line 569.
-(pdftex.def)             Requested size: 164.4171pt x 135.58786pt.
- <HW6Q3PBR4.png, id=80, 369.38pt x 304.13625pt>
-File: HW6Q3PBR4.png Graphic file (type png)
- <use HW6Q3PBR4.png>
-Package pdftex.def Info: HW6Q3PBR4.png used on input line 570.
-(pdftex.def)             Requested size: 164.4171pt x 135.375pt.
- [8 <./HW6Q3PBHist.png> <./HW6Q3PBRF.png> <./HW6Q3PBQQPlot.png> <./HW6Q3PBR4.png>] <HW6Q3PCRegHist.png, id=88, 425.59pt x 305.14pt>
-File: HW6Q3PCRegHist.png Graphic file (type png)
- <use HW6Q3PCRegHist.png>
-Package pdftex.def Info: HW6Q3PCRegHist.png used on input line 596.
-(pdftex.def)             Requested size: 164.4171pt x 117.88666pt.
- <HW6Q3PCRegResFitted.png, id=89, 428.60126pt x 318.18875pt>
-File: HW6Q3PCRegResFitted.png Graphic file (type png)
- <use HW6Q3PCRegResFitted.png>
-Package pdftex.def Info: HW6Q3PCRegResFitted.png used on input line 597.
-(pdftex.def)             Requested size: 164.4171pt x 122.05879pt.
- <HW6Q3PCRegQQ.png, id=90, 428.60126pt x 316.18124pt>
-File: HW6Q3PCRegQQ.png Graphic file (type png)
- <use HW6Q3PCRegQQ.png>
-Package pdftex.def Info: HW6Q3PCRegQQ.png used on input line 599.
-(pdftex.def)             Requested size: 164.4171pt x 121.2887pt.
- <HW6Q3PCRegResX4.png, id=91, 429.605pt x 314.17375pt>
-File: HW6Q3PCRegResX4.png Graphic file (type png)
- <use HW6Q3PCRegResX4.png>
-Package pdftex.def Info: HW6Q3PCRegResX4.png used on input line 600.
-(pdftex.def)             Requested size: 164.4171pt x 120.24057pt.
- [9 <./HW6Q3PCRegHist.png> <./HW6Q3PCRegResFitted.png> <./HW6Q3PCRegQQ.png> <./HW6Q3PCRegResX4.png>] <HW6Q3PCLogHist.png, id=99, 516.93124pt x 310.15875pt>
-File: HW6Q3PCLogHist.png Graphic file (type png)
- <use HW6Q3PCLogHist.png>
-Package pdftex.def Info: HW6Q3PCLogHist.png used on input line 645.
-(pdftex.def)             Requested size: 164.4171pt x 98.65178pt.
- <HW6Q3PCLogResFitted.png, id=100, 515.9275pt x 318.18875pt>
-File: HW6Q3PCLogResFitted.png Graphic file (type png)
- <use HW6Q3PCLogResFitted.png>
-Package pdftex.def Info: HW6Q3PCLogResFitted.png used on input line 646.
-(pdftex.def)             Requested size: 164.4171pt x 101.40007pt.
- <HW6Q3PCLogQQPlot.png, id=101, 513.92pt x 328.22626pt>
-File: HW6Q3PCLogQQPlot.png Graphic file (type png)
- <use HW6Q3PCLogQQPlot.png>
-Package pdftex.def Info: HW6Q3PCLogQQPlot.png used on input line 648.
-(pdftex.def)             Requested size: 164.4171pt x 105.00949pt.
- <HW6Q3PCLogResX4.png, id=102, 504.88625pt x 314.17375pt>
-File: HW6Q3PCLogResX4.png Graphic file (type png)
- <use HW6Q3PCLogResX4.png>
-Package pdftex.def Info: HW6Q3PCLogResX4.png used on input line 649.
-(pdftex.def)             Requested size: 164.4171pt x 102.31139pt.
- [10 <./HW6Q3PCLogHist.png> <./HW6Q3PCLogResFitted.png> <./HW6Q3PCLogQQPlot.png> <./HW6Q3PCLogResX4.png>] <HW6Q4.png, id=110, 697.60625pt x 334.24875pt>
-File: HW6Q4.png Graphic file (type png)
- <use HW6Q4.png>
-Package pdftex.def Info: HW6Q4.png used on input line 703.
-(pdftex.def)             Requested size: 469.75499pt x 225.07774pt.
- <HW6Q4LM.png, id=111, 368.37625pt x 258.9675pt>
-File: HW6Q4LM.png Graphic file (type png)
- <use HW6Q4LM.png>
-Package pdftex.def Info: HW6Q4LM.png used on input line 707.
-(pdftex.def)             Requested size: 164.4171pt x 115.58197pt.
- <HW6Q4PB.png, id=112, 356.33125pt x 276.03125pt>
-File: HW6Q4PB.png Graphic file (type png)
- <use HW6Q4PB.png>
-Package pdftex.def Info: HW6Q4PB.png used on input line 714.
-(pdftex.def)             Requested size: 164.4171pt x 127.3634pt.
- <HW6Q4PC.png, id=113, 364.36125pt x 295.1025pt>
-File: HW6Q4PC.png Graphic file (type png)
- <use HW6Q4PC.png>
-Package pdftex.def Info: HW6Q4PC.png used on input line 721.
-(pdftex.def)             Requested size: 164.4171pt x 133.16412pt.
- [11 <./HW6Q4.png> <./HW6Q4LM.png> <./HW6Q4PB.png>] <HW6Q4PE1.png, id=120, 362.35374pt x 262.9825pt>
-File: HW6Q4PE1.png Graphic file (type png)
- <use HW6Q4PE1.png>
-Package pdftex.def Info: HW6Q4PE1.png used on input line 745.
-(pdftex.def)             Requested size: 164.4171pt x 119.32817pt.
- <HW6Q4PE2.png, id=121, 367.3725pt x 300.12125pt>
-File: HW6Q4PE2.png Graphic file (type png)
- <use HW6Q4PE2.png>
-Package pdftex.def Info: HW6Q4PE2.png used on input line 746.
-(pdftex.def)             Requested size: 164.4171pt x 134.32059pt.
- <HW6Q4PE3.png, id=122, 362.35374pt x 291.0875pt>
-File: HW6Q4PE3.png Graphic file (type png)
- <use HW6Q4PE3.png>
-Package pdftex.def Info: HW6Q4PE3.png used on input line 747.
-(pdftex.def)             Requested size: 164.4171pt x 132.0808pt.
-
-Overfull \hbox (36.82959pt too wide) in paragraph at lines 745--748
-[]   []   []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 745--748
-
- []
-
-[12 <./HW6Q4PC.png> <./HW6Q4PE1.png> <./HW6Q4PE2.png> <./HW6Q4PE3.png>] <HW6Q5.png, id=130, 694.595pt x 131.49126pt>
-File: HW6Q5.png Graphic file (type png)
- <use HW6Q5.png>
-Package pdftex.def Info: HW6Q5.png used on input line 757.
-(pdftex.def)             Requested size: 469.75499pt x 88.93132pt.
- [13 <./HW6Q5.png>] (/Users/jm/joshualmitchell.github.io/MATH5345/HW6/.texpadtmp/HW6 - MATH5345.aux) ) 
+] [2] (/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/HW 10 - Analysis 1 - MATH 3380.aux) ) 
 Here is how much of TeX's memory you used:
- 14951 strings out of 492995
- 301007 string characters out of 6132704
- 347958 words of memory out of 5000000
- 18175 multiletter control sequences out of 15000+600000
- 7025 words of font info for 28 fonts, out of 8000000 for 9000
+ 14545 strings out of 492995
+ 295638 string characters out of 6132704
+ 341472 words of memory out of 5000000
+ 17812 multiletter control sequences out of 15000+600000
+ 6252 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,66p,532b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH5345/HW6/.texpadtmp/HW6 - MATH5345.pdf" (13 pages, 2694769 bytes).
+ 55i,12n,66p,442b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "/Users/jm/joshualmitchell.github.io/MATH3380/.texpadtmp/HW 10 - Analysis 1 - MATH 3380.pdf" (2 pages, 91433 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
