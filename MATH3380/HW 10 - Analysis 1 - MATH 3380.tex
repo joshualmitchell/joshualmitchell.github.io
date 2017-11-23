@@ -244,9 +244,37 @@ Let f : D \lra \br and let c \mem D. Mark each statement True or False. Justify 
 	
 	\textbf{True.} If you just pick a \dta st only x \eql c fits in \av{x \ms c} \ls \dta (which is possible since it's an isolated point), then that works for any \ep \gr 0 since \av{f(x) \ms f(c)} will always be 0.
 \item if f is continuous at c and \prn{\uw{x}{n}} is a sequence in D, then \uw{x}{n} \lra c whenever f(\uw{x}{n}) \lra f(c)
+
+	\textbf{True.}
+	
+	So, what we are asking is:
+	
+	\bpth{1} f is continuous at c, \bpth{2} \prn{\uw{x}{n}} is a sequence in D, and \bpth{3} f(\uw{x}{n}) \lra f(c) implies \uw{x}{n} \lra c 
+	
+	True or false?
+	
+	\wts{\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{\uw{x}{n} \ms c} \ls \ep}
+	
+	\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and \av{x \ms c} \ls \dta implies \av{f(x) \ms f(c)} \ls \ep
+	
+	So, if we let x \eql \uw{x}{n} (since \uw{x}{n} \mem D),
+	
+	For \ep \gr 0, \exs \dta \gr 0 st \uw{x}{n} \mem D and \av{\uw{x}{n} \ms c} \ls \dta implies \av{f(\uw{x}{n}) \ms f(c)} \ls \ep \bpth{4}
+	
+	We also know that, by \bpth{3},
+	
+	\fa \ep \gr 0, \exs N \mem \bn st n \gre N implies \av{f(\uw{x}{n}) \ms f(c)} \ls \ep
+	
+	So, by \bpth{1} and \bpth{3},
+	
+	For \ep \gr 0, \exs \dta \gr 0 st \av{\uw{x}{n} \ms c} \ls \dta implies \av{f(\uw{x}{n}) \ms f(c)} \ls \ep
+	
+	and for this same \ep, there is an N \mem \bn st n \gre N implies the same.
 	
 	
 \item if f is continuous at c, then for every neighborhood V of f(c), there exists a neighborhood U of c such that f(U \inn D) \eql V
+	
+	\textbf{True. By Theorem 5.2.2 (c).}
 \elist
 
 }
