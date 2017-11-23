@@ -1,0 +1,416 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#7}
+
+% \input{ShortcutsStatistics}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage{blkarray}
+
+% Libraries
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 5345 / Regression Analysis}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Sun}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{\operatorname{+}} }
+\newcommand{\ms}{\mt{\operatorname{-}} }
+
+\newcommand{\ls}{\mt{\operatorname{<}} }
+\newcommand{\gr}{\mt{\operatorname{>}} }
+
+\newcommand{\lse}{\mt{\operatorname{\leq}} }
+\newcommand{\gre}{\mt{\operatorname{\geq}} }
+
+\newcommand{\eql}{ \mt{\operatorname{=}} }
+
+\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\txt}[1]{\text{#1}} % Not new command, but remember \text for text in eqns
+\newcommand{\tl}{\mt{\thicksim}}
+\newcommand{\mn}[1]{\mt{\overline{#1}}}
+\newcommand{\sg}{\mt{\sigma}}
+\newcommand{\ssq}{\mt{\sigma^2}}	
+
+\newcommand{\bh}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\bth}{\mt{\bh{\beta}}}
+\newcommand{\yh}{\mt{\bh{Y}}}
+
+\newcommand{\exv}[1]{\txt{E[}#1\txt{]}}
+\newcommand{\vrn}[1]{V[#1]}
+
+\newcommand{\gv}{ \mt{|} }
+
+\newcommand{\cov}[2]{\txt{Cov(#1, #2)}}
+
+\newcommand{\img}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.5\linewidth]{#1}
+\end{figure}
+}
+\newcommand{\simg}[1]{
+  \includegraphics[width=0.35\linewidth]{#1}
+}
+\newcommand{\wimg}[1]{
+\begin{figure}[h]
+  \includegraphics[width=1\linewidth]{#1}
+\end{figure}
+}
+\newcommand\tab[1][1cm]{\hspace*{#1}}	
+\newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}	
+
+\newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+\newcommand{\inm}[1]{\mt{\left\[ \begin{smallmatrix} #1 \end{smallmatrix} \right\]}}
+
+\newcommand{\lbm}[4]{
+	  \begin{blockarray}{#1} % a c for every row, plus the c-labels
+        #2 \\ % & c-label1 & c-label2 & c-label3...
+      \begin{block}{c(#3)} % a c for every column only
+        #4 % r-label1 & data & data & data ... \\
+           % r-label2 & data & data & data ... \\
+           % ...
+           % r-labeln & data & data & data ... \\
+      \end{block}
+    \end{blockarray}
+}
+
+% Example:
+% \[\lbm{ccccc}{& H & y & d}{cccc}{H & 4 & 4 & 4 \\
+% Y & 3 & 3 & 3 \\
+% D & 2 & 2 & 2 \\
+% D & 2 & 2 & 2 \\}\]
+
+\newcommand{\unds}[2]{\mt{\underset{#1}{#2}}} % stuff underneath!	 
+% ----------
+
+\begin{document}
+
+\wimg{HW7}
+
+\bsc{Question 1}{
+
+\newpage
+
+\ssc{Q1 Part (a)}{
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\ 
+  \hline
+(Intercept) & -7.0471 & 4.6742 & -1.51 & 0.1316 \\ 
+  x1 & 0.0001 & 0.0001 & 1.16 & 0.2466 \\ 
+  x2 & 0.9879 & 0.5274 & 1.87 & 0.0610 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{verbatim}
+    Null deviance: 27.726  on 19  degrees of freedom
+Residual deviance: 21.082  on 17  degrees of freedom
+AIC: 27.082
+
+Number of Fisher Scoring iterations: 5
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrr}
+  \hline
+ & Df & Deviance & Resid. Df & Resid. Dev \\ 
+  \hline
+NULL &  &  & 19 & 27.73 \\ 
+  x1 & 1 & 0.73 & 18 & 26.99 \\ 
+  x2 & 1 & 5.91 & 17 & 21.08 \\ 
+   \hline
+\end{tabular}
+\end{table}
+}
+
+\ssc{Q1 Part (b)}{
+
+\textbf{Since every one unit increase in x1 results in a 0.0001 increase in ln(\frc{p}{1 - p}), it looks like the income of the family not very relevant, where as the age of the car (x2) is highly relevant.}
+
+}
+
+\ssc{Q1 Part (c)}{
+
+We will test if \uw{\bth}{1} and \uw{\bth}{2} are statistically significant (i.e. testing \uw{H}{0} : \uw{\bth}{1} \eql 0 and \uw{\bth}{2} \eql 0)
+
+Our Wald statistics (given by the z value in the summary) are:
+
+\uw{\bth}{1} : 1.16
+
+\uw{\bth}{2} : 1.87
+
+We will test at \afa \eql 0.05
+
+\uw{Z}{\afa / 2} \eql \uw{Z}{0.05 / 2} \eql  \uw{Z}{0.025} \eql $-$1.96
+
+\uw{\bth}{1} : \av{1.16} \gr 1.96 \lra Not true.
+
+\uw{\bth}{2} : \av{1.87} \gr 1.96 \lra Not true.
+
+Thus, 
+
+\textbf{we fail to reject \uw{H}{0}.}
+
+}
+
+\newpage 
+
+\ssc{Q1 Part (d)}{
+
+\begin{verbatim}
+new <- data.frame(x1 = 45000, x2 = 5)
+predict(glm.1, new)
+\end{verbatim}
+
+gives us 1.214124
+
+So,
+
+\eqn{\ln(p / (1 - p)) = 1.214124}
+\eqn{p / (1 - p) = e^{1.214124}}
+\eqn{p = e^{1.214124}(1 - p)}
+\eqn{p = e^{1.214124} - pe^{1.214124}}
+\eqn{(1 + e^{1.214124})p = e^{1.214124}}
+\eqn{p = \frac{e^{1.214124}}{(1 + e^{1.214124})}}
+\eqn{p(y = 1 \textrm{ } | \textrm{ } x1 = 45,000, \textrm{ } x2 = 5) = 0.77102783}
+
+\textbf{They have a 77.1\% chance of buying a new vehicle in the next 6 months.}
+
+}
+
+\ssc{Q1 Part (e)}{
+
+\begin{verbatim}
+glm.2 <- glm(y ~ x1 + x2 + (x1)*(x2), family=binomial(link=logit), data=q1data)
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) \\ 
+  \hline
+(Intercept) & 0.3144 & 6.3940 & 0.05 & 0.9608 \\ 
+  x1 & -0.0001 & 0.0001 & -1.00 & 0.3177 \\ 
+  x2 & -2.4617 & 2.0815 & -1.18 & 0.2369 \\ 
+  x1:x2 & 0.0001 & 0.0001 & 1.61 & 0.1074 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{verbatim}
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 27.726  on 19  degrees of freedom
+Residual deviance: 16.551  on 16  degrees of freedom
+AIC: 24.551
+
+Number of Fisher Scoring iterations: 6
+\end{verbatim}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrr}
+  \hline
+ & Df & Deviance & Resid. Df & Resid. Dev \\ 
+  \hline
+NULL &  &  & 19 & 27.73 \\ 
+  x1 & 1 & 0.73 & 18 & 26.99 \\ 
+  x2 & 1 & 5.91 & 17 & 21.08 \\ 
+  x1:x2 & 1 & 4.53 & 16 & 16.55 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\textbf{Yes - both parameters for x1 and x2 switched signs when the interaction term was added, indicating a possible dependency. The interaction term also has a p value of 0.1074, which itself is not a strong p value, but out of the 4 parameters, it is the most significant.}
+}
+}
+
+\end{document}
