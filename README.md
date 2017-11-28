@@ -1,2 +1,3 @@
 # joshualmitchell.github.io
-My blog @TODO: get better description
+
+The source code for my website and my college work repository. 
