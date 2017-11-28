@@ -280,6 +280,8 @@ Let f : D \lra \br and let c \mem D. Mark each statement True or False. Justify 
 
 }
 
+\newpage
+
 \bsc{Exercise 2 (omit d)}{
 
 Let f : D \lra R and let c \mem D. Mark each statement True or False. Justify each answer.
@@ -317,6 +319,8 @@ How should f(3) be defined so that f will be continuous at 3?
 \textbf{f(3) should be defined as 10.}
 
 }
+
+\newpage
 
 \bsc{Exercise 5 (prove the result)}{
 
@@ -371,6 +375,8 @@ Since f(x) is continuous, and f(x) is only defined at one point, f(x) is only co
 \elist
 
 }
+
+\newpage
 
 \bsc{Exercise 11 (just prove the "max" result)}{
 
@@ -448,7 +454,11 @@ f(x) \gr \afa \fa x \mem U \inn D
 
 }
 
+\newpage
+
 \bsc{Exercise 16}{
+
+\textbf{I got super lost on this problem..}
 
 (First prove that for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}, use this in conjunction with Theorem 5.2.14)
 
@@ -465,62 +475,61 @@ Prove that f is continuous on \br iff \uf{f}{-1}(H) is a closed set whenever H i
 
 \wts{H is a closed set \rar \uf{f}{-1}(H) is a closed set}
 
-We know that, by Theorem 5.2.14, since D \eql \br,
+\textbf{Theorem 5.2.14} (since D \eql \br):
 
 for every open set H \sbs \br, \exs an open set G \sbs \br st \uf{f}{-1}(H) \eql G
 
-So, 
+\textbf{Corollary 5.2.15:}
 
-\uf{f}{-1}(H) \eql G
+A function f : \br \lra \br is continuous iff \uf{f}{-1}(G) is open in \br whenever G is open in \br
 
-and
+\
 
-f(G) \eql H
+So at this point we know that:
 
-Notice that:
+G is open in \br \rar \uf{f}{-1}(G) is open in \br
 
-H is a closed set \rar \uf{f}{-1}(H) is a closed set iff \uf{f}{-1}(H) is an open set \rar H is an open set
+\
 
+\lt{H \sbs \br be open.}
 
+***Somehow, from here, we show:
 
+\step{\textrm{for } H \sbs \br, \tab \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}}{1}
 
+\supp{\uf{f}{-1}(H) is closed}
 
+Then, \bnt{\br}{\uf{f}{-1}(H)} must be open.
+
+Which means that \uf{f}{-1}(\bnt{\br}{H}) is open.
+
+We also know that \bnt{\br}{H} is closed since H is open.
+
+However, by Corollary 5.2.15, 
+
+if \bnt{\br}{H} is open then \uf{f}{-1}(\bnt{\br}{H}) must be open,
+
+a contradiction.
+
+So, \uf{f}{-1}(H) must be open.
+
+\
 
 \lla
 
 \lt{\uf{f}{-1}(H) be a closed set whenever H is a closed set}
 
+So,
+
+H is an open set whenever \uf{f}{-1}(H) is an open set.
+
 \wts{for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}}
 
-\lt{H \sbs \br be a closed set.}
-
-Thus, 
-
-
-
-Then
+Then,
 
 \wts{for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D (which implies continuity on \br)}
 
-\
-
-\
-
-\
-
-\
-
-In other words, given a closed set H, \uf{f}{-1}(H) is a closed set.
-
-In other words, if \uf{f}{-1}(H) is an open set, then H is an open set.
-
-\wts{f : \br \lra \br is continuous on \br}
-
 \epf
-
-A function f : D \lra \br is continuous on D iff 
-
-for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D
 
 }
 
