@@ -29,3 +29,5 @@ predict(glm.1, new) # 1.214124
 ## E
 
 glm.2 <- glm(y ~ x1 + x2 + (x1)*(x2), family=binomial(link=logit), data=q1data)
+summary(glm.2)
+anova(glm.2)

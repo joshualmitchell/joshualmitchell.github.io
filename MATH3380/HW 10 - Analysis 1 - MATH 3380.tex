@@ -267,10 +267,11 @@ Let f : D \lra \br and let c \mem D. Mark each statement True or False. Justify 
 	
 	So, by \bpth{1} and \bpth{3},
 	
-	For \ep \gr 0, \exs \dta \gr 0 st \av{\uw{x}{n} \ms c} \ls \dta implies \av{f(\uw{x}{n}) \ms f(c)} \ls \ep
+	For \ep \gr 0, \exs \dta \gr 0 st \uw{x}{n} \mem D and \av{\uw{x}{n} \ms c} \ls \dta implies \av{f(\uw{x}{n}) \ms f(c)} \ls \ep
 	
 	and for this same \ep, there is an N \mem \bn st n \gre N implies the same.
 	
+	\textbf{I'm not sure at this point, but I think that \exs N \mem n st n \gre N implies \av{f(\uw{x}{n}) \ms f(c)} \ls \ep implies that \av{\uw{x}{n} \ms c} goes to 0 as well.}
 	
 \item if f is continuous at c, then for every neighborhood V of f(c), there exists a neighborhood U of c such that f(U \inn D) \eql V
 	
@@ -285,9 +286,25 @@ Let f : D \lra R and let c \mem D. Mark each statement True or False. Justify ea
 
 \balist
 \item if f is continuous at c and c is an accumulation point of D, then \limt{x}{c} f(x) \eql f(c)
+	
+	\textbf{True, by Theorem 5.2.2 (d).}
 \item Every polynomial is continuous at each point in \br
-\item if \bk{\uw{x}{n})} is a Cauchy sequence in D, then \bk{f(\uw{x}{n}} is convergent.
+	
+	\textbf{True, by Theorem 5.1.13. Since every polynomial can be obtained by Theorem 5.1.13's operations on continuous functions, every polynomial is continuous as well.}
+\item if \bk{(\uw{x}{n})} is a Cauchy sequence in D, then \bk{f(\uw{x}{n})} is convergent.
+	
+	\textbf{False.}
+	
+	It is true that all Cauchy sequences are convergent, but just because \bk{\uw{x}{n}} is a sequence in D doesn't mean that \uw{x}{n} converges to L st L \mem D. 
+	
+	If L $\not\in$ D, then f(L) won't be defined.
+	
+	In order for \bk{f(\uw{x}{n})} to be convergent, that has to be the case. It can't converge to an undefined number.
 \item if f : \br \lra \br and g : \br \lra \br are both continuous on \br, then f o g and g o f are both continuous on \br
+	
+	\textbf{True. Since f and g are defined for all real numbers, f o g and g o f are also defined for all real numbers. Since both functions are continuous everywhere, there are no discontinuities no matter what input either function takes (even if the input is the output of another function, i.e. a composition).}
+	
+	\textbf{Also true by Theorem 5.2.12.}
 \elist
 }
 
@@ -296,6 +313,8 @@ Let f : D \lra R and let c \mem D. Mark each statement True or False. Justify ea
 \lt{f(x) \eql \prn{\uf{x}{2} \ps 4x \ms 21}/\prn{x \ms 3} for x $\neq$ 3.}
 
 How should f(3) be defined so that f will be continuous at 3?
+\eqn{f(x) = \frac{x^2 + 4x - 21}{x - 3} = \frac{(x + 7)(x - 3)}{(x - 3)}}
+\textbf{f(3) should be defined as 10.}
 
 }
 
@@ -303,13 +322,52 @@ How should f(3) be defined so that f will be continuous at 3?
 
 Find an example of a function f : \br \lra \br that is continuous at exactly one point.
 
+\lt{f(x) \eql 1 and D \eql \bk{0}}
+
+In order for f(x) to be continuous, it must satisfy this definition:
+
+\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and \av{x \ms c} \ls \dta implies \av{f(x) \ms f(c)} \ls \ep
+
+If we let c \eql 0, notice that f(0) \eql 1, 0 is in the domain, and \av{f(x) \ms f(c)} \ls \ep for any epsilon
+
+(since f(x) and f(c) will always be the same number under our definitions).
+
+Notice also that f(x) is only defined at x \eql 0.
+
+Since f(x) is continuous, and f(x) is only defined at one point, f(x) is only continuous at one point.
 }
 
 \bsc{Exercise 10}{
 
 \balist
 \item Let f : D \lra \br and define \av{f} : D \lra \br by \av{f}(x) \eql \av{f(x)}. Suppose that f(x) is continuous at c \mem D. Prove that \av{f} is continuous at c.
+	
+	\wts{\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and \av{x \ms c} \ls \dta implies \av{\av	{f}(x) \ms \av{f}(c)} \ls \ep}
+	
+	Since f(x) is continuous at c \mem D,
+	
+	\fa \ep \gr 0, \exs \dta \gr 0 st x \mem D and \av{x \ms c} \ls \dta implies \av{f(x) \ms f(c)} \ls \ep
+	
+	By the triangle inequality,
+	
+	\av{\av{f(x)} \ms \av{f(c)}} \lse \av{f(x) \ms f(c)}
+	
+	Since \av{f}(x) \eql \av{f(x)},
+	
+	\av{\av{f(x)} \ms \av{f(c)}} \lse \av{f(x) \ms f(c)} \ls \ep
+	
+	\av{\av{f(x)} \ms \av{f(c)}} \ls \ep
+	
+	\av{\av{f}(x) \ms \av{f}(c)} \ls \ep
+	
+	Hence, \av{f} is continuous at c.
+	
+	
 \item if \av{f} is continuous at c, does it follow that f is continuous at c? Justify your answer.
+	
+	\textbf{No.}
+	
+	For example, if f(x) \eql \bk{1 for x $\neq$ 0, $-$1 otherwise}, \av{f}(x) is defined as 1 for all x \mem \br, making it continuous everywhere. However, f(x) is not continuous at x \eql 0.
 \elist
 
 }
@@ -328,25 +386,141 @@ Show that:
 
 max(f, g) \eql \frc{1}{2}(f \ps g) \ps \frc{1}{2}\av{f \ms g}
 
+\
+
+\lt{h \eql \frc{1}{2}(f \ps g) \ps \frc{1}{2}\av{f \ms g}}
+
+h \ms \frc{1}{2}(f \ps g) \eql \frc{1}{2}\av{f \ms g}
+
+2h \ms (f \ps g) \eql \av{f \ms g}
+
+So,
+
+Case
+\bilist
+\item 2h \ms (f \ps g) \eql f \ms g (i.e. f \ms g is non-negative and f \gre g)
+
+	2h \eql f \ms g \ps f \ps g
+	
+	2h \eql 2f
+	
+	h \eql f
+\item $-$(2h \ms (f \ps g)) \eql f \ms g (i.e. f \ms g is negative and g \gr f)
+	
+	2h \ms (f \ps g) \eql g \ms f
+	
+	2h \eql g \ms f \ps f \ps g
+	
+	2h \eql 2g
+	
+	h \eql g
+\elist
+
+Hence, result.
 
 }
 
 \bsc{Exercise 13}{
 
 \lt{f : D \lra \br be continuous at c \mem D}
+
 \as{f(c) \gr 0}
 
 Prove that \exs \afa \gr 0 and a neighborhood U of c st f(x) \gr \afa, \fa x \mem U \inn D
+
+\wts{\exs a neighborhood V of f(c) st \fa v \mem V, v \gr 0}
+
+Since f(c) \gr 0, if we let \ep \eql \frc{f(c) \ms 0}{4} and V \eql N(f(c), $\epsilon$), then we can see that \fa v \mem V, v \gr 0
+
+(which we can do since f is continuous at c)
+
+By Theorem 5.2.2 (c), for this neighborhood V, \exs a neighborhood U of c st f(U \inn D) \sbs V
+
+\lt{\afa \eql \frc{f(c)}{2} \gr 0}
+
+Notice that \fa v \mem V, \afa \ls v
+
+Notice also that f(U \inn D) \sbs V
+
+Thus,
+
+f(x) \gr \afa \fa x \mem U \inn D
 
 }
 
 \bsc{Exercise 16}{
 
-(First prove that for any H \sbs \br, \uf{f}{-1}(\bnt{R}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}, use this in conjunction with Theorem 5.2.14)
+(First prove that for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}, use this in conjunction with Theorem 5.2.14)
 
 \lt{f : \br \lra \br}
 
 Prove that f is continuous on \br iff \uf{f}{-1}(H) is a closed set whenever H is a closed set.
+
+(vs H is a closed set whenever f(H) is a closed set?)
+
+\bgpf
+\lra
+
+\lt{f : \br \lra \br be continuous on \br}
+
+\wts{H is a closed set \rar \uf{f}{-1}(H) is a closed set}
+
+We know that, by Theorem 5.2.14, since D \eql \br,
+
+for every open set H \sbs \br, \exs an open set G \sbs \br st \uf{f}{-1}(H) \eql G
+
+So, 
+
+\uf{f}{-1}(H) \eql G
+
+and
+
+f(G) \eql H
+
+Notice that:
+
+H is a closed set \rar \uf{f}{-1}(H) is a closed set iff \uf{f}{-1}(H) is an open set \rar H is an open set
+
+
+
+
+
+
+\lla
+
+\lt{\uf{f}{-1}(H) be a closed set whenever H is a closed set}
+
+\wts{for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}}
+
+\lt{H \sbs \br be a closed set.}
+
+Thus, 
+
+
+
+Then
+
+\wts{for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D (which implies continuity on \br)}
+
+\
+
+\
+
+\
+
+\
+
+In other words, given a closed set H, \uf{f}{-1}(H) is a closed set.
+
+In other words, if \uf{f}{-1}(H) is an open set, then H is an open set.
+
+\wts{f : \br \lra \br is continuous on \br}
+
+\epf
+
+A function f : D \lra \br is continuous on D iff 
+
+for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D
 
 }
 
