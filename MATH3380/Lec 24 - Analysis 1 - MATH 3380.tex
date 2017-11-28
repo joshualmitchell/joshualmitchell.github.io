@@ -1,0 +1,469 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#24}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+     							 
+% ----------
+
+\begin{document}
+
+Part of HW 11: 1, 2, and 5 from section 5.3
+
+Hint: \uf{5}{x} and \uf{x}{4} are polynomials, so you can assume g(x) is continuous.
+
+Look at 5.3.8 if you have a chance.
+
+\bsc{Theorem 5.3.2}{
+
+f : D \lra \br is continuous \rar f(D) is compact (i.e. D is compact \rar f(D) is compact)
+
+\bgpf
+
+A set is compact iff every open cover of a set has a finite subcover.
+
+\as{f(D) \sbs \urng{\afa \mem I}{} \uw{G}{\afa} and \uw{G}{\afa} is open \fa \afa \mem I}
+
+Thus, D \sbs \urng{\afa \mem I}{} \uf{f}{-1}(\uw{G}{\afa})
+
+\
+
+(i.e. \urng{\afa \mem I}{} \uf{f}{-1}(\uw{G}{\afa}) \eql \urng{\afa \mem I}{} (\uw{H}{\afa} \inn D) \sbs \urng{\afa \mem I}{} \uw{H}{\afa})
+
+\sidenote{
+\lt{x \mem D}
+
+Then f(x) \mem f(D)
+
+So, \exs \uw{\afa}{0} \mem I st f(x) \mem \dbs{G}{\afa}{0}
+
+and x \mem \uf{f}{-1}(\dbs{G}{\afa}{0}) \sbs \urng{\afa \mem I}{} \uf{f}{-1}(\uw{G}{\afa})
+}
+
+From 
+\eqn{f^{-1}(G_\alpha) = H_\alpha \inn D \textrm{, where \uw{H}{\afa} is open (Theorem 5.2.14)}}
+
+Since D is compact,
+
+D \sbs \urng{i = 1}{n} \dbs{H}{\afa}{i}
+
+Thus,
+
+D \sbs \urng{i = 1}{n} (\dbs{H}{\afa}{i} \inn D) \eql \urng{i = 1}{n} \uf{f}{-1}(\dbs{G}{\afa}{i})
+
+f(D) \sbs \urng{i = 1}{n} \dbs{G}{\afa}{i}
+
+Hence, f(D) is compact.
+
+\sidenote{
+\lt{x \mem D}
+
+Then x \mem \uf{f}{-1}(\dbs{G}{\afa}{k}) where k \mem \bk{1, 2.. n}
+
+So f(x) \mem \dbs{G}{\afa}{k} \sbs \urng{i = 1}{n} \dbs{G}{\afa}{i}
+
+and
+
+f(D) \sbs \urng{i = 1}{n} \dbs{G}{\afa}{i}
+}
+\epf
+}
+
+\newpage 
+
+\bsc{Corollary 5.3.3}{
+
+f : D \lra \br is continuous and D is compact.
+
+Then \exs \uw{x}{1}, \uw{x}{2} \mem D st
+\eqn{f(x_1) \lse f(x) \lse f(x_2) \tab \fa x \mem D}
+where f(\uw{x}{2}) is the max of f(D) and f(\uw{x}{1}) is the min.
+
+\bgpf
+
+f(D) is compact, so by Heine-Borel, f(D) is closed and bounded.
+
+Thus, sup f(D) exists.
+
+Now, sup f(D) is an accumulation point of f(D).
+
+Since f(D) is closed,
+
+sup f(D) \mem f(D) and sup f(D) \eql f(\uw{x}{2}) for some \uw{x}{2} \mem D
+
+i.e. y \lse sup f(D) \fa y \mem f(D)
+
+and
+
+\exs \uw{y}{n} \mem f(D) st sup f(D) \ms \frc{1}{n} \ls \uw{y}{n} \lse sup f(D) \ls sup f(D) \ps \frc{1}{n}
+
+\epf
+
+}
+
+\bsc{Section 5.4: Uniform Continuity	}{
+
+\ssc{Definition 5.4.1}{
+
+\lt{f : D \lra \br}
+
+We say that f is uniformly continuous on D if for \ep \gr 0, \exs \dta \gr 0 st \av{f(x) \ms f(y)} \ls \ep whenever \av{x \ms y} \ls \dta and x, y \mem D
+
+\
+
+Recall the old definition of continuity:
+
+f is continuous at c \mem D iff \fa \ep \gr 0, \exs \dta \gr 0 st \av{x \ms c} and x \mem D \rar \av{f(x) \ms f(c)} \ls \ep
+
+\
+
+The old one depends on c and \ep, where as the new definition only depends on \ep
+}
+
+Notice that if f is uniformly continuous on D, then f is certainly continuous on D.
+
+\ssc{Example 5.4.2}{
+
+Prove that f : \br \lra \br where f(x) \eql 2x is uniformly continuous on \br
+
+\bgpf
+
+\lt{x, y \mem \br and \ep \gr 0}
+
+\av{f(x) \ms f(y)} \eql \av{2x \ms 2y} \eql 2\av{x \ms y} \ls \ep
+
+whenever \av{x \ms y} \ls \dta \eql \frc{\epsilon}{2}
+
+\epf
+
+}
+
+\ssc{Practice 5.4.3}{
+
+Negating the definition:
+
+\exs \ep \gr 0 st \fa \dta \gr 0, \exs x, y \mem D st \av{x \ms y} \ls \dta but \av{f(x) \ms f(y)} \gre \ep
+
+in logic, but is another word for and (where but tells you something different is coming)
+}
+
+\ssc{Example 5.4.4}{
+
+\lt{f : \br \lra \br where f(x) \eql \uf{x}{2}}
+
+Prove that f is not uniformly continuous on \br
+
+\bgpf
+
+\lt{\ep \eql 1, x \mem \uf{\br}{+} and choose \dta \gr 0}
+
+\lt{y \eql x \ps \frc{\dta}{2}}
+
+Then
+\eqn{|x - y| = \frac{\delta}{2} < \dta}
+and
+\step{|f(x) - f(y)| = |x^2 - y^2| = |x - y||x + y| = |x + y|\frac{\delta}{2}}{1}
+\lt{x \eql \frc{1}{\dta}}
+
+Then
+\step{|x + y| = |\frac{1}{\delta} + \frac{1}{\delta} + \frac{\delta}{2} = \frac{2}{\delta} + \frac{\delta}{2} > \frac{2}{\delta}}{2}
+From \bpth{1} and \bpth{2},
+\eqn{|f(x) - f(y)| > \frac{2}{\delta} \frac{\delta}{2} = 1}
+
+Hence,
+
+f is NOT uniformly continuous on \br
+
+\epf
+}
+
+\ssc{Example 5.4.5}{
+\lt{f : [$-$5, 5] \lra \br where f(x) \eql \uf{x}{2}}
+
+Show that f is uniformly continuous on [$-$5, 5]
+
+\bgpf
+
+\lt{\ep \gr 0 and x, y \mem D}
+
+Then
+\eqn{|f(x) - f(y)| = |x^2 - y^2| = |x - y||x + y| \lse |x - y|(|x| + |y|) \lse |x - y|10 \ls \ep}
+whenever \av{x \ms y} \ls \dta \eql \frc{\ep}{10}
+
+\epf
+}
+
+\newpage
+
+\ssc{Theorem 5.4.6}{
+
+\as{f : D \lra \br is continuous on a compact set D.}
+
+Then, f is uniformly continuous on D
+
+\bgpf
+
+\lt{\ep \gr 0 and c \mem D}
+
+Then \exs \dta(c) \gr 0 st 
+\eqn{f(x) - f(c) < \frac{\epsilon}{2}}
+whenever \av{x \ms c} \ls \dta(c) and x \mem D
+
+(this is just the definition of continuity)
+
+Thus,
+
+D \sbs \urng{c \mem D}{} N(c, \frc{\delta(c)}{2})
+
+Since D is compact and N(c, \dta(c)) is an open set \fa c \mem D (which we proved a long time ago), 
+
+\exs n \mem \bn st
+\eqn{D \sbs \urng{i = 1}{n} N(c_i, \frac{\delta(c)_i}{2})}
+\lt{\dta \eql min \bk{\frc{\dta(c)_1}{2}, \frc{\dta(c)_2}{2}, ... \frc{\dta(c)_i}{2}}}
+
+Now let x, y \mem D with \av{x \ms y} \ls \dta
+
+Then x \mem N(\uw{c}{k}, \frc{\dta(c)_k}{2} for some k \mem \bk{1, 2, .. n}
+
+Then \av{x \ms \uw{c}{k}} \ls \frc{\dta(c)_k}{2} \ls \uw{\dta(c)}{k}
+
+From \bpth{1},
+
+\av{f(x) \ms f(\uw{c}{k})} \ls \frc{\ep}{2} \bpth{2}
+
+Also, \av{y \ms \uw{c}{k}} \eql \av{(y \ms x) \ps (x \ms \uw{c}{k})} \lse \av{y \ms x} \ps \av{x \ms \uw{c}{k}} \ls \dta \ps \frc{\dta(c)_k}{2} \lse \frc{\dta(c)_k}{2} \ps \frc{\dta(c)_k}{2} \eql \uw{\dta(c)}{k}
+
+From \bpth{1},
+
+\av{f(y) \ms f(\uw{c}{k})} \ls \frc{\epsilon}{2} \bpth{3}
+
+Hence, from \bpth{2} and \bpth{3},
+
+\eqn{|f(x) - f(y)| < |f(x) - f(c_k)| + |f(x) - f(y)| < \frc{\ep}{2} + \frc{\ep}{2} = \ep}
+
+Hence, f is uniformly continuous.
+
+\epf
+
+}
+
+}
+
+\end{document}
