@@ -16,24 +16,24 @@ displayResidualPlots <- function(model, regressors, df) {
     xname <- paste(regressor)
     resid_vs_regr <- data.frame(df[c(regressor)], resid(model))
     regressor_column <- c(df[c(regressor)])
-    str(regressor_column)
-    str(resid(model))
+    # str(regressor_column)
+    # str(resid(model))
     plot(resid_vs_regr,  main=title, xlab=xname, ylab=yname)
     abline(h = 0, col="red")
   }
 }
 
-displayPartialRegressionPlots <- function(predictor, regressors, df) {
-  # predictor : string 
+displayPartialRegressionPlots <- function(response, regressors, df) {
+  # response : string 
   # regressors : c("regressor1", "regressor2"...)
-  # df : data frame containing your data (only the regressors/predictor you actually use)
+  # df : data frame containing your data (only the regressors/response you actually use)
   for (regressor in regressors){
     regr <- names(df) %in% c(regressor)
     no_regressor_data <- df[!regr]
-    formula_reg <- as.formula(paste(predictor, " ~ .", sep = ""))
+    formula_reg <- as.formula(paste(response, " ~ .", sep = ""))
     lm_no_regressor <- lm(formula_reg, data=no_regressor_data)
     
-    pred <- names(df) %in% c(predictor)
+    pred <- names(df) %in% c(response)
     no_predictor_data <- df[!pred]
     formula_pred <- as.formula(paste(regressor, " ~ .", sep = ""))
     lm_otherRegressor_toRest <- lm(formula_pred, data=no_predictor_data)
@@ -108,31 +108,61 @@ regressors <- setdiff(colnames, c("mpg_c"))
 
 displayResidualPlots(lm7, regressors, autodata)
 
-##############################################################################
-####### Partial Regression Plots:
-##############################################################################
-
-colnames <- colnames(autodata)
-colnames <- c(colnames)
-regressors <- setdiff(colnames, c("mpg_c"))
-
 displayPartialRegressionPlots("mpg_c", regressors, autodata)
 
-# Oooh, has kind of a horseshoe pattern, let's apply a log transformation:
+# It looks like displacement brings in barely any information.
+# Weight seems to have information.
+
+# Let's look at a partial F test for Displacement, Weight, Cylinders, and HP:
+
+no_disp_model.reduced <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + cylnum_mvd + acc_c, data = autodata)
+no_wgt_model.reduced <- lm(mpg_c ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+no_hp_model.reduced <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + cylnum_mvd + acc_c, data = autodata)
+no_cyl_model.reduced <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + acc_c, data = autodata)
+
+
+anova(no_disp_model.reduced, lm7) # F: 9.8867,   Pr(>F): 0.001795,   significance: **
+anova(no_wgt_model.reduced, lm7)  # F: 104.63    Pr(>F): 2.2e-16     significance: ***
+anova(no_hp_model.reduced, lm7)   # F: 1.6075    Pr(>F): 0.2056      significance: none
+anova(no_cyl_model.reduced, lm7)  # F: 2.5285    Pr(>F): 0.1126      significance: none 
+
+
+# Has kind of a horseshoe pattern, let's apply a log transformation:
 
 ##############################################################################
 ####### Apply log transformation due to horseshoe pattern:
 ##############################################################################
 
-lm7 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+lm7_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 
-plot(lm7$fitted.values, resid(lm7), main="[Transformed] Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")
+plot(lm7_log$fitted.values, resid(lm7_log), main="[Transformed] Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")
 abline(h = 0, col="red")
 
 # Much better! Let's check normality again:
-qqnorm(resid(lm7), main="[Transformed] Residuals vs Random Normal", xlab="Random Normal", ylab="Residuals")
-qqline(resid(lm7))
+qqnorm(resid(lm7_log), main="[Transformed] Residuals vs Random Normal", xlab="Random Normal", ylab="Residuals")
+qqline(resid(lm7_log))
 # Still mostly normal, but now it has a lower left tail
+
+# Individual Residual Plots (per regressor)
+colnames <- colnames(autodata)
+colnames <- c(colnames)
+regressors <- setdiff(colnames, c("mpg_c"))
+
+displayResidualPlots(lm7_log, regressors, autodata)
+displayPartialRegressionPlots("log(mpg_c)", regressors, autodata)
+
+# Let's look at a partial F test for Displacement, Weight, Cylinders, and HP:
+
+no_disp_model.reduced <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + cylnum_mvd + acc_c, data = autodata)
+no_wgt_model.reduced <- lm(log(mpg_c) ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+no_hp_model.reduced <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + cylnum_mvd + acc_c, data = autodata)
+no_cyl_model.reduced <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + acc_c, data = autodata)
+
+
+anova(no_disp_model.reduced, lm7_log) # F: 8.3922,   Pr(>F): 0.003985,   significance: **
+anova(no_wgt_model.reduced, lm7_log)  # F: 126.68    Pr(>F): 2.2e-16     significance: ***
+anova(no_hp_model.reduced, lm7_log)   # F: 9.0956    Pr(>F): 0.002734    significance: **
+anova(no_cyl_model.reduced, lm7_log)  # F: 6.3481    Pr(>F): 0.01216     significance: *
 
 ##############################################################################
 ####### Model Selection:

@@ -458,8 +458,6 @@ f(x) \gr \afa \fa x \mem U \inn D
 
 \bsc{Exercise 16}{
 
-\textbf{I got super lost on this problem..}
-
 (First prove that for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}, use this in conjunction with Theorem 5.2.14)
 
 \lt{f : \br \lra \br}
@@ -469,79 +467,82 @@ Prove that f is continuous on \br iff \uf{f}{-1}(H) is a closed set whenever H i
 (vs H is a closed set whenever f(H) is a closed set?)
 
 \bgpf
-\lra
-
-\lt{f : \br \lra \br be continuous on \br}
-
-\wts{H is a closed set \rar \uf{f}{-1}(H) is a closed set}
-
-\textbf{Theorem 5.2.14} (since D \eql \br):
-
-for every open set H \sbs \br, \exs an open set G \sbs \br st \uf{f}{-1}(H) \eql G
-
-\textbf{Corollary 5.2.15:}
-
-A function f : \br \lra \br is continuous iff \uf{f}{-1}(G) is open in \br whenever G is open in \br
-
-\
-
-So at this point we know that:
-
-G is open in \br \rar \uf{f}{-1}(G) is open in \br
-
-\
-
-\lt{H \sbs \br be open.}
 
 \wts{for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}}
 
-\lt{x \mem \uf{f}{-1}(\bnt{\br}{H}}
+\lra
 
-so, f(x) \mem \bnt{\br}{H}
+\lt{x \mem \uf{f}{-1}(\bnt{\br}{H}) and H \sbs \br}
 
-\supp{x \mem \uf{f}{-1}(H)}
+therefore, 
 
-Then f(x) \mem H.
+f(x) \mem \bnt{\br}{H}
 
-So, x $\not\in$ \uf{f}{-1}(H) or, equivalently, x \mem \bnt{\br}{\uf{f}{-1}(H)}
+f(x) $\not\in$ H
 
+x $\not\in$ \uf{f}{-1}(H) \lla \textbf{I know you told us to do this in class, but isn't this only true if f is injective?}
 
+x \mem \bnt{\br}{\uf{f}{-1}(H)}
 
-***Somehow, from here, we show:
+\
 
+\lla 
+
+\lt{x \mem \bnt{\br}{\uf{f}{-1}(H)} and H \sbs \br}
+
+therefore,
+
+x $\not\in$ \uf{f}{-1}(H)
+
+f(x) $\not\in$ H
+
+f(x) \mem \bnt{\br}{H}
+
+x \mem \uf{f}{-1}(\bnt{\br}{H}) \lla \textbf{Same question here.}
+
+\
+
+So, at this point we have shown that:
 \step{\textrm{for } H \sbs \br, \tab \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}}{1}
+\lra 
 
-\supp{\uf{f}{-1}(H) is closed}
+\as{f : \br \lra \br is continuous}
 
-Then, \bnt{\br}{\uf{f}{-1}(H)} must be open.
+\wts{\uf{f}{-1}(H) is a closed set whenever H is closed OR H is an open set whenever \uf{f}{-1}(H) is open.}
 
-Which means that \uf{f}{-1}(\bnt{\br}{H}) is open.
+\lt{H \sbs \br be closed}
 
-We also know that \bnt{\br}{H} is closed since H is open.
+So \bnt{\br}{H} is open.
 
-However, by Corollary 5.2.15, 
+By Corollary 5.2.15, 
 
-if \bnt{\br}{H} is open then \uf{f}{-1}(\bnt{\br}{H}) must be open,
+\uf{f}{-1}(\bnt{\br}{H}) is open.
 
-a contradiction.
+Thus, by \bpth{1},
 
-So, \uf{f}{-1}(H) must be open.
+\bnt{\br}{\uf{f}{-1}(H)} is open, and
+
+\uf{f}{-1}(H) is closed.
 
 \
 
 \lla
 
-\lt{\uf{f}{-1}(H) be a closed set whenever H is a closed set}
+\as{\uf{f}{-1}(H) is a closed set whenever H is closed AND H is an open set whenever \uf{f}{-1}(H) is open.}
 
-So,
+\wts{for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D, i.e. continuity on \br}
 
-H is an open set whenever \uf{f}{-1}(H) is an open set.
+\lt{G \sbs \br be an open set}
 
-\wts{for any H \sbs \br, \uf{f}{-1}(\bnt{\br}{H}) \eql \bnt{\br}{\uf{f}{-1}(H)}}
+So, \bnt{\br}{G} is a closed set.
 
-Then,
+By our assumption, \uf{f}{-1}(\bnt{\br}{G}) is also closed.
 
-\wts{for every open set G \sbs \br, \exs an open set H \sbs \br st \uf{f}{-1}(G) \eql H \inn D (which implies continuity on \br)}
+By \bpth{1}, \bnt{\br}{\uf{f}{-1}(G)} is also closed.
+
+So, \uf{f}{-1}(G) is open.
+
+By Corollary 5.2.15, f is continuous on \br
 
 \epf
 
