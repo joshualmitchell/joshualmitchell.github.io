@@ -1,6 +1,7 @@
 setwd("/Users/jm/joshualmitchell.github.io/MATH5345/proj")
 library(leaps)
 library(car)
+library(xtable)
 
 ##############################################################################
 ####### Helper functions (for partial regression and residual plots):
@@ -28,22 +29,23 @@ displayPartialRegressionPlots <- function(response, regressors, df) {
   # regressors : c("regressor1", "regressor2"...)
   # df : data frame containing your data (only the regressors/response you actually use)
   for (regressor in regressors){
-    regr <- names(df) %in% c(regressor)
-    no_regressor_data <- df[!regr]
-    formula_reg <- as.formula(paste(response, " ~ .", sep = ""))
-    lm_no_regressor <- lm(formula_reg, data=no_regressor_data)
+    if (!is.factor(df[, match(regressor, names(df))])) {
+      regr <- names(df) %in% c(regressor)
+      no_regressor_data <- df[!regr]
+      formula_reg <- as.formula(paste(response, " ~ .", sep = ""))
+      lm_no_regressor <- lm(formula_reg, data=no_regressor_data)
+      
+      resp <- names(df) %in% c(response)
+      no_response_data <- df[!resp]
+      formula_resp <- as.formula(paste(regressor, " ~ .", sep = ""))
+      lm_otherRegressor_toRest <- lm(formula_resp, data=no_response_data)
+      title <- paste(paste("resid(Missing ", regressor, sep=''), paste(paste(") vs resid(", regressor, sep=''), " vs Rest)", sep=''))
+      xname <- paste(paste("resid(", regressor, sep=''), " vs Rest)", sep='')
+      yname <- paste(paste("resid(Missing ", regressor, sep=''), ")", sep='')
     
-    pred <- names(df) %in% c(response)
-    no_predictor_data <- df[!pred]
-    formula_pred <- as.formula(paste(regressor, " ~ .", sep = ""))
-    lm_otherRegressor_toRest <- lm(formula_pred, data=no_predictor_data)
-    
-    title <- paste(paste("resid(Missing ", regressor, sep=''), paste(paste(") vs resid(", regressor, sep=''), " vs Rest)", sep=''))
-    xname <- paste(paste("resid(", regressor, sep=''), " vs Rest)", sep='')
-    yname <- paste(paste("resid(Missing ", regressor, sep=''), ")", sep='')
-    
-    plot(resid(lm_otherRegressor_toRest), resid(lm_no_regressor), main=title, xlab=xname, ylab=yname)
-    abline(h = 0, col="red")
+      plot(resid(lm_otherRegressor_toRest), resid(lm_no_regressor), main=title, xlab=xname, ylab=yname)
+      abline(h = 0, col="red")
+    }
   }
 }
 
@@ -76,6 +78,10 @@ autodata$hp_c <- as.numeric(as.character(autodata$hp_c))
 # Remove name_str:
 autodata <- subset(autodata, select=-c(name_str))
 
+str(autodata)
+cor(autodata[ ,1:7])
+pairs(autodata[, 1:8])
+
 # All Possible Regressor Selection (using regsub)
 
 regsub.exhaust<-regsubsets(mpg_c ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
@@ -85,6 +91,53 @@ summary.out
 model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
 model_info
 
+
+
+
+
+
+
+
+regsub.exhaust<-regsubsets(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + displ_c * cylnum_mvd + cylnum_mvd * wgt_c + wgt_c * displ_c + hp_c * cylnum_mvd + wgt_c * hp_c * displ_c + cylnum_mvd * wgt_c * hp_c, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
+summary.out <- summary(regsub.exhaust)
+summary.out
+
+model_info <- cbind("# Regressors"=1:17, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:17), "CP - p"=summary.out$cp - 2:17)
+model_info
+
+full <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + displ_c * cylnum_mvd + cylnum_mvd * wgt_c + wgt_c * displ_c + hp_c * cylnum_mvd + wgt_c * hp_c * displ_c + cylnum_mvd * wgt_c * hp_c, data=autodata) 
+null <- lm(log(mpg_c) ~ 1, data=autodata) 
+
+# Perform "forward" selection starting from the NULL model and set up the scope to have an upper = FULL model. 
+
+forw <- step(null, scope=list(lower=null, upper=full), direction="forward")
+
+#############
+
+back <- step(full, data=autodata, direction="backward")
+# back.lm <- lm(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + modelyr_mvd + origin_mvd, data = autodata)
+# Same summary as forward
+summary(back.lm)
+anova(back.lm)
+
+# Stepwise Selection
+
+stepwise<- step(null, scope = list(upper=full), data=autodata, direction="both")
+# stepwise.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
+# Same as forward and backward
+summary(stepwise.lm)
+anova(stepwise.lm)
+
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + 
+  wgt_c:hp_c
+
+
+lm7_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + displ_c * cylnum_mvd + cylnum_mvd * wgt_c + wgt_c * displ_c + hp_c * cylnum_mvd + wgt_c * hp_c * displ_c + cylnum_mvd * wgt_c * hp_c, data = autodata)
+
+
+
+
+
 # Let's check constant variance:
 
 ##############################################################################
@@ -93,12 +146,16 @@ model_info
 
 lm7 <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 
+par(mar=c(2, 2, 2, 2))
+par(mfrow=c(3,3))
+
 # Fitted Values Residual Plot
-plot(lm7$fitted.values, resid(lm7), main="Residuals vs Fitted Values", xlab="Fitted Values", ylab="Residuals")
+plot(lm7$fitted.values, resid(lm7), main="Residuals vs Fitted", xlab="Fitted Values", ylab="Residuals")
 abline(h = 0, col="red")
 
+
 # Random Normal Residual Plot
-qqnorm(resid(lm7), main="Residuals vs Random Normal", xlab="Random Normal", ylab="Residuals")
+qqnorm(resid(lm7), main="Residuals vs R-Norm", xlab="Random Normal", ylab="Residuals")
 qqline(resid(lm7))
 
 # Individual Residual Plots (per regressor)
@@ -107,6 +164,13 @@ colnames <- c(colnames)
 regressors <- setdiff(colnames, c("mpg_c"))
 
 displayResidualPlots(lm7, regressors, autodata)
+
+lm7_vif <- vif(lm7)
+lm7_vif <- as.data.frame(lm7_vif)
+lm7_vif
+
+par(mar=c(2, 2, 2, 2))
+par(mfrow=c(2,2))
 
 displayPartialRegressionPlots("mpg_c", regressors, autodata)
 
@@ -126,8 +190,15 @@ anova(no_wgt_model.reduced, lm7)  # F: 104.63    Pr(>F): 2.2e-16     significanc
 anova(no_hp_model.reduced, lm7)   # F: 1.6075    Pr(>F): 0.2056      significance: none
 anova(no_cyl_model.reduced, lm7)  # F: 2.5285    Pr(>F): 0.1126      significance: none 
 
+parFchart <- list(Regressor = c("Displacement", "Weight", "HP", "Cylinder Num"), 
+                  F_Statistic = c(9.8867, 104.63, 1.6075, 2.5285), 
+                  P_Value = c(0.001795, 0.000001, 0.2056, 0.1126),
+                  Significance = c("**", "***", "none", "none"))
+parFchart <- as.data.frame(parFchart)
 
-# Has kind of a horseshoe pattern, let's apply a log transformation:
+xtable(parFchart)
+
+# Two problems: correlation and non constant variance. 
 
 ##############################################################################
 ####### Apply log transformation due to horseshoe pattern:
@@ -135,11 +206,14 @@ anova(no_cyl_model.reduced, lm7)  # F: 2.5285    Pr(>F): 0.1126      significanc
 
 lm7_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 
-plot(lm7_log$fitted.values, resid(lm7_log), main="[Transformed] Residuals vs Fitted Values", xlab="Residuals", ylab="Fitted Values")
+par(mar=c(2, 2, 2, 2))
+par(mfrow=c(3,3))
+
+plot(lm7_log$fitted.values, resid(lm7_log), main="[T] Residuals vs Fitted", xlab="Residuals", ylab="Fitted Values")
 abline(h = 0, col="red")
 
 # Much better! Let's check normality again:
-qqnorm(resid(lm7_log), main="[Transformed] Residuals vs Random Normal", xlab="Random Normal", ylab="Residuals")
+qqnorm(resid(lm7_log), main="[T] Residuals vs R-Norm", xlab="Random Normal", ylab="Residuals")
 qqline(resid(lm7_log))
 # Still mostly normal, but now it has a lower left tail
 
@@ -149,6 +223,15 @@ colnames <- c(colnames)
 regressors <- setdiff(colnames, c("mpg_c"))
 
 displayResidualPlots(lm7_log, regressors, autodata)
+
+lm7_log_vif <- vif(lm7_log)
+lm7_log_vif <- as.data.frame(lm7_log_vif)
+
+xtable(lm7_log_vif)
+
+par(mar=c(2, 2, 2, 2))
+par(mfrow=c(2,2))
+
 displayPartialRegressionPlots("log(mpg_c)", regressors, autodata)
 
 # Let's look at a partial F test for Displacement, Weight, Cylinders, and HP:
@@ -163,6 +246,13 @@ anova(no_disp_model.reduced, lm7_log) # F: 8.3922,   Pr(>F): 0.003985,   signifi
 anova(no_wgt_model.reduced, lm7_log)  # F: 126.68    Pr(>F): 2.2e-16     significance: ***
 anova(no_hp_model.reduced, lm7_log)   # F: 9.0956    Pr(>F): 0.002734    significance: **
 anova(no_cyl_model.reduced, lm7_log)  # F: 6.3481    Pr(>F): 0.01216     significance: *
+
+parFchart <- list(Regressor = c("Displacement", "Weight", "HP", "Cylinder Num"), 
+                  F_Statistic = c(8.3922, 126.68, 9.0956, 6.3481), 
+                  P_Value = c(0.003985, 0.000001, 0.002734, 0.01216),
+                  Significance = c("**", "***", "**", "*"))
+parFchart <- as.data.frame(parFchart)
+xtable(parFchart)
 
 ##############################################################################
 ####### Model Selection:
@@ -226,10 +316,6 @@ final_lm_2 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c,
 
 # hp, disp, cylnum, and wgt appear to be similar (which makes sense because they should correlate)
 # But, does correlation necessarily mean dependency?
-
-lm7_vif <- vif(lm7)
-lm7_vif <- as.data.frame(lm7_vif)
-lm7_vif
 
 final_lm_vif <- vif(final_lm)
 final_lm_vif <- as.data.frame(final_lm_vif)
