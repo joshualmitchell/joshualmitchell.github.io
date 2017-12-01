@@ -179,7 +179,6 @@ displayResidualPlots(lm7_log, regressors, autodata)
 
 lm7_log_vif <- vif(lm7_log)
 lm7_log_vif <- as.data.frame(lm7_log_vif)
-
 xtable(lm7_log_vif)
 
 par(mar=c(2, 2, 2, 2))
@@ -274,29 +273,6 @@ anova(lm_interaction_log)
 
 # So now, let's look at building our model from all of these regressors.
 
-regsub.exhaust <- regsubsets(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c 
-                                        + displ_c + cylnum_mvd + acc_c + 
-                                         wgt_c * hp_c + hp_c * displ_c + 
-                                         wgt_c * hp_c * displ_c * cylnum_mvd + 
-                                         wgt_c * hp_c * displ_c + 
-                                         wgt_c * hp_c * cylnum_mvd + 
-                                         wgt_c * displ_c * cylnum_mvd + 
-                                         hp_c * displ_c * cylnum_mvd + 
-                                         wgt_c * hp_c +
-                                         wgt_c * displ_c +
-                                         wgt_c * cylnum_mvd + 
-                                         hp_c * displ_c + 
-                                         hp_c * cylnum_mvd + 
-                                         displ_c * cylnum_mvd, data=autodata, nvmax=19)
-                             
-summary.out <- summary(regsub.exhaust)
-summary.out
-summary.out$which
-model_info <- cbind("# Regressors"=1:19, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:20), "CP - p"=summary.out$cp - 2:20)
-model_info
-
-allp.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + wgt_c * hp_c + hp_c * displ_c + wgt_c * cylnum_mvd + displ_c * cylnum_mvd + wgt_c * hp_c * displ_c + wgt_c * hp_c * cylnum_mvd + hp_c * displ_c * cylnum_mvd + wgt_c * hp_c * displ_c * cylnum_mvd, data = autodata)
-
 full <- lm_interaction_log
 null <- lm(log(mpg_c) ~ 1, data=autodata)
 
@@ -318,8 +294,7 @@ summary(lm.back)
 anova(lm.back)
 # MS_res: 0.012
 
-# Roughly the same summary as forward, maybe a little better, corresponds to [17,]
-# on all possible. Has worse CP - p than forward though.
+# Roughly the same summary as forward, maybe a little better
 
 # Stepwise Selection
 stepwise <- step(null, scope = list(upper=full), data=autodata, direction="both")
@@ -331,11 +306,11 @@ summary(lm.stepwise)
 anova(lm.stepwise)
 # MS_res: 0.013
 
-bestModels <- list(Selection_Method = c("All Possible", "Forward", "Backward", "Stepwise"),
-                  Num_Regressors = c(12, 6, 16, 6),
-                  R_Sq = c(0.9030, 0.8918, 0.9044, 0.8918), 
-                  Adj_R_Sq = c(0.9000, 0.8899, 0.9001, 0.8899),
-                  MS_res = c(0.01162, 0.013, 0.012, 0.013))
+bestModels <- list(Selection_Method = c("Forward", "Backward", "Stepwise"),
+                  Num_Regressors = c(6, 16, 6),
+                  R_Sq = c(0.8918, 0.9044, 0.8918), 
+                  Adj_R_Sq = c(0.8899, 0.9001, 0.8899),
+                  MS_res = c(0.013, 0.012, 0.013))
 
 bestModels <- as.data.frame(bestModels)
 bestModels
@@ -344,28 +319,23 @@ xtable(bestModels)
 par(mar=c(2, 2, 2, 2))
 par(mfrow=c(3,2))
 
-plot(allp.lm$fitted.values, resid(allp.lm), main="All P Residuals vs Fitted", ylab="All P Residuals", xlab="Fitted Values")
+plot(forw.lm$fitted.values, resid(forw.lm), main="FW: Residuals vs Fitted", ylab="FW: Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")
 
-qqnorm(resid(allp.lm), main="All P Residuals vs R-Norm", xlab="Random Normal", ylab="All P Residuals")
-qqline(resid(lm.forw))
+qqnorm(resid(forw.lm), main="FW: Residuals vs R-Norm", xlab="Random Normal", ylab="FW: Residuals")
+qqline(resid(forw.lm))
 
-plot(lm.forw$fitted.values, resid(lm.forw), main="Fw/Stp Residuals vs Fitted", ylab="Fw/Stp Residuals", xlab="Fitted Values")
+plot(lm.back$fitted.values, resid(lm.back), main="BK: Residuals vs Fitted", ylab="BK: Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")
 
-qqnorm(resid(lm.forw), main="Fw/Stp Residuals vs R-Norm", xlab="Random Normal", ylab="Fwd / Stp Residuals")
-qqline(resid(lm.forw))
+qqnorm(resid(lm.back), main="BK: Residuals vs R-Norm", xlab="Random Normal", ylab="BK: Residuals")
+qqline(resid(lm.back))
 
-plot(lm.forw$fitted.values, resid(lm.forw), main="Bkwd Residuals vs Fitted", ylab="Bkwd Residuals", xlab="Fitted Values")
+plot(lm.stepwise$fitted.values, resid(lm.stepwise), main="STP: Residuals vs Fitted", ylab="STP: Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")
 
-qqnorm(resid(lm.forw), main="Bkwd Residuals vs R-Norm", xlab="Random Normal", ylab="Bkwd Residuals")
-qqline(resid(lm.forw))
-
-allp.lm.vif <- vif(allp.lm)
-allp.lm.vif <- as.data.frame(allp.lm.vif)
-allp.lm.vif
-# xtable(allp.lm.vif)
+qqnorm(resid(lm.stepwise), main="STP: Residuals vs R-Norm", xlab="Random Normal", ylab="STP: Residuals")
+qqline(resid(lm.stepwise))
 
 lm.forw.vif <- vif(lm.forw)
 lm.forw.vif <- as.data.frame(lm.forw.vif)
@@ -376,6 +346,11 @@ lm.back.vif <- vif(lm.back)
 lm.back.vif <- as.data.frame(lm.back.vif)
 lm.back.vif
 # xtable(lm.back.vif)
+
+lm.stepwise.vif <- vif(lm.stepwise)
+lm.stepwise.vif <- as.data.frame(lm.stepwise.vif)
+lm.stepwise.vif
+# xtable(lm.stepwise.vif)
 
 ##############################################################################
 ####### Model Selection:
