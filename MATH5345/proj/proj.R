@@ -268,6 +268,9 @@ summary(lm_interaction_log)
 anova(lm_interaction_log)
 # MS_res: 0.012
 
+i_vs_ni <- list(Model = c("Interaction", "Transformed + Interaction"), R_Sq = c(0.8762, 0.9045), AR_Sq = c(0.8699, 0.8996), MS_res = c(7.9, 0.012))
+i_vs_ni <- as.data.frame(i_vs_ni)
+xtable(i_vs_ni)
 # It looks like, even taking into account the interactions, the log transformation
 # helps the model explain more of the relationship.
 
@@ -340,19 +343,17 @@ qqline(resid(lm.stepwise))
 lm.forw.vif <- vif(lm.forw)
 lm.forw.vif <- as.data.frame(lm.forw.vif)
 lm.forw.vif
-# xtable(lm.forw.vif)
+xtable(lm.forw.vif)
 
 lm.back.vif <- vif(lm.back)
 lm.back.vif <- as.data.frame(lm.back.vif)
 lm.back.vif
-# xtable(lm.back.vif)
+xtable(lm.back.vif)
 
 lm.stepwise.vif <- vif(lm.stepwise)
 lm.stepwise.vif <- as.data.frame(lm.stepwise.vif)
 lm.stepwise.vif
-# xtable(lm.stepwise.vif)
-
-
+xtable(lm.stepwise.vif)
 
 data_with_inflpnts_fw <- influence.measures(lm.forw)
 inflpnts_fw <- which(apply(data_with_inflpnts_fw$is.inf, 1, any)) 
@@ -362,6 +363,12 @@ data_with_inflpnts_bk <- influence.measures(lm.back)
 inflpnts_bk <- which(apply(data_with_inflpnts_bk$is.inf, 1, any)) 
 data_wo_inflpnts_bk <- autodata[-inflpnts_bk,] # 355 / 391 -> 9.2072% influential points
 
+common_infl_pnts <- intersect(inflpnts_bk, inflpnts_fw) # 14
+
+no_infl_forw_back <- list(Model = c("Forward", "Backward"), Num_Infl_Pnts = c(20, 36), Percent_Infl_Pnts = c("5.12%", "9.21%"), Common_Infl_Pnts = 14)
+no_infl_forw_back <- as.data.frame(no_infl_forw_back)
+xtable(no_infl_forw_back)
+
 lm.forw.wo.infl <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = data_wo_inflpnts_fw)
 lm.back.wo.infl <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
 
@@ -369,6 +376,10 @@ summary(lm.forw.wo.infl) # Multiple R-squared:  0.9092,	Adjusted R-squared:  0.9
 summary(lm.back.wo.infl) # Multiple R-squared:  0.9044,	Adjusted R-squared:  0.9001 
 anova(lm.forw.wo.infl) # MS_res: 0.0099
 anova(lm.back.wo.infl) # MS_res: 0.012
+
+no_infl_forw_back <- list(Model = c("Forward w/o Infl", "Backward w/o Infl"), R_Sq = c(0.9092, 0.9044), AR_Sq = c(0.9074, 0.9001), MS_res = c(0.0099, 0.012))
+no_infl_forw_back <- as.data.frame(no_infl_forw_back)
+xtable(no_infl_forw_back)
 
 # I would personally choose the forward model since the key statistics (R^2, etc)
 # are around the same as the backward model, but the forward model is a lot more

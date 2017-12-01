@@ -285,6 +285,9 @@ mpg\_c & 1.00 & -0.78 & -0.80 & -0.78 & -0.83 & 0.42 & 0.58 \\
 \end{tabular}
 \end{table}
 
+\wimg{1p_ScPlMtr}
+\wimg{2-10p_resall}
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrr}
@@ -316,26 +319,15 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \end{tabular}
 \end{table}
 
+\wimg{11-14p_PrRgall4}
 
+% TRANSFORMATION:
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrr}
-  \hline
- & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
-  \hline
-wgt\_c & 11.07 & 1.00 & 3.33 \\ 
-  modelyr\_mvd & 1.30 & 1.00 & 1.14 \\ 
-  origin\_mvd & 2.09 & 2.00 & 1.20 \\ 
-  hp\_c & 9.98 & 1.00 & 3.16 \\ 
-  displ\_c & 22.87 & 1.00 & 4.78 \\ 
-  cylnum\_mvd & 10.74 & 1.00 & 3.28 \\ 
-  acc\_c & 2.62 & 1.00 & 1.62 \\ 
-   \hline
-\end{tabular}
-\end{table}
+\newpage
 
+\wimg{15-23t_resall}
 
+\newpage 
 
 \begin{table}[ht]
 \centering
@@ -347,6 +339,101 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
   2 & Weight & 126.68 & 0.00 & *** \\ 
   3 & HP & 9.10 & 0.00 & ** \\ 
   4 & Cylinder Num & 6.35 & 0.01 & * \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\wimg{24-27t_PrRgall4}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrr}
+  \hline
+ & Model & R\_Sq & AR\_Sq & MS\_res \\ 
+  \hline
+1 & Interaction & 0.88 & 0.87 & 7.90 \\ 
+  2 & Transformed + Interaction & 0.90 & 0.90 & 0.01 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & Selection\_Method & Num\_Regressors & R\_Sq & Adj\_R\_Sq & MS\_res \\ 
+  \hline
+1 & Forward & 6.00 & 0.89 & 0.89 & 0.01 \\ 
+  2 & Backward & 16.00 & 0.90 & 0.90 & 0.01 \\ 
+  3 & Stepwise & 6.00 & 0.89 & 0.89 & 0.01 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\wimg{28ti_resfittednorm}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 13.83 & 1.00 & 3.72 \\ 
+  modelyr\_mvd & 1.27 & 1.00 & 1.13 \\ 
+  origin\_mvd & 1.74 & 2.00 & 1.15 \\ 
+  hp\_c & 37.47 & 1.00 & 6.12 \\ 
+  acc\_c & 2.61 & 1.00 & 1.62 \\ 
+  wgt\_c:hp\_c & 58.06 & 1.00 & 7.62 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 3110.02 & 1.00 & 55.77 \\ 
+  modelyr\_mvd & 1.44 & 1.00 & 1.20 \\ 
+  origin\_mvd & 3.01 & 2.00 & 1.32 \\ 
+  hp\_c & 2806.06 & 1.00 & 52.97 \\ 
+  displ\_c & 10568.29 & 1.00 & 102.80 \\ 
+  cylnum\_mvd & 975.92 & 1.00 & 31.24 \\ 
+  acc\_c & 3.64 & 1.00 & 1.91 \\ 
+  wgt\_c:hp\_c & 27058.36 & 1.00 & 164.49 \\ 
+  hp\_c:displ\_c & 39680.75 & 1.00 & 199.20 \\ 
+  wgt\_c:displ\_c & 11724.72 & 1.00 & 108.28 \\ 
+  wgt\_c:cylnum\_mvd & 9069.37 & 1.00 & 95.23 \\ 
+  hp\_c:cylnum\_mvd & 9125.25 & 1.00 & 95.53 \\ 
+  displ\_c:cylnum\_mvd & 19861.83 & 1.00 & 140.93 \\ 
+  wgt\_c:hp\_c:cylnum\_mvd & 41867.56 & 1.00 & 204.62 \\ 
+  wgt\_c:displ\_c:cylnum\_mvd & 15077.88 & 1.00 & 122.79 \\ 
+  hp\_c:displ\_c:cylnum\_mvd & 44842.29 & 1.00 & 211.76 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrlr}
+  \hline
+ & Model & Num\_Infl\_Pnts & Percent\_Infl\_Pnts & Common\_Infl\_Pnts \\ 
+  \hline
+1 & Forward & 20.00 & 5.12\% & 14.00 \\ 
+  2 & Backward & 36.00 & 9.21\% & 14.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrr}
+  \hline
+ & Model & R\_Sq & AR\_Sq & MS\_res \\ 
+  \hline
+1 & Forward w/o Infl & 0.91 & 0.91 & 0.01 \\ 
+  2 & Backward w/o Infl & 0.90 & 0.90 & 0.01 \\ 
    \hline
 \end{tabular}
 \end{table}
