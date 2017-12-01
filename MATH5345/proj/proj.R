@@ -2,6 +2,7 @@ setwd("/Users/jm/joshualmitchell.github.io/MATH5345/proj")
 library(leaps)
 library(car)
 library(xtable)
+library(locfit)
 
 ##############################################################################
 ####### Helper functions (for partial regression and residual plots):
@@ -91,53 +92,6 @@ summary.out
 model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
 model_info
 
-
-
-
-
-
-
-
-regsub.exhaust<-regsubsets(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + displ_c * cylnum_mvd + cylnum_mvd * wgt_c + wgt_c * displ_c + hp_c * cylnum_mvd + wgt_c * hp_c * displ_c + cylnum_mvd * wgt_c * hp_c, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
-summary.out <- summary(regsub.exhaust)
-summary.out
-
-model_info <- cbind("# Regressors"=1:17, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:17), "CP - p"=summary.out$cp - 2:17)
-model_info
-
-full <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + displ_c * cylnum_mvd + cylnum_mvd * wgt_c + wgt_c * displ_c + hp_c * cylnum_mvd + wgt_c * hp_c * displ_c + cylnum_mvd * wgt_c * hp_c, data=autodata) 
-null <- lm(log(mpg_c) ~ 1, data=autodata) 
-
-# Perform "forward" selection starting from the NULL model and set up the scope to have an upper = FULL model. 
-
-forw <- step(null, scope=list(lower=null, upper=full), direction="forward")
-
-#############
-
-back <- step(full, data=autodata, direction="backward")
-# back.lm <- lm(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + modelyr_mvd + origin_mvd, data = autodata)
-# Same summary as forward
-summary(back.lm)
-anova(back.lm)
-
-# Stepwise Selection
-
-stepwise<- step(null, scope = list(upper=full), data=autodata, direction="both")
-# stepwise.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
-# Same as forward and backward
-summary(stepwise.lm)
-anova(stepwise.lm)
-
-log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + 
-  wgt_c:hp_c
-
-
-lm7_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + displ_c * cylnum_mvd + cylnum_mvd * wgt_c + wgt_c * displ_c + hp_c * cylnum_mvd + wgt_c * hp_c * displ_c + cylnum_mvd * wgt_c * hp_c, data = autodata)
-
-
-
-
-
 # Let's check constant variance:
 
 ##############################################################################
@@ -152,7 +106,6 @@ par(mfrow=c(3,3))
 # Fitted Values Residual Plot
 plot(lm7$fitted.values, resid(lm7), main="Residuals vs Fitted", xlab="Fitted Values", ylab="Residuals")
 abline(h = 0, col="red")
-
 
 # Random Normal Residual Plot
 qqnorm(resid(lm7), main="Residuals vs R-Norm", xlab="Random Normal", ylab="Residuals")
@@ -209,7 +162,7 @@ lm7_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + c
 par(mar=c(2, 2, 2, 2))
 par(mfrow=c(3,3))
 
-plot(lm7_log$fitted.values, resid(lm7_log), main="[T] Residuals vs Fitted", xlab="Residuals", ylab="Fitted Values")
+plot(lm7_log$fitted.values, resid(lm7_log), main="[T] Residuals vs Fitted", ylab="Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")
 
 # Much better! Let's check normality again:
@@ -253,6 +206,176 @@ parFchart <- list(Regressor = c("Displacement", "Weight", "HP", "Cylinder Num"),
                   Significance = c("**", "***", "**", "*"))
 parFchart <- as.data.frame(parFchart)
 xtable(parFchart)
+
+# Knowing that there's correlation between variables, let's look at interaction terms
+
+##############################################################################
+#######  Interaction terms:
+##############################################################################
+
+# Possible Interaction Terms:
+# wgt_c * hp_c * displ_c * cylnum_mvd
+# wgt_c * hp_c * displ_c
+# wgt_c * hp_c * cylnum_mvd
+# wgt_c * displ_c * cylnum_mvd
+# hp_c * displ_c * cylnum_mvd
+# wgt_c * hp_c
+# wgt_c * displ_c 
+# wgt_c * cylnum_mvd
+# hp_c * displ_c
+# hp_c * cylnum_mvd
+# displ_c * cylnum_mvd
+
+# So let's build a model with all 7 regressors and all of those interaction terms
+# (since those 4 had the high VIFs)
+# and see what's the most significant.
+
+lm_interaction <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c 
+                     + displ_c + cylnum_mvd + acc_c + 
+                       wgt_c * hp_c + hp_c * displ_c + 
+                       wgt_c * hp_c * displ_c * cylnum_mvd + 
+                       wgt_c * hp_c * displ_c + 
+                       wgt_c * hp_c * cylnum_mvd + 
+                       wgt_c * displ_c * cylnum_mvd + 
+                       hp_c * displ_c * cylnum_mvd + 
+                       wgt_c * hp_c +
+                       wgt_c * displ_c +
+                       wgt_c * cylnum_mvd + 
+                       hp_c * displ_c + 
+                       hp_c * cylnum_mvd + 
+                       displ_c * cylnum_mvd, data=autodata)
+
+lm_interaction_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c 
+                     + displ_c + cylnum_mvd + acc_c + 
+                       wgt_c * hp_c + hp_c * displ_c + 
+                       wgt_c * hp_c * displ_c * cylnum_mvd + 
+                       wgt_c * hp_c * displ_c + 
+                       wgt_c * hp_c * cylnum_mvd + 
+                       wgt_c * displ_c * cylnum_mvd + 
+                       hp_c * displ_c * cylnum_mvd + 
+                       wgt_c * hp_c +
+                       wgt_c * displ_c +
+                       wgt_c * cylnum_mvd + 
+                       hp_c * displ_c + 
+                       hp_c * cylnum_mvd + 
+                       displ_c * cylnum_mvd, data=autodata)
+
+summary(lm_interaction)
+# R_sq : 0.8762, AR_sq: 0.8699
+anova(lm_interaction)
+# MS_res: 7.9
+summary(lm_interaction_log)
+# R_sq : 0.9045, AR_sq: 0.8996
+anova(lm_interaction_log)
+# MS_res: 0.012
+
+# It looks like, even taking into account the interactions, the log transformation
+# helps the model explain more of the relationship.
+
+# So now, let's look at building our model from all of these regressors.
+
+regsub.exhaust <- regsubsets(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c 
+                                        + displ_c + cylnum_mvd + acc_c + 
+                                         wgt_c * hp_c + hp_c * displ_c + 
+                                         wgt_c * hp_c * displ_c * cylnum_mvd + 
+                                         wgt_c * hp_c * displ_c + 
+                                         wgt_c * hp_c * cylnum_mvd + 
+                                         wgt_c * displ_c * cylnum_mvd + 
+                                         hp_c * displ_c * cylnum_mvd + 
+                                         wgt_c * hp_c +
+                                         wgt_c * displ_c +
+                                         wgt_c * cylnum_mvd + 
+                                         hp_c * displ_c + 
+                                         hp_c * cylnum_mvd + 
+                                         displ_c * cylnum_mvd, data=autodata, nvmax=19)
+                             
+summary.out <- summary(regsub.exhaust)
+summary.out
+summary.out$which
+model_info <- cbind("# Regressors"=1:19, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:20), "CP - p"=summary.out$cp - 2:20)
+model_info
+
+allp.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + wgt_c * hp_c + hp_c * displ_c + wgt_c * cylnum_mvd + displ_c * cylnum_mvd + wgt_c * hp_c * displ_c + wgt_c * hp_c * cylnum_mvd + hp_c * displ_c * cylnum_mvd + wgt_c * hp_c * displ_c * cylnum_mvd, data = autodata)
+
+full <- lm_interaction_log
+null <- lm(log(mpg_c) ~ 1, data=autodata)
+
+# Perform "forward" selection starting from the NULL model and set up the scope to have an upper = FULL model. 
+
+forw <- step(null, scope=list(lower=null, upper=full), direction="forward")
+# Chosen: lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+lm.forw <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+summary(lm.forw)
+# Multiple R-squared:  0.8918,	Adjusted R-squared:  0.8899 
+anova(lm.forw)
+# MS_res: 0.013
+
+back <- step(full, data=autodata, direction="backward")
+# Chosen: lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
+lm.back <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
+summary(lm.back)
+# Multiple R-squared:  0.9044,	Adjusted R-squared:  0.9001  
+anova(lm.back)
+# MS_res: 0.012
+
+# Roughly the same summary as forward, maybe a little better, corresponds to [17,]
+# on all possible. Has worse CP - p than forward though.
+
+# Stepwise Selection
+stepwise <- step(null, scope = list(upper=full), data=autodata, direction="both")
+# Chosen: lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+lm.stepwise <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+# Same model as forward, same summary (roughly) as all of them.
+summary(lm.stepwise)
+# Multiple R-squared:  0.8918,	Adjusted R-squared:  0.8899 
+anova(lm.stepwise)
+# MS_res: 0.013
+
+bestModels <- list(Selection_Method = c("All Possible", "Forward", "Backward", "Stepwise"),
+                  Num_Regressors = c(12, 6, 16, 6),
+                  R_Sq = c(0.9030, 0.8918, 0.9044, 0.8918), 
+                  Adj_R_Sq = c(0.9000, 0.8899, 0.9001, 0.8899),
+                  MS_res = c(0.01162, 0.013, 0.012, 0.013))
+
+bestModels <- as.data.frame(bestModels)
+bestModels
+xtable(bestModels)
+
+par(mar=c(2, 2, 2, 2))
+par(mfrow=c(3,2))
+
+plot(allp.lm$fitted.values, resid(allp.lm), main="All P Residuals vs Fitted", ylab="All P Residuals", xlab="Fitted Values")
+abline(h = 0, col="red")
+
+qqnorm(resid(allp.lm), main="All P Residuals vs R-Norm", xlab="Random Normal", ylab="All P Residuals")
+qqline(resid(lm.forw))
+
+plot(lm.forw$fitted.values, resid(lm.forw), main="Fw/Stp Residuals vs Fitted", ylab="Fw/Stp Residuals", xlab="Fitted Values")
+abline(h = 0, col="red")
+
+qqnorm(resid(lm.forw), main="Fw/Stp Residuals vs R-Norm", xlab="Random Normal", ylab="Fwd / Stp Residuals")
+qqline(resid(lm.forw))
+
+plot(lm.forw$fitted.values, resid(lm.forw), main="Bkwd Residuals vs Fitted", ylab="Bkwd Residuals", xlab="Fitted Values")
+abline(h = 0, col="red")
+
+qqnorm(resid(lm.forw), main="Bkwd Residuals vs R-Norm", xlab="Random Normal", ylab="Bkwd Residuals")
+qqline(resid(lm.forw))
+
+allp.lm.vif <- vif(allp.lm)
+allp.lm.vif <- as.data.frame(allp.lm.vif)
+allp.lm.vif
+# xtable(allp.lm.vif)
+
+lm.forw.vif <- vif(lm.forw)
+lm.forw.vif <- as.data.frame(lm.forw.vif)
+lm.forw.vif
+# xtable(lm.forw.vif)
+
+lm.back.vif <- vif(lm.back)
+lm.back.vif <- as.data.frame(lm.back.vif)
+lm.back.vif
+# xtable(lm.back.vif)
 
 ##############################################################################
 ####### Model Selection:
@@ -300,6 +423,9 @@ log_model_info
 
 final_lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c, data = autodata)
 # R^2: 0.88    Adj R^2: 0.8781    MS_Res: 0.014
+
+
+
 
 data_with_inflpnts <- influence.measures(final_lm)
 inflpnts <- which(apply(data_with_inflpnts$is.inf, 1, any)) 
