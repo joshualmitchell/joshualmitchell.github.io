@@ -352,78 +352,24 @@ lm.stepwise.vif <- as.data.frame(lm.stepwise.vif)
 lm.stepwise.vif
 # xtable(lm.stepwise.vif)
 
-##############################################################################
-####### Model Selection:
-##############################################################################
-
-full <- lm(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata) 
-null <- lm(log(mpg_c) ~ 1, data=autodata) 
-
-# Perform "forward" selection starting from the NULL model and set up the scope to have an upper = FULL model. 
-
-forw <- step(null, scope=list(lower=null, upper=full), direction="forward")
-forw.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
-summary(forw.lm)
-# Multiple R-squared:  0.8819,	Adjusted R-squared:  0.8798 
-anova(forw.lm)
-# Mean Sq: 0.014
-
-# Backwards Selection
-
-back <- step(full, data=autodata, direction="backward")
-back.lm <- lm(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + modelyr_mvd + origin_mvd, data = autodata)
-# Same summary as forward
-summary(back.lm)
-anova(back.lm)
-
-# Stepwise Selection
-
-stepwise<- step(null, scope = list(upper=full), data=autodata, direction="both")
-stepwise.lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd, data = autodata)
-# Same as forward and backward
-summary(stepwise.lm)
-anova(stepwise.lm)
-
-# All Possible Regressor Selection (using regsub)
-
-regsub.exhaust<-regsubsets(log(mpg_c) ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
-summary.out <- summary(regsub.exhaust)
-summary.out
-
-log_model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
-log_model_info
-
-# At this point, Forward, Backward, and Stepwise tell us to choose the full model minus cylnum and acc
-# Right before we add cylnum and acc, CP - p goes negative, which also indicates we should choose full - (cylnum + acc) model
-
-final_lm <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c, data = autodata)
-# R^2: 0.88    Adj R^2: 0.8781    MS_Res: 0.014
 
 
+data_with_inflpnts_fw <- influence.measures(lm.forw)
+inflpnts_fw <- which(apply(data_with_inflpnts_fw$is.inf, 1, any)) 
+data_wo_inflpnts_fw <- autodata[-inflpnts_fw,] # 371 / 391 = 0.9488491 -> 5.11509% infl
 
+data_with_inflpnts_bk <- influence.measures(lm.back)
+inflpnts_bk <- which(apply(data_with_inflpnts_bk$is.inf, 1, any)) 
+data_wo_inflpnts_bk <- autodata[-inflpnts_bk,] # 355 / 391 -> 9.2072% influential points
 
-data_with_inflpnts <- influence.measures(final_lm)
-inflpnts <- which(apply(data_with_inflpnts$is.inf, 1, any)) 
-data_wo_inflpnts <- autodata[-inflpnts,] 
-# 368/391 = 0.9411765 which means 5.9% of our data is influential points.
+lm.forw.wo.infl <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = data_wo_inflpnts_fw)
+lm.back.wo.infl <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
 
-final_lm_2 <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c, data = data_wo_inflpnts)
-# R^2: 0.9017    Adj R^2: 0.900    MS_Res: 0.011
+summary(lm.forw.wo.infl) # Multiple R-squared:  0.9092,	Adjusted R-squared:  0.9074 
+summary(lm.back.wo.infl) # Multiple R-squared:  0.9044,	Adjusted R-squared:  0.9001 
+anova(lm.forw.wo.infl) # MS_res: 0.0099
+anova(lm.back.wo.infl) # MS_res: 0.012
 
-# Multiple R-squared:  0.9037,	Adjusted R-squared:  0.9018,   MS_res: 0.0104
-# without influential points
-
-# VIFS:
-
-# hp, disp, cylnum, and wgt appear to be similar (which makes sense because they should correlate)
-# But, does correlation necessarily mean dependency?
-
-final_lm_vif <- vif(final_lm)
-final_lm_vif <- as.data.frame(final_lm_vif)
-final_lm_vif
-
-final_lm_2_vif <- vif(final_lm_2)
-final_lm_2_vif <- as.data.frame(final_lm_2_vif)
-final_lm_2_vif
-
-# 
+# I would personally choose the forward model since the key statistics (R^2, etc)
+# are around the same as the backward model, but the forward model is a lot more
+# forgiving of influential points.
