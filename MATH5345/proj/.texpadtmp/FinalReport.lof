@@ -1,5 +1,6 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Scatterplot Matrix of the Original Full Model}}{5}
 \contentsline {figure}{\numberline {2}{\ignorespaces Residual Plots of the Original Full Model}}{6}
-\contentsline {figure}{\numberline {3}{\ignorespaces Partial regression plots on high VIF regressors}}{8}
-\contentsline {figure}{\numberline {4}{\ignorespaces Residual Plots of the Transformed Full Model}}{10}
-\contentsline {figure}{\numberline {5}{\ignorespaces Partial regression plots on high VIF regressors on the Transformed Full Model}}{11}
+\contentsline {figure}{\numberline {3}{\ignorespaces Partial regression plots on high VIF regressors}}{7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Residual Plots of the Transformed Full Model}}{9}
+\contentsline {figure}{\numberline {5}{\ignorespaces Partial regression plots on high VIF regressors on the Transformed Full Model}}{10}
+\contentsline {figure}{\numberline {6}{\ignorespaces Residuals vs Fitted and vs Random Normal plots for Forward, Backward, and Stepwise Models}}{13}

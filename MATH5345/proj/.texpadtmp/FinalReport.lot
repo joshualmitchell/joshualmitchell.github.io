@@ -2,11 +2,11 @@
 \contentsline {table}{\numberline {2}{\ignorespaces R ANOVA of original full model (relating mpg to the rest)}}{4}
 \contentsline {table}{\numberline {3}{\ignorespaces VIF of each regressor in the Full Original Model}}{4}
 \contentsline {table}{\numberline {4}{\ignorespaces A partial F test on each of the regressors with high VIF scores}}{7}
-\contentsline {table}{\numberline {5}{\ignorespaces A partial F test on each of the regressors with high VIF scores on the Transformed Full Model}}{11}
-\contentsline {table}{\numberline {6}{\ignorespaces A chart comparing the Untransformed Full Model with all combinations of interaction terms for the high VIF regressors against the same model with a log transformation on the response variable (mpg)}}{12}
-\contentsline {table}{\numberline {7}{\ignorespaces Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}}{12}
-\contentsline {table}{\numberline {8}{\ignorespaces VIF of each regressor in the Forward Model}}{13}
-\contentsline {table}{\numberline {9}{\ignorespaces VIF of each regressor in the Backward Model}}{13}
+\contentsline {table}{\numberline {5}{\ignorespaces A partial F test on each of the regressors with high VIF scores on the Transformed Full Model}}{10}
+\contentsline {table}{\numberline {6}{\ignorespaces A chart comparing the Untransformed Full Model with all combinations of interaction terms for the high VIF regressors against the same model with a log transformation on the response variable (mpg)}}{11}
+\contentsline {table}{\numberline {7}{\ignorespaces Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}}{11}
+\contentsline {table}{\numberline {8}{\ignorespaces VIF of each regressor in the Forward Model}}{12}
+\contentsline {table}{\numberline {9}{\ignorespaces VIF of each regressor in the Backward Model}}{12}
 \contentsline {table}{\numberline {10}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{14}
 \contentsline {table}{\numberline {11}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{14}
 \contentsline {table}{\numberline {12}{\ignorespaces R Summary of the final model}}{15}
