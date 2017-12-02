@@ -354,7 +354,7 @@ wgt\_c & 1 & 16470.05 & 16470.05 & 1505.92 & 0.0000 \\
 	\centering
 	\includegraphics[width=1\linewidth]{2-10p_resall}
 	\caption[Residual Plots of the Original Full Model]
-	{A Residual vs Fitted, a Residual vs R-Norm, and Residual vs Regressors plots}
+	{A Residual vs Fitted, a Residual vs R-Norm, and Residual vs Regressors plots of the Original Full Model}
 \end{figure}
 
 \clearpage
@@ -423,8 +423,8 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{15-23t_resall}
-	\caption[TOC Define Me]
-	{Description define me}
+	\caption[Residual Plots of the Transformed Full Model]
+	{A Residual vs Fitted, a Residual vs R-Norm, and Residual vs Regressors plots of the Transformed Full Model}
 \end{figure}
 
 \clearpage
@@ -590,14 +590,14 @@ mpg (c) \tl modelyr (mvd) + origin (mvd) + hp (c) + acc (c) + wgt (c) * hp (c)
   \hline
  & Estimate & Std. Error & t value & Pr($>$$|$t$|$) & Significance\\ 
   \hline
-(Intercept) & 2.1373 & 0.1735 & 12.32 & 0.0000 & *** \\ 
-  wgt\_c & -0.0004 & 0.0000 & -14.76 & 0.0000 & *** \\ 
-  modelyr\_mvd & 0.0309 & 0.0018 & 17.59 & 0.0000 & *** \\ 
-  origin\_mvd2 & 0.0558 & 0.0177 & 3.14 & 0.0018 & ** \\ 
-  origin\_mvd3 & 0.0455 & 0.0180 & 2.52 & 0.0121 & * \\ 
-  hp\_c & -0.0064 & 0.0009 & -7.06 & 0.0000 & *** \\ 
-  acc\_c & -0.0053 & 0.0034 & -1.59 & 0.1118 & \\ 
-  wgt\_c:hp\_c & 0.0000 & 0.0000 & 6.71 & 0.0000 & *** \\ 
+(Intercept) & 2.1373 & 0.1735 & 12.32 & 0.00001 & *** \\ 
+  wgt\_c & -0.0004 & 0.0000 & -14.76 & 0.00001 & *** \\ 
+  modelyr\_mvd & 0.0309 & 0.0018 & 17.59 & 0.00001 & *** \\ 
+  origin\_mvd2 & 0.0558 & 0.0177 & 3.14 & 0.00180 & ** \\ 
+  origin\_mvd3 & 0.0455 & 0.0180 & 2.52 & 0.01210 & * \\ 
+  hp\_c & -0.0064 & 0.0009 & -7.06 & 0.00001 & *** \\ 
+  acc\_c & -0.0053 & 0.0034 & -1.59 & 0.11180 & \\ 
+  wgt\_c:hp\_c & 0.0000013 & 0.0000002 & 6.71 & 0.00001 & *** \\ 
    \hline
 \end{tabular}
 \caption{R Summary of the final model}

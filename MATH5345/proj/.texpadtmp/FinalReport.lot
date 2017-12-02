@@ -3,12 +3,12 @@
 \contentsline {table}{\numberline {3}{\ignorespaces R ANOVA of original full model (relating mpg to the rest)}}{3}
 \contentsline {table}{\numberline {4}{\ignorespaces VIF of each regressor in the Full Original Model}}{6}
 \contentsline {table}{\numberline {5}{\ignorespaces A partial F test on each of the regressors with high VIF scores}}{6}
-\contentsline {table}{\numberline {6}{\ignorespaces This table shows some data}}{9}
-\contentsline {table}{\numberline {7}{\ignorespaces This table shows some data}}{11}
-\contentsline {table}{\numberline {8}{\ignorespaces This table shows some data}}{11}
-\contentsline {table}{\numberline {9}{\ignorespaces VIF of each regressor in the Forward Model}}{13}
-\contentsline {table}{\numberline {10}{\ignorespaces VIF of each regressor in the Backward Model}}{13}
-\contentsline {table}{\numberline {11}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{14}
-\contentsline {table}{\numberline {12}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{14}
-\contentsline {table}{\numberline {13}{\ignorespaces R Summary of the final model}}{15}
-\contentsline {table}{\numberline {14}{\ignorespaces R ANOVA of the final model}}{15}
+\contentsline {table}{\numberline {6}{\ignorespaces This table shows some data}}{10}
+\contentsline {table}{\numberline {7}{\ignorespaces This table shows some data}}{12}
+\contentsline {table}{\numberline {8}{\ignorespaces This table shows some data}}{12}
+\contentsline {table}{\numberline {9}{\ignorespaces VIF of each regressor in the Forward Model}}{14}
+\contentsline {table}{\numberline {10}{\ignorespaces VIF of each regressor in the Backward Model}}{14}
+\contentsline {table}{\numberline {11}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{15}
+\contentsline {table}{\numberline {12}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{15}
+\contentsline {table}{\numberline {13}{\ignorespaces R Summary of the final model}}{16}
+\contentsline {table}{\numberline {14}{\ignorespaces R ANOVA of the final model}}{16}
