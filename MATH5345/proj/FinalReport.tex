@@ -415,19 +415,17 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \clearpage
 \newpage
 
-Original Model
+A full multiple linear regression was fitted on the data set with mileage (mpg) as the response variable and number of cylinders (cylnum), displacement (displ), horsepower (hp), weight (wgt), acceleration (acc), model year (modelyr), and origin (origin) as the predictor variables. The following five key assumptions were examined:
 
-A multiple linear regression was fitted on miles per gallon ~ number of cylinders (as a factor), displacement, horsepower, weight, acceleration, model year, and origen (as a factor); and the five requirements to realize a regression analysis were checked.
+\balist
+\item Normality of errors: Based on figure 2, it appears that the residuals are mostly normally distributed with a right tail.
+\item Independence of errors: Based on figure 2, our errors might be nontrivially dependent due to the quadratic shape of the Residuals vs Fitted plot.
+\item Constant variance of errors: Based on figure 2's Residuals vs Fitted plot, it appears that, due to the inconsistency of the spread of the residuals, constant variance is not upheld.
+\item An expected error value of 0: Based on figure 2's Residuals vs Fitted plot, it is likely that this is upheld (due to half the data being roughly above 0 and the other half being below).
+\item Linearity: Based on the significance of multiple coefficient estimates for each regressor in Table 1, it appears that our response variable is linearly related to our predictor variables.
+\elist
 
-Normality: 
-
-Notice that the Residual vs. Normal plot behaves mostly normal except at the tails. Where the tails seem lighter than the textbook ideal. Yet, this will not bring major issues to the analysis. Therefore, normality can be concluded for this purpose.
-
-Independence, Linearity and Constant Variance:
-
-The Residual vs. Fitted Values plot for this regression,  makes a shoe horse shape plot and, most of the data points are below the abline. It indicates lack of constant variance, non-zero mean error, and a non-linear distribution. This will bring major problems to the predictions, and analysis.  The issue can be addressed in a simple manner; and will be discussed in the next section. Also, notice how all of the residuals are bounded, this is an indication of uncorrelated errors.
-
-Figure 2 and Table 3 gives an insight for correlation among variables. Since a lot of the plots show a linear relationship (with a nonzero slope), multicollinearity is suspected. Further evidence that there exists a dependence among variables are the VIF values of cylinder number, displacement, horsepower and weight; hence it will be needed to include some interaction variables. 
+Correlation among variables was also examined. Figure 1 and Table 3 indicate a strong relationship between hp, wgt, displ, and cylnum. Further inspection was done with partial regression plots and a partial f test for each of said variables. At this point, due to the significance of some variables and lack of significance of others from the partial f tests, it was concluded that a log transformation should be done on the response variable (mpg), due to the quadratic pattern in the Residual vs Fitted plot, and possibly an addition of an interaction term.
 
 
 \clearpage 
@@ -475,19 +473,11 @@ Figure 2 and Table 3 gives an insight for correlation among variables. Since a l
 \clearpage
 \newpage
 
-Several issues, not very major, have been found in the original model. In order to address them a transformation has to be applied into the fit: Since the Residuals vs. Fitted plot showed a horseshoe pattern, based on previous encounters, a log transformation in the predictor was selected:
+A new model was created with a log transformation on the response variable and then examined. Fortunately, the transformation dampened the quadratic pattern (increasing the independence of the errors) and stabilized the variance of the residuals.
 
-“Insert transformed regression here”
+\
 
- Which fixed most of the problems, with regard of the assumptions:
- 
-Figure 4, Residuals vs. Fitted shows that the new model  is linear, has mean zero error, and independent .
-
-
-Notice, in Figure 4 Residuals vs. R-Norm, that a new problem has arised in the tails have become lighter, compared to the original.  This could be caused by interaction among variables and/or influential points. It is worth to remark that in this model, so far cylinder number, horsepower, and weight do not contribute much towards the model: based on the partial residual plots (Figure 5), there is no apparent pattern on said variables. But, the partial F-Test indicates otherwise, which is a stronger sign of interaction.
-
-The remainder of the plots, show a constant band of residuals, which is a sign of constant variance. 
-	 Thus, based on all of the previews evidence there must be variables interacting with each other, and should be included in the model. 
+However, the partial regression plots and partial f tests were redone with the same 4 regressors with mixed results. The transformation made the insignificant regressors (hp and cylnum) more significant (**, and *, respectively), however, the partial regression plots showed that the explanatory power of these two regressors was not significant.
 
 \clearpage
 \newpage
@@ -508,9 +498,7 @@ The remainder of the plots, show a constant band of residuals, which is a sign o
 \label{tab:myfirsttable}
 \end{table}
 
-It has been discovered during the analysis that the model contains variable interaction. This might have caused the violations towards the assumptions. Therefore, a comparison among a regression with interaction and a transformed transformation with interaction has to be made.
-
-Note, that the transformed regression with interaction has the highest \uf{R}{2} (0.9), and the lowest mean square errors (0.01). This model may be the most appropriate one for the data.  Yet, all of the insignificant variables have to be vanish, and all of the assumptions have to be revised again.
+It was suspected, due to the somewhat significant difference between the partial f tests and partial regression plots of the transformed full model, that there was possible multicollinearity, so it was decided that an interaction term should be added. Due to the number of possible interaction terms, it was decided that all regressors plus all possible combinations of the regressors with high VIFs should be modeled and then compared to the original full model. The addition of these interaction terms resulted in a significant increase in \uf{R}{2}. A plain full model with these interaction terms was also compared to a transformed full model with the same interaction terms, and it was concluded that, given that interaction terms were going to be included, the transformed model was better based on its \uf{R}{2}. In the next section, other model metrics will be considered.
 
 \newpage
 
@@ -528,7 +516,7 @@ Note, that the transformed regression with interaction has the highest \uf{R}{2}
    \hline
 \end{tabular}
 \caption{Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}
-\label{tab:myfirsttable}
+\label{tab:selectionalgorithmmodelcomparison}
 \end{table}
 
 \begin{table}[ht]
@@ -592,9 +580,21 @@ wgt\_c & 3110.02 & 1.00 & 55.77 \\
 
 In order to select the most significant variables, several tests were applied: Forward, Backwards and Stepwise (Table 7).
 
-Although, the Backward Test has the largest \uf{R}{2} and $R^2_{adj}$, Forward and Stepwise have the least number of regressors, in fact the exact same regressors were selected. Another reason to select the Forward model over the Backward, are the VIF values. On the Forward all of the VIF values are relatively small and consistent compared to the Backwards; where we have values that reached the 45,000.
+\
 
-Note that all of the assumptions hold for both (Figure 6); maybe with exception that for both variable selections, the Residual vs R-Norm plot still has light tails (Figure 6); this might be an issue of influential points.
+The Forward and Stepwise selection algorithms both selected a model with 6 variables (5 original variables and 1 interaction term). The Backwards selection algorithm selected a model with 16 variables (mostly interaction terms).
+
+\
+
+The Backward selection model has a slightly higher \uf{R}{2}, but with slightly less degrees of freedom (due to the increased parameters) and possibly more complexity.
+
+\
+
+The VIF values of each regressor of each model were also examined. As expected, the VIF for the known correlated variables was still high, but, more importantly, the other variables showed little correlation.
+
+\
+
+The 5 key assumptions for each model were also checked (see Figure 6) and no major problems were observed. Outliers and influential points are examined in the next section.
 
 \clearpage
 \newpage 
@@ -629,14 +629,14 @@ Note that all of the assumptions hold for both (Figure 6); maybe with exception 
 \label{tab:forwardvsbackwardnoinfluential}
 \end{table}
 
-It may be beneficial to our model to identify influential points, without deleting a good portion of the data.  Thru Backward variable selection a 9.21\% of the data will have to be vanish; whereas thru Forward variable selection there will only be a 5.12%.
+It was observed that the Backward model had almost twice as many points deemed influential as the Forward model, indicating that the Forward model might be either more resilient to influential points or a better model of the data in general, since both models have a roughly equal \uf{R}{2} and \uw{MS}{residuals}.
 
 \clearpage
 \newpage
 
 \subsection{Final Model Choice}
 
-\textbf{FINAL MODEL: log(mpg) (c) \tl modelyr (mvd) + origin (mvd) + hp (c) + acc (c) + wgt (c) * hp (c)}
+\textbf{log(mpg) (c) \tl modelyr (mvd) + origin (mvd) + hp (c) + acc (c) + wgt (c) * hp (c)}
 
 \begin{table}[ht]
 \centering
@@ -677,24 +677,23 @@ wgt\_c & 1 & 34.62 & 34.62 & 2714.64 & 0.0000 & *** \\
 \label{tab:anovafinalmodel}
 \end{table}
 
-Up to this point, the model suggested by the Forward variable selection, has had the lowest VIF values, the highest \uf{R}{2} and $R^2_{adj}$ (Table 11), and requires to delete a smallest portion of data, due to influential points.  Hence, it will be recommended to proceed with the model the Forward test selected:
-
-\begin{verbatim}
-  lm(log(mpg_c) \tl wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
-\end{verbatim}
-
-The summary indicates high significance of the variables selected to the model (Table 12)
-
+Many model combinations were considered, but the simplicity, high \uf{R}{2}, low \uw{MS}{residuals}, and resilience to influential points of the Forward model made it the number one choice. Tables 12 and 13 indicate the R Summary and R ANOVA of the chosen model.
 
 \newpage
 
 \section{Conclusion}
 
+A model that mostly satisfies the 5 key assumptions of multiple linear regression and also explains 89\% of the variance in the response variable (mpg) was found, which, by most metrics is a good job. It does appear that there is a significant linear relationship between the gas mileage of a car and other attributes like its weight and model year.
 
+\
+
+The initial model appeared to violate 2 of the 5 key assumptions (independent errors and constant variance of residuals) and seemed to have some multicollinearity problems among regressors. A log transformation on the response variable eased the 2 key assumption violations (as well as increased the predictive ability of the model), and the addition of an interaction term compensated for the correlation of two of the variables (as well as increased the predictive ability of the model. Since the models generated by the selection algorithms had similar predictive power, the one that had the least influential points was chosen.
 
 \newpage
 
 \section{References}
+
+The data was acquired from UC Irvine's Machine Learning Repository at the following web address:
 
 https://archive.ics.uci.edu/ml/datasets/auto+mpg
 

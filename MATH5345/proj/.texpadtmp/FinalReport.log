@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -427,9 +427,6 @@ LaTeX Warning: Label `tab:myfirsttable' multiply defined.
 
 LaTeX Warning: Label `tab:myfirsttable' multiply defined.
 
-
-LaTeX Warning: Label `tab:myfirsttable' multiply defined.
-
 )
 \openout1 = `FinalReport.aux'.
 
@@ -539,44 +536,32 @@ Package pdftex.def Info: 11-14p_PrRgall4.png used on input line 410.
 ] <15-23t_resall.png, id=50, 784.9325pt x 711.65875pt>
 File: 15-23t_resall.png Graphic file (type png)
  <use 15-23t_resall.png>
-Package pdftex.def Info: 15-23t_resall.png used on input line 444.
+Package pdftex.def Info: 15-23t_resall.png used on input line 442.
 (pdftex.def)             Requested size: 446.2658pt x 404.61809pt.
  [10
 
  <./15-23t_resall.png>] <24-27t_PrRgall4.png, id=55, 1105.12875pt x 708.6475pt>
 File: 24-27t_PrRgall4.png Graphic file (type png)
  <use 24-27t_PrRgall4.png>
-Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 470.
+Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 468.
 (pdftex.def)             Requested size: 469.75499pt x 301.21986pt.
  [11
 
- <./24-27t_PrRgall4.png>]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ú in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ù in font cmr10!
- [12
+ <./24-27t_PrRgall4.png>] [12
 
 ] [13
 
 ] [14] <28ti_resfittednorm.png, id=70, 638.385pt x 557.08125pt>
 File: 28ti_resfittednorm.png Graphic file (type png)
  <use 28ti_resfittednorm.png>
-Package pdftex.def Info: 28ti_resfittednorm.png used on input line 585.
+Package pdftex.def Info: 28ti_resfittednorm.png used on input line 573.
 (pdftex.def)             Requested size: 469.75499pt x 409.93007pt.
  [15 <./28ti_resfittednorm.png>] [16
 
 
 ] [17
 
-]
-Overfull \hbox (44.74052pt too wide) in paragraph at lines 684--684
-[]  \OT1/cmtt/m/n/10 lm(log(mpg_c) \tl wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)[] 
- []
-
-[18
+] [18
 
 ] [19] [20] (/Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.aux)
 
@@ -584,15 +569,15 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14827 strings out of 492995
- 299110 string characters out of 6132704
- 348098 words of memory out of 5000000
- 18065 multiletter control sequences out of 15000+600000
+ 14836 strings out of 492995
+ 299293 string characters out of 6132704
+ 348107 words of memory out of 5000000
+ 18074 multiletter control sequences out of 15000+600000
  12624 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,66p,604b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,66p,898b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.pdf (20 pages, 3434317 bytes).
+Output written on /Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.pdf (20 pages, 3430195 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
