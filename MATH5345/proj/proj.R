@@ -314,7 +314,9 @@ bestModels
 xtable(bestModels)
 
 par(mar=c(2, 2, 2, 2))
-par(mfrow=c(3,2))
+par(mfrow=c(2,2))
+
+# 28ti_resfittednorm
 
 plot(lm.forw$fitted.values, resid(lm.forw), main="FW: Residuals vs Fitted", ylab="FW: Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")
@@ -327,12 +329,6 @@ abline(h = 0, col="red")
 
 qqnorm(resid(lm.back), main="BK: Residuals vs R-Norm", xlab="Random Normal", ylab="BK: Residuals")
 qqline(resid(lm.back))
-
-plot(lm.stepwise$fitted.values, resid(lm.stepwise), main="STP: Residuals vs Fitted", ylab="STP: Residuals", xlab="Fitted Values")
-abline(h = 0, col="red")
-
-qqnorm(resid(lm.stepwise), main="STP: Residuals vs R-Norm", xlab="Random Normal", ylab="STP: Residuals")
-qqline(resid(lm.stepwise))
 
 lm.forw.vif <- vif(lm.forw)
 lm.forw.vif <- as.data.frame(lm.forw.vif)
