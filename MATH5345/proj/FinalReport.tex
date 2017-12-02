@@ -301,7 +301,49 @@ mpg\_c & 1.00 & -0.78 & -0.80 & -0.78 & -0.83 & 0.42 & 0.58 \\
   modelyr\_mvd & 0.58 & -0.34 & -0.37 & -0.42 & -0.31 & 0.29 & 1.00 \\ 
    \hline
 \end{tabular}
-\caption{First full model (i.e. with all regressors).}
+\caption{Correlation of all variables in the automobile data set}
+\label{tab:myfirsttable}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & -18.3106 & 4.6933 & -3.90 & 0.0001 \\ 
+  wgt\_c & -0.0067 & 0.0007 & -10.23 & 0.0000 \\ 
+  modelyr\_mvd & 0.7805 & 0.0519 & 15.03 & 0.0000 \\ 
+  origin\_mvd2 & 2.6340 & 0.5665 & 4.65 & 0.0000 \\ 
+  origin\_mvd3 & 2.8557 & 0.5528 & 5.17 & 0.0000 \\ 
+  hp\_c & -0.0174 & 0.0137 & -1.27 & 0.2056 \\ 
+  displ\_c & 0.0241 & 0.0077 & 3.14 & 0.0018 \\ 
+  cylnum\_mvd & -0.5123 & 0.3222 & -1.59 & 0.1126 \\ 
+  acc\_c & 0.0845 & 0.0984 & 0.86 & 0.3913 \\ 
+   \hline
+\end{tabular}
+\caption{R Summary of original full model (relating mpg to the rest)}
+\label{tab:myfirsttable}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+wgt\_c & 1 & 16470.05 & 16470.05 & 1505.92 & 0.0000 \\ 
+  modelyr\_mvd & 1 & 2756.94 & 2756.94 & 252.08 & 0.0000 \\ 
+  origin\_mvd & 2 & 261.23 & 130.61 & 11.94 & 0.0000 \\ 
+  hp\_c & 1 & 8.96 & 8.96 & 0.82 & 0.3659 \\ 
+  displ\_c & 1 & 77.03 & 77.03 & 7.04 & 0.0083 \\ 
+  cylnum\_mvd & 1 & 29.10 & 29.10 & 2.66 & 0.1037 \\ 
+  acc\_c & 1 & 8.06 & 8.06 & 0.74 & 0.3913 \\ 
+  Residuals & 382 & 4177.89 & 10.94 &  &  \\ 
+   \hline
+\end{tabular}
+\caption{R ANOVA of original full model (relating mpg to the rest)}
 \label{tab:myfirsttable}
 \end{table}
 
@@ -310,7 +352,7 @@ mpg\_c & 1.00 & -0.78 & -0.80 & -0.78 & -0.83 & 0.42 & 0.58 \\
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{1p_ScPlMtr}
+	\includegraphics[width=1\linewidth]{2-10p_resall}
 	\caption[TOC Define Me]
 	{Description define me}
 \end{figure}
@@ -320,7 +362,7 @@ mpg\_c & 1.00 & -0.78 & -0.80 & -0.78 & -0.83 & 0.42 & 0.58 \\
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1\linewidth]{2-10p_resall}
+	\includegraphics[width=1\linewidth]{1p_ScPlMtr}
 	\caption[TOC Define Me]
 	{Description define me}
 \end{figure}

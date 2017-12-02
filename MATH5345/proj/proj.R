@@ -316,11 +316,11 @@ xtable(bestModels)
 par(mar=c(2, 2, 2, 2))
 par(mfrow=c(3,2))
 
-plot(forw.lm$fitted.values, resid(forw.lm), main="FW: Residuals vs Fitted", ylab="FW: Residuals", xlab="Fitted Values")
+plot(lm.forw$fitted.values, resid(lm.forw), main="FW: Residuals vs Fitted", ylab="FW: Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")
 
-qqnorm(resid(forw.lm), main="FW: Residuals vs R-Norm", xlab="Random Normal", ylab="FW: Residuals")
-qqline(resid(forw.lm))
+qqnorm(resid(lm.forw), main="FW: Residuals vs R-Norm", xlab="Random Normal", ylab="FW: Residuals")
+qqline(resid(lm.forw))
 
 plot(lm.back$fitted.values, resid(lm.back), main="BK: Residuals vs Fitted", ylab="BK: Residuals", xlab="Fitted Values")
 abline(h = 0, col="red")

@@ -1,12 +1,14 @@
-\contentsline {table}{\numberline {1}{\ignorespaces First full model (i.e. with all regressors).}}{3}
-\contentsline {table}{\numberline {2}{\ignorespaces Correlations of the first untransformed model}}{6}
-\contentsline {table}{\numberline {3}{\ignorespaces This table shows some data}}{6}
-\contentsline {table}{\numberline {4}{\ignorespaces This table shows some data}}{9}
-\contentsline {table}{\numberline {5}{\ignorespaces This table shows some data}}{11}
-\contentsline {table}{\numberline {6}{\ignorespaces This table shows some data}}{11}
-\contentsline {table}{\numberline {7}{\ignorespaces VIF of each regressor in the Forward Model}}{13}
-\contentsline {table}{\numberline {8}{\ignorespaces VIF of each regressor in the Backward Model}}{13}
-\contentsline {table}{\numberline {9}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{14}
-\contentsline {table}{\numberline {10}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{14}
-\contentsline {table}{\numberline {11}{\ignorespaces R Summary of the final model}}{15}
-\contentsline {table}{\numberline {12}{\ignorespaces R ANOVA of the final model}}{15}
+\contentsline {table}{\numberline {1}{\ignorespaces Correlation of all variables in the automobile data set}}{3}
+\contentsline {table}{\numberline {2}{\ignorespaces R Summary of original full model (relating mpg to the rest)}}{3}
+\contentsline {table}{\numberline {3}{\ignorespaces R ANOVA of original full model (relating mpg to the rest)}}{3}
+\contentsline {table}{\numberline {4}{\ignorespaces Correlations of the first untransformed model}}{6}
+\contentsline {table}{\numberline {5}{\ignorespaces This table shows some data}}{6}
+\contentsline {table}{\numberline {6}{\ignorespaces This table shows some data}}{9}
+\contentsline {table}{\numberline {7}{\ignorespaces This table shows some data}}{11}
+\contentsline {table}{\numberline {8}{\ignorespaces This table shows some data}}{11}
+\contentsline {table}{\numberline {9}{\ignorespaces VIF of each regressor in the Forward Model}}{13}
+\contentsline {table}{\numberline {10}{\ignorespaces VIF of each regressor in the Backward Model}}{13}
+\contentsline {table}{\numberline {11}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{14}
+\contentsline {table}{\numberline {12}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{14}
+\contentsline {table}{\numberline {13}{\ignorespaces R Summary of the final model}}{15}
+\contentsline {table}{\numberline {14}{\ignorespaces R ANOVA of the final model}}{15}
