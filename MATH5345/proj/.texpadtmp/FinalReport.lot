@@ -7,7 +7,7 @@
 \contentsline {table}{\numberline {7}{\ignorespaces Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}}{14}
 \contentsline {table}{\numberline {8}{\ignorespaces VIF of each regressor in the Forward Model}}{14}
 \contentsline {table}{\numberline {9}{\ignorespaces VIF of each regressor in the Backward Model}}{14}
-\contentsline {table}{\numberline {10}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{16}
-\contentsline {table}{\numberline {11}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{16}
-\contentsline {table}{\numberline {12}{\ignorespaces R Summary of the final model}}{17}
-\contentsline {table}{\numberline {13}{\ignorespaces R ANOVA of the final model}}{17}
+\contentsline {table}{\numberline {10}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{17}
+\contentsline {table}{\numberline {11}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{17}
+\contentsline {table}{\numberline {12}{\ignorespaces R Summary of the final model}}{18}
+\contentsline {table}{\numberline {13}{\ignorespaces R ANOVA of the final model}}{18}

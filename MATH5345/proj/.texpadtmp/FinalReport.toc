@@ -5,7 +5,7 @@
 \contentsline {subsection}{Transformed Full Model Analysis}{10}
 \contentsline {subsection}{Interaction Terms Analysis}{13}
 \contentsline {subsection}{Model Selection Analysis}{14}
-\contentsline {subsection}{Influential Points Analysis}{16}
-\contentsline {subsection}{Final Model Choice}{17}
-\contentsline {section}{Conclusion}{17}
-\contentsline {section}{References}{17}
+\contentsline {subsection}{Influential Points Analysis}{17}
+\contentsline {subsection}{Final Model Choice}{18}
+\contentsline {section}{Conclusion}{19}
+\contentsline {section}{References}{20}
