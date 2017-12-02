@@ -1,5 +1,5 @@
 \contentsline {section}{Abstract}{3}
 \contentsline {section}{Introduction}{4}
-\contentsline {section}{Models and Analysis Results}{5}
-\contentsline {section}{Conclusion and Discussion}{17}
+\contentsline {section}{Discussion of Models and Analysis Results}{5}
+\contentsline {section}{Conclusion}{17}
 \contentsline {section}{References}{17}
