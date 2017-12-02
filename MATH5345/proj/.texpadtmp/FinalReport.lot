@@ -4,9 +4,9 @@
 \contentsline {table}{\numberline {4}{\ignorespaces This table shows some data}}{9}
 \contentsline {table}{\numberline {5}{\ignorespaces This table shows some data}}{11}
 \contentsline {table}{\numberline {6}{\ignorespaces This table shows some data}}{11}
-\contentsline {table}{\numberline {7}{\ignorespaces This table shows some data}}{13}
-\contentsline {table}{\numberline {8}{\ignorespaces This table shows some data}}{14}
-\contentsline {table}{\numberline {9}{\ignorespaces This table shows some dataaaaaaa}}{15}
-\contentsline {table}{\numberline {10}{\ignorespaces This table shows some dataaaaa}}{15}
-\contentsline {table}{\numberline {11}{\ignorespaces R Summary of the final model}}{16}
-\contentsline {table}{\numberline {12}{\ignorespaces R ANOVA of the final model}}{16}
+\contentsline {table}{\numberline {7}{\ignorespaces VIF of each regressor in the Forward Model}}{13}
+\contentsline {table}{\numberline {8}{\ignorespaces VIF of each regressor in the Backward Model}}{13}
+\contentsline {table}{\numberline {9}{\ignorespaces Influential point comparison of Forward Model vs Backward Model}}{14}
+\contentsline {table}{\numberline {10}{\ignorespaces Forward Model with no influential points vs Backward Model with no influential points}}{14}
+\contentsline {table}{\numberline {11}{\ignorespaces R Summary of the final model}}{15}
+\contentsline {table}{\numberline {12}{\ignorespaces R ANOVA of the final model}}{15}
