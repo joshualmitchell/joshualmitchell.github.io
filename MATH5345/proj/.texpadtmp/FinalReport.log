@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 11:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -419,9 +419,6 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 LaTeX Warning: Label `tab:myfirsttable' multiply defined.
 
 
-LaTeX Warning: Label `tab:myfirsttable' multiply defined.
-
-
 LaTeX Warning: Label `tab:partialfhighvif' multiply defined.
 
 
@@ -521,12 +518,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [2] [3] [4] <2-10p_resall.png, id=24, 840.13875pt x 692.5875pt>
 File: 2-10p_resall.png Graphic file (type png)
  <use 2-10p_resall.png>
-Package pdftex.def Info: 2-10p_resall.png used on input line 355.
+Package pdftex.def Info: 2-10p_resall.png used on input line 336.
 (pdftex.def)             Requested size: 469.75499pt x 387.25455pt.
  [5 <./2-10p_resall.png>] <1p_ScPlMtr.png, id=30, 825.0825pt x 645.41125pt>
 File: 1p_ScPlMtr.png Graphic file (type png)
  <use 1p_ScPlMtr.png>
-Package pdftex.def Info: 1p_ScPlMtr.png used on input line 365.
+Package pdftex.def Info: 1p_ScPlMtr.png used on input line 346.
 (pdftex.def)             Requested size: 469.75499pt x 367.46477pt.
  [6 <./1p_ScPlMtr.png>] [7
 
@@ -535,12 +532,12 @@ Package pdftex.def Info: 1p_ScPlMtr.png used on input line 365.
 ] <11-14p_PrRgall4.png, id=40, 1148.29pt x 710.655pt>
 File: 11-14p_PrRgall4.png Graphic file (type png)
  <use 11-14p_PrRgall4.png>
-Package pdftex.def Info: 11-14p_PrRgall4.png used on input line 413.
+Package pdftex.def Info: 11-14p_PrRgall4.png used on input line 394.
 (pdftex.def)             Requested size: 469.75499pt x 290.7198pt.
  [8 <./11-14p_PrRgall4.png>] <15-23t_resall.png, id=45, 784.9325pt x 711.65875pt>
 File: 15-23t_resall.png Graphic file (type png)
  <use 15-23t_resall.png>
-Package pdftex.def Info: 15-23t_resall.png used on input line 423.
+Package pdftex.def Info: 15-23t_resall.png used on input line 404.
 (pdftex.def)             Requested size: 469.75499pt x 425.91264pt.
  [9
 
@@ -550,7 +547,7 @@ Package pdftex.def Info: 15-23t_resall.png used on input line 423.
 ] <24-27t_PrRgall4.png, id=56, 1105.12875pt x 708.6475pt>
 File: 24-27t_PrRgall4.png Graphic file (type png)
  <use 24-27t_PrRgall4.png>
-Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 454.
+Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 435.
 (pdftex.def)             Requested size: 469.75499pt x 301.21986pt.
  [12 <./24-27t_PrRgall4.png>] [13
 
@@ -558,7 +555,7 @@ Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 454.
 ] <28ti_resfittednorm.png, id=65, 636.3775pt x 557.08125pt>
 File: 28ti_resfittednorm.png Graphic file (type png)
  <use 28ti_resfittednorm.png>
-Package pdftex.def Info: 28ti_resfittednorm.png used on input line 496.
+Package pdftex.def Info: 28ti_resfittednorm.png used on input line 477.
 (pdftex.def)             Requested size: 469.75499pt x 411.21364pt.
  [14 <./28ti_resfittednorm.png>] [15
 
@@ -575,13 +572,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14827 strings out of 492995
  299110 string characters out of 6132704
- 349099 words of memory out of 5000000
+ 346098 words of memory out of 5000000
  18065 multiletter control sequences out of 15000+600000
  12624 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,66p,421b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.pdf (17 pages, 3424677 bytes).
+Output written on /Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.pdf (17 pages, 3424042 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
