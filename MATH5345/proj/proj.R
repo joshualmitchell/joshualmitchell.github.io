@@ -83,15 +83,6 @@ str(autodata)
 cor(autodata[ ,1:7])
 pairs(autodata[, 1:8])
 
-# All Possible Regressor Selection (using regsub)
-
-regsub.exhaust<-regsubsets(mpg_c ~ cylnum_mvd + displ_c + hp_c + wgt_c + acc_c + modelyr_mvd + origin_mvd, data=autodata, nbest = 1, nvmax = NULL,force.in = NULL, force.out = NULL, intercept=TRUE, method = "exhaustive")
-summary.out <- summary(regsub.exhaust)
-summary.out
-
-model_info <- cbind("# Regressors"=1:8, "R-squared"=summary.out$rsq, "adj R-squared"=summary.out$adjr2, "MS_res"=summary.out$rss/(nrow(autodata) - 2:9), "CP - p"=summary.out$cp - 2:9)
-model_info
-
 # Let's check constant variance:
 
 ##############################################################################
@@ -120,7 +111,7 @@ displayResidualPlots(lm7, regressors, autodata)
 
 lm7_vif <- vif(lm7)
 lm7_vif <- as.data.frame(lm7_vif)
-lm7_vif
+xtable(lm7_vif)
 
 par(mar=c(2, 2, 2, 2))
 par(mfrow=c(2,2))
