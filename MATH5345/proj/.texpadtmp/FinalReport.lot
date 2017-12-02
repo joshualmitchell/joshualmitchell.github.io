@@ -1,8 +1,8 @@
-\contentsline {table}{\numberline {1}{\ignorespaces R Summary of original full model (relating mpg to the rest)}}{6}
-\contentsline {table}{\numberline {2}{\ignorespaces R ANOVA of original full model (relating mpg to the rest)}}{6}
-\contentsline {table}{\numberline {3}{\ignorespaces VIF of each regressor in the Full Original Model}}{6}
-\contentsline {table}{\numberline {4}{\ignorespaces A partial F test on each of the regressors with high VIF scores}}{9}
-\contentsline {table}{\numberline {5}{\ignorespaces A partial F test on each of the regressors with high VIF scores on the Transformed Full Model}}{12}
+\contentsline {table}{\numberline {1}{\ignorespaces R Summary of original full model (relating mpg to the rest)}}{5}
+\contentsline {table}{\numberline {2}{\ignorespaces R ANOVA of original full model (relating mpg to the rest)}}{5}
+\contentsline {table}{\numberline {3}{\ignorespaces VIF of each regressor in the Full Original Model}}{5}
+\contentsline {table}{\numberline {4}{\ignorespaces A partial F test on each of the regressors with high VIF scores}}{8}
+\contentsline {table}{\numberline {5}{\ignorespaces A partial F test on each of the regressors with high VIF scores on the Transformed Full Model}}{11}
 \contentsline {table}{\numberline {6}{\ignorespaces A chart comparing the Untransformed Full Model with all combinations of interaction terms for the high VIF regressors against the same model with a log transformation on the response variable (mpg)}}{13}
 \contentsline {table}{\numberline {7}{\ignorespaces Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}}{14}
 \contentsline {table}{\numberline {8}{\ignorespaces VIF of each regressor in the Forward Model}}{14}

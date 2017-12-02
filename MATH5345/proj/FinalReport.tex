@@ -282,27 +282,21 @@
 
 \section{Abstract}
 
-\begin{verbatim}
-  A multiple linear regression was calculated to predict the gas mileage of a car (its MPG) based on the number of cylinders, displacement, horsepower, weight, acceleration, model year, and origin of the car. A significant regression equation was found with an R^2 of .89.
+  A multiple linear regression was calculated to predict the gas mileage of a car (its MPG) based on the number of cylinders, displacement, horsepower, weight, acceleration, model year, and origin of the car. A significant regression equation was found with an R2 of .89.
   
-  Participants’ predicted miles per gallon are equal to 2.1373 - 0.0004 (weight) + 0.0309 (Model year) + 0.0558 (Origin) + 0.0455 (Origen2) - 0.0064 (horsepower) - 0.0053 (Acceleration) + 0.13 e^ -6 (weight * horsepower), where model year is a factor, and the rest are treated as continuous variables.
+  Participants’ predicted miles per gallon are equal to 2.1373 - 0.0004 (weight) + 0.0309 (Model year) + 0.0558 (Origin) + 0.0455 (Origen2) - 0.0064 (horsepower) - 0.0053 (Acceleration) + 0.13 e-6 (weight * horsepower), where model year is a factor, and the rest are treated as continuous variables.
   
   The previous regressors, included in the equation, were significant predictors of the amount of gallons per mile traveled.
-\end{verbatim}
-
 
 \newpage
 
 \section{Introduction}
 
-\begin{verbatim}
   The data analyzed contained a total of seven regressors, which two of them are discrete(origin, and number of cylinders), the rest are continuous; and it contains a total of 397 data points.
   
   During the data inspection it was noted that some of the data points had missing information. Thus, said points were removed from the analysis.
   
-  It was not feared that such action will alter, significantly,  the regression since the number of points removed were less than 3% of the data.
-\end{verbatim}
-
+  It was not feared that such action will alter, significantly,  the regression since the number of points removed were less than 3\% of the data.
 
 \newpage
 
@@ -310,9 +304,9 @@
 
 \subsection{Original Full Model Analysis}
 
-\newpage
+\textbf{Original Full Model:}
 
-\textbf{Original Full Model: mpg (c) \tl wgt (c) + modelyr (mvd) + origin (mvd) + hp (c) + displ (c) + cylnum (mvd) + acc (c)}
+\textbf{mpg (c) \tl wgt (c) + modelyr (mvd) + origin (mvd) + hp (c) + displ (c) + cylnum (mvd) + acc (c)}
 
 \begin{table}[ht]
 \centering
@@ -425,16 +419,33 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \clearpage
 \newpage
 
+Original Model
+
+A multiple linear regression was fitted on miles per gallon ~ number of cylinders (as a factor), displacement, horsepower, weight, acceleration, model year, and origen (as a factor); and the five requirements to realize a regression analysis were checked.
+
+Normality: 
+
+Notice that the Residual vs. Normal plot behaves mostly normal except at the tails. Where the tails seem lighter than the textbook ideal. Yet, this will not bring major issues to the analysis. Therefore, normality can be concluded for this purpose.
+
+Independence, Linearity and Constant Variance:
+
+The Residual vs. Fitted Values plot for this regression,  makes a shoe horse shape plot and, most of the data points are below the abline. It indicates lack of constant variance, non-zero mean error, and a non-linear distribution. This will bring major problems to the predictions, and analysis.  The issue can be addressed in a simple manner; and will be discussed in the next section. Also, notice how all of the residuals are bounded, this is an indication of uncorrelated errors.
+
+Figure 2 and Table 3 gives an insight for correlation among variables. Since a lot of the plots show a linear relationship (with a nonzero slope), multicollinearity is suspected. Further evidence that there exists a dependence among variables are the VIF values of cylinder number, displacement, horsepower and weight; hence it will be needed to include some interaction variables. 
+
+
+\clearpage 
+\newpage
+
 \subsection{Transformed Full Model Analysis}
 
-\textbf{Transformed Full Model: log(mpg) (c) \tl wgt (c) + modelyr (mvd) + origin (mvd) + hp (c) + displ (c) + cylnum (mvd) + acc (c)}
+\textbf{Transformed Full Model:}
 
-\clearpage
-\newpage 
+\textbf{log(mpg) (c) \tl wgt (c) + modelyr (mvd) + origin (mvd) + hp (c) + displ (c) + cylnum (mvd) + acc (c)}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{15-23t_resall}
+	\includegraphics[width=0.95\linewidth]{15-23t_resall}
 	\caption[Residual Plots of the Transformed Full Model]
 	{A Residual vs Fitted, a Residual vs R-Norm, and Residual vs Regressors plots of the Transformed Full Model}
 \end{figure}
@@ -464,6 +475,23 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 	\caption[Partial regression plots on high VIF regressors on the Transformed Full Model]
 	{Partial regression plots on each of the regressors with high VIF scores on the Transformed Full Model}
 \end{figure}
+
+\clearpage
+\newpage
+
+Several issues, not very major, have been found in the original model. In order to address them a transformation has to be applied into the fit: Since the Residuals vs. Fitted plot showed a horseshoe pattern, based on previous encounters, a log transformation in the predictor was selected:
+
+“Insert transformed regression here”
+
+ Which fixed most of the problems, with regard of the assumptions:
+ 
+Figure 4, Residuals vs. Fitted shows that the new model  is linear, has mean zero error, and independent .
+
+
+Notice, in Figure 4 Residuals vs. R-Norm, that a new problem has arised in the tails have become lighter, compared to the original.  This could be caused by interaction among variables and/or influential points. It is worth to remark that in this model, so far cylinder number, horsepower, and weight do not contribute much towards the model: based on the partial residual plots (Figure 5), there is no apparent pattern on said variables. But, the partial F-Test indicates otherwise, which is a stronger sign of interaction.
+
+The remainder of the plots, show a constant band of residuals, which is a sign of constant variance. 
+	 Thus, based on all of the previews evidence there must be variables interacting with each other, and should be included in the model. 
 
 \clearpage
 \newpage
