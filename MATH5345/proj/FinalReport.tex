@@ -418,14 +418,14 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \clearpage
 \newpage
 
-\textbf{POST TRANSFORMATION}
-
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{15-23t_resall}
 	\caption[Residual Plots of the Transformed Full Model]
 	{A Residual vs Fitted, a Residual vs R-Norm, and Residual vs Regressors plots of the Transformed Full Model}
 \end{figure}
+
+\textbf{POST TRANSFORMATION}
 
 \clearpage
 \newpage 
@@ -442,8 +442,8 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
   4 & Cylinder Num & 6.35 & 0.01 & * \\ 
    \hline
 \end{tabular}
-\caption{This table shows some data}
-\label{tab:myfirsttable}
+\caption{A partial F test on each of the regressors with high VIF scores on the Transformed Full Model}
+\label{tab:partialfhighvif}
 \end{table}
 
 \clearpage
@@ -452,8 +452,8 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{24-27t_PrRgall4}
-	\caption[TOC Define Me]
-	{Description define me}
+	\caption[Partial regression plots on high VIF regressors on the Transformed Full Model]
+	{Partial regression plots on each of the regressors with high VIF scores on the Transformed Full Model}
 \end{figure}
 
 \clearpage
@@ -469,7 +469,7 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
   2 & Transformed + Interaction & 0.90 & 0.90 & 0.01 \\ 
    \hline
 \end{tabular}
-\caption{This table shows some data}
+\caption{A chart comparing the Untransformed Full Model with all combinations of interaction terms for the high VIF regressors against the same model with a log transformation on the response variable (mpg)}
 \label{tab:myfirsttable}
 \end{table}
 
@@ -484,7 +484,7 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
   3 & Stepwise & 6.00 & 0.89 & 0.89 & 0.01 \\ 
    \hline
 \end{tabular}
-\caption{This table shows some data}
+\caption{Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}
 \label{tab:myfirsttable}
 \end{table}
 
@@ -494,8 +494,8 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \begin{figure}
 	\centering
 	\includegraphics[width=1\linewidth]{28ti_resfittednorm}
-	\caption[TOC Define Me]
-	{hi}
+	\caption[Residuals vs Fitted and vs Random Normal plots for Forward, Backward, and Stepwise Models]
+	{Residuals vs Fitted and vs Random Normal plots for Forward, Backward, and Stepwise Models}
 \end{figure}
 
 \clearpage
@@ -516,7 +516,7 @@ wgt\_c & 13.83 & 1.00 & 3.72 \\
    \hline
 \end{tabular}
 \caption{VIF of each regressor in the Forward Model}
-\label{tab:myfirsttable}
+\label{tab:forwardmodelvif}
 \end{table}
 
 \begin{table}[ht]
@@ -614,7 +614,7 @@ wgt\_c & 1 & 34.62 & 34.62 & 2714.64 & 0.0000 & *** \\
   modelyr\_mvd & 1 & 4.72 & 4.72 & 369.94 & 0.0000 & *** \\ 
   origin\_mvd & 2 & 0.25 & 0.12 & 9.78 & 0.0001 & *** \\ 
   hp\_c & 1 & 0.11 & 0.11 & 8.87 & 0.0031 & ** \\ 
-  acc\_c & 1 & 0.00 & 0.00 & 0.26 & 0.6078 & \\ 
+  acc\_c & 1 & 0.001 & 0.00 & 0.26 & 0.6078 & \\ 
   wgt\_c:hp\_c & 1 & 0.57 & 0.57 & 45.04 & 0.0000 & *** \\ 
   Residuals & 383 & 4.88 & 0.01 &  &  & \\ 
    \hline
