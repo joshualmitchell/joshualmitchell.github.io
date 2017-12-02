@@ -1,8 +1,8 @@
 \contentsline {table}{\numberline {1}{\ignorespaces Correlation of all variables in the automobile data set}}{3}
 \contentsline {table}{\numberline {2}{\ignorespaces R Summary of original full model (relating mpg to the rest)}}{3}
 \contentsline {table}{\numberline {3}{\ignorespaces R ANOVA of original full model (relating mpg to the rest)}}{3}
-\contentsline {table}{\numberline {4}{\ignorespaces Correlations of the first untransformed model}}{6}
-\contentsline {table}{\numberline {5}{\ignorespaces This table shows some data}}{6}
+\contentsline {table}{\numberline {4}{\ignorespaces VIF of each regressor in the Full Original Model}}{6}
+\contentsline {table}{\numberline {5}{\ignorespaces A partial F test on each of the regressors with high VIF scores}}{6}
 \contentsline {table}{\numberline {6}{\ignorespaces This table shows some data}}{9}
 \contentsline {table}{\numberline {7}{\ignorespaces This table shows some data}}{11}
 \contentsline {table}{\numberline {8}{\ignorespaces This table shows some data}}{11}
