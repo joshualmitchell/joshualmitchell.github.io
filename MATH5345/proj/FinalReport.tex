@@ -282,13 +282,33 @@
 
 \section{Abstract}
 
+\begin{verbatim}
+  A multiple linear regression was calculated to predict the gas mileage of a car (its MPG) based on the number of cylinders, displacement, horsepower, weight, acceleration, model year, and origin of the car. A significant regression equation was found with an R^2 of .89.
+  
+  Participants’ predicted miles per gallon are equal to 2.1373 - 0.0004 (weight) + 0.0309 (Model year) + 0.0558 (Origin) + 0.0455 (Origen2) - 0.0064 (horsepower) - 0.0053 (Acceleration) + 0.13 e^ -6 (weight * horsepower), where model year is a factor, and the rest are treated as continuous variables.
+  
+  The previous regressors, included in the equation, were significant predictors of the amount of gallons per mile traveled.
+\end{verbatim}
+
+
 \newpage
 
 \section{Introduction}
 
+\begin{verbatim}
+  The data analyzed contained a total of seven regressors, which two of them are discrete(origin, and number of cylinders), the rest are continuous; and it contains a total of 397 data points.
+  
+  During the data inspection it was noted that some of the data points had missing information. Thus, said points were removed from the analysis.
+  
+  It was not feared that such action will alter, significantly,  the regression since the number of points removed were less than 3% of the data.
+\end{verbatim}
+
+
 \newpage
 
 \section{Discussion of Models and Analysis Results}
+
+\subsection{Original Full Model Analysis}
 
 \newpage
 
@@ -405,6 +425,8 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \clearpage
 \newpage
 
+\subsection{Transformed Full Model Analysis}
+
 \textbf{Transformed Full Model: log(mpg) (c) \tl wgt (c) + modelyr (mvd) + origin (mvd) + hp (c) + displ (c) + cylnum (mvd) + acc (c)}
 
 \clearpage
@@ -444,7 +466,9 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \end{figure}
 
 \clearpage
-\newpage 
+\newpage
+
+\subsection{Interaction Terms Analysis}
 
 \begin{table}[ht]
 \centering
@@ -460,6 +484,10 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \label{tab:myfirsttable}
 \end{table}
 
+\newpage
+
+\subsection{Model Selection Analysis}
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{rlrrrr}
@@ -474,9 +502,6 @@ wgt\_c & 11.07 & 1.00 & 3.33 \\
 \caption{Statistics about the models outputted from Forward, Backward, and Stepwise Selection algorithms in R (note that the model selected by Forward and Stepwise selection is identical, so just the Forward model will be considered in further sections)}
 \label{tab:myfirsttable}
 \end{table}
-
-\clearpage
-\newpage 
 
 \begin{table}[ht]
 \centering
@@ -537,6 +562,8 @@ wgt\_c & 3110.02 & 1.00 & 55.77 \\
 \clearpage
 \newpage 
 
+\subsection{Influential Points Analysis}
+
 \begin{table}[ht]
 \centering
 \begin{tabular}{rlrlr}
@@ -566,7 +593,9 @@ wgt\_c & 3110.02 & 1.00 & 55.77 \\
 \end{table}
 
 \clearpage
-\newpage 
+\newpage
+
+\subsection{Final Model Choice}
 
 \textbf{FINAL MODEL: log(mpg) (c) \tl modelyr (mvd) + origin (mvd) + hp (c) + acc (c) + wgt (c) * hp (c)}
 

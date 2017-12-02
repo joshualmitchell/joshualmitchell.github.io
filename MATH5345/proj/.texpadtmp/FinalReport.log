@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 12:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -515,20 +515,53 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lof=\write6
 \openout6 = `FinalReport.lof'.
 
- [2] [3] [4] [5] [6] <1p_ScPlMtr.png, id=32, 825.0825pt x 645.41125pt>
+ [2]
+Overfull \hbox (958.23256pt too wide) in paragraph at lines 291--291
+[]  \OT1/cmtt/m/n/10 A multiple linear regression was calculated to predict the gas mileage of a car (its MPG) based on the number of cylinders, displacement, horsepower, weight, acceleration, model year, and origin of the car. A significant regression equation was found with an R^2 of .89.[] 
+ []
+
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+
+Overfull \hbox (1105.23128pt too wide) in paragraph at lines 291--291
+[]  \OT1/cmtt/m/n/10 Participants predicted miles per gallon are equal to 2.1373 - 0.0004 (weight) + 0.0309 (Model year) + 0.0558 (Origin) + 0.0455 (Origen2) - 0.0064 (horsepower) - 0.0053 (Acceleration) + 0.13 e^ -6 (weight * horsepower), where model year is a factor, and the rest are treated as continuous variables.[] 
+ []
+
+
+Overfull \hbox (181.23933pt too wide) in paragraph at lines 291--291
+[]  \OT1/cmtt/m/n/10 The previous regressors, included in the equation, were significant predictors of the amount of gallons per mile traveled.[] 
+ []
+
+[3]
+Overfull \hbox (538.23622pt too wide) in paragraph at lines 304--304
+[]  \OT1/cmtt/m/n/10 The data analyzed contained a total of seven regressors, which two of them are discrete(origin, and number of cylinders), the rest are continuous; and it contains a total of 397 data points.[] 
+ []
+
+
+Overfull \hbox (291.48837pt too wide) in paragraph at lines 304--304
+[]  \OT1/cmtt/m/n/10 During the data inspection it was noted that some of the data points had missing information. Thus, said points were removed from the analysis.[] 
+ []
+
+
+Overfull \hbox (291.48837pt too wide) in paragraph at lines 304--304
+[]  \OT1/cmtt/m/n/10 It was not feared that such action will alter, significantly,  the regression since the number of points removed were less than 3% of the data.[] 
+ []
+
+[4] [5] [6] <1p_ScPlMtr.png, id=32, 825.0825pt x 645.41125pt>
 File: 1p_ScPlMtr.png Graphic file (type png)
  <use 1p_ScPlMtr.png>
-Package pdftex.def Info: 1p_ScPlMtr.png used on input line 364.
+Package pdftex.def Info: 1p_ScPlMtr.png used on input line 384.
 (pdftex.def)             Requested size: 469.75499pt x 367.46477pt.
  [7 <./1p_ScPlMtr.png>] <2-10p_resall.png, id=39, 840.13875pt x 692.5875pt>
 File: 2-10p_resall.png Graphic file (type png)
  <use 2-10p_resall.png>
-Package pdftex.def Info: 2-10p_resall.png used on input line 374.
+Package pdftex.def Info: 2-10p_resall.png used on input line 394.
 (pdftex.def)             Requested size: 469.75499pt x 387.25455pt.
  [8 <./2-10p_resall.png>] <11-14p_PrRgall4.png, id=44, 1148.29pt x 710.655pt>
 File: 11-14p_PrRgall4.png Graphic file (type png)
  <use 11-14p_PrRgall4.png>
-Package pdftex.def Info: 11-14p_PrRgall4.png used on input line 400.
+Package pdftex.def Info: 11-14p_PrRgall4.png used on input line 420.
 (pdftex.def)             Requested size: 469.75499pt x 290.7198pt.
  [9
 
@@ -539,24 +572,22 @@ Package pdftex.def Info: 11-14p_PrRgall4.png used on input line 400.
 ] <15-23t_resall.png, id=52, 784.9325pt x 711.65875pt>
 File: 15-23t_resall.png Graphic file (type png)
  <use 15-23t_resall.png>
-Package pdftex.def Info: 15-23t_resall.png used on input line 415.
+Package pdftex.def Info: 15-23t_resall.png used on input line 437.
 (pdftex.def)             Requested size: 469.75499pt x 425.91264pt.
  [11 <./15-23t_resall.png>] <24-27t_PrRgall4.png, id=57, 1105.12875pt x 708.6475pt>
 File: 24-27t_PrRgall4.png Graphic file (type png)
  <use 24-27t_PrRgall4.png>
-Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 441.
+Package pdftex.def Info: 24-27t_PrRgall4.png used on input line 463.
 (pdftex.def)             Requested size: 469.75499pt x 301.21986pt.
  [12
 
 
  <./24-27t_PrRgall4.png>] [13
 
-] [14
-
-] <28ti_resfittednorm.png, id=69, 636.3775pt x 557.08125pt>
+] [14] <28ti_resfittednorm.png, id=69, 636.3775pt x 557.08125pt>
 File: 28ti_resfittednorm.png Graphic file (type png)
  <use 28ti_resfittednorm.png>
-Package pdftex.def Info: 28ti_resfittednorm.png used on input line 532.
+Package pdftex.def Info: 28ti_resfittednorm.png used on input line 557.
 (pdftex.def)             Requested size: 469.75499pt x 411.21364pt.
  [15 <./28ti_resfittednorm.png>] [16
 
@@ -575,9 +606,9 @@ Here is how much of TeX's memory you used:
  18065 multiletter control sequences out of 15000+600000
  12624 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,66p,421b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,66p,421b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.pdf (17 pages, 3426615 bytes).
+Output written on /Users/jm/joshualmitchell.github.io/MATH5345/proj/.texpadtmp/FinalReport.pdf (17 pages, 3438500 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream

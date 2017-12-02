@@ -91,8 +91,8 @@ pairs(autodata[, 1:8])
 
 lm7 <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
 
-summary(lm7)
-anov
+xtable(summary(lm7))
+xtable(anova(lm7))
 
 par(mar=c(2, 2, 2, 2))
 par(mfrow=c(3,3))

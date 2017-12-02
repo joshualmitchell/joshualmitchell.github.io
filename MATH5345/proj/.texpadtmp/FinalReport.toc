@@ -1,5 +1,11 @@
 \contentsline {section}{Abstract}{3}
 \contentsline {section}{Introduction}{4}
 \contentsline {section}{Discussion of Models and Analysis Results}{5}
+\contentsline {subsection}{Original Full Model Analysis}{5}
+\contentsline {subsection}{Transformed Full Model Analysis}{10}
+\contentsline {subsection}{Interaction Terms Analysis}{13}
+\contentsline {subsection}{Model Selection Analysis}{14}
+\contentsline {subsection}{Influential Points Analysis}{16}
+\contentsline {subsection}{Final Model Choice}{17}
 \contentsline {section}{Conclusion}{17}
 \contentsline {section}{References}{17}
