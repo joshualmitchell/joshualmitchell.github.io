@@ -181,7 +181,7 @@
 
 \newcommand{\eql}{ \mt{\operatorname{=}} }
 
-\newcommand{\pr}{\mt{^\prime}} 		   % prime (i.e. R')
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
 \newcommand{\uw}[2]{#1\mt{_{#2}}}
 \newcommand{\uf}[2]{#1\mt{^{#2}}}
 \newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
@@ -229,6 +229,12 @@
   \includegraphics[width=0.5\linewidth]{#1}
 \end{figure}
 }
+
+\newcommand{\simg}[1]{
+\begin{figure}[h]
+  \includegraphics[width=0.33\linewidth]{#1}
+\end{figure}
+}
 \newcommand{\sumin}[1]{\mt{\sum_{i = 1}^n #1}}
 
 \newcommand{\brm}[1]{\begin{pmatrix} #1 \end{pmatrix}}
@@ -269,23 +275,84 @@
 
 Exhibit a maximum matching in the graph below, and use a result in this section to give a short proof that it has no larger matching.
 
-\img{GTHW5332}
+\simg{GTHW53322}
+
+\textbf{Since G is not bipartite (see the odd cycle above), it's not necessarily true that a maximum matching is equal to a minimum vertex cover.}
+
+\simg{GTHW5332}
+
+A maximum matching of size 8 is shown above (hence there is no perfect matching). Proof that there is no perfect matching (i.e. a matching of size 9 since there are 18 vertices) is demonstrated below with an identified set that violates Tutte's condition:
+
+\simg{GTHW53323}
 
 }
+
+\newpage
+
 
 \ssc{4.1.5 (p. 158)}{
 
 Let G be a connected graph with at least three vertices. Form G\pr from G by adding an edge with endpoints x, y whenever \uw{d}{G}(x, y) \eql 2.
 
 Prove that G\pr is 2-connected.
+\bgpf
 
+Since G is connected, G must have at least \av{V(G)} \ms 1 edges. So, G is at least 1-connected, which means that G\pr is at least 1-connected (since no edges are lost).
+
+\textbf{Induction on \av{V(G)}:}
+
+Notice that when \av{V(G)} \eql 3, G\pr is \uw{K}{3}, a 2 connected graph.
+
+\lt{v \mem V(G)}
+
+Case:
+\bilist
+\item deg(v) \eql 1
+
+Then, since G is connected and V(G) \gre 3, v's neighbor must have a degree equal to at least two. Since this neighbor of v's neighbor is a distance of two edges away from v, these 3 vertices would form a clique of size 3 in G\pr.
+
+\item deg(v) \gr 1
+
+Then v has at least two neighbors. Since these two neighbors of v are a distance of 2 edges apart, in G\pr they would surely have an edge connecting them, creating a clique of size 3.
+\elist
+
+
+Thus, for any v \mem V(G), v is part of a clique in G\pr of at least size 3.
+
+\as{G\pr is 2-connected, \av{V(G)} \eql n \gr 3}
+
+If we attach a leaf, l, to any v \mem V(G), we know that, with the addition of l, deg(v) \gre 2.
+
+Since v has one other neighbor, v, l, and the other neighbor would form a clique in G\pr
+
+Since this clique in G\pr is 2-connected by the Expansion Lemma, and since, by the induction hypothesis, the rest of G\pr with \av{V(G\pr)} \eql n \ps 1 is 2-connected, G\pr must be 2-connected.
+
+Hence, result.
+
+\epf
 }
+
+\newpage
 
 \ssc{4.2.1 (p. 172)}{
 
 Determine $\kappa$(u, v) and $\kappa\pr$(u, v) in the graph drawn below. (Hint: Use the dual problems to give short proofs of optimality.)
 
 \img{GTHW5421}
+
+Notice the sets of vertices, V, and edges, E, where V \eql \bk{v1, v2, v3} and E \eql \bk{p1, p2, p3, p4, p5} below.
+
+\img{GTHW54212}
+
+These are cut vertex and cut edge sets, respectively. This also means that the cardinality of each of these sets is an upper bound for $\kappa$(u, v) and $\kappa\pr$(u, v), respectively.
+
+Since a set, V, of 3 pairwise internally disjoint u, v-paths exists, $\kappa$(u, v) \gre 3.
+
+Since a set, V, of 5 pairwise internally edge disjoint u, v-paths exists, $\kappa\pr$(u, v) \gre 5.
+
+Hence,
+
+$\kappa$(u, v) \eql 3 and $\kappa\pr$(u, v) \eql 5.
 
 }
 
@@ -295,29 +362,37 @@ Determine $\kappa$(u, v) and $\kappa\pr$(u, v) in the graph drawn below. (Hint: 
 
 A kitchen sink draws water from two tanks according to the network of pipes with capacities per unit time shown below. Find the maximum flow. Prove that your answer is optimal by using the dual problem, and explain why this proves optimality.
 
-\img{GTHW5433}
+\simg{GTHW5433}
+
+\img{GTHW54332}
+
+\simg{GTHW54333}
+
+
+From the above work, using the Ford-Fulkerson algorithm, the max flow is 34 (also attached on the next page as a paper copy). The answer is optimal because a minimum cut can be found by deleting the vertices whose outflows are circled above in red: 9 \ps 5 \ps 5 \ps 10 \ps 5 \eql 34. This proves optimality because the flow of the network can't be larger than any cut. Thus, finding the minimum cut finds the absolute maximum flow capacity of the network.
 
 }
+
+\newpage
 
 \ssc{5.1.12 (p. 200)}{
 
 Prove or disprove: Every k-chromatic graph G has a proper k-coloring in which some color class has \afa(G) vertices.
 
+In other words, if a graph is k-chromatic, then there is a coloring such that one of the color classes is a maximum independent set.
+
+\textbf{False.}
+
+A counter example:
+
+\img{GTHW55121}
+
+This graph, no matter how it is 2-colored, will always have a maximum color class of 3, where as the maximum independent set possible is 4.
 }
 
 \ssc{5.3.4 (p. 229)}{
 
-\balist
-\item Prove that $\chi$(\uw{C}{n}; k) \eql (k \ms 1)$^n$ \ps ($-1$)$^n$(k \ms 1).
 
-
-
-\item For H \eql G \unn \uw{K}{1}, prove that $\chi$(F; k) \eql \uw{k}{\chi}(G; k \ms 1).
-
-
-
-\item From this and part (a), find the chromatic polynomial of the wheel \uw{C}{n} \unn \uw{K}{1}.
-\elist
 
 }
 \end{document}

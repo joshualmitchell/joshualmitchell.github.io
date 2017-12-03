@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 DEC 2017 20:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 DEC 2017 16:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -417,18 +417,18 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 )) (/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 5 - GT - MATH 5355.aux)
 \openout1 = `"HW 5 - GT - MATH 5355.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 264.
-LaTeX Font Info:    ... okay on input line 264.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 264.
-LaTeX Font Info:    ... okay on input line 264.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 264.
-LaTeX Font Info:    ... okay on input line 264.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 264.
-LaTeX Font Info:    ... okay on input line 264.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 264.
-LaTeX Font Info:    ... okay on input line 264.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 264.
-LaTeX Font Info:    ... okay on input line 264.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 270.
+LaTeX Font Info:    ... okay on input line 270.
  ABD: EveryShipout initializing macros (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count132
@@ -477,44 +477,86 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) <GTHW5332.png, id=4, 188.705pt x 133.49875pt>
+)) <GTHW53322.png, id=4, 188.705pt x 133.49875pt>
+File: GTHW53322.png Graphic file (type png)
+ <use GTHW53322.png>
+Package pdftex.def Info: GTHW53322.png used on input line 278.
+(pdftex.def)             Requested size: 155.02pt x 109.66725pt.
+ <GTHW5332.png, id=6, 188.705pt x 133.49875pt>
 File: GTHW5332.png Graphic file (type png)
  <use GTHW5332.png>
-Package pdftex.def Info: GTHW5332.png used on input line 272.
-(pdftex.def)             Requested size: 234.87749pt x 166.16411pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 278.
+Package pdftex.def Info: GTHW5332.png used on input line 282.
+(pdftex.def)             Requested size: 155.02pt x 109.66725pt.
+ <GTHW53323.png, id=7, 188.705pt x 133.49875pt>
+File: GTHW53323.png Graphic file (type png)
+ <use GTHW53323.png>
+Package pdftex.def Info: GTHW53323.png used on input line 286.
+(pdftex.def)             Requested size: 155.02pt x 109.66725pt.
+ [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+ <./GTHW53322.png> <./GTHW5332.png> <./GTHW53323.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 295.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 278.
+LaTeX Font Info:    Try loading font information for U+msb on input line 295.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) <GTHW5421.png, id=6, 206.7725pt x 102.3825pt>
+)
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+[2] <GTHW5421.png, id=28, 206.7725pt x 102.3825pt>
 File: GTHW5421.png Graphic file (type png)
  <use GTHW5421.png>
-Package pdftex.def Info: GTHW5421.png used on input line 288.
+Package pdftex.def Info: GTHW5421.png used on input line 341.
 (pdftex.def)             Requested size: 234.87749pt x 116.3017pt.
- [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
- <./GTHW5332.png> <./GTHW5421.png>] <GTHW5433.png, id=20, 371.3875pt x 144.54pt>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 343.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 343.
+ <GTHW54212.png, id=29, 206.7725pt x 102.3825pt>
+File: GTHW54212.png Graphic file (type png)
+ <use GTHW54212.png>
+Package pdftex.def Info: GTHW54212.png used on input line 345.
+(pdftex.def)             Requested size: 234.87749pt x 116.3017pt.
+ [3 <./GTHW5421.png> <./GTHW54212.png>] <GTHW5433.png, id=35, 371.3875pt x 144.54pt>
 File: GTHW5433.png Graphic file (type png)
  <use GTHW5433.png>
-Package pdftex.def Info: GTHW5433.png used on input line 298.
-(pdftex.def)             Requested size: 234.87749pt x 91.41354pt.
- [2 <./GTHW5433.png>] (/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 5 - GT - MATH 5355.aux) ) 
+Package pdftex.def Info: GTHW5433.png used on input line 365.
+(pdftex.def)             Requested size: 155.02pt x 60.33365pt.
+ <GTHW54332.png, id=36, 3035.34pt x 4047.12pt>
+File: GTHW54332.png Graphic file (type png)
+ <use GTHW54332.png>
+Package pdftex.def Info: GTHW54332.png used on input line 367.
+(pdftex.def)             Requested size: 234.87749pt x 313.15453pt.
+ <GTHW54333.png, id=37, 371.3875pt x 144.54pt>
+File: GTHW54333.png Graphic file (type png)
+ <use GTHW54333.png>
+Package pdftex.def Info: GTHW54333.png used on input line 369.
+(pdftex.def)             Requested size: 155.02pt x 60.33365pt.
+ [4 <./GTHW5433.png> <./GTHW54332.png> <./GTHW54333.png>] <GTHW55121.png, id=44, 1058.95625pt x 587.19376pt>
+File: GTHW55121.png Graphic file (type png)
+ <use GTHW55121.png>
+Package pdftex.def Info: GTHW55121.png used on input line 388.
+(pdftex.def)             Requested size: 234.87749pt x 130.23132pt.
+ [5 <./GTHW55121.png>] (/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 5 - GT - MATH 5355.aux) ) 
 Here is how much of TeX's memory you used:
- 14760 strings out of 492995
- 297775 string characters out of 6132704
- 341911 words of memory out of 5000000
- 18022 multiletter control sequences out of 15000+600000
- 6252 words of font info for 25 fonts, out of 8000000 for 9000
+ 14812 strings out of 492995
+ 298641 string characters out of 6132704
+ 342957 words of memory out of 5000000
+ 18064 multiletter control sequences out of 15000+600000
+ 6598 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,66p,433b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 5 - GT - MATH 5355.pdf" (2 pages, 170557 bytes).
+ 55i,11n,66p,496b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "/Users/jm/joshualmitchell.github.io/MATH5355/.texpadtmp/HW 5 - GT - MATH 5355.pdf" (5 pages, 18501034 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
