@@ -18,4 +18,3 @@ summary(glm2)
 anova(glm2)
 
 anova(glm2, test="Chisq")
-
