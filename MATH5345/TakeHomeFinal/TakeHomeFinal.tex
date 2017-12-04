@@ -230,7 +230,7 @@
 \end{figure}
 }
 \newcommand{\simg}[1]{
-  \includegraphics[width=0.35\linewidth]{#1}
+  \includegraphics[width=0.5\linewidth]{#1}
 }
 \newcommand{\wimg}[1]{
 \begin{figure}[h]
@@ -332,5 +332,37 @@ But we solved for the expected value of \uw{\bth}{1}'s numerator above. So:
 \newpage
 
 \wimg{THFP2}
+
+\bpth{a}
+
+\simg{FQ2Sum}
+\simg{FQ2Anov}
+
+\bpth{b}
+
+\textbf{Based on the Wald test statistic, months(***) is statistically significant.}
+
+\newpage
+
+\bpth{c}
+
+\simg{FQ2Sum2}
+\simg{FQ2Anov}
+
+\textbf{Using another Wald test statistic for \uf{months}{2}, it looks as though there is some evidence (.) that the quadratic term is significant.}
+
+\
+
+\textbf{Using a log likelihood ratio test:}
+
+\begin{verbatim}
+  anova(glm2, test="Chisq")
+\end{verbatim}
+
+\img{FQ2Lik}
+
+\textbf{There is slightly more evidence that the quadratic term is significant.}
+
+\textbf{So, overall, yes: there is some evidence to suggest that the quadratic term is statistically significant.}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 DEC 2017 10:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 DEC 2017 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -496,20 +496,64 @@ File: THFP2.png Graphic file (type png)
  <use THFP2.png>
 Package pdftex.def Info: THFP2.png used on input line 334.
 (pdftex.def)             Requested size: 469.75499pt x 357.64055pt.
- [4 <./THFP2.png>] (/Users/jm/joshualmitchell.github.io/MATH5345/TakeHomeFinal/.texpadtmp/TakeHomeFinal.aux) ) 
+ <FQ2Sum.png, id=26, 549.05125pt x 446.66875pt>
+File: FQ2Sum.png Graphic file (type png)
+ <use FQ2Sum.png>
+Package pdftex.def Info: FQ2Sum.png used on input line 338.
+(pdftex.def)             Requested size: 234.87749pt x 191.07555pt.
+ <FQ2Anov.png, id=27, 362.35374pt x 263.98625pt>
+File: FQ2Anov.png Graphic file (type png)
+ <use FQ2Anov.png>
+Package pdftex.def Info: FQ2Anov.png used on input line 339.
+(pdftex.def)             Requested size: 234.87749pt x 171.11774pt.
+
+Overfull \hbox (6.66663pt too wide) in paragraph at lines 338--340
+[][]   []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
+
+ []
+
+[4 <./THFP2.png> <./FQ2Sum.png> <./FQ2Anov.png>] <FQ2Sum2.png, id=34, 668.4975pt x 501.875pt>
+File: FQ2Sum2.png Graphic file (type png)
+ <use FQ2Sum2.png>
+Package pdftex.def Info: FQ2Sum2.png used on input line 349.
+(pdftex.def)             Requested size: 234.87749pt x 176.33278pt.
+File: FQ2Anov.png Graphic file (type png)
+ <use FQ2Anov.png>
+Package pdftex.def Info: FQ2Anov.png used on input line 350.
+(pdftex.def)             Requested size: 234.87749pt x 171.11774pt.
+
+Overfull \hbox (6.66663pt too wide) in paragraph at lines 349--351
+[][]   []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
+
+ []
+
+<FQ2Lik.png, id=35, 533.995pt x 324.21124pt>
+File: FQ2Lik.png Graphic file (type png)
+ <use FQ2Lik.png>
+Package pdftex.def Info: FQ2Lik.png used on input line 362.
+(pdftex.def)             Requested size: 234.87749pt x 142.60391pt.
+ [5 <./FQ2Sum2.png> <./FQ2Lik.png>] (/Users/jm/joshualmitchell.github.io/MATH5345/TakeHomeFinal/.texpadtmp/TakeHomeFinal.aux) ) 
 Here is how much of TeX's memory you used:
- 14747 strings out of 492995
- 297544 string characters out of 6132704
- 345968 words of memory out of 5000000
- 18010 multiletter control sequences out of 15000+600000
- 6266 words of font info for 25 fonts, out of 8000000 for 9000
+ 14770 strings out of 492995
+ 297865 string characters out of 6132704
+ 345967 words of memory out of 5000000
+ 18028 multiletter control sequences out of 15000+600000
+ 6434 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,23n,66p,423b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /Users/jm/joshualmitchell.github.io/MATH5345/TakeHomeFinal/.texpadtmp/TakeHomeFinal.pdf (4 pages, 292407 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on /Users/jm/joshualmitchell.github.io/MATH5345/TakeHomeFinal/.texpadtmp/TakeHomeFinal.pdf (5 pages, 540477 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
