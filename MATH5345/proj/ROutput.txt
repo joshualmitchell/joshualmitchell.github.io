@@ -1,0 +1,1426 @@
+﻿> setwd("/Users/jm/joshualmitchell.github.io/MATH5345/proj")
+> library(leaps)
+> library(car)
+> library(xtable)
+> library(locfit)
+> 
+> ##############################################################################
+> ####### Helper functions (for partial regression and residual plots):
+> ##############################################################################
+> 
+> displayResidualPlots <- function(model, regressors, df) {
++   # model : linear model
++   # regressors : c("regressor1", "regressor2"...)
++   # df : data frame containing your data (only the regressors/predictor you actually use)
++   for (regressor in regressors){
++     title <- paste("Residuals vs ", regressor, sep='')
++     yname <- "Residuals"
++     xname <- paste(regressor)
++     resid_vs_regr <- data.frame(df[c(regressor)], resid(model))
++     regressor_column <- c(df[c(regressor)])
++     # str(regressor_column)
++     # str(resid(model))
++     plot(resid_vs_regr,  main=title, xlab=xname, ylab=yname)
++     abline(h = 0, col="red")
++   }
++ }
+> 
+> displayPartialRegressionPlots <- function(response, regressors, df) {
++   # response : string 
++   # regressors : c("regressor1", "regressor2"...)
++   # df : data frame containing your data (only the regressors/response you actually use)
++   for (regressor in regressors){
++     if (!is.factor(df[, match(regressor, names(df))])) {
++       regr <- names(df) %in% c(regressor)
++       no_regressor_data <- df[!regr]
++       formula_reg <- as.formula(paste(response, " ~ .", sep = ""))
++       lm_no_regressor <- lm(formula_reg, data=no_regressor_data)
++       
++       resp <- names(df) %in% c(response)
++       no_response_data <- df[!resp]
++       formula_resp <- as.formula(paste(regressor, " ~ .", sep = ""))
++       lm_otherRegressor_toRest <- lm(formula_resp, data=no_response_data)
++       title <- paste(paste("resid(Missing ", regressor, sep=''), paste(paste(") vs resid(", regressor, sep=''), " vs Rest)", sep=''))
++       xname <- paste(paste("resid(", regressor, sep=''), " vs Rest)", sep='')
++       yname <- paste(paste("resid(Missing ", regressor, sep=''), ")", sep='')
++     
++       plot(resid(lm_otherRegressor_toRest), resid(lm_no_regressor), main=title, xlab=xname, ylab=yname)
++       abline(h = 0, col="red")
++     }
++   }
++ }
+> 
+> ##############################################################################
+> ####### Setup / Data clean-up:
+> ##############################################################################
+> 
+> autodata <- read.table("raw_auto-mpg.text", header=TRUE)
+> colnames(autodata) <- c("mpg_c", "cylnum_mvd", "displ_c", "hp_c", "wgt_c", "acc_c", "modelyr_mvd", "origin_mvd", "name_str")
+> 
+> # Step 1: Explore and check your data
+> 
+> # -- Using R functions: dim, summary, hist, plot, boxplot, table (for categorical variables)
+> # -- to check the dimension, distribution, potential outliers for data (y, x1, x2...)
+> # -- consider removing incorrect or "weird" data points (but be VERY careful)
+> 
+> str(autodata)
+'data.frame':        397 obs. of  9 variables:
+ $ mpg_c      : num  15 18 16 17 15 14 14 14 15 15 ...
+ $ cylnum_mvd : int  8 8 8 8 8 8 8 8 8 8 ...
+ $ displ_c    : num  350 318 304 302 429 454 440 455 390 383 ...
+ $ hp_c       : Factor w/ 94 levels "?","100.0","102.0",..: 35 29 29 24 42 47 46 48 40 37 ...
+ $ wgt_c      : num  3693 3436 3433 3449 4341 ...
+ $ acc_c      : num  11.5 11 12 10.5 10 9 8.5 10 8.5 10 ...
+ $ modelyr_mvd: int  70 70 70 70 70 70 70 70 70 70 ...
+ $ origin_mvd : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ name_str   : Factor w/ 305 levels "amc ambassador brougham",..: 37 232 15 162 142 55 224 242 2 102 ...
+> summary(autodata)
+     mpg_c         cylnum_mvd       displ_c           hp_c         wgt_c          acc_c      
+ Min.   : 9.00   Min.   :3.000   Min.   : 68.0   150.0  : 22   Min.   :1613   Min.   : 8.00  
+ 1st Qu.:17.50   1st Qu.:4.000   1st Qu.:104.0   90.00  : 20   1st Qu.:2223   1st Qu.:13.90  
+ Median :23.00   Median :4.000   Median :146.0   88.00  : 19   Median :2800   Median :15.50  
+ Mean   :23.53   Mean   :5.448   Mean   :193.1   110.0  : 18   Mean   :2969   Mean   :15.58  
+ 3rd Qu.:29.00   3rd Qu.:8.000   3rd Qu.:262.0   100.0  : 17   3rd Qu.:3609   3rd Qu.:17.20  
+ Max.   :46.60   Max.   :8.000   Max.   :455.0   75.00  : 14   Max.   :5140   Max.   :24.80  
+                                                 (Other):287                                 
+  modelyr_mvd      origin_mvd              name_str  
+ Min.   :70.00   Min.   :1.000   ford pinto    :  6  
+ 1st Qu.:73.00   1st Qu.:1.000   amc matador   :  5  
+ Median :76.00   Median :1.000   ford maverick :  5  
+ Mean   :76.03   Mean   :1.574   toyota corolla:  5  
+ 3rd Qu.:79.00   3rd Qu.:2.000   amc gremlin   :  4  
+ Max.   :82.00   Max.   :3.000   amc hornet    :  4  
+                                 (Other)       :368  
+> 
+> # Check normality of "y" (we don't care about normality of x):
+> hist(autodata$mpg_c, main="MPG Frequency", xlab="Miles per gallon", ylab="Number of cars with x miles per galon")
+> 
+> # Make origin a factor (since it's not continuous)
+> autodata$origin_mvd <- as.factor(autodata$origin_mvd)
+> 
+> # Remove data points with missing horsepower values and set them to numeric columns
+> autodata <- subset(autodata, !autodata[ , 4] == "?")
+> autodata$hp_c <- as.numeric(as.character(autodata$hp_c))
+> 
+> # Remove name_str:
+> autodata <- subset(autodata, select=-c(name_str))
+> 
+> str(autodata)
+'data.frame':        391 obs. of  8 variables:
+ $ mpg_c      : num  15 18 16 17 15 14 14 14 15 15 ...
+ $ cylnum_mvd : int  8 8 8 8 8 8 8 8 8 8 ...
+ $ displ_c    : num  350 318 304 302 429 454 440 455 390 383 ...
+ $ hp_c       : num  165 150 150 140 198 220 215 225 190 170 ...
+ $ wgt_c      : num  3693 3436 3433 3449 4341 ...
+ $ acc_c      : num  11.5 11 12 10.5 10 9 8.5 10 8.5 10 ...
+ $ modelyr_mvd: int  70 70 70 70 70 70 70 70 70 70 ...
+ $ origin_mvd : Factor w/ 3 levels "1","2","3": 1 1 1 1 1 1 1 1 1 1 ...
+> cor(autodata[ ,1:7])
+                 mpg_c cylnum_mvd    displ_c       hp_c      wgt_c      acc_c modelyr_mvd
+mpg_c        1.0000000 -0.7776431 -0.8048993 -0.7781647 -0.8320645  0.4221878   0.5799602
+cylnum_mvd  -0.7776431  1.0000000  0.9508242  0.8433154  0.8981461 -0.5022810  -0.3415949
+displ_c     -0.8048993  0.9508242  1.0000000  0.8972653  0.9331295 -0.5422095  -0.3671630
+hp_c        -0.7781647  0.8433154  0.8972653  1.0000000  0.8643969 -0.6888569  -0.4152394
+wgt_c       -0.8320645  0.8981461  0.9331295  0.8643969  1.0000000 -0.4158833  -0.3077328
+acc_c        0.4221878 -0.5022810 -0.5422095 -0.6888569 -0.4158833  1.0000000   0.2865470
+modelyr_mvd  0.5799602 -0.3415949 -0.3671630 -0.4152394 -0.3077328  0.2865470   1.0000000
+> pairs(autodata[, 1:8])
+> 
+> # Let's check constant variance:
+> 
+> ##############################################################################
+> ####### Residual Plots:
+> ##############################################################################
+> 
+> lm7 <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+> 
+> xtable(summary(lm7))
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:15:10 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
+  \hline
+(Intercept) & -18.3106 & 4.6933 & -3.90 & 0.0001 \\ 
+  wgt\_c & -0.0067 & 0.0007 & -10.23 & 0.0000 \\ 
+  modelyr\_mvd & 0.7805 & 0.0519 & 15.03 & 0.0000 \\ 
+  origin\_mvd2 & 2.6340 & 0.5665 & 4.65 & 0.0000 \\ 
+  origin\_mvd3 & 2.8557 & 0.5528 & 5.17 & 0.0000 \\ 
+  hp\_c & -0.0174 & 0.0137 & -1.27 & 0.2056 \\ 
+  displ\_c & 0.0241 & 0.0077 & 3.14 & 0.0018 \\ 
+  cylnum\_mvd & -0.5123 & 0.3222 & -1.59 & 0.1126 \\ 
+  acc\_c & 0.0845 & 0.0984 & 0.86 & 0.3913 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> xtable(anova(lm7))
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:15:10 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrrr}
+  \hline
+ & Df & Sum Sq & Mean Sq & F value & Pr($>$F) \\ 
+  \hline
+wgt\_c & 1 & 16470.05 & 16470.05 & 1505.92 & 0.0000 \\ 
+  modelyr\_mvd & 1 & 2756.94 & 2756.94 & 252.08 & 0.0000 \\ 
+  origin\_mvd & 2 & 261.23 & 130.61 & 11.94 & 0.0000 \\ 
+  hp\_c & 1 & 8.96 & 8.96 & 0.82 & 0.3659 \\ 
+  displ\_c & 1 & 77.03 & 77.03 & 7.04 & 0.0083 \\ 
+  cylnum\_mvd & 1 & 29.10 & 29.10 & 2.66 & 0.1037 \\ 
+  acc\_c & 1 & 8.06 & 8.06 & 0.74 & 0.3913 \\ 
+  Residuals & 382 & 4177.89 & 10.94 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> par(mar=c(2, 2, 2, 2))
+> par(mfrow=c(3,3))
+> 
+> # Fitted Values Residual Plot
+> plot(lm7$fitted.values, resid(lm7), main="Residuals vs Fitted", xlab="Fitted Values", ylab="Residuals")
+> abline(h = 0, col="red")
+> 
+> # Random Normal Residual Plot
+> qqnorm(resid(lm7), main="Residuals vs R-Norm", xlab="Random Normal", ylab="Residuals")
+> qqline(resid(lm7))
+> 
+> # Individual Residual Plots (per regressor)
+> colnames <- colnames(autodata)
+> colnames <- c(colnames)
+> regressors <- setdiff(colnames, c("mpg_c"))
+> 
+> displayResidualPlots(lm7, regressors, autodata)
+> 
+> lm7_vif <- vif(lm7)
+> lm7_vif <- as.data.frame(lm7_vif)
+> xtable(lm7_vif)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:15:10 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 11.07 & 1.00 & 3.33 \\ 
+  modelyr\_mvd & 1.30 & 1.00 & 1.14 \\ 
+  origin\_mvd & 2.09 & 2.00 & 1.20 \\ 
+  hp\_c & 9.98 & 1.00 & 3.16 \\ 
+  displ\_c & 22.87 & 1.00 & 4.78 \\ 
+  cylnum\_mvd & 10.74 & 1.00 & 3.28 \\ 
+  acc\_c & 2.62 & 1.00 & 1.62 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> par(mar=c(2, 2, 2, 2))
+> par(mfrow=c(2,2))
+> 
+> displayPartialRegressionPlots("mpg_c", regressors, autodata)
+> 
+> # It looks like displacement brings in barely any information.
+> # Weight seems to have information.
+> 
+> # Let's look at a partial F test for Displacement, Weight, Cylinders, and HP:
+> 
+> no_disp_model.reduced <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + cylnum_mvd + acc_c, data = autodata)
+> no_wgt_model.reduced <- lm(mpg_c ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+> no_hp_model.reduced <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + cylnum_mvd + acc_c, data = autodata)
+> no_cyl_model.reduced <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + acc_c, data = autodata)
+> 
+> 
+> anova(no_disp_model.reduced, lm7) # F: 9.8867,   Pr(>F): 0.001795,   significance: **
+Analysis of Variance Table
+
+
+Model 1: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + cylnum_mvd + 
+    acc_c
+Model 2: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + 
+    acc_c
+  Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1    383 4286.0                                
+2    382 4177.9  1    108.13 9.8867 0.001795 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> anova(no_wgt_model.reduced, lm7)  # F: 104.63    Pr(>F): 2.2e-16     significance: ***
+Analysis of Variance Table
+
+
+Model 1: mpg_c ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + 
+    acc_c
+Model 2: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + 
+    acc_c
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+1    383 5322.3                                  
+2    382 4177.9  1    1144.4 104.63 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> anova(no_hp_model.reduced, lm7)   # F: 1.6075    Pr(>F): 0.2056      significance: none
+Analysis of Variance Table
+
+
+Model 1: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + cylnum_mvd + 
+    acc_c
+Model 2: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + 
+    acc_c
+  Res.Df    RSS Df Sum of Sq      F Pr(>F)
+1    383 4195.5                           
+2    382 4177.9  1    17.581 1.6075 0.2056
+> anova(no_cyl_model.reduced, lm7)  # F: 2.5285    Pr(>F): 0.1126      significance: none 
+Analysis of Variance Table
+
+
+Model 1: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + acc_c
+Model 2: mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + 
+    acc_c
+  Res.Df    RSS Df Sum of Sq      F Pr(>F)
+1    383 4205.5                           
+2    382 4177.9  1    27.654 2.5285 0.1126
+> 
+> parFchart <- list(Regressor = c("Displacement", "Weight", "HP", "Cylinder Num"), 
++                   F_Statistic = c(9.8867, 104.63, 1.6075, 2.5285), 
++                   P_Value = c(0.001795, 0.000001, 0.2056, 0.1126),
++                   Significance = c("**", "***", "none", "none"))
+> parFchart <- as.data.frame(parFchart)
+> 
+> xtable(parFchart)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:15:11 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrl}
+  \hline
+ & Regressor & F\_Statistic & P\_Value & Significance \\ 
+  \hline
+1 & Displacement & 9.89 & 0.00 & ** \\ 
+  2 & Weight & 104.63 & 0.00 & *** \\ 
+  3 & HP & 1.61 & 0.21 & none \\ 
+  4 & Cylinder Num & 2.53 & 0.11 & none \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> # Two problems: correlation and non constant variance. 
+> 
+> ##############################################################################
+> ####### Apply log transformation due to horseshoe pattern:
+> ##############################################################################
+> 
+> lm7_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+> 
+> par(mar=c(2, 2, 2, 2))
+> par(mfrow=c(3,3))
+> 
+> plot(lm7_log$fitted.values, resid(lm7_log), main="[T] Residuals vs Fitted", ylab="Residuals", xlab="Fitted Values")
+> abline(h = 0, col="red")
+> 
+> # Much better! Let's check normality again:
+> qqnorm(resid(lm7_log), main="[T] Residuals vs R-Norm", xlab="Random Normal", ylab="Residuals")
+> qqline(resid(lm7_log))
+> # Still mostly normal, but now it has a lower left tail
+> 
+> # Individual Residual Plots (per regressor)
+> colnames <- colnames(autodata)
+> colnames <- c(colnames)
+> regressors <- setdiff(colnames, c("mpg_c"))
+> 
+> displayResidualPlots(lm7_log, regressors, autodata)
+> 
+> lm7_log_vif <- vif(lm7_log)
+> lm7_log_vif <- as.data.frame(lm7_log_vif)
+> xtable(lm7_log_vif)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:15:11 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 11.07 & 1.00 & 3.33 \\ 
+  modelyr\_mvd & 1.30 & 1.00 & 1.14 \\ 
+  origin\_mvd & 2.09 & 2.00 & 1.20 \\ 
+  hp\_c & 9.98 & 1.00 & 3.16 \\ 
+  displ\_c & 22.87 & 1.00 & 4.78 \\ 
+  cylnum\_mvd & 10.74 & 1.00 & 3.28 \\ 
+  acc\_c & 2.62 & 1.00 & 1.62 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+> 
+> par(mar=c(2, 2, 2, 2))
+> par(mfrow=c(2,2))
+> 
+> displayPartialRegressionPlots("log(mpg_c)", regressors, autodata)
+> 
+> # Let's look at a partial F test for Displacement, Weight, Cylinders, and HP:
+> 
+> no_disp_model.reduced <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + cylnum_mvd + acc_c, data = autodata)
+> no_wgt_model.reduced <- lm(log(mpg_c) ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c, data = autodata)
+> no_hp_model.reduced <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + cylnum_mvd + acc_c, data = autodata)
+> no_cyl_model.reduced <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + acc_c, data = autodata)
+> 
+> 
+> anova(no_disp_model.reduced, lm7_log) # F: 8.3922,   Pr(>F): 0.003985,   significance: **
+Analysis of Variance Table
+
+
+Model 1: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + cylnum_mvd + 
+    acc_c
+Model 2: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c
+  Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1    383 5.4492                                
+2    382 5.3321  1   0.11714 8.3922 0.003985 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> anova(no_wgt_model.reduced, lm7_log)  # F: 126.68    Pr(>F): 2.2e-16     significance: ***
+Analysis of Variance Table
+
+
+Model 1: log(mpg_c) ~ modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + 
+    acc_c
+Model 2: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+1    383 7.1003                                  
+2    382 5.3321  1    1.7683 126.68 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> anova(no_hp_model.reduced, lm7_log)   # F: 9.0956    Pr(>F): 0.002734    significance: **
+Analysis of Variance Table
+
+
+Model 1: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + displ_c + cylnum_mvd + 
+    acc_c
+Model 2: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c
+  Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1    383 5.4590                                
+2    382 5.3321  1   0.12696 9.0956 0.002734 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> anova(no_cyl_model.reduced, lm7_log)  # F: 6.3481    Pr(>F): 0.01216     significance: *
+Analysis of Variance Table
+
+
+Model 1: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    acc_c
+Model 2: log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c
+  Res.Df    RSS Df Sum of Sq      F  Pr(>F)  
+1    383 5.4207                              
+2    382 5.3321  1  0.088608 6.3481 0.01216 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> parFchart <- list(Regressor = c("Displacement", "Weight", "HP", "Cylinder Num"), 
++                   F_Statistic = c(8.3922, 126.68, 9.0956, 6.3481), 
++                   P_Value = c(0.003985, 0.000001, 0.002734, 0.01216),
++                   Significance = c("**", "***", "**", "*"))
+> parFchart <- as.data.frame(parFchart)
+> xtable(parFchart)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:43 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrl}
+  \hline
+ & Regressor & F\_Statistic & P\_Value & Significance \\ 
+  \hline
+1 & Displacement & 8.39 & 0.00 & ** \\ 
+  2 & Weight & 126.68 & 0.00 & *** \\ 
+  3 & HP & 9.10 & 0.00 & ** \\ 
+  4 & Cylinder Num & 6.35 & 0.01 & * \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> # Knowing that there's correlation between variables, let's look at interaction terms
+> 
+> ##############################################################################
+> #######  Interaction terms:
+> ##############################################################################
+> 
+> # Possible Interaction Terms:
+> # wgt_c * hp_c * displ_c * cylnum_mvd
+> # wgt_c * hp_c * displ_c
+> # wgt_c * hp_c * cylnum_mvd
+> # wgt_c * displ_c * cylnum_mvd
+> # hp_c * displ_c * cylnum_mvd
+> # wgt_c * hp_c
+> # wgt_c * displ_c 
+> # wgt_c * cylnum_mvd
+> # hp_c * displ_c
+> # hp_c * cylnum_mvd
+> # displ_c * cylnum_mvd
+> 
+> # So let's build a model with all 7 regressors and all of those interaction terms
+> # (since those 4 had the high VIFs)
+> # and see what's the most significant.
+> 
+> lm_interaction <- lm(mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c 
++                      + displ_c + cylnum_mvd + acc_c + 
++                        wgt_c * hp_c + hp_c * displ_c + 
++                        wgt_c * hp_c * displ_c * cylnum_mvd + 
++                        wgt_c * hp_c * displ_c + 
++                        wgt_c * hp_c * cylnum_mvd + 
++                        wgt_c * displ_c * cylnum_mvd + 
++                        hp_c * displ_c * cylnum_mvd + 
++                        wgt_c * hp_c +
++                        wgt_c * displ_c +
++                        wgt_c * cylnum_mvd + 
++                        hp_c * displ_c + 
++                        hp_c * cylnum_mvd + 
++                        displ_c * cylnum_mvd, data=autodata)
+> 
+> lm_interaction_log <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c 
++                      + displ_c + cylnum_mvd + acc_c + 
++                        wgt_c * hp_c + hp_c * displ_c + 
++                        wgt_c * hp_c * displ_c * cylnum_mvd + 
++                        wgt_c * hp_c * displ_c + 
++                        wgt_c * hp_c * cylnum_mvd + 
++                        wgt_c * displ_c * cylnum_mvd + 
++                        hp_c * displ_c * cylnum_mvd + 
++                        wgt_c * hp_c +
++                        wgt_c * displ_c +
++                        wgt_c * cylnum_mvd + 
++                        hp_c * displ_c + 
++                        hp_c * cylnum_mvd + 
++                        displ_c * cylnum_mvd, data=autodata)
+> 
+> summary(lm_interaction)
+
+
+Call:
+lm(formula = mpg_c ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + 
+    displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + 
+    wgt_c * hp_c * displ_c * cylnum_mvd + wgt_c * hp_c * displ_c + 
+    wgt_c * hp_c * cylnum_mvd + wgt_c * displ_c * cylnum_mvd + 
+    hp_c * displ_c * cylnum_mvd + wgt_c * hp_c + wgt_c * displ_c + 
+    wgt_c * cylnum_mvd + hp_c * displ_c + hp_c * cylnum_mvd + 
+    displ_c * cylnum_mvd, data = autodata)
+
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.8458 -1.6295 -0.1049  1.3550 12.7760 
+
+
+Coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                   -8.455e+01  5.859e+01  -1.443  0.14982    
+wgt_c                          4.501e-02  1.976e-02   2.278  0.02327 *  
+modelyr_mvd                    7.657e-01  4.698e-02  16.299  < 2e-16 ***
+origin_mvd2                    1.442e+00  5.443e-01   2.648  0.00843 ** 
+origin_mvd3                    1.605e+00  5.333e-01   3.010  0.00279 ** 
+hp_c                           5.642e-01  5.924e-01   0.952  0.34153    
+displ_c                       -3.113e-01  4.300e-01  -0.724  0.46953    
+cylnum_mvd                     1.705e+01  1.103e+01   1.546  0.12286    
+acc_c                         -1.837e-01  9.976e-02  -1.842  0.06629 .  
+wgt_c:hp_c                    -5.041e-04  2.026e-04  -2.488  0.01329 *  
+hp_c:displ_c                   4.440e-03  4.719e-03   0.941  0.34744    
+wgt_c:displ_c                 -5.602e-05  1.343e-04  -0.417  0.67695    
+wgt_c:cylnum_mvd              -8.243e-03  3.433e-03  -2.401  0.01684 *  
+hp_c:cylnum_mvd               -1.438e-01  1.001e-01  -1.437  0.15162    
+displ_c:cylnum_mvd             1.345e-02  5.939e-02   0.226  0.82100    
+wgt_c:hp_c:displ_c             2.938e-07  1.446e-06   0.203  0.83908    
+wgt_c:hp_c:cylnum_mvd          7.910e-05  3.124e-05   2.532  0.01174 *  
+wgt_c:displ_c:cylnum_mvd       1.294e-05  1.825e-05   0.709  0.47856    
+hp_c:displ_c:cylnum_mvd       -3.769e-04  6.201e-04  -0.608  0.54373    
+wgt_c:hp_c:displ_c:cylnum_mvd -7.640e-08  1.893e-07  -0.404  0.68666    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 2.817 on 371 degrees of freedom
+Multiple R-squared:  0.8762,        Adjusted R-squared:  0.8699 
+F-statistic: 138.2 on 19 and 371 DF,  p-value: < 2.2e-16
+
+
+> # R_sq : 0.8762, AR_sq: 0.8699
+> anova(lm_interaction)
+Analysis of Variance Table
+
+
+Response: mpg_c
+                               Df  Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c                           1 16470.1 16470.1 2075.3564 < 2.2e-16 ***
+modelyr_mvd                     1  2756.9  2756.9  347.3967 < 2.2e-16 ***
+origin_mvd                      2   261.2   130.6   16.4584 1.418e-07 ***
+hp_c                            1     9.0     9.0    1.1292  0.288632    
+displ_c                         1    77.0    77.0    9.7064  0.001979 ** 
+cylnum_mvd                      1    29.1    29.1    3.6670  0.056270 .  
+acc_c                           1     8.1     8.1    1.0151  0.314332    
+wgt_c:hp_c                      1   938.2   938.2  118.2266 < 2.2e-16 ***
+hp_c:displ_c                    1    68.6    68.6    8.6385  0.003497 ** 
+wgt_c:displ_c                   1     9.8     9.8    1.2336  0.267435    
+wgt_c:cylnum_mvd                1     5.4     5.4    0.6830  0.409072    
+hp_c:cylnum_mvd                 1     9.2     9.2    1.1590  0.282363    
+displ_c:cylnum_mvd              1    28.3    28.3    3.5684  0.059668 .  
+wgt_c:hp_c:displ_c              1     1.8     1.8    0.2264  0.634513    
+wgt_c:hp_c:cylnum_mvd           1    42.5    42.5    5.3547  0.021213 *  
+wgt_c:displ_c:cylnum_mvd        1    13.8    13.8    1.7412  0.187806    
+hp_c:displ_c:cylnum_mvd         1   114.7   114.7   14.4525  0.000168 ***
+wgt_c:hp_c:displ_c:cylnum_mvd   1     1.3     1.3    0.1630  0.686658    
+Residuals                     371  2944.3     7.9                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # MS_res: 7.9
+> summary(lm_interaction_log)
+
+
+Call:
+lm(formula = log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + 
+    hp_c + displ_c + cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * 
+    displ_c + wgt_c * hp_c * displ_c * cylnum_mvd + wgt_c * hp_c * 
+    displ_c + wgt_c * hp_c * cylnum_mvd + wgt_c * displ_c * cylnum_mvd + 
+    hp_c * displ_c * cylnum_mvd + wgt_c * hp_c + wgt_c * displ_c + 
+    wgt_c * cylnum_mvd + hp_c * displ_c + hp_c * cylnum_mvd + 
+    displ_c * cylnum_mvd, data = autodata)
+
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.34820 -0.06573  0.00495  0.05989  0.46506 
+
+
+Coefficients:
+                                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                   -1.687e-02  2.242e+00  -0.008   0.9940    
+wgt_c                          1.475e-03  7.562e-04   1.950   0.0519 .  
+modelyr_mvd                    2.930e-02  1.798e-03  16.294   <2e-16 ***
+origin_mvd2                    4.635e-02  2.083e-02   2.225   0.0267 *  
+origin_mvd3                    4.719e-02  2.041e-02   2.312   0.0213 *  
+hp_c                           9.800e-03  2.268e-02   0.432   0.6658    
+displ_c                       -1.616e-02  1.646e-02  -0.982   0.3267    
+cylnum_mvd                     3.662e-01  4.221e-01   0.868   0.3862    
+acc_c                         -7.658e-03  3.818e-03  -2.006   0.0456 *  
+wgt_c:hp_c                    -1.591e-05  7.755e-06  -2.051   0.0410 *  
+hp_c:displ_c                   2.458e-04  1.806e-04   1.361   0.1743    
+wgt_c:displ_c                 -1.484e-06  5.142e-06  -0.289   0.7730    
+wgt_c:cylnum_mvd              -2.256e-04  1.314e-04  -1.717   0.0869 .  
+hp_c:cylnum_mvd               -2.467e-03  3.832e-03  -0.644   0.5200    
+displ_c:cylnum_mvd             1.376e-03  2.273e-03   0.605   0.5453    
+wgt_c:hp_c:displ_c            -7.597e-09  5.534e-08  -0.137   0.8909    
+wgt_c:hp_c:cylnum_mvd          2.061e-06  1.196e-06   1.724   0.0856 .  
+wgt_c:displ_c:cylnum_mvd       2.901e-07  6.984e-07   0.415   0.6781    
+hp_c:displ_c:cylnum_mvd       -2.714e-05  2.373e-05  -1.144   0.2535    
+wgt_c:hp_c:displ_c:cylnum_mvd  5.417e-10  7.243e-09   0.075   0.9404    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1078 on 371 degrees of freedom
+Multiple R-squared:  0.9045,        Adjusted R-squared:  0.8996 
+F-statistic:   185 on 19 and 371 DF,  p-value: < 2.2e-16
+
+
+> # R_sq : 0.9045, AR_sq: 0.8996
+> anova(lm_interaction_log)
+Analysis of Variance Table
+
+
+Response: log(mpg_c)
+                               Df Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c                           1 34.623  34.623 2978.3063 < 2.2e-16 ***
+modelyr_mvd                     1  4.718   4.718  405.8740 < 2.2e-16 ***
+origin_mvd                      2  0.249   0.125   10.7262 2.960e-05 ***
+hp_c                            1  0.113   0.113    9.7264 0.0019583 ** 
+displ_c                         1  0.041   0.041    3.5621 0.0598931 .  
+cylnum_mvd                      1  0.088   0.088    7.5498 0.0062947 ** 
+acc_c                           1  0.001   0.001    0.1221 0.7269856    
+wgt_c:hp_c                      1  0.491   0.491   42.2247 2.624e-10 ***
+hp_c:displ_c                    1  0.159   0.159   13.6491 0.0002535 ***
+wgt_c:displ_c                   1  0.036   0.036    3.0658 0.0807820 .  
+wgt_c:cylnum_mvd                1  0.004   0.004    0.3784 0.5388212    
+hp_c:cylnum_mvd                 1  0.000   0.000    0.0157 0.9004442    
+displ_c:cylnum_mvd              1  0.025   0.025    2.1710 0.1414845    
+wgt_c:hp_c:displ_c              1  0.035   0.035    3.0276 0.0826875 .  
+wgt_c:hp_c:cylnum_mvd           1  0.023   0.023    2.0172 0.1563666    
+wgt_c:displ_c:cylnum_mvd        1  0.052   0.052    4.4312 0.0359589 *  
+hp_c:displ_c:cylnum_mvd         1  0.194   0.194   16.6801 5.423e-05 ***
+wgt_c:hp_c:displ_c:cylnum_mvd   1  0.000   0.000    0.0056 0.9404291    
+Residuals                     371  4.313   0.012                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # MS_res: 0.012
+> 
+> i_vs_ni <- list(Model = c("Interaction", "Transformed + Interaction"), R_Sq = c(0.8762, 0.9045), AR_Sq = c(0.8699, 0.8996), MS_res = c(7.9, 0.012))
+> i_vs_ni <- as.data.frame(i_vs_ni)
+> xtable(i_vs_ni)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:43 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrr}
+  \hline
+ & Model & R\_Sq & AR\_Sq & MS\_res \\ 
+  \hline
+1 & Interaction & 0.88 & 0.87 & 7.90 \\ 
+  2 & Transformed + Interaction & 0.90 & 0.90 & 0.01 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> # It looks like, even taking into account the interactions, the log transformation
+> # helps the model explain more of the relationship.
+> 
+> # So now, let's look at building our model from all of these regressors.
+> 
+> full <- lm_interaction_log
+> null <- lm(log(mpg_c) ~ 1, data=autodata)
+> 
+> # Perform "forward" selection starting from the NULL model and set up the scope to have an upper = FULL model. 
+> 
+> forw <- step(null, scope=list(lower=null, upper=full), direction="forward")
+Start:  AIC=-841.91
+log(mpg_c) ~ 1
+
+
+              Df Sum of Sq    RSS      AIC
++ wgt_c        1    34.623 10.543 -1408.76
++ displ_c      1    32.916 12.251 -1350.09
++ hp_c         1    31.114 14.053 -1296.42
++ cylnum_mvd   1    30.908 14.259 -1290.73
++ modelyr_mvd  1    15.035 30.132  -998.19
++ origin_mvd   2    14.911 30.256  -994.58
++ acc_c        1     9.013 36.153  -926.95
+<none>                     45.167  -841.91
+
+
+Step:  AIC=-1408.76
+log(mpg_c) ~ wgt_c
+
+
+              Df Sum of Sq     RSS     AIC
++ modelyr_mvd  1    4.7183  5.8251 -1638.8
++ hp_c         1    0.9565  9.5870 -1444.0
++ displ_c      1    0.4704 10.0731 -1424.6
++ cylnum_mvd   1    0.3902 10.1532 -1421.5
++ acc_c        1    0.3726 10.1708 -1420.8
++ origin_mvd   2    0.1599 10.3835 -1410.7
+<none>                     10.5434 -1408.8
+
+
+Step:  AIC=-1638.75
+log(mpg_c) ~ wgt_c + modelyr_mvd
+
+
+             Df Sum of Sq    RSS     AIC
++ origin_mvd  2  0.249388 5.5757 -1651.9
++ hp_c        1  0.099967 5.7251 -1643.5
++ cylnum_mvd  1  0.083892 5.7412 -1642.4
++ acc_c       1  0.046659 5.7784 -1639.9
++ displ_c     1  0.033446 5.7917 -1639.0
+<none>                    5.8251 -1638.8
+
+
+Step:  AIC=-1651.86
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd
+
+
+             Df Sum of Sq    RSS     AIC
++ hp_c        1  0.113071 5.4626 -1657.9
++ acc_c       1  0.038540 5.5372 -1652.6
++ cylnum_mvd  1  0.032006 5.5437 -1652.1
+<none>                    5.5757 -1651.9
++ displ_c     1  0.000038 5.5757 -1649.9
+
+
+Step:  AIC=-1657.87
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c
+
+
+             Df Sum of Sq    RSS     AIC
++ wgt_c:hp_c  1   0.54537 4.9173 -1697.0
++ displ_c     1   0.04141 5.4212 -1658.8
+<none>                    5.4626 -1657.9
++ cylnum_mvd  1   0.00829 5.4544 -1656.5
++ acc_c       1   0.00336 5.4593 -1656.1
+
+
+Step:  AIC=-1697
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + wgt_c:hp_c
+
+
+             Df Sum of Sq    RSS     AIC
++ acc_c       1  0.032400 4.8849 -1697.6
+<none>                    4.9173 -1697.0
++ displ_c     1  0.014517 4.9028 -1696.2
++ cylnum_mvd  1  0.003576 4.9137 -1695.3
+
+
+Step:  AIC=-1697.58
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + 
+    wgt_c:hp_c
+
+
+             Df Sum of Sq    RSS     AIC
+<none>                    4.8849 -1697.6
++ displ_c     1 0.0077055 4.8772 -1696.2
++ cylnum_mvd  1 0.0073538 4.8775 -1696.2
+> # Chosen: lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+> lm.forw <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+> summary(lm.forw)
+
+
+Call:
+lm(formula = log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + 
+    hp_c + acc_c + wgt_c:hp_c, data = autodata)
+
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.36694 -0.07005  0.00032  0.06556  0.37958 
+
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  2.137e+00  1.735e-01  12.319  < 2e-16 ***
+wgt_c       -3.693e-04  2.502e-05 -14.760  < 2e-16 ***
+modelyr_mvd  3.086e-02  1.754e-03  17.589  < 2e-16 ***
+origin_mvd2  5.576e-02  1.774e-02   3.143   0.0018 ** 
+origin_mvd3  4.546e-02  1.804e-02   2.520   0.0121 *  
+hp_c        -6.416e-03  9.088e-04  -7.060 7.90e-12 ***
+acc_c       -5.344e-03  3.353e-03  -1.594   0.1118    
+wgt_c:hp_c   1.327e-06  1.977e-07   6.711 6.98e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1129 on 383 degrees of freedom
+Multiple R-squared:  0.8918,        Adjusted R-squared:  0.8899 
+F-statistic: 451.2 on 7 and 383 DF,  p-value: < 2.2e-16
+
+
+> # Multiple R-squared:  0.8918,        Adjusted R-squared:  0.8899 
+> anova(lm.forw)
+Analysis of Variance Table
+
+
+Response: log(mpg_c)
+             Df Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c         1 34.623  34.623 2714.6355 < 2.2e-16 ***
+modelyr_mvd   1  4.718   4.718  369.9418 < 2.2e-16 ***
+origin_mvd    2  0.249   0.125    9.7766 7.226e-05 ***
+hp_c          1  0.113   0.113    8.8653  0.003091 ** 
+acc_c         1  0.003   0.003    0.2638  0.607822    
+wgt_c:hp_c    1  0.574   0.574   45.0360 6.982e-11 ***
+Residuals   383  4.885   0.013                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # MS_res: 0.013
+> 
+> back <- step(full, data=autodata, direction="backward")
+Start:  AIC=-1722.27
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c + wgt_c * hp_c + hp_c * displ_c + wgt_c * 
+    hp_c * displ_c * cylnum_mvd + wgt_c * hp_c * displ_c + wgt_c * 
+    hp_c * cylnum_mvd + wgt_c * displ_c * cylnum_mvd + hp_c * 
+    displ_c * cylnum_mvd + wgt_c * hp_c + wgt_c * displ_c + wgt_c * 
+    cylnum_mvd + hp_c * displ_c + hp_c * cylnum_mvd + displ_c * 
+    cylnum_mvd
+
+
+                                Df Sum of Sq    RSS     AIC
+- wgt_c:hp_c:displ_c:cylnum_mvd  1   0.00007 4.3130 -1724.3
+<none>                                       4.3129 -1722.3
+- acc_c                          1   0.04676 4.3597 -1720.1
+- origin_mvd                     2   0.07686 4.3898 -1719.4
+- modelyr_mvd                    1   3.08638 7.3993 -1513.2
+
+
+Step:  AIC=-1724.27
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + 
+    wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + 
+    wgt_c:hp_c:displ_c + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + 
+    hp_c:displ_c:cylnum_mvd
+
+
+                           Df Sum of Sq    RSS     AIC
+- wgt_c:hp_c:displ_c        1   0.00339 4.3164 -1726.0
+<none>                                  4.3130 -1724.3
+- acc_c                     1   0.04670 4.3597 -1722.1
+- origin_mvd                2   0.07818 4.3912 -1721.2
+- wgt_c:displ_c:cylnum_mvd  1   0.05848 4.3715 -1721.0
+- wgt_c:hp_c:cylnum_mvd     1   0.10639 4.4194 -1716.7
+- hp_c:displ_c:cylnum_mvd   1   0.19391 4.5069 -1709.1
+- modelyr_mvd               1   3.09079 7.4038 -1515.0
+
+
+Step:  AIC=-1725.96
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + 
+    cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + 
+    wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + 
+    wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd
+
+
+                           Df Sum of Sq    RSS     AIC
+<none>                                  4.3164 -1726.0
+- acc_c                     1   0.04408 4.3605 -1724.0
+- wgt_c:displ_c:cylnum_mvd  1   0.05511 4.3715 -1723.0
+- origin_mvd                2   0.08257 4.3989 -1722.5
+- wgt_c:hp_c:cylnum_mvd     1   0.13735 4.4537 -1715.7
+- hp_c:displ_c:cylnum_mvd   1   0.20124 4.5176 -1710.1
+- modelyr_mvd               1   3.10823 7.4246 -1515.9
+> # Chosen: lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
+> lm.back <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
+> summary(lm.back)
+
+
+Call:
+lm(formula = log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + 
+    hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + 
+    wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + 
+    wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, 
+    data = autodata)
+
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.35646 -0.06558  0.00605  0.05941  0.46693 
+
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)    
+(Intercept)               2.106e-01  5.748e-01   0.366 0.714335    
+wgt_c                     1.424e-03  3.574e-04   3.985 8.11e-05 ***
+modelyr_mvd               2.919e-02  1.781e-03  16.389  < 2e-16 ***
+origin_mvd2               4.753e-02  2.063e-02   2.304 0.021784 *  
+origin_mvd3               4.836e-02  2.016e-02   2.398 0.016963 *  
+hp_c                      8.759e-03  7.491e-03   1.169 0.243071    
+displ_c                  -1.410e-02  5.352e-03  -2.635 0.008775 ** 
+cylnum_mvd                2.661e-01  9.991e-02   2.663 0.008069 ** 
+acc_c                    -7.356e-03  3.769e-03  -1.952 0.051713 .  
+wgt_c:hp_c               -1.584e-05  4.065e-06  -3.896 0.000116 ***
+hp_c:displ_c              2.226e-04  5.002e-05   4.450 1.13e-05 ***
+wgt_c:displ_c            -2.143e-06  1.126e-06  -1.904 0.057728 .  
+wgt_c:cylnum_mvd         -1.993e-04  5.077e-05  -3.926 0.000103 ***
+hp_c:cylnum_mvd          -1.744e-03  1.240e-03  -1.407 0.160185    
+displ_c:cylnum_mvd        1.306e-03  7.691e-04   1.699 0.090241 .  
+wgt_c:hp_c:cylnum_mvd     1.896e-06  5.502e-07   3.445 0.000636 ***
+wgt_c:displ_c:cylnum_mvd  3.199e-07  1.466e-07   2.182 0.029718 *  
+hp_c:displ_c:cylnum_mvd  -2.577e-05  6.180e-06  -4.170 3.79e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1076 on 373 degrees of freedom
+Multiple R-squared:  0.9044,        Adjusted R-squared:  0.9001 
+F-statistic: 207.7 on 17 and 373 DF,  p-value: < 2.2e-16
+
+
+> # Multiple R-squared:  0.9044,        Adjusted R-squared:  0.9001  
+> anova(lm.back)
+Analysis of Variance Table
+
+
+Response: log(mpg_c)
+                          Df Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c                      1 34.623  34.623 2991.9631 < 2.2e-16 ***
+modelyr_mvd                1  4.718   4.718  407.7351 < 2.2e-16 ***
+origin_mvd                 2  0.249   0.125   10.7754 2.822e-05 ***
+hp_c                       1  0.113   0.113    9.7710 0.0019118 ** 
+displ_c                    1  0.041   0.041    3.5784 0.0593085 .  
+cylnum_mvd                 1  0.088   0.088    7.5844 0.0061758 ** 
+acc_c                      1  0.001   0.001    0.1226 0.7263845    
+wgt_c:hp_c                 1  0.491   0.491   42.4183 2.386e-10 ***
+hp_c:displ_c               1  0.159   0.159   13.7117 0.0002453 ***
+wgt_c:displ_c              1  0.036   0.036    3.0799 0.0800882 .  
+wgt_c:cylnum_mvd           1  0.004   0.004    0.3802 0.5378904    
+hp_c:cylnum_mvd            1  0.000   0.000    0.0157 0.9002170    
+displ_c:cylnum_mvd         1  0.025   0.025    2.1809 0.1405734    
+wgt_c:hp_c:cylnum_mvd      1  0.057   0.057    4.8883 0.0276460 *  
+wgt_c:displ_c:cylnum_mvd   1  0.043   0.043    3.7043 0.0550340 .  
+hp_c:displ_c:cylnum_mvd    1  0.201   0.201   17.3903 3.789e-05 ***
+Residuals                373  4.316   0.012                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # MS_res: 0.012
+> 
+> # Roughly the same summary as forward, maybe a little better
+> 
+> # Stepwise Selection
+> stepwise <- step(null, scope = list(upper=full), data=autodata, direction="both")
+Start:  AIC=-841.91
+log(mpg_c) ~ 1
+
+
+              Df Sum of Sq    RSS      AIC
++ wgt_c        1    34.623 10.543 -1408.76
++ displ_c      1    32.916 12.251 -1350.09
++ hp_c         1    31.114 14.053 -1296.42
++ cylnum_mvd   1    30.908 14.259 -1290.73
++ modelyr_mvd  1    15.035 30.132  -998.19
++ origin_mvd   2    14.911 30.256  -994.58
++ acc_c        1     9.013 36.153  -926.95
+<none>                     45.167  -841.91
+
+
+Step:  AIC=-1408.76
+log(mpg_c) ~ wgt_c
+
+
+              Df Sum of Sq    RSS      AIC
++ modelyr_mvd  1     4.718  5.825 -1638.75
++ hp_c         1     0.956  9.587 -1443.95
++ displ_c      1     0.470 10.073 -1424.61
++ cylnum_mvd   1     0.390 10.153 -1421.51
++ acc_c        1     0.373 10.171 -1420.83
++ origin_mvd   2     0.160 10.384 -1410.74
+<none>                     10.543 -1408.76
+- wgt_c        1    34.623 45.167  -841.91
+
+
+Step:  AIC=-1638.75
+log(mpg_c) ~ wgt_c + modelyr_mvd
+
+
+              Df Sum of Sq     RSS      AIC
++ origin_mvd   2    0.2494  5.5757 -1651.86
++ hp_c         1    0.1000  5.7251 -1643.52
++ cylnum_mvd   1    0.0839  5.7412 -1642.43
++ acc_c        1    0.0467  5.7784 -1639.90
++ displ_c      1    0.0334  5.7917 -1639.00
+<none>                      5.8251 -1638.75
+- modelyr_mvd  1    4.7183 10.5434 -1408.76
+- wgt_c        1   24.3064 30.1315  -998.19
+
+
+Step:  AIC=-1651.86
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd
+
+
+              Df Sum of Sq     RSS     AIC
++ hp_c         1    0.1131  5.4626 -1657.9
++ acc_c        1    0.0385  5.5372 -1652.6
++ cylnum_mvd   1    0.0320  5.5437 -1652.1
+<none>                      5.5757 -1651.9
++ displ_c      1    0.0000  5.5757 -1649.9
+- origin_mvd   2    0.2494  5.8251 -1638.8
+- modelyr_mvd  1    4.8078 10.3835 -1410.7
+- wgt_c        1   13.5035 19.0793 -1172.9
+
+
+Step:  AIC=-1657.87
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c
+
+
+              Df Sum of Sq    RSS     AIC
++ wgt_c:hp_c   1    0.5454 4.9173 -1697.0
++ displ_c      1    0.0414 5.4212 -1658.8
+<none>                     5.4626 -1657.9
++ cylnum_mvd   1    0.0083 5.4544 -1656.5
++ acc_c        1    0.0034 5.4593 -1656.1
+- hp_c         1    0.1131 5.5757 -1651.9
+- origin_mvd   2    0.2625 5.7251 -1643.5
+- wgt_c        1    3.5950 9.0577 -1462.2
+- modelyr_mvd  1    3.8390 9.3017 -1451.8
+
+
+Step:  AIC=-1697
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + wgt_c:hp_c
+
+
+              Df Sum of Sq    RSS     AIC
++ acc_c        1    0.0324 4.8849 -1697.6
+<none>                     4.9173 -1697.0
++ displ_c      1    0.0145 4.9028 -1696.2
++ cylnum_mvd   1    0.0036 4.9137 -1695.3
+- origin_mvd   2    0.1402 5.0575 -1690.0
+- wgt_c:hp_c   1    0.5454 5.4626 -1657.9
+- modelyr_mvd  1    3.9874 8.9047 -1466.8
+
+
+Step:  AIC=-1697.58
+log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + 
+    wgt_c:hp_c
+
+
+              Df Sum of Sq    RSS     AIC
+<none>                     4.8849 -1697.6
+- acc_c        1    0.0324 4.9173 -1697.0
++ displ_c      1    0.0077 4.8772 -1696.2
++ cylnum_mvd   1    0.0074 4.8775 -1696.2
+- origin_mvd   2    0.1482 5.0331 -1689.9
+- wgt_c:hp_c   1    0.5744 5.4593 -1656.1
+- modelyr_mvd  1    3.9457 8.8306 -1468.1
+> # Chosen: lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+> lm.stepwise <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = autodata)
+> # Same model as forward, same summary (roughly) as all of them.
+> summary(lm.stepwise)
+
+
+Call:
+lm(formula = log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + 
+    hp_c + acc_c + wgt_c:hp_c, data = autodata)
+
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.36694 -0.07005  0.00032  0.06556  0.37958 
+
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  2.137e+00  1.735e-01  12.319  < 2e-16 ***
+wgt_c       -3.693e-04  2.502e-05 -14.760  < 2e-16 ***
+modelyr_mvd  3.086e-02  1.754e-03  17.589  < 2e-16 ***
+origin_mvd2  5.576e-02  1.774e-02   3.143   0.0018 ** 
+origin_mvd3  4.546e-02  1.804e-02   2.520   0.0121 *  
+hp_c        -6.416e-03  9.088e-04  -7.060 7.90e-12 ***
+acc_c       -5.344e-03  3.353e-03  -1.594   0.1118    
+wgt_c:hp_c   1.327e-06  1.977e-07   6.711 6.98e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1129 on 383 degrees of freedom
+Multiple R-squared:  0.8918,        Adjusted R-squared:  0.8899 
+F-statistic: 451.2 on 7 and 383 DF,  p-value: < 2.2e-16
+
+
+> # Multiple R-squared:  0.8918,        Adjusted R-squared:  0.8899 
+> anova(lm.stepwise)
+Analysis of Variance Table
+
+
+Response: log(mpg_c)
+             Df Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c         1 34.623  34.623 2714.6355 < 2.2e-16 ***
+modelyr_mvd   1  4.718   4.718  369.9418 < 2.2e-16 ***
+origin_mvd    2  0.249   0.125    9.7766 7.226e-05 ***
+hp_c          1  0.113   0.113    8.8653  0.003091 ** 
+acc_c         1  0.003   0.003    0.2638  0.607822    
+wgt_c:hp_c    1  0.574   0.574   45.0360 6.982e-11 ***
+Residuals   383  4.885   0.013                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> # MS_res: 0.013
+> 
+> bestModels <- list(Selection_Method = c("Forward", "Backward", "Stepwise"),
++                   Num_Regressors = c(6, 16, 6),
++                   R_Sq = c(0.8918, 0.9044, 0.8918), 
++                   Adj_R_Sq = c(0.8899, 0.9001, 0.8899),
++                   MS_res = c(0.013, 0.012, 0.013))
+> 
+> bestModels <- as.data.frame(bestModels)
+> bestModels
+  Selection_Method Num_Regressors   R_Sq Adj_R_Sq MS_res
+1          Forward              6 0.8918   0.8899  0.013
+2         Backward             16 0.9044   0.9001  0.012
+3         Stepwise              6 0.8918   0.8899  0.013
+> xtable(bestModels)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:43 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & Selection\_Method & Num\_Regressors & R\_Sq & Adj\_R\_Sq & MS\_res \\ 
+  \hline
+1 & Forward & 6.00 & 0.89 & 0.89 & 0.01 \\ 
+  2 & Backward & 16.00 & 0.90 & 0.90 & 0.01 \\ 
+  3 & Stepwise & 6.00 & 0.89 & 0.89 & 0.01 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> par(mar=c(2, 2, 2, 2))
+> par(mfrow=c(2,2))
+> 
+> # 28ti_resfittednorm
+> 
+> plot(lm.forw$fitted.values, resid(lm.forw), main="FW: Residuals vs Fitted", ylab="FW: Residuals", xlab="Fitted Values")
+> abline(h = 0, col="red")
+> 
+> qqnorm(resid(lm.forw), main="FW: Residuals vs R-Norm", xlab="Random Normal", ylab="FW: Residuals")
+> qqline(resid(lm.forw))
+> 
+> plot(lm.back$fitted.values, resid(lm.back), main="BK: Residuals vs Fitted", ylab="BK: Residuals", xlab="Fitted Values")
+> abline(h = 0, col="red")
+> 
+> qqnorm(resid(lm.back), main="BK: Residuals vs R-Norm", xlab="Random Normal", ylab="BK: Residuals")
+> qqline(resid(lm.back))
+> 
+> lm.forw.vif <- vif(lm.forw)
+> lm.forw.vif <- as.data.frame(lm.forw.vif)
+> lm.forw.vif
+                 GVIF Df GVIF^(1/(2*Df))
+wgt_c       13.833237  1        3.719306
+modelyr_mvd  1.271783  1        1.127734
+origin_mvd   1.735529  2        1.147778
+hp_c        37.472961  1        6.121516
+acc_c        2.612397  1        1.616291
+wgt_c:hp_c  58.059671  1        7.619690
+> xtable(lm.forw.vif)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:43 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 13.83 & 1.00 & 3.72 \\ 
+  modelyr\_mvd & 1.27 & 1.00 & 1.13 \\ 
+  origin\_mvd & 1.74 & 2.00 & 1.15 \\ 
+  hp\_c & 37.47 & 1.00 & 6.12 \\ 
+  acc\_c & 2.61 & 1.00 & 1.62 \\ 
+  wgt\_c:hp\_c & 58.06 & 1.00 & 7.62 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> lm.back.vif <- vif(lm.back)
+> lm.back.vif <- as.data.frame(lm.back.vif)
+> lm.back.vif
+                                 GVIF Df GVIF^(1/(2*Df))
+wgt_c                     3110.019906  1       55.767552
+modelyr_mvd                  1.444713  1        1.201962
+origin_mvd                   3.014606  2        1.317673
+hp_c                      2806.059780  1       52.972255
+displ_c                  10568.291441  1      102.802196
+cylnum_mvd                 975.921261  1       31.239738
+acc_c                        3.637782  1        1.907297
+wgt_c:hp_c               27058.355425  1      164.494241
+hp_c:displ_c             39680.745049  1      199.200264
+wgt_c:displ_c            11724.719629  1      108.280744
+wgt_c:cylnum_mvd          9069.372133  1       95.233251
+hp_c:cylnum_mvd           9125.247796  1       95.526163
+displ_c:cylnum_mvd       19861.833874  1      140.932019
+wgt_c:hp_c:cylnum_mvd    41867.559926  1      204.615639
+wgt_c:displ_c:cylnum_mvd 15077.875898  1      122.792003
+hp_c:displ_c:cylnum_mvd  44842.287177  1      211.759975
+> xtable(lm.back.vif)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:43 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 3110.02 & 1.00 & 55.77 \\ 
+  modelyr\_mvd & 1.44 & 1.00 & 1.20 \\ 
+  origin\_mvd & 3.01 & 2.00 & 1.32 \\ 
+  hp\_c & 2806.06 & 1.00 & 52.97 \\ 
+  displ\_c & 10568.29 & 1.00 & 102.80 \\ 
+  cylnum\_mvd & 975.92 & 1.00 & 31.24 \\ 
+  acc\_c & 3.64 & 1.00 & 1.91 \\ 
+  wgt\_c:hp\_c & 27058.36 & 1.00 & 164.49 \\ 
+  hp\_c:displ\_c & 39680.75 & 1.00 & 199.20 \\ 
+  wgt\_c:displ\_c & 11724.72 & 1.00 & 108.28 \\ 
+  wgt\_c:cylnum\_mvd & 9069.37 & 1.00 & 95.23 \\ 
+  hp\_c:cylnum\_mvd & 9125.25 & 1.00 & 95.53 \\ 
+  displ\_c:cylnum\_mvd & 19861.83 & 1.00 & 140.93 \\ 
+  wgt\_c:hp\_c:cylnum\_mvd & 41867.56 & 1.00 & 204.62 \\ 
+  wgt\_c:displ\_c:cylnum\_mvd & 15077.88 & 1.00 & 122.79 \\ 
+  hp\_c:displ\_c:cylnum\_mvd & 44842.29 & 1.00 & 211.76 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> lm.stepwise.vif <- vif(lm.stepwise)
+> lm.stepwise.vif <- as.data.frame(lm.stepwise.vif)
+> lm.stepwise.vif
+                 GVIF Df GVIF^(1/(2*Df))
+wgt_c       13.833237  1        3.719306
+modelyr_mvd  1.271783  1        1.127734
+origin_mvd   1.735529  2        1.147778
+hp_c        37.472961  1        6.121516
+acc_c        2.612397  1        1.616291
+wgt_c:hp_c  58.059671  1        7.619690
+> xtable(lm.stepwise.vif)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:43 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & GVIF & Df & GVIF\verb|^|(1/(2*Df)) \\ 
+  \hline
+wgt\_c & 13.83 & 1.00 & 3.72 \\ 
+  modelyr\_mvd & 1.27 & 1.00 & 1.13 \\ 
+  origin\_mvd & 1.74 & 2.00 & 1.15 \\ 
+  hp\_c & 37.47 & 1.00 & 6.12 \\ 
+  acc\_c & 2.61 & 1.00 & 1.62 \\ 
+  wgt\_c:hp\_c & 58.06 & 1.00 & 7.62 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> data_with_inflpnts_fw <- influence.measures(lm.forw)
+> inflpnts_fw <- which(apply(data_with_inflpnts_fw$is.inf, 1, any)) 
+> data_wo_inflpnts_fw <- autodata[-inflpnts_fw,] # 371 / 391 = 0.9488491 -> 5.11509% infl
+> 
+> data_with_inflpnts_bk <- influence.measures(lm.back)
+> inflpnts_bk <- which(apply(data_with_inflpnts_bk$is.inf, 1, any)) 
+> data_wo_inflpnts_bk <- autodata[-inflpnts_bk,] # 355 / 391 -> 9.2072% influential points
+> 
+> common_infl_pnts <- intersect(inflpnts_bk, inflpnts_fw) # 14
+> 
+> no_infl_forw_back <- list(Model = c("Forward", "Backward"), Num_Infl_Pnts = c(20, 36), Percent_Infl_Pnts = c("5.12%", "9.21%"), Common_Infl_Pnts = 14)
+> no_infl_forw_back <- as.data.frame(no_infl_forw_back)
+> xtable(no_infl_forw_back)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:44 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrlr}
+  \hline
+ & Model & Num\_Infl\_Pnts & Percent\_Infl\_Pnts & Common\_Infl\_Pnts \\ 
+  \hline
+1 & Forward & 20.00 & 5.12\% & 14.00 \\ 
+  2 & Backward & 36.00 & 9.21\% & 14.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> lm.forw.wo.infl <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + acc_c + wgt_c:hp_c, data = data_wo_inflpnts_fw)
+> lm.back.wo.infl <- lm(log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, data = autodata)
+> 
+> summary(lm.forw.wo.infl) # Multiple R-squared:  0.9092,        Adjusted R-squared:  0.9074 
+
+
+Call:
+lm(formula = log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + 
+    hp_c + acc_c + wgt_c:hp_c, data = data_wo_inflpnts_fw)
+
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.244000 -0.064164  0.003044  0.062339  0.240289 
+
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  2.350e+00  1.596e-01  14.721  < 2e-16 ***
+wgt_c       -3.828e-04  2.369e-05 -16.157  < 2e-16 ***
+modelyr_mvd  2.854e-02  1.578e-03  18.088  < 2e-16 ***
+origin_mvd2  4.161e-02  1.589e-02   2.618  0.00921 ** 
+origin_mvd3  3.842e-02  1.621e-02   2.369  0.01833 *  
+hp_c        -6.288e-03  9.045e-04  -6.952 1.68e-11 ***
+acc_c       -6.161e-03  3.158e-03  -1.951  0.05182 .  
+wgt_c:hp_c   1.347e-06  1.955e-07   6.890 2.48e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.0993 on 363 degrees of freedom
+Multiple R-squared:  0.9092,        Adjusted R-squared:  0.9074 
+F-statistic:   519 on 7 and 363 DF,  p-value: < 2.2e-16
+
+
+> summary(lm.back.wo.infl) # Multiple R-squared:  0.9044,        Adjusted R-squared:  0.9001 
+
+
+Call:
+lm(formula = log(mpg_c) ~ wgt_c + modelyr_mvd + origin_mvd + 
+    hp_c + displ_c + cylnum_mvd + acc_c + wgt_c:hp_c + hp_c:displ_c + 
+    wgt_c:displ_c + wgt_c:cylnum_mvd + hp_c:cylnum_mvd + displ_c:cylnum_mvd + 
+    wgt_c:hp_c:cylnum_mvd + wgt_c:displ_c:cylnum_mvd + hp_c:displ_c:cylnum_mvd, 
+    data = autodata)
+
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.35646 -0.06558  0.00605  0.05941  0.46693 
+
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)    
+(Intercept)               2.106e-01  5.748e-01   0.366 0.714335    
+wgt_c                     1.424e-03  3.574e-04   3.985 8.11e-05 ***
+modelyr_mvd               2.919e-02  1.781e-03  16.389  < 2e-16 ***
+origin_mvd2               4.753e-02  2.063e-02   2.304 0.021784 *  
+origin_mvd3               4.836e-02  2.016e-02   2.398 0.016963 *  
+hp_c                      8.759e-03  7.491e-03   1.169 0.243071    
+displ_c                  -1.410e-02  5.352e-03  -2.635 0.008775 ** 
+cylnum_mvd                2.661e-01  9.991e-02   2.663 0.008069 ** 
+acc_c                    -7.356e-03  3.769e-03  -1.952 0.051713 .  
+wgt_c:hp_c               -1.584e-05  4.065e-06  -3.896 0.000116 ***
+hp_c:displ_c              2.226e-04  5.002e-05   4.450 1.13e-05 ***
+wgt_c:displ_c            -2.143e-06  1.126e-06  -1.904 0.057728 .  
+wgt_c:cylnum_mvd         -1.993e-04  5.077e-05  -3.926 0.000103 ***
+hp_c:cylnum_mvd          -1.744e-03  1.240e-03  -1.407 0.160185    
+displ_c:cylnum_mvd        1.306e-03  7.691e-04   1.699 0.090241 .  
+wgt_c:hp_c:cylnum_mvd     1.896e-06  5.502e-07   3.445 0.000636 ***
+wgt_c:displ_c:cylnum_mvd  3.199e-07  1.466e-07   2.182 0.029718 *  
+hp_c:displ_c:cylnum_mvd  -2.577e-05  6.180e-06  -4.170 3.79e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Residual standard error: 0.1076 on 373 degrees of freedom
+Multiple R-squared:  0.9044,        Adjusted R-squared:  0.9001 
+F-statistic: 207.7 on 17 and 373 DF,  p-value: < 2.2e-16
+
+
+> anova(lm.forw.wo.infl) # MS_res: 0.0099
+Analysis of Variance Table
+
+
+Response: log(mpg_c)
+             Df  Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c         1 31.4891 31.4891 3193.4802 < 2.2e-16 ***
+modelyr_mvd   1  3.6820  3.6820  373.4104 < 2.2e-16 ***
+origin_mvd    2  0.1428  0.0714    7.2399 0.0008257 ***
+hp_c          1  0.0336  0.0336    3.4117 0.0655495 .  
+acc_c         1  0.0078  0.0078    0.7862 0.3758406    
+wgt_c:hp_c    1  0.4681  0.4681   47.4697 2.477e-11 ***
+Residuals   363  3.5793  0.0099                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> anova(lm.back.wo.infl) # MS_res: 0.012
+Analysis of Variance Table
+
+
+Response: log(mpg_c)
+                          Df Sum Sq Mean Sq   F value    Pr(>F)    
+wgt_c                      1 34.623  34.623 2991.9631 < 2.2e-16 ***
+modelyr_mvd                1  4.718   4.718  407.7351 < 2.2e-16 ***
+origin_mvd                 2  0.249   0.125   10.7754 2.822e-05 ***
+hp_c                       1  0.113   0.113    9.7710 0.0019118 ** 
+displ_c                    1  0.041   0.041    3.5784 0.0593085 .  
+cylnum_mvd                 1  0.088   0.088    7.5844 0.0061758 ** 
+acc_c                      1  0.001   0.001    0.1226 0.7263845    
+wgt_c:hp_c                 1  0.491   0.491   42.4183 2.386e-10 ***
+hp_c:displ_c               1  0.159   0.159   13.7117 0.0002453 ***
+wgt_c:displ_c              1  0.036   0.036    3.0799 0.0800882 .  
+wgt_c:cylnum_mvd           1  0.004   0.004    0.3802 0.5378904    
+hp_c:cylnum_mvd            1  0.000   0.000    0.0157 0.9002170    
+displ_c:cylnum_mvd         1  0.025   0.025    2.1809 0.1405734    
+wgt_c:hp_c:cylnum_mvd      1  0.057   0.057    4.8883 0.0276460 *  
+wgt_c:displ_c:cylnum_mvd   1  0.043   0.043    3.7043 0.0550340 .  
+hp_c:displ_c:cylnum_mvd    1  0.201   0.201   17.3903 3.789e-05 ***
+Residuals                373  4.316   0.012                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> no_infl_forw_back <- list(Model = c("Forward w/o Infl", "Backward w/o Infl"), R_Sq = c(0.9092, 0.9044), AR_Sq = c(0.9074, 0.9001), MS_res = c(0.0099, 0.012))
+> no_infl_forw_back <- as.data.frame(no_infl_forw_back)
+> xtable(no_infl_forw_back)
+% latex table generated in R 3.4.1 by xtable 1.8-2 package
+% Mon Dec  4 08:12:44 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrr}
+  \hline
+ & Model & R\_Sq & AR\_Sq & MS\_res \\ 
+  \hline
+1 & Forward w/o Infl & 0.91 & 0.91 & 0.01 \\ 
+  2 & Backward w/o Infl & 0.90 & 0.90 & 0.01 \\ 
+   \hline
+\end{tabular}
+\end{table}
+> 
+> # I would personally choose the forward model since the key statistics (R^2, etc)
+> # are around the same as the backward model, but the forward model is a lot more
+> # forgiving of influential points.
