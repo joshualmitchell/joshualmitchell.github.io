@@ -233,8 +233,26 @@ HW 11: page 220 - 221, \#1, 2, 5 and page 226-227, \# 1 - 3, 4(a)(b), 5, 11
 Mark each statement True or False. Justify each answer.
 \balist
 \item Let D be a compact subset of \br and suppose that f : D \lra \br is continuous. Then f(D) is compact.
+	
+	\textbf{True, by Theorem 5.3.2.}
 \item Suppose that f : D \lra R is continuous. Then, there exists a point \uw{x}{1} in D st f(\uw{x}{1}) \gre f(x) \fa x \mem D
+	
+	\textbf{False.}
+	
+	\lt{f(x) \eql x and D \eql \br}
+	
+	\supp{\exs \uw{x}{1} \mem D st f(\uw{x}{1}) \gre f(x) \fa x \mem D}
+	
+	Notice that (f(\uw{x}{1}) \ps 1) \mem \br, and if \uw{x}{2} \eql (f(\uw{x}{1}) \ps 1), then f(\uw{x}{2}) \eql (f(\uw{x}{1}) \ps 1) \gr f(\uw{x}{1}). A contradiction.
 \item Let D be a bounded subset of \br and assume that f : D \lra \br is continuous. Then f(D) is bounded.
+
+	\textbf{False.}
+	
+	\lt{f : (0, \infy) \lra \br be defined by f(x) \eql \frc{1}{x}}
+	
+	\supp{\exs f(\uw{x}{1}) st f(\uw{x}{1}) \gre f(x) \fa x \mem (0, \infy)}
+	
+	Notice that (f(\uw{x}{1}) \ps 1) \mem \br, and if \uw{x}{2} \eql \frc{1}{f(\uw{x}{1}) \ps 1}, then f(\uw{x}{2}) \eql (f(\uw{x}{1}) \ps 1) \gr f(\uw{x}{1}). A contradiction.
 \elist
 }
 
@@ -244,16 +262,48 @@ Mark each statement True or False. Justify each answer.
 
 \balist
 \item Let f : [a,b] \lra \br be continuous and assume f(a) \ls 0 \ls f(b). Then there exists a point c \mem (a, b) st f(c) \eql 0.
+
+	\textbf{True, by Theorem 5.3.6 (IVT).}
+
 \item Let f : [a,b] \lra \br be continuous and assume f(a) \lse k \lse f(b). Then there exists a point c \mem [a,b] st f(c) \eql k.
+
+	\textbf{True, by Theorem 5.3.6 (IVT). Also because this statement is just (a) above with k \eql 0, except weaker.}
+	
 \item If f : D \lra \br is continuous and bounded on D, then f assumes maximum and minimum values on D.
+	
+	\textbf{False.}
+	
+	\lt{f : (0, 1) \lra \br be defined by f(x) \eql x}
+	
+	\supp{f has x \mem D, a maximum value on D}
+	
+	Notice that 0 \ls x \ls 1, and that x \ls x \ps \frc{1 - x}{2}.
+	
+	However, notice also that x \ps \frc{1 - x}{2} \ls 1
+	
+	But x is a maximum value on D. A contradiction.
+	
+	WLOG, a minimum value on D is similar.
+	
 \elist
 }
+
+\newpage
 
 \bsc{Exercise 5 (pages 220 - 221)}{
 Show that the equation \uf{5}{x} = \uf{x}{4} has at least one real solution.
 
-}
+\lt{f : [$-1$, 0] \lra \br be defined by f(x) \eql \uf{5}{x} \ms \uf{x}{4}}
 
+Notice that f($-1$) \eql $-0.8$ and f(0) \eql 1
+
+Since \uf{5}{x} \ms \uf{x}{4} \eql 0 means \uf{5}{x} \eql \uf{x}{4}, and $-0.8$ \ls 0 \ls 1,
+
+by Theorem 5.3.6, since f(x) is continuous on \br,
+
+\exs c \mem [$-1$, 0] st f(c) \eql 0.
+
+}
 
 \bsc{Exercise 1 (pages 226 - 227)}{
 
@@ -261,8 +311,17 @@ Let f : D \lra \br. Mark each statement True or False. Justify each answer.
 
 \balist
 \item f is uniformly continuous on D iff for every \ep \gr 0 there exists a \dta \gr 0 st \av{f(x) \ms f(y)} \ls \dta whenever \av{x \ms y} \ls \ep and x, y \mem D.
+
+\textbf{This isn't the definition, but I can't find a counter example for it...}
+
 \item If D \eql \bk{x}, then f is uniformly continuous at x.
+	
+\textbf{True. Since x is the only element in the domain, and since f is a function, f(x) is the only element in the range of f which makes \av{f(x) \ms f(y)} always less than any \ep \gr 0 since there is only one object in the range, making them the same object in any possible case.}
+	
 \item If f is continuous and D is compact, then f is uniformly continuous on D.
+	
+	\textbf{True, by Theorem 5.4.6.}
+
 \elist
 }
 
@@ -270,33 +329,68 @@ Let f : D \lra \br. Mark each statement True or False. Justify each answer.
 Let f : D \lra \br. Mark each statement True or False. Justify each answer.
 \balist
 \item In the definition of uniform continuity, the positive \dta depends only on the function f and the given \ep \gr 0.
+
+\textbf{False. The positive \dta depends on the given x, y \mem D as well.}
+
 \item If f is continuous and (\uw{x}{n}) is a Cauchy sequence in D, then (f(\uw{x}{n})) is a Cauchy sequence.
+
+\textbf{False.}
+
+\lt{\uw{x}{n} \eql \frc{1}{n}, n \mem \bn and f : (0, 1] \lra \br be defined by f(x) \eql \frc{1}{x}}
+
+Notice that f(\uw{x}{n}) \eql 1, 2, 3...
+
+This is not a Cauchy sequence.
+
 \item If f : (a, b) \lra \br can be extended to a function that is continuous on [a, b], then f is uniformly continuous on (a,b).
+
+\textbf{True, by Theorem 5.4.9.}
+
 \elist
 }
+
+\newpage
 
 \bsc{Exercise 3 (pages 226 - 227)}{
 
 Determine which of the following continuous functions are uniformly continuous on the given set. Justify your answers.
 
 \balist
-\item f(x) \eql x on [2, 5]
-\item f(x) \eql x on (0, 2)
-\item f(x) \eql \uf{x}{2} \ps 2x \ms 7 on [0, 5]
-\item f(x) \eql \uf{x}{2} \ps 2x \ms 7 on (1, 4)
-\item f(x) \eql \frc{1}{x^2} on (0, 1)
-\item f(x) \eql \frc{1}{x^2} on (0, \infy)
-\item f(x) \eql \frc{x^2 - 4}{x - 2} on (2, 4)
-\item f(x) \eql x sin(\frc{1}{x}) on (0, 1)
+\item f(x) \eql x on [2, 5] \textbf{since f is continuous and D is compact, f is uniformly continuous (by Theorem 5.4.6)}
+\item f(x) \eql x on (0, 2) \textbf{since \wit{f} : [0, 2] \lra \br is continuous, f is uniformly continuous (by Theorem 5.4.9)}
+\item f(x) \eql \uf{x}{2} \ps 2x \ms 7 on [0, 5] \textbf{since f is continuous and D is compact, f is uniformly continuous (by Theorem 5.4.6)}
+\item f(x) \eql \uf{x}{2} \ps 2x \ms 7 on (1, 4) \textbf{since \wit{f} : [1, 4] \lra \br is continuous, f is uniformly continuous (by Theorem 5.4.9)}
+\item f(x) \eql \frc{1}{x^2} on (0, 1) \textbf{Since \limt{x}{0} f(x) does not exist, f(x) cannot be extended to a continuous function. Therefore, f is not uniformly continuous.}
+\item f(x) \eql \frc{1}{x^2} on (0, \infy) \textbf{Since \limt{x}{0} f(x) does not exist, f(x) cannot be extended to a continuous function. Therefore, f is not uniformly continuous.}
+\item f(x) \eql \frc{x^2 - 4}{x - 2} on (2, 4) \textbf{Since \limt{x}{2} f(x) and \limt{x}{4} f(x) exist, f(x) can be extended to a continuous function. Therefore, f is uniformly continuous.}
+\item f(x) \eql x sin(\frc{1}{x}) on (0, 1) \textbf{Since \limt{x}{0} f(x) \eql 0 and \limt{x}{1} f(x) \eql sin(1), f(x) can be extended to a continuous function. Therefore, f is uniformly continuous.}
 \elist
 
 }
 \bsc{Exercise 4(a)(b) (pages 226 - 227)}{
 Prove that each function is uniformly continuous on the given set by directly verifying the \ep - \dta property in Definition 4.1.
 
+\textbf{Definition 5.4.1:}
+
+f : D \lra \br is uniformly continuous on D if
+
+\fa \ep \gr 0, \exs \dta \gr 0 st 0 \ls \av{x \ms y} \ls \dta and x, y \mem D implies \av{f(x) \ms f(y)} \ls \ep
+
 \balist
 \item f(x) \eql \uf{x}{3} on [0, 2]
+
+\fa \ep \gr 0, \exs \dta \gr 0 st 0 \ls \av{x \ms y} \ls \dta and x, y \mem D implies \av{\uf{x}{3} \ms \uf{y}{3}} \ls \ep
+
+\eqn{\av{\uf{x}{3} \ms \uf{y}{3}}}
+\eqn{\av{(x - y)(x^2 + xy + y^2)}}
+\eqn{\av{(x - y)(x^2 + xy + y^2)} \lse |(x - y)|(|x^2| + |xy| + |y^2|) \lse 12|(x - y)| \ls \ep}
+whenever \av{x \ms y} \ls \dta \eql \frc{\ep}{12}
+
 \item f(x) \eql \frc{1}{x} on [2, \infy)
+
+\fa \ep \gr 0, \exs \dta \gr 0 st 0 \ls \av{x \ms y} \ls \dta and x, y \mem D implies \av{\frc{1}{x} \ms \frc{1}{y}} \ls \ep
+
+\eqn{|\frac{1}{x} - \frac{1}{y}| = |\frac{y - x}{xy}|}
 \elist
 
 }
@@ -308,6 +402,10 @@ Prove that f(x) = $\sqrt{x}$ is uniformly continuous on [0, \infy).
 \bsc{Exercise 11 (pages 226 - 227)}{
 
 Let f : D \lra \br be uniformly continuous on the bounded set D. Prove that f is bounded on D. 
+
+Use Theorem 4.4.6, 5.4.8 (but there is no theorem 4.4.6, figure out which one it is).
+
+The hint is that it's bounded.
 }
 
 \end{document}

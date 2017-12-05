@@ -1,0 +1,434 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{Lec\ \#26}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 3380 / Analysis 1}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Welsh}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\newcommand{\wit}[1]{\mt{\widetilde{#1}}}
+     							 
+% ----------
+
+\begin{document}
+
+\bsc{6.1 Continued}{
+
+\ssc{Theorem 6.1.3}{
+
+\lt{I be an interval containing the point c}
+
+\as{f : I \lra \br}
+
+f is differentiable at c 
+
+iff 
+
+for every sequence \bk{\uw{x}{n}} in I st \uw{x}{n} \lra c as n \lra \infy with \uw{x}{n} $\neq$ c \fa n \mem \bn, 
+
+the sequence 
+\eqn{\frac{f(x_n) - f(c)}{x_n - c}}
+converges.
+
+Furthermore, if f is differentiable at c, then the sequence of quotients converges to f(c).
+
+(this looks weird, haven't we already proved it?
+
+they're just saying it to be specific, emphasizing the p iff q and not p iff not q part)
+
+\bgpf
+
+\lra
+
+\as{f\pr(c) exists}
+
+Then \limt{x}{c} (\frc{f(x) \ms f(c)}{x - c}) \eql f\pr(c).
+
+By Theorem 5.1.8, if \bk{\uw{x}{n}} lies in I, \uw{x}{n} $\neq$ c \fa n \mem \bn, and \uw{x}{n} \lra c as n \lra \infy, then
+\eqn{\lmti{n} \frac{f(x_n) - f(c)}{x_n - c} = f\pr(c)}
+
+\lla
+
+Conversely,
+
+\as{\bk{\uw{x}{n}} lies in I, \uw{x}{n} $\neq$ c \fa n \mem \bn, and \uw{x}{n} \lra c as n \lra \infy}
+
+Then,
+\eqn{\lmti{n} \frac{f(x_n) - f(c)}{x_n - c}}
+exists.
+
+Then, by the negation of Theorem 5.1.10,
+\eqn{\frac{f(x) - f(c)}{x - c}}
+has a limit at x \eql c.
+
+Hence, result.
+
+\epf 
+}
+
+\newpage 
+
+\ssc{Example 6.1.4}{
+
+\balist
+\item \lt{f(x) \eql \av{x} \eql x if x \gre 0, $-$x if x \ls 0}. Prove that f is not differentiable at x \eql 0.
+
+Solution:
+
+\lt{\uw{x}{n} \eql \frc{(-1)^n}{n} \fa n \mem \bn}
+
+Notice that if
+\eqn{\limt{x}{0} \frac{f(x_n) - f(0)}{x_n - 0}}
+exists, then f is differentiable and
+\eqn{\lmti{n} \frac{f(x_n) - f(0)}{x_n - 0}}
+exists.
+
+Also, notice that \uw{x}{n} $\neq$ 0 \fa n \mem \bn, \uw{x}{n} \lra 0 as n \lra \infy and 
+\eqn{s_n = \frac{f(x_n) - f(0)}{x_n - 0} = \frac{|\frac{(-1)^n}{n}| - |0|}{\frac{(-1)^n}{n}} = \frac{\frac{1}{n}}{\frac{(-1)^n}{n}} = \frac{1}{(-1)^n}}
+Since \uw{s}{n} \eql $-1$, 1, $-1$, 1, $-1$, 1, ..., \bk{\uw{s}{n}} does not converge.
+
+So by Theorem 6.1.3, f is not differentiable at x \eql 0.
+
+\item \lt{f(x) \eql 3\uf{x}{2} \ps 1 if x \ls 1, 2\uf{x}{3} \ps 2 if x \gre 1.} Prove that f is differentiable at x \eql 1.
+
+Solution: We must prove that
+\eqn{\limt{x}{1} \frac{f(x) - f(1)}{x - 1}}
+exists.
+
+We know that:
+
+\limt{x}{c} g(x) exists iff \limt{x}{c^-} g(x) \eql \limt{x}{c^+} g(x) \eql L
+
+Left hand side limit:
+
+\eqn{\limt{x}{1-} \frac{f(x) - f(1)}{x - 1} = \limt{x}{1-} \frac{3x^2 + 1 - 4}{x - 1} = \limt{x}{1-} \frac{3(x - 1)(x + 1)	}{x - 1} = \limt{x}{1-} 3(x + 1) = 6}
+
+Right hand side limit:
+
+\eqn{\limt{x}{1+} \frac{f(x) - f(1)}{x - 1} = \limt{x}{1+} \frac{2x^3 + 2 - 4}{x - 1} = \limt{x}{1+} \frac{2(x^3 - 1)}{x - 1} = \limt{x}{1+} \frac{2(x - 1)(x^2 + x + 1)}{x - 1} = \limt{x}{1+} 2(x^2 + x + 1) = 6}
+Hence,
+\eqn{\limt{x}{1} \frac{f(x) - f(1)}{x - 1} = 6}
+
+\elist
+
+}
+
+\newpage
+
+\ssc{Practice 6.1.5}{
+
+\lt{f : \br \lra \br be defined by f(x) \eql x sin(\frc{1}{x}) if x $\neq$ 0 and 0 if x \eql 0}
+
+Solution:
+\eqn{\limt{x}{0} \frac{f(x) - f(0)}{x - 0} = \limt{x}{0} \frac{x \sin{\frac{1}{x}} - 0)}{x - 0}}
+\lt{\uw{x}{n} \eql \frc{2}{n\pi} \fa n \mem \bn}
+
+Then \uw{x}{n} $\neq$ 0 \fa n \mem \bn and \uw{x}{n} \lra 0 as n \lra \infy.
+
+However,
+\eqn{\frac{f(x_n) - f(0)}{x_n - 0} = \sin{\frac{1}{x_n}} = \sin{\frac{n\pi}{2}}}
+Since sin(\frc{n\pi}{2}) \eql 1, 0, $-1$, 0, 1, 0, $-1$, ...,
+
+by Theorem 6.1.3, f is not differentiable at x \eql 0.
+}
+
+\ssc{Theorem 6.1.6}{
+
+If f : I \lra \br is differentiable at a point c \mem I, then f is continuous.
+
+\bgpf
+
+Recall:
+
+\limt{x}{c} f(x) \eql f(c) is saying 3 things:
+
+The limit exists, the function is defined at c, and that they're equal to each other.
+
+(you can't say undefined \eql undefined)
+
+\lt{x \mem I with x $\neq$ c}
+
+Then
+\eqn{f(x) = (\frac{f(x) - f(c)}{x - c})(x - c) + f(c) \lra f(c)}
+as x \lra c.
+
+by Theorem 5.1.13.
+
+Thus, by Theorem 5.2.21(d)(a), f is continuous.
+
+\epf
+
+}
+
+\newpage
+
+\ssc{Theorem 6.1.7}{
+
+\as{f : I \lra \br and g : I \lra \br are differentiable at c \mem I.}
+
+Then,
+
+\balist
+\item If k \mem \br, then (kf)\pr(c) \eql k * f\pr(c)
+\item (f \ps g)\pr(c) \eql f\pr(c) \ps g\pr(c)
+\item (fg)\pr(c) \eql f(c)g\pr(c) \ps f\pr(c)g(c)
+\item If g(c) $\neq$ 0, then (\frc{f}{g})\pr(c) \eql \frc{g(c)f\pr(c) - f(c)g\pr(c)}{[g(c)]^2}
+\elist
+
+There's no homework this week, but make sure you know how to prove a, b, and c on your own.
+
+\bgpf
+
+\bpth{d}: 
+
+\lt{x \mem I, x $\neq$ c}
+
+Then,
+
+\eqn{\frac{(\frac{f}{g})(x) - (\frac{f}{g})(c)}{x - c} = \frac{\frac{f(x)}{g(x)} - \frac{f(c)}{g(c)}}{x - c} = \frac{f(x)g(c) - f(c)g(x)}{[g(x)g(c)](x - c)}}
+
+We have a problem. What if g(x) \ms g(c) \eql 0?
+
+Since g(c) $\neq$ 0 and g is differentiable at c, we know that g is continuous at c by 5.2 HW problem 11 on 213.
+
+Recall:
+
+\eqn{|a| - |b| \lse ||a| - |b|| \lse |a - b|}
+\eqn{|b| \gre |a| - |a - b|}
+so,
+\eqn{|g(x)| \gre g(c) \ms |g(c)| \ms g(x)| \gr \frac{|g(c)|}{2} \gr 0}
+
+Hence,
+
+\exs \dta \gr 0 st
+\eqn{-|g(c) - g(x)| > \frac{-|g(c)|}{2}}
+where \av{x \ms c} \ls \dta
+
+So we know that:
+
+\exs an interval J \sbs I st c \mem J and if x \mem J, then g(x) $\neq$ 0.
+
+Thus,
+\eqn{(\frac{f}{g})(x) - (\frac{f}{g})(c) = \frac{f(x)g(c) - f(c)g(c) \times f(c)g(c) - f(c)g(x)}{g(x)g(c)(x - c)} = \frac{g(c)[f(x) - f(c)]}{g(x)g(c)(x - c)} - \frac{f(c)[g(x) - g(c)]}{g(x)g(c)(x - c)}}
+\eqn{= \frac{g(c)f\pr(c) - f(c)(g\pr(c)}{[g(c)]^2}}
+\epf
+
+}
+
+}
+
+\end{document}
