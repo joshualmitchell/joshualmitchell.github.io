@@ -410,13 +410,14 @@ so, whenever \av{x \ms y} \ls \dta \eql 4\ep, \av{\frc{1}{x} \ms \frc{1}{y}} \ls
 
 Prove that f(x) = $\sqrt{x}$ is uniformly continuous on [0, \infy).
 
-In other words, show that
+\lt{\ep \gr 0}
 
-\fa \ep \gr 0, \exs \dta \gr 0 st \av{x \ms y} \ls \dta and x, y \mem [0, \infy) implies \av{$\sqrt{x}$ \ms $\sqrt{y}$} \ls \ep
-\eqn{|\sqrt{x} - \sqrt{y}|^2 \lse |\sqrt{x} - \sqrt{y}||\sqrt{x} + \sqrt{y}| = |x - y| \ls \ep^2}
-so, if we let
-\eqn{\dta \eql \epsilon^2}
-then \av{$\sqrt{x}$ \ms $\sqrt{y}$} \ls \ep
+Choose \dta \eql SOMETHING to make \av{x \ms y} \ls \dta. We know that:
+\eqn{\av{f(x) - f(y)} = \av{\sqrt{x} - \sqrt{y}} = \frac{\av{x - y}}{|\sqrt{x} + \sqrt{y}|} \ls \frac{\dta}{|\sqrt{x} + \sqrt{y}|}}
+So, let
+\eqn{\dta \frac{1}{|\sqrt{x} + \sqrt{y}|} = \epsilon \rar \dta \frac{1}{|1 + 1|} = \epsilon \rar \dta = 2\epsilon}
+
+then \av{$\sqrt{x}$ \ms $\sqrt{y}$} \ls \ep if \av{x \ms y} \ls \dta and x, y \mem [0, \infy)
 
 }
 
@@ -426,9 +427,7 @@ then \av{$\sqrt{x}$ \ms $\sqrt{y}$} \ls \ep
 
 Let f : D \lra \br be uniformly continuous on the bounded set D. Prove that f is bounded on D. 
 
-Use Theorem 4.4.6, 5.4.8 (but there is no theorem 4.4.6, figure out which one it is).
-
-The hint is that it's bounded.
+Use Theorem 5.4.8. The hint is that it's bounded.
 
 \ssc{Theorem 5.4.8}{
 
@@ -450,6 +449,8 @@ Every Cauchy sequence is bounded.
 Any Cauchy sequence \uw{x}{n} in D means that \bk{f(\uw{x}{n})} is a Cauchy sequence, and if \bk{f(\uw{x}{n})} is a Cauchy sequence then it's bounded.
 
 So, our strategy will be to somehow make a Cauchy sequence \uw{x}{n} that has a limit at c such that f(c) \eql max(f(D)) and, WLOG, d such that f(d) \eql min(f(D)).
+
+Either that, or figure out a way to make a list of Cauchy sequences that hit all values in the domain.
 
 \epf
 
