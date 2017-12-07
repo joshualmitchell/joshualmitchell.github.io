@@ -479,7 +479,33 @@ Recall the definition of uniform continuity:
 
 
 \epf
+}
 
+\newpage
+
+\bsc{Exercise 11 (pages 226 - 227 (TEACHER VERSION))}{
+
+Let f : D \lra \br be uniformly continuous on the bounded set D. Prove that f is bounded on D
+
+(i.e. that \av{f(x)} \ls M, \fa x \mem D)
+
+\bgpf
+
+\supp{f(D) is unbounded.}
+
+Then, for each n \mem \bn, \exs \uw{x}{n} \mem D st
+\eqn{|f(x_n)| > n}
+
+Since \bk{\uw{x}{n}} is a bounded sequence, by the Bolzano-Weierstrauss Theorem, \bk{\dbs{x}{n}{k}} converges.
+
+So, since \bk{\dbs{x}{n}{k}} converges, \bk{\dbs{x}{n}{k}} is Cauchy.
+
+Since \bk{\dbs{x}{n}{k}} is Cauchy, \bk{f(\dbs{x}{n}{k})} is Cauchy, which is bounded. But f(D) is unbounded, a contradiction.
+
+Hence, \exs m \mem \bn st
+\eqn{|f(\dbs{x}{n}{k})| \lse m}
+\fa k \mem \bn
+\epf
 
 }
 
