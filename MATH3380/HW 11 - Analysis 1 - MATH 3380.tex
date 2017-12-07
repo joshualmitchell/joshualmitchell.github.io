@@ -367,6 +367,9 @@ Determine which of the following continuous functions are uniformly continuous o
 \elist
 
 }
+
+\newpage 
+
 \bsc{Exercise 4(a)(b) (pages 226 - 227)}{
 Prove that each function is uniformly continuous on the given set by directly verifying the \ep - \dta property in Definition 4.1.
 
@@ -384,21 +387,41 @@ f : D \lra \br is uniformly continuous on D if
 \eqn{\av{\uf{x}{3} \ms \uf{y}{3}}}
 \eqn{\av{(x - y)(x^2 + xy + y^2)}}
 \eqn{\av{(x - y)(x^2 + xy + y^2)} \lse |(x - y)|(|x^2| + |xy| + |y^2|) \lse 12|(x - y)| \ls \ep}
-whenever \av{x \ms y} \ls \dta \eql \frc{\ep}{12}
+so, whenever \av{x \ms y} \ls \dta \eql \frc{\ep}{12}, \av{\uf{x}{3} \ms \uf{y}{3}} \ls \ep
 
 \item f(x) \eql \frc{1}{x} on [2, \infy)
 
 \fa \ep \gr 0, \exs \dta \gr 0 st 0 \ls \av{x \ms y} \ls \dta and x, y \mem D implies \av{\frc{1}{x} \ms \frc{1}{y}} \ls \ep
 
 \eqn{|\frac{1}{x} - \frac{1}{y}| = |\frac{y - x}{xy}|}
+Since all elements in the domain are positive,
+\eqn{|\frac{y - x}{xy}| = |y - x| \frac{1}{xy} = |x - y| \frac{1}{xy} \ls \ep}
+So, since \frc{1}{x} is maximum at x \eql 2 and \frc{1}{y} is maximum at y \eql 2,
+\eqn{|x - y| \ls xy\ep}
+\eqn{|x - y| \ls (2)(2)\ep}
+\eqn{|x - y| \ls \dta \eql 4\ep}
+so, whenever \av{x \ms y} \ls \dta \eql 4\ep, \av{\frc{1}{x} \ms \frc{1}{y}} \ls \ep
+
+
 \elist
 
 }
 \bsc{Exercise 5 (pages 226 - 227)}{
 
-Prove that f(x) = $\sqrt{x}$ is uniformly continuous on [0, \infy). 
+Prove that f(x) = $\sqrt{x}$ is uniformly continuous on [0, \infy).
+
+In other words, show that
+
+\fa \ep \gr 0, \exs \dta \gr 0 st \av{x \ms y} \ls \dta and x, y \mem [0, \infy) implies \av{$\sqrt{x}$ \ms $\sqrt{y}$} \ls \ep
+\eqn{|\sqrt{x} - \sqrt{y}|^2 \lse |\sqrt{x} - \sqrt{y}||\sqrt{x} + \sqrt{y}| = |x - y| \ls \ep^2}
+so, if we let
+\eqn{\dta \eql \epsilon^2}
+then \av{$\sqrt{x}$ \ms $\sqrt{y}$} \ls \ep
 
 }
+
+\newpage
+
 \bsc{Exercise 11 (pages 226 - 227)}{
 
 Let f : D \lra \br be uniformly continuous on the bounded set D. Prove that f is bounded on D. 
@@ -406,6 +429,31 @@ Let f : D \lra \br be uniformly continuous on the bounded set D. Prove that f is
 Use Theorem 4.4.6, 5.4.8 (but there is no theorem 4.4.6, figure out which one it is).
 
 The hint is that it's bounded.
+
+\ssc{Theorem 5.4.8}{
+
+\lt{f : D \lra \br be uniformly continuous on D}
+
+\as{\bk{\uw{x}{n}} is a Cauchy sequence in D}
+
+Then,
+
+\bk{f(\uw{x}{n})} is a Cauchy sequence.
+}
+
+\ssc{Lemma 4.3.11}{
+Every Cauchy sequence is bounded.
+}
+
+\bgpf
+
+Any Cauchy sequence \uw{x}{n} in D means that \bk{f(\uw{x}{n})} is a Cauchy sequence, and if \bk{f(\uw{x}{n})} is a Cauchy sequence then it's bounded.
+
+So, our strategy will be to somehow make a Cauchy sequence \uw{x}{n} that has a limit at c such that f(c) \eql max(f(D)) and, WLOG, d such that f(d) \eql min(f(D)).
+
+\epf
+
+
 }
 
 \end{document}
