@@ -444,13 +444,39 @@ Then,
 Every Cauchy sequence is bounded.
 }
 
-\bgpf
+\
+
+\textbf{Proof strategy:}
+
+\
 
 Any Cauchy sequence \uw{x}{n} in D means that \bk{f(\uw{x}{n})} is a Cauchy sequence, and if \bk{f(\uw{x}{n})} is a Cauchy sequence then it's bounded.
 
 So, our strategy will be to somehow make a Cauchy sequence \uw{x}{n} that has a limit at c such that f(c) \eql max(f(D)) and, WLOG, d such that f(d) \eql min(f(D)).
 
 Either that, or figure out a way to make a list of Cauchy sequences that hit all values in the domain.
+
+Or maybe just prove it by contradiction:
+
+\bgpf
+
+\supp{f is NOT bounded on D}
+
+Then \exs m \mem \br st f(x) \gr m \fa x \mem D (or, WLOG, st f(x) \ls m \fa x \mem D)
+
+Since sup f(D) is unbounded above, there exists a monotone subsequence \uw{s}{n} in f(D) st \lmti{n} \uw{s}{n} \eql \infy
+
+This also means every subsequence of \uw{s}{n} diverges to infinity.
+
+If we let \uw{t}{n} be a Cauchy sequence in D, then by Theorem 5.4.8, \bk{f(\uw{t}{n})} must be a Cauchy sequence.
+
+Recall the definition of uniform continuity:
+
+\fa \ep \gr 0, \exs \dta \gr 0 st \av{x \ms y} \ls \dta and x, y \mem D implies \av{f(x) \ms f(y)} \ls \ep
+
+\textbf{I know it's a jumble of statements... I think I need to stick those together somehow but I'm lost.}
+
+
 
 \epf
 
