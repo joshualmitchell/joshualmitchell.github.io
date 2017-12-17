@@ -9,13 +9,13 @@ title: Home
 
 <p>My goal is to bring as much value to as many people as possible through mediums I find interesting (like programming and data science).</p>
 
-<h1>Latest Post</h1>
+<h3>Latest Post</h3>
 {% for post in site.posts limit:1 %}
 <span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 {% endfor %}
-<h1>Recent Posts</h1>
+<h3>Recent Posts</h3>
 {% for post in site.posts offset:1 limit:2 %}
-<span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 {% endfor %}
 
 <p>Thanks for visiting!</p>
