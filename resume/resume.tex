@@ -1,0 +1,144 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Joshua Lelon Mitchell
+	}\par}
+\par{\centering
+		{
+	\href {mailto:jlelonmitchell@gmail.com}{jlelonmitchell@gmail.com}
+	$\mid$
+	\href {https://github.com/joshualmitchell}{GitHub}
+	$\mid$
+	\href {https://www.linkedin.com/in/joshua-mitchell-17b94077/}{LinkedIn}
+	$\mid$
+	\href {http://lelon.io/}{Homepage}
+}\par}
+
+%--------------------SECTIONS-----------------------------------
+\section{Core Technical Skills}
+
+\underline{Data}: Python (numpy, matplotlib, scikit-learn), R, SQL, Matlab
+
+\underline{Web}: HTML/CSS, JavaScript, Angular.js
+
+\underline{Other}: git, *nix, LaTeX, Eclipse, Visual Studio
+
+%Section: Work Experience at the top
+\section{Career Experience}
+\begin{tabular}{r|p{12cm}}
+\textsc{Aug 2017 -} & Graduate Instructional Assistant (TA) at \textsc{Texas State University} \\
+\emph{Current} & \footnotesize{I teach Algebra and pre-Calculus course material to undergraduates in a classroom setting.
+ 
+ 	Responsibilities include lecturing on course content as well as developing, administering, and grading homework assignments and quizzes.} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Jun 2016 -} & Software Developer at \textsc{General Motors Company (GMC)} \\
+Aug 2017 & \footnotesize{I was part of a team that developed a new mobile-first web application for factory workers in 60+ factories to keep track of parts on assembly lines.
+
+Specific contributions included webpage development and integration with REST services.
+} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Sep 2015 -} & Co-Op Software Engineer at \textsc{International Business Machines (IBM) Corp.} \\
+ May 2016 & \footnotesize{I was part of a team of six co-op software engineers that worked with mostly back-end and mobile technologies (specifically Node.js, HTML, CSS, JavaScript, and the Ionic framework).
+
+Our main focus was to help redesign a mobile application that supplied the user with updates about the status of multiple servers and sent notifications in the event of any changes.} \\
+ \multicolumn{2}{c}{} \\
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{May} 2019 & Master of Science in \textsc{Applied Mathematics}, \textbf{Texas State University}, San Marcos, TX\\
+ 
+&\textsc{In progress (began August 2017). Focus on analytics and machine learning.} \\ & \\
+
+\textsc{May} 2016 & Bachelor of Science in \textsc{Computer Science}, \textbf{Texas State University}, San Marcos, TX \\
+
+&\normalsize \textsc{GPA}: 3.63/4, Dean’s List: Fall 2015, Spring 2016 \\&\\
+\end{tabular}
+
+%Section: Selected Personal Projects
+\section{Selected Personal Projects}
+\begin{tabular}{rl}
+ \textsc{HandGestures} & Implemented a neural network in Python using matplotlib, pandas, \\
+ 
+ & 
+ 
+and numpy that identifies the high five hand gesture in a picture. \\
+\textsc{CheckClass} & Wrote a Java Selenium script that navigates my University’s class \\
+& registration page and sends me a text if a specified class is available. \\
+\textsc{DoesColemanWork} & Wrote a small Ionic application for the mother of a friend (who is a \\
+& fire fighter that works a 24 hour shift every 3 days) that tells her the \\
+
+& day he works next. \\
+\end{tabular}
+
+\end{document}
