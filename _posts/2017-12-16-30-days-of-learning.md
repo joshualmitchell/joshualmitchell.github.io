@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "30 Days Of Learning"
+title: "30 days of learning"
 date: 2017-12-16
 ---
 

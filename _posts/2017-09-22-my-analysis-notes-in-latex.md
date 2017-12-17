@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "My Analysis Notes In LaTeX"
+title: "My Analysis I notes in LaTeX"
 date: 2017-09-22
 ---
 
 Here are my class resources for Texas State University's MATH 3380: Analysis 1.
 Taught by Dr. Stewart Welsh, Fall 2017
 
-Note: at some point I plan to add more visuals (like number lines). You'll see this in the side notes, primarily. It looks like gibberish, but it's just there to indicate where the holes, filled in points, parenthesis, etc. will go when I go back and make visualizations out of them.
+Note: the lectures I'm pretty darn sure have no errors, but the homework definitely does. Correcting all of them isn't super high on my priority list, unfortunately, but the problem sets themselves are exactly what was assigned.
 
 | Content   |      PDF      |  LaTeX Source |
 |:---------|:--------------|:------|
@@ -22,9 +22,21 @@ Note: at some point I plan to add more visuals (like number lines). You'll see t
 | Lecture 9|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%209%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%209%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Lecture 10|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2010%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2010%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Lecture 11|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2011%20-%20Analysis%201%20-%20MATH%203380.pdf) (empty) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2011%20-%20Analysis%201%20-%20MATH%203380.tex) |
-| Lecture 12|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2012%20-%20Analysis%201%20-%20MATH%203380.pdf) (empty) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2012%20-%20Analysis%201%20-%20MATH%203380.tex) |
-| Lecture 13|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2013%20-%20Analysis%201%20-%20MATH%203380.pdf) (empty) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2013%20-%20Analysis%201%20-%20MATH%203380.tex) |
-| Lecture 14|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2014%20-%20Analysis%201%20-%20MATH%203380.pdf) (empty) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2014%20-%20Analysis%201%20-%20MATH%203380.tex) |
-| Lecture 15|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2015%20-%20Analysis%201%20-%20MATH%203380.pdf) (empty) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2015%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 12|  Test Day | Test Day |
+| Lecture 13|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2013%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2013%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 14|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2014%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2014%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 15|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2015%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2015%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 16|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2016%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2016%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 17|  Test Day | Test Day |
+| Lecture 18|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2018%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2018%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 19|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2019%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2019%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 20|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2020%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2020%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 21|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2021%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2021%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 22|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2022%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2022%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 23|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2023%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2023%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 24|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2024%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2024%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 25|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2025%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2025%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 26|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2026%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2026%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Lecture 27|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2027%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2027%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Macros|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) (useless) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex) |
 | Defs/Thrms/Cors | [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/DefsThrmsCors%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/DefsThrmsCors%20-%20Analysis%201%20-%20MATH%203380.tex) |
