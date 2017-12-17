@@ -7,7 +7,7 @@ date: 2017-09-22
 Here are my class resources for Texas State University's MATH 3380: Analysis 1.
 Taught by Dr. Stewart Welsh, Fall 2017
 
-Note: the lectures I'm pretty darn sure have no errors, but the homework definitely does. Correcting all of them isn't super high on my priority list, unfortunately, but the problem sets themselves are exactly what was assigned.
+Note: the lectures I'm pretty darn sure have no errors, but the homeworks definitely do.
 
 | Content   |      PDF      |  LaTeX Source |
 |:---------|:--------------|:------|
@@ -38,5 +38,14 @@ Note: the lectures I'm pretty darn sure have no errors, but the homework definit
 | Lecture 25|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2025%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2025%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Lecture 26|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2026%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2026%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Lecture 27|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2027%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/Lec%2027%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 3|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%203%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%203%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 4|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%204%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%204%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 5|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%205%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%205%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 6|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%206%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%206%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 7|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%207%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%207%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 8|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%208%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%208%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 9|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%209%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%209%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 10|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%2010%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%2010%20-%20Analysis%201%20-%20MATH%203380.tex) |
+| Homework 11|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%2011%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/HW%2011%20-%20Analysis%201%20-%20MATH%203380.tex) |
 | Macros|  [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.pdf) (useless) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/ShortcutsAnalysis.tex) |
 | Defs/Thrms/Cors | [PDF](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/DefsThrmsCors%20-%20Analysis%201%20-%20MATH%203380.pdf) | [TeX](https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/MATH3380/DefsThrmsCors%20-%20Analysis%201%20-%20MATH%203380.tex) |
