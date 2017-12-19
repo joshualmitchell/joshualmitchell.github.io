@@ -122,8 +122,8 @@ ATTEMPT:  You run the risk of not generalizing well, since you tuned your hyper 
 
 ANSWER: If you tune hyperparameters using the test set, you risk overfitting the test set, and the generalization error you measure will be optimistic (you may launch a model that performs worse than you expect).
 
-19. Cross-validation is a technique that makes it possible to compare models (for model selection and hyperparameter tuning) without the need for a separate validation set. This saves precious training data.
+19. What is cross-validation and why would you prefer it to a validation set?
 
-ATTEMPT: What is cross-validation and why would you prefer it to a validation set?
+ATTEMPT: Cross-validation is a technique that makes it possible to compare models (for model selection and hyperparameter tuning) without the need for a separate validation set. This saves precious training data.
 
 ANSWER: Cross validation is splitting your training set into several subsets and then training each model on some subset of the set of subsets and then validating it against the unused subsets. You might prefer it to a validation set if your dataset is small.
