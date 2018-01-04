@@ -15,11 +15,11 @@ I will also frequently update this page (although you're welcome to check my LIN
 
 | Project | Status | Problem / Goal | Technology | Methods |
 |:-------------|:---------------------|:----------------|:--------------|:-------------------|
-| TBA | Not Started | TBA | Big Data Ecosystem (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), Bigger focus on visualization (i.e. d3.js, Tableau) | TBA |
-| [Zillow (Kaggle Competition)](https://github.com/joshualmitchell/Zillow) | Just Started | Predict the price of a house (Zestimate) based on its various features | Python (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas) | Linear Regression, Decision Trees |
-| [DrawingGuide](https://github.com/joshualmitchell/DrawingGuide) | In Progress | Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences | Python (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas) | Gradient Descent |
-| [Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj) | Finished* | Predict a car's MPG based on its various features | R (leaps, car, xtable, locfit), RStudio | Linear Regression |
-| [log-to-csv](https://github.com/joshualmitchell/log_to_csv )| Finished* | In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis | Python (and other standard libraries like os and json) | Various parsing and cleaning of text |
+| TBA | Not Started | TBA | __Big Data Ecosystem__ (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), __Visualization Tech__ (i.e. d3.js, Tableau) | TBA |
+| [Zillow (Kaggle Competition)](https://github.com/joshualmitchell/Zillow) | Just Started | Predict the price of a house (Zestimate) based on its various features | __Python__ (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas) | Linear Regression, Decision Trees |
+| [DrawingGuide](https://github.com/joshualmitchell/DrawingGuide) | In Progress | Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences | __Python__ (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas) | Gradient Descent |
+| [Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj) | Finished* | Predict a car's MPG based on its various features | __R__ (leaps, car, xtable, locfit), __RStudio__ | Linear Regression |
+| [log-to-csv](https://github.com/joshualmitchell/log_to_csv )| Finished* | In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis | __Python__ (and other standard libraries like os and json) | Various parsing and cleaning of text |
 
 The truth is that none of these are ever really finished*. There's always more to do (clean up code, new features, etc), so I really mean, "I don't plan on touching this again anytime soon."
 
