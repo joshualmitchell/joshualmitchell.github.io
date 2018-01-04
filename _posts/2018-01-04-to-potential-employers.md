@@ -5,7 +5,7 @@ date: 2018-01-04
 ---
 (last revised: 04 Jan 2018)
 
-Welcome to my <a target="_blank" href="http://lelon.io/">site</a>, and thank you for considering me as a candidate. This page serves as a tool to augment my <a target="_blank" href="https://github.com/joshualmitchell/joshualmitchell.github.io/blob/master/resume/resume.pdf">resume</a> by giving a more detailed description of my skills and experience.
+Welcome to my site, and thank you for considering me as a candidate. This page serves as a tool to augment my resume by giving a more detailed description of my skills and experience.
 
 Most of my professional work exerience is related to software development, but since I'm moving towards a data science / engineering related career, I'm going to emphasize that experience (which is mostly from acadamia / personal projects).
 
