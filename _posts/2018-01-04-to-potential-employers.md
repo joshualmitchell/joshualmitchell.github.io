@@ -3,6 +3,7 @@ layout: post
 title: "Potential Employers:"
 date: 2018-01-04
 ---
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 Welcome. Thank you for your consideration.
 
 This page serves to augment my resume (by providing more details).
@@ -31,14 +32,48 @@ hi
 
 ``*``Not necessarily forever.
 
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Honda</td>
+            <td>Accord</td>
+            <td>2009</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Toyota</td>
+            <td>Camry</td>
+            <td>2012</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Hyundai</td>
+            <td>Elantra</td>
+            <td>2010</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Career Experience
 
 ## Education
 
-*Currently*, I'm pursuing a __Master of Science__ in __Applied Mathematics__ at __Texas State University__ with a concentration in __Analytics__ and __Machine Learning__.
+*Currently*, I'm pursuing a __Master of Science (M.S.)__ in __Applied Mathematics__ at __Texas State University__ with a concentration in __Analytics__ and __Machine Learning__.
 
 I'm being co-advised by [Dr. Jelena Tesic](https://cs.txstate.edu/accounts/profiles/j_t463/) (Computer Science Department) and [Dr. Lucas Rusnak](http://www.math.txstate.edu/people/faculty/rusnak.html) (Mathematics Department).
 
 My current GPA is a __3.50__, and I'm scheduled to graduate in the Spring of 2019.
 
-*Previously*, I obtained a __Bachelor of Science__ in __Computer Science__ at __Texas State University__ with a __3.63__ GPA in the Spring of 2016.
+*Previously*, I obtained a __Bachelor of Science (B.S.)__ in __Computer Science__ at __Texas State University__ with a __3.63__ GPA in the Spring of 2016.
