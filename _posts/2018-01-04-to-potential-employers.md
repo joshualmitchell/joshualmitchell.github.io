@@ -9,6 +9,16 @@ This page serves to augment my resume (by providing more details).
 
 Most of my professional work exerience is related to software development, but since I'm moving towards a data science / engineering related career, I'm going to emphasize my data-related experience, which is mostly from academia and personal projects.
 
+## Core Technical Skills
+
+### Data Science:
+
+hi
+
+### Other:
+
+hi
+
 ## Projects
 
 | Project | Status | Problem / Goal | Technology | Methods |
@@ -21,25 +31,7 @@ Most of my professional work exerience is related to software development, but s
 
 ``*``Not necessarily forever.
 
-
-
-## Core Technical Skills
-
-### Data Science:
-
-hi
-
-### Other:
-
-hi
-
-
-Data Preparation / Wrangling 
-Data Modelling
-Evaluation / Interpretation
-Deployment
-
-Career Experience
+## Career Experience
 
 ## Education
 
