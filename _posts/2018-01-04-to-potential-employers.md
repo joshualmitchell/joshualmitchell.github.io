@@ -11,7 +11,7 @@ Most of my professional work exerience is related to software development, but s
 
 I'll start by giving a table with a list of projects, their status, the problem they aim to solve / goal they aim to achieve, the technology they use, and any special methods / techniques they use.
 
-I will also frequently update this page (although you're welcome to check my LINK github for the sourecode).
+I will also frequently update this page (although you're welcome to check my LINK [GitHub](https://github.com/joshualmitchell) for the source code).
 
 | Project | Status | Problem / Goal | Technology | Methods |
 | TBA | Not Started | TBA | Big Data Ecosystem (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), Bigger focus on visualization (i.e. d3.js, Tableau) | TBA |
