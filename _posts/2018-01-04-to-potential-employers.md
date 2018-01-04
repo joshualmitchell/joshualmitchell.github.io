@@ -36,35 +36,35 @@ hi
             <td>TBA</td>
             <td>Not Started</td>
             <td>TBA</td>
-            <td>__Big Data Ecosystem__ (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), __Visualization Tech__ (d3.js, Tableau)</td>
+            <td>Big Data Ecosystem (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), Visualization Tech (d3.js, Tableau)</td>
             <td>TBA</td>
         </tr>
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/Zillow">Zillow (Kaggle Competition)</a></td>
             <td>Just Started</td>
             <td>Predict the price of a house (Zestimate) based on its various features</td>
-            <td>__Python__ (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas)</td>
+            <td>Python (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas)</td>
             <td>Linear Regression, Decision Trees</td>
         </tr>
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/DrawingGuide">DrawingGuide</a></td>
             <td>In Progress</td>
             <td>Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences</td>
-            <td>__Python__ (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas)2010</td>
+            <td>Python (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas)</td>
             <td>Gradient Descent</td>
         </tr>
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj">Cars-MPG</a></td>
             <td>Finished*</td>
             <td>Predict a car's MPG based on its various features</td>
-            <td>__R__ (leaps, car, xtable, locfit), __RStudio__</td>
+            <td>R (leaps, car, xtable, locfit), RStudio</td>
             <td>Linear Regression</td>
         </tr>
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/log_to_csv">log-to-csv</a></td>
             <td>Finished*</td>
             <td>In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis</td>
-            <td>__Python__ (and other standard libraries like os and json)010</td>
+            <td>Python (and other standard libraries like os and json)</td>
             <td>Various parsing and cleaning of text</td>
         </tr>
     </tbody>
