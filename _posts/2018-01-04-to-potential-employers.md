@@ -9,7 +9,7 @@ Welcome to my site, and thank you for considering me as a candidate. This page s
 
 Most of my professional work exerience is related to software development, but since I'm moving towards a data science / engineering related career, I'm going to emphasize that experience (which is mostly from academia / personal projects).
 
-I'll start by giving a table with a list of projects, their status, the problem they aim to solve / goal they aim to achieve, the technology they use, and any special methods / techniques they use.
+I'll start by giving a table with a list of projects, their status, the problem / goal they aim to solve / achieve, the technology they use, and any special methods / techniques they use.
 
 I will also frequently update this page (although you're welcome to check my [GitHub](https://github.com/joshualmitchell) for the source code).
 
@@ -21,7 +21,7 @@ I will also frequently update this page (although you're welcome to check my [Gi
 | [Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj) | Finished* | Predict a car's MPG based on its various features | __R__ (leaps, car, xtable, locfit), __RStudio__ | Linear Regression |
 | [log-to-csv](https://github.com/joshualmitchell/log_to_csv )| Finished* | In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis | __Python__ (and other standard libraries like os and json) | Various parsing and cleaning of text |
 
-The truth is that none of these are ever really finished*. There's always more to do (clean up code, new features, etc), so I really mean, "I don't plan on touching this again anytime soon."
+``*``The truth is that none of these are ever really finished. There's always more to do (clean up code, new features, etc), so I really mean, "finished until inspiration strikes again."
 
 
 Core Technical Skills
