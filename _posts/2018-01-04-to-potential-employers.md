@@ -3,7 +3,6 @@ layout: post
 title: "Potential Employers:"
 date: 2018-01-04
 ---
-<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 Welcome. Thank you for your consideration.
 
 This page serves to augment my resume (by providing more details).
