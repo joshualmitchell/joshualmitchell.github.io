@@ -14,7 +14,6 @@ I'll start by giving a table with a list of projects, their status, the problem 
 I will also frequently update this page (although you're welcome to check my LINK github for the sourecode).
 
 | Project | Status | Problem / Goal | Technology | Methods |
-|:-------------|:---------------------|:----------------|:--------------|:-------------------|
 | TBA | Not Started | TBA | Big Data Ecosystem (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), Bigger focus on visualization (i.e. d3.js, Tableau) | TBA |
 | [Zillow (Kaggle Competition)](https://github.com/joshualmitchell/Zillow) | Just Started | Predict the price of a house (Zestimate) based on its various features | Python (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas) | Linear Regression, Decision Trees |
 | [DrawingGuide](https://github.com/joshualmitchell/DrawingGuide) | In Progress | Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences | Python (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas) | Gradient Descent |
