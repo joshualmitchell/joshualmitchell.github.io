@@ -7,7 +7,7 @@ date: 2018-01-04
 
 Welcome to my site, and thank you for considering me as a candidate. This page serves as a tool to augment my resume by giving a more detailed description of my skills and experience.
 
-Most of my professional work exerience is related to software development, but since I'm moving towards a data science / engineering related career, I'm going to emphasize that experience (which is mostly from acadamia / personal projects).
+Most of my professional work exerience is related to software development, but since I'm moving towards a data science / engineering related career, I'm going to emphasize that experience (which is mostly from academia / personal projects).
 
 I'll start by giving a table with a list of projects, their status, the problem they aim to solve / goal they aim to achieve, the technology they use, and any special methods / techniques they use.
 
