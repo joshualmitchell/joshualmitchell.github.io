@@ -50,4 +50,5 @@ I'm being co-advised by [Dr. Jelena Tesic](https://cs.txstate.edu/accounts/profi
 My current GPA is a __3.50__, and I'm scheduled to graduate in the Spring of 2019.
 
 
-I previously obtained a __Bachelor of Science__ in __Computer Science__ at __Texas State University__ with a __3.63__ GPA in the Spring of 2016.
+
+Previously, I obtained a __Bachelor of Science__ in __Computer Science__ at __Texas State University__ with a __3.63__ GPA in the Spring of 2016.
