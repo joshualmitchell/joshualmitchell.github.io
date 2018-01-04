@@ -43,12 +43,8 @@ Career Experience
 
 ## Education
 
-I'm currently pursuing a __Master of Science__ in __Applied Mathematics__ at __Texas State University__ with a concentration in __Analytics__ and __Machine Learning__.
-
+Currently, I'm pursuing a __Master of Science__ in __Applied Mathematics__ at __Texas State University__ with a concentration in __Analytics__ and __Machine Learning__.
 I'm being co-advised by [Dr. Jelena Tesic](https://cs.txstate.edu/accounts/profiles/j_t463/) (Computer Science Department) and [Dr. Lucas Rusnak](http://www.math.txstate.edu/people/faculty/rusnak.html) (Mathematics Department).
-
 My current GPA is a __3.50__, and I'm scheduled to graduate in the Spring of 2019.
-
-
 
 I previously obtained a __Bachelor of Science__ in __Computer Science__ at __Texas State University__ with a __3.63__ GPA in the Spring of 2016.
