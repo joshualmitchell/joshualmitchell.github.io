@@ -21,7 +21,7 @@ I will also frequently update this page (although you're welcome to check my LIN
 | [Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj) | Finished* | Predict a car's MPG based on its various features | R (leaps, car, xtable, locfit), RStudio | Linear Regression |
 | [log-to-csv](https://github.com/joshualmitchell/log_to_csv )| Finished* | In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis | Python (and other standard libraries like os and json) | Various parsing and cleaning of text |
 
-* The truth is that none of these are ever really finished. There's always more to do (clean up code, new features, etc), so I really mean, "I don't plan on touching this again anytime soon."
+The truth is that none of these are ever really finished*. There's always more to do (clean up code, new features, etc), so I really mean, "I don't plan on touching this again anytime soon."
 
 
 Core Technical Skills
