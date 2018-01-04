@@ -11,11 +11,11 @@ Most of my professional work exerience is related to software development, but s
 
 I'll start by giving a table with a list of projects, their status, the problem they aim to solve / goal they aim to achieve, the technology they use, and any special methods / techniques they use.
 
-I will also frequently update this page (although you're welcome to check my LINK [GitHub](https://github.com/joshualmitchell) for the source code).
+I will also frequently update this page (although you're welcome to check my [GitHub](https://github.com/joshualmitchell) for the source code).
 
 | Project | Status | Problem / Goal | Technology | Methods |
 |:-------------|:---------------------|:----------------|:--------------|:-------------------|
-| TBA | Not Started | TBA | __Big Data Ecosystem__ (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), __Visualization Tech__ (i.e. d3.js, Tableau) | TBA |
+| TBA | Not Started | TBA | __Big Data Ecosystem__ (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), __Visualization Tech__ (d3.js, Tableau) | TBA |
 | [Zillow (Kaggle Competition)](https://github.com/joshualmitchell/Zillow) | Just Started | Predict the price of a house (Zestimate) based on its various features | __Python__ (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas) | Linear Regression, Decision Trees |
 | [DrawingGuide](https://github.com/joshualmitchell/DrawingGuide) | In Progress | Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences | __Python__ (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas) | Gradient Descent |
 | [Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj) | Finished* | Predict a car's MPG based on its various features | __R__ (leaps, car, xtable, locfit), __RStudio__ | Linear Regression |
