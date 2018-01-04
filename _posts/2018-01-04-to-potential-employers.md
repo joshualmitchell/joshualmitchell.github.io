@@ -21,49 +21,55 @@ hi
 
 ## Projects
 
-| Project | Status | Problem / Goal | Technology | Methods |
-|:-------------|:---------------------|:----------------|:--------------|:-------------------|
-| TBA | Not Started | TBA | __Big Data Ecosystem__ (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), __Visualization Tech__ (d3.js, Tableau) | TBA |
-| [Zillow (Kaggle Competition)](https://github.com/joshualmitchell/Zillow) | Just Started | Predict the price of a house (Zestimate) based on its various features | __Python__ (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas) | Linear Regression, Decision Trees |
-| [DrawingGuide](https://github.com/joshualmitchell/DrawingGuide) | In Progress | Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences | __Python__ (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas) | Gradient Descent |
-| [Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj) | Finished* | Predict a car's MPG based on its various features | __R__ (leaps, car, xtable, locfit), __RStudio__ | Linear Regression |
-| [log-to-csv](https://github.com/joshualmitchell/log_to_csv )| Finished* | In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis | __Python__ (and other standard libraries like os and json) | Various parsing and cleaning of text |
-
-``*``Not necessarily forever.
-
 <table class="pure-table">
     <thead>
         <tr>
-            <th>#</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Year</th>
+            <th>Project</th>
+            <th>Status</th>
+            <th>Problem / Goal</th>
+            <th>Technology</th>
+            <th>Methods</th>
         </tr>
     </thead>
-
     <tbody>
         <tr>
-            <td>1</td>
-            <td>Honda</td>
-            <td>Accord</td>
-            <td>2009</td>
+            <td>TBA</td>
+            <td>Not Started</td>
+            <td>TBA</td>
+            <td>__Big Data Ecosystem__ (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), __Visualization Tech__ (d3.js, Tableau)</td>
+            <td>TBA</td>
         </tr>
-
         <tr>
-            <td>2</td>
-            <td>Toyota</td>
-            <td>Camry</td>
-            <td>2012</td>
+            <td>[Zillow (Kaggle Competition)](https://github.com/joshualmitchell/Zillow)</td>
+            <td>Just Started</td>
+            <td>Predict the price of a house (Zestimate) based on its various features</td>
+            <td>__Python__ (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas)</td>
+            <td>Linear Regression, Decision Trees</td>
         </tr>
-
         <tr>
-            <td>3</td>
-            <td>Hyundai</td>
-            <td>Elantra</td>
-            <td>2010</td>
+            <td>[DrawingGuide](https://github.com/joshualmitchell/DrawingGuide)</td>
+            <td>In Progress</td>
+            <td>Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences</td>
+            <td>__Python__ (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas)2010</td>
+            <td>Gradient Descent</td>
+        </tr>
+        <tr>
+            <td>[Cars-MPG](https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj)</td>
+            <td>Finished*</td>
+            <td>Predict a car's MPG based on its various features</td>
+            <td>__R__ (leaps, car, xtable, locfit), __RStudio__</td>
+            <td>Linear Regression</td>
+        </tr>
+        <tr>
+            <td>[log-to-csv](https://github.com/joshualmitchell/log_to_csv )</td>
+            <td>Finished*</td>
+            <td>In order to better diagnose my old Windows machine's freezes, I wrote a script to convert the Windows wevtuti event log into a CSV file for easier analysis</td>
+            <td>__Python__ (and other standard libraries like os and json)010</td>
+            <td>Various parsing and cleaning of text</td>
         </tr>
     </tbody>
 </table>
+``*``Not necessarily forever.
 
 ## Career Experience
 
