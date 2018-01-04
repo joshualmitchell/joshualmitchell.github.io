@@ -5,13 +5,11 @@ date: 2018-01-04
 ---
 (last revised: 04 Jan 2018)
 
-Welcome to my site, and thank you for considering me as a candidate. This page serves as a tool to augment my resume by giving a more detailed description of my skills and experience.
+Welcome. Thank you for your consideration.
+
+This page serves to augment my resume (by providing more details).
 
 Most of my professional work exerience is related to software development, but since I'm moving towards a data science / engineering related career, I'm going to emphasize that experience (which is mostly from academia / personal projects).
-
-I'll start by giving a table with a list of projects, their status, the problem / goal they aim to solve / achieve, the technology they use, and any special methods / techniques they use.
-
-I will also frequently update this page (although you're welcome to check my [GitHub](https://github.com/joshualmitchell) for the source code).
 
 | Project | Status | Problem / Goal | Technology | Methods |
 |:-------------|:---------------------|:----------------|:--------------|:-------------------|
