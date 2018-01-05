@@ -83,14 +83,6 @@ A quick caveat: it has been several years since I've used some of this technolog
 </table>
 ``*``Not necessarily forever.
 
-## Career Experience
-
-Since __August 2017__ (about 5 months so far), I've been a __Graduate Instructional Assistant__ (a TA, essentially) for the __Mathematics Department__ at __Texas State University__. In Fall 2017 I taught a Pre-Calculus lab, and in Spring 2018 I expect to teach a Calculus I lab (although, that's subject to change). Responsibilities include lecturing on course content and developing, administering, and grading homework assignments and quizzes.
-
-From __June 2016 to August 2017__ (1 year, 3 months), I was a __Software Developer__ at __General Motors Company (GMC)__. I was part of a team that developed a new mobile-first web application for factory workers in 60+ factories to keep track of parts on assembly lines. Some specific contributions included writing unit tests for the Java backend (specifically: bringing code coverage up to ~90%-95%), and later adding Angular.js routes and pages to the front end.
-
-From __September 2015 to May 2016__ (9 months), I was a __Co-Op Software Engineer__ (an intern, essentially) at __International Business Machines (IBM) Corporation__. I was part of a team of six co-op software engineers that worked with mostly back-end and mobile technologies (Node.js, Angular.js, HTML/CSS/JS, and the Ionic framework, specifically). Our main focus was to help redesign a mobile application that supplied the user with updates about the status of various servers and sent notifications in the event of any changes.  
-
 ## Education
 
 *Currently*, I'm pursuing a __Master of Science (M.S.)__ in __Applied Mathematics__ at __Texas State University__ with a concentration in __Analytics__ and __Machine Learning__.
@@ -100,3 +92,11 @@ I'm being co-advised by [Dr. Jelena Tesic](https://cs.txstate.edu/accounts/profi
 My current GPA is a __3.50__, and I'm scheduled to graduate in the Spring of 2019.
 
 *Previously*, I obtained a __Bachelor of Science (B.S.)__ in __Computer Science__ at __Texas State University__ with a __3.63__ GPA in the Spring of 2016.
+
+## Career Experience
+
+Since __August 2017__ (about 5 months so far), I've been a __Graduate Instructional Assistant__ (a TA, essentially) for the __Mathematics Department__ at __Texas State University__. In Fall 2017 I taught a Pre-Calculus lab, and in Spring 2018 I expect to teach a Calculus I lab (although, that's subject to change). Responsibilities include lecturing on course content and developing, administering, and grading homework assignments and quizzes.
+
+From __June 2016 to August 2017__ (1 year, 3 months), I was a __Software Developer__ at __General Motors Company (GMC)__. I was part of a team that developed a new mobile-first web application for factory workers in 60+ factories to keep track of parts on assembly lines. Some specific contributions included writing unit tests for the Java backend (specifically: bringing code coverage up to ~90%-95%), and later adding Angular.js routes and pages to the front end.
+
+From __September 2015 to May 2016__ (9 months), I was a __Co-Op Software Engineer__ (an intern, essentially) at __International Business Machines (IBM) Corporation__. I was part of a team of six co-op software engineers that worked with mostly back-end and mobile technologies (Node.js, Angular.js, HTML/CSS/JS, and the Ionic framework, specifically). Our main focus was to help redesign a mobile application that supplied the user with updates about the status of various servers and sent notifications in the event of any changes.  
