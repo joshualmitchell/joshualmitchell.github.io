@@ -13,13 +13,25 @@ Most of my professional work exerience is related to software development, but s
 
 ### Data Science:
 
-hi
+*In a nutshell*: Python (numpy, pandas, scikit-learn, matplotlib, opencv), R, SQL, Matlab, Bash scripting, git, *nix, LaTeX.
+
+I've done several projects that required cleaning/wrangling, pipelining, analyzing, and presenting data. (Details below, in Projects section.)
+
+These are at a pretty small scale though (Kilobytes).
+
+My next project will have a focus on Big(ger) Data (i.e. learning to use Spark, Hive, etc) and visualization (i.e. learning to use d3.js, Tableau, etc).
+
+Down the road (probably Fall 2018) I also plan on diving into parallel programming, distributed systems, and containerization (Docker) as they relate to Data Science projects.
 
 ### Other:
 
-hi
+*In a nutshell*: Java, HTML/CSS/JavaScript, Angular.js, Python (Flask), Jekyll/Markdown (for example, this site).
 
-## Projects
+I've done several projects and professional work in the areas of front-end Angular development, server-side Java development, and mobile development (using Ionic and React Native).
+
+A quick caveat: it has been several years since I've used some of this technology. I don't foresee any problems picking it back up if I need to, but I probably won't be able to confidently answer specific questions about some of it.
+
+## Projects (data-related)
 
 <table class="pure-table">
     <thead>
@@ -72,6 +84,12 @@ hi
 ``*``Not necessarily forever.
 
 ## Career Experience
+
+Since __August 2017__ (about 5 months so far), I've been a __Graduate Instructional Assistant__ (a TA, essentially) for the __Mathematics Department__ at __Texas State University__. In Fall 2017 I taught a Pre-Calculus lab, and in Spring 2018 I expect to teach a Calculus I lab (although, that's subject to change). Responsibilities include lecturing on course content and developing, administering, and grading homework assignments and quizzes.
+
+From __June 2016 to August 2017__ (1 year, 3 months), I was a __Software Developer__ at __General Motors Company (GMC)__. I was part of a team that developed a new mobile-first web application for factory workers in 60+ factories to keep track of parts on assembly lines. Some specific contributions included writing unit tests for the Java backend (specifically: bringing code coverage up to ~90%-95%), and later adding Angular.js routes and pages to the front end.
+
+From __September 2015 to May 2016__ (9 months), I was a __Co-Op Software Engineer__ (an intern, essentially) at __International Business Machines (IBM) Corporation__. I was part of a team of six co-op software engineers that worked with mostly back-end and mobile technologies (Node.js, Angular.js, HTML/CSS/JS, and the Ionic framework, specifically). Our main focus was to help redesign a mobile application that supplied the user with updates about the status of various servers and sent notifications in the event of any changes.  
 
 ## Education
 
