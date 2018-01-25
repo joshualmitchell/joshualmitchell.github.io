@@ -68,7 +68,7 @@ A quick caveat: it has been several years since I've used some of this technolog
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj">Cars-MPG</a></td>
             <td>Finished*</td>
-            <td>Predict a car's MPG based on its various features</td>
+            <td>An expansion on a talk I gave at HomeAway: predict a car's MPG based on its various features</td>
             <td>R (leaps, car, xtable, locfit), RStudio</td>
             <td>Linear Regression</td>
         </tr>
