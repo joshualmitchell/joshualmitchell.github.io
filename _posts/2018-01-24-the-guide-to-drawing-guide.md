@@ -4,7 +4,7 @@ title: "The Guide to DrawingGuide"
 date: 2018-01-24
 ---
 
-This is a write up of DrawingGuide, my application that aids its users in learning to draw.
+This is a write up of the current status of DrawingGuide, an application that aids its users in learning to draw.
 
 I talk about what the problem I'm trying to solve, how I'm trying to solve it, technology I'm using, and the mistakes I've made.
 
