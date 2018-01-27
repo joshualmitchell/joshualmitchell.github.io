@@ -13,7 +13,7 @@ Most of my professional work exerience is related to software development, but s
 
 ### Data Science:
 
-*In a nutshell*: Python (numpy, pandas, scikit-learn, matplotlib, opencv), R, SQL, Matlab, Bash scripting, git, *nix, LaTeX.
+*In a nutshell*: Python (numpy, pandas, scikit-learn, matplotlib, opencv, pytorch), R, SQL, Matlab, Bash scripting, git, *nix, LaTeX.
 
 I've done several projects that required cleaning/wrangling, pipelining, analyzing, and presenting data. (Details below, in Projects section.)
 
@@ -44,26 +44,26 @@ A quick caveat: it has been several years since I've used some of this technolog
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <!--tr>
             <td>TBA</td>
             <td>Not Started</td>
             <td>TBA</td>
             <td>Big Data Ecosystem (Spark, Hive, Pig, HBase, Cassandra, Kafka, Redis, etc), Visualization Tech (d3.js, Tableau)</td>
             <td>TBA</td>
-        </tr>
-        <tr>
+        </tr-->
+        <!--tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/Zillow">Zillow (Kaggle Competition)</a></td>
             <td>Just Started</td>
             <td>Predict the price of a house (Zestimate) based on its various features</td>
             <td>Python (Jupyter Notebooks, NumPy, SciPy, matplotlib/Seaborn, Pandas)</td>
             <td>Linear Regression, Decision Trees</td>
-        </tr>
+        </tr-->
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/DrawingGuide">DrawingGuide</a></td>
             <td>In Progress</td>
             <td>Give the user feedback on his/her drawing by superimposing an attempted image over a target image and highlighting the differences</td>
-            <td>Python (Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas)</td>
-            <td>Gradient Descent</td>
+            <td>Python (PyTorch, Jupyter Notebooks, Scikit-Image, Pillow, OpenCV, NumPy, SciPy, matplotlib, Pandas)</td>
+            <td>(Stochastic) Gradient Descent (possibly Hogwild! later), SIFT, Affine Transformations</td>
         </tr>
         <tr>
             <td><a target="_blank" href="https://github.com/joshualmitchell/joshualmitchell.github.io/tree/master/MATH5345/proj">Cars-MPG</a></td>
