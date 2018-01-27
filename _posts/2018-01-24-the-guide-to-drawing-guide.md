@@ -6,14 +6,13 @@ date: 2018-01-24
 
 This is a write up of DrawingGuide, my application that aids its users in learning to draw.
 
-I talk about what the problem I'm trying to solve is, how I'm trying to solve it, technology I'm using, mistakes I've made, and future plans I have for it.
+I talk about what the problem I'm trying to solve, how I'm trying to solve it, technology I'm using, and the mistakes I've made.
 
 ## Outline
 
 - Motivation
 - Components
 - Lessons Learned
-- Future Plans
 
 ## Motivation
 
@@ -44,6 +43,8 @@ I've currently got a cost function set up that calculates the sum of all the Euc
 I'm currently using Gradient Descent to minimize it (soon to be Stochastic Gradient Descent), and I'm currently just taking a uniformly random sample of all the foreground pixels to reduce computational time (soon to have a better method of choosing important pixels, like SIFT).
 
 More details (and math) about the comparison algorithm can be found here: https://github.com/joshualmitchell/DrawingGuide/blob/master/Description.pdf
+
+I'm also looking into other methods (i.e. Image Registration from astronomy)
 
 - a superimposition algorithm (in progress)
 
@@ -102,7 +103,3 @@ For example: I wanted to write the comparison function, but I realized that I di
 I read a few programming blogs and Hacker News posts, and found out that what I did was really common: trying to build the whole thing at once and then getting overwhelmed.
 
 So now: I make incremental improvements, and if I need a component for something to work, I just mock it or make the most absolute minimally functional version.
-
-## Future Plans
-
-https://en.wikipedia.org/wiki/Image_registration#cite_ref-AG_3-6
