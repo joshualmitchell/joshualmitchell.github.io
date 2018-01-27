@@ -4,7 +4,7 @@ title: "The Guide to DrawingGuide"
 date: 2018-01-24
 ---
 
-This is a write up of DrawingGuide, my application that aids its users in learning to draw.
+This is a write up of the current status of DrawingGuide, an application that aids its users in learning to draw.
 
 I talk about what the problem I'm trying to solve, how I'm trying to solve it, technology I'm using, and the mistakes I've made.
 
@@ -34,7 +34,7 @@ This is the bread and butter of the application. It takes two images, compares t
 
 I've currently got a cost function set up that calculates the sum of all the Euclidean distances between all of the foreground pixels of the target and attempt images, where the independent variables are s, the scale factor, theta, the rotation factor, x, the horizontal translation factor, and y, the vertical translation factor. 
 
-I'm currently using Gradient Descent to minimize it (soon to be Stochastic Gradient Descent), and I'm currently just taking a uniformly random sample of all the foreground pixels to reduce computational time (soon to have a better method of choosing important pixels, like SIFT).
+I'm currently using Gradient Descent to minimize it (soon to be Stochastic Gradient Descent, possibly the parallelized Hogwild! implementation), and I'm currently just taking a uniformly random sample of all the foreground pixels to reduce computational time (soon to have a better method of choosing important pixels, like SIFT).
 
 More details (and math) about the comparison algorithm can be found here: [Comparison Algorithm Description](https://github.com/joshualmitchell/DrawingGuide/blob/master/Description.pdf "Comparison Algorithm Description")
 
