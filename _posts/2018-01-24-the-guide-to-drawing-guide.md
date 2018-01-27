@@ -24,6 +24,8 @@ Eventually, I want to bring AI into the picture and find patterns in what you (a
 
 ## Components
 
+Repository: https://github.com/joshualmitchell/DrawingGuide
+
 Here are the components of the project with a description, justification, and status for each.
 
 - a React Native app (not started)
