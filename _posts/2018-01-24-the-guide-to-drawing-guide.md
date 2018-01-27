@@ -37,6 +37,7 @@ I've currently got a cost function set up that calculates the sum of all the Euc
 I'm currently using Gradient Descent to minimize it (soon to be Stochastic Gradient Descent), and I'm currently just taking a uniformly random sample of all the foreground pixels to reduce computational time (soon to have a better method of choosing important pixels, like SIFT).
 
 More details (and math) about the comparison algorithm can be found here: [Comparison Algorithm Description](https://github.com/joshualmitchell/DrawingGuide/blob/master/Description.pdf "Comparison Algorithm Description")
+
 I'm also looking into other methods (i.e. Image Registration from astronomy)
 
 - a superimposition algorithm (in progress)
