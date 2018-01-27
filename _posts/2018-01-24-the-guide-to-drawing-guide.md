@@ -28,14 +28,6 @@ Repository: https://github.com/joshualmitchell/DrawingGuide
 
 Here are the components of the project with a description, justification, and status for each.
 
-- a React Native app (not started)
-
-This will be the front end. The user will take the pictures and the app will display the overlay. I chose React Native because it's a smaller framework (as opposed to Angular and Cordova), it transpiles to both iOS and Android, and I'm sending the images off to a server to do the heavy lifting so I don't *think* performance will be an issue (i.e. needing to be natively written). Then again, I've been wrong before. We'll see.
-
-- a Flask REST API hosted on AWS (not started)
-
-This will do the image processing and comparison. In other words, the app will send 2 images over, and this API will do the calculations and send back the two overlayed. I chose Flask because it's also Python so it'll be easier to integrate with the Python I use to manipulate the images. I chose AWS because they gave me free student credits.
-
 - a comparison algorithm (in progress)
 
 This is the bread and butter of the application. It takes two images, compares them, and finds the affine transformations necessary (only translation, rotation, and scaling are allowed to maintain image fidelity) to find the best spot to overlay the attempt image over the target.
@@ -51,6 +43,14 @@ I'm also looking into other methods (i.e. Image Registration from astronomy)
 - a superimposition algorithm (in progress)
 
 This is the tool that takes the instructions from the comparison algorithm and actually creates the image composed of the attempt image overlayed over the target image. I've actually found a use for all 3 of scikit-image, OpenCV, and Pillow. I don't really see a need to restrict myself to only one, save increased dependencies but it doesn't seem like it will be an issue.
+
+- a React Native app (not started)
+
+This will be the front end. The user will take the pictures and the app will display the overlay. I chose React Native because it's a smaller framework (as opposed to Angular and Cordova), it transpiles to both iOS and Android, and I'm sending the images off to a server to do the heavy lifting so I don't *think* performance will be an issue (i.e. needing to be natively written). Then again, I've been wrong before. We'll see.
+
+- a Flask REST API hosted on AWS (not started)
+
+This will do the image processing and comparison. In other words, the app will send 2 images over, and this API will do the calculations and send back the two overlayed. I chose Flask because it's also Python so it'll be easier to integrate with the Python I use to manipulate the images. I chose AWS because they gave me free student credits.
 
 - A database (not started)
 
