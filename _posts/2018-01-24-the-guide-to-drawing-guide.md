@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Guide to Drawing Guide"
+title: "The Guide to DrawingGuide"
 date: 2018-01-24
 ---
 
