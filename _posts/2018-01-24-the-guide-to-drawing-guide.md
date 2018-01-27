@@ -62,9 +62,9 @@ This is where the machine learning is really going to come into the fray. I'm go
 
 ## Lessons Learned
 
-I was starstruck by the idea of making something people (including myself) actually used, so I really didn't want to rigorously plan it out. I just wanted to get started. I had a vague idea of what I wanted to do (compare two images, overlay them, then show the difference), but I didn't have any computer vision background. Nonetheless, I told myself I'd just learn whatever necessary as I went along, and got started. Here are some of my mistakes.
+I was starstruck by the idea of making something people (including myself) actually used, so I really didn't want to rigorously plan it out. I just wanted to get started. I had a vague idea of what I wanted to do (compare two images, overlay them, then show the difference), but I didn't have any computer vision background. Nonetheless, I told myself I'd just learn whatever necessary as I went along, and got started. Here are 3 of my mistakes.
 
-1. Not doing the research
+### 1) Not doing the research
 
 I'm moderately familiar with the Python-related data science stack, so I knew I'd be using numpy and whatnot, but other than that, I hard-coded everything (the cost function, the partial derivatives of each transformation variable with respect to the cost function, etc). It didn't even occur to me that there were probably libraries and frameworks for that as well. In any case, I figured I had all I needed, so I just did it. 
 
@@ -86,7 +86,7 @@ All of which made perfect sense in retrospect, and all of which I could have don
 
 So now, I'm essentially rewriting everything to include those updates.
 
-2. Not testing constantly
+### 2) Not testing constantly
 
 The most interesting part to me was the comparison algorithm, so that's what I wrote first. Unfortunately, I was having so much fun writing it that testing it fell to the wayside. When I finally got done, it just plain didn't work and I had no idea why.
 
@@ -96,7 +96,7 @@ So I decided that was unacceptable and shifted gears to make testing more feasib
 - installed pytest (a minimal boilerplate testing suite) and wrote tests for everything I had
 - refactored my project directory to make it more organized and moved any code I was experimenting with into its own experimentation folder
 
-3. Trying to implement V9.0 before V1.0
+### 3) Trying to implement V9.0 before V1.0
 
 On one hand, I didn't do extensive research at first, but on the other hand, I did do copious amounts of planning. I used several sheets of scratch paper to do lots of math and architecture planning before I wrote any code. The problem: once I wrote code, I realized immediately that parts of my architecture became useless or redundant, and I really should have been writing this other thing. It was frustrating because I just wasn't getting where I wanted fast enough.
 
