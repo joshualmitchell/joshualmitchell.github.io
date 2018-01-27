@@ -25,7 +25,37 @@ Eventually, I want to bring AI into the picture and find patterns in what you (a
 
 ## Components
 
-the cost function for the mean squared error between each foreground pixel in each respective image and used gradient descent to find the affine transformations (minus sheering and reflecting, since we want to maintain fidelity) that overlay the attempt image on the target image optimally (i.e. has a good 'fit').
+Here are the components of the project with a description, justification, and status for each.
+
+- a React Native app (not started)
+
+This will be the front end. The user will take the pictures and the app will display the overlay. I chose React Native because it's a smaller framework (as opposed to Angular and Cordova), it transpiles to both iOS and Android, and I'm sending the images off to a server to do the heavy lifting so I don't *think* performance will be an issue (i.e. needing to be natively written). Then again, I've been wrong before. We'll see.
+
+- a Flask REST API hosted on AWS (not started)
+
+This will do the image processing and comparison. In other words, the app will send 2 images over, and this API will do the calculations and send back the two overlayed. I chose Flask because it's also Python so it'll be easier to integrate with the Python I use to manipulate the images. I chose AWS because they gave me free student credits.
+
+- a comparison algorithm (in progress)
+
+This is the bread and butter of the application. It takes two images, compares them, and finds the affine transformations necessary (only translation, rotation, and scaling are allowed to maintain image fidelity) to find the best spot to overlay the attempt image over the target.
+
+I've currently got a cost function set up that calculates the sum of all the Euclidean distances between all of the foreground pixels of the target and attempt images, where the independent variables are s, the scale factor, theta, the rotation factor, x, the horizontal translation factor, and y, the vertical translation factor. 
+
+I'm currently using Gradient Descent to minimize it (soon to be Stochastic Gradient Descent), and I'm currently just taking a uniformly random sample of all the foreground pixels to reduce computational time (soon to have a better method of choosing important pixels, like SIFT).
+
+More details (and math) about the comparison algorithm can be found here: https://github.com/joshualmitchell/DrawingGuide/blob/master/Description.pdf
+
+- a superimposition algorithm (in progress)
+
+This is the tool that takes the instructions from the comparison algorithm and actually creates the image composed of the attempt image overlayed over the target image. I've actually found a use for all 3 of scikit-image, OpenCV, and Pillow. I don't really see a need to restrict myself to only one, save increased dependencies but it doesn't seem like it will be an issue.
+
+- A database (not started)
+
+This is just going to collect a whole bunch of information that I haven't defined yet. I'm probably going to use SQLite (since the database and the code will be in the same server, and I don't think I'll need to scale several orders of magnitude anytime soon).
+
+- an AI Guide / Planner (will start once everything else is done)
+
+This is where the machine learning is really going to come into the fray. I'm going to create an algorithm / recommendation engine that uses the information from the database to create a prescribed "Learning Plan" that identifies where you're having trouble and generates images for you to draw that specifically touch on what you need to improve on. There's a lot of room for day dreaming here. (GANs, anyone?)
 
 ## Lessons Learned
 
