@@ -42,15 +42,15 @@ I'm also looking into other methods (i.e. Image Registration from astronomy)
 
 - a superimposition algorithm (in progress)
 
-This is the tool that takes the instructions from the comparison algorithm and actually creates the image composed of the attempt image overlayed over the target image. I've actually found a use for all 3 of scikit-image, OpenCV, and Pillow. I don't really see a need to restrict myself to only one, save increased dependencies but it doesn't seem like it will be an issue.
+This is the tool that takes the instructions from the comparison algorithm and actually creates the image composed of the attempt image overlayed over the target image. I've actually found a use for all 3 of scikit-image, OpenCV, and Pillow. Aside from increased dependencies (which I don't think will be an issue), I don't really see a need to restrict myself to a subset of them.
 
 - a React Native app (not started)
 
-This will be the front end. The user will take the pictures and the app will display the overlay. I chose React Native because it's a smaller framework (as opposed to Angular and Cordova), it transpiles to both iOS and Android, and I'm sending the images off to a server to do the heavy lifting so I don't *think* performance will be an issue (i.e. needing to be natively written). Then again, I've been wrong before. We'll see.
+This will be the front end. The user will take the pictures and the app will display the overlay. I chose React Native because it's a smaller framework (as opposed to Angular and Cordova), it transpiles to both iOS and Android, and I'm sending the images off to a server to do the heavy lifting so I don't *think* performance will be an issue (i.e. needing to be natively written or otherwise optimized). Then again, I've been wrong before. We'll see.
 
 - a Flask REST API hosted on AWS (not started)
 
-This will do the image processing and comparison. In other words, the app will send 2 images over, and this API will do the calculations and send back the two overlayed. I chose Flask because it's also Python so it'll be easier to integrate with the Python I use to manipulate the images. I chose AWS because they gave me free student credits.
+This will do the image processing and comparison. In other words, the app will send 2 images over, and this API will do the calculations and send back one image that contains the two overlayed. I chose Flask because it's also Python so it'll be easier to integrate with the Python I use to manipulate the images. I chose AWS because they gave me free student credits.
 
 - A database (not started)
 
@@ -73,7 +73,7 @@ Here's what went wrong:
 - it took 8 hours to run
 - it often didn't converge, and when it did, it was grossly inaccurate
 
-Demoralized, I talked to some computer vision professors about it. I explained what was happening and my theories as to why. I figured it had to be some subset of: inaccurate implementation, my theory was wrong, the cost function space was too flat, or I'm being really inefficient with my calculations.
+Somewhat demoralized, I talked to some computer vision professors about it. I explained what was happening and my theories as to why. I figured it had to be some subset of: inaccurate implementation, my theory was wrong, the cost function space was too flat, or I'm being really inefficient with my calculations.
 
 The feedback I got was:
 
@@ -98,9 +98,9 @@ So I decided that was unacceptable and shifted gears to make testing more feasib
 
 ### 3) Trying to implement V9.0 before V1.0
 
-On one hand, I didn't do extensive research at first, but on the other hand, I did do copious amounts of planning. I used several sheets of scratch paper to do lots of math and architecture planning before I wrote any code. The problem: once I wrote code, I realized immediately that parts of my architecture became useless or redundant, and I really should have been writing this other thing. It was frustrating because I just wasn't getting where I wanted fast enough.
+On one hand, I didn't do extensive research at first, but on the other hand, I did do superfluous amounts of planning. I used several sheets of scratch paper to do lots of math and architecture planning before I wrote any code. The problem: once I wrote code, I realized immediately that parts of my architecture became useless or redundant, and I really should have been writing this other thing. It was frustrating because I just wasn't getting where I wanted fast enough.
 
-For example: I wanted to write the comparison function, but I realized that I didn't have anything to compare (i.e. no data), and I didn't have any functions to display the images overlayed the way I wanted. So I started to write the display function, but then realized I needed a few other things ready. It became a viscious circle.
+For example: I wanted to write the comparison function first, but I realized that I didn't have anything to compare (i.e. no data) and no way to get feedback. I also didn't have any function to display the images overlayed the way I wanted. So I started to write the display function, but then realized I "needed" a few other things ready. It became a viscious circle.
 
 I read a few programming blogs and Hacker News posts, and found out that what I did was really common: trying to build the whole thing at once and then getting overwhelmed.
 
