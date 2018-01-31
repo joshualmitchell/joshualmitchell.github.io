@@ -219,6 +219,10 @@
 \newcommand{\unn}{\mt{\cup} }
 \newcommand{\inn}{\mt{\cap} }
 \newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\rln}{ \mt{\sim} }
+\newcommand{\dvd}{ \mt{\vert} }
+\newcommand{\ndvd}{ \mt{\not\vert} }
+\newcommand{\eqw}{ \mt{ \equiv } }
 
 \newcommand{\wit}[1]{\mt{\widetilde{#1}}}
      							 
@@ -227,6 +231,83 @@
 \begin{document}
 
 \bsc{Page 24, Exercise 16, 20}{
+
+\ssc{Exercise 16}{
+
+\textbf{Determine \uf{7}{1000} mod 6.}
+
+
+
+Let a, b, k, n \mem \bz such that k \gr 0 and n \gr 0.
+
+If a \eqw b mod n, then \uf{a}{k} \eqw \uf{b}{k} mod n
+
+Base Case:
+
+k \eql 1
+
+\uf{a}{1} \eqw \uf{b}{1} holds true 
+
+Inductive Step:
+
+Suppose: \uf{a}{k} \eqw \uf{b}{k} mod n
+
+\uf{a}{k \ps 1} \eqw \uf{a}{1}\uf{a}{k}
+
+\uf{a}{1}\uf{a}{k} \eqw \uf{a}{1}\uf{b}{k} mod n by inductive hypothesis
+
+\uf{a}{k \ps 1} \eqw \uf{b}{k}b mod n by base case
+
+\uf{a}{k \ps 1} \eqw \uf{b}{k \ps 1} mod n
+
+Thus, \uf{a}{k} \eql \uf{b}{k} mod n
+
+Since 7 \eqw 1 mod 6
+
+\uf{7}{1000} \eqw \uf{1}{1000} \eqw 1 mod 6
+
+\
+
+\textbf{Determine \uf{6}{1001} mod 7.}
+
+\uf{6}{1001} mod 7 \eqw 6 * \uf{6}{1000} mod 7
+
+\eqn{
+	\splt{
+		\uf{6}{1001} \mod 7 & \equiv 6 * \uf{6}{1000} \mod 7 \\
+		& \equiv 6 * (6^2)^{500} \mod 7 \\
+		& \equiv 6 * (36)^{500} \mod 7 \\
+		& \equiv 6 * (1)^{500} \mod 7 \\
+		& \equiv 6 \mod 7
+	}
+}
+}
+
+\ssc{Exercise 20}{
+
+\textbf{Let \uw{p}{1}, \uw{p}{2}, ... \uw{p}{n}, be prime numbers. Show that \uw{p}{1} * \uw{p}{2} * ... \uw{p}{n} * \uw{p}{n + 1} is not divisible by any of the n \ps 1 primes.}
+
+We will prove this by contradiction.
+
+Suppose there are finitely many primes which are the ones listed.
+
+Then, consider \uw{p}{1} * \uw{p}{2} * ... \uw{p}{n} * \uw{p}{n + 1}.
+
+This number is either composite or prime.
+
+If it's prime, we just created a new prime, a contradiction.
+
+If it's composite, that means it must be divisible by some prime.
+
+By the fundamental theorem of Arithmetic, \exs t \mem \bz such that
+
+\uw{p}{1}t \eql q \eql \uw{p}{1} * \uw{p}{2} * ... \uw{p}{n} * \uw{p}{n \ps 1}, which implies that \uw{p}{i}\dvd 1 for i \mem \bk{1, 2, ... n}
+
+This holds if and only if \uw{p}{i} \eql 1, a contradiction of the definition of a prime number.
+
+Hence, there are infinitely many primes.
+
+}
 
 }
 

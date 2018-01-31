@@ -219,6 +219,10 @@
 \newcommand{\unn}{\mt{\cup} }
 \newcommand{\inn}{\mt{\cap} }
 \newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\rln}{ \mt{\sim} }
+\newcommand{\dvd}{ \mt{\vert} }
+\newcommand{\ndvd}{ \mt{\not\vert} }
+\newcommand{\eqw}{ \mt{ \equiv } }
 
 \newcommand{\wit}[1]{\mt{\widetilde{#1}}}
      							 
@@ -227,6 +231,40 @@
 \begin{document}
 
 \bsc{Euclid's Lemma}{
+
+Let p be a prime number and assume that p\dvd ab where a, b \mem \bz. Then, p\dvd a or p\dvd b.
+
+\bgpf
+
+If p is prime, then the only numbers that divide p are p and 1.
+
+Therefore, if p\ndvd a, then gcd(p, a) \eql 1.
+
+Then by B\'ezout's identity, \exs some s, t \mem \bz such that as \ps pt \eql 1.
+
+Then b(1) \eql b(as \ps pt) \eql abs \ps ptb.
+
+Now:
+
+b \eql b * as \ps b * pt
+
+Recall that p\dvd ab and p\dvd p
+
+So, p\dvd ab * s and p\dvd p * tb
+
+Thus, p\dvd (abs \ps ptb)
+
+Therefore, p\dvd b
+
+\
+
+p\ndvd b \rar p\dvd a is similar.
+
+\
+
+Therefore, p\dvd a or p\dvd b
+
+\epf
 
 }
 
