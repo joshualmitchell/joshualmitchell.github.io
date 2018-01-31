@@ -222,7 +222,8 @@
 \newcommand{\rln}{ \mt{\sim} }
 \newcommand{\dvd}{ \mt{\vert} }
 \newcommand{\ndvd}{ \mt{\not\vert} }
-\newcommand{\eqw}{ \mt{ \equiv } }
+\newcommand{\eqw}{ \mt{\equiv} }
+\newcommand{\lcg}{ \mt{\gamma} }
 
 \newcommand{\wit}[1]{\mt{\widetilde{#1}}}
      							 
@@ -230,8 +231,24 @@
 
 \begin{document}
 
-Assigned: Page 22, Theorem 2, 3, 4
+Assigned: Page 22, prove Properties of Functions Theorem parts 2, 3, and 4
 
+\
 
+Given functions \afa: A \lra B, \bta: B \lra C, and \lcg: C \lra D, then
+
+\begin{enumerate}
+  \item \lcg(\bta\afa) \eql (\lcg\bta)\afa (associativity).
+
+Let a \mem A. Then (\lcg(\bta\afa))(a) \eql \lcg((\bta\afa)(a)) \eql \lcg(\bta(\afa(a))).
+
+On the other hand, ((\lcg\bta)\afa)(a) \eql (\lcg\bta)(\afa(a)) \eql \lcg(\bta(\afa(a))).
+
+So, \lcg(\bta\afa) \eql (\lcg\bta)\afa.
+
+  \item If \afa and \bta are one-to-one, then \bta\afa is one-to-one.
+  \item If \afa and \bta are onto, then \bta\afa is onto.
+  \item If \afa is one-to-one and onto, then there is a function \uf{\afa}{-1} from B onto A such that (\uf{\afa}{-1}\afa)(a) \eql a, \fa a \mem A and (\afa\uf{\afa}{-1})(b) \eql b, \fa b \mem B.
+\end{enumerate}
 
 \end{document}
