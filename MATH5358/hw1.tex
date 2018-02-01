@@ -233,53 +233,132 @@
 \begin{document}
 
 \begin{enumerate}
-  \item How many orderings are there for a deck of 52 cards if all the cards of the same suit are together?
+  \item \textbf{How many orderings are there for a deck of 52 cards if all the cards of the same suit are together?}
   
   P(13, 13) * P(4, 4)
   
   
-  \item How many distinct positive divisors does the number \uf{3}{4} * \uf{5}{2} * \uf{7}{6} * \uf{11}{1} have?
+  \item \textbf{How many distinct positive divisors does the number \uf{3}{4} * \uf{5}{2} * \uf{7}{6} * \uf{11}{1} have?}
   
   Well, 3, 5, 7, and 11 are all prime so it looks like we can do this:
   
   (4 \ps 1)(2 \ps 1)(6 \ps 1)(1 \ps 1)
   
-  \item A committee of five people is to be chosen from a club that boasts a membership of 10 men and 12 women. How many ways can the committee be formed if it is to contain at least two women? How many ways if, in addition, one particular man and one particular woman who are members of the club refuse to serve together on the committee?
+  \item \textbf{A committee of five people is to be chosen from a club that boasts a membership of 10 men and 12 women. How many ways can the committee be formed if it is to contain at least two women? How many ways if, in addition, one particular man and one particular woman who are members of the club refuse to serve together on the committee?}
   
   \frc{\nck{10}{3}\nck{12}{2}}{\nck{10}{5}}
   
-  \item How many sets of 3 integers between 1 and 20 are possible if no two consecutive integers are to be in a set?
+  \item \textbf{How many sets of 3 integers between 1 and 20 are possible if no two consecutive integers are to be in a set?}
   
   \nck{20}{1} * \nck{18}{1} * \nck{18}{1}
   
-  \item How many permutations are there of the letters of the word ADDRESSES? How many 8-permutations are there of these 9 letters?
+  \item \textbf{How many permutations are there of the letters of the word ADDRESSES? How many 8-permutations are there of these 9 letters?}
   
   \nck{n}{1, 2, 1, 2, 3}
   
   Not sure.
   
-  \item List all 5-permutations, 3-combinations, and 4-combinations of the multiset \bk{2 * a, 1 * b, 3 * c}.
+  \item \textbf{List all 5-permutations, 3-combinations, and 4-combinations of the multiset \bk{2 * a, 1 * b, 3 * c}.}
   
-  No
+  5-permutations: abccc, baccc, bcacc, bccac, bccca, aaccc, acacc, accac, accca, caacc, cacac, cacca, ccaac, ccaca, cccaa, ...
   
-  \item How many integral solutions of \uw{x}{1} \ps \uw{x}{2} \ps \uw{x}{3} \ps \uw{x}{4} \eql 30 satisfy the following conditions:
+  3-combinations: \bk{a, a, b}, \bk{a, a, c}, \bk{a, b, c}, \bk{a, c, c}, \bk{c, c, c}, \bk{b, c, c}
+  
+  4-combinations: \bk{a, a, b, c}, \bk{a, a, c, c}, \bk{a, b, c, c}, \bk{a, c, c, c}, \bk{b, c, c, c}
+  
+  \item \textbf{How many integral solutions of \uw{x}{1} \ps \uw{x}{2} \ps \uw{x}{3} \ps \uw{x}{4} \eql 30 satisfy the following conditions:}
   	\balist
-  	\item \uw{x}{i} \gre 0, \fa i
-  	\item \uw{x}{1} \gre 2, \uw{x}{2} \gre 0, \uw{x}{3} \gre $-$3, \uw{x}{4} \gre 4
+  	\item \textbf{\uw{x}{i} \gre 0, \fa i}
+  	
+  	\nck{30 \ps 4 \ms 1}{30}
+  	
+  	\item \textbf{\uw{x}{1} \gre 2, \uw{x}{2} \gre 0, \uw{x}{3} \gre $-$3, \uw{x}{4} \gre 4}
+  	
+  	\uw{x}{1} - 2 + \uw{x}{2} - 0 + \uw{x}{3} + 3 + \uw{x}{4} - 4 \eql 30 \ms 3 \eql 27
+  	
+  	\nck{27 \ps 4 \ms 1}{27}
+  	
   	\elist
-  \item Find a one-to-one correspondence between the permutations of the set \bk{1, 2, ... n} and the towers \uw{A}{0} \sbs \uw{A}{1} \sbs ... \uw{A}{n}, where \av{\uw{A}{k}} \eql k for k \mem \bk{1, 2, ... n}
-  \item Provide an algebraic proof of Pascal's Formula.
-  \item What is the coefficient of \uf{x}{5}\uf{y}{13} in the expansion of (3x \ms 2y)$^{18}$?
-  \item Use the binomial theorem to prove:
+  \item \textbf{Find a one-to-one correspondence between the permutations of the set S \eql \bk{1, 2, ... n} and the towers \uw{A}{0} \sbs \uw{A}{1} \sbs ... \uw{A}{n}, where \av{\uw{A}{k}} \eql k for k \mem \bk{1, 2, ... n}}
+  
+  Well, the number of permutations of S are simply \av{S}!
+  
+  And the number of permutations for the towers is just \av{\uw{A}{0}} * \av{\uw{A}{1}} * ... \av{\uw{A}{n}} \eql \av{\uw{A}{n}}!
+  
+  \item \textbf{Provide an algebraic proof of Pascal's Formula.}
+  
+  Pascal's Formula:
+  
+  \eqn{\nck{n}{r} = \nck{n - 1}{k} + \nck{n - 1}{k - 1}}
+  
+  \eqn{
+  	\splt{
+  	\frac{n!}{k!(n - k)!} & = \frac{(n - 1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k - 1)!(n - 1 - (k - 1))!} \\
+  		& = \frac{(n - 1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k - 1)!(n - k)!} \\
+  		& = \frac{(n - k)(n - 1)!}{k!(n - k)!} + \frac{k(n - 1)!}{k!(n - k)!} \\
+  		& = \frac{(n)(n - 1)!}{k!(n - k)!} \\
+  		& = \frac{n!}{k!(n - k)!} \\
+  	}
+  }
+  
+  
+  \item \textbf{What is the coefficient of \uf{x}{5}\uf{y}{13} in the expansion of (3x \ms 2y)$^{18}$?}
+  
+  \nck{18}{5}\uf{3}{5}\uf{x}{5}\uf{(-2)}{13}\uf{y}{13}
+  
+  \nck{18}{5} * \uf{3}{5} * \uf{(-2)}{13}
+  
+  \item\textbf{ Use the binomial theorem to prove:}
   \eqn{3^n = \smm{k = 0}{n}\nck{n}{k}2^k}
-  \item Provide a combinatorial argument that
+  
+  Binomial Theorem:
+  \eqn{(x + y)^n = \smm{k = 0}{n} \nck{n}{k}x^ky^{n-k}}
+  Let x \eql 2, y \eql 1
+  \eqn{(2 + 1)^n = \smm{k = 0}{n} \nck{n}{k}2^k1^{n-k}}
+  \eqn{(3)^n = \smm{k = 0}{n} \nck{n}{k}2^k}
+  
+  \item \textbf{Provide a combinatorial argument that}
   \eqn{\nck{n}{k} - \nck{n - 3}{k} = \nck{n - 1}{k - 1} + \nck{n - 2}{k - 1} \ps \nck{n - 3}{k - 1}}
-  \item Provide two proofs (one algebraic, one combinatorial) that
+  \item \textbf{Provide two proofs (one algebraic, one combinatorial) that}
   \eqn{\nck{n}{m} \nck{m}{k} = \nck{n}{k} \nck{n - k}{m - k}}
-  \item What is the coefficient of
+  \item \textbf{What is the coefficient of}
   \eqn{x_1^3x_2^3x_3^1x_4^2 \textrm{ in } (x_1 - x_2 + 2x_3 - 2x_4)^9?}
-  \item Prove by induction on n that, for a positive integer n,
+  
+  Based on the Multinomial Theorem:
+  
+  \eqn{(x_1 + x_2 + ... x_t)^n = \smm{n_1 + n_2 ... n_t, \textrm{ where } n_i \gre 0}{} \nck{n}{n_1, n_2 ... n_t} x_1^{n_1}x_2^{n_2}...x_t^{n_t}}
+  
+  \eqn{(x_1 - x_2 + 2x_3 - 2x_4)^9 = \smm{n_1 + n_2 ... n_t, \textrm{ where } n_i \gre 0}{} \nck{9}{1, 2, 3, 4} x_1^{n_1}x_2^{n_2}...x_t^{n_t}}
+  
+  
+  \item \textbf{Prove by induction on n that, for a positive integer n,}
   \eqn{\frac{1}{(1 - x)^n} = \smm{k = 0}{\infty} \nck{n + k - 1}{k}x^k}
+  
+  Base Case:
+  
+  Let n \eql 1
+  
+  \eqn{
+  		\splt{
+  			\frac{1}{(1 - x)^1} & = \smm{k = 0}{\infty} \nck{1 + k - 1}{k}x^k \\
+  			\frac{1}{(1 - x)} & = \smm{k = 0}{\infty} \nck{k}{k}x^k \\
+  			\frac{1}{(1 - x)} & = \smm{k = 0}{\infty} x^k \\
+  		}
+  	}
+  
+  Inductive Hypothesis:
+  
+  Assume it's true up to n.
+  
+  Want to show that it's true for n \ps 1.
+  
+  \eqn{
+  		\splt{
+  			\frac{1}{(1 - x)^n} & = \smm{k = 0}{\infty} \nck{n + k - 1}{k}x^k \\
+  		}
+  	}
+  
+  
 \end{enumerate}
 
 
