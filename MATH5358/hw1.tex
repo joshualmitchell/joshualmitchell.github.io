@@ -234,11 +234,34 @@
 
 \begin{enumerate}
   \item How many orderings are there for a deck of 52 cards if all the cards of the same suit are together?
+  
+  P(13, 13) * P(4, 4)
+  
+  
   \item How many distinct positive divisors does the number \uf{3}{4} * \uf{5}{2} * \uf{7}{6} * \uf{11}{1} have?
+  
+  Well, 3, 5, 7, and 11 are all prime so it looks like we can do this:
+  
+  (4 \ps 1)(2 \ps 1)(6 \ps 1)(1 \ps 1)
+  
   \item A committee of five people is to be chosen from a club that boasts a membership of 10 men and 12 women. How many ways can the committee be formed if it is to contain at least two women? How many ways if, in addition, one particular man and one particular woman who are members of the club refuse to serve together on the committee?
+  
+  \frc{\nck{10}{3}\nck{12}{2}}{\nck{10}{5}}
+  
   \item How many sets of 3 integers between 1 and 20 are possible if no two consecutive integers are to be in a set?
+  
+  \nck{20}{1} * \nck{18}{1} * \nck{18}{1}
+  
   \item How many permutations are there of the letters of the word ADDRESSES? How many 8-permutations are there of these 9 letters?
+  
+  \nck{n}{1, 2, 1, 2, 3}
+  
+  Not sure.
+  
   \item List all 5-permutations, 3-combinations, and 4-combinations of the multiset \bk{2 * a, 1 * b, 3 * c}.
+  
+  No
+  
   \item How many integral solutions of \uw{x}{1} \ps \uw{x}{2} \ps \uw{x}{3} \ps \uw{x}{4} \eql 30 satisfy the following conditions:
   	\balist
   	\item \uw{x}{i} \gre 0, \fa i
