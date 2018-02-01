@@ -319,8 +319,26 @@
   
   \item \textbf{Provide a combinatorial argument that}
   \eqn{\nck{n}{k} - \nck{n - 3}{k} = \nck{n - 1}{k - 1} + \nck{n - 2}{k - 1} \ps \nck{n - 3}{k - 1}}
+  
+  
+  
+  
   \item \textbf{Provide two proofs (one algebraic, one combinatorial) that}
   \eqn{\nck{n}{m} \nck{m}{k} = \nck{n}{k} \nck{n - k}{m - k}}
+  Algebraic:
+  \eqn{
+  	\splt{
+  		\frac{n!}{m!(n - m)!}\frac{m!}{k!(m - k)!} & = \frac{n!}{k!(n - k)!}\frac{(n - k)!}{(m - k)!(n - k - m + k)!} \\
+  		& = \frac{n!}{k!(n - k)!}\frac{(n - k)!}{(m - k)!(n - m)!} \\
+  		& = \frac{n!}{k!}\frac{1}{(m - k)!(n - m)!}	\\
+  		& = \frac{n!m!}{(m - k)!(n - m)!k!m!} \\
+  		& = \frac{n!m!}{m!(n - m)!k!(m - k)!} 
+  	}
+  }
+  
+  
+  
+  
   \item \textbf{What is the coefficient of}
   \eqn{x_1^3x_2^3x_3^1x_4^2 \textrm{ in } (x_1 - x_2 + 2x_3 - 2x_4)^9?}
   
