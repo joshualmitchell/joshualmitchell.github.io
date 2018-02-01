@@ -231,14 +231,10 @@
 
 \begin{document}
 
-Assigned: Page 22, prove Properties of Functions Theorem parts 2, 3, and 4
-
-\
-
 Given functions \afa: A \lra B, \bta: B \lra C, and \lcg: C \lra D, then
 
 \begin{enumerate}
-  \item \lcg(\bta\afa) \eql (\lcg\bta)\afa (associativity).
+  \item \textbf{\lcg(\bta\afa) \eql (\lcg\bta)\afa (associativity).}
 
 Let a \mem A. Then (\lcg(\bta\afa))(a) \eql \lcg((\bta\afa)(a)) \eql \lcg(\bta(\afa(a))).
 
@@ -246,9 +242,70 @@ On the other hand, ((\lcg\bta)\afa)(a) \eql (\lcg\bta)(\afa(a)) \eql \lcg(\bta(\
 
 So, \lcg(\bta\afa) \eql (\lcg\bta)\afa.
 
-  \item If \afa and \bta are one-to-one, then \bta\afa is one-to-one.
-  \item If \afa and \bta are onto, then \bta\afa is onto.
-  \item If \afa is one-to-one and onto, then there is a function \uf{\afa}{-1} from B onto A such that (\uf{\afa}{-1}\afa)(a) \eql a, \fa a \mem A and (\afa\uf{\afa}{-1})(b) \eql b, \fa b \mem B.
+  \item \textbf{If \afa and \bta are one-to-one, then \bta\afa is one-to-one.}
+  
+  Let \afa and \bta be one-to-one.
+  
+  Suppose \bta\afa is not one-to-one.
+  
+  Then, \exs c \mem C and \uw{a}{1}, \uw{a}{2} \mem A such that \uw{a}{1} $\neq$ \uw{a}{2}, \bta(\afa(\uw{a}{1})) \eql c, and \bta(\afa(\uw{a}{2})) \eql c.
+  
+  Since \bta is one-to-one, \bta(\afa(\uw{a}{1})) \eql c and \bta(\afa(\uw{a}{2})) \eql c implies \afa(\uw{a}{1}) \eql \afa(\uw{a}{2}).
+  
+  Since \afa is one-to-one, \afa(\uw{a}{1}) \eql \afa(\uw{a}{2}) implies \uw{a}{1} \eql \uw{a}{2}, a contradiction.
+  
+  Hence, \bta\afa is one-to-one.
+  
+  \item \textbf{If \afa and \bta are onto, then \bta\afa is onto.}
+  
+  Let \afa and \bta be onto.
+  
+  Suppose \bta\afa is not onto.
+  
+  Then \exs c \mem C such that \fa a \mem A, \bta(\afa(a)) $\neq$ c. 
+  
+  Since \bta is onto, \exs b \mem B such that \bta(b) \eql c.
+  
+  Since \afa is onto, \exs a \mem A such that \afa(a) \eql b.
+  
+  But, \bta(\afa(a)) \eql c. A contradiction.
+  
+  Hence, \bta\afa is onto.
+  
+  \item \textbf{If \afa is one-to-one and onto, then there is a function \uf{\afa}{-1} from B onto A such that (\uf{\afa}{-1}\afa)(a) \eql a, \fa a \mem A and (\afa\uf{\afa}{-1})(b) \eql b, \fa b \mem B.}
+  
+  \textbf{Part 1:}
+  
+  Let \afa be one-to-one and onto function from A to B.
+  
+  Assume \afa(a) is defined \fa a \mem A.
+  
+  Let a \mem A and let \afa(a) \eql b.
+  
+  Since \afa is one-to-one, b is only mapped to by a.
+  
+  Since \afa is onto, every element in B is mapped to by an element in A.
+  
+  Notice also that every element in B is mapped to only once, since \afa is one-to-one as well.
+  
+  Thus, \fa a \mem A, there exists a unique \afa(a), and for each unique \afa(a), \exs a unique a.
+  
+  Hence, \exs a function \uf{\afa}{-1} such that (\uf{\afa}{-1}\afa)(a) \eql a, \fa a \mem A
+  
+  \textbf{Part 2:}
+  
+  Let \afa be one-to-one and onto function from A to B.
+  
+  Let b \mem B.
+  
+  Since \afa is onto, \exs a \mem A such that \afa(a) \eql b.
+  
+  Since \afa is one-to-one, the only element that maps to b is a.
+  
+  Thus, any b \mem B can only map backwards to one a \mem A, and that a can only map forwards to b.
+  
+  Hence, \exs a function \uf{\afa}{-1} such that (\afa\uf{\afa}{-1})(b) \eql b, \fa b \mem B
+  
 \end{enumerate}
 
 \end{document}
