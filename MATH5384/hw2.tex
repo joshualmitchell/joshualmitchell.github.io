@@ -237,11 +237,11 @@ Assigned: Page 54, Exercise 2, 4, 23, 25, 33
 
 Which of the following binary operations are associative?
 \balist
-\item subtraction of integers
-\item division of nonzero rationals
-\item function composition of polynomials with real coefficients
-\item multiplication of 2 x 2 matrices with integer entries
-\item exponentiation of integers
+\item subtraction of integers - \textbf{No}
+\item division of nonzero rationals - \textbf{No}
+\item function composition of polynomials with real coefficients - \textbf{Yes}
+\item multiplication of 2 x 2 matrices with integer entries - \textbf{No}
+\item exponentiation of integers - \textbf{Yes}
 \elist
 
 }
@@ -249,33 +249,49 @@ Which of the following binary operations are associative?
 \ssc{Exercise 4}{
 Which of the following sets are closed under the given operation?
 \balist
-\item {0, 4, 8, 12} addition mod 16
-\item {0, 4, 8, 12} addition mod 15
-\item {1, 4, 7, 13} multiplication mod 15
-\item {1, 4, 5, 7} multiplication mod 9
+\item {0, 4, 8, 12} addition mod 16 - \textbf{Yes}
+\item {0, 4, 8, 12} addition mod 15 - \textbf{No}
+\item {1, 4, 7, 13} multiplication mod 15 - \textbf{Yes}
+\item {1, 4, 5, 7} multiplication mod 9 - \textbf{No}
 \elist
 
 }
 
 \ssc{Exercise 23}{
 
-(Law of Exponents for Abelian Groups)
+\textbf{(Law of Exponents for Abelian Groups)}
 
-Let a and b be elements of an Abelian group and let n be any integer. Show that \uf{(ab)}{n} \eql \uf{a}{n}\uf{b}{n}.
+\textbf{Let a and b be elements of an Abelian group and let n be any integer.}
 
-Is this also true for non-Abelian groups?
+\textbf{Show that \uf{(ab)}{n} \eql \uf{a}{n}\uf{b}{n}.}
+
+Let a, b \mem G, an Abelian group.
+
+Let n \mem \bz
+
+\eqn{
+	\splt{
+		(ab)^n & = ab \times  ab \times ab \times... \times ab \textrm{ (n times) } \\
+		& = a \times a \times a \times ... \times a \times b \times b \times b \times ... \times b \textrm{ (by commutativity) } \\
+		& = (a)^n(b)^n
+	}
+}
+
+\
+
+\textbf{Is this also true for non-Abelian groups?}
 
 }
 
 \ssc{Exercise 25}{
 
-Prove that a group G is Abelian iff \uf{(ab)}{-1} \eql \uf{a}{-1}\uf{b}{-1}, \fa a, b \mem G.
+\textbf{Prove that a group G is Abelian iff \uf{(ab)}{-1} \eql \uf{a}{-1}\uf{b}{-1}, \fa a, b \mem G.}
 
 }
 
 \ssc{Exercise 33}{
 
-Suppose the table below is a group table. Fill in the blank entries.
+\textbf{Suppose the table below is a group table. Fill in the blank entries.}
 
 \begin{tabular}{l|ccccc}
   & e & a & b & c & d \\
