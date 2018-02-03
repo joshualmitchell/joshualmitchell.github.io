@@ -265,9 +265,7 @@ Which of the following sets are closed under the given operation?
 
 \textbf{Show that \uf{(ab)}{n} \eql \uf{a}{n}\uf{b}{n}.}
 
-Let a, b \mem G, an Abelian group.
-
-Let n \mem \bz
+Let a, b \mem G, an Abelian group, and let n \mem \bz
 
 \eqn{
 	\splt{
@@ -281,11 +279,24 @@ Let n \mem \bz
 
 \textbf{Is this also true for non-Abelian groups?}
 
+No. Since this requires commutativity to prove.
 }
 
 \ssc{Exercise 25}{
 
 \textbf{Prove that a group G is Abelian iff \uf{(ab)}{-1} \eql \uf{a}{-1}\uf{b}{-1}, \fa a, b \mem G.}
+
+\lra
+
+Let G be an Abelian group, and let a, b \mem G.
+
+\uf{(ab)}{-1} \eql \frc{1}{ab} \eql \frc{1}{a}\frc{1}{b} \eql \uf{a}{-1}\uf{b}{-1} (by commutativity)
+
+\lla
+
+Assume that \uf{(ab)}{-1} \eql \uf{a}{-1}\uf{b}{-1}, \fa a, b \mem G.
+
+
 
 }
 
@@ -306,11 +317,11 @@ Let n \mem \bz
 \begin{tabular}{l|ccccc}
   & e & a & b & c & d \\
   \hline
-  e & e & - & - & - & - \\
-  a & - & b & - & - & e \\
-  b & - & c & d & e & -  \\
-  c & - & d & - & a & b \\
-  d & - & - & - & - & - 
+  e & e & a & b & c & d \\
+  a & a & b & c & d & e \\
+  b & b & c & d & e & a  \\
+  c & c & d & e & a & b \\
+  d & d & e & a & b & c 
 \end{tabular}
 
 }
