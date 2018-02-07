@@ -237,11 +237,12 @@ Assigned: Page 54, Exercise 2, 4, 23, 25, 33
 
 Which of the following binary operations are associative?
 \balist
-\item subtraction of integers - \textbf{No}
-\item division of nonzero rationals - \textbf{No}
+\item subtraction of integers - \textbf{No.} (1 \ms 1) \ms (\ms 1) $\neq$ (1) \ms (1 \ms (\ms 1)). 
+\item division of nonzero rationals - \textbf{No.} (2/4)/2 $\neq$ 2/(4/2). 
+
 \item function composition of polynomials with real coefficients - \textbf{Yes}
-\item multiplication of 2 x 2 matrices with integer entries - \textbf{No}
-\item exponentiation of integers - \textbf{Yes}
+\item multiplication of 2 x 2 matrices with integer entries - \textbf{Yes}
+\item exponentiation of integers - \textbf{No.} \mt{2^{(3^4)} \neq (2^3)^4}
 \elist
 
 }
@@ -250,9 +251,49 @@ Which of the following binary operations are associative?
 Which of the following sets are closed under the given operation?
 \balist
 \item {0, 4, 8, 12} addition mod 16 - \textbf{Yes}
+
+\begin{tabular}{l|cccc}
+  & 0 & 4 & 8 & 12 \\
+  \hline
+  0 & 0 & 4 & 8 & 12 \\
+  4 & 4 & 8 & 12 & 0 \\
+  8 & 8 & 12 & 0 & 4 \\
+  12 & 12 & 0 & 4 & 8
+\end{tabular}
+
 \item {0, 4, 8, 12} addition mod 15 - \textbf{No}
+
+\begin{tabular}{l|cccc}
+  & 0 & 4 & 8 & 12 \\
+  \hline
+  0 & 0 & 4 & 8 & 12 \\
+  4 & 4 & 8 & 12 & 1 \\
+  8 & 8 & 12 & 1 & 5 \\
+  12 & 12 & 1 & 5 & 9
+\end{tabular}
+
 \item {1, 4, 7, 13} multiplication mod 15 - \textbf{Yes}
+
+\begin{tabular}{l|cccc}
+  & 1 & 4 & 7 & 13 \\
+  \hline
+  1 & 1 & 4 & 7 & 13 \\
+  4 & 4 & 1 & 9 & 7 \\
+  7 & 7 & 9 & 4 & 7 \\
+  13 & 13 & 7 & 7 & 4
+\end{tabular}
+
 \item {1, 4, 5, 7} multiplication mod 9 - \textbf{No}
+
+\begin{tabular}{l|cccc}
+  & 1 & 4 & 5 & 7 \\
+  \hline
+  1 & 1 & 4 & 5 & 7 \\
+  4 & 4 & 7 & 2 & 1 \\
+  5 & 5 & 2 & 7 & 8 \\
+  7 & 7 & 1 & 8 & 4
+\end{tabular}
+
 \elist
 
 }
