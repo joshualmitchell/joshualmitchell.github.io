@@ -1,0 +1,382 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#1}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 5358 / Applied Discrete Math}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Rusnak}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\rln}{ \mt{\sim} }
+\newcommand{\dvd}{ \mt{\vert} }
+\newcommand{\ndvd}{ \mt{\not\vert} }
+\newcommand{\eqw}{ \mt{ \equiv } }
+\newcommand{\lcg}{ \mt{\gamma} }
+\newcommand{\smm}[2]{ \mt{\sum_{#1}^{#2}}}
+
+\newcommand{\wit}[1]{\mt{\widetilde{#1}}}
+     							 
+% ----------
+
+\begin{document}
+
+\begin{enumerate}
+  \item \textbf{How many orderings are there for a deck of 52 cards if all the cards of the same suit are together?}
+  
+   P(4, 4) * \uf{P(13, 13)}{4}
+  
+  \item \textbf{How many distinct positive divisors does the number \uf{3}{4} * \uf{5}{2} * \uf{7}{6} * \uf{11}{1} have?}
+  
+  Well, 3, 5, 7, and 11 are all prime so it looks like we can do this:
+  
+  (4 \ps 1)(2 \ps 1)(6 \ps 1)(1 \ps 1)
+  
+  \item \textbf{A committee of five people is to be chosen from a club that boasts a membership of 10 men and 12 women. How many ways can the committee be formed if it is to contain at least two women? How many ways if, in addition, one particular man and one particular woman who are members of the club refuse to serve together on the committee?}
+  
+  \frc{\nck{10}{3}\nck{12}{2}}{\nck{10}{5}}
+  
+  \item \textbf{How many sets of 3 integers between 1 and 20 are possible if no two consecutive integers are to be in a set?}
+  
+  \nck{20}{1} * \nck{18}{1} * \nck{18}{1}
+  
+  \item \textbf{How many permutations are there of the letters of the word ADDRESSES? How many 8-permutations are there of these 9 letters?}
+  
+  \nck{n}{1, 2, 1, 2, 3}
+  
+  Not sure.
+  
+  \item \textbf{List all 5-permutations, 3-combinations, and 4-combinations of the multiset \bk{2 * a, 1 * b, 3 * c}.}
+  
+  5-permutations: abccc, baccc, bcacc, bccac, bccca, aaccc, acacc, accac, accca, caacc, cacac, cacca, ccaac, ccaca, cccaa, ...
+  
+  3-combinations: \bk{a, a, b}, \bk{a, a, c}, \bk{a, b, c}, \bk{a, c, c}, \bk{c, c, c}, \bk{b, c, c}
+  
+  4-combinations: \bk{a, a, b, c}, \bk{a, a, c, c}, \bk{a, b, c, c}, \bk{a, c, c, c}, \bk{b, c, c, c}
+  
+  \item \textbf{How many integral solutions of \uw{x}{1} \ps \uw{x}{2} \ps \uw{x}{3} \ps \uw{x}{4} \eql 30 satisfy the following conditions:}
+  	\balist
+  	\item \textbf{\uw{x}{i} \gre 0, \fa i}
+  	
+  	\nck{30 \ps 4 \ms 1}{30}
+  	
+  	\item \textbf{\uw{x}{1} \gre 2, \uw{x}{2} \gre 0, \uw{x}{3} \gre $-$3, \uw{x}{4} \gre 4}
+  	
+  	\uw{x}{1} - 2 + \uw{x}{2} - 0 + \uw{x}{3} + 3 + \uw{x}{4} - 4 \eql 30 \ms 3 \eql 27
+  	
+  	\nck{27 \ps 4 \ms 1}{27}
+  	
+  	\elist
+  \item \textbf{Find a one-to-one correspondence between the permutations of the set S \eql \bk{1, 2, ... n} and the towers \uw{A}{0} \sbs \uw{A}{1} \sbs ... \uw{A}{n}, where \av{\uw{A}{k}} \eql k for k \mem \bk{1, 2, ... n}}
+  
+  Well, the number of permutations of S are simply \av{S}!
+  
+  And the number of permutations for the towers is just \av{\uw{A}{0}} * \av{\uw{A}{1}} * ... \av{\uw{A}{n}} \eql \av{\uw{A}{n}}!
+  
+  \item \textbf{Provide an algebraic proof of Pascal's Formula.}
+  
+  Pascal's Formula:
+  
+  \eqn{\nck{n}{r} = \nck{n - 1}{k} + \nck{n - 1}{k - 1}}
+  
+  \eqn{
+  	\splt{
+  	\frac{n!}{k!(n - k)!} & = \frac{(n - 1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k - 1)!(n - 1 - (k - 1))!} \\
+  		& = \frac{(n - 1)!}{k!(n - 1 - k)!} + \frac{(n - 1)!}{(k - 1)!(n - k)!} \\
+  		& = \frac{(n - k)(n - 1)!}{k!(n - k)!} + \frac{k(n - 1)!}{k!(n - k)!} \\
+  		& = \frac{(n)(n - 1)!}{k!(n - k)!} \\
+  		& = \frac{n!}{k!(n - k)!} \\
+  	}
+  }
+  
+  
+  \item \textbf{What is the coefficient of \uf{x}{5}\uf{y}{13} in the expansion of (3x \ms 2y)$^{18}$?}
+  
+  \nck{18}{5}\uf{3}{5}\uf{x}{5}\uf{(-2)}{13}\uf{y}{13}
+  
+  \nck{18}{5} * \uf{3}{5} * \uf{(-2)}{13}
+  
+  \item\textbf{ Use the binomial theorem to prove:}
+  \eqn{3^n = \smm{k = 0}{n}\nck{n}{k}2^k}
+  
+  Binomial Theorem:
+  \eqn{(x + y)^n = \smm{k = 0}{n} \nck{n}{k}x^ky^{n-k}}
+  Let x \eql 2, y \eql 1
+  \eqn{(2 + 1)^n = \smm{k = 0}{n} \nck{n}{k}2^k1^{n-k}}
+  \eqn{(3)^n = \smm{k = 0}{n} \nck{n}{k}2^k}
+  
+  \item \textbf{Provide a combinatorial argument that}
+  \eqn{\nck{n}{k} - \nck{n - 3}{k} = \nck{n - 1}{k - 1} + \nck{n - 2}{k - 1} \ps \nck{n - 3}{k - 1}}
+  
+  
+  
+  
+  \item \textbf{Provide two proofs (one algebraic, one combinatorial) that}
+  \eqn{\nck{n}{m} \nck{m}{k} = \nck{n}{k} \nck{n - k}{m - k}}
+  Algebraic:
+  \eqn{
+  	\splt{
+  		\frac{n!}{m!(n - m)!}\frac{m!}{k!(m - k)!} & = \frac{n!}{k!(n - k)!}\frac{(n - k)!}{(m - k)!(n - k - m + k)!} \\
+  		& = \frac{n!}{k!(n - k)!}\frac{(n - k)!}{(m - k)!(n - m)!} \\
+  		& = \frac{n!}{k!}\frac{1}{(m - k)!(n - m)!}	\\
+  		& = \frac{n!m!}{(m - k)!(n - m)!k!m!} \\
+  		& = \frac{n!m!}{m!(n - m)!k!(m - k)!} 
+  	}
+  }
+  
+  
+  
+  
+  \item \textbf{What is the coefficient of}
+  \eqn{x_1^3x_2^3x_3^1x_4^2 \textrm{ in } (x_1 - x_2 + 2x_3 - 2x_4)^9?}
+  
+  Based on the Multinomial Theorem:
+  
+  \eqn{(x_1 + x_2 + ... x_t)^n = \smm{n_1 + n_2 ... n_t, \textrm{ where } n_i \gre 0}{} \nck{n}{n_1, n_2 ... n_t} x_1^{n_1}x_2^{n_2}...x_t^{n_t}}
+  
+  \eqn{(x_1 - x_2 + 2x_3 - 2x_4)^9 = \smm{n_1 + n_2 ... n_t, \textrm{ where } n_i \gre 0}{} \nck{9}{1, 2, 3, 4} x_1^{n_1}x_2^{n_2}...x_t^{n_t}}
+  
+  
+  \item \textbf{Prove by induction on n that, for a positive integer n,}
+  \eqn{\frac{1}{(1 - x)^n} = \smm{k = 0}{\infty} \nck{n + k - 1}{k}x^k}
+  
+  Base Case:
+  
+  Let n \eql 1
+  
+  \eqn{
+  		\splt{
+  			\frac{1}{(1 - x)^1} & = \smm{k = 0}{\infty} \nck{1 + k - 1}{k}x^k \\
+  			\frac{1}{(1 - x)} & = \smm{k = 0}{\infty} \nck{k}{k}x^k \\
+  			\frac{1}{(1 - x)} & = \smm{k = 0}{\infty} x^k \\
+  		}
+  	}
+  
+  Inductive Hypothesis:
+  
+  Assume it's true up to n.
+  
+  Want to show that it's true for n \ps 1.
+  
+  \eqn{
+  		\splt{
+  			\frac{1}{(1 - x)^n} & = \smm{k = 0}{\infty} \nck{n + k - 1}{k}x^k \\
+  		}
+  	}
+  
+  
+\end{enumerate}
+
+
+\end{document}
