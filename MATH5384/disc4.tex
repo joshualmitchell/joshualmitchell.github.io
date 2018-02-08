@@ -222,7 +222,7 @@
 \newcommand{\dvd}{ \mt{\vert} }
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 \newcommand{\ndvd}{ \mt{\not\vert} }
-\newcommand{\eqw}{ \mt{ \equiv } }
+\newcommand{\eqw}{\mt{\equiv } }
 \newcommand{\lcg}{ \mt{\gamma} }
 
 \newcommand{\wit}[1]{\mt{\widetilde{#1}}}
@@ -233,7 +233,7 @@
 
 \ssc{Page 24 Exercise 11}{
 
-\textbf{Let n and a be positive integers and let d \eql gcd(a, n). Show that the equation ax mod n \eql 1 has a solution iff d \eql 1. (This exercise is referred to in Chapter 2.}
+\textbf{Let n and a be positive integers and let d \eql gcd(a, n). Show that the equation ax \eqw 1 mod n has a solution iff d \eql 1. (This exercise is referred to in Chapter 2.)}
 
 Let a, n \mem \uf{\bz}{+}.
 
@@ -241,24 +241,37 @@ Let d \eql gcd(a, n)
 
 \lra
 
-Want to show: ax mod n \eql 1 \rar d \eql 1
+Want to show: ax \eqw 1 mod n \rar d \eql 1
 
-Suppose ax mod n \eql 1.
+Suppose ax \eqw 1 mod n.
 
-\
+Then \exs t \mem \bz st 
 
-\
+tn \eql 1 \ms ax
 
-\
+tn \ps xa \eql 1
 
-\
+Since \exs t, x \mem \bz such that tn \ps xa \eql 1,
 
-\
+a and n are relatively prime.
+
+Therefore, gcd(a, n) \eql d \eql 1.
 
 \lla
 
-Want to show: d \eql 1 \rar ax mod n \eql 1
+Want to show: d \eql 1 \rar ax \eqw 1 mod n
+
 Suppose d \eql 1.
+
+Then gcd(a, n) \eql 1.
+
+Thus, \exs t, x \mem \bz such that tn \ps ax \eql 1.
+
+tn \ps ax \eql 1
+
+tn \eql 1 \ms ax
+
+Thus, t is a possible solution to ax \eqw 1 mod n
 
 }
 \end{document}
