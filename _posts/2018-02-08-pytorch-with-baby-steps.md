@@ -22,7 +22,7 @@ Instead of teaching one big lesson, teach a sequence of small, self-contained le
 
 It would work for the unfamiliar (since it's not overwhelming and only goes one step at a time), but it would also ideally go at a faster pace (so that those who pick it up quicker aren't as bored). The key is making sure everyone is always on the same page, so we only explain and never re-explain. 
 
-That's what I want to do with PyTorch: start with a College Algebra-esque linear model, explain the details, and then add another line or two of code. Rinse and repeat until we have a CNN.
+That's what I want to do with PyTorch: start with a College Algebra-esque linear model, explain the details, and then add another few lines of code. Rinse and repeat until we have a CNN.
 
 # Outline:
 
