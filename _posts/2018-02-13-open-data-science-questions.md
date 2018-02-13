@@ -12,4 +12,6 @@ As an instructor, when a student has a question but doesn't ask it, it frustrate
 
 In any case, this knowledge is valuable, and I feel that I could add a lot of value to the lives of anyone learning data science simply by listing all the questions that come to mind, as well as answers to them when I get them.
 
-So, in chronological order, from now on, I'm going to list any questions I have that I don't immediately think of an answer to. Then, at probably not the same pace, I'm going to answer them.
+So, in chronological order, from now on, I'm going to list any questions I have that I don't immediately think of an answer to. Then, as I do get answers to them, I'll put them here as well.
+
+### Question 1 (02/13/2018): How do hypothesis tests factor into predictive models? It seems like we just don't care about them when they could add some amount of information.
