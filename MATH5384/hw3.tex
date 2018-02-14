@@ -270,7 +270,7 @@ Let h(a) \eql \uw{a}{h}, g(h(a)) \eql \uw{a}{gh}, f(a) \eql \uw{a}{f}, f(g(a)) \
 
 Notice that ((f o g) o h)(a) \eql f(g(\uw{a}{h})) and (f o (g o h))(a) \eql f(\uw{a}{gh}).
 
-Want to show: g(\uw{a}{h}) \eql \uw{a}{gh}.
+\textbf{Want to show: g(\uw{a}{h}) \eql \uw{a}{gh}.}
 
 Well, g(\uw{a}{h}) \eql g(a(h)) by definition, and \uw{a}{gh} \eql g(a(h)) by definition.
 
@@ -278,11 +278,79 @@ Hence, result.
 
 \item \textbf{Identity:} Want to show that \exs I \mem \uw{S}{A} such that I o f \eql f o I \eql f, \fa f \mem \uw{S}{A}.
 
+Define I : A \lra A to be I(a) \eql a, \fa a \mem A.
 
+\textbf{Want to show: I is well defined.}
+
+Let a \mem A.
+
+Then I(a) \eql a. Since all elements of A are unique, all I(a)'s are unique.
+
+Hence, I is well defined.
+
+\textbf{Want to show: I is one-to-one.}
+
+Let I(\uw{a}{1}) \eql I(\uw{a}{2}).
+
+Since I(a) \eql a, \uw{a}{1} \eql \uw{a}{2}.
+
+\textbf{Want to show: I is onto.}
+
+Let a \mem A, the set that I maps into.
+
+Since I(a) \eql a, a is the element that maps to a.
+
+\newpage
+
+\textbf{Want to show: I \mem \uw{S}{A}}
+
+Since I is one-to-one and onto, I \mem \uw{S}{A}.
+
+\textbf{Want to show: I o f \eql f o I \eql f.}
+
+Let f \mem \uw{S}{A} and a \mem A.
+
+Notice that f(I(a)) \eql f(a) and I(f(a)) \eql f(a).
+
+Hence, result.
 
 \item \textbf{Inverse:} Want to show that, \fa f \mem \uw{S}{A}, \exs \uf{f}{-1} such that f(\uf{f}{-1}(a)) \eql \uf{f}{-1}(f(a)) \eql a, \fa a \mem A.
 
+\textbf{Want to show: \uf{f}{-1} is well defined.}
 
+Let f \mem \uw{S}{A} and suppose we have a relation \uf{f}{-1} such that \uf{f}{-1}(f(a)) \eql a.
+
+We know that f is one-to-one. Thus, if f(\uw{a}{1}) \eql f(\uw{a}{2}), then \uw{a}{1} \eql \uw{a}{2}.
+
+Therefore there is no f(a) such that \uf{f}{-1}(f(a)) has two outputs.
+
+Hence, \uf{f}{-1} is a well-defined function.
+
+\textbf{Want to show: \uf{f}{-1} is one-to-one.}
+
+Suppose \exs a \mem A such that \uf{f}{-1}(f(\uw{a}{1})) \eql a and \uf{f}{-1}(f(\uw{a}{2})) \eql a for some \uw{a}{1}, \uw{a}{2} \mem A (\uw{a}{1} $\neq$ \uw{a}{2})
+
+We know that, since f is one-to-one, f(\uw{a}{1}) $\neq$ f(\uw{a}{2}).
+
+So, by definition of \uf{f}{-1}, \uf{f}{-1} has to map f(\uw{a}{1}) and f(\uw{a}{2}) back to \uw{a}{1} and \uw{a}{2}, respectively.
+
+A contradiction.
+
+\textbf{Want to show: \uf{f}{-1} is onto.}
+
+Suppose \exs \uw{a}{0} \mem A such that \uf{f}{-1}(f(a)) $\neq$ \uw{a}{0}, \fa a \mem A.
+
+Since f is one-to-one and onto, f(\uw{a}{0}) maps to some unique \uw{a}{f} \mem A (i.e. f(\uw{a}{0}) \eql \uw{a}{f}).
+
+\uf{f}{-1}(\uw{a}{f}) can only map to one solution since \uf{f}{-1} is one-to-one, which is guaranteed to exist.
+
+Since \uf{f}{-1}(f(\uw{a}{0})) \eql \uf{f}{-1}(\uw{a}{f}), \uf{f}{-1}(\uw{a}{f}) is, by definition, \uw{a}{0}.
+
+A contradiction.
+
+\textbf{Want to show: \uf{f}{-1} \mem \uw{S}{A}}
+
+Since \uf{f}{-1} is one-to-one and onto, \uf{f}{-1} \mem \uw{S}{A}.
 
 \elist
 
