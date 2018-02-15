@@ -14,6 +14,8 @@ In any case, this knowledge is valuable, and I feel that I could add a lot of va
 
 So, in chronological order, from now on, I'm going to list any questions I have (or come across). Then, as I have both the answers and the time, I'll put them here as well. If the question has just a number (i.e. Question 3) then it's not a question I came up with, just one I saw somewhere (e.g. an interview question). If it has an M (e.g. Question 1M) it's a question I thought of myself.
 
+Note: There are some duplications in here, for now.
+
 ### Question 1M (02/13/2018): How do hypothesis tests factor into predictive models? It seems like we just don't care about them when they could add some amount of information.
 
 ### Question 2M (02/14/2018): What happens when you do some dimensionality reduction technique on a picture? (i.e. you think of the columns or rows of the picture matrix as features and the other one as samples) - is there a way to do this meaningfully? Can lossy compression algorithms on pictures be thought of as dimensionality reduction? Or is there a meaningful difference?
