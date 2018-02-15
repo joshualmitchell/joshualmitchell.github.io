@@ -12,8 +12,22 @@ As an instructor, when a student has a question but doesn't ask it, it frustrate
 
 In any case, this knowledge is valuable, and I feel that I could add a lot of value to the lives of anyone learning data science simply by listing all the questions that come to mind, as well as answers to them when I get them.
 
-So, in chronological order, from now on, I'm going to list any questions I have that I don't immediately think of an answer to. Then, as I do get answers to them, I'll put them here as well.
+So, in chronological order, from now on, I'm going to list any questions I have (or come across). Then, as I have both the answers and the time, I'll put them here as well. If the question has just a number (i.e. Question 3) then it's not a question I came up with, just one I saw somewhere (e.g. an interview question). If it has an M (e.g. Question 1M) it's a question I thought of myself.
 
-### Question 1 (02/13/2018): How do hypothesis tests factor into predictive models? It seems like we just don't care about them when they could add some amount of information.
+### Question 1M (02/13/2018): How do hypothesis tests factor into predictive models? It seems like we just don't care about them when they could add some amount of information.
 
-### Question 2 (02/14/2018): What happens when you do some dimensionality reduction technique on a picture? (i.e. you think of the columns or rows of the picture matrix as features and the other one as samples) - is there a way to do this meaningfully? Can lossy compression algorithms on pictures be thought of as dimensionality reduction? Or is there a meaningful difference?
+### Question 2M (02/14/2018): What happens when you do some dimensionality reduction technique on a picture? (i.e. you think of the columns or rows of the picture matrix as features and the other one as samples) - is there a way to do this meaningfully? Can lossy compression algorithms on pictures be thought of as dimensionality reduction? Or is there a meaningful difference?
+
+### Question 3 (02/15/2018): What is an auto-encoder? Why do we "auto-encode"? Hint: it's really a misnomer.
+
+### Question 4 (02/15/2018): What is a Boltzmann Machine? Why a Boltzmann Machine?
+
+### Question 5 (02/15/2018): Why do we use sigmoid for an output function? Why tanh? Why not cosine? Why any function in particular?
+
+### Question 6 (02/16/2018): Why are CNNs used primarily in imaging and not so much other tasks?
+
+### Question 7 (02/17/2018): Explain backpropagation simply.
+
+### Question 8 (02/18/2018): Is it OK to connect from a Layer 4 output back to a Layer 2 input?
+
+### Question 9 (02/19/2018): A data-scientist person recently put up a YouTube video explaining that the essential difference between a Neural Network and a Deep Learning network is that the former is trained from output back to input, while the latter is trained from input toward output. Do you agree? Explain.
