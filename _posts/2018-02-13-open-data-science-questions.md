@@ -15,3 +15,5 @@ In any case, this knowledge is valuable, and I feel that I could add a lot of va
 So, in chronological order, from now on, I'm going to list any questions I have that I don't immediately think of an answer to. Then, as I do get answers to them, I'll put them here as well.
 
 ### Question 1 (02/13/2018): How do hypothesis tests factor into predictive models? It seems like we just don't care about them when they could add some amount of information.
+
+### Question 2 (02/14/2018): What happens when you do some dimensionality reduction technique on a picture? (i.e. you think of the columns or rows of the picture matrix as features and the other one as samples) - is there a way to do this meaningfully? Can lossy compression algorithms on pictures be thought of as dimensionality reduction? Or is there a meaningful difference?
