@@ -31,3 +31,59 @@ So, in chronological order, from now on, I'm going to list any questions I have 
 ### Question 8 (02/18/2018): Is it OK to connect from a Layer 4 output back to a Layer 2 input?
 
 ### Question 9 (02/19/2018): A data-scientist person recently put up a YouTube video explaining that the essential difference between a Neural Network and a Deep Learning network is that the former is trained from output back to input, while the latter is trained from input toward output. Do you agree? Explain.
+
+### Question 10 (02/19/2018): Implement dropout during forward and backward pass?
+### Question 11 (02/19/2018): Neural network training loss/testing loss stays constant, what do you do?
+### Question 12 (02/19/2018): Why do RNNs have a tendency to suffer from exploding/vanishing gradient? How do you prevent this?
+### Question 13 (02/19/2018): Does using full batch means that the convergence is always better given unlimited power?
+### Question 14 (02/19/2018): What is the problem with sigmoid during backpropagation?
+### Question 15 (02/19/2018): Given a black box machine learning algorithm that you can’t modify, how could you improve its error?
+### Question 16 (02/19/2018): How to find the best hyper parameters?
+
+Missing value treatmentmethods:
+Different methods: Mean, median, K-NN imputation, regression based etc.
+Outlier treatment methods:
+Different methods: Replacement by quartile values, max or min etc.
+Near zero variance
+Variance inflation factor (VIF)
+Correlation: between numerical-numerical variables, categorical-categorical, categorical and numerical variables
+Plotting: ggplot2(R), Matplotlib and Seaborn (Python) etc. Sound understanding of various plots and their usage such as Bar plot should be used for categorical variables and Histogram should be used for continuous variables etc.
+Transformations:
+Normalization- scaling
+Variable transformations (e.g. x^2 -> z)
+Sampling techniques- Simple random sampling, Stratified sampling
+Hypothesis testing (This is sort of essential because you will have better understanding of various tests and model outputs if you know this.)
+3. Feature selection/ extraction:
+
+Lasso regression
+Ridge regression
+Subset selection
+Using Random forest
+4. Modeling algorithms
+
+Regression:
+Simple linear regression
+Multiple linear regression
+GLM
+With proper understanding of assumptions, multicollinearity etc
+Goodness of fit measures such as R^2, RMSE, Adjusted-R^2, Predicted-R^2 etc
+Lasso regression
+Ridge regression
+Concept of regularization
+Concpt of over-fitting and underfitting, learning rate
+Concept of bias and variance
+Classification
+K-NN
+Logistics regression with ROC curve and selection of optimal threshold
+Decision tree
+Concept of Bagging: Random forest
+Support vector machine
+Bay’s classifier
+Concept of Boosting: Xgboost, Adaboost
+Artificial neural networks: Perceptron, Multiplayer perceptron (Feed forward neural networks)
+Classification performance measures: confusion matrix, accuracy, sensitivity, specificity, precision, F-measure
+Clustering:
+K-means with fair understanding of distance and dissimilarity measures for non-numerical type of variables.
+Hierarchical clustering
+Dimensionality reduction techniques:
+PCA
