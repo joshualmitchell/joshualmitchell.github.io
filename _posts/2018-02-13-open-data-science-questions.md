@@ -48,37 +48,9 @@ So, in chronological order, from now on, I'm going to list any questions I have 
 ### Question 22 (02/19/2018): What're some different types of transformations, what do they do, and when should you do them? (i.e. normalization and variable transformations like x^2 -> z)
 ### Question 23 (02/19/2018): What're some different sampling techniques and when/why should you use each of them? Pros and cons? (e.g. simple random sampling, stratified sampling)
 ### Question 24 (02/19/2018): What is hypothesis testing? When/why should you do it? What're the popular hypothesis tests and what do they test? 
-3. Feature selection/ extraction:
-
-Lasso regression
-Ridge regression
-Subset selection
-Using Random forest
-4. Modeling algorithms
-
-Regression:
-Simple linear regression
-Multiple linear regression
-GLM
-With proper understanding of assumptions, multicollinearity etc
-Goodness of fit measures such as R^2, RMSE, Adjusted-R^2, Predicted-R^2 etc
-Lasso regression
-Ridge regression
-Concept of regularization
-Concpt of over-fitting and underfitting, learning rate
-Concept of bias and variance
-Classification
-K-NN
-Logistics regression with ROC curve and selection of optimal threshold
-Decision tree
-Concept of Bagging: Random forest
-Support vector machine
-Bay’s classifier
-Concept of Boosting: Xgboost, Adaboost
-Artificial neural networks: Perceptron, Multiplayer perceptron (Feed forward neural networks)
-Classification performance measures: confusion matrix, accuracy, sensitivity, specificity, precision, F-measure
-Clustering:
-K-means with fair understanding of distance and dissimilarity measures for non-numerical type of variables.
-Hierarchical clustering
-Dimensionality reduction techniques:
-PCA
+### Question 25 (02/19/2018): What is feature selection/ extraction? Why do you do it? How do you do it?
+### Question 26 (02/19/2018): What're the pros and cons of each of these feature selection techniques: Lasso regression, Ridge regression, Subset selection, Random forest
+### Question 27 (02/19/2018): Regression in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. Simple / Multiple LR, GLMs, R^2, RMSE, Adj R^2, Predicted R^2, Lasso / Ridge Regression, Regularization, Over/Underfitting, Learning Rate, Bias/Variance Tradeoff...)
+### Question 28 (02/19/2018): Classification in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. K-NN, Logistic Regression with ROC curve and selection of optimal threshold, Decision trees, Bagging / Random Forrests, SVMs, Bayes Classifier, Boosting (e.g. Xgboost, Adaboost), ANNs (perceptron, MLP, etc), performance measures like confusion matrix, accuracy, sensitivity, specificity, precision, F-Measure, Recall, F1)
+### Question 28 (02/19/2018): Clustering in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. K-Means, distance and dissimilarity measures (for both numerical and non-numerical types of variables), Hierarchical clustering, maybe a few others)
+### Question 28 (02/19/2018): Dimensionality Reduction in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. PCA, Kernel-PCA, etc)
