@@ -45,9 +45,9 @@ So, in chronological order, from now on, I'm going to list any questions I have 
 ### Question 19 (02/19/2018): What're Near Zero Variance predictors? How do you deal with them?
 ### Question 20 (02/19/2018): What is the Variance Inflation Factor (VIF)?
 ### Question 21 (02/19/2018): What does correlation between numerical-numerical variables, categorical-categorical, categorical and numerical variables mean? What do you do about it? How do you find out it's there?
-What're some different types of transformations, what do they do, and when should you do them? (i.e. normalization and variable transformations like x^2 -> z)
-Sampling techniques- Simple random sampling, Stratified sampling
-Hypothesis testing (This is sort of essential because you will have better understanding of various tests and model outputs if you know this.)
+### Question 22 (02/19/2018): What're some different types of transformations, what do they do, and when should you do them? (i.e. normalization and variable transformations like x^2 -> z)
+### Question 23 (02/19/2018): What're some different sampling techniques and when/why should you use each of them? Pros and cons? (e.g. simple random sampling, stratified sampling)
+### Question 24 (02/19/2018): What is hypothesis testing? When/why should you do it? What're the popular hypothesis tests and what do they test? 
 3. Feature selection/ extraction:
 
 Lasso regression
