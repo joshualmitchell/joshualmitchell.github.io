@@ -51,8 +51,27 @@ So, in chronological order, from now on, I'm going to list any questions I have 
 ### Question 25 (02/19/2018): What is feature selection/ extraction? Why do you do it? How do you do it?
 ### Question 26 (02/19/2018): What're the pros and cons of each of these feature selection techniques: Lasso regression, Ridge regression, Subset selection, Random forest
 ### Question 27 (02/19/2018): Regression in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. Simple / Multiple LR, GLMs, R^2, RMSE, Adj R^2, Predicted R^2, Lasso / Ridge Regression, Regularization, Over/Underfitting, Learning Rate, Bias/Variance Tradeoff...)
-### Question 28 (02/19/2018): Classification in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. K-NN, Logistic Regression with ROC curve and selection of optimal threshold, Decision trees, Bagging / Random Forrests, SVMs, Bayes Classifier, Boosting (e.g. Xgboost, Adaboost), ANNs (perceptron, MLP, etc), performance measures like confusion matrix, accuracy, sensitivity, specificity, precision, F-Measure, Recall, F1)
+### Question 28 (02/19/2018): Classification in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. K-NN, Logistic Regression with ROC curve and selection of optimal threshold, Decision trees, Bagging / Random Forrests, SVMs, Bayes Classifier, Boosting (e.g. Xgboost, Adaboost, gradient boost), ANNs (perceptron, MLP, etc), performance measures like confusion matrix, accuracy, sensitivity, specificity, precision, F-Measure, Recall, F1)
 ### Question 29 (02/19/2018): Clustering in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. K-Means, distance and dissimilarity measures (for both numerical and non-numerical types of variables), Hierarchical clustering, maybe a few others)
-### Question 30 (02/19/2018): Dimensionality Reduction in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. PCA, Kernel-PCA, etc)
+### Question 30 (02/19/2018): Dimensionality Reduction in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. PCA, Kernel-PCA, etc and manifold learning techniques like MDS and t-SNe)
 ### Question 31 (02/19/2018): What is KKT and what're it's conditions?
 ### Question 32 (02/19/2018): What is Laplace Approximation and what's it used for?
+### Question 33 (02/19/2018): What is a Time series? What're some time series methods (ARIMA, SSA, machine-learning-based approaches) and what are their pros and cons?
+### Question 34 (02/19/2018): What is Structural equation modeling? It's use? Weakness?
+### Question 35 (02/19/2018): What is Factor analysis (exploratory and confirmatory)? It's use? Weakness?
+### Question 36 (02/19/2018): What is Power analysis/trial design (particularly simulation-based trial design)? It's use? Weakness?
+### Question 37 (02/19/2018): What is Nonparametric testing (deriving tests from scratch, particularly through simulations)/MCMC? It's use? Weakness?
+### Question 38 (02/19/2018): What're the different Optimization algorithms (genetic algorithms, quantum-inspired evolutionary algorithms, simulated annealing, particle-swarm optimization)? What're their uses and weaknesses?
+### Question 39 (02/19/2018): What're the different Topological data analysis tools (persistent homology, Morse-Smale clustering, Mapper...)? What're their uses and weaknesses?
+### Question 40 (02/19/2018): What're the different Bayesian methods (Naïve Bayes, Bayesian model averaging, Bayesian adaptive trials...)? What're their uses and weaknesses?
+### Question 41 (02/19/2018): What're the different Gradient-based optimization methods? What're their uses and weaknesses?
+### Question 42 (02/19/2018): What're the different Penalized regression models (elastic net, LASSO, LARS...) and adding penalties to models in general (SVM, XGBoost...)? What're their uses and weaknesses?
+### Question 43 (02/19/2018): What're Spline-based models (MARS...)? What're their uses and weaknesses?
+### Question 44 (02/19/2018): What're Markov chains and stochastic processes? What're their uses and weaknesses?
+### Question 45 (02/19/2018): What're Network metrics and algorithms (centrality measures, betweenness, diversity, entropy, Laplacians, epidemic spread, spectral clustering)? What're their uses and weaknesses?
+
+### Question 46 (02/19/2018): What're some missing data imputation schemes (missForest, MICE...)? What're their uses and weaknesses?
+### Question 47 (02/19/2018): What're Bayesian networks (pathway mining)? What're their uses and weaknesses?
+### Question 48 (02/19/2018): What is Survival analysis? Strengths, weaknesses?
+### Question 49 (02/19/2018): What is Mixture modeling? Strengths, weaknesses?
+### Question 50 (02/19/2018): What is Statistical inference and group testing? Strengths, weaknesses?
