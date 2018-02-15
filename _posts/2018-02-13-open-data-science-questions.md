@@ -40,17 +40,12 @@ So, in chronological order, from now on, I'm going to list any questions I have 
 ### Question 15 (02/19/2018): Given a black box machine learning algorithm that you can’t modify, how could you improve its error?
 ### Question 16 (02/19/2018): How to find the best hyper parameters?
 
-Missing value treatmentmethods:
-Different methods: Mean, median, K-NN imputation, regression based etc.
-Outlier treatment methods:
-Different methods: Replacement by quartile values, max or min etc.
-Near zero variance
-Variance inflation factor (VIF)
-Correlation: between numerical-numerical variables, categorical-categorical, categorical and numerical variables
-Plotting: ggplot2(R), Matplotlib and Seaborn (Python) etc. Sound understanding of various plots and their usage such as Bar plot should be used for categorical variables and Histogram should be used for continuous variables etc.
-Transformations:
-Normalization- scaling
-Variable transformations (e.g. x^2 -> z)
+### Question 17 (02/19/2018): How do you treat missing values? What're the pros and cons of using mean, median, K-NN imputation, regression, etc?
+### Question 18 (02/19/2018): How do you treat outliers? What're the pros and cons of replacement by quartile values, max or min etc.
+### Question 19 (02/19/2018): What're Near Zero Variance predictors? How do you deal with them?
+### Question 20 (02/19/2018): What is the Variance Inflation Factor (VIF)?
+### Question 21 (02/19/2018): What does correlation between numerical-numerical variables, categorical-categorical, categorical and numerical variables mean? What do you do about it? How do you find out it's there?
+What're some different types of transformations, what do they do, and when should you do them? (i.e. normalization and variable transformations like x^2 -> z)
 Sampling techniques- Simple random sampling, Stratified sampling
 Hypothesis testing (This is sort of essential because you will have better understanding of various tests and model outputs if you know this.)
 3. Feature selection/ extraction:
