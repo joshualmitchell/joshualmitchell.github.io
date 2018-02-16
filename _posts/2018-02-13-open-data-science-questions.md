@@ -53,6 +53,9 @@ Note: There are some duplications in here, for now.
 ### Question 25 (02/19/2018): What is feature selection/ extraction? Why do you do it? How do you do it?
 ### Question 26 (02/19/2018): What're the pros and cons of each of these feature selection techniques: Lasso regression, Ridge regression, Subset selection, Random forest
 ### Question 27 (02/19/2018): Regression in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. Simple / Multiple LR, GLMs, R^2, RMSE, Adj R^2, Predicted R^2, Lasso / Ridge Regression, Regularization, Over/Underfitting, Learning Rate, Bias/Variance Tradeoff...)
+
+https://news.ycombinator.com/item?id=16386183
+
 ### Question 28 (02/19/2018): Classification in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (i.e. K-NN, Logistic Regression with ROC curve and selection of optimal threshold, Decision trees, Bagging / Random Forrests, SVMs, Bayes Classifier, Boosting (e.g. Xgboost, Adaboost, gradient boost), ANNs (perceptron, MLP, etc), performance measures like confusion matrix, accuracy, sensitivity, specificity, precision, F-Measure, Recall, F1)
 ### Question 29 (02/19/2018): Clustering in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. K-Means, distance and dissimilarity measures (for both numerical and non-numerical types of variables), Hierarchical clustering, maybe a few others)
 ### Question 30 (02/19/2018): Dimensionality Reduction in a nutshell. What're the different types, assumptions, mistakes, indicators, etc? (e.g. PCA, Kernel-PCA, etc and manifold learning techniques like MDS and t-SNe)
