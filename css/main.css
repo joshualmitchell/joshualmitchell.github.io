@@ -10,8 +10,6 @@ body {
     display: inline-block;
 }
 #navdontmoveme ul li {
-    margin: 0;
-    padding: 0;
     display: inline-block;
 }
 #pagetitledontmoveme {
