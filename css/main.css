@@ -5,6 +5,7 @@ body {
 #navdontmoveme {
     text-align: center;
     display: block;
+    margin:0 auto;
 }
 #pagetitledontmoveme {
     text-align: center;
