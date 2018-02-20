@@ -11782,7 +11782,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://github.com/joshualmitchell/Pytorch-Tutorial">Take me to the github!</a></p>
-<p><a href="#outline">Take me to the outline!</a></p>
+<p><a href="#outline">Take me to the outline / table of contents!</a></p>
 
 </div>
 </div>
