@@ -7,7 +7,6 @@ body {
     display: block;
     margin:0 auto;
 }
-
 #navdontmoveme ul {
     display: inline-block;
 }
@@ -18,12 +17,10 @@ body {
 }
 #pagetitledontmoveme {
     text-align: center;
-    display: block;
     margin:0 auto;
 }
 #pagedatedontmoveme {
     text-align: center;
-    display: block;
 }
 
 nav ul, footer ul {
