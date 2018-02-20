@@ -4,13 +4,16 @@ body {
 }
 
 #navdontmoveme {
-    
+    text-align: center;
+    display: inline-block;
 }
 #pagetitledontmoveme {
-
+    text-align: center;
+    display: inline-block;
 }
 #pagedatedontmoveme {
-
+    text-align: center;
+    display: inline-block;
 }
 
 nav ul, footer ul {
