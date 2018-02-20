@@ -4,30 +4,15 @@ body {
 }
 
 #navdontmoveme {
-    /*
-    margin: 60px auto;
-    width: 70%;
-    */
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em
+    
 }
 #pagetitledontmoveme {
-    /*
-    margin: 60px auto;
-    width: 70%;
-    */
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em
+
 }
 #pagedatedontmoveme {
-    /*
-    margin: 60px auto;
-    width: 70%;
-    */
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em
+
 }
-*/
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
