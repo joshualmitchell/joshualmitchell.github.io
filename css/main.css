@@ -11,7 +11,7 @@ body {
 #navdontmoveme ul {
     display: inline-block;
 }
-#nav ul li {
+#navdontmoveme ul li {
     margin: 0;
     padding: 0;
     display: inline-block;
