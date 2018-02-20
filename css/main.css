@@ -6,6 +6,10 @@ body {
     text-align: center;
     display: block;
     margin:0 auto;
+    position: absolute;
+}
+#navdontmoveme ul {
+    display: inline-block;
 }
 #pagetitledontmoveme {
     text-align: center;
