@@ -10441,7 +10441,6 @@ div#notebook {
     padding: 15px;
     background-color: #fff;
     min-height: 0;
-    -webkit-box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
 @media print {
