@@ -2,18 +2,17 @@ body {
     margin: 60px auto;
     width: 70%;
 }
-
 #navdontmoveme {
     text-align: center;
-    display: inline-block;
+    display: block;
 }
 #pagetitledontmoveme {
     text-align: center;
-    display: inline-block;
+    display: block;
 }
 #pagedatedontmoveme {
     text-align: center;
-    display: inline-block;
+    display: block;
 }
 
 nav ul, footer ul {
