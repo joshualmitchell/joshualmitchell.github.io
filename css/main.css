@@ -11,6 +11,11 @@ body {
 #navdontmoveme ul {
     display: inline-block;
 }
+#nav ul li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
 #pagetitledontmoveme {
     text-align: center;
     display: block;
