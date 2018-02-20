@@ -6,9 +6,8 @@ body {
     text-align: center;
     display: block;
     margin:0 auto;
-    position: absolute;
 }
-/*
+
 #navdontmoveme ul {
     display: inline-block;
 }
@@ -17,7 +16,6 @@ body {
     padding: 0;
     display: inline-block;
 }
-*/
 #pagetitledontmoveme {
     text-align: center;
     display: block;
