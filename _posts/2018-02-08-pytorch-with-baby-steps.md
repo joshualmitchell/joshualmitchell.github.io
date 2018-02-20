@@ -6,7 +6,7 @@ date: 2018-02-08
 
 <html>
 <head><meta charset="utf-8" />
-<title>pytorchtut</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Pytorch With Baby Steps</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -1083,6 +1083,7 @@ th {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/*
 html {
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -1093,7 +1094,7 @@ body {
   line-height: 1.42857143;
   color: #000;
   background-color: #fff;
-}
+}*/
 input,
 button,
 select,
@@ -11718,7 +11719,7 @@ ul.typeahead-list > li > a {
 
 .ansi-bold { font-weight: bold; }
 
-    </style>
+</style>
 
 
 <style type="text/css">
