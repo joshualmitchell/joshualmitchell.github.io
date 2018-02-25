@@ -80,3 +80,5 @@ https://news.ycombinator.com/item?id=16386183
 ### Question 48 (02/19/2018): What is Survival analysis? Strengths, weaknesses?
 ### Question 49 (02/19/2018): What is Mixture modeling? Strengths, weaknesses?
 ### Question 50 (02/19/2018): What is Statistical inference and group testing? Strengths, weaknesses?
+### Question 51 (02/25/2018): How does the distribution of the data affect results for say, neural networks, regression, etc? Can we use it to our advantage?
+### Question 52 (02/25/2018): Does linear regression perform slightly better than chance for image classification? Or is it just not even worth it?
