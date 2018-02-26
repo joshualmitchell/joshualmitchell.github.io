@@ -1,0 +1,295 @@
+% Thank you Josh Davis for this template!
+% https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+\documentclass{article}
+
+\newcommand{\hmwkTitle}{HW\ \#2}
+
+% \input{ShortcutsAnalysis}
+
+% ----------
+
+% Packages
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+
+% Libraries
+
+\graphicspath{{/Users/jm/iclouddrive/3380pics/}}
+
+\usetikzlibrary{automata, positioning, arrows}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{}
+\rhead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\hmwkClass}{MATH 5358 / Applied Discrete Math}        % Class
+\newcommand{\hmwkClassInstructor}{Dr. Rusnak}           % Instructor
+\newcommand{\hmwkAuthorName}{\textbf{Joshua Mitchell}} % Author
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+%
+% Various Helper Commands
+%
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+% Formatting commands:
+
+\newcommand{\mt}[1]{\ensuremath{#1}}
+\newcommand{\nm}[1]{\textrm{#1}}
+
+\newcommand\bsc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \section[#1]{#2}%
+}
+\newcommand\ssc[2][\DefaultOpt]{%
+  \def\DefaultOpt{#2}%
+  \subsection[#1]{#2}%
+}
+\newcommand{\bgpf}{\begin{proof} $ $\newline}
+
+\newcommand{\bgeq}{\begin{equation*}}
+\newcommand{\eeq}{\end{equation*}}	
+
+\newcommand{\balist}{\begin{enumerate}[label=\alph*.]}
+\newcommand{\elist}{\end{enumerate}}
+
+\newcommand{\bilist}{\begin{enumerate}[label=\roman*)]}	
+
+\newcommand{\bgsp}{\begin{split}}
+% \newcommand{\esp}{\end{split}} % doesn't work for some reason.
+
+\newcommand\prs[1]{~~~\textbf{(#1)}}
+
+\newcommand{\lt}[1]{\textbf{Let: } #1}
+     							   %  if you're setting it to be true
+\newcommand{\supp}[1]{\textbf{Suppose: } #1}
+     							   %  Suppose (if it'll end up false)
+\newcommand{\wts}[1]{\textbf{Want to show: } #1}
+     							   %  Want to show
+\newcommand{\as}[1]{\textbf{Assume: } #1}
+     							   %  if you think it follows from truth
+\newcommand{\bpth}[1]{\textbf{(#1)}}
+
+\newcommand{\step}[2]{\begin{equation}\tag{#2}#1\end{equation}}
+\newcommand{\epf}{\end{proof}}
+
+\newcommand{\dbs}[3]{\mt{#1_{#2_#3}}}
+
+\newcommand{\sidenote}[1]{-----------------------------------------------------------------Side Note----------------------------------------------------------------
+#1 \
+
+---------------------------------------------------------------------------------------------------------------------------------------------}
+
+% Analysis / Logical commands:
+
+\newcommand{\br}{\mt{\mathbb{R}} }       % |R
+\newcommand{\bq}{\mt{\mathbb{Q}} }       % |Q
+\newcommand{\bn}{\mt{\mathbb{N}} }       % |N
+\newcommand{\bc}{\mt{\mathbb{C}} }       % |C
+\newcommand{\bz}{\mt{\mathbb{Z}} }       % |Z
+
+\newcommand{\ep}{\mt{\epsilon} }         % epsilon
+\newcommand{\fa}{\mt{\forall} }          % for all
+\newcommand{\afa}{\mt{\alpha} }
+\newcommand{\bta}{\mt{\beta} }
+\newcommand{\dta}{\mt{\delta} }
+\newcommand{\mem}{\mt{\in} }
+\newcommand{\exs}{\mt{\exists} }
+
+\newcommand{\es}{\mt{\emptyset} }        % empty set
+\newcommand{\sbs}{\mt{\subset} }         % subset of
+\newcommand{\fs}[2]{\{\uw{#1}{1}, \uw{#1}{2}, ... \uw{#1}{#2}\}}
+
+\newcommand{\lra}{ \mt{\longrightarrow} } % implies ----->
+\newcommand{\rar}{ \mt{\Rightarrow} }     % implies -->
+
+\newcommand{\lla}{ \mt{\longleftarrow} }  % implies <-----
+\newcommand{\lar}{ \mt{\Leftarrow} }      % implies <--
+
+\newcommand{\av}[1]{\mt{|}#1\mt{|}}  % absolute value
+
+\newcommand{\prn}[1]{(#1)}
+\newcommand{\bk}[1]{\{#1\}}
+
+\newcommand{\ps}{\mt{+} }
+\newcommand{\ms}{\mt{-} }
+
+\newcommand{\ls}{\mt{<} }
+\newcommand{\gr}{\mt{>} }
+
+\newcommand{\lse}{\mt{\leq} }
+\newcommand{\gre}{\mt{\geq} }
+
+\newcommand{\eql}{\mt{=} }
+
+\newcommand{\pr}{\mt{^\prime} } 		   % prime (i.e. R')
+\newcommand{\uw}[2]{#1\mt{_{#2}}}
+\newcommand{\uf}[2]{#1\mt{^{#2}}}
+\newcommand{\frc}[2]{\mt{\frac{#1}{#2}}}
+\newcommand{\lmti}[1]{\mt{\displaystyle{\lim_{#1 \to \infty}}}}
+\newcommand{\limt}[2]{\mt{\displaystyle{\lim_{#1 \to #2}}}}
+
+\newcommand{\bnm}[2]{\mt{#1\setminus{#2}}}
+\newcommand{\bnt}[2]{\mt{\textrm{#1}\setminus{\textrm{#2}}}}
+\newcommand{\bi}{\bnm{\mathbb{R}}{\mathbb{Q}}}
+
+\newcommand{\urng}[2]{\mt{\bigcup_{#1}^{#2}}}
+\newcommand{\nrng}[2]{\mt{\bigcap_{#1}^{#2}}}
+\newcommand{\nck}[2]{\mt{{#1 \choose #2}}}
+
+\newcommand{\nbho}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N(x, eps) intersect S \= emptyset
+\newcommand{\nbhe}[3]{\textrm{N(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N(x, eps) intersect S  = emptyset
+\newcommand{\dnbho}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} \neq \emptyset}
+     							   %  N*(x, eps) intersect S \= emptyset
+\newcommand{\dnbhe}[3]{\textrm{N*(}#1, #2\textrm{) }\cap \textrm{ #3} = \emptyset}
+     							   %  N*(x, eps) intersect S = emptyset
+     							   
+\newcommand{\eqn}[1]{\[#1\]}
+\newcommand{\splt}[1]{\begin{split}#1\end{split}}
+
+\newcommand{\infy}{\mt{\infty} }
+\newcommand{\unn}{\mt{\cup} }
+\newcommand{\inn}{\mt{\cap} }
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand{\rln}{ \mt{\sim} }
+\newcommand{\dvd}{ \mt{\vert} }
+\newcommand{\ndvd}{ \mt{\not\vert} }
+\newcommand{\eqw}{ \mt{ \equiv } }
+\newcommand{\lcg}{ \mt{\gamma} }
+\newcommand{\smm}[2]{ \mt{\sum_{#1}^{#2}}}
+\newcommand{\ff}[2]{[\mt{#1}]\mt{_{(\underline{#2})}}}
+
+\newcommand{\wit}[1]{\mt{\widetilde{#1}}}
+     							 
+% ----------
+
+\begin{document}
+
+\begin{enumerate}
+  \item Prove Pascal's Formula \nck{\afa}{k} \eql \nck{\afa - 1}{k - 1} \ps \nck{\afa - 1}{k} for any \afa \mem \br and k \mem \uw{\bz}{\gre 0}. (Note: You will need to use the falling factorial definition.)
+  \item Determine the generating function for each of the following sequences:
+   \balist
+   \item 1, r, \uf{r}{2}, \uf{r}{3}, ...
+   \item 1, \ms 1, 1, \ms 1, ...
+   \item \nck{\afa}{0}, \ms\nck{\afa}{1}, \nck{\afa}{2}, \ms\nck{\afa}{3}, ...
+   \item 1, \frc{1}{1!}, \frc{1}{2!}, \frc{1}{3!}, ...
+   \item 1, \frc{-1}{1!}, \frc{1}{2!}, \frc{-1}{3!}, \frc{1}{4!}, ...
+   \item \nck{0}{2}, \nck{1}{2}, \nck{2}{2}, \nck{3}{2}, ...
+   \elist
+   \item Given the Fibonacci sequence \uw{f}{n} \eql \uw{f}{n - 1} \ps \uw{f}{n - 2} with initial conditions \uw{f}{0} \eql 0 and \uw{f}{1} \eql 1,
+   \balist
+   \item Solve the recursion by writing it as a linear homogenous recursion and finding the characteristic polynomial. Write your answer in the form \uw{c}{1}\uf{\uw{q}{1}}{n} \ps \uw{c}{2}\uf{\uw{q}{2}}{n}. (Note: we have already solved this up to finding the constants in class. Finish the problem.)
+   \item Solve the recursion by using generating functions. (Note: Use a partial fraction decomposition to finish the problem.)
+   \elist
+   \item Prove that the Fibonacci number \uw{f}{n} is even if, and only if, divisible by 3.
+   \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red, white, or blue. Let \uw{h}{n} be the number of colorings in which there is an even number of red squares (the example from class).
+   \balist
+   \item Reproduce the exponential generating function solution from class.
+   \item Solve this by using a standard generating function and partial fractions.
+   \item Reproduce the associated recursion for \uw{h}{n}.
+   \item Using your answer from part c, solve the recursion using the generating function method for non-homogeneous recursions.
+   \elist
+   \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red or blue. Let \uw{h}{n} be the number of colorings in which no two squares that are colored red are adjacent. Find a recurrence relation that \uw{h}{n} satisfies, then derive a formula for \uw{h}{n}.
+   \item Determine the generating function for the number \uw{h}{n} of bags of fruit of apples, oranges, bananas, and pears in which apples \% 2 \eql 0, oranges \lse 2, bananas \% 3 \eql 0, and pears \lse 1. Then find a formula for \uw{h}{n} from the generating function.
+   \item Determine the exponential generating function for the following sequence:
+   \balist
+   \item 0!, 1!, 2!, ...
+   \item \ff{\alpha}{0}, \ff{\alpha}{1}, \ff{\alpha}{2}, \ff{\alpha}{3}, ... (Note: \ff{\alpha}{n} is the falling factorial.)
+   \elist
+   \item Let \uw{h}{n} denote the number of ways to color the square of a 1-by-n board with the colors red, white, blue, and green in such a way that the numbers of squares colored red is even and the number of squares colored white is odd. Determine the exponential generating function for the sequence, then find a simple formula for \uw{h}{n}.
+   \item Determine the number of ways to color the squares of a 1-by-n board using the colors red, blue, green, and orange if an even number of squares is to be colored red and an even number is to be colored green.
+   \item Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
+   \item Solve the recurrence relation:
+   \balist
+   \item \uw{h}{n} \eql 4\uw{h}{n - 2}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and n \gre 2.
+   \item \uw{h}{n} \eql \uw{h}{n - 1} \ps 9\uw{h}{n - 2} \ms 9\uw{h}{n - 3}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and \uw{h}{2} \eql 2. n \gre 3.
+   \item \uw{h}{n} \eql 4\uw{h}{n - 1} \ps \uf{4}{n}, \uw{h}{0} \eql 3 and n \gre 1.
+   \elist
+   \item Let \uw{h}{n} \eql the number of ternary strings of length n made up of 0's, 1's, and 2's, such that the substrings 00, 01, 10, and 11 never occur. Prove that
+   \eqn{h_n = h_{n - 1} + 2h_{n - 2}}
+   with \uw{h}{0} \eql 1, \uw{h}{1} \eql 3, and then find a formula for \uw{h}{n}.
+   \item Compute the Stirling numbers of the first and second kind up to n \eql 6 using their recursive formulas.
+   \item Prove the Stirling numbers of the second kind satisfy:
+   \balist
+   \item S(n, 1) \eql 1
+   \item S(n, 2) \eql \uf{2}{n - 1} \ms 1
+   \item S(n, n \ms 1) \eql \nck{n}{2}
+   \elist
+   \item Prove the Stirling numbers of the first kind satisfy:
+   \balist
+   \item s(n, 1) \eql (n \ms 1)!
+   \item s(n, n \ms 1) \eql \nck{n}{2}
+   \elist
+   \item Write \ff{n}{k} as a polynomial in n for k \eql 5, 6, 7. (Do not use distribution!)
+   \item Find a closed formula for the sequence: 1, 6, 15, 28, 45, 66, 91, ... (Use a difference table.)
+\end{enumerate}
+
+\end{document}
