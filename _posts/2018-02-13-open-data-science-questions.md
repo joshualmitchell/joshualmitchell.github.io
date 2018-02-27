@@ -16,6 +16,10 @@ So, in chronological order, from now on, I'm going to list any questions I have 
 
 Note: There are some duplications in here, for now.
 
+Also, as of 02/27/2018, I found this page: http://www.itshared.org/2015/10/data-science-interview-questions.html
+
+So I'll be adding those in later as well.
+
 ### Question 1M (02/13/2018): How do hypothesis tests factor into predictive models? It seems like we just don't care about them when they could add some amount of information.
 
 ### Question 2M (02/14/2018): What happens when you do some dimensionality reduction technique on a picture? (i.e. you think of the columns or rows of the picture matrix as features and the other one as samples) - is there a way to do this meaningfully? Can lossy compression algorithms on pictures be thought of as dimensionality reduction? Or is there a meaningful difference?
