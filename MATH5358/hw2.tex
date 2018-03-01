@@ -253,10 +253,37 @@
    
    1 \ms \afa x \ps \frc{\ff{\afa}{2}}{\ff{2}{2}}\uf{x}{2} \ms \frc{\ff{\afa}{3}}{\ff{3}{3}}\uf{x}{3} ...
    
+   \mt{\sum_{k = 0}^\infy (-1)^k\nck{\afa}{k}x^k}
+   
+   \frc{1}{(1 + x)^\afa}
+   
    \item 1, \frc{1}{1!}, \frc{1}{2!}, \frc{1}{3!}, ...
+   
+   1 \ps \frc{1}{1!}x \ps \frc{1}{2!}\uf{x}{2} \ps \frc{1}{3!}\uf{x}{3}...
+   
+   \uf{e}{x}
+   
    \item 1, \frc{-1}{1!}, \frc{1}{2!}, \frc{-1}{3!}, \frc{1}{4!}, ...
+   
+   1 \ms \frc{1}{1!}x \ps \frc{1}{2!}\uf{x}{2} \ms \frc{1}{3!}\uf{x}{3}...
+   
+   1 \ps \frc{1}{1!}x \ps \frc{1}{2!}\uf{x}{2} \ps \frc{1}{3!}\uf{x}{3}... \ms 2(\frc{1}{1!}x \ps \frc{1}{3!}\uf{x}{3}...)
+   
+   \uf{e}{x} \ms sinh x
+   
    \item \nck{0}{2}, \nck{1}{2}, \nck{2}{2}, \nck{3}{2}, ...
+   
+   \nck{0}{2} \ps \nck{1}{2}x \ps \nck{2}{2}\uf{x}{2} \ps \nck{3}{2}\uf{x}{3} ...
+   
+   -\frc{1}{2} \ps 0x \ps \frc{\ff{2}{2}}{\ff{2}{2}}\uf{x}{2} \ps \frc{\ff{3}{2}}{\ff{2}{2}}\uf{x}{3} ...
+   
+   -\frc{1}{2} \ps 0x \ps \frc{\ff{2}{2}}{2}\uf{x}{2} \ps \frc{\ff{3}{2}}{2}\uf{x}{3} ... 
+
    \elist
+   
+   \textbf{Is this the right process?}
+   
+   \textbf{How do you know when to use EGF vs GF?}
    \item Given the Fibonacci sequence \uw{f}{n} \eql \uw{f}{n - 1} \ps \uw{f}{n - 2} with initial conditions \uw{f}{0} \eql 0 and \uw{f}{1} \eql 1,
    \balist
    \item Solve the recursion by writing it as a linear homogenous recursion and finding the characteristic polynomial. Write your answer in the form \uw{c}{1}\uf{\uw{q}{1}}{n} \ps \uw{c}{2}\uf{\uw{q}{2}}{n}. (Note: we have already solved this up to finding the constants in class. Finish the problem.)
