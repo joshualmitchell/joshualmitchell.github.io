@@ -20,6 +20,8 @@ Note: There are some duplications in here, for now.
 
 ### Question 2M (02/14/2018): What happens when you do some dimensionality reduction technique on a picture? (i.e. you think of the columns or rows of the picture matrix as features and the other one as samples) - is there a way to do this meaningfully? Can lossy compression algorithms on pictures be thought of as dimensionality reduction? Or is there a meaningful difference?
 
+### 3/3/18 What is the difference between a neural network that has 8 hidden layers with 1 node in each layer, and one that has 1 hidden layer with 8 nodes?
+
 ### Question 3 (02/15/2018): What is an auto-encoder? Why do we "auto-encode"? Hint: it's really a misnomer.
 
 ### Question 4 (02/15/2018): What is a Boltzmann Machine? Why a Boltzmann Machine?
@@ -82,3 +84,25 @@ https://news.ycombinator.com/item?id=16386183
 ### Question 50 (02/19/2018): What is Statistical inference and group testing? Strengths, weaknesses?
 ### Question 51 (02/25/2018): How does the distribution of the data affect results for say, neural networks, regression, etc? Can we use it to our advantage?
 ### Question 52 (02/25/2018): Does linear regression perform slightly better than chance for image classification? Or is it just not even worth it?
+
+### 3/3/2018
+### Explain what regularization is and why it is useful. What are the benefits and drawbacks of specific methods, such as ridge regression and LASSO?
+### Explain what a local optimum is and why it is important in a specific context, such as k-means clustering. What are specific ways for determining if you have a local optimum problem? What can be done to avoid local optima?
+### Assume you need to generate a predictive model of a quantitative outcome variable using multiple regression. Explain how you intend to validate this model.
+### Explain what precision and recall are. How do they relate to the ROC curve?
+### Explain what a long tailed distribution is and provide three examples of relevant phenomena that have long tails. Why are they important in classification and prediction problems?
+### What is latent semantic indexing? What is it used for? What are the specific limitations of the method?
+### What is the Central Limit Theorem? Explain it. Why is it important? When does it fail to hold?
+### What is statistical power?
+### Explain what resampling methods are and why they are useful. Also explain their limitations.
+### Explain the differences between artificial neural networks with softmax activation, logistic regression, and the maximum entropy classifier.
+### Explain selection bias (with regards to a dataset, not variable selection). Why is it important? How can data management procedures such as missing data handling make it worse?
+### Provide a simple example of how an experimental design can help answer a question about behavior. For instance, explain how an experimental design can be used to optimize a web page. How does experimental data contrast with observational data.
+### Explain the difference between "long" and "wide" format data. Why would you use one or the other?
+### Is mean imputation of missing data acceptable practice? Why or why not?
+### Explain Edward Tufte's concept of "chart junk."
+### What is an outlier? Explain how you might screen for outliers and what you would do if you found them in your dataset. Also, explain what an inlier is and how you might screen for them and what you would do if you found them in your dataset.
+### What is principal components analysis (PCA)? Explain the sorts of problems you would use PCA for. Also explain its limitations as a method.
+### You have data on the duration of calls to a call center. Generate a plan for how you would code and analyze these data. Explain a plausible scenario for what the distribution of these durations might look like. How could you test (even graphically) whether your expectations are borne out?
+### Explain what a false positive and a false negative are. Why is it important to differentiate these from each other? Provide examples of situations where (1) false positives are more important than false negatives, (2) false negatives are more important than false positives, and (3) these two types of errors are about equally important.
+### Explain likely differences encountered between administrative datasets and datasets gathered from experimental studies. What are likely problems encountered with administrative data? How do experimental methods help alleviate these problems? What problems do they bring?
