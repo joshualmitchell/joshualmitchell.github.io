@@ -312,6 +312,29 @@
    
    \uw{f}{n} \eql \uw{f}{n - 1} \ps \uw{f}{n - 2}
    
+   \uw{h}{n} \eql \uw{h}{n - 1} \ps \uw{h}{n - 2}
+   
+   0 \eql \uw{h}{n} \ms \uw{h}{n - 1} \ms \uw{h}{n - 2}
+   
+   Let g(x) \eql \uw{h}{0} \ps \uw{h}{1}\uf{x}{1} \ps \uw{h}{2}\uf{x}{2} ... 
+   
+   Then,
+   \eqn{
+   		\splt{
+   			g(x) = &  \uw{h}{0} \ps \uw{h}{1}\uf{x}{1} \ps \uw{h}{2}\uf{x}{2} ... \\
+   			-xg(x) = & -h_0x^1 - h_1x^2 - h_2x^3 ... \\
+   			-x^2g(x) = & -h_0x^2 - h_1x^3 - h_2x^4 ...
+   		}
+   }
+   Thus,
+   \eqn{(1 - x - x^2)g(x) = h_0 + (h_1 - h_0)x^1 + (h_2 - h_1 - h_0)x^2 + (h_3 - h_2 - h_1)x^3 + ...}
+   
+   But since 0 \eql \uw{h}{n} \ms \uw{h}{n - 1} \ms \uw{h}{n - 2},
+   
+   \eqn{(1 - x - x^2)g(x) = h_0 + (h_1 - h_0)x^1}
+   \eqn{g(x) = \frac{h_0 + (h_1 - h_0)x^1}{(1 - x - x^2)}}
+   
+   
    \elist
    \item Prove that the Fibonacci number \uw{f}{n} is even if, and only if, divisible by 3.
    \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red, white, or blue. Let \uw{h}{n} be the number of colorings in which there is an even number of red squares (the example from class).
