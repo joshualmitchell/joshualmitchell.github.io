@@ -336,11 +336,28 @@
    Plugging in \mt{h_0 = 0} and \mt{h_1 = 1},
    \eqn{g(x) = \frac{x}{(1 - x - x^2)}}
    \eqn{g(x) = \frac{x}{(1 - x - x^2)}}
+   \eqn{g(x) = \frac{x}{(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{A}{(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})} + \frac{B}{(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{1/2}{(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})} + \frac{1/2}{(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{1}{2(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})} + \frac{1}{2(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{1}{2}\frac{1}{((-\frac{1}{2} + \frac{\sqrt{5}}{2}) + x)}  -\frac{1}{2}\frac{1}{((-\frac{1}{2} + \frac{\sqrt{5}}{2}) - x)}}
    
+   \textbf{At this point, I'm not sure how to convert to Power Series}
+   
+   \uw{f}{n} \eql \frc{1}{\sqrt{5}}\uf{(\frc{1 + \sqrt{5}}{2})}{n} \ps \frc{-1}{\sqrt{5}}\uf{(\frc{1 - \sqrt{5}}{2})}{n}
    
    
    \elist
    \item Prove that the Fibonacci number \uw{f}{n} is even if, and only if, divisible by 3.
+   
+   \lra
+   
+   \as{\uw{f}{n} is even (i.e. \exs t \mem \bz such that \uw{f}{n} \eql 2t)}
+   
+   \lla
+   
+   \as{3 divides \uw{f}{n} (i.e. \exs t \mem \bz such that \uw{f}{n} \eql 3t)}
+   
    \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red, white, or blue. Let \uw{h}{n} be the number of colorings in which there is an even number of red squares (the example from class).
    \balist
    \item Reproduce the exponential generating function solution from class.
@@ -353,7 +370,16 @@
    \item Determine the exponential generating function for the following sequence:
    \balist
    \item 0!, 1!, 2!, ...
+   
+   \eqn{\uf{g}{(e)}(x) \eql \frac{0!}{0!} + \frac{1!}{1!}x + \frac{2!}{2!}x^2 ... }
+   \eqn{\uf{g}{(e)}(x) \eql 1 + x + x^2 ...}
+   
    \item \ff{\alpha}{0}, \ff{\alpha}{1}, \ff{\alpha}{2}, \ff{\alpha}{3}, ... (Note: \ff{\alpha}{n} is the falling factorial.)
+   
+   \eqn{\uf{g}{(e)}(x) \eql \frac{\afa}{0!} + \frac{\afa(\afa - 1)}{1!}x + \frac{\alpha(\alpha - 1)(\alpha - 2)}{2!}x^2 ... }
+   \eqn{\uf{g}{(e)}(x) \eql \sum_{n = 0}^{\infty} \frac{\alpha!}{(\alpha - n - 1)!n!}}
+   
+   
    \elist
    \item Let \uw{h}{n} denote the number of ways to color the square of a 1-by-n board with the colors red, white, blue, and green in such a way that the numbers of squares colored red is even and the number of squares colored white is odd. Determine the exponential generating function for the sequence, then find a simple formula for \uw{h}{n}.
    \item Determine the number of ways to color the squares of a 1-by-n board using the colors red, blue, green, and orange if an even number of squares is to be colored red and an even number is to be colored green.
