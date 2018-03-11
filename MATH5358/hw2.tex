@@ -406,7 +406,34 @@
    \item s(n, n \ms 1) \eql \nck{n}{2}
    \elist
    \item Write \ff{n}{k} as a polynomial in n for k \eql 5, 6, 7. (Do not use distribution!)
+   
+   \ff{n}{k} \eql n(n \ms 1)(n \ms 2)...(n \ms k)
+   
+   \ff{n}{k} \eql \mt{\sum_{p = 0}^k (-1)^{k - p}s(k, p)n^p}
+   
+   \ff{n}{5} \eql \mt{\sum_{p = 0}^5 (-1)^{5 - p}s(5, p)n^p}
+   
+   \ff{n}{5} \eql \mt{-s(5, 0)} \ps \mt{s(5, 1)n} \ms \mt{s(5, 2)n^2} \ps \mt{s(5, 3)n^3} \ms \mt{s(5, 4)n^4} \ps \mt{s(5, 5)n^5}
+   
+   \ff{n}{5} \eql \mt{4!n} \ms \mt{s(5, 2)n^2} \ps \mt{s(5, 3)n^3} \ms \mt{\nck{5}{2}n^4} \ps \mt{n^5}
+   
+   s(5, 2) \eql 4s(4, 2) \ps 3! and s(5, 3) \eql 4\nck{4}{2} \ps s(4, 2)
+   
+   
+   
    \item Find a closed formula for the sequence: 1, 6, 15, 28, 45, 66, 91, ... (Use a difference table.)
+   
+   \begin{tabular}{l|ccccccc}
+  & 1 & 6 & 15 & 28 & 45 & 66 & 91 \\
+  \hline
+  & & 5 & 9 & 13 & 17 & 21 & 25 \\
+  & & & 4 & 4 & 4 & 4 & 4 \\
+  & & & & 0 & 0 & 0 & 0
+\end{tabular}
+
+\uw{h}{n} \eql 1\nck{n}{0} \ps 5\nck{n}{1} \ps 4\nck{n}{2}
+
+   
 \end{enumerate}
 
 \end{document}
