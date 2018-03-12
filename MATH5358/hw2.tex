@@ -387,13 +387,49 @@
    \item Solve the recurrence relation:
    \balist
    \item \uw{h}{n} \eql 4\uw{h}{n - 2}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and n \gre 2.
+   
+   0, 1, 0, 4, 0, 16, 0, 64...
+   
+   \uw{h}{n} \ms 4\uw{h}{n - 2} \eql 0
+   
+   \uf{q}{n - 2}(\uf{q}{2} \ms 4) \eql 0
+   
+   \uw{h}{n} \eql a\uf{(2)}{n} \ps b\uf{(-2)}{n}
+   
+   0 \eql a \ps b and 1 \eql 2a \ms 2b
+   
+   b \eql -\frc{1}{4}, a \eql \frc{1}{4}
+   
+   \uw{h}{n} \eql \frc{1}{4}\uf{2}{n} \ms \frc{1}{4}\uf{(-2)}{n}
+   
    \item \uw{h}{n} \eql \uw{h}{n - 1} \ps 9\uw{h}{n - 2} \ms 9\uw{h}{n - 3}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and \uw{h}{2} \eql 2. n \gre 3.
+   
+   \uf{q}{n - 3}(\uf{q}{3} \ms \uf{q}{2} \ms 9\uf{q}{1} \ms 9) \eql 0
+   
+   (\uf{q}{2} \ms 9)(\uf{q}{1} \ps 1) \eql 0
+   
+   (q \ms 3)(q \ps 3)(q \ps 1) \eql 0
+   
+   \uw{h}{n} \eql a\uf{(3)}{n} \ps b\uf{(-3)}{n} \ps c\uf{(-1)}{n}
+   
+   So, 0 \eql a \ps b \ps c, 1 \eql 3a \ms 3b \ms c, 2 \eql 9a \ps 9b \ps c
+   
+   Hence, a \eql \frc{1}{4}, b \eql 0, c \eql -\frc{1}{4}
+   
+   \uw{h}{n} \eql \frc{1}{4}\uf{(3)}{n} \ps -\frc{1}{4}\uf{(-1)}{n}
+   
    \item \uw{h}{n} \eql 4\uw{h}{n - 1} \ps \uf{4}{n}, \uw{h}{0} \eql 3 and n \gre 1.
+   
+   3, 16, 80, 384...
+   
    \elist
    \item Let \uw{h}{n} \eql the number of ternary strings of length n made up of 0's, 1's, and 2's, such that the substrings 00, 01, 10, and 11 never occur. Prove that
    \eqn{h_n = h_{n - 1} + 2h_{n - 2}}
    with \uw{h}{0} \eql 1, \uw{h}{1} \eql 3, and then find a formula for \uw{h}{n}.
    \item Compute the Stirling numbers of the first and second kind up to n \eql 6 using their recursive formulas.
+   
+   \textbf{But stirling numbers take 2 parameters: s(p, k); where does n fit?}
+   
    \item Prove the Stirling numbers of the second kind satisfy:
    \balist
    \item S(n, 1) \eql 1
