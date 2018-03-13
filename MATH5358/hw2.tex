@@ -364,6 +364,8 @@
    \elist
    \item Prove that the Fibonacci number \uw{f}{n} is even if, and only if, divisible by 3.
    
+   \textbf{Wait.. 2 is a fibonacci number that is even and not divisible by 3.. So is 8.}
+   
    \lra
    
    \as{\uw{f}{n} is even (i.e. \exs t \mem \bz such that \uw{f}{n} \eql 2t)}
@@ -396,7 +398,33 @@
    
    \elist
    \item Let \uw{h}{n} denote the number of ways to color the square of a 1-by-n board with the colors red, white, blue, and green in such a way that the numbers of squares colored red is even and the number of squares colored white is odd. Determine the exponential generating function for the sequence, then find a simple formula for \uw{h}{n}.
+   
+   Colors: RWBG. R is even, W is odd.
+   
+   EGF:
+   \eqn{(1 + \frac{x^2}{2!} + \frac{x^4}{4!}...)(x + \frac{x^3}{3!} + \frac{x^5}{5!}...)(1 \ps x \ps \frac{x^2}{2!} + \frac{x^3}{3!}...)^2}
+   \eqn{\frac{1}{2}(e^x + e^{-x}) * \frac{1}{2}(e^x - e^{-x}) * e^x * e^x}
+   \eqn{\frac{1}{4}(e^{2x} - e^{-2x})* e^{2x}}
+   \eqn{\frac{1}{4}(e^{4x} - 1)}
+   
+   f(x) \eql \mt{\frac{1}{4}(e^{4x} - 1)} \lra f'(x) \eql \frc{1}{4}(4\uf{e}{4x}) \lra f''(x) \eql \frc{1}{4}16\uf{e}{4x} \lra f'''(x) \eql \frc{1}{4}64\uf{e}{4x} \lra \uf{f}{n}(x) \eql \frc{1}{4}(\uf{4}{n}\uf{e}{4x})
+   
+   So,
+   
+   \uw{h}{n} \eql \frc{4^n}{4n!} \textbf{Which doesn't seem right since n! grows faster than \uf{4}{n}. Also, where goes - 1?}
+   
+   
    \item Determine the number of ways to color the squares of a 1-by-n board using the colors red, blue, green, and orange if an even number of squares is to be colored red and an even number is to be colored green.
+   
+   Colors: RGBO. R, G are even.
+   
+   GF:
+   \eqn{(1 + x^2 + x^4...)^2(1 + x + x^2 + x^3...)^2}
+   \eqn{\frac{1}{1 - x^2}\frac{1}{1 - x^2}\frac{1}{1 - x}\frac{1}{1 - x}}
+   \eqn{\frac{1}{(1 - x)^4(1 + x)^2}}
+   \eqn{\frac{A}{(1 - x)} + \frac{B}{(1 - x)^2} + \frac{C}{(1 - x)^3} + \frac{D}{(1 - x)^4} + \frac{E}{(1 + x)} + \frac{F}{(1 + x)^2}}
+   \eqn{A\sum x^n + E\sum(-1)^nx^n}
+   
    \item Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
    \item Solve the recurrence relation:
    \balist
@@ -445,6 +473,8 @@
    \textbf{But stirling numbers take 2 parameters: s(p, k); where does n fit?}
    
    \item Prove the Stirling numbers of the second kind satisfy:
+
+   Recall: S(p, k) \eql k S(p \ms 1, k) \ps S(p \ms 1, k \ms 1)
    \balist
    \item S(n, 1) \eql 1
    \item S(n, 2) \eql \uf{2}{n - 1} \ms 1
