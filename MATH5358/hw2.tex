@@ -235,6 +235,20 @@
 
 \begin{enumerate}
   \item Prove Pascal's Formula \nck{\afa}{k} \eql \nck{\afa - 1}{k - 1} \ps \nck{\afa - 1}{k} for any \afa \mem \br and k \mem \uw{\bz}{\gre 0}. (Note: You will need to use the falling factorial definition.)
+  \eqn{
+  	\splt{
+  		\nck{\afa}{k} & = \nck{\afa - 1}{k - 1} + \nck{\afa - 1}{k} \\
+  		& = \frac{(\alpha - 1)!}{((\alpha - 1) - (k - 1))!(k - 1)!} + \frac{(\alpha - 1)!}{((\alpha - 1) - k)!k!} \\
+  		& = \frac{(\alpha - 1)!}{(\alpha - k)!(k - 1)!} + \frac{(\alpha - 1)!}{(\alpha - 1 - k)!k!} \\
+  		& = \frac{(\alpha - 1)!}{(\alpha - k)!(k - 1)!} + \frac{(\alpha - 1)!(\alpha - k)\frac{1}{k}}{(\alpha - k)!(k - 1)!} \\
+  		& = \frac{(\alpha - 1)! + (\alpha - 1)!(\alpha - k)\frac{1}{k}}{(\alpha - k)!(k - 1)!} \\
+  		& = \frac{k(\alpha - 1)! + (\alpha - 1)!(\alpha - k)}{(\alpha - k)!k!} \\
+  		& = \frac{\alpha(\alpha - 1)!}{(\alpha - k)!k!} \\
+  		& = \frac{\alpha!}{(\alpha - k)!k!} \\
+  	}
+  }
+  
+  
   \item Determine the generating function for each of the following sequences:
    \balist
    \item 1, r, \uf{r}{2}, \uf{r}{3}, ...
