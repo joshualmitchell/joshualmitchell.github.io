@@ -490,6 +490,24 @@
    \eqn{A\sum x^n + E\sum(-1)^nx^n}
    
    \item Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
+   
+   \uw{d}{1}, \uw{d}{2}... \uw{d}{n} where \uw{d}{i} \% 2 \eql 1
+   
+   1 and 3 each occur a nonzero, even number of times. 5, 7, and 9 can occur any amount of times.
+   
+   So:
+   
+   \eqn{(x^2 + x^4 + x^6 ...)^2(1 + x + x^2 ...)^3}
+   which is
+   \eqn{(\frac{1}{(1 - x)^2} - 1)^2(\frac{1}{1 - x})^3}
+   \eqn{(\frac{1 - (1 - x)^2}{(1 - x)^2})^2(\frac{1}{1 - x})^3}
+   \eqn{(\frac{2x - x^2}{(1 - x)^2})^2(\frac{1}{1 - x})^3}
+   \eqn{\frac{(2x - x^2)^2}{(1 - x)^7}}
+   \eqn{\frac{x^4 -4x^3 + 4x^2}{(1 - x)^7}}
+   which decomposes into:
+   \eqn{\frac{-1}{(x - 1)^3} + \frac{2}{(x - 1)^5} + \frac{-1}{(x - 1)^7}}
+   \eqn{-\sum x^{3n} + 2\sum x^{5n} - \sum x^{7n} \lra \sum -x^{3n} + 2x^{5n} - x^{7n}}
+   
    \item Solve the recurrence relation:
    \balist
    \item \uw{h}{n} \eql 4\uw{h}{n - 2}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and n \gre 2.
