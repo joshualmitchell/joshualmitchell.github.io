@@ -377,12 +377,76 @@
    \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red, white, or blue. Let \uw{h}{n} be the number of colorings in which there is an even number of red squares (the example from class).
    \balist
    \item Reproduce the exponential generating function solution from class.
+   
+   Colors: R, W, B. R is even.
+   
+   EGF:
+   \eqn{(1 \ps \frac{x^2}{2!} + \frac{x^4}{4!}...)(1 \ps \frac{x^1}{1!} + \frac{x^2}{2!}...)^2}
+   \eqn{\frac{1}{2}(e^x + e^{-x})e^xe^x}
+   \eqn{\frac{1}{2}(e^{3x} + e^x)}
+   \eqn{\frac{1}{2}(\sum\frac{3^nx^n}{n!} + \sum\frac{x^n}{n!})}
+   \eqn{\frac{1}{2}(\sum(3^n + 1)\frac{x^n}{n!})}
+   \eqn{\rar \sum(\frac{3^n + 1}{2})\frac{x^n}{n!}}
    \item Solve this by using a standard generating function and partial fractions.
+   
+   GF:
+   \eqn{(1 + x^2 + x^4 ...)(1 + x + x^2 ...)^2}
+   \eqn{\frac{1}{1 - x^2}\frac{1}{1 - x}\frac{1}{1 - x}}
+   \eqn{\frac{1}{(1 + x)(1 - x)^3}}
+   \eqn{\frac{A}{1 + x} + \frac{B}{1 - x} + \frac{C}{(1 - x)^2} + \frac{D}{(1 - x)^3}}
+   After partial fractions:
+   
+   \mt{
+   	\begin{matrix}
+  	1 & 1 & 1 & 1 & | & 1\\
+  	-3 & -1 & 0 & 1 & | & 0 \\
+  	3 & -1 & -1 & 0 & | & 0 \\
+  	-1 & 1 & 0 & 0 & | & 0
+	\end{matrix}
+	}
+	
+	A \eql \frc{1}{8}, B \eql \frc{1}{8}, C \eql \frc{1}{4}, D \eql \frc{1}{2}
+	
+	\eqn{\rar \frac{1}{8}\sum(-1)^nx^n + \frac{1}{8}\sum x^n + \frac{1}{4}\sum nx^{n - 1} + \frac{1}{2}\sum n(n - 1)x^{n - 2}}
+	\textbf{How do I get from above to below?}
+	\eqn{\sum (\frac{3^n + 1}{2})x^n}
+   
    \item Reproduce the associated recursion for \uw{h}{n}.
    \item Using your answer from part c, solve the recursion using the generating function method for non-homogeneous recursions.
    \elist
    \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red or blue. Let \uw{h}{n} be the number of colorings in which no two squares that are colored red are adjacent. Find a recurrence relation that \uw{h}{n} satisfies, then derive a formula for \uw{h}{n}.
+   
+   Colors: R, B. 
+   
+   \uw{h}{n} is the number of colorings such that no two adjacent squares are red.
+   
+   In other words, B \rar R or B and R \rar B.
+   
+   \uw{h}{1} \eql 2, \uw{h}{2} \eql 3, \uw{h}{3} \eql 5, \uw{h}{4} \eql 8, \uw{h}{5} \eql 13...
+   
+   It looks like the number of ways that color the nth square blue is just \uw{h}{n - 1}, and the number of ways to color the nth square red is the number of ways that color the (n-1)th square blue, which is just \uw{h}{n - 2}.
+   
+   So it looks like a recurrence relation would be \uw{h}{n} \eql \uw{h}{n - 1} \ps \uw{h}{n - 2}
+   
+   Since this is Fibonacci (and we already did this):
+   
+   \uw{h}{n} \eql \frc{1}{\sqrt{5}}\uf{(\frc{1 + \sqrt{5}}{2})}{n} \ps \frc{-1}{\sqrt{5}}\uf{(\frc{1 - \sqrt{5}}{2})}{n}
+   
+   
    \item Determine the generating function for the number \uw{h}{n} of bags of fruit of apples, oranges, bananas, and pears in which apples \% 2 \eql 0, oranges \lse 2, bananas \% 3 \eql 0, and pears \lse 1. Then find a formula for \uw{h}{n} from the generating function.
+   
+   GF:
+   
+   \eqn{(1 \ps x^2 + x^4 + ...)(1 + x + x^2)(1 + x^3 + x^6 ...)(1 + x)}
+   \eqn{\frac{1}{(1 - x)^2}\frac	{1 - x^3	}{1 - x}\frac{1}{(1 - x)^3}\frac{1 - x^2}{1 - x}}
+   \eqn{\frac{1}{(1 + x)(1 - x)}\frac{(1 - x)(1 + x + x^2)}{1 - x}\frac{1}{(1 - x)^3}\frac{(1 - x)(1 + x)}{1 - x}}
+   
+   \eqn{\frac{(1 + x + x^2)}{(1 - x)^4}}
+   
+   \eqn{\frac{1}{(1 - x)^2} + \frac{-3}{(1 - x)^3} + \frac{3}{(1 - x)^4}}
+   
+   \eqn{\sum x^{2n} - 3\sum x^{3n} + 3\sum x^{4n} \lra \sum x^{2n} - 3x^{3n} + 3x^{4n}}
+   
    \item Determine the exponential generating function for the following sequence:
    \balist
    \item 0!, 1!, 2!, ...
