@@ -235,6 +235,20 @@
 
 \begin{enumerate}
   \item Prove Pascal's Formula \nck{\afa}{k} \eql \nck{\afa - 1}{k - 1} \ps \nck{\afa - 1}{k} for any \afa \mem \br and k \mem \uw{\bz}{\gre 0}. (Note: You will need to use the falling factorial definition.)
+  \eqn{
+  	\splt{
+  		\nck{\afa}{k} & = \nck{\afa - 1}{k - 1} + \nck{\afa - 1}{k} \\
+  		& = \frac{(\alpha - 1)!}{((\alpha - 1) - (k - 1))!(k - 1)!} + \frac{(\alpha - 1)!}{((\alpha - 1) - k)!k!} \\
+  		& = \frac{(\alpha - 1)!}{(\alpha - k)!(k - 1)!} + \frac{(\alpha - 1)!}{(\alpha - 1 - k)!k!} \\
+  		& = \frac{(\alpha - 1)!}{(\alpha - k)!(k - 1)!} + \frac{(\alpha - 1)!(\alpha - k)\frac{1}{k}}{(\alpha - k)!(k - 1)!} \\
+  		& = \frac{(\alpha - 1)! + (\alpha - 1)!(\alpha - k)\frac{1}{k}}{(\alpha - k)!(k - 1)!} \\
+  		& = \frac{k(\alpha - 1)! + (\alpha - 1)!(\alpha - k)}{(\alpha - k)!k!} \\
+  		& = \frac{\alpha(\alpha - 1)!}{(\alpha - k)!k!} \\
+  		& = \frac{\alpha!}{(\alpha - k)!k!} \\
+  	}
+  }
+  
+  
   \item Determine the generating function for each of the following sequences:
    \balist
    \item 1, r, \uf{r}{2}, \uf{r}{3}, ...
@@ -255,7 +269,7 @@
    
    \mt{\sum_{k = 0}^\infy (-1)^k\nck{\afa}{k}x^k}
    
-   \frc{1}{(1 + x)^\afa}
+   \mt{(1 - x)^\afa}
    
    \item 1, \frc{1}{1!}, \frc{1}{2!}, \frc{1}{3!}, ...
    
@@ -281,43 +295,268 @@
 
    \elist
    
-   \textbf{Is this the right process?}
-   
-   \textbf{How do you know when to use EGF vs GF?}
+   \textbf{Is this the right process?} \textbf{How do you know when to use EGF vs GF?}
    \item Given the Fibonacci sequence \uw{f}{n} \eql \uw{f}{n - 1} \ps \uw{f}{n - 2} with initial conditions \uw{f}{0} \eql 0 and \uw{f}{1} \eql 1,
    \balist
    \item Solve the recursion by writing it as a linear homogenous recursion and finding the characteristic polynomial. Write your answer in the form \uw{c}{1}\uf{\uw{q}{1}}{n} \ps \uw{c}{2}\uf{\uw{q}{2}}{n}. (Note: we have already solved this up to finding the constants in class. Finish the problem.)
+   
+   \uw{f}{n} \eql \uw{f}{n - 1} \ps \uw{f}{n - 2}
+   
+   0 \eql \uw{f}{n} - \uw{f}{n - 1} \ms \uw{f}{n - 2}
+   
+   \uf{q}{n} \ms \uf{q}{n - 1} \ms \uf{q}{n - 2} \eql 0
+   
+   \uf{q}{n - 2}(\uf{q}{2} \ms \uf{q}{1} \ms 1) \eql 0
+   
+   Thus, the solution has the form \uw{f}{n} \eql \uw{c}{1}\uf{(?)}{n} \uw{c}{2}\uf{(?)}{n}.
+   
+   q \eql \frc{1 \pm \sqrt{5}}{2}
+   
+   \uw{f}{n} \eql \uw{c}{1}\frc{1 + \sqrt{5}}{2} \ps \uw{c}{2}\frc{1 - \sqrt{5}}{2}
+   
+   \uw{f}{0} \eql \uw{c}{1} \ps \uw{c}{2}
+   
+   \uw{f}{1} \eql \uw{c}{1}\uf{(\frc{1 + \sqrt{5}}{2})}{1} \ps \uw{c}{2}\uf{(\frc{1 - \sqrt{5}}{2})}{1}
+   
+   Let \uw{f}{0} \eql 0, \uw{f}{1} \eql 1. Solving for \uw{c}{1} and \uw{c}{2} gives us \uw{c}{1} \eql \frc{1}{\sqrt{5}}, \uw{c}{2} \eql \frc{-1}{\sqrt{5}}
+   
+   Thus, \uw{f}{n} \eql \frc{1}{\sqrt{5}}\uf{(\frc{1 + \sqrt{5}}{2})}{n} \ps \frc{-1}{\sqrt{5}}\uf{(\frc{1 - \sqrt{5}}{2})}{n}
+   
    \item Solve the recursion by using generating functions. (Note: Use a partial fraction decomposition to finish the problem.)
+   
+   \uw{f}{n} \eql \uw{f}{n - 1} \ps \uw{f}{n - 2}
+   
+   \uw{h}{n} \eql \uw{h}{n - 1} \ps \uw{h}{n - 2}
+   
+   0 \eql \uw{h}{n} \ms \uw{h}{n - 1} \ms \uw{h}{n - 2}
+   
+   Let g(x) \eql \uw{h}{0} \ps \uw{h}{1}\uf{x}{1} \ps \uw{h}{2}\uf{x}{2} ... 
+   
+   Then,
+   \eqn{
+   		\splt{
+   			g(x) = &  \uw{h}{0} \ps \uw{h}{1}\uf{x}{1} \ps \uw{h}{2}\uf{x}{2} ... \\
+   			-xg(x) = & -h_0x^1 - h_1x^2 - h_2x^3 ... \\
+   			-x^2g(x) = & -h_0x^2 - h_1x^3 - h_2x^4 ...
+   		}
+   }
+   Thus,
+   \eqn{(1 - x - x^2)g(x) = h_0 + (h_1 - h_0)x^1 + (h_2 - h_1 - h_0)x^2 + (h_3 - h_2 - h_1)x^3 + ...}
+   
+   But since 0 \eql \uw{h}{n} \ms \uw{h}{n - 1} \ms \uw{h}{n - 2},
+   
+   \eqn{(1 - x - x^2)g(x) = h_0 + (h_1 - h_0)x^1}
+   \eqn{g(x) = \frac{h_0 + (h_1 - h_0)x}{(1 - x - x^2)}}
+   Plugging in \mt{h_0 = 0} and \mt{h_1 = 1},
+   \eqn{g(x) = \frac{x}{(1 - x - x^2)}}
+   \eqn{g(x) = \frac{x}{(1 - x - x^2)}}
+   \eqn{g(x) = \frac{x}{(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{A}{(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})} + \frac{B}{(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{1/2}{(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})} + \frac{1/2}{(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{1}{2(x + (-\frac{1}{2} + \frac{\sqrt{5}}{2})} + \frac{1}{2(x - (-\frac{1}{2} + \frac{\sqrt{5}}{2})}}
+   \eqn{g(x) = \frac{1}{2}\frac{1}{((-\frac{1}{2} + \frac{\sqrt{5}}{2}) + x)}  -\frac{1}{2}\frac{1}{((-\frac{1}{2} + \frac{\sqrt{5}}{2}) - x)}}
+   
+   \textbf{At this point, I'm not sure how to convert to Power Series}
+   
+   \uw{f}{n} \eql \frc{1}{\sqrt{5}}\uf{(\frc{1 + \sqrt{5}}{2})}{n} \ps \frc{-1}{\sqrt{5}}\uf{(\frc{1 - \sqrt{5}}{2})}{n}
+   
+   
    \elist
    \item Prove that the Fibonacci number \uw{f}{n} is even if, and only if, divisible by 3.
+   
+   \textbf{Wait.. 2 is a fibonacci number that is even and not divisible by 3.. So is 8.}
+   
+   \lra
+   
+   \as{\uw{f}{n} is even (i.e. \exs t \mem \bz such that \uw{f}{n} \eql 2t)}
+   
+   \lla
+   
+   \as{3 divides \uw{f}{n} (i.e. \exs t \mem \bz such that \uw{f}{n} \eql 3t)}
+   
    \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red, white, or blue. Let \uw{h}{n} be the number of colorings in which there is an even number of red squares (the example from class).
    \balist
    \item Reproduce the exponential generating function solution from class.
+   
+   Colors: R, W, B. R is even.
+   
+   EGF:
+   \eqn{(1 \ps \frac{x^2}{2!} + \frac{x^4}{4!}...)(1 \ps \frac{x^1}{1!} + \frac{x^2}{2!}...)^2}
+   \eqn{\frac{1}{2}(e^x + e^{-x})e^xe^x}
+   \eqn{\frac{1}{2}(e^{3x} + e^x)}
+   \eqn{\frac{1}{2}(\sum\frac{3^nx^n}{n!} + \sum\frac{x^n}{n!})}
+   \eqn{\frac{1}{2}(\sum(3^n + 1)\frac{x^n}{n!})}
+   \eqn{\rar \sum(\frac{3^n + 1}{2})\frac{x^n}{n!}}
    \item Solve this by using a standard generating function and partial fractions.
+   
+   GF:
+   \eqn{(1 + x^2 + x^4 ...)(1 + x + x^2 ...)^2}
+   \eqn{\frac{1}{1 - x^2}\frac{1}{1 - x}\frac{1}{1 - x}}
+   \eqn{\frac{1}{(1 + x)(1 - x)^3}}
+   \eqn{\frac{A}{1 + x} + \frac{B}{1 - x} + \frac{C}{(1 - x)^2} + \frac{D}{(1 - x)^3}}
+   After partial fractions:
+   
+   \mt{
+   	\begin{matrix}
+  	1 & 1 & 1 & 1 & | & 1\\
+  	-3 & -1 & 0 & 1 & | & 0 \\
+  	3 & -1 & -1 & 0 & | & 0 \\
+  	-1 & 1 & 0 & 0 & | & 0
+	\end{matrix}
+	}
+	
+	A \eql \frc{1}{8}, B \eql \frc{1}{8}, C \eql \frc{1}{4}, D \eql \frc{1}{2}
+	
+	\eqn{\rar \frac{1}{8}\sum(-1)^nx^n + \frac{1}{8}\sum x^n + \frac{1}{4}\sum nx^{n - 1} + \frac{1}{2}\sum n(n - 1)x^{n - 2}}
+	\textbf{How do I get from above to below?}
+	\eqn{\sum (\frac{3^n + 1}{2})x^n}
+   
    \item Reproduce the associated recursion for \uw{h}{n}.
    \item Using your answer from part c, solve the recursion using the generating function method for non-homogeneous recursions.
    \elist
    \item Consider a 1-by-n chessboard. Suppose we color each square of the chessboard with one of the colors red or blue. Let \uw{h}{n} be the number of colorings in which no two squares that are colored red are adjacent. Find a recurrence relation that \uw{h}{n} satisfies, then derive a formula for \uw{h}{n}.
+   
+   Colors: R, B. 
+   
+   \uw{h}{n} is the number of colorings such that no two adjacent squares are red.
+   
+   In other words, B \rar R or B and R \rar B.
+   
+   \uw{h}{1} \eql 2, \uw{h}{2} \eql 3, \uw{h}{3} \eql 5, \uw{h}{4} \eql 8, \uw{h}{5} \eql 13...
+   
+   It looks like the number of ways that color the nth square blue is just \uw{h}{n - 1}, and the number of ways to color the nth square red is the number of ways that color the (n-1)th square blue, which is just \uw{h}{n - 2}.
+   
+   So it looks like a recurrence relation would be \uw{h}{n} \eql \uw{h}{n - 1} \ps \uw{h}{n - 2}
+   
+   Since this is Fibonacci (and we already did this):
+   
+   \uw{h}{n} \eql \frc{1}{\sqrt{5}}\uf{(\frc{1 + \sqrt{5}}{2})}{n} \ps \frc{-1}{\sqrt{5}}\uf{(\frc{1 - \sqrt{5}}{2})}{n}
+   
+   
    \item Determine the generating function for the number \uw{h}{n} of bags of fruit of apples, oranges, bananas, and pears in which apples \% 2 \eql 0, oranges \lse 2, bananas \% 3 \eql 0, and pears \lse 1. Then find a formula for \uw{h}{n} from the generating function.
+   
+   GF:
+   
+   \eqn{(1 \ps x^2 + x^4 + ...)(1 + x + x^2)(1 + x^3 + x^6 ...)(1 + x)}
+   \eqn{\frac{1}{(1 - x)^2}\frac	{1 - x^3	}{1 - x}\frac{1}{(1 - x)^3}\frac{1 - x^2}{1 - x}}
+   \eqn{\frac{1}{(1 + x)(1 - x)}\frac{(1 - x)(1 + x + x^2)}{1 - x}\frac{1}{(1 - x)^3}\frac{(1 - x)(1 + x)}{1 - x}}
+   
+   \eqn{\frac{(1 + x + x^2)}{(1 - x)^4}}
+   
+   \eqn{\frac{1}{(1 - x)^2} + \frac{-3}{(1 - x)^3} + \frac{3}{(1 - x)^4}}
+   
+   \eqn{\sum x^{2n} - 3\sum x^{3n} + 3\sum x^{4n} \lra \sum x^{2n} - 3x^{3n} + 3x^{4n}}
+   
    \item Determine the exponential generating function for the following sequence:
    \balist
    \item 0!, 1!, 2!, ...
+   
+   \eqn{\uf{g}{(e)}(x) \eql \frac{0!}{0!} + \frac{1!}{1!}x + \frac{2!}{2!}x^2 ... }
+   \eqn{\uf{g}{(e)}(x) \eql 1 + x + x^2 ...}
+   
    \item \ff{\alpha}{0}, \ff{\alpha}{1}, \ff{\alpha}{2}, \ff{\alpha}{3}, ... (Note: \ff{\alpha}{n} is the falling factorial.)
+   
+   \eqn{\uf{g}{(e)}(x) \eql \frac{\afa}{0!} + \frac{\afa(\afa - 1)}{1!}x + \frac{\alpha(\alpha - 1)(\alpha - 2)}{2!}x^2 ... }
+   \eqn{\uf{g}{(e)}(x) \eql \sum_{n = 0}^{\infty} \frac{\alpha!}{(\alpha - n - 1)!n!}}
+   
+   
    \elist
    \item Let \uw{h}{n} denote the number of ways to color the square of a 1-by-n board with the colors red, white, blue, and green in such a way that the numbers of squares colored red is even and the number of squares colored white is odd. Determine the exponential generating function for the sequence, then find a simple formula for \uw{h}{n}.
+   
+   Colors: RWBG. R is even, W is odd.
+   
+   EGF:
+   \eqn{(1 + \frac{x^2}{2!} + \frac{x^4}{4!}...)(x + \frac{x^3}{3!} + \frac{x^5}{5!}...)(1 \ps x \ps \frac{x^2}{2!} + \frac{x^3}{3!}...)^2}
+   \eqn{\frac{1}{2}(e^x + e^{-x}) * \frac{1}{2}(e^x - e^{-x}) * e^x * e^x}
+   \eqn{\frac{1}{4}(e^{2x} - e^{-2x})* e^{2x}}
+   \eqn{\frac{1}{4}(e^{4x} - 1)}
+   
+   f(x) \eql \mt{\frac{1}{4}(e^{4x} - 1)} \lra f'(x) \eql \frc{1}{4}(4\uf{e}{4x}) \lra f''(x) \eql \frc{1}{4}16\uf{e}{4x} \lra f'''(x) \eql \frc{1}{4}64\uf{e}{4x} \lra \uf{f}{n}(x) \eql \frc{1}{4}(\uf{4}{n}\uf{e}{4x})
+   
+   So,
+   
+   \uw{h}{n} \eql \frc{4^n}{4n!} \textbf{Which doesn't seem right since n! grows faster than \uf{4}{n}. Also, where goes - 1?}
+   
+   
    \item Determine the number of ways to color the squares of a 1-by-n board using the colors red, blue, green, and orange if an even number of squares is to be colored red and an even number is to be colored green.
+   
+   Colors: RGBO. R, G are even.
+   
+   GF:
+   \eqn{(1 + x^2 + x^4...)^2(1 + x + x^2 + x^3...)^2}
+   \eqn{\frac{1}{1 - x^2}\frac{1}{1 - x^2}\frac{1}{1 - x}\frac{1}{1 - x}}
+   \eqn{\frac{1}{(1 - x)^4(1 + x)^2}}
+   \eqn{\frac{A}{(1 - x)} + \frac{B}{(1 - x)^2} + \frac{C}{(1 - x)^3} + \frac{D}{(1 - x)^4} + \frac{E}{(1 + x)} + \frac{F}{(1 + x)^2}}
+   \eqn{A\sum x^n + E\sum(-1)^nx^n}
+   
    \item Determine the number of n-digit numbers with all digits odd, such that 1 and 3 each occur a nonzero, even number of times.
+   
+   \uw{d}{1}, \uw{d}{2}... \uw{d}{n} where \uw{d}{i} \% 2 \eql 1
+   
+   1 and 3 each occur a nonzero, even number of times. 5, 7, and 9 can occur any amount of times.
+   
+   So:
+   
+   \eqn{(x^2 + x^4 + x^6 ...)^2(1 + x + x^2 ...)^3}
+   which is
+   \eqn{(\frac{1}{(1 - x)^2} - 1)^2(\frac{1}{1 - x})^3}
+   \eqn{(\frac{1 - (1 - x)^2}{(1 - x)^2})^2(\frac{1}{1 - x})^3}
+   \eqn{(\frac{2x - x^2}{(1 - x)^2})^2(\frac{1}{1 - x})^3}
+   \eqn{\frac{(2x - x^2)^2}{(1 - x)^7}}
+   \eqn{\frac{x^4 -4x^3 + 4x^2}{(1 - x)^7}}
+   which decomposes into:
+   \eqn{\frac{-1}{(x - 1)^3} + \frac{2}{(x - 1)^5} + \frac{-1}{(x - 1)^7}}
+   \eqn{-\sum x^{3n} + 2\sum x^{5n} - \sum x^{7n} \lra \sum -x^{3n} + 2x^{5n} - x^{7n}}
+   
    \item Solve the recurrence relation:
    \balist
    \item \uw{h}{n} \eql 4\uw{h}{n - 2}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and n \gre 2.
+   
+   0, 1, 0, 4, 0, 16, 0, 64...
+   
+   \uw{h}{n} \ms 4\uw{h}{n - 2} \eql 0
+   
+   \uf{q}{n - 2}(\uf{q}{2} \ms 4) \eql 0
+   
+   \uw{h}{n} \eql a\uf{(2)}{n} \ps b\uf{(-2)}{n}
+   
+   0 \eql a \ps b and 1 \eql 2a \ms 2b
+   
+   b \eql -\frc{1}{4}, a \eql \frc{1}{4}
+   
+   \uw{h}{n} \eql \frc{1}{4}\uf{2}{n} \ms \frc{1}{4}\uf{(-2)}{n}
+   
    \item \uw{h}{n} \eql \uw{h}{n - 1} \ps 9\uw{h}{n - 2} \ms 9\uw{h}{n - 3}, \uw{h}{0} \eql 0, \uw{h}{1} \eql 1, and \uw{h}{2} \eql 2. n \gre 3.
+   
+   \uf{q}{n - 3}(\uf{q}{3} \ms \uf{q}{2} \ms 9\uf{q}{1} \ms 9) \eql 0
+   
+   (\uf{q}{2} \ms 9)(\uf{q}{1} \ps 1) \eql 0
+   
+   (q \ms 3)(q \ps 3)(q \ps 1) \eql 0
+   
+   \uw{h}{n} \eql a\uf{(3)}{n} \ps b\uf{(-3)}{n} \ps c\uf{(-1)}{n}
+   
+   So, 0 \eql a \ps b \ps c, 1 \eql 3a \ms 3b \ms c, 2 \eql 9a \ps 9b \ps c
+   
+   Hence, a \eql \frc{1}{4}, b \eql 0, c \eql -\frc{1}{4}
+   
+   \uw{h}{n} \eql \frc{1}{4}\uf{(3)}{n} \ps -\frc{1}{4}\uf{(-1)}{n}
+   
    \item \uw{h}{n} \eql 4\uw{h}{n - 1} \ps \uf{4}{n}, \uw{h}{0} \eql 3 and n \gre 1.
+   
+   3, 16, 80, 384...
+   
    \elist
    \item Let \uw{h}{n} \eql the number of ternary strings of length n made up of 0's, 1's, and 2's, such that the substrings 00, 01, 10, and 11 never occur. Prove that
    \eqn{h_n = h_{n - 1} + 2h_{n - 2}}
    with \uw{h}{0} \eql 1, \uw{h}{1} \eql 3, and then find a formula for \uw{h}{n}.
    \item Compute the Stirling numbers of the first and second kind up to n \eql 6 using their recursive formulas.
+   
+   \textbf{But stirling numbers take 2 parameters: s(p, k); where does n fit?}
+   
    \item Prove the Stirling numbers of the second kind satisfy:
+
+   Recall: S(p, k) \eql k S(p \ms 1, k) \ps S(p \ms 1, k \ms 1)
    \balist
    \item S(n, 1) \eql 1
    \item S(n, 2) \eql \uf{2}{n - 1} \ms 1
@@ -329,7 +568,34 @@
    \item s(n, n \ms 1) \eql \nck{n}{2}
    \elist
    \item Write \ff{n}{k} as a polynomial in n for k \eql 5, 6, 7. (Do not use distribution!)
+   
+   \ff{n}{k} \eql n(n \ms 1)(n \ms 2)...(n \ms k)
+   
+   \ff{n}{k} \eql \mt{\sum_{p = 0}^k (-1)^{k - p}s(k, p)n^p}
+   
+   \ff{n}{5} \eql \mt{\sum_{p = 0}^5 (-1)^{5 - p}s(5, p)n^p}
+   
+   \ff{n}{5} \eql \mt{-s(5, 0)} \ps \mt{s(5, 1)n} \ms \mt{s(5, 2)n^2} \ps \mt{s(5, 3)n^3} \ms \mt{s(5, 4)n^4} \ps \mt{s(5, 5)n^5}
+   
+   \ff{n}{5} \eql \mt{4!n} \ms \mt{s(5, 2)n^2} \ps \mt{s(5, 3)n^3} \ms \mt{\nck{5}{2}n^4} \ps \mt{n^5}
+   
+   s(5, 2) \eql 4s(4, 2) \ps 3! and s(5, 3) \eql 4\nck{4}{2} \ps s(4, 2)
+   
+   
+   
    \item Find a closed formula for the sequence: 1, 6, 15, 28, 45, 66, 91, ... (Use a difference table.)
+   
+   \begin{tabular}{l|ccccccc}
+  & 1 & 6 & 15 & 28 & 45 & 66 & 91 \\
+  \hline
+  & & 5 & 9 & 13 & 17 & 21 & 25 \\
+  & & & 4 & 4 & 4 & 4 & 4 \\
+  & & & & 0 & 0 & 0 & 0
+\end{tabular}
+
+\uw{h}{n} \eql 1\nck{n}{0} \ps 5\nck{n}{1} \ps 4\nck{n}{2}
+
+   
 \end{enumerate}
 
 \end{document}
