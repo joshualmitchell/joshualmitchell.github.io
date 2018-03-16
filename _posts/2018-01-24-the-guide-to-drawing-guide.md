@@ -44,7 +44,7 @@ I'm also looking into other methods (i.e. Image Registration from astronomy)
 
 This is the tool that takes the instructions from the comparison algorithm and actually creates the image composed of the attempt image overlayed over the target image. I've actually found a use for all 3 of scikit-image, OpenCV, and Pillow. Aside from increased dependencies (which I don't think will be an issue), I don't really see a need to restrict myself to a subset of them.
 
-- a React Native app (not started)
+- a React Native app (in progress)
 
 This will be the front end. The user will take the pictures and the app will display the overlay. I chose React Native because it's a smaller framework (as opposed to Angular and Cordova), it transpiles to both iOS and Android, and I'm sending the images off to a server to do the heavy lifting so I don't *think* performance will be an issue (i.e. needing to be natively written or otherwise optimized). Then again, I've been wrong before. We'll see.
 
