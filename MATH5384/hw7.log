@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  23 MAR 2018 19:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.24)  23 MAR 2018 20:00
 entering extended mode
 **./hw7.tex
 (hw7.tex
@@ -696,11 +696,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Here is how much of TeX's memory you used:
  14474 strings out of 493303
  298883 string characters out of 3127609
- 334463 words of memory out of 3000000
+ 335463 words of memory out of 3000000
  17747 multiletter control sequences out of 15000+200000
  6857 words of font info for 27 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,66p,416b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,66p,845b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/WallabyWay/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/WallabyWay/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/WallabyWay/AppDa
@@ -710,7 +710,7 @@ r10.pfb><C:/Users/WallabyWay/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmr7.pfb><C:/Users/WallabyWay/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/WallabyWay/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
-Output written on hw7.pdf (2 pages, 86036 bytes).
+Output written on hw7.pdf (2 pages, 87988 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
