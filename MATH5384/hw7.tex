@@ -338,6 +338,26 @@ Prove that \uw{F}{1}\uw{F}{2} \eql \uw{R}{\uf{180}{\circ}}
 Let R be any fixed rotation and F any fixed reflection in a dihedral group.
 
 prove that \uf{R}{k}F\uf{R}{k} \eql F
+
+\textbf{We will attempt to prove this by induction.}
+
+Base case:
+\eqn{R^0FR^0 = F}
+\eqn{F = F}
+Inductive step: assume it's true up to
+\eqn{R^{k - 1}FR^{k - 1} = F}
+Want to show:
+\eqn{R^kFR^k = F}
+Well,
+\eqn{
+	\splt{
+		R^{k - 1}FR^{k - 1} & = F \\
+		R^kFR^k & = RFR
+}
+}
+Hence, it is sufficient to show \mt{F = RFR}.
+
+RFR \eql (RF)R \eql \uf{(RF)}{-1}R \eql \uf{F}{-1}\uf{R}{-1}R \eql F\uf{R}{-1}R \eql F. Hence, \uf{R}{k}F\uf{R}{k} \eql F.
 }	
 }
 \end{document}
