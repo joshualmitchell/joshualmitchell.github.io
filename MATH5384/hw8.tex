@@ -3,7 +3,7 @@
 
 \documentclass{article}
 
-\newcommand{\hmwkTitle}{HW\ \#7}
+\newcommand{\hmwkTitle}{HW\ \#8}
 
 % \input{ShortcutsAnalysis}
 
@@ -231,136 +231,18 @@
 % ----------
 
 \begin{document}
-	
-All: page 37: 5, 6, 7, 8 (me)
+Due 4/9:
 
-G1: page 37: 14, 15, page 57: 41, 44
+G1 (present): page 150: 1, 7, 8
 
-G2: page 37: 16, 17, page 57: 42, 43 (me)
+G2 (present): page 150: 3, 6, 9, 12, 14 (me: 3, 14)
 
-(In other words, do: page 37: 5, 6, 7, 8, 16, 17, page 57: 42, 43)
+All (turn in): page 150: 17, 19, 29, 36 (me)
 
-\bsc{Page 37}{
+Due 4/11:
 
-\ssc{Exercise 5}{
-	
-For n \gre 3, describe the elements of \uw{D}{n}. (Hint: You will need to
-consider two cases: n is even and n is odd.)
+Present: page 167: 20
 
-\
+All (turn in): page 167: 1, 22
 
-\textbf{The elements of \uw{D}{n} are just reflections and rotations of the n-gon.}
-	
-\textbf{If n is even, \uw{D}{n} will have n \ms 1 rotations, n reflections, and the identity, for a total of 2n operations.}
-	
-\textbf{If n is odd, \uw{D}{n} will have n \ms 1 rotations, n reflections, and the identity, for a total of 2n operations.}
-
-\
-
-How many elements does \uw{D}{n} have?
-
-\
-
-\textbf{2n}
-
-}
-\ssc{Exercise 6}{
-	
-In \uw{D}{n}, explain geometrically why a reflection followed by a reflection must be a rotation.
-
-\
-
-\textbf{Flipping a shape twice either puts all the corners back where they were or puts them back where they were with some offset for all of them, which is a rotation.}
-
-}
-\ssc{Exercise 7}{
-
-In \uw{D}{n}, explain geometrically why a rotation followed by a rotation must be a rotation.
-
-\
-
-\textbf{Because rotating a shape (x \ps y) degrees is the same thing as rotating that shape x degrees, followed by rotating it y degrees.}
-	
-}
-\ssc{Exercise 8}{
-
-In \uw{D}{n}, explain geometrically why a rotation and a reflection taken together in either order must be a reflection.
-
-\
-
-\textbf{Well, suppose there was a rotation and a reflection that yielded a non-reflection. Then it must either be the identity or a rotation. Since the inverse of a rotation is a rotation, the result of a rotation and a reflection (or vise versa) cannot be the identity. Thus, this rotation and reflection combo must be a rotation. However, because all rotations form a cyclic subgroup, this rotation and reflection combo must be a member of that cyclic subgroup. Since all rotations can be split into any arbitrary rotation plus another rotation based on the first rotation, if we split the rotation and reflection combo into the rotation part and the reflection part, then this implies the reflection must be a rotation - a contradiction. Therefore, a rotation and a reflection taken together must be a reflection.}
-	
-}
-\ssc{Exercise 16}{
-
-Describe the symmetries of a parallelogram that is neither a rectangle nor a rhombus.
-
-\
-
-\textbf{Then the parallelogram is a trapezoid, and it only has 4: reflection down the symmetric part from either direction, or rotation either 180 or -180 degrees.}
-
-\
-
-Describe the symmetries of a rhombus that is not a rectangle.
- 
-\
-
-\textbf{I think it only has two: rotation by either 180 or -180 degrees.}
-}
-\ssc{Exercise 17}{
-
-Describe the symmetries of a non-circular ellipse. Do the same for a hyperbola.
-
-\
-
-\textbf{A non-circular ellipse has 6: 2 reflections across the vertical axis and 2 across the horizontal axis, and 180 or -180 degree rotation. A hyperbola appears to have the exact same symmetries.}
-
-}
-
-}
-
-\bsc{Page 57}{
-\ssc{Exercise 42}{
-Suppose \uw{F}{1} and \uw{F}{2} are distinct reflections in a dihedral group \uw{D}{n} such that \uw{F}{1}\uw{F}{2} \eql \uw{F}{2}\uw{F}{1}.
-
-Prove that \uw{F}{1}\uw{F}{2} \eql \uw{R}{\uf{180}{\circ}}
-
-\textbf{Well, suppose that there exists distinct \uw{F}{1} and \uw{F}{2} reflections in a dihedral group \uw{D}{n} such that \uw{F}{1}\uw{F}{2} \eql \uw{F}{2}\uw{F}{1} and \uw{F}{1}\uw{F}{2} $\neq$ \uw{R}{\uf{180}{\circ}}}
-
-\textbf{Since a reflection followed by a reflection is a rotation, and \uw{F}{1}\uw{F}{2} $\neq$ \uw{R}{\uf{180}{\circ}}, \uw{R}{n} \eql \uw{F}{1}\uw{F}{2}} such that 0 \ls n \ls 180 or 180 \ls n \ls 360.
-
-\textbf{However, by symmetry, \uw{F}{2}\uw{F}{1} must be equal to  \uw{R}{t} such that t \eql 360 \ms n}
-
-\textbf{If t \eql n, then the only way that's true is if n \eql 180, a contradiction. Hence, \uw{F}{1}\uw{F}{2} is \uw{R}{\uf{180}{\circ}}.}
-}
-
-\ssc{Exercise 43}{
-Let R be any fixed rotation and F any fixed reflection in a dihedral group.
-
-prove that \uf{R}{k}F\uf{R}{k} \eql F
-
-\textbf{We will attempt to prove this by induction.}
-
-Base case:
-\eqn{R^0FR^0 = F}
-\eqn{F = F}
-Inductive step: assume it's true up to
-\eqn{R^{k - 1}FR^{k - 1} = F}
-Want to show:
-\eqn{R^kFR^k = F}
-Well,
-\eqn{
-	\splt{
-		R^{k - 1}FR^{k - 1} & = F \\
-		R^kFR^k & = RFR
-}
-}
-Hence, it is sufficient to show \mt{F = RFR}.
-
-RFR \eql (RF)R \eql \uf{(RF)}{-1}R \eql \uf{F}{-1}\uf{R}{-1}R \eql F\uf{R}{-1}R \eql F. Hence, \uf{R}{k}F\uf{R}{k} \eql F.
-}	
-}
-
-\eqn{\sum_{i = 0}^{n} (y_i - \hat{y_i})^2}
-\eqn{\sum_{i = 0}^{n} (y_i - \frac{1}{1 + e^{-(mx_i + b)}})^2}
 \end{document}
