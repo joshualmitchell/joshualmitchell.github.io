@@ -552,17 +552,24 @@
    with \uw{h}{0} \eql 1, \uw{h}{1} \eql 3, and then find a formula for \uw{h}{n}.
    \item Compute the Stirling numbers of the first and second kind up to n \eql 6 using their recursive formulas.
    
-   \textbf{But stirling numbers take 2 parameters: s(p, k); where does n fit?}
+   S(6, 6) \eql 6 S(5, 6) \ps S(5, 5)
+   
+   s(6, 6) \eql s(5, 5) \ms 5s(5, 6)
    
    \item Prove the Stirling numbers of the second kind satisfy:
 
-   Recall: S(p, k) \eql k S(p \ms 1, k) \ps S(p \ms 1, k \ms 1)
+   Recall: S(p, k) \eql k S(p \ms 1, k) \ps S(p \ms 1, k \ms 1) and
+   \eqn{S(p, k) \eql \frac{1}{k!}\sum_{i = 0}^k(-1)^i\nck{k}{i}(k - i)^p}
    \balist
    \item S(n, 1) \eql 1
    \item S(n, 2) \eql \uf{2}{n - 1} \ms 1
    \item S(n, n \ms 1) \eql \nck{n}{2}
    \elist
    \item Prove the Stirling numbers of the first kind satisfy:
+   
+   Recall: s(p, k) \eql s(p \ms 1, k \ms 1) \ms (p \ms 1)s(p \ms 1, k) and
+   \eqn{s(p, k) = \sum_{i \eql k}^p p^{i - k}s(p + 1, i + 1)}
+   
    \balist
    \item s(n, 1) \eql (n \ms 1)!
    \item s(n, n \ms 1) \eql \nck{n}{2}

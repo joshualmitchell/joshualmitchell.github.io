@@ -1,0 +1,145 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Joshua Lelon Mitchell
+	}\par}
+\par{\centering
+		{
+	Austin, TX
+	$\mid$
+	(512) 537-9446
+	$\mid$
+	\href {mailto:joshua.mitchell@txstate.edu}{jlm346@txstate.edu}
+	$\mid$
+	\href {http://lelon.io/blog/2018/01/04/to-potential-employers}{lelon.io}
+	$\mid$
+	\href {https://github.com/joshualmitchell}{github.com/joshualmitchell}
+}\par}
+
+%--------------------SECTIONS-----------------------------------
+
+\section{Research Interests}
+
+My research and thesis mainly focuses on new spectral clustering techniques with improved out-of-sample extension and scalability.
+
+My general research interests span formal languages, automata theory, natural language processing, machine learning, and computer vision.
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{May} 2019 & Master of Science in \textsc{Applied Mathematics}, \textbf{Texas State University}, San Marcos, TX\\
+ 
+&\normalsize \textsc{GPA}: 3.50/4, Data Mining and Machine Learning focus \\ & \\
+
+\textsc{May} 2016 & Bachelor of Science in \textsc{Computer Science}, \textbf{Texas State University}, San Marcos, TX \\
+
+&\normalsize \textsc{GPA}: 3.63/4 \\&\\
+\end{tabular}
+
+\section{Achievements and Extracurricular Activities}
+\begin{tabular}{rl}
+ \textsc{Deans List} & Fall 2015, Spring 2016 \\
+
+& \\
+\textsc{Academic Distinction} & Recipient of the Undergraduate Academic Distinction Award from \\ & the Department of Computer Science at Texas State University. \\
+
+& \\
+\textsc{Member} & The Texas State Computer Science Club (EXE). I primarily focused on \\
+	& connecting employers and relaying job opportunities to members. \\
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Career Experience}
+\begin{tabular}{r|p{12cm}}
+\textsc{Aug 2017 -} & Graduate Instructional Assistant at \textsc{Texas State University}, San Marcos, TX \\
+\emph{Present} & \footnotesize{I teach Algebra and pre-Calculus course material to undergraduates in a classroom setting.
+ 
+ 	Responsibilities include lecturing on course content as well as developing, administering, and grading homework assignments and quizzes.} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Jun 2016 -} & Software Developer at \textsc{General Motors Company (GMC)}, Austin, TX \\
+Aug 2017 & \footnotesize{I developed Angular.js applications and integrated them with existing REST services. My team was responsible for developing a mobile-first web application for factory workers in 60+ factories to keep track of parts on assembly lines.
+} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Sep 2015 -} & Co-Op Software Engineer at \textsc{IBM Corporation}, Austin, TX \\
+ May 2016 & \footnotesize{I used Balsamiq to mock up application flows and the Ionic/Angular.js frameworks to build MVPs and fix existing bugs. My team's main focus was to help redesign a mobile application that supplied the user with updates about the status of multiple servers.} \\
+ \multicolumn{2}{c}{} \\
+\end{tabular}
+
+\section{Core Technical Skills}
+
+\underline{Data}: Python (Numpy, matplotlib, Pandas, Scikit-Learn, OpenCV, PyTorch), R, SQL, Matlab
+
+\underline{Web}: HTML/CSS, JavaScript, Angular.js
+
+\underline{Peripherals}: git, *nix, LaTeX, Eclipse, Visual Studio, Balsamiq
+
+\end{document}
