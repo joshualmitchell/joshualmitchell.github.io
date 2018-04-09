@@ -227,6 +227,9 @@
 \newcommand{\smm}[2]{ \mt{\sum_{#1}^{#2}}}
 \newcommand{\ff}[2]{[\mt{#1}]\mt{_{(\underline{#2})}}}
 
+\newcommand{\lgnd}{\mt{\land} }
+\newcommand{\lgor}{\mt{\lor} }
+
 \newcommand{\wit}[1]{\mt{\widetilde{#1}}}
      							 
 % ----------
@@ -364,4 +367,128 @@ Find the matrices for the relations:
 
 }
 
+\ssc{Exercise 7}{
+
+Which of these relations on \bk{0, 1, 2, 3} are equivalence relations? If they are not, why?
+
+\balist 
+\item \bk{(0, 0), (1, 1), (2, 2), (3, 3)}
+\item \bk{(0, 0), (0, 2), (2, 0), (2, 2), (2, 3), (3, 2), (3, 3)}
+\item \bk{(0, 0), (1, 1), (1, 2), (2, 1), (2, 2), (3, 3)}
+\item \bk{(0, 0), (1, 1), (1, 3), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)}
+\item \bk{(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2), (3, 3)}
+\elist 
+
+}
+
+\ssc{Exercise 8}{
+List the ordered pairs in the equivalence relations produced by these partitions of \bk{0, 1, 2, 3, 4, 5}.
+
+\balist
+\item \bk{0}, \bk{1, 2}, \bk{3, 4, 5}
+\item \bk{0, 1}, \bk{2, 3}, \bk{4, 5}
+\item \bk{0, 1, 2}, \bk{3, 4, 5}
+\item \bk{0}, \bk{1}, \bk{2}, \bk{3}, \bk{4}, \bk{5}
+\elist
+}
+
+\ssc{Exercise 9}{
+
+Which of these relations on \bk{0, 1, 2, 3} are partial orderings? If they are not, why?
+
+\balist 
+\item \bk{(0, 0), (1, 1), (2, 2), (3, 3)}
+\item \bk{(0, 0), (0, 2), (2, 0), (2, 2), (2, 3), (3, 2), (3, 3)}
+\item \bk{(0, 0), (1, 1), (1, 2), (2, 1), (2, 2), (3, 3)}
+\item \bk{(0, 0), (1, 1), (1, 3), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)}
+\item \bk{(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 2), (3, 3)}
+\elist 
+}
+
+\ssc{Exercise 10}{
+
+Answer these questions for the divides poset (\bk{3, 5, 9, 15, 24, 45}; $\mid$).
+\balist
+\item Draw the Hasse diagram
+\item List the maximal and minimal elements
+\item Is there a greatest element? A least element?
+\item Find all upper bounds of \bk{3, 5}. Find the least upper bound of \bk{3, 5}, if it exists.
+\item Find all the lower bounds of \bk{15, 45}. Find the greatest lower bound of \bk{15, 45}, if it exists.
+\elist
+
+}
+
+\ssc{Exercise 11}{
+
+Prove the following:
+
+\balist
+\item There is exactly one greatest element of a poset, if such an element exists.
+\item There is exactly one maximal element in a poset with a greatest element.
+\item The least upper bound of a set in a poset is unique if it exists.
+\elist
+
+}
+
+\ssc{Exercise 12}{
+
+Determine whether these posets are lattices.
+
+\balist
+\item (\bk{1, 3, 6, 9, 12}; $\vert$)
+\item (\bk{1, 5, 25, 125}; $\vert$)
+\item (\bz; \gre)
+\item ($\mathcal{P}$(S), \sbs), where $\mathcal{P}$(S) is the power set of a set S.
+\elist
+
+}
+
+\ssc{Exercise 13}{
+
+Show that every totally ordered set is a lattice.
+
+}
+
+\ssc{Exercise 14}{
+
+Show that every finite lattice has a least element and a greatest element.
+
+}
+
+\ssc{Exercise 15}{
+
+Give an example of an infinite lattice with 
+
+\balist
+\item neither a least nor a greatest element.
+\item a least but not a greatest element.
+\item a greatest but not a least element.
+\item both a least and a greatest element.
+\elist
+
+}
+
+\ssc{Exercise 16}{
+
+Show that in any lattice (x \lgnd y) \lgnd z \eql x \lgnd (y \lgnd z). Note: (x \lgnd y) \lgnd z \lse x \lgnd (y \lgnd z) was shown in class.)
+
+}
+
+\ssc{Exercise 17}{
+
+Show that in any lattice x \lgor (x \lgnd y) \eql x. Note: the dual absorption law was shown in class.
+
+}
+
+\ssc{Exercise 18}{
+
+Show that any lattice x \lgor (y \lgnd z) \lse (x \lgor y) \lgnd (x \lgor z). Note: the dual distributive inequality was shown in class.
+
+}
+
+\ssc{Exercise 19}{
+
+Show that the two distributive equalities are equivalent. That is, x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z) if, and only if, x \lgnd (y \lgor z) \eql (x \lgnd y) \lgor (x \lgnd z).
+
+}
 \end{document}
