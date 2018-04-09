@@ -332,11 +332,27 @@ Hence, H must be cyclic.
 
 \
 
-Fermat's Little Theorem: For every integer a and prime p, \uf{a}{p} mod p \eql a mod p 
+Fermat's Little Theorem: For every integer a and prime p, \uf{a}{p} $\equiv$ a mod p.
+
+And, if a is not divisible by p, then \uf{a}{p - 1} $\equiv$ 1 mod p (which is 1)
+
+Also, if a and n are relatively prime, then \uf{a}{\phi(n)} mod n $\equiv$ 1 (from problem 18 in the book)
 
 \eqn{
 	\splt{
-		5^{15}\mod 7 & = 5^{3} * 5^5 \mod 7 \\
+		5^{15}\mod 7 & \equiv 5(5^2)^7 \mod 7 \\
+		& \equiv 5(5^2) \mod 7 \\
+		& \equiv 125 \mod 7 \\
+		& = 6
+	}
+}
+
+\eqn{
+	\splt{
+		7^{13}\mod 11 & \equiv 7^2(7)^11 \mod 11 \\
+		& \equiv 7^2) \mod 11 \\
+		& \equiv 49 \mod 11 \\
+		& = 5
 	}
 }
 }
