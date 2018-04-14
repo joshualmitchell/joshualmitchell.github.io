@@ -362,8 +362,79 @@ Prove the following:
 
 \balist
 \item A relation R is reflexive iff \uf{R}{-1} is reflexive (where \uf{R}{-1} is the inverse relation that just reverses the order).
+
+\lra 
+
+Assume R is reflexive.
+
+Let (a, a) \mem R
+
+Then (a, a) \mem \uf{R}{-1}
+
+Hence, \uf{R}{-1} is reflexive.
+
+\lla
+
+Assume \uf{R}{-1} is reflexive.
+
+Let (a, a) \mem \uf{R}{-1}
+
+Then (a, a) \mem R
+
+Hence, R is reflexive.
+
+
 \item A relation R is symmetric iff R \eql \uf{R}{-1}.
+
+\lra
+
+Assume R is symmetric.
+
+Let (a, b) \mem R.
+
+Want to show: (a, b) \mem \uf{R}{-1}.
+
+Notice: (b, a) \mem R.
+
+Thus, (a, b) \mem \uf{R}{-1}.
+
+Hence, R \eql \uf{R}{-1}.
+
+\lla
+
+Assume R \eql \uf{R}{-1}.
+
+Let (a, b) \mem R.
+
+Then (a, b) \mem \uf{R}{-1}.
+
+(a, b) \mem R \rar (b, a) \mem \uf{R}{-1}.
+
+But since \uf{R}{-1} \eql R, (b, a) \mem R.
+
+So, (a, b) \mem R \rar (b, a) \mem R.
+
+Hence, R is symmetric..
+
 \item A relation R is anti-symmetric iff R \inn \uf{R}{-1} \sbs $\Delta$ : $\Delta$ \eql \bk{(a, a) : a \mem A}
+
+\lra 
+
+Assume R is anti-symmetric.
+
+Then (a, b), (b, a) \mem R \rar a \eql b.
+
+So, R \inn \uf{R}{-1} will only contain tuples such that a \eql b.
+
+\lla 
+
+Assume R \inn \uf{R}{-1} \sbs $\Delta$ : $\Delta$ \eql \bk{(a, a) : a \mem A}.
+
+Let (a, b) \mem R. If a $\neq$ b, then (a, b) $\not\in$ R \inn \uf{R}{-1}. Thus, (a, b) $\not\in$ \uf{R}{-1}.
+
+Hence, R is anti-symmetric.
+
+
 \elist
 }
 
