@@ -850,11 +850,37 @@ x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
 
 Show that the distributive law implies the modular law. That is, if a lattice satisfies one (hence both, from problem 19), then (x \lse z \rar x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd z).
 
+WTS:
+
+x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z) or x \lgnd (y \lgor z) \eql (x \lgnd y) \lgor (x \lgnd z) \rar (x \lse z \rar x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd z)
+
 }
 
 \ssc{Exercise 21}{
 
 Check if the lattice \uw{N}{5} is distributive.
+
+\ 
+
+I checked. It isn't. Just kidding, here's why:
+
+Let's look at Z \lgnd (Y \lgor X) \eql (Z \lgnd Y) \lgor (Z \lgnd X)
+
+Z \lgnd (Y \lgor X)
+
+Z \lgnd 1
+
+Z
+
+And:
+
+(Z \lgnd Y) \lgor (Z \lgnd X)
+
+0 \lgor X
+
+X
+
+This is saying Z \eql X, which is not true.
 
 }
 \end{document}
