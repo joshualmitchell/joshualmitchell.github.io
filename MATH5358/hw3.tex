@@ -850,9 +850,33 @@ x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
 
 Show that the distributive law implies the modular law. That is, if a lattice satisfies one (hence both, from problem 19), then (x \lse z \rar x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd z).
 
+\
+
 WTS:
 
 x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z) or x \lgnd (y \lgor z) \eql (x \lgnd y) \lgor (x \lgnd z) \rar (x \lse z \rar x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd z)
+
+\
+
+x \lse x \lgor y and x \lse z \rar x \lse (x \lgor y) \lgnd z
+
+y \lgnd z \lse y \lse x \lgor y and y \lgnd z \lse z \rar y \lgnd z \lse (x \lgor y) \lgnd z
+
+x \lgor (y \lgnd z) \lse (x \lgor y) \lgnd z
+
+\
+
+x \gre x \lgnd y and x \lse z \rar x \gre (x \lgnd y) \lgor z
+
+y \lgor z \gre y \gre x \lgnd y and y \lgor z \gre z \rar y \lgor z \gre (x \lgnd y) \lgor z
+
+x \lgor (y \lgnd z) \gre (x \lgor y) \lgnd z
+
+\
+
+Hence,
+
+x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd z
 
 }
 
@@ -866,19 +890,27 @@ I checked. It isn't. Just kidding, here's why:
 
 Let's look at Z \lgnd (Y \lgor X) \eql (Z \lgnd Y) \lgor (Z \lgnd X)
 
+\
+
 Z \lgnd (Y \lgor X)
 
 Z \lgnd 1
 
 Z
 
+\
+
 And:
+
+\
 
 (Z \lgnd Y) \lgor (Z \lgnd X)
 
 0 \lgor X
 
 X
+
+\
 
 This is saying Z \eql X, which is not true.
 
