@@ -588,8 +588,34 @@ Prove the following:
 
 \balist
 \item There is exactly one greatest element of a poset, if such an element exists.
+
+Suppose \exs a, b \mem a poset P, such that a and b are the greatest elements of P.
+
+Then a \gre x and b \gre x \fa x \mem P.
+
+So a \gre b and b \gre a.
+
+Thus, a \eql b.
+
 \item There is exactly one maximal element in a poset with a greatest element.
+
+Let P be a poset and let a be the greatest element in P.
+
+Let b \mem P such that b $\neq$ a.
+
+Then, by definition, a \lse b.
+
+Thus, a is the only maximal element in P.
+
 \item The least upper bound of a set in a poset is unique if it exists.
+
+Let P be a poset and a \mem P.
+
+Suppose \exs \uw{U}{1} and \uw{U}{2} \mem P such that \uw{U}{1} and \uw{U}{2} are least upper bounds for a and \uw{U}{1} $\neq$ \uw{U}{2}
+
+Then, by definition, \uw{U}{1} \lse \uw{U}{2} and \uw{U}{2} \lse \uw{U}{1}.
+
+Hence, \uw{U}{1} \eql \uw{U}{2}
 \elist
 
 }
