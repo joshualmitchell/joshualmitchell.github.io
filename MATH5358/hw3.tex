@@ -806,11 +806,43 @@ X \lgor (X \lgnd Y) \eql X
 
 Show that any lattice x \lgor (y \lgnd z) \lse (x \lgor y) \lgnd (x \lgor z). Note: the dual distributive inequality was shown in class.
 
+\
+
+X \lgor Y \gre X
+
+X \lgor Y \gre Y \gre Y \lgnd Z
+
+X \lgor Y \gre X \lgor (Y \lgnd Z)
+
+X \lgor Z \gre X \lgor (Y \lgnd Z) 
+
+(X \lgor Y) \lgnd (X \lgor Z) \gre X \lgor (Y \lgnd Z)
+
 }
 
 \ssc{Exercise 19}{
 
 Show that the two distributive equalities are equivalent. That is, x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z) if, and only if, x \lgnd (y \lgor z) \eql (x \lgnd y) \lgor (x \lgnd z).
+
+\lra
+
+WTS: x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z) \rar x \lgnd (y \lgor z) \eql (x \lgnd y) \lgor (x \lgnd z).
+
+x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
+
+(x \lgnd y) \lgor (x \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
+
+(x \lgnd y) \lgor (x \lgnd z) \eql x \lgnd (y \lgor z)
+
+\lla 
+
+WTS: x \lgnd (y \lgor z) \eql (x \lgnd y) \lgor (x \lgnd z) \rar x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
+
+(x \lgnd y) \lgor (x \lgnd z) \eql x \lgnd (y \lgor z)
+
+(x \lgnd y) \lgor (x \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
+
+x \lgor (y \lgnd z) \eql (x \lgor y) \lgnd (x \lgor z)
 
 }
 
