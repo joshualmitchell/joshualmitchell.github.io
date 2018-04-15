@@ -730,11 +730,75 @@ Give an example of an infinite lattice with
 
 Show that in any lattice (x \lgnd y) \lgnd z \eql x \lgnd (y \lgnd z). Note: (x \lgnd y) \lgnd z \lse x \lgnd (y \lgnd z) was shown in class.)
 
+\
+
+Proof of (x \lgnd y) \lgnd z \lse x \lgnd (y \lgnd z):
+
+Z \lse Z
+
+(X \lgnd Y) \lgnd Z \lse Z \bpth{1}
+
+We also know:
+
+(X \lgnd Y) \lgnd Z \lse X \lgnd Y \lse X \bpth{2}
+
+(X \lgnd Y) \lgnd Z \lse X \lgnd Y \lse Y \bpth{3}
+
+And:
+
+(X \lgnd Y) \lgnd Z \lse X \lgnd Z by \bpth{1} and \bpth{2}
+
+And:
+
+(X \lgnd Y) \lgnd Z \lse X \lgnd (Y \lgnd Z) by \bpth{1}, \bpth{2} and \bpth{3}
+
+\newpage
+
+Proof of (x \lgnd y) \lgnd z \gre x \lgnd (y \lgnd z):
+
+X \gre X
+
+X \gre X \lgnd (Y \lgnd Z)
+
+\
+
+Y \lgnd Z \gre X \lgnd (Y \lgnd Z)
+
+\
+
+Y \gre Y \lgnd Z \gre X \lgnd (Y \lgnd Z)
+
+Z \gre Y \lgnd Z \gre X \lgnd (Y \lgnd Z)
+
+Thus,
+
+(X \lgnd Y) \lgnd Z \gre X \lgnd (Y \lgnd Z)
+
+
+
 }
 
 \ssc{Exercise 17}{
 
 Show that in any lattice x \lgor (x \lgnd y) \eql x. Note: the dual absorption law was shown in class.
+
+\
+
+X \lgor (X \lgnd Y) \gre X \bpth{1}
+
+\
+
+X \lgnd Y \lse X
+
+X \lgor (X \lgnd Y) \lse X \lgor X \eql X
+
+X \lgor (X \lgnd Y) \lse X \bpth{2}
+
+By \bpth{1}, \bpth{2}, and antisymmetry, 
+
+X \lgor (X \lgnd Y) \eql X
+
+
 
 }
 
