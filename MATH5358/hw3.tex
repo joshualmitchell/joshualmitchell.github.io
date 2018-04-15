@@ -673,6 +673,32 @@ Hence, any two elements have a LUB and GLB.
 
 Show that every finite lattice has a least element and a greatest element.
 
+\
+
+Let L be a finite lattice.
+
+Suppose there are two least elements in L: \uw{l}{1}, \uw{l}{2} such that \uw{l}{1} $\neq$ \uw{l}{2}
+
+Let l \eql \uw{l}{1} meet \uw{l}{2} (which exists because L is a lattice)
+
+Case:
+
+\bilist
+\item l \eql \uw{l}{1}: a contradiction, since \uw{l}{2} is the least element.
+\item l \eql \uw{l}{2}: a contradiction, since \uw{l}{1} is the least element.
+\item l $\neq$ \uw{l}{1} and l $\neq$ \uw{l}{2}: a contradiction, since \uw{l}{1} and \uw{l}{2} are the least elements.
+\elist
+
+Thus, the least element in L is unique, if it exists.
+
+Let A \eql \uw{a}{1} meet \uw{a}{2} meet ... \uw{a}{n} where n \eql \av{L} and \uw{a}{i} \mem L
+
+Since A exists and is the least possible element, L has a least element.
+
+WLOG, the same is true for a greatest element. (can I do this?)
+
+
+
 }
 
 \ssc{Exercise 15}{
@@ -681,9 +707,21 @@ Give an example of an infinite lattice with
 
 \balist
 \item neither a least nor a greatest element.
+
+(\bz, \lse)
+
 \item a least but not a greatest element.
+
+(\uf{\bz}{+}, \lse)
+
 \item a greatest but not a least element.
+
+(\uf{\bz}{-}, \lse)
+
 \item both a least and a greatest element.
+
+(\uf{\bq}{[0, 1]}, \lse)
+
 \elist
 
 }
