@@ -267,8 +267,41 @@ Let H \eql \bk{(1), (12)(34)} in \uw{A}{4}.
 
 \balist
 \item Show that H is not normal in \uw{A}{4}.
+
+Well, recall that a subgroup H of G is normal iff gH \eql Hg \fa g \mem G.
+
+So all we need to do is find a g \mem \uw{A}{4} such that gH $\neq$ Hg.
+
+Notice: (23) \mem \uw{A}{4}.
+
+(23)H \eql \bk{(23)(1), (23)(12)(34)} \eql \bk{(23), (1342)}
+
+H(23) \eql \bk{(1)(23), (12)(34)(23)} \eql \bk{(23), (1243)}
+
+\bk{(23), (1342)} $\neq$ \bk{(23), (1243)}
+
+Thus, H is not normal in \uw{A}{4}
+
 \item Referring to the multiplication table for \uw{A}{4} in Table 5.1 on page 105, show that, although \uw{\afa}{6}H \eql \uw{\afa}{7}H and \uw{\afa}{9}H \eql \uw{\afa}{11}H, it is not true that \uw{\afa}{6}\uw{\afa}{9}H \eql \uw{\afa}{7}\uw{\afa}{11}H.
+
+\uw{\afa}{6} \eql (243), \uw{\afa}{7} \eql (142), \uw{\afa}{9} \eql (132), and \uw{\afa}{11} \eql (234)
+
+So, let's look at both:
+
+\uw{\afa}{6}\uw{\afa}{9}H \lla ? \lra \uw{\afa}{7}\uw{\afa}{11}H
+
+(243)(132)H \lla ? \lra (142)(234)H
+
+\bk{(243)(132)(1), (243)(132)(12)(34)} \lla ? \lra \bk{(142)(234)(1), (142)(234)(12)(34)}
+
+\bk{(12)(34), (1)} \lla ? \lra \bk{(14)(23),(13)(24)}
+
+Nope! Those sets are not equal, so it's not true that \uw{\afa}{6}\uw{\afa}{9}H \eql \uw{\afa}{7}\uw{\afa}{11}H.
+
 \item Explain why this proves that the left cosets of H do not form a group under coset multiplication.
+
+
+
 \elist
 
 }
