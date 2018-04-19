@@ -239,15 +239,32 @@ Due 4/25 (Wednesday):
 All (turn in): Chapter 10, page 206, 14-18, 20, 24
 
 \bsc{Chapter 10}{
+
+Recall: 
+
+A homomorphism $\phi$ from a group G to a group G\pr is a mapping from G into G\pr that preserves the group operation; that is, $\phi$(ab) \eql $\phi$(a)$\phi$(b) for a, b \mem G.
+
+The kernel of a homomorphism $\phi$ from a group G to a group G\pr with identity e\pr is the set \bk{x \mem G : $\phi$(x) \eql e\pr}.
+
 \ssc{Exercise 14}{
 
 Explain why the correspondence x \lra 3x from \uw{Z}{12} to \uw{Z}{10} is not a homomorphism.
+
+\
+
+Because $\phi$ is not OP:
+
+$\phi$(3 * 4) \eql $\phi$(12) \eql $\phi$(0) \eql (3 * (0 mod 12)) mod 10 \eql e, and
+
+$\phi$(3)$\phi$(4) \eql (3 * (3 mod 12) * 3 * (4 mod 12)) mod 10 \eql (9 * 3 * 4) mod 10 \eql (108) mod 10 \eql 8
 
 }
 
 \ssc{Exercise 15}{
 
 Suppose that $\phi$ is a homomorphism from \uw{Z}{30} to \uw{Z}{30} and Ker $\phi$ \eql \bk{0, 10, 20}. If $\phi$(23) \eql 9, determine all elements that map to 9.
+
+
 
 }
 
