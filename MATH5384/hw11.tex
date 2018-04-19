@@ -262,9 +262,25 @@ $\phi$(3)$\phi$(4) \eql (3 * (3 mod 12) * 3 * (4 mod 12)) mod 10 \eql (9 * 3 * 4
 
 \ssc{Exercise 15}{
 
-Suppose that $\phi$ is a homomorphism from \uw{Z}{30} to \uw{Z}{30} and Ker $\phi$ \eql \bk{0, 10, 20}. If $\phi$(23) \eql 9, determine all elements that map to 9.
+Suppose that $\phi$ is a homomorphism from \uw{Z}{30} to \uw{Z}{30} and Ker $\phi$ \eql \bk{0, 10, 20}.
 
+If $\phi$(23) \eql 9, determine all elements that map to 9.
 
+\
+
+$\phi$(ab mod 30) \eql $\phi$(a mod 30)$\phi$(b mod 30)
+
+$\phi$(23) \eql 9.
+
+$\phi$(0) \eql $\phi$(10) \eql $\phi$(20) \eql 0
+
+It looks like it's $\phi$(x) \eql 3x:
+
+$\phi$(23) \eql 3 * 23 mod 30 \eql 69 mod 30 \eql 9.
+
+Thus,
+
+$\phi$(3), $\phi$(13), and $\phi$(23) all map to 9.
 
 }
 
