@@ -22,4 +22,5 @@ Note: the 1-10 scale means 1 being absolute worst, 10 being absolute best.
 - how much work I was not looking forward to at all that I got done (scale: minutes)
 - how healthy I ate that day (scale: 1-10). Note: my definition of healthy, for the sake of simplicity, is consuming as little processed foods and junk food as possible.
 - how much exercise I got (scale: minutes)
-- step count (scale: number of steps)
+- step count (scale: number of steps) according to fitbit.
+- how much time in each sleep stage (scale: hours) according to fitbit. This includes Awake, REM, Light, and Deep stages.
