@@ -19,8 +19,11 @@ Note: the 1-10 scale means 1 being absolute worst, 10 being absolute best.
 - how much shallow work I got done (scale: minutes)
 - how much work I was excited about that I got done (scale: minutes)
 - how much work I was lukewarm about that I got done (scale: minutes)
-- how much work I was not looking forward to at all that I got done (scale: minutes)
+- how much work I was not looking forward to at all that I got done (scale: minutes), noted as resistant work.
 - how healthy I ate that day (scale: 1-10). Note: my definition of healthy, for the sake of simplicity, is consuming as little processed foods and junk food as possible.
 - how much exercise I got (scale: minutes)
 - step count (scale: number of steps) according to fitbit.
 - how much time I spent in each sleep stage (scale: hours) the night before according to fitbit. This includes Awake, REM, Light, and Deep stages.
+
+| Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Sleep: Awake | Sleep: REM | Sleep: Light | Sleep: Deep |
+|:---------|:--------------|:------|
