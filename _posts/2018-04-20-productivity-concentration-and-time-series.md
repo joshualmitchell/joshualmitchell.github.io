@@ -23,7 +23,9 @@ Note: the 1-10 scale means 1 being absolute worst, 10 being absolute best.
 - how healthy I ate that day (scale: 1-10). Note: my definition of healthy, for the sake of simplicity, is consuming as little processed foods and junk food as possible.
 - how much exercise I got (scale: minutes)
 - step count (scale: number of steps) according to fitbit.
+- weight (scale: pounds), this is each morning after I use the bathroom.
 - how much time I spent in each sleep stage (scale: hours) the night before according to fitbit. This includes Awake, REM, Light, and Deep stages.
 
-| Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Sleep: Awake | Sleep: REM | Sleep: Light | Sleep: Deep |
+| Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Weight | Sleep: Awake | Sleep: REM | Sleep: Light | Sleep: Deep |
 |:---------|:--------------|:------|
+| 4/20/2018 | 3
