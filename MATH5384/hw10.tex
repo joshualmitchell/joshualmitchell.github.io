@@ -246,6 +246,38 @@ Present (me): 10
 
 Prove that \uw{A}{n} is normal in \uw{S}{n}.
 
+WTS: s\uw{A}{n}\uf{s}{-1} \sbs \uw{A}{n} \fa s \mem \uw{S}{n}.
+
+Let s \mem \uw{S}{n}, a \mem \uw{A}{n}.
+
+Case: 
+\bilist
+\item s $\notin$ \uw{A}{n}
+
+Then s can be expressed as a product of k transpositions, where k is an odd integer.
+
+Since s is odd, this means that \uf{s}{-1} is also odd.
+
+Since sa\uf{s}{-1} is a product of 2k plus an even number of transpositions, sa\uf{s}{-1} is even.
+
+Therefore, sa\uf{s}{-1} \mem \uw{A}{n} \fa a \mem \uw{A}{n}.
+
+Hence, s\uw{A}{n}\uf{s}{-1} \sbs \uw{A}{n} \fa s $\notin$ \uw{A}{n} but still in \uw{S}{n}.
+
+\item s \mem \uw{A}{n}
+
+Then sa\uf{s}{-1} is a product of 3k transpositions (where k is an even integer this time).
+
+Thus, sa\uf{s}{-1} is even.
+
+Hence, s\uw{A}{n}\uf{s}{-1} \sbs \uw{A}{n} \fa s \mem \uw{A}{n}.
+
+\elist
+
+Hence, \uw{A}{n} is normal in \uw{S}{n}.
+
+
+
 }
 
 \ssc{Exercise 6}{
@@ -258,6 +290,47 @@ $\begin{bmatrix}{}
 }.
 
 Is H a normal subgroup of GL(2, $\br$)?
+
+\
+
+WTS: gH\uf{g}{-1} \sbs H \fa g \mem GL(2, $\br$)
+
+\
+
+Let g \mem GL(2, $\br$), h \mem H.
+
+gh\uf{g}{-1} \eql 
+$\begin{bmatrix}{}
+  e & f \\
+  g & h
+\end{bmatrix}$
+$\begin{bmatrix}{}
+  a & b \\
+  0 & d
+\end{bmatrix}$
+$\begin{bmatrix}{}
+  h & -f \\
+  -g & e
+\end{bmatrix}\frac{1}{eh - fg}$ : a, b, ... h \mem \br, eh \ms fg $\neq$ 0 and ad $\neq$ 0.
+
+We want to check if the product of the first and fourth entries in our new matrix is 0 or not, and if the third entry is 0.
+
+New matrix:
+
+$\begin{bmatrix}{}
+  e(ah - bg) - fdg & g(ah - bg) - hdg \\
+  e(be - fa) + fde & g(be - fa) + hde
+\end{bmatrix}$
+
+This matrix is a member of H if
+
+\eqn{e(be - fa) + fde = ebe - efa + fde = 0}
+
+and
+
+\eqn{(e(ah - bg) - fdg)(g(be - fa) + hde) = (eah - ebg - fdg)(gbe - gfa + hde) \neq 0}
+
+
 
 }
 
@@ -309,6 +382,8 @@ Because the order of the permutations results in different output permutation, w
 \ssc{Exercise 14}{
 
 What is the order of the element 14 \ps \abk{8} in the factor group \uw{Z}{24}/\abk{8}?
+
+
 
 }
 
