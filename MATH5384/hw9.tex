@@ -340,8 +340,8 @@ Also, if a and n are relatively prime, then \uf{a}{\phi(n)} mod n $\equiv$ 1 (fr
 
 \eqn{
 	\splt{
-		5^{15}\mod 7 & \equiv 5(5^2)^7 \mod 7 \\
-		& \equiv 5(5^2) \mod 7 \\
+		5^{15}\mod 7 & \eql (5^7)(5^7)5^1 \mod 7 \\
+		& \equiv (5)(5)5 \mod 7 \textrm{ (by Fermat's Little Theorem)} \\
 		& \equiv 125 \mod 7 \\
 		& = 6
 	}
@@ -349,10 +349,10 @@ Also, if a and n are relatively prime, then \uf{a}{\phi(n)} mod n $\equiv$ 1 (fr
 
 \eqn{
 	\splt{
-		7^{13}\mod 11 & \equiv 7^2(7)^{11} \mod 11 \\
-		& \equiv 7^2 \mod 11 \\
-		& \equiv 49 \mod 11 \\
-		& = 5
+		7^{13}\mod 11 & = (7)^3(7)^{10} \mod 11 \\
+		& \equiv 7^3(1) \mod 11 \textrm{ (by Fermat's Little Theorem)} \\
+		& \equiv 147 \mod 11 \\
+		& = 4
 	}
 }
 }
