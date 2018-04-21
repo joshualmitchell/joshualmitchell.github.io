@@ -31,5 +31,5 @@ Note: the 1-10 scale means 1 being absolute worst, 10 being absolute best.
 |hi|hi|hi|hi|hi|hi|
 
 | Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Weight | Sleep: Awake | Sleep: REM | Sleep: Light | Sleep: Deep |
-|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:-----:
-| 4/20/2018 | 3
+|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:-----|
+|hi|hi|hi|hi|hi|hi||hi|hi|hi|hi|hi|hi||hi|hi|hi|hi|
