@@ -313,7 +313,7 @@ $\begin{bmatrix}{}
   -g & e
 \end{bmatrix}\frac{1}{eh - fg}$ : a, b, ... h \mem \br, eh \ms fg $\neq$ 0 and ad $\neq$ 0.
 
-We want to check if the product of the first and fourth entries in our new matrix is 0 or not, and if the third entry is 0.
+We want to check if (first)(fourth) in our new matrix (gh\uf{g}{-1}) is 0 or not, and if the third entry is 0.
 
 New matrix:
 
@@ -328,8 +328,9 @@ This matrix is a member of H if
 
 and
 
-\eqn{(e(ah - bg) - fdg)(g(be - fa) + hde) = (eah - ebg - fdg)(gbe - gfa + hde) \neq 0}
+\eqn{(e(ah - bg) - fdg)(g(be - fa) + hde) - (eah - ebg - fdg)(gbe - gfa + hde) \neq 0}
 
+I'm guessing no, since the the restrictions are less powerful than the number of options e, b, f, a, d, g, h, etc. There is probably a counter example.
 
 
 }
@@ -383,6 +384,29 @@ Because the order of the permutations results in different output permutation, w
 
 What is the order of the element 14 \ps \abk{8} in the factor group \uw{Z}{24}/\abk{8}?
 
+Well,
+
+\uw{Z}{24} / \abk{8} \eql \bk{z\abk{8} : z \mem \uw{Z}{24}}
+
+\abk{8} \eql \bk{e, 8, 16}
+
+14 \ps \abk{8} \eql \bk{14, 22, 6}
+
+So, first of all, the group \uw{Z}{24} / \abk{8} is going to be of order 8 since \abk{8} has 8 left cosets.
+
+Therefore, the order of 14 \ps \abk{8} cannot be larger than 8.
+
+Let's let k \eql \av{14 \ps \abk{8}}.
+
+By LaGrange's theorem, k divides \av{\uw{Z}{24} / \abk{8}}, since \abk{14 \ps \abk{8}} will generate a subgroup of \uw{Z}{24} / \abk{8}.
+
+Since k clearly isn't 1, it can only be 2, 4, or 8.
+
+14 \ps 14 \ps \abk{8} \eql 4 \ps \abk{8} \eql \bk{4, 12, 20}. Nope!
+
+14 \ps 14 \ps 14 \ps 14 \eql 56 \ps \abk{8} \eql 8 \ps \abk{8} \eql 0 \ps \abk{8} \eql \abk{e, 8, 16}.
+
+So, k \eql \av{14 \ps \abk{8}} \eql 4.
 
 
 }
