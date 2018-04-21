@@ -26,9 +26,9 @@ Note: the 1-10 scale means 1 being absolute worst, 10 being absolute best.
 - weight (scale: pounds), this is each morning after I use the bathroom.
 - how much time I spent in each sleep stage (scale: hours) the night before according to fitbit. This includes Awake, REM, Light, and Deep stages.
 
-| Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Weight | Sleep: Awake | Sleep: REM |
-|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|
-|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|
+| Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Weight | Sleep: Awake | Sleep: REM | Sleep: Light | Sleep: Deep |
+|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:------|:-----|
+|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|
 
 | Date | Meditation | Deep Work | Shallow Work | Excited Work | Lukewarm Work | Resistant Work | Healthy Food | Exercise | Step Count | Weight | Sleep: Awake | Sleep: REM | Sleep: Light | Sleep: Deep |
 |:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:---------|:--------------|:------|:-----|
