@@ -32,7 +32,7 @@ Note: the 1-10 scale means 1 being absolute worst, 10 being absolute best.
 |04/21/2018|7|hi|20|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|hi|
 
 excited - 20
-shallow - 30
-goofing - 15
-luke - 20
-deep - 10
+shallow - 40
+goofing - 15 start: 10:30
+luke - 60
+deep - 40
