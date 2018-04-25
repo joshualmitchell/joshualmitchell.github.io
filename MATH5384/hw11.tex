@@ -314,15 +314,42 @@ Prove that there is no homomorphism from \uw{Z}{16} \edp \uw{Z}{2} onto \uw{Z}{4
 
 Suppose \exs $\phi$: \uw{Z}{16} \edp \uw{Z}{2} \lra \uw{Z}{4} \edp \uw{Z}{4}, such that $\phi$ is a homomorphism.
 
-Because \uw{Z}{16} is of order 16, and \av{\uw{Z}{2}} divides 8, there is an element of order 16 in \uw{Z}{16} \edp \uw{Z}{2}, let's call it \uw{z}{16}.
+Since G / Ker $\phi$ is isomorphic to $\phi$(G),
 
-Thus, \uw{z}{16} \mem \uw{Z}{16} \edp \uw{Z}{2}.
+\av{G / Ker $\phi$} \eql \av{$\phi$(G)} \eql 16.
 
-Because $\phi$ is OP, \exs z \mem \uw{Z}{4} \edp \uw{Z}{4} such that $\phi$(\uw{z}{16}) \eql z and \av{z} \eql 16.
+Since \av{G} \eql 32, \av{Ker $\phi$} \eql 2.
 
-However, there is no element of order 16 in \uw{Z}{4} \edp \uw{Z}{4}. A contradiction.
+Since Ker $\phi$ \lse G, e \mem Ker $\phi$.
 
-Hence, no homomorphism exists.
+Since Ker $\phi$ is of order 2, the other element in Ker $\phi$ must have order 2, let's call it k.
+
+The only possibilities for k are: (8, 0), (8, 1), (0, 1)
+
+Since \av{G / Ker $\phi$} has order 16, the possibilities for the order of each c \mem G / Ker $\phi$ are factors of 16: 1, 2, 4, 8, and 16.
+
+Case:
+
+\bilist
+\item Ker $\phi$ \eql \bk{(0, 0), (8, 0)}
+
+Let's look at the coset c \eql Ker $\phi$ \ps (1, 1) \mem G / Ker $\phi$
+
+Notice that the order of c is 8.
+
+\item Ker $\phi$ \eql \bk{(0, 0), (8, 1)}
+
+Let's look at the coset c \eql Ker $\phi$ \ps (1, 1) \mem G / Ker $\phi$
+
+Notice that the order of c is 16.
+
+\item Ker $\phi$ \eql \bk{(0, 0), (0, 1)}
+
+Let's look at the coset c \eql Ker $\phi$ \ps (1, 1) \mem G / Ker $\phi$
+
+Notice that the order of c is 16.
+
+\elist 
 
 }
 
@@ -336,6 +363,26 @@ Can there be a homomorphism from \uw{Z}{4} \edp \uw{Z}{4} onto \uw{Z}{8}? Can th
 
 How many homomorphisms are there from \uw{Z}{20} onto \uw{Z}{8}? How many are there to \uw{Z}{8}?
 
+\
+
+Let $\phi$ : \uw{Z}{20} \lra \uw{Z}{8}
+
+Since $\phi$ is onto, \av{$\phi$(G)} \eql 8.
+
+However, since G is finite, \av{$\phi$(G)} divides \av{G}.
+
+Therefore, 8 divides 20. A contradiction.
+
+Therefore, there are no homomorphisms from \uw{Z}{20} to \uw{Z}{8}.
+
+\
+
+Let $\phi$ be a homomorphism from \uw{Z}{8} onto \uw{Z}{8}.
+
+Since $\phi$ is onto, and the groups are the same order, that means $\phi$ is an isomorphism.
+
+As far as how many of those there are, I'm not sure. 8, I suppose?
+
 }
 
 \ssc{Exercise 24}{
@@ -344,9 +391,21 @@ Suppose that $\phi$: \uw{Z}{50} \lra \uw{Z}{15} is a group homomorphism with $\p
 
 \balist
 \item Determine $\phi$(x).
+
+If $\phi$(7) \eql 6, and $\phi$(0) \eql 0, then I suppose $\phi$(x) \eql 3x
+
 \item Determine the image of $\phi$.
+
+\bk{0, 3, 6, 9, 12}
+
 \item Determine the kernel of $\phi$.
+
+\bk{0, 5, 10, 15, 20, 25, 30, 35, 40, 45}
+
 \item Determine $\uf{\phi}{-1}$(3). That is, determine the set of all elements that map to 3.
+
+\bk{1, 6, 11, 16, 21, 26, 31, 36, 41, 46}
+
 \elist
 
 }
