@@ -11821,7 +11821,7 @@ div#notebook {
 <p>4) <a href="#four">Calculating Our Gradient</a>: calculate our gradient based on the previous loss function</p>
 <p>5) <a href="#five">Recalculating/Updating Our Weights</a>: calculate the change in our weights based on the gradient and updating them</p>
 <p>6) <a href="#six">Updating Our Weights More Than Once</a>: set up a for loop to do steps 3-5 an arbitrary number of times (i.e. epochs)</p>
-<p>7) <a href="#seven">Making Our Epochs Only Use A Subset Of The Data</a>: make the for loop only use a portion of the data (i.e. a batch)</p>
+<p>7) <a href="#seven">Making Our Epochs Only Use A Subset Of The Data</a>: make the for loop only use a portion of the data (i.e. a minibatch)</p>
 <p>8) <a href="#eight">Changing Our Model from Linear Regression to Neural Network</a>: make it fit the data better</p>
 <p>9) <a href="#nine">Abstracting Our Neural Network Into Its Pytorch Class</a>: make it more maintainable and less messy</p>
 <p>10) <a href="#ten">Changing Our Input From Arbitrary Vectors To Images</a>: make it do something more interesting</p>
@@ -12796,7 +12796,7 @@ Should be getting closer to 0...
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7)--Making-Our-Epochs-Only-Use-A-Subset-Of-The-Data-(i.e.-a-&quot;batch&quot;)">7)  Making Our Epochs Only Use A Subset Of The Data (i.e. a "batch")<a class="anchor-link" href="#7)--Making-Our-Epochs-Only-Use-A-Subset-Of-The-Data-(i.e.-a-&quot;batch&quot;)">&#182;</a></h1>
+<h1 id="7)--Making-Our-Epochs-Only-Use-A-Subset-Of-The-Data-(i.e.-a-&quot;batch&quot;)">7)  Making Our Epochs Only Use A Subset Of The Data (i.e. a "minibatch")<a class="anchor-link" href="#7)--Making-Our-Epochs-Only-Use-A-Subset-Of-The-Data-(i.e.-a-&quot;batch&quot;)">&#182;</a></h1>
 </div>
 </div>
 </div>
