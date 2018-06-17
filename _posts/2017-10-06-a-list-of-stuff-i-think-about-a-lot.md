@@ -3,7 +3,7 @@ layout: single
 title: "A list of stuff I think about a lot"
 date: 2017-10-06
 categories: blog
-tags: update
+tags: [math, theoretical-cs, information-theory, machine-learning]
 toc: true # outline page on the right hand side
 ---
 

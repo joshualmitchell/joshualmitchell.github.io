@@ -3,7 +3,7 @@ layout: single
 title: "Open (Usually Data Science) Questions"
 date: 2018-02-23
 categories: blog
-tags: update
+tags: [machine-learning, deep-learning]
 toc: true # outline page on the right hand side
 ---
 

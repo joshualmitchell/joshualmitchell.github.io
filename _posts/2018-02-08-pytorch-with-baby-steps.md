@@ -3,7 +3,7 @@ layout: single
 title: "PyTorch With Baby Steps: From y = x To Training A Convnet"
 date: 2018-02-08
 categories: tutorial
-tags: update
+tags: [deep-learning, pytorch]
 ---
 
 [Take me to the github!](https://github.com/joshualmitchell/Pytorch-Tutorial)

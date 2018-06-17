@@ -3,7 +3,7 @@ layout: single
 title: "Potential Employers:"
 date: 2018-01-04
 categories: blog
-tags: update
+tags: for-employers
 toc: true # outline page on the right hand side
 ---
 Welcome. Thank you for your consideration.

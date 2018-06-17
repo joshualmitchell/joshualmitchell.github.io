@@ -3,7 +3,7 @@ layout: single
 title: "My Analysis I notes in LaTeX"
 date: 2017-09-22
 categories: blog
-tags: update
+tags: [math, latex]
 ---
 
 Here are my class resources for Texas State University's MATH 3380: Analysis 1.

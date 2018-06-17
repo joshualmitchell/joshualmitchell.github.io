@@ -3,7 +3,7 @@ layout: single
 title: "Gathering Housing Insights From The Zillow Dataset (on Kaggle)"
 date: 2018-06-15
 categories: project
-tags: update
+tags: [machine-learning]
 toc: true # outline page on the right hand side
 ---
 
