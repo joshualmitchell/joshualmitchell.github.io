@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Open (Usually Data Science) Questions"
+title: " Data Science (ish) Q/A Collection"
 date: 2018-02-23
 categories: blog
 tags: [machine-learning, deep-learning]
