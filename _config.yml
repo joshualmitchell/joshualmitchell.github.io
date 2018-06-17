@@ -29,7 +29,7 @@ words_per_minute         : 200
 
 # Comments Settings
 comments:
-  provider               : "staticman_v2" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2", "custom"
+  provider               : "false" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -281,7 +281,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
   # _pages
@@ -298,7 +298,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      comments: true
+      comments: false
       share: true
     header: # doesn't seem to work
       teaser: /assets/images/profile.jpg
