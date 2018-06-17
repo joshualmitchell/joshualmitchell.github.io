@@ -4,7 +4,7 @@ title: "PyTorch With Baby Steps: From y = x To Training A Convnet"
 date: 2018-02-08
 categories: tutorial
 tags: [deep-learning, pytorch]
-alias: /blog/2018/02/08/pytorch-with-baby-steps
+alias: /tutorial/pytorch-with-baby-steps
 permalink: /blog/2018/02/08/pytorch-with-baby-steps
 ---
 
