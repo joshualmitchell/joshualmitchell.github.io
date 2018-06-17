@@ -1,7 +1,10 @@
 ---
-layout: post
+layout: single
 title: "Open (Usually Data Science) Questions"
 date: 2018-02-23
+categories: blog
+tags: update
+toc: true # outline page on the right hand side
 ---
 
 As I'm learning and doing research, I often have a lot of questions that I silently ask myself. A lot of them get answered as I read further, but some of them don't.

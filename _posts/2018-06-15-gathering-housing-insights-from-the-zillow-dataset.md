@@ -1,7 +1,10 @@
 ---
-layout: post
+layout: single
 title: "Gathering Housing Insights From The Zillow Dataset (on Kaggle)"
 date: 2018-06-15
+categories: project
+tags: update
+toc: true # outline page on the right hand side
 ---
 
 I've always been passively "interested in real estate" - but when I sat down and thought about what that meant, it dissolved mostly into, "I'd really like to just own a bunch of houses, rent them out, and live off the profit." I imagine I'm not alone in that regard - there are probably a ton of "wannabe" real-estate moguls like me. 
