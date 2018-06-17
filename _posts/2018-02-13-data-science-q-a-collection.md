@@ -38,8 +38,6 @@ How do you treat missing values? What're the pros and cons of using mean, median
 
 What is an outlier? Explain how you might screen for outliers and what you would do if you found them in your dataset. Also, explain what an inlier is and how you might screen for them and what you would do if you found them in your dataset.
 
-
-
 Given a black box machine learning algorithm that you can’t modify, how could you improve its error?
 
 How to find the best hyper parameters?
