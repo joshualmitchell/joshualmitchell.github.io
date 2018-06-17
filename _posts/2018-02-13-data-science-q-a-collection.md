@@ -78,6 +78,12 @@ Explain what a long tailed distribution is and provide three examples of relevan
 
 What're the different Bayesian methods (Naïve Bayes, Bayesian model averaging, Bayesian adaptive trials...)? What're their uses and weaknesses?
 
+What're Bayesian networks (pathway mining)? What're their uses and weaknesses?
+
+What is Statistical inference and group testing? Strengths, weaknesses?
+
+How does the distribution of the data affect results for say, neural networks, regression, etc? Can we use it to our advantage?
+
 ## Numerical / Convex Optimization
 
 What're the different Optimization algorithms (genetic algorithms, quantum-inspired evolutionary algorithms, simulated annealing, particle-swarm optimization)? What're their uses and weaknesses?
@@ -166,33 +172,31 @@ You have data on the duration of calls to a call center. Generate a plan for how
 
 Provide a simple example of how an experimental design can help answer a question about behavior. For instance, explain how an experimental design can be used to optimize a web page. How does experimental data contrast with observational data.
 
+## Unsorted
 
-### Question 31 (02/19/2018): What is KKT and what're it's conditions?
-### Question 32 (02/19/2018): What is Laplace Approximation and what's it used for?
-### Question 33 (02/19/2018): What is a Time series? What're some time series methods (ARIMA, SSA, machine-learning-based approaches) and what are their pros and cons?
-### Question 34 (02/19/2018): What is Structural equation modeling? It's use? Weakness?
-### Question 35 (02/19/2018): What is Factor analysis (exploratory and confirmatory)? It's use? Weakness?
-### Question 36 (02/19/2018): What is Power analysis/trial design (particularly simulation-based trial design)? It's use? Weakness?
-### Question 37 (02/19/2018): What is Nonparametric testing (deriving tests from scratch, particularly through simulations)/MCMC? It's use? Weakness?
+What is KKT and what're it's conditions?
 
+What is Laplace Approximation and what's it used for?
 
-### Question 39 (02/19/2018): What're the different Topological data analysis tools (persistent homology, Morse-Smale clustering, Mapper...)? What're their uses and weaknesses?
-### Question 44 (02/19/2018): What're Markov chains and stochastic processes? What're their uses and weaknesses?
-### Question 45 (02/19/2018): What're Network metrics and algorithms (centrality measures, betweenness, diversity, entropy, Laplacians, epidemic spread, spectral clustering)? What're their uses and weaknesses?
+What is a Time series? What're some time series methods (ARIMA, SSA, machine-learning-based approaches) and what are their pros and cons?
 
-### Question 47 (02/19/2018): What're Bayesian networks (pathway mining)? What're their uses and weaknesses?
-### Question 48 (02/19/2018): What is Survival analysis? Strengths, weaknesses?
-### Question 49 (02/19/2018): What is Mixture modeling? Strengths, weaknesses?
-### Question 50 (02/19/2018): What is Statistical inference and group testing? Strengths, weaknesses?
-### Question 51 (02/25/2018): How does the distribution of the data affect results for say, neural networks, regression, etc? Can we use it to our advantage?
+What is Structural equation modeling? It's use? Weakness?
 
+What is Factor analysis (exploratory and confirmatory)? It's use? Weakness?
 
-### What is latent semantic indexing? What is it used for? What are the specific limitations of the method?
+What is Power analysis/trial design (particularly simulation-based trial design)? It's use? Weakness?
 
-### Explain the differences between artificial neural networks with softmax activation, logistic regression, and the maximum entropy classifier.
+What is Nonparametric testing (deriving tests from scratch, particularly through simulations)/MCMC? It's use? Weakness?
 
-### Explain what a local optimum is and why it is important in a specific context, such as k-means clustering. What are specific ways for determining if you have a local optimum problem? What can be done to avoid local optima?
-### 
+What're the different Topological data analysis tools (persistent homology, Morse-Smale clustering, Mapper...)? What're their uses and weaknesses?
 
-### What is latent semantic indexing? What is it used for? What are the specific limitations of the method?
+What're Markov chains and stochastic processes? What're their uses and weaknesses?
+
+What're Network metrics and algorithms (centrality measures, betweenness, diversity, entropy, Laplacians, epidemic spread, spectral clustering)? What're their uses and weaknesses?
+
+What is Survival analysis? Strengths, weaknesses?
+
+What is Mixture modeling? Strengths, weaknesses?
+
+What is latent semantic indexing? What is it used for? What are the specific limitations of the method?
 
