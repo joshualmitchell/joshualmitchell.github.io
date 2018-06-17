@@ -5,6 +5,7 @@ date: 2018-02-08
 categories: tutorial
 tags: [deep-learning, pytorch]
 alias: /blog/2018/02/08/pytorch-with-baby-steps
+permalink: /blog/2018/02/08/pytorch-with-baby-steps
 ---
 
 [Take me to the github!](https://github.com/joshualmitchell/Pytorch-Tutorial)
