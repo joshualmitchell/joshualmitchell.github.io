@@ -3,7 +3,7 @@ main:
    - title: "About Me"
      url: /about/
    - title: "Resume"
-     url: /assets/docs/resume/resume.pdf
+     url: /resume/resume.pdf
    - title: "Posts (by date)"
      url: /year-archive/
    - title: "Posts (by category)"
