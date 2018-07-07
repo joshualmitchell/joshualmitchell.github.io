@@ -53,9 +53,9 @@ That took care of problems 2 and 4, here's how I dealt with 1 and 3:
 
 I resisted using a personal project management tool for a long time because it seemed like
 
-(1) a pain (*you mean I have to sketch out the entire thing, divvy up tasks, and all this stuff before I get to the fun part?*) and
+1. a pain (*you mean I have to sketch out the entire thing, divvy up tasks, and all this stuff before I get to the fun part?*) and
 
-(2) a waste of time (*why spend time jotting down what I'm going to do instead of doing it?*).
+2. a waste of time (*why spend time jotting down what I'm going to do instead of doing it?*).
 
 However, I realized that I made it out to be a demanding taskmaster demon in my head when really it should be perceived as a helpful, guiding angel.
 
