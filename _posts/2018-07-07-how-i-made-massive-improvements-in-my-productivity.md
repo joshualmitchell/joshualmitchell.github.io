@@ -78,7 +78,7 @@ My golden goose daily routine is now:
 
 During this whole time, if I think of something I need to do, I add it to the big to-do list, and if I learn something new, I'll Ankify it (*make flashcards*). 
 
-The two key things that help fix problems 1 and 3 are:
+The two key things that helped fix problems 1 and 3 are:
 
 - I no longer have unknown / unforgotten tasks that might be important eating away at me subconsciously
 - At any given time, what's on my plate is always manageable and easy to create momentum
