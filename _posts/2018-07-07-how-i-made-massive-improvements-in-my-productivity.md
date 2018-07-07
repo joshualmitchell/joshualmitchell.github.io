@@ -40,7 +40,10 @@ My system clearly needed a lot of work, but it turned out to have 2 main holes I
 
 - I couldn't trust myself to not go on reddit et al., so I bought a subscription to [Freedom](https://freedom.to/). You give it a list of sites you don't want to visit and the times you don't want to visit them, and it disables them at those times (*at the VPN level, so it doesn't matter what browser you use*). I specifically set it to only let me go on distracting sites between 6pm and 7pm (until I learn self control I suppose).
 - Unfortunately, Freedom isn't available on Linux yet. However, I discovered that you can just edit your /etc/hosts file and add any sites there you don't want to visit (e.g. 127.0.0.1    facebook.com). Does mostly the same thing, but easier to get around.
-- I emailed [Derek Sivers](https://sivers.org/) about this, and he said some other stuff he does is (1) move all your distracting apps (*including your default browser*) into as deeply nested of a folder you can (only 1 level on iOS) as far away from your home screen as you can (*so you have to swipe multiple times to get to that page of apps*) (2) disable those apps from appearing in your recently used section (*to avoid temptation to open them again*) and (3) download Firefox Focus (*which makes you manually type out all your websites instead of remembering them*).
+- I emailed [Derek Sivers](https://sivers.org/) about this, and he said some other stuff he does is
+    1. move all your distracting apps (*including your default browser*) into as deeply nested of a folder you can (only 1 level on iOS) as far away from your home screen as you can (*so you have to swipe multiple times to get to that page of apps*)
+    2. disable those apps from appearing in your recently used section (*to avoid temptation to open them again*) and
+    3. download Firefox Focus (*which makes you manually type out all your websites instead of remembering them*).
 
 Ultimately, the idea was to set up as many barriers as possible to distracting stuff. These worked pretty well.
 
