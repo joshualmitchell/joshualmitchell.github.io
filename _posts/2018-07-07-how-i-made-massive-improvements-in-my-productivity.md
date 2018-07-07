@@ -45,8 +45,6 @@ My system clearly needed a lot of work, but it turned out to have 2 main holes I
     2. disable those apps from appearing in your recently used section (*to avoid temptation to open them again*) and
     3. download Firefox Focus (*which makes you manually type out all your websites instead of remembering them*).
 
-Ultimately, the idea was to set up as many barriers as possible to distracting stuff. These worked pretty well.
-
 A side effect of eliminating the distractions meant that I didn't get random spurts of inspiration from various cool tech threads I found on reddit/HN, and instead got spurts of information from seeing myself succeed in whatever project I was doing (*which didn't pull me away to other things*).
 
 So that took care of problems 2 and 4, here's how I dealt with 1 and 3:
