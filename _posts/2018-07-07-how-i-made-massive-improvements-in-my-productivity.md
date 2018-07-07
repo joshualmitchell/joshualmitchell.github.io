@@ -76,7 +76,7 @@ My golden goose daily routine is now:
 - at 5:30pm, at this point I've probably thought of more stuff to do later, so I'll add these tasks to the big to-do list and break down the big ones into actionable chunks.
 - Finally, before I end my work day, I'll assign myself a reasonable, digestible, and manageable amount of tasks to do the next morning.
 
-During this whole time, if I think of something I need to do, I add it to the big to-do list, and if I learn something new, I'll Ankify it (*make flashcards*). 
+During this whole time, if I think of something I need to do, I add it to the big to-do list, and if I learn something new, I'll Ankify it / make flash cards for it. 
 
 The two key things that helped fix problems 1 and 3 are:
 
