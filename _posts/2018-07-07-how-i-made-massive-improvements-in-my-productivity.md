@@ -36,7 +36,7 @@ A lot of these problems turned out to be interwoven with each other. When I brok
 
 My system clearly needed a lot of work, but it turned out to have 2 main holes I had to plug:
 
-# Eliminate Distractions
+### Eliminate Distractions
 
 - I couldn't trust myself to not go on reddit et al., so I bought a subscription to [Freedom](https://freedom.to/). You give it a list of sites you don't want to visit and the times you don't want to visit them, and it disables them at those times (at the VPN level, so it doesn't matter what browser you use). I specifically set it to only let me go on distracting sites between 6pm and 7pm (until I learn self control I suppose).
 - Unfortunately, Freedom isn't available on Linux yet. However, I discovered that you can just edit your /etc/hosts file and add any sites there you don't want to visit (e.g. 127.0.0.1    facebook.com). Does mostly the same thing, but easier to get around.
@@ -48,13 +48,17 @@ A side effect of eliminating the distractions meant that I didn't get random spu
 
 So that took care of problems 2 and 4, here's how I dealt with 1 and 3:
 
-# Set Up Formal Project Management
+### Set Up Formal Project Management
 
 I resisted using a personal project management tool for a long time because it seemed like (1) a pain (you mean I have to sketch out the entire thing, divvy up tasks, and all this stuff before I get to the fun part?) and (2) a waste of time (why spend time jotting down what I'm going to do instead of doing it?).
 
 However, I realized that I made it out to be a demanding taskmaster demon in my head when really it should be perceived as a helpful, guiding angel.
 
-First, I had to mentally decouple all the stuff I needed to do from what I should be doing right this second. Second, I had to take all the big/complex/abstract stuff and break it into small, actionable bits (I know this is what all the productivity people have been saying for ages... I guess I just wanted to discover my own cool new way of being productive). Third, I had to start recording anything I needed to do so that it didn't fade into obscurity and stress me out because I forgot what it was / how important it was.
+First, I had to mentally decouple all the stuff I needed to do from what I should be doing right this second.
+
+Second, I had to take all the big/complex/abstract stuff and break it into small, actionable bits (I know this is what all the productivity people have been saying for ages... I guess I just wanted to discover my own cool new way of being productive).
+
+Third, I had to start recording anything I needed to do so that it didn't fade into obscurity and stress me out because I forgot what it was / how important it was.
 
 The project management I ended up using is called [Basecamp](https://basecamp.com/). It costs money, but I totally played the student card and they gave it to me for free (for a year) when I emailed them.
 
