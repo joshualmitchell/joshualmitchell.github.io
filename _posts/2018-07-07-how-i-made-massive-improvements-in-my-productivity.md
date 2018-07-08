@@ -7,8 +7,6 @@ tags: [productivity, project-management]
 toc: true # outline page on the right hand side
 ---
 
-I'm really excited.
-
 As someone who has had periodic (*and highly variable*) spurts of productivity, but never managed to isolate a good system for consistent, long-term results: I think I've finally found what works for me.
 
 I'm posting this write-up on it in hopes that it helps others. 
