@@ -301,5 +301,5 @@ defaults:
       comments: false
       share: true
     header: # doesn't seem to work
-      teaser: /assets/images/profile.jpg
+      teaser: /assets/images/profile.jpeg
 
