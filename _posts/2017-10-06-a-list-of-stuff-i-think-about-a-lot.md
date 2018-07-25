@@ -1,7 +1,10 @@
 ---
-layout: post
+layout: single
 title: "A list of stuff I think about a lot"
 date: 2017-10-06
+categories: blog
+tags: [math, theoretical-cs, information-theory, machine-learning]
+toc: true # outline page on the right hand side
 ---
 
 As a new graduate student, I have a ton of shallow interests with next to none of the vocabulary to articulate where I want to go with each of them. I suspect I have a deeper interest in a subset of those, but when I get asked, "What're your research interests?" - I don't have those immediately available. This tends to be a problem.
@@ -59,7 +62,7 @@ That trick only works because the numbers are ordered and evenly spaced apart - 
 
 For example (a Q3 hypergraph):
 
-![Q3 Hypergraph - Image Not Found](https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/img/q3.png "Q3 Hypergraph")
+![png](/figure/posts/2017-10-06-a-list-of-stuff-i-think-about-a-lot/q3.png)
 
 Can we flatten this such that no edge is lying on another edge? Does this mean it has to be 3D?
 - Summarizing an entire textbook or picture into one word or pixel is kind of useless, but how big/small does the summary have to be before it becomes useful?

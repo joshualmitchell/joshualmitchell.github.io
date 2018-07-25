@@ -1,0 +1,7 @@
+Folder:
+
+year-mo-day-title-of-post
+
+in the folder:
+
+name.ext

@@ -1,7 +1,10 @@
 ---
-layout: post
+layout: single
 title: "The Guide to DrawingGuide"
 date: 2018-01-24
+categories: project
+tags: [web-dev, computer-vision, deep-learning]
+toc: true # outline page on the right hand side
 ---
 
 This is a write up of the current status of DrawingGuide, an application that aids its users in learning to draw.

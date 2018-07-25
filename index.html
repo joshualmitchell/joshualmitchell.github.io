@@ -1,20 +1,4 @@
---- 
-layout: default 
-title: Home
 ---
-<h1>{{ page.title }}</h1>
-<p>Hi! My name's Joshua Lelon Mitchell. I'm a M.S. in Applied Mathematics graduate student at Texas State University. Welcome to my site.</p>
-<p>My goal is to bring as much value to as many people as possible through mediums I find interesting (like writing, programming, and data science).</p>
-<h3>Latest Post</h3>
-<ul class="posts">
-    {% for post in site.posts limit:1 %}
-    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
-<h3>Recent Posts</h3>
-<ul class="posts">
-    {% for post in site.posts offset:1 limit:2 %}
-    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
-<p>Thanks for visiting!</p>
+layout: home
+author_profile: true
+---
