@@ -126,11 +126,13 @@ _AGAINST_: However, you could also argue: it's not an employers' responsibility 
 
 ---
 
-I don't know. At the end of the day, I won't sweat embellishing at a 1 or 2 level.
+I don't know.
 
-I wouldn't be against doing a 3 (but I'd be nervous about it and study beforehand if I actually got the interview). 
+I won't sweat embellishing at a 1 or 2. I think a lot of people do 1's or 2's accidently without ever knowing it.
 
-Anything that's a 4 or above, I wouldn't do it unless it was that or not eat / go hardcore into debt / etc. I think that's pretty reasonable.
+I wouldn't necessarily be against doing a 3, but I would be nervous about it and study beforehand if I actually got the interview. That way, I'm not caught with my pants down.
+
+Anything that's a 4 or above, I wouldn't do it unless it was a survival situation (which I don't see happening anytime soon).
 
 I'd probably put the story above at a solid 3...
 
