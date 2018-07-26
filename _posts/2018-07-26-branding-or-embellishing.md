@@ -106,23 +106,27 @@ Suppose that all resume embellishment lies on a scale from 1-10 (least extreme t
 
 If your embellishment is a 1, are you necessarily wrong for doing that? Is this one of those times lying is okay?
 
-You could argue, all else being equal, someone who knows X that takes 15 minutes to learn is a better candidate than someone who doesn't know X.
+_AGAINST_: You could argue, all else being equal, someone who knows X that takes 15 minutes to learn is a better candidate than someone who doesn't know X.
 
-At the same time, you could argue that there's no such thing as "all else being equal" since we live in a giant chaotic system that doesn't allow us to definitively say "this is a better candidate" based on this specific skill. Maybe they do know X, but they're going to argue with Jerry, the senior developer, a lot more and cause less productivity for the team in total - there are uncountably infinite scenarios like this.
+_FOR_: However, you could argue that there's no such thing as "all else being equal" since we live in a giant chaotic system that doesn't allow us to definitively say "this is a better candidate" based on this specific skill.
 
-You could argue that true, you can't know how much value someone will add, but the probability given they know X is ever so slightly higher.
+For example, maybe they do know X, but they're going to argue with Jerry, the senior developer, a lot more and cause less productivity for the team in total. You can't infer business value from small skills like that with any certainty.
 
-Then again, you could also argue that the above difference, while true, is statistically insignificant and has no validity.
+_AGAINST_: You could argue that, true, you can't know how much value someone will add, but the probability given they know X is ever so slightly higher.
 
-You could argue that you shouldn't embellish whatsoever, since it's not your business what an employer wants to hire for.
+_FOR_: Then again, you could also argue that the above difference, while true, is statistically insignificant and therefore has no validity.
 
-Then again, you could also argue that it's not the employer's business to know a complete profile of what you're capable of - that it's only their business to know if you can do their job.
+_AGAINST_: You could argue that you shouldn't embellish whatsoever, since it's not your business what an employer wants to hire for.
 
-You could argue: everyone has to eat. In other words, you're not wrong for doing what you have to in order to survive - which in this case, means embellishing to get a job to get money to get food.
+_FOR_: Then again, you could also argue that it's not the employer's business to know a complete profile of what you're capable of - that it's only their business to know if you can do their job.
 
-However, you could also argue: it's not an employers' responsibility to feed everyone.
+_FOR_: You also could argue: everyone has to eat. In other words, you're not wrong for doing what you have to in order to survive - which in this case, means embellishing to get a job to get money to get food.
 
-I don't know...
+_AGAINST_: However, you could also argue: it's not an employers' responsibility to feed everyone.
+
+---
+
+I don't know. At the end of the day, I won't sweat embellishing at a 1 or 2 level. I wouldn't be against doing a 3 (but I'd be nervous about it and study beforehand if I actually got the interview). Anything that's a 4 or above, I wouldn't do it unless it was that or not eat / go hardcore into debt / etc. I think that's pretty reasonable. 
 
 ## The Examples
 
@@ -144,4 +148,4 @@ I don't know...
 
 9. Super High ...
 
-10. EXTTREMELY High : You've never used a computer before. You're applying for an architect position. You see where I'm going with this.
+10. EXTREMELY High : You've never used a computer before. You're applying for an architect position. You see where I'm going with this.
