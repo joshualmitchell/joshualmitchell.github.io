@@ -97,7 +97,7 @@ I think it's agreeable that if you embellish and it slows the business down (or 
 
 However, what about embellishing when it doesn't adversely affect the business?
 
-Suppose that all resume embellishment lies on a scale from 1-10 (least extreme to most). I'll put some examples at the bottom of this post, but TL;DR:
+Suppose that all resume embellishment lies on a scale from 1-10 (least extreme to most). TL;DR:
 
 - 1 to 2: nobody who hired you would notice and business would run as usual.
 - 3 to 4: maybe a few people would notice at first, but you'd cover your deficit quickly and the business wouldn't be impacted.
@@ -135,25 +135,3 @@ I wouldn't necessarily be against doing a 3, but I would be nervous about it and
 Anything that's a 4 or above, I wouldn't do it unless it was a survival situation (which I don't see happening anytime soon).
 
 I'd probably put the story above at a solid 3...
-
-## The Examples
-
-1. Inconsequential / Nobody Reasonable would care : Maybe you're a developer who's worked with JavaFramework 4.x for 3 years. When they release JavaFramework 5.0, they rename it JavaLibrary. It's the same thing with a new feature or two. You shrug and add that new word to your resume. Despite not technically using it yet, it would take you a maximum of 15 minutes to read the docs and be productive.
-
-2. Negligible / Very Mild : Maybe you got hired at the very end of August. You were in the office filling out paperwork on Friday, but you officially started your position in September on a Monday. On your resume, you put that you started in August.
-
-3. Mildish ...
-
-4. Mild to Moderate : Maybe you've programmed in Java and C++ for 3 years. Ugh, this position wants 3 years of JavaScript experience as well as Java and C++. You've never used JavaScript. You look up the syntax... it looks similar enough. You look at the job description again... it looks like the job is mainly Java development... You could totally do this job. Whatever. Ta-da! You have 3 years of JavaScript experience now.
-
-5. Moderate : Oh crap. They want experience with MySQL and/or SQL Server too. 3 years. You haven't done any of that. What does that look like? SELECT * FROM CUSTOMERS NATURAL JOIN ORDERS... Okay, it's just for managing data. That doesn't sound hard to pick up. Abra Kadabra! 3 years of SQL.
-
-6. Upper end of Moderate : Okay, so they want HTML, CSS, JavaScript, Angular.js, SQL, and Java. This is clearly a web development position. 2-3 years of experience. You only have 2 years of Java. But! You're a developer. That's a developer position. Developers are learning new things all the time anyway... You could totally do that job (probably)! Zip Bam Boom: 2 years of experience in all of the above.
-
-7. High : You've made a static site with HTML and CSS once, a few years ago. You did a hello world tutorial in Java, too! It wasn't that hard. You hear developers make a lot of money. Plus, you have a math degree, so you're sure you can pick up whatever you need to. Just put whatever this web developer position requires on your resume. Bam! Look at you. You're the perfect candidate!
-
-8. Very High : You want to make a lot of money. You have so much money to pay back in student loans from your B.S. in Biology. So, you apply for any job you hear pays well. This Senior Developer position looks pretty high profile. Just fill your resume with all the key terms!
-
-9. Super High ...
-
-10. EXTREMELY High : You've never used a computer before. You're applying for an architect position. You see where I'm going with this.
