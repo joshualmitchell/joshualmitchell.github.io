@@ -1,0 +1,190 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+\newenvironment{tightcenter}{%
+	\setlength\topsep{0pt}
+	\setlength\parskip{0pt}
+	\begin{center}
+	}{%
+	\end{center}
+}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Joshua Lelon Mitchell
+	}\par}
+\par{\centering
+		{
+	Austin, TX
+	$\mid$
+	(512) 537-9446
+	$\mid$
+	\href {mailto:jlelonmitchell@gmail.com}{jlelonmitchell@gmail.com}
+	$\mid$
+	\href {http://lelon.io/blog/2018/01/04/to-potential-employers}{lelon.io}
+	$\mid$
+	\href {https://github.com/joshualmitchell}{github.com/joshualmitchell}
+}\par}
+
+%--------------------SECTIONS-----------------------------------
+\begin{center}
+I write software and use advanced machine learning techniques to bring businesses value. I leverage my deep learning expertise to derive key insights from complex multimedia data. I have 3 years of combined personal and professional software development experience.
+\end{center}
+
+\section{Technical Skills}
+
+\underline{Proficient}: Python (Numpy, networkx, matplotlib, PyTorch), C++, SQL, git, Unix, LaTeX
+
+\underline{Familiar}: Python (Pandas, Scikit-Learn, OpenCV), R, Matlab, HTML/CSS, JavaScript, Angular.js
+
+\underline{Learning}: MPI, OpenMP, CUDA, Hadoop, Spark, Hive, Pig, d3.js, 
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+	\textsc{May} 2019 & Master of Science in \textsc{Computer Science}, \textbf{Texas State University}, San Marcos, TX\\
+	
+	&\normalsize \textsc{GPA}: 3.80/4, Data Mining and Machine Learning focus \\ 
+	
+	& \emph{HomeAway InternHackATX Team MVP Nominee} (2017, 2018) \\
+	
+	& \\
+	
+	\textsc{May} 2016 & Bachelor of Science in \textsc{Computer Science}, \textbf{Texas State University}, San Marcos, TX \\
+	
+	&\normalsize \textsc{GPA}: 3.63/4,  \textbf{Dean’s List}: Fall 2015, Spring 2016 \\
+	
+	& \emph{USAA 2015 Intern Innovation Open, 1st prize} (resulting in patent filing)  \\
+	
+	& \\
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Career Experience}
+\begin{tabular}{r|p{12cm}}
+\textsc{Aug 2017 -} & Research Engineer | \textsc{Texas State University}, San Marcos, TX \\
+\emph{Present} & \small{
+	\textbf{Tech}: PyTorch, Numpy, Matplotlib, OpenCV, Pandas, Scikit-Learn, Python, Unix
+	}
+
+	\tiny{
+	\vphantom{a}
+	}
+
+	\small{
+	- Previously implemented a novel bias detection algorithm on graph datasets	
+	
+	- Currently creating a deep learning architecture that produces state of the art classification and localization accuracy on the xView dataset
+	
+	- In charge of taking a previous deep learning application and modifying it to accommodate an entirely different dataset 
+	
+	- Automated the end-to-end process of wrangling the dataset to training the model using a series of bash scripts
+	}
+	\\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Jun 2016 -} & Software Developer | \textsc{General Motors Company (GMC)}, Austin, TX \\
+Aug 2017 & \small{
+	\textbf{Tech}: Angular.js, HTML, CSS, Javascript, REST, SQL}
+
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+	- Part of a team that developed the first mobile web application scaled across 60+ GMC factories 
+	
+	- Developed feature enhancements that generated an 8\% efficiency increase
+	
+	- Autonomously implemented Adobe XD mock-ups in Angular.js and integrated them with existing REST services
+} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Sep 2015 -} & Co-Op Software Engineer | \textsc{IBM Corporation}, Austin, TX \\
+ May 2016 & \small{
+ 	\textbf{Tech}: Angular.js, HTML, CSS, Javascript, REST, SQL, Balsamiq, Unix}
+ 
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+ 	- I used Balsamiq to mock up application flows and the Ionic/Angular.js frameworks to build MVPs, fix existing bugs, and deliver the final application
+ 	
+ 	- Supported the redesign of a mobile application that supplied user’s with server status updates
+ 	
+ 	- Debugged functions that retrieved, parsed, and pushed data to the REST API 
+ 	
+ 	- Worked on cross-functional team including 5 interns and a software architect
+ } \\
+ \multicolumn{2}{c}{} \\
+\end{tabular}
+
+\end{document}
