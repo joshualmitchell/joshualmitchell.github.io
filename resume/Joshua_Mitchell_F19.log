@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6600 64-bit) (preloaded format=xelatex 2018.7.25)  15 AUG 2018 22:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6600 64-bit) (preloaded format=xelatex 2018.7.25)  15 AUG 2018 22:30
 entering extended mode
 **./Joshua_Mitchell_F19.tex
 (Joshua_Mitchell_F19.tex
@@ -1030,6 +1030,10 @@ Overfull \hbox (17.79016pt too wide) in paragraph at lines 111--128
 [][] 
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 134.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 134.
 
 Overfull \hbox (3.68309pt too wide) in paragraph at lines 131--189
 [][] 
@@ -1046,12 +1050,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 190.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 190.
  ) 
 Here is how much of TeX's memory you used:
- 23661 strings out of 427834
- 423874 string characters out of 3147547
- 508684 words of memory out of 3000000
- 27494 multiletter control sequences out of 15000+200000
- 535856 words of font info for 47 fonts, out of 3000000 for 9000
+ 23677 strings out of 427834
+ 424067 string characters out of 3147547
+ 509684 words of memory out of 3000000
+ 27503 multiletter control sequences out of 15000+200000
+ 537687 words of font info for 54 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
- 39i,8n,65p,405b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,11n,65p,405b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on Joshua_Mitchell_F19.pdf (1 page).
