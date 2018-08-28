@@ -7,6 +7,8 @@ tags: [pytorch, deep-learning, machine-learning, education]
 toc: true # outline page on the right hand side
 ---
 
+Here is a copy of a demo I gave at the Evening of Python Coding Meet Up.
+
 # Quick 15 minute (ish) PyTorch Demo
 
 By Joshua Mitchell
