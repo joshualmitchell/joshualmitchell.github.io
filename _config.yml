@@ -102,7 +102,7 @@ analytics:
 author:
   name             : "Joshua L. Mitchell"
   avatar           : "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Comp-Sci M.S. Student | Data Scientist"
+  bio              : "Comp-Sci M.S. Student | Data Engineer"
   location         : "Austin, TX, USA"
   email            : "jlelonmitchell@gmail.com"
   uri              :
