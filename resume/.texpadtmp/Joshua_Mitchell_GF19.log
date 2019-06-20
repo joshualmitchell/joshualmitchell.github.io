@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  25 SEP 2018 10:43
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  20 JUN 2019 14:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -893,25 +893,25 @@ Overfull \hbox (17.79016pt too wide) in paragraph at lines 111--128
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 134.
+(Font)              <9> on input line 135.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 134.
+(Font)              <6> on input line 135.
 
-Overfull \hbox (3.68309pt too wide) in paragraph at lines 131--189
+Overfull \hbox (4.2831pt too wide) in paragraph at lines 131--195
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 190.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_GF19.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 190.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `Joshua_Mitchell_GF19.out' has not changed.
 (rerunfilecheck)             Checksum: .
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 190.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
  22927 strings out of 492970
