@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  19 AUG 2019 16:09
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  10 SEP 2019 14:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -888,30 +888,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
-Overfull \hbox (17.79016pt too wide) in paragraph at lines 111--128
+Overfull \hbox (26.76346pt too wide) in paragraph at lines 110--127
 [][] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 135.
+(Font)              <9> on input line 134.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 135.
+(Font)              <6> on input line 134.
 
-Overfull \hbox (4.2831pt too wide) in paragraph at lines 131--195
+Overfull \hbox (4.2831pt too wide) in paragraph at lines 130--194
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
  (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_GF19.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `Joshua_Mitchell_GF19.out' has not changed.
 (rerunfilecheck)             Checksum: .
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
  22927 strings out of 492970
