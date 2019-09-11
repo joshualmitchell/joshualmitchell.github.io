@@ -1,0 +1,195 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+\newenvironment{tightcenter}{%
+	\setlength\topsep{0pt}
+	\setlength\parskip{0pt}
+	\begin{center}
+	}{%
+	\end{center}
+}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Joshua Lelon Mitchell
+	}\par}
+\par{\centering
+		{
+	Austin, TX
+	$\mid$
+	(512) 537-9446
+	$\mid$
+	\href {mailto:jlelonmitchell@gmail.com}{jlelonmitchell@gmail.com}
+	$\mid$
+	\href {http://lelon.io/blog/2018/01/04/to-potential-employers}{lelon.io}
+	$\mid$
+	\href {https://github.com/joshualmitchell}{github.com/joshualmitchell}
+}\par}
+
+%--------------------SECTIONS-----------------------------------
+\begin{center}
+I analyze data and write code to add business value.
+\end{center}
+\section{Technical Skills}
+
+\underline{Proficient}: Python (numpy, pandas, matplotlib, sk-learn), git, Unix
+
+\underline{Familiar}: SQL, R, Matlab, HTML/CSS, JavaScript, Angular.js, C++, MPI, OpenMP, CUDA
+
+\underline{Learning}: Google Cloud (Dataflow, BigQuery, Cloud Composer), Concourse, Airflow, Spark
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+	\textsc{May} 2020 & \textbf{Master of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX\\
+	
+	(part-time, &\normalsize \textsc{GPA}: 3.80/4, Focus: \underline{Data Mining \& Natural Language Processing} \\ 
+	
+	evenings)& \emph{HomeAway InternHackATX Team MVP Nominee} (2017, 2018) \\
+	
+	& \\
+	
+	\textsc{May} 2016 & \textbf{Bachelor of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX \\
+	
+	(complete) &\normalsize \textsc{GPA}: 3.63/4,  Dean's List: Fall 2015, Spring 2016 \\
+	
+	& \emph{USAA 2015 Intern Innovation Open, 1st prize} (resulting in patent filing)  \\
+	
+	& \\
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Career Experience}
+\begin{tabular}{r|p{12cm}}
+
+\textsc{May 2019 -} & \textbf{Data Engineer Intern} (Marketing Analytics) | \textsc{The Home Depot Inc}, Austin, TX \\
+Aug 2019 & \small{
+	\textbf{\underline{Tech}}: Google Cloud (Dataflow, BigQuery, Cloud Composer), Airflow, Concourse, Python}
+
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+	- worked on the Transaction Matching (TM) team, where the goal was to match people to their transactions to yield better marketing insights
+	
+	- helped migrate an on-premise Hadoop-based data pipeline to Google Cloud } \\
+ \multicolumn{2}{c}{} \\
+
+\textsc{Aug 2017 -} & \textbf{Research and Teacher Assistant} | \textsc{Texas State University}, San Marcos, TX \\
+May 2019 & \small{
+	\textbf{\underline{Tech}}: Spark, Python (PyTorch, numpy, pandas, matplotlib, scikit-learn), Unix
+	}
+
+	\tiny{
+	\vphantom{a}
+	}
+
+	\small{
+	
+	- modified an existing deep learning architecture to produce state of the art classification and localization accuracy on the xView dataset
+	
+	- was in charge of taking a previous deep learning application and modifying it to accommodate an entirely different dataset 
+	
+	- automated the end-to-end process of wrangling the dataset to training the model using a series of bash scripts
+	}
+	\\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Jun 2016 -} & \textbf{Software Developer} | \textsc{General Motors Company (GMC)}, Austin, TX \\
+Aug 2017 & \small{
+	\textbf{\underline{Tech}}: Angular.js, HTML, CSS, Javascript, REST, SQL}
+
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+	- part of a team that developed an Angular.js mobile web application scaled across 60+ GMC factories 
+	
+	- developed feature enhancements that generated a large efficiency increase in factory assembly line yield
+} \\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Sep 2015 -} & \textbf{Co-Op Software Engineer} | \textsc{IBM Corporation}, Austin, TX \\
+ May 2016 & \small{
+ 	\textbf{\underline{Tech}}: Angular.js, HTML, CSS, Javascript, REST, SQL, Balsamiq, Unix}
+ 
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+ 	- used Balsamiq to mock up application flows and the Ionic/Angular.js frameworks to build MVPs, fix existing bugs, and deliver a final application that supplied user’s with server status updates
+ } \\
+ \multicolumn{2}{c}{} \\
+\end{tabular}
+
+\end{document}
