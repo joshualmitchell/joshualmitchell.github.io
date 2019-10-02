@@ -12,6 +12,7 @@
 \usepackage{titlesec}					%custom \section
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{multicol}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
@@ -93,17 +94,31 @@ ItalicFont = Fontin-Italic.otf
 	\href {https://www.linkedin.com/in/joshua-mitchell-17b94077/}{in/joshua-mitchell-17b94077}
 }\par}
 
-%--------------------SECTIONS-----------------------------------
-\section{Profile}
-
-Experienced software engineer and data analyst transitioning applying those skills in the digital marketing domain (and learning new ones). Bringing forth broad scripting, automation, and analytics knowledge coupled with strong written and oral communication skills. Accomplished at managing a blog and social media presence. Experienced in solving business problems with code and data.
+\begin{center}
+	Experienced data analyst applying those skills in the digital marketing domain (and learning new ones). Bringing forth broad scripting, automation, and analytics knowledge coupled with strong written and oral communication skills. Accomplished at managing a blog and social media presence. Experienced in solving business problems with code and data. 
+\end{center}
 
 \section{Skills}
 
-\textbf{Marketing}: Google Analytics (GA), Adobe Experience Cloud
-
-\textbf{Programming/Data Analysis}: HTML/CSS, JavaScript, Angular.js, Unix/Linux, Python, SQL, R
-
+\begin{multicols}{2}
+	Data Analysis (Google Analytics, Adobe)
+	
+	Data Mining (SQL)
+	
+	Predictive Modeling
+	
+	Front-End Development
+	
+	\columnbreak
+	
+	Project Management
+	
+	Public Speaking
+	
+	Team Building
+	
+	Content Creation
+\end{multicols}
 %Section: Work Experience at the top
 \section{Career Experience}
 \begin{tabular}{r|p{12cm}}
@@ -117,9 +132,9 @@ Aug 2019 & \small{
 	}
 	
 	\small{
-	- worked on the Transaction Matching (TM) team, where the goal was to match people to their transactions to yield better marketing insights
+	- worked on the Transaction Matching team, where the goal was to match people to their transactions to yield better marketing insights
 	
-	- helped migrate an on-premise Hadoop-based data pipeline to Google Cloud as part of a bigger \$500,000/yr cost savings project. } \\
+	- helped migrate an on-premise data pipeline to Google Cloud as part of a bigger \$500,000/yr cost savings project by reducing server and software maintenance costs } \\
  \multicolumn{2}{c}{} \\
 
 \textsc{Aug 2017 -} & \textbf{Research and Teacher Assistant} | \textsc{Texas State University}, San Marcos, TX \\
@@ -149,9 +164,9 @@ Aug 2017 & \small{
 	}
 	
 	\small{
-	- part of a team that developed an Angular.js mobile web application scaled across 60+ GMC factories 
+	- part of the IT Manufacturing team that developed an Angular.js mobile web application in production across 60+ GMC factories 
 	
-	- developed feature enhancements that generated a large efficiency increase in factory assembly line yield
+	- developed features that enhanced part tracking during assembly processes, generating a large efficiency increase in vehicle yield
 } \\
  \multicolumn{2}{c}{} \\
  
@@ -162,7 +177,7 @@ Aug 2017 & \small{
 \begin{tabular}{rl}	
 	\textsc{May} 2020 & \textbf{Master of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX\\
 	
-	(part-time, &\normalsize \textsc{GPA}: 3.73/4, Focus: \underline{Data Mining \& Natural Language Processing on Marketing Data} \\ 
+	(part-time, &\normalsize \textsc{GPA}: 3.73/4, Focus: Data Mining \& Natural Language Processing on Marketing Data \\ 
 	
 	evenings)& \emph{HomeAway InternHackATX Team MVP Nominee} (2017, 2018) \\
 	
