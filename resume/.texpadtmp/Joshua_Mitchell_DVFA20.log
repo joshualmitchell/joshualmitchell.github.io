@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  23 SEP 2019 22:37
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  22 NOV 2019 11:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -888,38 +888,39 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
-Overfull \hbox (24.40012pt too wide) in paragraph at lines 108--125
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 111.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 111.
+
+Overfull \hbox (4.2831pt too wide) in paragraph at lines 103--158
 [][] 
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 132.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 132.
 
-Overfull \hbox (4.2831pt too wide) in paragraph at lines 128--195
+Overfull \hbox (24.40012pt too wide) in paragraph at lines 167--184
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
 [1
 
-] [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
  (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA20.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `Joshua_Mitchell_DVFA20.out' has not changed.
-(rerunfilecheck)             Checksum: .
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+(rerunfilecheck)             Checksum: FB6C837BCAD1DF20DECA660AB30833EF.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
  22927 strings out of 492970
  422163 string characters out of 6133938
- 509424 words of memory out of 5000000
+ 508424 words of memory out of 5000000
  26775 multiletter control sequences out of 15000+600000
  535621 words of font info for 52 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 39i,11n,65p,10478b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,11n,65p,10478b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA20.pdf (2 pages).
+Output written on /Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA20.pdf (1 page).

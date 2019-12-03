@@ -58,137 +58,128 @@ ItalicFont = Fontin-Italic.otf
 
 %--------------------BEGIN DOCUMENT----------------------
 \begin{document}
-	
-	%WATERMARK TEST [**not part of a CV**]---------------
-	%\font\wm=''Baskerville:color=787878'' at 8pt
-	%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
-	%{\wm 
-	%	\begin{textblock}{1}(0,0)
-	%		\rotatebox{-90}{\parbox{500mm}{
-	%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
-	%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
-	%		}
-	%	}
-	%	\end{textblock}
-	%}
-	
-	\pagestyle{empty} % non-numbered pages
-	
-	\font\fb=''[cmr10]'' %for use with \LaTeX command
-	
-	%--------------------TITLE-------------
-	\par{\centering
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
 		{\Huge Joshua Lelon Mitchell
-		}\par}
-	\par{\centering
+	}\par}
+\par{\centering
 		{
-			Austin, TX
-			$\mid$
-			(512) 537-9446
-			$\mid$
-			\href {mailto:jlelonmitchell@gmail.com}{jlelonmitchell@gmail.com}
-			$\mid$
-			\href {https://lelon.io/}{lelon.io}
-			
-			\href {https://github.com/joshualmitchell}{github.com/joshualmitchell}
-			$\mid$
-			\href {https://www.linkedin.com/in/joshua-mitchell-17b94077/}{linkedin.com/in/joshua-mitchell-17b94077/}
-		}\par}
+	Austin, TX
+	$\mid$
+	(512) 537-9446
+	$\mid$
+	\href {mailto:jlelonmitchell@gmail.com}{jlelonmitchell@gmail.com}
+	$\mid$
+	\href {https://lelon.io/}{lelon.io}
+	$\mid$
+	\href {https://github.com/joshualmitchell}{github.com/joshualmitchell}
+}\par}
+
+%--------------------SECTIONS-----------------------------------
+\begin{center}
+I'm a developer with significant experience in front-end engineering, data analytics, and, most recently, data engineering. I'm looking for a full-time development role (to start immediately) where I can enhance my knowledge and add value.
+\end{center}
+
+%Section: Work Experience at the top
+\section{Career Experience}
+\begin{tabular}{r|p{12cm}}
+
+\textsc{Aug 2017 -} & \textbf{Masters Student}  | \textsc{Texas State University}, San Marcos, TX \\
+Present & - finishing up my last bit of coursework part-time, in the evenings \\
+ \multicolumn{2}{c}{} \\
+
+\textsc{May 2019 -} & \textbf{Data Engineer Intern} (Marketing Analytics) | \textsc{The Home Depot Inc}, Austin, TX \\
+Aug 2019 & \small{
+	\textbf{\underline{Tech}}: Google Cloud (Dataflow, BigQuery, Cloud Composer), Airflow, Jenkins, Python}
+
+	\tiny{
+	\vphantom{a}
+	}
 	
-	%--------------------SECTIONS-----------------------------------
-	\begin{center}
-		I'm a developer with significant experience in front-end engineering, machine learning engineering, and, most recently, data engineering. I'm looking for a full-time role starting Jan 2020 where I can enhance my knowledge and add value in one of those domains.
-	\end{center}
-	\section{Technical Skills}
+	\small{
+	- worked on the Transaction Matching team, where the goal was to match people to their transactions to yield better marketing insights
 	
-	\textbf{Python} (numpy, pandas, matplotlib, sk-learn), \textbf{SQL}, Google Cloud (BigQuery, Composer)
+	- helped migrate an on-premise data pipeline from Hadoop as part of a bigger \$500,000/yr cost savings project (reduced server and software maintenance costs) }
 	
-	\textbf{HTML/CSS}, \textbf{JavaScript}, \textbf{Angular.js}, C++, Java, git, Jenkins, Concourse
+	- helped create a modern ETL (Extract, Transform, Load) pipeline using Apache Airflow, Jenkins, and Google Cloud \\
+ \multicolumn{2}{c}{} \\
+
+\textsc{Aug 2017 -} & \textbf{Research and Teacher Assistant} | \textsc{Texas State University}, San Marcos, TX \\
+May 2019 & \small{
+	\textbf{\underline{Tech}}: Spark, Python (PyTorch, numpy, pandas, matplotlib, scikit-learn), Unix
+	}
+
+	\tiny{
+	\vphantom{a}
+	}
+
+	\small{
 	
-	%Section: Education
-	\section{Education}
-	\begin{tabular}{rl}	
-		\textsc{Dec} 2019 & \textbf{Master of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX\\
-		
-		&\normalsize \textsc{GPA}: 3.73/4, Focus: Data Mining \\ 
-		
-		& \emph{HomeAway InternHackATX Team MVP Nominee} (2017, 2018) \\
-		
-		& \\
-		
-		\textsc{May} 2016 & \textbf{Bachelor of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX \\
-		
-		(complete) &\normalsize \textsc{GPA}: 3.63/4,  Dean's List: Fall 2015, Spring 2016 \\
-		
-		& \emph{USAA 2015 Intern Innovation Open, 1st prize} (resulting in patent filing)  \\
-		
-	\end{tabular}
-	%Section: Work Experience at the top
-	\section{Career Experience}
-	\begin{tabular}{r|p{12cm}}
-		
-		\textsc{May 2019 -} & \textbf{Data Engineer Intern} (Marketing Analytics) | \textsc{The Home Depot Inc}, Austin, TX \\
-		Aug 2019 & \small{
-			\textbf{\underline{Tech}}: Google Cloud (Dataflow, BigQuery, Cloud Composer), Airflow, Concourse, Python}
-		
-		\tiny{
-			\vphantom{a}
-		}
-		
-		\small{
-			- worked on the Transaction Matching (TM) team, where the goal was to match people to their transactions to yield better marketing insights
-			
-			- helped migrate a data pipeline to Google Cloud as part of a \$600,000/yr savings } \\
-		\multicolumn{2}{c}{} \\
-		
-		\textsc{Aug 2017 -} & \textbf{Research and Teacher Assistant} | \textsc{Texas State University}, San Marcos, TX \\
-		May 2019 & \small{
-			\textbf{\underline{Tech}}: Spark, Python (PyTorch, numpy, pandas, matplotlib, scikit-learn), Unix
-		}
-		
-		\tiny{
-			\vphantom{a}
-		}
-		
-		\small{
-			
-			- implemented a novel bias detection algorithm on large social media / network datasets using Spark (second project)
-			
-			- took a previous deep learning model and modified it to accommodate the xView dataset for object detection and classification (first project)
-		}
-		\\
-		\multicolumn{2}{c}{} \\
-		
-		\textsc{Jun 2016 -} & \textbf{Software Developer} | \textsc{General Motors Company (GMC)}, Austin, TX \\
-		Aug 2017 & \small{
-			\textbf{\underline{Tech}}: Angular.js, HTML, CSS, Javascript, REST, SQL}
-		
-		\tiny{
-			\vphantom{a}
-		}
-		
-		\small{
-			- part of a team that developed an Angular.js mobile web application designed to help factory workers track parts via RFID chips
-			
-			- developed feature enhancements that generated a large efficiency increase in factory assembly line yield across 60+ GMC factories 
-		} \\
-		\multicolumn{2}{c}{} \\
-	\end{tabular}
-	\section{Projects}
-	\begin{tabular}{rl}	
-		Domain-Adapted  & Working on implementing and improving an algorithm that takes general word  \\
-		
-		Word Embeddings & embeddings and fine-tunes them for smaller, more specific data sets. \\ 
-		
-		& \underline{Business value}: enhanced customer support, declining churn, review filtering \\
-		
-		& \\
-		
-		lelon.io Blog  & I write technical tutorials and examine ideas to make them more digestible. I've \\
-		
-		& produced content and delivered talks on subjects like \href {https://lelon.io/blog/2018/02/08/pytorch-with-baby-steps}{PyTorch} and \href {https://lelon.io/project/intro-to-pytorch-an-evening-of-python-coding-meetup-demo/}{machine learning}. \\ 
-		
-		& \underline{Business value}: better understanding of client needs, improved communication skills \\
-		
-	\end{tabular}
+	- enhanced an existing Deep Learning model to produce high object detection accuracy on the xView dataset
+	
+	- automated the end-to-end process of wrangling the dataset to training the model
+	}
+	\\
+ \multicolumn{2}{c}{} \\
+ 
+ \textsc{Jun 2016 -} & \textbf{Software Developer} | \textsc{General Motors Company (GMC)}, Austin, TX \\
+Aug 2017 & \small{
+	\textbf{\underline{Tech}}: Angular.js, HTML, CSS, Javascript, REST, SQL}
+
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+	- part of the IT Manufacturing team that developed an Angular.js mobile web application in production across 60+ GMC factories 
+	
+	- developed features that enhanced part tracking during assembly processes, generating a large efficiency increase in vehicle yield
+} \\
+ \multicolumn{2}{c}{} \\
+\end{tabular}
+
+\section{Technical Skills}
+
+\underline{Proficient}: Python (numpy, pandas, matplotlib, sk-learn), git, Unix
+
+\underline{Familiar}: Angular (1.0), React, HTML/CSS, JavaScript, SQL, Jenkins, Google Analytics (lelon.io)
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+	\textsc{Dec} 2019 & \textbf{Master of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX\\
+	
+	(part-time, &\normalsize \textsc{GPA}: 3.73/4 \\ 
+	
+	evenings)& \emph{HomeAway InternHackATX Team MVP Nominee} (2017, 2018) \\
+	
+	& \\
+	
+	\textsc{May} 2016 & \textbf{Bachelor of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX \\
+	
+	(complete) &\normalsize \textsc{GPA}: 3.63/4,  Dean's List: Fall 2015, Spring 2016 \\
+	
+	& \emph{USAA 2015 Intern Innovation Open, 1st prize} (resulting in patent filing)  \\
+	
+	& \\
+\end{tabular}
+
 \end{document}

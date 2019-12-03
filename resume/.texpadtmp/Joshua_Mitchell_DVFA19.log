@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  3 DEC 2019 13:48
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.4.16)  22 NOV 2019 11:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Joshua_Mitchell_DVSP20.tex
-(./Joshua_Mitchell_DVSP20.tex
+**Joshua_Mitchell_DVFA19.tex
+(./Joshua_Mitchell_DVFA19.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -741,8 +741,8 @@ Grid set 16 x 16 = 37.34424pt x 52.81541pt
 TextBlockOrigin set to 0pt x 0pt
 )
 TextBlockOrigin set to 2mm x 0.65\paperheight 
-(/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVSP20.aux)
-\openout1 = `Joshua_Mitchell_DVSP20.aux'.
+(/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA19.aux)
+\openout1 = `Joshua_Mitchell_DVFA19.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
@@ -876,9 +876,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 60.
 LaTeX Info: Redefining \pageref on input line 60.
 LaTeX Info: Redefining \nameref on input line 60.
- (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVSP20.out) (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVSP20.out)
+ (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA19.out) (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA19.out)
 \@outlinefile=\write3
-\openout3 = `Joshua_Mitchell_DVSP20.out'.
+\openout3 = `Joshua_Mitchell_DVFA19.out'.
 
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -893,34 +893,34 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 111.
 
-Overfull \hbox (4.2831pt too wide) in paragraph at lines 107--175
+Overfull \hbox (4.2831pt too wide) in paragraph at lines 103--158
 [][] 
  []
 
 
-Overfull \hbox (24.40012pt too wide) in paragraph at lines 184--201
+Overfull \hbox (24.40012pt too wide) in paragraph at lines 167--184
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
 [1
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
- (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVSP20.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
-Package rerunfilecheck Info: File `Joshua_Mitchell_DVSP20.out' has not changed.
-(rerunfilecheck)             Checksum: .
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+ (/Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA19.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
+Package rerunfilecheck Info: File `Joshua_Mitchell_DVFA19.out' has not changed.
+(rerunfilecheck)             Checksum: FB6C837BCAD1DF20DECA660AB30833EF.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
  22927 strings out of 492970
  422163 string characters out of 6133938
- 509424 words of memory out of 5000000
+ 508424 words of memory out of 5000000
  26775 multiletter control sequences out of 15000+600000
  535621 words of font info for 52 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  39i,11n,65p,10478b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVSP20.pdf (1 page).
+Output written on /Users/jm/projects/joshualmitchell.github.io/resume/.texpadtmp/Joshua_Mitchell_DVFA19.pdf (1 page).
