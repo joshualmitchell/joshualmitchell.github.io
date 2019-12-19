@@ -50,7 +50,7 @@ BUT! Let's say we've solved it. We've characterized everything you could possibl
 
 3) indeterminant (anything that isn't 1 or 2), which feeds into a LARGE number of sub-categories
 
-To be clear, when I say indeterminant, that's not derogatory. That just means, "doesn't cleanly fit into the categories most other people fit into," which is completely valid and should be acknowledged. Indeterminant isn't some faceless catch-all category. All those sub-categories should also be acknowledged as well.
+To be clear, when I say indeterminant, that's not derogatory. That just means, "doesn't cleanly fit into the categories most other people fit into," which is completely valid and should be acknowledged. Indeterminant isn't some faceless catch-all category. Each individual sub-categories should also be acknowledged.
 
 Let's answer an (in my opinion) easier question:
 
