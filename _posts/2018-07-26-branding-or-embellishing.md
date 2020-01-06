@@ -7,8 +7,6 @@ tags: [careers, branding, marketing]
 toc: true # outline page on the right hand side
 ---
 
-## The Story
-
 I was talking to a recruiter about my resume the other day. One of the suggestions he made was to combine my TA experience (9 months) and my research experience (3 months) into one position and rename the whole thing to something researchy / buzzword-y.
 
 I had two conflicting reactions.
@@ -55,7 +53,7 @@ Let's also suppose that Embellishing just means Branding, except publishing scal
 
 I think those definitions are pretty clear-cut, but let's see where they break down.
 
-## Where the line is blurry.
+## Where the line is blurry
 
 1. We know that some interviewers positively note when candidates dress nice to interviews.
 

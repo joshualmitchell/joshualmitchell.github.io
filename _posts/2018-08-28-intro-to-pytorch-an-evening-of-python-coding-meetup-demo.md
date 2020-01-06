@@ -7,20 +7,11 @@ tags: [pytorch, deep-learning, machine-learning, education]
 toc: true # outline page on the right hand side
 ---
 
-Here is a copy of a demo I gave at the Evening of Python Coding Meet Up.
+Presentation notes for a demo I gave at the Evening of Python Coding Meet Up.
 
-# Quick 15 minute (ish) PyTorch Demo
+# A 15 minute PyTorch demo
 
-By Joshua Mitchell
-
-https://lelon.io
-
-jlelonmitchell@gmail.com
-
-https://www.linkedin.com/in/joshua-mitchell-17b94077/
-
-## Some quick Jupyter Notebooks features
-
+## Some cool Jupyter Notebooks features
 
 ```python
 # Install a conda package in the current Jupyter kernel
@@ -74,6 +65,8 @@ InteractiveShell.ast_node_interactivity = "all" # makes jupyter's auto-print fun
 # Command palette (for those who think clicking is cumbersome, like me):
 # CMD + Shift + P (might be CTRL + Shift + P or something on Windows)
 ```
+
+## Some keyboard shortcuts I found useful:
 
 #### Esc     -   command mode (navigation)
 #### Enter  -   edit mode (typing)

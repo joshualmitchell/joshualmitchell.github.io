@@ -7,13 +7,13 @@ tags: [productivity, entrepreneurship, education]
 toc: true # outline page on the right hand side
 ---
 
-## The Problem
-
-I just watched Sal Khan's [TED Talk](https://www.youtube.com/watch?v=-MTRxRO5SRA) on teaching for mastery (as opposed to test scores).
+I watched Sal Khan's [TED Talk](https://www.youtube.com/watch?v=-MTRxRO5SRA) on teaching for mastery (as opposed to test scores).
 
 He talked about how dumb it was that, instead of teaching until we've mastered the basics, we just ship students along the assembly line to the next class with shaky foundations. The fact that a "70" is good enough is absolutely baffling.
 
 Before the internet, any lesson personalization didn't scale well. Now that we have the internet (and AI!), there's so much potential to make the learning experience absolutely amazing for students.
+
+## The Problem
 
 When I took classes in undergrad, I
 
