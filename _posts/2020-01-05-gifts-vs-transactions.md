@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Gifts VS Transactions"
+title: "Gifts vs Transactions"
 date: 2020-01-05
 categories: communication
 tags: [communication, society, relationships]
