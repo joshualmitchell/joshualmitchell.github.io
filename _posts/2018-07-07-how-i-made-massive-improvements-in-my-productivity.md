@@ -27,7 +27,7 @@ On my most unproductive days, here's what would happen:
 
 1. Distractions were numerous: Hacker News, Twitter, Reddit, etc.
 
-2. Inspiration was common, but also fickle: I'd be inspired to do one project, work on it for a day or two, and then be inspired to do something else. Rinse and repeat, indefinitely.
+2. Inspiration was common, but also fickle: I'd be inspired to do one project, work on it for a day or two, and then be inspired to do something else.
 
 3. I loved consuming information but had a lot of anxiety applying it and working on projects.
 
