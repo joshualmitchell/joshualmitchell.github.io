@@ -11,79 +11,102 @@ As someone who has had periodic (*and highly variable*) spurts of productivity, 
 
 I'm posting this write-up on it in hopes that it helps others. 
 
-## Problems
-
-1. I loved consuming information but was particularly resistant to gaining knowledge (i.e. *browsing reddit vs learning math*)
-
-2. Inspiration was common, but also fickle: I'd be inspired to do one project, work on it for a day or two, and then be inspired to do something else. Rinse and repeat indefinitely.
-
-3. How productive I was tended to correlate negatively with how much I had to do and how hard/intangible it was.
-
-4. Distractions were numerous: Quora, Hacker News, LinkedIn, Twitter, Facebook, Reddit, etc.
-
 ## Observations
 
-A lot of these problems turned out to be interwoven with each other. When I broke it down, this is what kept happening:
+On my most unproductive days, here's what would happen:
 
-- I'd either be assigned some work to do or be inspired to learn or do something.
-- If the work wasn't already daunting, in my head I'd start imagining (*unconsciously*) what would make it "acceptable" and/or "worth telling my friends about" and/or "good enough".
-- Usually this list of requirements I came up with would then become daunting.
-- After realizing its daunting-ness, I'd get anxious and start rationalizing procrastination.
-- Seeing the clock after an hour or two of burrying my head in the sand resulted in more anxiety, thus more procrastination.
-- Rinse and repeat until night-time (*at which point I get too tired to care, and then fall asleep*).
+1. Inspiration strikes
+2. Planning begins
+3. Anxiety sets in
+4. Procrastination (due to anxiety)
+5. Time flies
+6. Sun goes down: too late to do anything now
+7. Sun comes up, go to 1. 
+
+## Problems
+
+1. Distractions were numerous: Hacker News, Twitter, Reddit, etc.
+
+2. Inspiration was common, but also fickle: I'd be inspired to do one project, work on it for a day or two, and then be inspired to do something else. Rinse and repeat, indefinitely.
+
+3. I loved consuming information but had a lot of anxiety applying it and working on projects.
 
 ## Solutions
 
-My system clearly needed a lot of work, but it turned out to have 2 main holes I had to plug:
+### 1: Distractions
 
-### Eliminate Distractions
+- I couldn't trust myself to not go on reddit et al., so I bought a subscription to [Freedom](https://freedom.to/). You give it some sites and times and it blocks you from visiting those sites at those times with a VPN. I gave myself 1 hour of reddit et al a day.
 
-- I couldn't trust myself to not go on reddit et al., so I bought a subscription to [Freedom](https://freedom.to/). You give it a list of sites you don't want to visit and the times you don't want to visit them, and it disables them at those times (*at the VPN level, so it doesn't matter what browser you use*). I specifically set it to only let me go on distracting sites between 6pm and 7pm (until I learn self control I suppose).
-- Unfortunately, Freedom isn't available on Linux yet. However, I discovered that you can just edit your /etc/hosts file and add any sites there you don't want to visit (e.g. 127.0.0.1    facebook.com). Does mostly the same thing, but easier to get around.
-- I emailed [Derek Sivers](https://sivers.org/) about this, and he said some other stuff he does is
+(sidenote: Freedom isn't available on Linux yet. Workaround: edit your /etc/hosts file and unwanted sites. Does the same thing, but easier to get around.)
+
+- I emailed [Derek Sivers](https://sivers.org/) about this. He gave me the following advice:
     1. move all your distracting apps (*including your default browser*) into a folder as far away from your home screen as you can (*so you have to swipe multiple times to get to that page of apps*)
-    2. disable those apps from appearing in your recently used section (*to avoid temptation to open them again*) and
+    2. disable those apps from appearing in your recently used section (*to avoid temptation to open them again*)
     3. download Firefox Focus (*which makes you manually type out all your websites instead of remembering them*).
 
-A side effect of eliminating the distractions meant that I didn't get random spurts of inspiration from various cool tech threads I found on reddit/HN, and instead got spurts of information from seeing myself succeed in whatever project I was doing (*which didn't pull me away to other things*).
+### 2: Inspiration
 
-That took care of problems 2 and 4, here's how I dealt with 1 and 3:
+Limiting distractions resulted in more productivity, but also an unexpected side effect:
 
-### Set Up Formal Project Management
+I didn't get random spurts of inspiration from various cool tech threads that pushed me towards other projects.
 
-I resisted using a personal project management tool for a long time because it seemed like
+### 3: Anxiety
 
-1. a pain (*you mean I have to sketch out the entire thing, divvy up tasks, and all this stuff before I get to the fun part?*) and
+My anxiety came from 4 sources:
 
-2. a waste of time (*why spend time jotting down what I'm going to do instead of doing it?*).
+1. Memory: I felt like whatever I was doing would have to become THE THING that I do from now on, otherwise I'd forget it when I moved onto something else and it'd all be a waste of time.
+2. Getting Stuck: I hated getting things wrong and subsequently getting stuck (i.e. not able to learn from it)
+3. Vanishing Motivation: I felt like I needed to finish each project quickly because otherwise the motivation would vanish, I'd abandon the project, and it'd all be for nothing.
+4. Context Switching: I hated having to context switch between learning, planning, and doing.
 
-However, I realized that I made it out to be a demanding taskmaster demon in my head when really it should be perceived as a helpful, guiding angel.
+#### Memory
 
-First, I had to mentally decouple all the stuff I needed to do from what I should be doing right this second.
+A lot of this fear and stress simply came from not knowing how to learn. Reading [Ultralearning](https://www.scotthyoung.com/blog/ultralearning/) really helped.
 
-Second, I had to take all the big/complex/abstract stuff and break it into small, actionable bits (*I know this is what all the productivity people have been saying for ages...*).
+Long story short: all I ever did in college was passively take notes during lectures and then skim them right before tests. I unconsciously believed that's what learning was.
 
-Third, I had to start recording anything I needed to do so that it didn't fade into obscurity and stress me out because I forgot what it was / how important it was.
+When you dig into the material and actually build a solid foundation, it sticks a lot easier. The biggest gain for me came from forcing myself to recall what I learned (instead of just reading it).
 
-The project management I ended up using is called [Basecamp](https://basecamp.com/). It costs money, but I totally played the student card and they gave it to me for free (for a year) when I emailed them.
+Also, for the stuff that didn't stick as well, [Anki](https://apps.ankiweb.net/) (digital flashcards) came in handy. I was inspired by [Michael Nielsen's post](http://augmentingcognition.com/ltm.html).
 
-My golden goose daily routine is now:
+#### Getting Stuck
 
-- Exercise (*did I mention exercise and not eating B.S. food helps a lot too? Seriously.*)
-- Eat while reviewing my [Anki](https://apps.ankiweb.net/) deck (*another great tool for learning and not forgetting what you learned*)
-- Do the morning tasks I assigned myself last night in Basecamp
-- At 12:30pm, take a break, check email, and assign myself more tasks if I finished them all
-- at 5:30pm, at this point I've probably thought of more stuff to do later, so I'll add these tasks to the big to-do list and break down the big ones into actionable chunks.
-- Finally, before I end my work day, I'll assign myself a reasonable, digestible, and manageable amount of tasks to do the next morning.
+It turns out that solving my memory problem also helped me with getting stuck. I often got stuck because I "learned" the fundamentals but then got lost when I went deeper. I didn't know where to go or what to do next because my foundation sucked.
 
-During this whole time, if I think of something I need to do, I add it to the big to-do list, and if I learn something new, I'll Ankify it / make flash cards for it. 
+#### Vanishing Motivation
 
-The two key things that helped fix problems 1 and 3 are:
+Again, it turns out that my motivation died BECAUSE I kept getting stuck. Solving memory solved getting stuck which solved my motivation problem. Once I realized I could get past obstacles, my motivation came back.
 
-- I no longer have unknown / unforgotten tasks that might be important eating away at me subconsciously
-- At any given time, what's on my plate is always manageable and easy to create momentum
-- I might have a massive to-do list, but when I'm actually working, I always make sure I never look at that list and only look at the manageable, approachable "morning" or "afternoon" list (*since looking at the big list stresses me out*).
-- Any due dates are always accounted for, so once 6pm comes around I can mentally check out and recharge for the day (I learned that and more from Dr. Calvin Newport's book: [Deep Work](https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692))
-- With the majority of the stress and pressure gone, creating and learning became fun again! :)
+#### Context Switching
+
+This was hard to eliminate entirely, since life is chaotic, but implementing formal project management really helped.
+
+I resisted for a long time because it seemed like
+
+1. a pain (*you mean I have to sketch out the entire thing, divvy up tasks, and all this stuff before I get to the fun part?*), and
+
+2. a waste of time (*why spend time jotting down what I'm going to do instead of doing it?*)
+
+However, it turns out:
+
+1. It doesn't have to be a pain: you don't have to plan EVERYTHING out, just the next step. Resist the temptation to follow the planning momentum and plan the next step and the next step and etc.
+
+2. It takes like 2 minutes and is, most definitely, not a waste of time.
+
+I spent about 2 hours learning [Emacs Org-Mode](https://www.youtube.com/watch?v=sQS06Qjnkcc&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=1), and it's GREAT!
+
+It allows me to divide projects into their respective Planning, Learning, and Doing phases really effectively.
+
+First, I'll flesh it out with org-mode.
+
+Then, I'll learn what I need to know (with the context in mind from the plan).
+
+Finally, I'll do.
+
+The key here is: I don't feel overwhelmed because I know that
+
+1. everything is accounted for, and
+
+2. I can look at each task one step at a time and not think about anything else.
 
 So yeah, that's my system. Hope it helps!
