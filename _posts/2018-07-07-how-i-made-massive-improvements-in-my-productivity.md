@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "How I made massive improvements in my productivity (despite not naturally being a productive person)"
+title: "On reducing variance in productivity"
 date: 2018-07-07
 categories: productivity
 tags: [productivity, project-management]
