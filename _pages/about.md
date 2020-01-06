@@ -2,8 +2,6 @@
 layout: single
 permalink: /about/
 title: "About Me"
-last_modified_at: 2018-06-16
-excerpt: "Some stuff about this site"
 toc: true # outline page on the right hand side
 ---
 Hi!
