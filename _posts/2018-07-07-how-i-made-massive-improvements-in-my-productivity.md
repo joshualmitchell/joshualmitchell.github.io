@@ -37,7 +37,7 @@ On my most unproductive days, here's what would happen:
 
 - I couldn't trust myself to not go on reddit et al., so I bought a subscription to [Freedom](https://freedom.to/). You give it some sites and times and it blocks you from visiting those sites at those times with a VPN. I gave myself 1 hour of reddit et al a day.
 
-(sidenote: Freedom isn't available on Linux yet. Workaround: edit your /etc/hosts file and unwanted sites. Does the same thing, but easier to get around.)
+(sidenote: Freedom isn't available on Linux yet. Workaround: edit your /etc/hosts file and add sites. Does the same thing, but easier to get around.)
 
 - I emailed [Derek Sivers](https://sivers.org/) about this. He gave me the following advice:
     1. move all your distracting apps (*including your default browser*) into a folder as far away from your home screen as you can (*so you have to swipe multiple times to get to that page of apps*)
