@@ -87,7 +87,7 @@ You could argue that everyone's gotta eat. You could argue that not telling the 
 
 The principle I follow is, to borrow from Jordan Peterson: Tell the truth. Or, at least, don't lie.
 
-If the job calls for 3 years of experience in Angular, and I have 3 years of experience, then that will be on my resume.
+If the job calls for 3 years of experience in Angular, and I have 3 years of experience, then I'll apply and that'll be on my resume.
 
 It might be the case that I barely know Angular because I never bothered to learn it well.
 
