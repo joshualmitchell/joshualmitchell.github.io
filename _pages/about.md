@@ -36,7 +36,7 @@ That being said, do so in a kind, gentle, and sincere way. Find the balance. Kin
 
 ## Grit
 
-It pains me to hear people say something to the effect of, "I'm bad at Math" or, "I hate Math" - I don't get along well with people who don't have a growth mindset.
+It pains me to hear people say something to the effect of, "I'm bad at Math" or, "I hate Math" - I don't often have strong relationships with people who don't have a growth mindset.
 
 (It's also likely that they didn't have a good teacher. I didn't like my teachers and I hated math during K-12. It wasn't until college that I learned that math could be fun.)
 
