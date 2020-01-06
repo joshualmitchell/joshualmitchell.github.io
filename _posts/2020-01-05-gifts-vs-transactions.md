@@ -4,7 +4,6 @@ title: "Gifts VS Transactions"
 date: 2020-01-05
 categories: communication
 tags: [communication, society, relationships]
-toc: true # outline page on the right hand side
 ---
 
 If you're giving a gift to someone who expects it, that's not a gift. That's a transaction.

@@ -4,7 +4,6 @@ title: "The Future of EdTech: My Vision"
 date: 2019-09-21
 categories: entrepreneurship
 tags: [productivity, entrepreneurship, education]
-toc: true # outline page on the right hand side
 ---
 
 It blows my mind that EdTech isn't the NUMBER ONE place people who want to make a difference in the world start jumping on.
