@@ -6,58 +6,83 @@ categories: tutorial
 tags: [javascript, html, css]
 toc: true # outline page on the right hand side
 ---
-I'm doing 30 Days of JavaScript (hyperlink) course by Wes Bos. 
+
+I'm doing a blog series inspired by the [30 Days of JavaScript](https://javascript30.com/) course by Wes Bos.
+
+This post will serve as its kickoff introduction. I'll talk a little about my struggle for a rewarding development career, the issues I ran into, and how I hope this will help solve them for anyone reading this.
+
+## Finding something I enjoy (and am good at)
 
 Fun fact: I have a Computer Science B.S. and 2 years of web development experience.
 
-Hence, you might ask: Isn't this a cake walk for you?
+You might ask: Vanilla JS. Isn't this a cake walk for you?
 
-Yes, and, embarassingly, no.
+Yes, and embarassingly, no.
 
-When I look at the source code, nothing's really new. Div's, for loops - got it.
+When I look at the [source code](https://github.com/wesbos/JavaScript30), the individual pieces are familiar. Div's, for loops - got it.
 
 That being said, if you asked me to build any of those projects from scratch without looking at the source code..
 
 I'd be hopelessly lost.
 
-I've never felt like a bona-fide web developer for that reason.
+The advice I got starting out:
 
-At all my internships and jobs, I've never had to build anything from scratch. I fixed bugs and added new features on existing codebases.
+"Just jump in, learn by doing, don't worry about the little details at first - you'll pick it up!"
 
-When I was starting out, the advice I got was typically along the lines of: "Just jump in, learn by doing, don't worry about the little details at first - you'll pick it up!"
+It seemed to work. I ended up fixing some bugs and adding new features during my internships.
 
-I delivered, but the entire time I was walking on eggshells of abstractions, feeling overwhelmed.
+However, the entire time, I felt like I was walking on eggshells of abstractions, constantly feeling overwhelmed.
 
-I succeeded in getting started and ultimately delivering, but the problem was: I never learned good foundations.
+Everything took longer than it should have, I wasn't confident in the code I pushed, and I didn't feel like I was getting better.
 
-Completing tasks always took longer than they should have, and once I was finished, it didn't feel like I learned anything. I didn't really understand the big picture, so a lot of my work involved copy and pasting what "looked right" from StackOverflow, and then getting frustrated when it didn't work and I had no idea where to go from there, except back to google, HOPING to find the line that would actually work.
+I had a similar experience with each job I took, and it made me hate going to work.
 
-I hated my work. I wasn't proud of it. It wasn't meaningful. It felt eternally broken. Every line I added to it just felt like adding fuel to a bigger dumpster fire.
+So, I dreamed of greener pastures. 
 
-So, I dreamed of greener pastures:
+Machine Learning sounded cool, so I left my web development job and went to grad school to pivot into data science.
 
-- Going back to school for my M.S.
-- Switching to "data science" (whatever that meant, it sounded cool)
+Much to my chagrin, I ran into the same problem learning to munge data and build models.
 
-And I did. I quit my job as a web developer and went back to school.
+I jumped in and got overwhelmed. The novelty wore off, and it stopped being fun. Same story.
 
-But, I ran into the same problem munging data and building machine learning models.
+I hoped it would get better as I perservered. However, fast-forward 2 years to today, I still feel the same (despite being almost finished with my Master's).
 
-I jumped in and got overwhelmed.
+What's going on?
 
-But I already quit my job and was halfway through the M.S. - so I figured I might as well finish it. Maybe it'd get better.
+## The Issues
 
-I'm two classes away, and I still feel the same.
+To boil it down into one sentence:
 
-Why?
+Not enough *good* practice.
 
-No foundation.
+I never achieved the instinct and confidence that comes from lots of deliberate and increasingly challenging practice.
 
-It made me think: Well, shoot. Maybe I was doing it wrong. Maybe I didn't give web dev a proper chance. Plus, I miss it. I missed building things. Websites, specifically. I missed building something and releasing it to the world, where people could interact with it and benefit from it.
+I took multiple choice tests when I should have been writing programs from scratch.
 
-So that's my goal. To not only be able to build websites from scratch, but to do it FAST. I want to be one of those prodigies where code flows from their fingers faster than they can speak it.
+My assignments had parts a, b, c, and d, when they should have been one sentence prompts (i.e. more vague)
 
-And in order to do that, I need the intuition. I need both the big picture AND the micro details. Not to mention: a CRAP ton of practice. I also need to start from the beginning.
+Feedback came three weeks later in the form of a checkmark, when I needed it to be instantaneous and actionable.
 
-(insert algebra study about how students who do algebra the fastest are able to do calculus the best, from joel spolsky's blogs)
+I should have kept taking away the training wheels until I could make complex applications from scratch, but I [stopped when I learned enough to get an A](http://www.paulgraham.com/lesson.html) (which was suprisingly little).
 
+I crammed, which made me forget once I took the test.
+
+I didn't have a good foundation.
+
+## How this can help
+
+I want to become an *excellent* web developer (a 10x programmer?) - the kind of folks that can crank out *good* (modular, well tested, etc) code at [speeds only limited by how fast they can type it](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/).
+
+In order to get there, I think the solution is to practice building websites from scratch, starting with the basics.
+
+My goal is, for each "day" of 30 Days of JavaScript:
+
+- look at the end result (but not the source code),
+- build a MVP version, and
+- keep iterating until I get to the same functionality
+
+All while documenting the whole process.
+
+I definitely advocate practicing by building from scratch, [so you force lots of recall](https://www.scotthyoung.com/blog/ultralearning/), but I wanted to put this out there because blogs that discuss software engineering tradeoffs in context are actually kind of rare (but incredibly useful).
+
+I hope you gain some value from this series! Please feel free to reach out with any suggestions or comments (contact info on the left)!
