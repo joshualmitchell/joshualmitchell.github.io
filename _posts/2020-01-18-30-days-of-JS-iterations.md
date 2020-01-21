@@ -21,11 +21,9 @@ Yes, and embarassingly, no.
 
 When I look at the [source code](https://github.com/wesbos/JavaScript30), the individual pieces are familiar. Div's, for loops - got it.
 
-That being said, if you asked me to build any of those projects from scratch without looking at the source code..
+However, if you asked me to build any of those projects from scratch without looking at the source code..
 
 I'd be hopelessly lost.
-
-The advice I got starting out:
 
 "Just jump in, learn by doing, don't worry about the little details at first - you'll pick it up!"
 
