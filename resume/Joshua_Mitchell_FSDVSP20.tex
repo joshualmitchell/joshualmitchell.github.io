@@ -1,0 +1,197 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+\newenvironment{tightcenter}{%
+	\setlength\topsep{0pt}
+	\setlength\parskip{0pt}
+	\begin{center}
+	}{%
+	\end{center}
+}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Joshua Lelon Mitchell
+	}\par}
+\par{\centering
+		{
+	Austin, TX
+	$\mid$
+	(512) 537-9446
+	$\mid$
+	\href {mailto:jlelonmitchell@gmail.com}{jlelonmitchell@gmail.com}
+	$\mid$
+	\href {https://lelon.io/}{lelon.io}
+}\par}
+\par{\centering
+		{
+	\href {https://github.com/joshualmitchell}{github.com/joshualmitchell}
+	$\mid$
+	\href {https://www.linkedin.com/in/joshua-mitchell-17b94077/}{linkedin.com/in/joshua-mitchell-17b94077/}
+}\par}
+
+%--------------------SECTIONS-----------------------------------
+\begin{center}
+I'm an entry to mid-level full-stack software developer. I'm looking for a full-time development role where I can ship code to production and create an incredible user experience. I graduate May 2020, but I can start earlier, if needed. \end{center}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+	\textsc{May} 2020 & \textbf{Master of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX\\
+	
+	(in progress) &\normalsize \textsc{GPA}: 3.73/4 \\ 
+	
+	& \emph{HomeAway InternHackATX Team MVP Nominee} (2017, 2018) \\
+	
+	& \\
+	
+	\textsc{May} 2016 & \textbf{Bachelor of Science} in \textsc{Computer Science}, Texas State University, San Marcos, TX \\
+	
+	(complete) &\normalsize \textsc{GPA}: 3.63/4,  Dean's List: Fall 2015, Spring 2016 \\
+	
+	& \emph{USAA 2015 Intern Innovation Open, 1st prize} (resulting in patent filing)  \\
+	
+	& \\
+	
+	(complete) & \textbf{Udemy}: \href {https://www.udemy.com/course/javascript-beginners-complete-tutorial/}{\textsc{The Modern Javascript Bootcamp Course}} by Stephen Grider \\
+	
+	(complete) & \textbf{Udemy}: \href {https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/}{\textsc{Docker and Kubernetes, The Complete Guide}} by Stephen Grider \\
+	
+	(in progress) & \textbf{Udemy}: \href {https://www.udemy.com/course/react-redux/}{\textsc{Modern React with Redux}} by Stephen Grider \\
+	
+	(in progress) & \textbf{egghead.io}: \href {https://testingjavascript.com/}{\textsc{Testing Javascript}} by Kent C. Dodds \\
+	
+	(not started) & \textbf{Udemy}: \href {https://www.udemy.com/course/webaccessibility/}{\textsc{Web Accessibility Testing}} by Narayanan Palani \\
+	
+	
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Career Experience}
+\begin{tabular}{r|p{12cm}}
+
+\textsc{May 2019 -} & \textbf{Software Engineer Intern} | \textsc{The Home Depot Inc}, Austin, TX \\
+Aug 2019 & \small{
+	\textbf{\underline{Tech}}: Python, Google Cloud (Dataflow, BigQuery, Cloud Composer), Airflow, Jenkins}
+
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+	- helped migrate an on-premise data pipeline from Hadoop to Google Cloud as part of a \$500,000/yr cost savings project (reduced server and software maintenance) } \\
+ \multicolumn{2}{c}{} \\
+
+\textsc{Aug 2017 -} & \textbf{Research and Teacher Assistant} | \textsc{Texas State University}, San Marcos, TX \\
+May 2019 & \small{
+	\textbf{\underline{Tech}}: Spark, Python (PyTorch, numpy, pandas, matplotlib, scikit-learn), Linux
+	}
+
+	\tiny{
+	\vphantom{a}
+	}
+
+	\small{
+	
+	- implemented a novel bias detection algorithm on a voting dataset (project 1) and adapted a Deep Learning model for object detection on the xView dataset (project 2)	} \\
+ \multicolumn{2}{c}{} \\
+
+
+ \textsc{Jun 2016 -} & \textbf{Software Engineer} | \textsc{General Motors Company (GMC)}, Austin, TX \\
+Aug 2017 & \small{
+	\textbf{\underline{Tech}}: AngularJS, HTML, CSS, Javascript, REST, SQL}
+
+	\tiny{
+	\vphantom{a}
+	}
+	
+	\small{
+	- part of a 16 person IT Manufacturing team that developed an Angular.js mobile web application for part tracking during assembly (in production across 60+ GMC factories)} \\
+\end{tabular}
+
+
+%Section: Projects
+\section{Projects}
+\begin{tabular}{rl}	
+	
+	lelon.io & I write about software. My most impactful post: \href {https://lelon.io/blog/2018/02/08/pytorch-with-baby-steps}{PyTorch With Baby Steps} (linked)  \\
+	
+	el.com & A tutorial site focused on user engagement through extremely tight feedback loops. \\
+	
+	 & \textbf{Full URL}: \href {https://www.elatedlearning.com}{elatedlearning.com} \quad \textbf{Stack}: React, Node, Express, Postgres, Heroku\\
+\end{tabular}
+
+\section{Technical Skills}
+
+\textbf{Front End} (React, HTML/CSS/JavaScript) \quad\quad\thinspace\thinspace\thinspace\thinspace \textbf{Back End} (Node.js, Express.js, PostgreSQL)
+
+\textbf{DevOps} (Docker, Jenkins, Travis-CI, git) \quad\quad\thinspace\thinspace\thinspace\thinspace\thinspace \textbf{Data} (pandas, matplotlib, sk-learn, pytorch)
+
+\end{document}

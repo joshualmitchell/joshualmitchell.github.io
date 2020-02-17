@@ -73,7 +73,7 @@ You have lots of examples to choose from, but let's look at time A and time B.
 
 Time A would cause them to infer negatively about you. Time B, positively.
 
-Giving them both would paint a more honest picture, but giving them A would increase your chance of getting the job (and wouldn't be lying).
+Giving them both would paint a more honest picture, but giving them only B would increase your chance of getting the job (and wouldn't be lying).
 
 Is it branding because you're putting your best foot forward? Or is it embellishment because you didn't tell them the whole truth?
 
