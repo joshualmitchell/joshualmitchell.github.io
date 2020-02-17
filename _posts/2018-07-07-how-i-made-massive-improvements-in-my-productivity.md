@@ -35,7 +35,7 @@ On my most unproductive days, here's what would happen:
 
 ### 1: Distractions
 
-- I couldn't trust myself to not go on reddit et al., so I bought a subscription to [Freedom](https://freedom.to/). You give it some sites and times and it blocks you from visiting those sites at those times with a VPN. I gave myself 1 hour of reddit et al a day.
+- I couldn't trust myself to not go on reddit and such, so I bought a subscription to [Freedom](https://freedom.to/). You give it some sites and times and it blocks you from visiting those sites at those times with a VPN. I gave myself 1 hour of distraction a day.
 
 (sidenote: Freedom isn't available on Linux yet. Workaround: edit your /etc/hosts file and add sites. Does the same thing, but easier to get around.)
 
@@ -54,10 +54,10 @@ I didn't get random spurts of inspiration from various cool tech threads that pu
 
 My anxiety came from 4 sources:
 
-1. Memory: I felt like whatever I was doing would have to become THE THING that I do from now on, otherwise I'd forget it when I moved onto something else and it'd all be a waste of time.
-2. Getting Stuck: I hated getting things wrong and subsequently getting stuck (i.e. not able to learn from it)
+1. Memory: I felt like whatever I was doing/learning would have to become THE THING that I do from now on, otherwise, when I moved onto something else, I'd forget it and it'd all be a waste of time.
+2. Getting Stuck: I hated running into roadblocks and having zero idea where to go from there.
 3. Vanishing Motivation: I felt like I needed to finish each project quickly because otherwise the motivation would vanish, I'd abandon the project, and it'd all be for nothing.
-4. Context Switching: I hated having to context switch between learning, planning, and doing.
+4. Context Switching: Minor, compared to the rest, but worth mentioning: switching between learning, planning, and doing frequently took me out of "the zone" - doing any 2 at once was fine, but doing all 3 at once was often a drag.
 
 #### Memory
 
@@ -75,7 +75,7 @@ It turns out that solving my memory problem also helped me with getting stuck. I
 
 #### Vanishing Motivation
 
-Again, it turns out that my motivation died BECAUSE I kept getting stuck. Solving memory solved getting stuck which solved my motivation problem. Once I realized I could get past obstacles, my motivation came back.
+Again, it turns out that my motivation died BECAUSE I kept getting stuck. Solving my memory problem --> solved getting stuck which --> solved my motivation problem. Once I realized I could get past obstacles, my motivation came back.
 
 #### Context Switching
 
