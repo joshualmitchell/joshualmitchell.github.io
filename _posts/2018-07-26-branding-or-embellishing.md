@@ -79,7 +79,7 @@ Is it branding because you're putting your best foot forward? Or is it embellish
 
 ## Is embellishing OK?
 
-I get nervous about presenting absolutes as truth, so I hesitate to say that all lying is bad. For example, would I lie to save my family? Absolutely.
+I get nervous about presenting statements as absolute truth, so I hesitate to say that all lying is bad. For example, would I lie to save my family? Absolutely.
 
 How about for getting a job?
 
