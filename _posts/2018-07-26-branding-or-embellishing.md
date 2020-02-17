@@ -87,16 +87,16 @@ You could argue that everyone's gotta eat. You could argue that not telling the 
 
 The principle I follow is, to borrow from Jordan Peterson: Tell the truth. Or, at least, don't lie.
 
-If the job calls for 3 years of experience in Angular, and I have 3 years of experience, then I'll apply and that'll be on my resume.
+If the job calls for 3 years of experience in Angular, and I have 3 years of experience where I used it occassionally, then I'll apply and that'll be on my resume.
 
-It might be the case that I barely know Angular because I never bothered to learn it well.
+It might be the case that I have 3 months worth of Angular experience repeated 12 times because I never bothered to learn it well.
 
-It might be the case that I worked with it for 3 years, but I was using an ancient version (2.x).
+It might be the case that I worked with it for 3 years, but I was using an ancient version (1.x).
 
-However, I meet the requirements, so I'm not going to screen myself out. If they grill me on Angular and I sink, that's totally fair, but otherwise, I'm not going to assume I know what they're looking for, specifically.
+However, I meet the requirements it says, so I'm not going to screen myself out. If they grill me on Angular and I sink, that's totally fair, but otherwise, I'm not going to assume I know what they're looking for, specifically.
 
 Is that embellishing? Technically, I'd say no.
 
 But I do think it's somewhere in the gray area between branding and embellishing, and I'm still on the fence about it.
 
-In the meantime, I'll just stick with the truth.
+In the meantime, I'll just tell them what they want to know, when they ask it.
