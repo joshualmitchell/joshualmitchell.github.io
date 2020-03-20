@@ -11,7 +11,7 @@ As someone who has varying levels productivity, but never managed to isolate a g
 
 I'm posting this write-up on it in hopes that it helps others. 
 
-# Observations
+## Observations
 
 On my most unproductive days, here's what would happen:
 
@@ -23,7 +23,7 @@ On my most unproductive days, here's what would happen:
 6. Sun goes down: too late to do anything now
 7. Sun comes up, go to 1. 
 
-# Problems
+## Problems
 
 1. Distractions were numerous: Hacker News, Twitter, Reddit, etc.
 
@@ -31,9 +31,9 @@ On my most unproductive days, here's what would happen:
 
 3. I loved consuming information but various forms of anxiety applying it and working on projects.
 
-# Solutions
+## Solutions
 
-## 1: Distractions
+### 1: Distractions
 
 - I couldn't trust myself to not go on reddit and such, so I bought a subscription to [Freedom](https://freedom.to/). You give it some sites and times and it blocks you from visiting those sites at those times with a VPN. I gave myself 1 hour of distraction a day.
 
@@ -44,13 +44,13 @@ On my most unproductive days, here's what would happen:
     2. disable those apps from appearing in your recently used section (less temptation opportunities)
     3. download Firefox Focus - it makes you manually type out all your websites
 
-## 2: Inspiration
+### 2: Inspiration
 
 Limiting distractions resulted in more productivity, but also an unexpected side effect:
 
 I didn't get random spurts of inspiration from various cool tech threads that pushed me towards other projects.
 
-## 3: Anxiety
+### 3: Anxiety
 
 My anxiety came from 4 sources:
 
@@ -59,7 +59,7 @@ My anxiety came from 4 sources:
 3. Vanishing Motivation: I felt like I needed to finish each project quickly because otherwise the motivation would vanish, I'd abandon the project, and it'd all be for nothing.
 4. Context Switching: Minor, compared to the rest, but worth mentioning: switching between learning, planning, and doing frequently took me out of "the zone" - doing any 2 at once was fine, but doing all 3 at once was often a drag.
 
-### Memory
+**Memory**
 
 A lot of this fear and stress simply came from not knowing how to learn. Reading [Ultralearning](https://www.scotthyoung.com/blog/ultralearning/) really helped.
 
@@ -69,15 +69,15 @@ When you dig into the material and actually build a solid foundation, it sticks 
 
 Also, for the stuff that didn't stick as well, [Anki](https://apps.ankiweb.net/) (digital flashcards) came in handy. I was inspired by [Michael Nielsen's post](http://augmentingcognition.com/ltm.html).
 
-### Getting Stuck
+**Getting Stuck**
 
 It turns out that solving my memory problem also helped me with getting stuck. I often got stuck because I "learned" the fundamentals but then got lost when I went deeper. I didn't know where to go or what to do next because my foundation sucked.
 
-### Vanishing Motivation
+**Vanishing Motivation**
 
 Again, it turns out that my motivation died BECAUSE I kept getting stuck. Solving my memory problem --> solved getting stuck which --> solved my motivation problem. Once I realized I could get past obstacles, my motivation came back.
 
-### Context Switching
+**Context Switching**
 
 This was hard to eliminate entirely, since life is chaotic, but implementing formal project management really helped.
 

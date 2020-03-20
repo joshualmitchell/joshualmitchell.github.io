@@ -9,7 +9,7 @@ toc: true # outline page on the right hand side
 
 Some thoughts on how to make an "explanations on-demand" product.
 
-# The Problem
+## The Problem
 
 I was watching Sal Khan's [TED Talk](https://www.youtube.com/watch?v=-MTRxRO5SRA) on teaching for mastery (as opposed to test scores).
 
@@ -32,7 +32,7 @@ Ideally, students would learn by
 
 Any one of those 3 would be a great boon to education, but my idea would work towards the 1st one.
 
-# The Solution
+## The Solution
 
 There is actually a lot of amazing content out there that explains a lot of stuff very well, but I don't think it's aggregated well enough.
 
@@ -42,7 +42,7 @@ I'm imagining some kind of database / aggregator / recommendation system that ta
 
 For example, maybe I want to understand linear regression's key assumptions better: I want a (1) somewhat technical (video) that's maybe a (3) 4-6 min investment of my time. And, like magic, I'm represented a few candidate youtube videos (or maybe even minutes 4:00 through 10:00 of a lecture posted online) that other people "liked" and got value out of.
 
-# The Business Model
+## The Business Model
 
 I really wouldn't feel right if this were a pay-per-view or subscription model - I really align with the idea of anyone being able to access anything anytime.
 
