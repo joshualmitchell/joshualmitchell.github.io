@@ -6,7 +6,6 @@ categories: tutorial
 tags: [deep-learning, pytorch]
 alias: /tutorial/pytorch-with-baby-steps
 permalink: /blog/2018/02/08/pytorch-with-baby-steps
-toc: true # outline page on the right hand side
 ---
 
 A heavily example-based, incremental tutorial introduction to PyTorch.
