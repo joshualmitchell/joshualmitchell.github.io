@@ -7,7 +7,7 @@ tags: [productivity, project-management]
 toc: true # outline page on the right hand side
 ---
 
-As someone who has had periodic (*and highly variable*) spurts of productivity, but never managed to isolate a good system for consistent, long-term results: I think I've finally found what works for me.
+As someone who has varying levels productivity, but never managed to isolate a good system for consistent, long-term results: I think I've finally found what works for me.
 
 I'm posting this write-up on it in hopes that it helps others. 
 
@@ -29,7 +29,7 @@ On my most unproductive days, here's what would happen:
 
 2. Inspiration was common, but also fickle: I'd be inspired to do one project, work on it for a day or two, and then be inspired to do something else.
 
-3. I loved consuming information but had a lot of anxiety applying it and working on projects.
+3. I loved consuming information but various forms of anxiety applying it and working on projects.
 
 # Solutions
 
@@ -40,9 +40,9 @@ On my most unproductive days, here's what would happen:
 (sidenote: Freedom isn't available on Linux yet. Workaround: edit your /etc/hosts file and add sites. Does the same thing, but easier to get around.)
 
 - I emailed [Derek Sivers](https://sivers.org/) about this. He gave me the following advice:
-    1. move all your distracting apps (*including your default browser*) into a folder as far away from your home screen as you can (*so you have to swipe multiple times to get to that page of apps*)
-    2. disable those apps from appearing in your recently used section (*to avoid temptation to open them again*)
-    3. download Firefox Focus (*which makes you manually type out all your websites instead of remembering them*).
+    1. move all your distracting apps (including your default browser) into a folder as far away from your home screen as you can - this means you have to swipe multiple times to distract yourself
+    2. disable those apps from appearing in your recently used section (less temptation opportunities)
+    3. download Firefox Focus - it makes you manually type out all your websites
 
 ## 2: Inspiration
 
