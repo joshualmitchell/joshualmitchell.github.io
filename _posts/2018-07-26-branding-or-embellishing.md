@@ -9,14 +9,6 @@ toc: true # outline page on the right hand side
 
 Where to draw the line? I was talking to a recruiter about my resume the other day. One of the suggestions he made was to combine my TA experience (9 months) and my research experience (3 months) and just say I did research the whole time.
 
-It has got me thinking about where the line is. I want to take some time to
-
-1. draw the line between "Branding" and "Embellishing",
-
-2. discuss where the line is blurred, and
-
-3. talk about how embellishing could be "justified"
-
 # The line between "Branding" and "Embellishing"
 
 Part of me was for it. If I can do the job I get hired for, why does it matter?
@@ -41,7 +33,7 @@ Embellishing could be thought of as branding, except some of what you're saying 
 
 In this case, the line is lying. But where does this line get blurry?
 
-# Blurry line examples
+# Some "blurry line" examples
 
 1. We know that some interviewers positively note when candidates dress nice to interviews.
 
