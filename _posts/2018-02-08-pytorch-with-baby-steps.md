@@ -6,13 +6,16 @@ categories: tutorial
 tags: [deep-learning, pytorch]
 alias: /tutorial/pytorch-with-baby-steps
 permalink: /blog/2018/02/08/pytorch-with-baby-steps
+toc: true # outline page on the right hand side
 ---
+
+A heavily example-based, incremental tutorial introduction to PyTorch.
 
 [Take me to the github!](https://github.com/joshualmitchell/Pytorch-Tutorial)
 
 [Take me to the outline!](#outline)
 
-## Motivation:
+# Motivation:
 
 As I was going through the [Deep Learning Blitz](http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)  tutorial from pytorch.org, I had a lot of questions. I googled my way through all of them, but I had wished there was a more extensive example set (i.e. starting from a really basic model all the way to a CNN). That way I could see very clearly, through examples, what each component did in isolation.
 

@@ -7,7 +7,7 @@ tags: [careers, branding, marketing]
 toc: true # outline page on the right hand side
 ---
 
-I was talking to a recruiter about my resume the other day. One of the suggestions he made was to combine my TA experience (9 months) and my research experience (3 months) and just say I did research the whole time.
+Where to draw the line? I was talking to a recruiter about my resume the other day. One of the suggestions he made was to combine my TA experience (9 months) and my research experience (3 months) and just say I did research the whole time.
 
 Part of me was for it. If I can do the job I get hired for, why does it matter?
 
@@ -29,7 +29,7 @@ That being said, it has got me thinking about where the line is. I want to take 
 
 3. talk about how embellishing could be "justified"
 
-## The line between "Branding" and "Embellishing"
+# The line between "Branding" and "Embellishing"
 
 Let's say a company is looking for THE best candidate ever. Let's call this candidate Ideal.
 
@@ -41,7 +41,7 @@ Embellishing could be thought of as branding, except some of what you're saying 
 
 In this case, the line is lying. But where does this line get blurry?
 
-## Blurry line examples
+# Blurry line examples
 
 1. We know that some interviewers positively note when candidates dress nice to interviews.
 
@@ -77,7 +77,7 @@ Giving them both would paint a more honest picture, but giving them only B would
 
 Is it branding because you're putting your best foot forward? Or is it embellishment because you didn't tell them the whole truth?
 
-## Is embellishing OK?
+# Is embellishing OK?
 
 I get nervous about presenting statements as absolute truth, so I hesitate to say that all lying is bad. For example, would I lie to save my family? Absolutely.
 

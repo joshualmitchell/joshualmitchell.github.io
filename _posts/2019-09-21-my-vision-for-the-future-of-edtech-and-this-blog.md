@@ -43,6 +43,4 @@ If done right, if a system was invented that
 - is engaging (i.e. automatically tailors to your learning style, level, and pace)
 - is interesting (i.e. sells you on why you should learn what you're learning, gives you chances to be creative)
 
-The world would enter a true golden age.
-
-I know it's ambitious, but I want to create this system.
+The world would enter a true golden age. I want to do my part in creating this system.
