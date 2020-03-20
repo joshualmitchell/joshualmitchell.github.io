@@ -9,19 +9,7 @@ toc: true # outline page on the right hand side
 
 Where to draw the line? I was talking to a recruiter about my resume the other day. One of the suggestions he made was to combine my TA experience (9 months) and my research experience (3 months) and just say I did research the whole time.
 
-Part of me was for it. If I can do the job I get hired for, why does it matter?
-
-The other part of me felt slimy about doing that.
-
-"It's all about branding," he said.
-
-"Nobody cares that you were a TA or what your official title was at what time. They care if you can bring business value. Being a researcher is a better signal that you can do that. Everyone does this kind of thing. If you don't do it, you're behind."
-
-That's hard to argue with. If everyone else is doing steroids, why shouldn't I?
-
-For me, the answer is: Because that's not what I stand for.
-
-That being said, it has got me thinking about where the line is. I want to take some time to
+It has got me thinking about where the line is. I want to take some time to
 
 1. draw the line between "Branding" and "Embellishing",
 
@@ -30,6 +18,18 @@ That being said, it has got me thinking about where the line is. I want to take 
 3. talk about how embellishing could be "justified"
 
 # The line between "Branding" and "Embellishing"
+
+Part of me was for it. If I can do the job I get hired for, why does it matter?
+
+The other part of me felt slimy about doing that.
+
+"It's all about branding," he said.
+
+"Nobody cares that you were a TA or what your official title was at what time. They care if you can bring business value. Being a researcher is a better signal that you can do that. Everyone does this kind of thing. If you don't do it, you're behind. If everyone else is doing steroids, why shouldn't you?"
+
+A strong argument - but I'm still not (both literally and metaphorically) going to do steroids. Doesn't sit right with me.
+
+That being said - where *is* the line? A thought experiment:
 
 Let's say a company is looking for THE best candidate ever. Let's call this candidate Ideal.
 
