@@ -17,7 +17,7 @@ Fundamentally, it's a note taking system designed to [help insights accumulate](
 
 In traditional note taking systems, you spend most of your time pigeonholing notes into categories (you'll still probably have trouble finding them) and merging duplicates (to keep yourself sane).
 
-In the Evergreen System, you spend most of your time doing "productive" work, like fleshing out your ideas and connecting the dots - the organization takes care of itself.
+In the Evergreen System, you spend most of your time doing "productive" work, like fleshing out your ideas and connecting the dots. The organization takes care of itself.
 
 ### The problem with existing note taking systems
 
