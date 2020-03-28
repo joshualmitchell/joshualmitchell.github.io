@@ -170,9 +170,9 @@ I describe two approaches here: an <b>undirected</b> version, in which writing
 
 Undirected version:
 <ul style="list-style-type:disc;">
-  <li>Write durable notes continuously while reading and thinking. ([Evergreen note-writing as fundamental unit of knowledge work](https://notes.andymatuschak.org/Evergreen_note-writing_as_fundamental_unit_of_knowledge_work))</li>
-  <li>Each time you add a note, add a link to it to an outline, creating one if necessary ([Create speculative outlines while you write](https://notes.andymatuschak.org/Create_speculative_outlines_while_you_write)).</li>
-  <li>Eventually, you’ll feel excited about fleshing out one of those outlines. ([Let ideas and beliefs emerge organically](https://notes.andymatuschak.org/Let_ideas_and_beliefs_emerge_organically))</li>
+  <li>Write durable notes continuously while reading and thinking. ( <a href="https://notes.andymatuschak.org/Evergreen_note-writing_as_fundamental_unit_of_knowledge_work">Evergreen note-writing as fundamental unit of knowledge work</a>)</li>
+  <li>Each time you add a note, add a link to it to an outline, creating one if necessary (<a href="https://notes.andymatuschak.org/Create_speculative_outlines_while_you_write">Create speculative outlines while you write</a>).</li>
+  <li>Eventually, you’ll feel excited about fleshing out one of those outlines. (<a href="https://notes.andymatuschak.org/Let_ideas_and_beliefs_emerge_organically">Let ideas and beliefs emerge organically</a>)</li>
   <li>Write new notes to fill in missing pieces of the outline.</li>
   <li>Concatenate all the note texts together to get an initial manuscript</li>
   <li>Rewrite it.>
