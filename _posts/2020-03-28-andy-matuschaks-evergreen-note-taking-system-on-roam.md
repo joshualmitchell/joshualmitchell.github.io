@@ -9,6 +9,8 @@ toc: true # outline page on the right hand side
 
 ## Andy Matuschak's Note Taking System ("The Evergreen System")
 
+This is a post describing the "Evergreen" system, how it excels over traditional note-taking, and how to use it on Roam.
+
 ### What is it?
 
 Fundamentally, it's his note taking system designed to [help insights accumulate](https://notes.andymatuschak.org/Evergreen_note-writing_helps_insight_accumulate) by making notes [useful and worth building on top of](https://notes.andymatuschak.org/Evergreen_notes).
