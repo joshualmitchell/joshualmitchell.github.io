@@ -51,9 +51,9 @@ Highlights:
 
 Highlights:
 
-> Unlike the brain, the file cabinet approach makes it difficult or impossible to remix or reuse the same piece of information. Each time a change is made to any given file, it has to be tracked down and updated in every location in which it exists. This leads to redundancy, with a cluttering of near-identical ideas, and significant work any time a system-wide change is required.
+`Unlike the brain, the file cabinet approach makes it difficult or impossible to remix or reuse the same piece of information. Each time a change is made to any given file, it has to be tracked down and updated in every location in which it exists. This leads to redundancy, with a cluttering of near-identical ideas, and significant work any time a system-wide change is required.`
 
-> Current solutions also lack interconnectivity. Many files are divorced from context; cast into a drawer, rather than methodically fitted into a broader framework of knowledge. Knowledge trees can create pseudo-relationships between files nested within a given hierarchy, but these are not explicit, and can only describe a vertical ‘parent and child’ taxonomy. Some tools, such as web pages and wikis, also allow for orthogonal linking between related files, but this takes place in an ad hoc fashion, and again, there is no ability to explicitly define relationships.
+`Current solutions also lack interconnectivity. Many files are divorced from context; cast into a drawer, rather than methodically fitted into a broader framework of knowledge. Knowledge trees can create pseudo-relationships between files nested within a given hierarchy, but these are not explicit, and can only describe a vertical ‘parent and child’ taxonomy. Some tools, such as web pages and wikis, also allow for orthogonal linking between related files, but this takes place in an ad hoc fashion, and again, there is no ability to explicitly define relationships.`
 
 ### Why The Evergreen System is a better solution
 
