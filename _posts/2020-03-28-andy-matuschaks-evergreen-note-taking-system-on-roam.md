@@ -122,7 +122,7 @@ During undergrad, I took notes - but never looked at them again. I had a latent 
 
 Now, I don't have to do the leg work of finding notes to update. I just stumble upon them naturally and update them as needed.
 
-## Implement AM's system on Roam
+## Implementing the Evergreen system on Roam
 
 ### Creating a Roam Research account and using Roam
 
