@@ -77,7 +77,7 @@ Long story short: each note is meant to be [Evergreen](https://notes.andymatusch
 
 Properties of Evergreen notes:
 
-- [Atomic](https://notes.andymatuschak.org/Evergreen_notes_should_be_atomic): Evergreen notes should be about one thing, and fleshing out that one thing *well*.
+- [Atomic](https://notes.andymatuschak.org/Evergreen_notes_should_be_atomic): Evergreen notes should be about one thing, and flesh out that one thing *well*.
 
 Why atomic?
 
@@ -101,7 +101,9 @@ With atomicity and a good title, you can treat Evergreen notes like [APIs](https
 - [Concept-oriented](https://notes.andymatuschak.org/Evergreen_notes_should_be_concept-oriented): Evergreen notes should be as concept oriented as possible for 3 reasons.
 
 1) Concepts can manifest across different domains. When your notes are concepts, they're easier to find and reference in future notes.
+
 2) Concepts are "evergreen" in the sense that they're pure. They're not biased towards a particular domain, point of view, or time period. Thus, in theory, any note on a particular concept should only change if you learn more about the concept. Other than that, they're sturdy building blocks for other ideas.
+
 3) Concepts are the most "bang for your buck" in terms of note taking. They are, in theory, the most general Single Sources of Truth in existence. They're an answer to the question, "What's the largest overlap between all of these things?" 
 
 - [Densely-linked](https://notes.andymatuschak.org/Evergreen_notes_should_be_densely_linked): Concepts don't exist in isolation - they're compositions of other concepts.
@@ -116,9 +118,9 @@ In this system, [organization isn't decided beforehand - it happens organically 
 
 Check out the [Roam White Paper](https://roamresearch.com/#/v8/help/page/Vu1MmjinS) for an example / demo.
 
-Anecdotally, I first discovered it on [Nate Eliason's blog](https://www.nateliason.com/blog/roam). I use it as my primary idea database, although it does have functionality for other things (I also use it as a to-do list, a calendar, and a journal).
+Anecdotally, I first discovered it on [Nate Eliason's blog](https://www.nateliason.com/blog/roam). I use it as my primary idea database, although it does have functionality for other things. (I also use it as a to-do list, a calendar, and a journal.)
 
-During undergrad, I took notes - but never looked at them again. I had a latent "distrust" for them. In the back of my mind, I knew they weren't complete - that they were just going to be step 1 in a wild goose chase towards understanding. It didn't occur to me to update my notes because it seemed pointless: I'd have to update them "everywhere," but I had no idea where "everywhere" was.
+During undergrad, I took notes but never looked at them again. I had a latent "distrust" for them. In the back of my mind, I knew they weren't complete - that they were just going to be step 1 in a wild goose chase towards understanding. It didn't occur to me to update my notes because it seemed pointless: I'd have to update them "everywhere," but I had no idea where "everywhere" was.
 
 Now, I don't have to do the leg work of finding notes to update. I just stumble upon them naturally and update them as needed.
 
@@ -133,7 +135,9 @@ You can make an account on the [Roam website](). Once you've made an account, th
 
 ### Creating an Evergreen note
 
-Caveat: If I had generalizing and relating information down to an exact science, I'm pretty sure I'd be 1 step away from inventing true AI and starting a Singularity event. :) To my knowledge, it's not an exact science. However, I can give you some examples from Andy.
+Caveat: If I had generalizing and relating information down to an exact science, I'm pretty sure I'd be 1 step away from inventing true AI and starting a Singularity event. :) 
+
+To my knowledge, it's not an exact science. However, I can give you some examples as a jumping off point.
 
 Remember: we want our notes to act as flexible (concept-oriented) building blocks (atomic) that are frictionlessly reachable from related ideas (densely-linked) through reasonable handles (well-titled).
 
@@ -154,16 +158,16 @@ Some categories of Evergreen notes from Andy's site:
 - Observations
     * [The most effective readers and thinkers I know don’t take notes when reading](https://notes.andymatuschak.org/The_most_effective_readers_and_thinkers_I_know_don%E2%80%99t_take_notes_when_reading)
 
-Another tip: [Keep associations as fine-grained as possible](https://notes.andymatuschak.org/Prefer_fine-grained_associations). In other words, lots of atomic notes with many inline connections is preferred to bloated (non-atomic) notes with few "foot-note" style connections between other notes.
+Another tip: [Keep associations as fine-grained as possible](https://notes.andymatuschak.org/Prefer_fine-grained_associations). In other words, lots of atomic notes with many inline connections is preferred to bloated (non-atomic) notes with few "foot-note" style (coarse-grained) connections between other notes.
 
 ### Using your notes to write more notes, papers, essays, etc.
 
-I liked [Andy's thoughts](https://notes.andymatuschak.org/Executable_strategy_for_writing) on this, so I'll pull a few excerpts: 
+I liked [Andy's thoughts](https://notes.andymatuschak.org/Executable_strategy_for_writing) on this, so I'll pull another excerpt: 
 
 <blockquote style="font-style: normal">A naive writing process begins with a rough inkling about what one wants to write and a blank page. Progress from this point requires an enormous amount of activation energy and cognitive effort: there’s nothing external, so you must juggle all of the piece-to-be in your head.
 <br>
 <br>
-By contrast, if you’ve already written lots of concept-oriented <a href="https://notes.andymatuschak.org/Evergreen_notes">Evergreen notes</a> around the topic, your task is more like editing than composition. You can make an outline by shuffling the note titles, write notes on any missing material, and edit them together into a narrative. In fact, because you can <a href="https://notes.andymatuschak.org/Create_speculative_outlines_while_you_write">Create speculative outlines while you write</a>, you might find that the first of these steps is already accomplished, too. And writing each note isn’t hard.
+By contrast, if you’ve already written lots of concept-oriented <a href="https://notes.andymatuschak.org/Evergreen_notes">Evergreen notes</a> around the topic, your task is more like editing than composition. You can make an outline by shuffling the note titles, write notes on any missing material, and edit them together into a narrative. In fact, because you can <a href="https://notes.andymatuschak.org/Create_speculative_outlines_while_you_write">create speculative outlines while you write</a>, you might find that the first of these steps is already accomplished, too. And writing each note isn’t hard.
 <br>
 <br>
 Instead of having a task like “write an outline of the first chapter,” you have a task like “find notes which seem relevant.” Each step feels doable. This is an executable strategy (see <a href="https://notes.andymatuschak.org/Executable_strategy">Executable strategy</a>).
@@ -182,7 +186,6 @@ Undirected version:
   <li>Rewrite it.</li>
 </ul>
 <br>
-<br>
 Directed version:
 <ul style="list-style-type:disc;">
     <li>Review notes related to your topic (and a step or two beyond those - <a href="https://notes.andymatuschak.org/Notes_should_surprise_you">Notes should surprise you</a>).</li>
@@ -191,7 +194,6 @@ Directed version:
     <li>Concatenate all the note texts together to get an initial manuscript.</li>
     <li>Rewrite it.</li>
 </ul>
-<br>
 <br>
 One other nice benefit of this approach: <a href="https://notes.andymatuschak.org/Evergreen_notes_lower_the_emotional_stakes_in_editing_manuscripts">Evergreen notes lower the emotional stakes in editing manuscripts</a>.
 </blockquote>
