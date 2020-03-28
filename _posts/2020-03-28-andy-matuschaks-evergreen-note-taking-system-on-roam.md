@@ -180,14 +180,14 @@ Undirected version:
 
 Directed version:
 <ul style="list-style-type:disc;">
-    <li>Review notes related to your topic (and a step or two beyond those—[Notes should surprise you](https://notes.andymatuschak.org/Notes_should_surprise_you)).</li>
+    <li>Review notes related to your topic (and a step or two beyond those - <a href="https://notes.andymatuschak.org/Notes_should_surprise_you">Notes should surprise you</a>).</li>
     <li>Write an outline.</li>
     <li>Attach existing notes to each point in the outline; write new notes as needed.</li>
     <li>Concatenate all the note texts together to get an initial manuscript.</li>
     <li>Rewrite it.</li>
 </ul>
  
-One other nice benefit of this approach: [Evergreen notes lower the emotional stakes in editing manuscripts](https://notes.andymatuschak.org/Evergreen_notes_lower_the_emotional_stakes_in_editing_manuscripts).</blockquote>
+One other nice benefit of this approach: <a href="https://notes.andymatuschak.org/Evergreen_notes_lower_the_emotional_stakes_in_editing_manuscripts">Evergreen notes lower the emotional stakes in editing manuscripts</a>.</blockquote>
 
 ### Questions I still have:
 
