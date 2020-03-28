@@ -116,7 +116,7 @@ In this system, [organization isn't decided beforehand - it happens organically 
 
 [Roam](https://www.roamresearch.com/) is a note-taking tool for networked thought. Its key distinguishing feature is the ability to bidirectionally link notes to each other. For example, if you link to note B from note A, then you can go to B from A, and when you're on B, you'll see that A linked to B.
 
-Check out the [Roam White Paper](https://roamresearch.com/#/v8/help/page/Vu1MmjinS) for an example / demo.
+Check out the [Roam White Paper](https://roamresearch.com/#/v8/help/page/Vu1MmjinS) for a demo.
 
 Anecdotally, I first discovered it on [Nate Eliason's blog](https://www.nateliason.com/blog/roam). I use it as my primary idea database, although it does have functionality for other things. (I also use it as a to-do list, a calendar, and a journal.)
 
