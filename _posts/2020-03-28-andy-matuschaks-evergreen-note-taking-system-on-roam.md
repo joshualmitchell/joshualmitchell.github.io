@@ -57,11 +57,13 @@ Another excerpt from [The Roam Whitepaper](https://roamresearch.com/#/v8/help/pa
 
 ### Why The Evergreen System is a better solution
 
-**The value proposition in three sentences:**
+The value proposition in three sentences:
 
-In the past, when considering new ideas, you had to start from scratch connecting everything into a cohesive thought process. With this system, you save all that work you've done in the past into a form usable for new work. All you have to do is build on top of your existing knowledge base and add a few connections.
+In the past, to formulate new ideas, you had to start from scratch to connect everything into a cohesive thought process.
 
-**From Andy Matuschak's [notes](https://notes.andymatuschak.org/Note-writing_helps_insight_accumulate)**:
+With this system, you save all that work you've done in the past into a form usable for new work. All you have to do is build on top of your existing knowledge base and add a few connections.
+
+From Andy Matuschak's [notes](https://notes.andymatuschak.org/Note-writing_helps_insight_accumulate):
 
 <blockquote style="font-style: normal">Consider some hypothetical leap of insight you’d like to be able to make. To make that leap, you’ll typically need to evolve many independent, partially-formed ideas simultaneously, until they suddenly converge in a flash of inspiration. If you need to iterate on more than a few pieces at once, you may struggle to keep them all in your head.</blockquote>
 
@@ -73,7 +75,7 @@ However, in the Evergreen notes system, you've already thought about all those i
 
 Long story short: each note is meant to be [Evergreen](https://notes.andymatuschak.org/Evergreen_notes).
 
-**Properties of Evergreen notes:**
+Properties of Evergreen notes:
 
 - [Atomic](https://notes.andymatuschak.org/Evergreen_notes_should_be_atomic): Evergreen notes should be about one thing, and fleshing out that one thing *well*.
 
@@ -98,9 +100,9 @@ With atomicity and a good title, you can treat Evergreen notes like [APIs](https
 
 - [Concept-oriented](https://notes.andymatuschak.org/Evergreen_notes_should_be_concept-oriented): Evergreen notes should be as concept oriented as possible for 3 reasons.
 
-1. Concepts can manifest across different domains. When your notes are concepts, they're easier to find and reference in future notes.
-2. Concepts are "evergreen" in the sense that they're pure. They're not biased towards a particular domain, point of view, or time period. Thus, in theory, any note on a particular concept should only change if you learn more about the concept. Other than that, they're sturdy building blocks for other ideas.
-3. Concepts are the most "bang for your buck" in terms of note taking. They are, in theory, the most general Single Sources of Truth in existence. They're an answer to the question, "What's the largest overlap between all of these things?" 
+1) Concepts can manifest across different domains. When your notes are concepts, they're easier to find and reference in future notes.
+2) Concepts are "evergreen" in the sense that they're pure. They're not biased towards a particular domain, point of view, or time period. Thus, in theory, any note on a particular concept should only change if you learn more about the concept. Other than that, they're sturdy building blocks for other ideas.
+3) Concepts are the most "bang for your buck" in terms of note taking. They are, in theory, the most general Single Sources of Truth in existence. They're an answer to the question, "What's the largest overlap between all of these things?" 
 
 - [Densely-linked](https://notes.andymatuschak.org/Evergreen_notes_should_be_densely_linked): Concepts don't exist in isolation - they're compositions of other concepts.
 
