@@ -118,7 +118,7 @@ In this system, [organization isn't decided beforehand - it happens organically 
 
 Check out the [Roam White Paper](https://roamresearch.com/#/v8/help/page/Vu1MmjinS) for a demo.
 
-Anecdotally, I first discovered it on [Nate Eliason's blog](https://www.nateliason.com/blog/roam). I use it as my primary idea database, although it does have functionality for other things. (I also use it as a to-do list, a calendar, and a journal.)
+Anecdotally, I first discovered it on [Nate Eliason's blog](https://www.nateliason.com/blog/roam). I now use it as my primary idea database, although it does have functionality for other things. (I also use it as a to-do list, a calendar, and a journal.)
 
 During undergrad, I took notes but never looked at them again. I had a latent "distrust" for them. In the back of my mind, I knew they weren't complete - that they were just going to be step 1 in a wild goose chase towards understanding. It didn't occur to me to update my notes because it seemed pointless: I'd have to update them "everywhere," but I had no idea where "everywhere" was.
 
