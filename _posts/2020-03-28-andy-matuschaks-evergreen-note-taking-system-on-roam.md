@@ -73,7 +73,7 @@ However, in the Evergreen notes system, you've already thought about all those i
 
 ### How does it work? How's it different?
 
-Each note is meant to be [Evergreen](https://notes.andymatuschak.org/Evergreen_notes).
+Long story short: each note is meant to be [Evergreen](https://notes.andymatuschak.org/Evergreen_notes).
 
 **Properties of Evergreen notes:**
 
