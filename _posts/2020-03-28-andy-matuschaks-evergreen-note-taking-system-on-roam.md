@@ -30,11 +30,15 @@ A tweetstorm from Conor White-Sullivan (CEO/Founder of Roam Research) on why [cu
 <blockquote style="font-style: normal">7. For others (including your future self) to absorb, effectively criticize, and build upon your thoughts, they have to take that stream of words/ideas, and rebuild the original graph in their own heads.</blockquote>
 
 <blockquote style="font-style: normal">8. Good communicators make this process easier -- this is why speakers, teachers, and salespeople will often follow the formula of
-
+<br>
+<br>
 - Tell them what you're going to tell them
+<br>
 - Tell them
+<br>
 - Tell them what you told them.
-
+<br>
+<br>
 It lays out the scaffold of the idea, then fills it in</blockquote>
 
 <blockquote style="font-style: normal">10. The problem with our note taking systems is this -- even if we have to eventually present our thoughts in a linear sequence -- writing isn't just a tool for communication. First and foremost, writing is a tool for thinking, it is a way of expressing our thoughts to ourselves</blockquote>
