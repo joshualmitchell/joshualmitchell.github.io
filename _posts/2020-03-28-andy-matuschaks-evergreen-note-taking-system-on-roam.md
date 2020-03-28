@@ -7,7 +7,7 @@ tags: [productivity, project-management, note-taking]
 toc: true # outline page on the right hand side
 ---
 
-This is a post describing the "Evergreen" system, how it excels over traditional note-taking, and how to use it on Roam.
+This is a post describing the "Evergreen" note-taking system, how it excels over traditional note-taking, and how to use it on Roam.
 
 ## Andy Matuschak's Note Taking System ("The Evergreen System")
 
