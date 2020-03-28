@@ -49,9 +49,7 @@ It lays out the scaffold of the idea, then fills it in</blockquote>
 
 <blockquote style="font-style: normal">24. What I want in a second brain: I see something online (or I capture a thought myself) and think -- oh, that's interesting. Interesting for what? I don't know yet, but if it's good, it's because I expect it to influence my thinking about something else in the future.</blockquote>
 
-**[The Roam Whitepaper](https://roamresearch.com/#/v8/help/page/rdUZzTcyw)**
-
-Highlights:
+Another excerpt from [The Roam Whitepaper](https://roamresearch.com/#/v8/help/page/rdUZzTcyw) on why current solutions are inadequate:
 
 <blockquote style="font-style: normal">Unlike the brain, the file cabinet approach makes it difficult or impossible to remix or reuse the same piece of information. Each time a change is made to any given file, it has to be tracked down and updated in every location in which it exists. This leads to redundancy, with a cluttering of near-identical ideas, and significant work any time a system-wide change is required.</blockquote>
 
