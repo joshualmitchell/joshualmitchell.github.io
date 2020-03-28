@@ -162,12 +162,16 @@ I liked [Andy's thoughts](https://notes.andymatuschak.org/Executable_strategy_fo
 
 <blockquote style="font-style: normal">A naive writing process begins with a rough inkling about what one wants to write and a blank page. Progress from this point requires an enormous amount of activation energy and cognitive effort: there’s nothing external, so you must juggle all of the piece-to-be in your head.
 <br>
+<br>
 By contrast, if you’ve already written lots of concept-oriented <a href="https://notes.andymatuschak.org/Evergreen_notes">Evergreen notes</a> around the topic, your task is more like editing than composition. You can make an outline by shuffling the note titles, write notes on any missing material, and edit them together into a narrative. In fact, because you can <a href="https://notes.andymatuschak.org/Create_speculative_outlines_while_you_write">Create speculative outlines while you write</a>, you might find that the first of these steps is already accomplished, too. And writing each note isn’t hard.
 <br>
+<br>
 Instead of having a task like “write an outline of the first chapter,” you have a task like “find notes which seem relevant.” Each step feels doable. This is an executable strategy (see <a href="https://notes.andymatuschak.org/Executable_strategy">Executable strategy</a>).
-
+<br>
+<br>
 I describe two approaches here: an <b>undirected</b> version, in which writing projects emerge organically from daily work; and a <b>directed</b> version, in which you’re trying to write about something specific.
-
+<br>
+<br>
 Undirected version:
 <ul style="list-style-type:disc;">
   <li>Write durable notes continuously while reading and thinking. ( <a href="https://notes.andymatuschak.org/Evergreen_note-writing_as_fundamental_unit_of_knowledge_work">Evergreen note-writing as fundamental unit of knowledge work</a>)</li>
@@ -175,9 +179,10 @@ Undirected version:
   <li>Eventually, you’ll feel excited about fleshing out one of those outlines. (<a href="https://notes.andymatuschak.org/Let_ideas_and_beliefs_emerge_organically">Let ideas and beliefs emerge organically</a>)</li>
   <li>Write new notes to fill in missing pieces of the outline.</li>
   <li>Concatenate all the note texts together to get an initial manuscript</li>
-  <li>Rewrite it.>
+  <li>Rewrite it.</li>
 </ul>
-
+<br>
+<br>
 Directed version:
 <ul style="list-style-type:disc;">
     <li>Review notes related to your topic (and a step or two beyond those - <a href="https://notes.andymatuschak.org/Notes_should_surprise_you">Notes should surprise you</a>).</li>
@@ -186,8 +191,10 @@ Directed version:
     <li>Concatenate all the note texts together to get an initial manuscript.</li>
     <li>Rewrite it.</li>
 </ul>
- 
-One other nice benefit of this approach: <a href="https://notes.andymatuschak.org/Evergreen_notes_lower_the_emotional_stakes_in_editing_manuscripts">Evergreen notes lower the emotional stakes in editing manuscripts</a>.</blockquote>
+<br>
+<br>
+One other nice benefit of this approach: <a href="https://notes.andymatuschak.org/Evergreen_notes_lower_the_emotional_stakes_in_editing_manuscripts">Evergreen notes lower the emotional stakes in editing manuscripts</a>.
+</blockquote>
 
 ### Questions I still have:
 
