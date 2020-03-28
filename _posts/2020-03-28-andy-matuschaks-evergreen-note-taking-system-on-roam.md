@@ -23,9 +23,9 @@ In the Evergreen System, you spend most of your time doing "productive" work, li
 
 An excerpt from Conor White-Sullivan, CEO/Founder of Roam Research on why [current note-taking apps](https://twitter.com/Conaw/status/1099181050045952006) aren't getting the job done:
 
-<blockquote style="font-style: normal">3. That's how things work in your brain -- There is a structure between the thoughts -- the structure resembles something like a graph of nodes and edges with probabilistic weights.</blockquote></blockquote>
+<blockquote style="font-style: normal">3. That's how things work in your brain -- There is a structure between the thoughts -- the structure resembles something like a graph of nodes and edges with probabilistic weights.</blockquote>
 
-<blockquote style="font-style: normal">\6. The thing is, if you want to take those thoughts out of your head, basic human I/O says you have to turn the graph into a stream. You can only speak or write one word at a time.</blockquote>
+<blockquote style="font-style: normal">6. The thing is, if you want to take those thoughts out of your head, basic human I/O says you have to turn the graph into a stream. You can only speak or write one word at a time.</blockquote>
 
 <blockquote style="font-style: normal">7. For others (including your future self) to absorb, effectively criticize, and build upon your thoughts, they have to take that stream of words/ideas, and rebuild the original graph in their own heads.</blockquote>
 
