@@ -27,11 +27,11 @@ Some excerpts:
 
 Highlights:
 
-> 3. That's how things work in your brain -- There is a structure between the thoughts -- the structure resembles something like a graph of nodes and edges with probabilistic weights.
+> \3. That's how things work in your brain -- There is a structure between the thoughts -- the structure resembles something like a graph of nodes and edges with probabilistic weights.
 
-> 6. The thing is, if you want to take those thoughts out of your head, basic human I/O says you have to turn the graph into a stream. You can only speak or write one word at a time.
+> \6. The thing is, if you want to take those thoughts out of your head, basic human I/O says you have to turn the graph into a stream. You can only speak or write one word at a time.
 
-> 7. For others (including your future self) to absorb, effectively criticize, and build upon your thoughts, they have to take that stream of words/ideas, and rebuild the original graph in their own heads.
+> \7. For others (including your future self) to absorb, effectively criticize, and build upon your thoughts, they have to take that stream of words/ideas, and rebuild the original graph in their own heads.
 
 > 8. Good communicators make this process easier -- this is why speakers, teachers, and salespeople will often follow the formula of Tell them what you're going to tell them, Tell them, Tell them what you told them. It lays out the scaffold of the idea, then fills it in
 
