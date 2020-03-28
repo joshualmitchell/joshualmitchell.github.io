@@ -21,7 +21,7 @@ In the Evergreen System, you spend most of your time doing "productive" work, li
 
 ### The problem with existing note taking systems
 
-An excerpt from Conor White-Sullivan, CEO/Founder of Roam Research on why [current note-taking apps](https://twitter.com/Conaw/status/1099181050045952006) aren't getting the job done:
+A tweetstorm from Conor White-Sullivan, CEO/Founder of Roam Research on why [current note-taking apps](https://twitter.com/Conaw/status/1099181050045952006) aren't getting the job done:
 
 <blockquote style="font-style: normal">3. That's how things work in your brain -- There is a structure between the thoughts -- the structure resembles something like a graph of nodes and edges with probabilistic weights.</blockquote>
 
