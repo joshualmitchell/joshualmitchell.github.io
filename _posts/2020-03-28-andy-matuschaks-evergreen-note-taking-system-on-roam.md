@@ -114,7 +114,7 @@ In this system, [organization isn't decided beforehand - it happens organically 
 
 ## Roam Research
 
-[Roam](https://www.roamresearch.com/) is a note-taking tool for networked thought. It's key distinguishing feature is the ability to bidirectionally link notes to each other. For example, if you link to note B from note A, then you can go to B from A, and when you're on B, you'll see that A linked to B.
+[Roam](https://www.roamresearch.com/) is a note-taking tool for networked thought. Its key distinguishing feature is the ability to bidirectionally link notes to each other. For example, if you link to note B from note A, then you can go to B from A, and when you're on B, you'll see that A linked to B.
 
 Check out the [Roam White Paper](https://roamresearch.com/#/v8/help/page/Vu1MmjinS) for an example / demo.
 
