@@ -1,6 +1,8 @@
 # main links
 main:
-   - title: "About Me"
+   - title: "New here?"
+     url: /start_here/
+   - title: "About me"
      url: /about/
    - title: "Resume"
      url: /resume/Joshua_Mitchell_DVSP20.pdf
