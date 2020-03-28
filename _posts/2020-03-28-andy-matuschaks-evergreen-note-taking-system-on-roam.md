@@ -143,7 +143,7 @@ Some categories of Evergreen notes from Andy's site:
 - Ideas
     * [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes)
 - Objects
-    *[Pocket memo pad to capture into writing inbox while out](https://notes.andymatuschak.org/Pocket_memo_pad_to_capture_into_writing_inbox_while_out)
+    * [Pocket memo pad to capture into writing inbox while out](https://notes.andymatuschak.org/Pocket_memo_pad_to_capture_into_writing_inbox_while_out)
 - Advice
     * [Write about what you read](https://notes.andymatuschak.org/Write_about_what_you_read)
     * [Do your own thinking](https://notes.andymatuschak.org/Do_your_own_thinking)
