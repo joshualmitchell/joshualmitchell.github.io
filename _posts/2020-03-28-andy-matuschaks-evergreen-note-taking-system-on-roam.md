@@ -114,7 +114,7 @@ With atomicity and a good title, you can treat Evergreen notes like [APIs](https
 
 The more connections you find, The more the value of your network of ideas grows. In fact, actively pursuing connections between concepts creates pressure to [think carefully, foster learning, and discover insights](https://notes.andymatuschak.org/Understanding_requires_effortful_engagement).
 
-In this system, [organization isn't decided beforehand - it happens organically (through association)](https://notes.andymatuschak.org/Prefer_associative_ontologies_to_hierarchical_taxonomies). Ideas build on each other in unexpected ways and insights happen when you least expect them - this system is flexible enough to support that.
+In this system, [organization isn't decided beforehand - it happens organically (through association)](https://notes.andymatuschak.org/Prefer_associative_ontologies_to_hierarchical_taxonomies). Ideas build on each other in unexpected ways and insights happen when you least expect them. This system is flexible enough to support that.
 
 ## Roam Research
 
@@ -182,7 +182,7 @@ I describe two approaches here: an <b>undirected</b> version, in which writing
 <br>
 Undirected version:
 <ul style="list-style-type:disc;">
-  <li>Write durable notes continuously while reading and thinking. ( <a href="https://notes.andymatuschak.org/Evergreen_note-writing_as_fundamental_unit_of_knowledge_work">Evergreen note-writing as fundamental unit of knowledge work</a>)</li>
+  <li>Write durable notes continuously while reading and thinking. (<a href="https://notes.andymatuschak.org/Evergreen_note-writing_as_fundamental_unit_of_knowledge_work">Evergreen note-writing as fundamental unit of knowledge work</a>)</li>
   <li>Each time you add a note, add a link to it to an outline, creating one if necessary (<a href="https://notes.andymatuschak.org/Create_speculative_outlines_while_you_write">Create speculative outlines while you write</a>).</li>
   <li>Eventually, you’ll feel excited about fleshing out one of those outlines. (<a href="https://notes.andymatuschak.org/Let_ideas_and_beliefs_emerge_organically">Let ideas and beliefs emerge organically</a>)</li>
   <li>Write new notes to fill in missing pieces of the outline.</li>
