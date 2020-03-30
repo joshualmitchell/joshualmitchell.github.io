@@ -23,7 +23,7 @@ description              : "Thoughts on software, education, marketing, data, an
 url                      : https://lelon.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "joshualmitchell/joshualmitchell.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : /assets/images/profile.jpeg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : /assets/images/profile-teaser.jpg # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 
@@ -101,7 +101,7 @@ analytics:
 # Site Author - Side Bar
 author:
   name             : "Joshua L. Mitchell"
-  avatar           : "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Full-Stack Software Engineer"
   location         : "Austin, TX, USA"
   email            : "jlelonmitchell@gmail.com"
@@ -125,7 +125,7 @@ author:
   stackoverflow    : "7938146/joshua-mitchell" # (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : "JoshuaLelon"
   vine             :
   weibo            :
   xing             :
