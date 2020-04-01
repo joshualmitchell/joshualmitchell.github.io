@@ -7,7 +7,7 @@ tags: [productivity, project-management, note-taking]
 toc: true # outline page on the right hand side
 ---
 
-This is a post describing the "Evergreen" note-taking system, how it excels over traditional note-taking, and how to use it on Roam.
+This is a post describing the "Evergreen" note taking system, how it excels over traditional note taking, and how to use it on Roam.
 
 ## Andy Matuschak's Note Taking System ("The Evergreen System")
 
@@ -21,7 +21,7 @@ In the Evergreen System, you spend most of your time doing "productive" work, li
 
 ### The problem with existing note taking systems
 
-A tweetstorm from Conor White-Sullivan (CEO/Founder of Roam Research) on why [current note-taking apps](https://twitter.com/Conaw/status/1099181050045952006) aren't getting the job done:
+A tweetstorm from Conor White-Sullivan (CEO/Founder of Roam Research) on why [current note taking apps](https://twitter.com/Conaw/status/1099181050045952006) aren't getting the job done:
 
 <blockquote style="font-style: normal">3. That's how things work in your brain -- There is a structure between the thoughts -- the structure resembles something like a graph of nodes and edges with probabilistic weights.</blockquote>
 
@@ -118,11 +118,11 @@ In this system, [organization isn't decided beforehand - it happens organically 
 
 ## Roam Research
 
-[Roam](https://www.roamresearch.com/) is a note-taking tool for networked thought. Its key distinguishing feature is the ability to bidirectionally link notes to each other. For example, if you link to note B from note A, then you can go to B from A, and when you're on B, you'll see that A linked to B.
+[Roam](https://www.roamresearch.com/) is a note taking tool for networked thought. Its key distinguishing feature is the ability to bidirectionally link notes to each other. For example, if you link to note B from note A, then you can go to B from A, and when you're on B, you'll see that A linked to B.
 
 Check out the [Roam White Paper](https://roamresearch.com/#/v8/help/page/Vu1MmjinS) for a demo.
 
-Anecdotally, I first discovered it on [Nate Eliason's blog](https://www.nateliason.com/blog/roam). I now use it as my primary idea database, although it does have functionality for other things. (I also use it as a to-do list, a calendar, and a journal.)
+Anecdotally, I first discovered it on [Nat Eliason's blog](https://www.nateliason.com/blog/roam). I now use it as my primary idea database, although it does have functionality for other things. (I also use it as a to-do list, a calendar, and a journal.)
 
 During undergrad, I took notes but never looked at them again. I had a latent "distrust" for them. In the back of my mind, I knew they weren't complete - that they were just going to be step 1 in a wild goose chase towards understanding. It didn't occur to me to update my notes because it seemed pointless: I'd have to update them "everywhere," but I had no idea where "everywhere" was.
 
@@ -135,7 +135,7 @@ Now, I don't have to do the leg work of finding notes to update. I just stumble 
 You can make an account on the [Roam website](). Once you've made an account, there are a few options for learning how to use it:
 
 1. [The Demo Videos](https://roamresearch.com/#/v8/help/page/k5RxbGuJN) - A free quick-start guide for using Roam.
-2. [Nate Eliason's Roam Course](https://learn.nateliason.com/) - A paid course  walking you through all of Roam's features. I bought this course. I'm satisfied with it and would recommend it (I don't get any referral fees). That being said, I didn't do much research trying to find free alternatives, so it's possible you could find the same information elsewhere. YMMV. 
+2. [Nat Eliason's Roam Course](https://learn.nateliason.com/) - A paid course  walking you through all of Roam's features. I bought this course. I'm satisfied with it and would recommend it (I don't get any referral fees). That being said, I didn't do much research trying to find free alternatives, so it's possible you could find the same information elsewhere. YMMV. 
 
 ### Creating an Evergreen note
 
