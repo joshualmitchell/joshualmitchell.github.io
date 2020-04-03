@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Andy Matuschak's Evergreen Note Taking System On Roam"
+title: "Andy Matuschak's Evergreen Note System On Roam"
 date: 2020-03-28
 categories: productivity
 tags: [productivity, project-management, note-taking]
@@ -9,7 +9,7 @@ toc: true # outline page on the right hand side
 
 This is a post describing the "Evergreen" note taking system, how it excels over traditional note taking, and how to use it on Roam.
 
-## Andy Matuschak's Note Taking System ("The Evergreen System")
+## Andy Matuschak's Note System ("The Evergreen System")
 
 ### What is it?
 
