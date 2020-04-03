@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "The Problems Science Faces (And Why Evergreen Notes Are The Solution)"
+title: "Some Problems Science Has (And Why Evergreen Notes Are The Solution)"
 date: 2020-03-28
 categories: productivity
 tags: [productivity, project-management, note-taking]
