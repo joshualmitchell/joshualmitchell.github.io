@@ -19,7 +19,7 @@ Wealth is partially zero-sum (e.g. land) and partially positive-sum (e.g. innova
 
 Why, for example, aren't we all on the same page about COVID-19, even when we know who the reputable sources of information are? [(Or do we?)](https://www.scottaaronson.com/blog/?p=4695)
 
-The answer is accessibility. I'm not talking about papers being hidden behind paywalls (which is also an issue). I'm talking about how, when the average person reads a scientific paper, they get nothing out of it. It's like it's encrypted.
+The answer is accessibility. I'm not talking about papers being hidden behind paywalls (which is also an issue). I'm talking about how, when the average person reads a scientific paper, they get nothing out of it.
 
 Scientists themselves aren't immune to this problem. This is a condensed paper citation graph by field [tweeted](https://twitter.com/david_perell/status/1242209425458212864?s=20) by [David Perell](https://www.perell.com/):
 
