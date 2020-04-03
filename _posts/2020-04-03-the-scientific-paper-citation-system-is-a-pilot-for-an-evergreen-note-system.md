@@ -101,7 +101,7 @@ Now, imagine if you had the author right there in front of you. You can ask what
 - You could ask if it's the same thing as this other thing.
 - You could ask what assumptions are being made, and what happens if they're not true.
 
-It's like doing the [Feynman technique](https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf), except when you notice gaps in your knowledge, they're instantly remedied.
+It's like doing the [Feynman technique](https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf), except when you notice gaps in your knowledge, further explanation is right in front of you.
 
 What's your estimation for how long it might take to understand a paper with your author friend?
 
