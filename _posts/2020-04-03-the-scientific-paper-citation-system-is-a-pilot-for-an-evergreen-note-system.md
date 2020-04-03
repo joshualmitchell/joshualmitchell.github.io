@@ -27,7 +27,9 @@ Scientists themselves aren't immune to this problem. This is a condensed paper c
 
 [sciencegraph]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/sciencegraph.jpg "Scientific Paper Citations By Field"
 
-Our fields are siloed. It's a lot easier to read a paper in your field than it is in someone else's field. You have the background to understand your field - not theirs. This will only get worse as new fields branch out from others, and existing fields become more complicated.
+Our fields are siloed. It's a lot easier to read a paper in your field than it is in someone else's field.
+
+This will only get worse as new fields branch out from others, and existing fields become more complicated.
 
 ## A (possible) solution
 
