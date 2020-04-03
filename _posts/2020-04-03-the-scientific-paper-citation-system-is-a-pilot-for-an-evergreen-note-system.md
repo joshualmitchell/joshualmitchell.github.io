@@ -103,9 +103,9 @@ Now, imagine if you had the author right there in front of you. You can ask what
 
 It's like doing the [Feynman technique](https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf), except when you notice gaps in your knowledge, further explanation is right in front of you.
 
-What's your estimation for how long it might take to understand a paper with your author friend?
+What's your estimation for how long it might take to understand the paper with your author friend?
 
-Obviously it depends on the paper, but maybe.. a few hours? A few weeks if it's a doozy of a paper. (The next paper in the field would be even easier! Probably hours or days.)
+Obviously it depends on the paper, but maybe.. a few hours? A few weeks if it's a doozy of a paper (or you have zero background - don't worry, the next paper would be a lot easier! Probably hours or days).
 
 The point is that college degrees are too broad (you spend too much time covering unnecessary information), and Google searches are too fragmented (you might what you're looking for, but you also need to track down any/all context).
 
