@@ -109,7 +109,7 @@ Obviously it depends on the paper, but maybe.. a few hours? A few weeks if it's 
 
 The point is that college degrees are too broad (you spend too much time covering unnecessary information), and Google searches are too fragmented (you might find what you're looking for, but you also need to track down or conjure any/all context).
 
-The Goldilocks solution: a knowledge graph that contains atomic (neither broad nor fragmented) pieces of information and their relationship to other pieces of information (i.e. the answers to all the questions you asked to get to your understanding).
+The Goldilocks solution: a knowledge graph that contains atomic (neither broad nor fragmented) pieces of knowledge and their relationship to other pieces of knowledge (i.e. the answers to all the questions you asked to get to your understanding).
 
 With a tool like this, we could lower the barrier of entry *significantly*. And that's just for one field.
 
@@ -150,9 +150,9 @@ When you find what you're looking for, it'll be succinct, but still comprehensiv
 
 ## So it's a Panacea (cure-all)?
 
-Don't get me wrong, I'm really excited about this idea, and I think it could really move the needle on humanity's progress.
+Don't get me wrong, I'm really excited about this idea, and I think it could significantly move the needle on humanity's progress.
 
-That being said, there *will* be new issues (and probably old ones). This is just a concept sketch. Here are *some* areas I think we will run into problems:
+That being said, there *will* be new issues (and probably old ones). This is just a concept sketch. Here are just some of the areas I think we will run into problems:
 
 - How do we convert a broad work into atomic notes? What do we do with the leftover fragments?
 - How do you search for duplicates?
@@ -162,4 +162,4 @@ That being said, there *will* be new issues (and probably old ones). This is jus
 
 Still, I love the idea that I could pick up any scientific paper, know the tree of dependencies for understanding it, and have all the relationships between each concept available to me on demand.
 
-I think that's totally possible in this paradigm, and I think it could result in e.g. cancer being cured n - 15 years from now, instead of n years from now.
+I think that's doable in this paradigm, and I think it could possibly result in e.g. cancer being cured n - 15 years from now, instead of n years from now.
