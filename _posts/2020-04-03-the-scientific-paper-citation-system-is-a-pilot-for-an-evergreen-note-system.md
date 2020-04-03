@@ -157,7 +157,7 @@ That being said, there *will* be new issues (and probably old ones). This is jus
 - How do we convert a broad work into atomic notes? What do we do with the leftover fragments?
 - How do you search for duplicates?
 - What does the pruning process look like?
-- How do you add a new evergreen note? (Is it an O(n) search through all the other notes? What are we looking for, exactly?)
+- How do you add a new evergreen note? (Is it an [O(n)](https://www.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/big-o-notation) search through all the other notes? What are we looking for, exactly?)
 - Speaking of tabular data, how the heck does data itself fit in here? What about relational data? What about.. pictures? Or videos? Is this just for academic concepts?
 
 Still, I love the idea that I could pick up any scientific paper, know the tree of dependencies for understanding it, and have all the relationships between each concept available to me on demand.
