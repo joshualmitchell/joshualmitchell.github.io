@@ -107,7 +107,7 @@ What's your estimation for how long it might take to understand the paper with y
 
 Obviously it depends on the paper, but maybe.. a few hours? A few weeks if it's a doozy of a paper (or you have zero background - don't worry, the next paper would be a lot easier! Probably hours or days).
 
-The point is that college degrees are too broad (you spend too much time covering unnecessary information), and Google searches are too fragmented (you might what you're looking for, but you also need to track down any/all context).
+The point is that college degrees are too broad (you spend too much time covering unnecessary information), and Google searches are too fragmented (you might find what you're looking for, but you also need to track down or conjure any/all context).
 
 The Goldilocks solution: a knowledge graph that contains atomic (neither broad nor fragmented) pieces of information and their relationship to other pieces of information (i.e. the answers to all the questions you asked to get to your understanding).
 
