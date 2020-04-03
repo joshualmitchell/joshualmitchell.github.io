@@ -71,11 +71,11 @@ The main problem: The floor is unnecessarily high.
 
 If you were to imagine an entire scientific field as a knowledge [graph](https://en.wikipedia.org/wiki/Graph_theory) (i.e. concepts with connections between them describing their relationship), the list of things you need to understand to read a scientific paper would be a [tree](https://en.wikipedia.org/wiki/Tree_(graph_theory)) in that graph (think: flowchart).
 
-A metaphor: a degree plan for a bachelor's degree. You have prerequisites. And those prerequisites have prerequisites. And so on.
+A good metaphor is a degree plan for a bachelor's degree. You have prerequisites. Those prerequisites have prerequisites, and so on.
 
-To elaborate on the metaphor: the scientific paper is the bachelor's degree. To complete the bachelor's degree (understand the paper), you need to complete the required classes (understand the fundamental concepts of the field and look at the cited papers), which will have prerequisites (papers cited by the originally cited papers *and* prerequisite concepts to the fundamental concepts), which will... and so on.
+To elaborate on the metaphor: the scientific paper is the bachelor's degree. To complete the bachelor's degree (understand the paper), you need to complete the required classes (understand the fundamental concepts of the field and look at the cited papers), which will have prerequisites (papers cited by the originally cited papers *and* prerequisite concepts to the fundamental concepts), which will...
 
-A more concrete example: [MIP*=RE](https://arxiv.org/abs/2001.04383)
+A concrete example: [MIP*=RE](https://arxiv.org/abs/2001.04383)
 
 <blockquote style="font-style: normal">We show that the class MIP∗ of languages that can be decided by a classical verifier interacting with multiple all-powerful quantum provers sharing entanglement is equal to the class RE of recursively enumerable languages.</blockquote>
 
@@ -87,21 +87,21 @@ To understand what an all-powerful quantum prover is, we probably need to know w
 
 And so on...
 
-Long story short: the "floor" of understanding you have to get to in order to understand a scientific paper is extremely high. If you're starting from scratch, you either have to spend years getting a degree or spend days, weeks, or possibly months googling and hitting your head against the wall.
+Long story short: the "floor" of understanding you have to get to in order to understand a scientific paper is high. If you're starting from scratch, you either have to spend years getting a degree or spend days, weeks, or possibly months googling and hitting your head against the wall.
 
 ## Can we do better?
 
 But wait! Months googling is still a lot less time than years getting a degree. Can we do even *better*? Most people don't have months to go on a wild goose chase. What if we eliminated the head-wall factor entirely?
 
-Take any scientific paper.
+Pick any scientific paper.
 
-Now imagine if you had the author right there in front of you that you could ask questions until you understood the paper. You could even start with the basics. He or she won't be like those professors that yell at you for asking questions about "things you should already know" - they'll answer politely, succinctly, and informatively. Imagine you're a 5 year old that won't stop asking why.
+Now, imagine if you had the author right there in front of you. You can ask whatever you want - basic or advanced. He or she won't be like those professors that yell at you for asking questions about, "things you should already know" - they'll answer politely, succinctly, and informatively. Be like a 5 year old that won't stop asking why.
 
 - You could throw examples at them to verify your understanding.
 - You could ask if it's the same thing as this other thing.
 - You could ask what assumptions are being made, and what happens if they're not true.
 
-It's like doing the Feynman technique, except when you notice gaps in your knowledge, they're instantly remedied.
+It's like doing the [Feynman technique](https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf), except when you notice gaps in your knowledge, they're instantly remedied.
 
 What's your estimation for how long it might take to understand a paper with your author friend?
 
