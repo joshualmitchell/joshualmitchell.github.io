@@ -53,7 +53,7 @@ So maybe you search for a blog post explaining these two things in context. Ther
 
 Or maybe you got lucky and had some knowledge of the first few terms. And *then* you got stuck.
 
-Unfortunately, for the average paper, this is very likely to happen *a lot*. And this assumes that the paper was written well! And that you have some prior knowledge!
+Unfortunately, for the average paper, this is likely to happen *a lot*. And this assumes that the paper was written well! And that you have some prior knowledge!
 
 If only there were something that would answer *those* questions, too! Maybe a kind of knowledge graph that had the concepts for a given field and the relationship between them.
 
