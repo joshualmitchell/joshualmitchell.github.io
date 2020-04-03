@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Scientific Paper Citations: A v0.1 Evergreen Note System"
+title: "The Problems Science Faces (And Why Evergreen Notes Are The Solution)"
 date: 2020-03-28
 categories: productivity
 tags: [productivity, project-management, note-taking]
