@@ -261,15 +261,17 @@ This is the stage where you give those tasks a home both physically and psycholo
 
 This is the stage where you decide the order in which the tasks on your plate will be done.
 
-Step 1: Go to the list things tagged as prioritizeme
+Step 1: Go to the list things tagged as #prioritizeme
 
 ![alt text][pri1]
 
 [pri1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/pri1.png "Go to the prioritize me page"
 
-Step 2: Move a *reference* (remember, they live in your project) to all of them into the Master Priority List.
+Step 2: Move a *reference* (remember, they live in your project) of each one into the Master Priority List.
 
 This is done by Option + Clicking (on a Mac) on the black bullet to the left of the task, and then dragging it to your Master Priority List in the sidebar.
+
+You can also go to the Master Priority List, start typing /ref, select "Block Reference", start typing your task, and then select it.
 
 ![alt text][pri2]
 
