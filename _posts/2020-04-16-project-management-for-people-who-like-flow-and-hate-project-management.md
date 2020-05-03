@@ -80,7 +80,7 @@ Step 3: Start working
 
 That's it! These pictures might look intimidating, but, in practice, this takes <5 seconds.
 
-Once you finish
+Once you finish:
 
 * Mark it as done
 
@@ -142,7 +142,7 @@ Rinse and repeat until you're done for the day. Again, this process might seem c
 
 ### Housekeeping mode
 
-Each of these steps can be done in isolation (depending on what needs to be done), but to keep things running smoothly, they should be done, in order, at some regular interval. Ideas and tasks come when they come, but I do labeling and prioritization happen everyday in the evening to reinforce the habit.
+Each of these steps can be done in isolation (depending on what needs to be done), but to keep things running smoothly, they should be done, in order, at some regular interval. Ideas and tasks come when they come, but I do labeling and prioritization every week day in the evening to reinforce the habit.
 
 Let's talk about each stage of the CLP (I remember it as "clap") pipeline:
 
