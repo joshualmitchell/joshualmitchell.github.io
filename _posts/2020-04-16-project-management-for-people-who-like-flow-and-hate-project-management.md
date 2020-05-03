@@ -58,27 +58,77 @@ This section will seem unusually short and simple - but that's because all the h
 
 Step 1: Go to the Master Priority List
 
-PICTURE
+![alt text][mpl1]
+
+[mpl1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/mpl1.png "Master Priority List Search Screenshot"
+
+![alt text][mpl1a]
+
+[mpl1a]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/mpl1a.png "Master Priority List Screenshot"
 
 Step 2: Click the first thing that doesn't have a prioritizeme tag.
 
-Picture
+![alt text][mpl2]
+
+[mpl2]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/mpl2.png "Master Priority List, no prioritize me tag"
 
 Step 3: Start working
 
-Picture
+![alt text][mpl3]
 
-That's it! These pictures might look intimidating, but, in practice, this takes 5 seconds max.
+[mpl3]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/mpl3.png "Master Priority List, pick a task"
+
+That's it! These pictures might look intimidating, but, in practice, this takes <5 seconds.
 
 Once you finish
 
 * mark it as done
-* put the time and day
+
+![alt text][task1]
+
+[task1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task1.png "Task Marked As Done"
+
+* put the date
+
+![alt text][task2]
+
+[task2]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task2.png "Task with date"
+
+* put the time
+
+![alt text][task2a]
+
+[task2a]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task2a.png "Task with time"
+
+![alt text][task2b]
+
+[task2b]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task2b.png "Task with time complete"
+
 * remove it from the Master Priority List
-* move it from tasks to finished tasks in your project
+
+![alt text][task3a]
+
+[task3a]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task3a.png "Select Task"
+
+![alt text][task3b]
+
+[task3b]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task3b.png "Go To Master Priority List"
+
+![alt text][task3c]
+
+[task3c]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task3c.png "Task Removed From Master Priority List"
+
+* move it from undone tasks to done tasks in your project
+
+![alt text][task4]
+
+[task4]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task4.jpg "Task Completed and moved to done"
+
 * start the next thing.
 
-PICTURE PICTURE
+![alt text][task5]
+
+[task5]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task5.jpg "Moving to the next task on the master priority list"
 
 Rinse and repeat until you're done for the day. Again, this process might seem complicated, but only takes a few seconds once you get the hang of things.
 
@@ -106,17 +156,23 @@ Step 1: An idea forms in your head.
 
 Step 2: If you're at your computer, go to the Uncategorized Tasks page.
 
-PICTURE
+![alt text][uncat1]
+
+[uncat1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/uncat1.jpg "Uncategorized Tasks Page"
 
 Add whatever comes to mind, and tag it with #prioritizeme at the end.
 
-PICTURE
+![alt text][uncat2]
 
-If you're on mobile, just add it to your daily note with a tag that indicates it should be thought about later. I use #ingestme.
+[uncat2]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/uncat2.jpg "Uncategorized Tasks Page with prioritize me tag"
 
-PICTURE
+If you're on mobile, just add it to your daily note with a tag that indicates it should be thought about later. I use #[[Captured Notes]].
 
-That's it! Go about your day knowing that it'll be taken care of.
+![alt text][mobile]
+
+[mobile]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/mobile.jpg "Mobile Screenshot"
+
+That's it! Go about your day knowing that it'll be taken care of (by you, later).
 
 #### Labelling (L)
 
@@ -127,19 +183,25 @@ You have also, in theory, done the Task Conception step of getting their foot in
 At this point, these nascent tasks exist in two places:
 
 * the Uncategorized Tasks list
-* in your daily notes with the #ingestme tag (or whatever tag you use)
+* in your daily notes with the #[[Captured Notes]] tag (or whatever tag you use)
 
-Step 1: search for any notes tagged #ingestme
+Step 1: search for any notes tagged #[[Captured Notes]]
 
-PICTURE
+![alt text][captured1]
 
-Step 2: move them to the Uncategorized Tasks list, and replace the #ingestme tag with the #prioritizeme tag
+[captured1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/captured1.jpg "Captured Notes tagged notes"
 
-PICTURE
+Step 2: move them to the Uncategorized Tasks list, and replace the #[[Captured Notes]] tag with the #prioritizeme tag
 
-Step 3: move all your tasks from Uncategorized Tasks to the task lists of their respective projects.
+![alt text][captured2]
 
-PICTURE
+[captured2]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/captured2.jpg "Notes moved from captured notes to Uncategorized Tasks List"
+
+Step 3: move all your tasks from the Uncategorized Tasks List to the task lists of their respective projects.
+
+![alt text][uncat3]
+
+[uncat3]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/uncat3.jpg "Moving from Uncategorized Tasks List to Specific Projects"
 
 You might have a slightly different system. Maybe you don't have goals or projects. 
 
@@ -153,17 +215,27 @@ This is the stage where you decide the order in which the tasks on your plate wi
 
 Step 1: Go to the list things tagged as prioritizeme
 
-PICTURE
+![alt text][label]
 
-Step 2: Move a *reference* (remember, they *live* in your project) to all of them into the [[Master Priority List]]
+[label]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/.jpg "title"
 
-PICTURE
+Step 2: Move a *reference* (remember, they *live* in your project) to all of them into the [[Master Priority List]]. This is done by Option + Clicking on a Mac.
+
+![alt text][label]
+
+[label]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/.jpg "title"
 
 Step 3: Rank them in rough order of importance so that the most important is at the top. The order can be as perfect as you want it to be.
 
-PICTURE
+![alt text][label]
+
+[label]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/.jpg "title"
 
 Step 4: For every task you feel is in its proper place, remove the #prioritizeme tag.
+
+![alt text][label]
+
+[label]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/.jpg "title"
 
 That's it!
 
@@ -183,7 +255,9 @@ If you're inclined, run a Prioritization stage.
 
 If the task I gave myself seems too vague or too daunting, I break it down into more just manageable sub-pieces, like so:
 
-PICTURE
+![alt text][minitodo]
+
+[minitodo]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/minitodo.jpg "A Mini To Do List Within A Task"
 
 And consider it a mini-todo list. 
 
