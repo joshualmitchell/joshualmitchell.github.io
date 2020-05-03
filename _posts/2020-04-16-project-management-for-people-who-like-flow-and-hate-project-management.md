@@ -273,17 +273,7 @@ This is done by Option + Clicking (on a Mac) on the black bullet to the left of 
 
 [pri2]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/pri2.png "Move a reference to the task from the project to the master priority list"
 
-Step 3: Rank them in rough order of importance so that the most important is at the top. The order can be as perfect as you want it to be.
-
-![alt text][label]
-
-[label]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/.jpg "title"
-
-Step 4: For every task you feel is in its proper place, remove the #prioritizeme tag.
-
-![alt text][label]
-
-[label]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/.jpg "title"
+Step 3: Rank them in rough order of importance so that the most important is at the top. Once you feel a task is in its proper place, remove the #prioritizeme tag.
 
 That's it!
 
