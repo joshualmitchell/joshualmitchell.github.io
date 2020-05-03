@@ -265,7 +265,7 @@ Step 1: Go to the list things tagged as prioritizeme
 
 [pri1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/pri1.png "Go to the prioritize me page"
 
-Step 2: Move a *reference* (remember, they live in your project) to all of them into the [[Master Priority List]].
+Step 2: Move a *reference* (remember, they live in your project) to all of them into the Master Priority List.
 
 This is done by Option + Clicking (on a Mac) on the black bullet to the left of the task, and then dragging it to your Master Priority List in the sidebar.
 
