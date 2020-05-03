@@ -82,19 +82,19 @@ That's it! These pictures might look intimidating, but, in practice, this takes 
 
 Once you finish
 
-* mark it as done
+* Mark it as done
 
 ![alt text][task1]
 
 [task1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task1.png "Task Marked As Done"
 
-* put the date
+* Put the date
 
 ![alt text][task2]
 
 [task2]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task2.png "Task with date"
 
-* put the time
+* Put the time
 
 ![alt text][task2a]
 
@@ -104,7 +104,7 @@ Once you finish
 
 [task2b]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task2b.png "Task with time complete"
 
-* remove it from the Master Priority List
+* Remove it from the Master Priority List
 
 ![alt text][task3a]
 
@@ -118,17 +118,25 @@ Once you finish
 
 [task3c]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task3c.png "Task Removed From Master Priority List"
 
-* move it from undone tasks to done tasks in your project
+* Move it from undone tasks to done tasks in your project (My "project" is One Off Tasks)
 
-![alt text][task4]
+Open your relevant project in the side bar (search for it and then click it):
 
-[task4]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task4.jpg "Task Completed and moved to done"
+![alt text][task4b]
 
-* start the next thing.
+[task4b]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task4b.png "Opening the project"
 
-![alt text][task5]
+Move the task to the "Done" section.
 
-[task5]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task5.jpg "Moving to the next task on the master priority list"
+![alt text][task4c]
+
+[task4c]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task4c.png "Task Completed and moved to done"
+
+* Finally, go back to the Master Priority List (search --> Master Priority List). I also recommend favoriting (clicking the star) this page.
+
+![alt text][task4d]
+
+[task4d]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/task4d.png "Back to Master Priority List"
 
 Rinse and repeat until you're done for the day. Again, this process might seem complicated, but only takes a few seconds once you get the hang of things.
 
