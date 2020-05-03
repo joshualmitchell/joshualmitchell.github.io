@@ -201,7 +201,9 @@ Step 1: search for any notes tagged #[[Captured Notes]]
 
 [captured1]: https://raw.githubusercontent.com/joshualmitchell/joshualmitchell.github.io/master/assets/images/projmgmtguide/captured1.png "Captured Notes tagged notes"
 
-Step 2: move them to the Uncategorized Tasks list (make sure to make it a TODO item and put the #prioritizeme tag).
+Step 2: move them to the Uncategorized Tasks list
+
+Also, mark them as TODO and tag them as #prioritizeme.
 
 ![alt text][captured2]
 
